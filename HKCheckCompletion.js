@@ -18,21 +18,35 @@ var STRONG_START = "<strong>"
 var STRONG_END = "</strong>"
 
 var HK_BOSSES = {
-    mawlekDefeated: "Brooding Mawlek",
-    giantBuzzerDefeated: "Gruz Mother",
+    killedMawlek: "Brooding Mawlek",
+    killedBigBuzzer: "Gruz Mother",
     collectorDefeated: "The Collector",
     defeatedMegaJelly: "Uumuu",
     killedMimicSpider: "Nosk",
-    killedTraitorLord: "Traitor Lord"
+    killedTraitorLord: "Traitor Lord",
+    killedInfectedKnight: "Broken Vessel",
+    killedMageKnight: "Watcher Knights",
+    defeatedDungDefender: "Dung Defender",
+    mageLordDefeated: "Soul Master",
+    defeatedMantisLords: "Mantis Lords",
+    hornet1Defeated: "Hornet Protector",
+    hornetOutskirtsDefeated: "Hornet Sentinel",
+    falseKnightDefeated: "False Knight"
+};
+
+var HK_DREAMERS = {
+    lurienDefeated: "Lurien the Watcher",
+    monomonDefeated: "Monomon the Teacher",
+    hegemolDefeated: "Herrah the Beast"
 };
 
 function HKCheckCompletion(jsonObject) {
-    console.log("Script Run");
 
     let HKPlayerData = jsonObject.playerData;
     let divId = "";
     let divIdIntro = "hk-intro";
     let divIdBoss = "hk-bosses";
+    let divIdDreamers = "hk-dreamers";
 
     for (i in HKPlayerData) {
         COMPLETED_CHECK = SYMBOL_FALSE;
@@ -57,6 +71,17 @@ function HKCheckCompletion(jsonObject) {
             else currentDataFalse();
             fillHTML(divId, HK_BOSSES[j]);
             delete HK_BOSSES[j];
+        }
+
+        // ---------------- Dreamers --------------------- //
+
+        divId = divIdDreamers;
+
+        for (j in HK_DREAMERS) {
+            if (HKPlayerData[j] === true) currentDataTrue();
+            else currentDataFalse();
+            fillHTML(divId, HK_DREAMERS[j]);
+            delete HK_DREAMERS[j];
         }
     }
 }
