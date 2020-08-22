@@ -18,9 +18,12 @@ var STRONG_START = "<strong>"
 var STRONG_END = "</strong>"
 
 var HK_BOSSES = {
-    mawlekDefeated: "Brooding Mawlek: ",
-    giantBuzzerDefeated: "Gruz Mother: ",
-    collectorDefeated: "The Collector: "
+    mawlekDefeated: "Brooding Mawlek",
+    giantBuzzerDefeated: "Gruz Mother",
+    collectorDefeated: "The Collector",
+    defeatedMegaJelly: "Uumuu",
+    killedMimicSpider: "Nosk",
+    killedTraitorLord: "Traitor Lord"
 };
 
 function HKCheckCompletion(jsonObject) {
@@ -42,7 +45,7 @@ function HKCheckCompletion(jsonObject) {
         if (i === "completionPercentage") {
             if (HKPlayerData.completionPercentage >= 112) currentDataTrue();
             else currentDataFalse(HKPlayerData.completionPercentage);
-            fillHTML(divId, "Hollow Knight Completion: ", " %");
+            fillHTML(divId, "Hollow Knight Completion", " %");
         }
 
         // ---------------- Bosses (Base Game) --------------------- //
@@ -59,7 +62,7 @@ function HKCheckCompletion(jsonObject) {
 }
 
 function fillHTML(divId = "", textPrefix = "Unknown Completion Element: ", textSuffix = "") {
-    document.getElementById(divId).innerHTML += DIV_START + COMPLETED_CHECK + STRONG_START + textPrefix + STRONG_END + CURRENT_DATA + textSuffix + DIV_END;
+    document.getElementById(divId).innerHTML += DIV_START + COMPLETED_CHECK + STRONG_START + textPrefix + ": " + STRONG_END + CURRENT_DATA + textSuffix + DIV_END;
 }
 
 function currentDataTrue(textData = COMPLETED) {
