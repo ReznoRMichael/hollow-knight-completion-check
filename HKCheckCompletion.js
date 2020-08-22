@@ -2,9 +2,31 @@ function HKCheckCompletion(jsonObject) {
     console.log("Script Run");
 
     let HKPlayerData = jsonObject.playerData;
-    let symbolTrue = "✅";
-    let symbolFalse = "❌";
+    let completedCheck = "❌ ";
+    let symbolTrue = "✅ ";
+    let divIdIntro = "hk-intro";
+    let divIdBoss = "hk-bosses";
 
+    for (i in HKPlayerData) {
+
+        if (i === "completionPercentage") {
+            if (HKPlayerData.completionPercentage >= 112) completedCheck = symbolTrue;
+            fillHTML(divIdIntro, completedCheck, "Hollow Knight Completion: ", HKPlayerData.completionPercentage, " %");
+        }
+
+        if (i === "mawlekDefeated") {
+            if (HKPlayerData.mawlekDefeated === true) completedCheck = symbolTrue;
+            fillHTML(divIdBoss, completedCheck, "Brooding Mawlek: ", HKPlayerData.mawlekDefeated);
+        }
+
+        if (i === "giantBuzzerDefeated") {
+            if (HKPlayerData.giantBuzzerDefeated === true) completedCheck = symbolTrue;
+            fillHTML(divIdBoss, completedCheck, "Gruz Mother: ", HKPlayerData.giantBuzzerDefeated);
+        }
+    }
+}
+
+function fillHTML(divId = "", completedCheck = "❌ ", textPrefix = "Completion Element: ", textData = "Data unknown", textSuffix = "") {
     let divStart = [
         "<div>"
     ].join("\n");
@@ -13,17 +35,5 @@ function HKCheckCompletion(jsonObject) {
         "</div>"
     ].join("\n");
 
-    for(i in HKPlayerData) {
-        let completedCheck = symbolFalse;
-
-        if(i === "completionPercentage") {
-            if(HKPlayerData.completionPercentage >= 112) completedCheck = symbolTrue;
-            document.getElementById("hk-intro").innerHTML += divStart + completedCheck + " Hollow Knight Completion: " + HKPlayerData.completionPercentage + " %" + divEnd;
-        }
-
-        if(i === "mawlekDefeated") {
-            if(HKPlayerData.mawlekDefeated === true) completedCheck = symbolTrue;
-            document.getElementById("hk-bosses").innerHTML += divStart + completedCheck + " Brooding Mawlek: " + HKPlayerData.mawlekDefeated + divEnd;
-        }
-    }
+    document.getElementById(divId).innerHTML += divStart + completedCheck + textPrefix + textData + textSuffix + divEnd;
 }
