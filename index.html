@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Hollow Knight Completion %</title>
+    <meta name="description" content="">
+	<meta name="keywords" content="">
+	
+	<meta property="og:title" content="Hollow Knight Completion %">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="http://reznortech.rf.gd/favicon.png">
+	<meta property="og:url" content="http://reznortech.rf.gd/epic-games-store-version-history">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:site_name" content="rezno[R].tech">
+	<meta name="twitter:image:alt" content="">
+
+	<meta name="author" content="ReznoR Michael">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="../favicon.png">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script src="loadJson.js"></script>
+    <script src="HKCheckCompletion.js"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136831794-2"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-136831794-2');
+    </script>
+    
+</head>
+<body>
+    
+    <h1>Hollow Knight Completion %</h1>
+
+    <p class="smalltext">Check what you have left for completion.</p>
+
+    <div style="margin-bottom: 20px;"></div>
+
+    <button id="startbutton" onclick="HKCheckCompletion( jsonObj );">Run Script</button>
+
+    <div style="margin-bottom: 20px;"></div>
+
+    <div id="hk-intro">
+    </div>
+
+    <div id="hk-bosses">
+        <div>Bosses:</div>
+    </div>
+
+</body>
+</html>
