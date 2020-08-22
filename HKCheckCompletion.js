@@ -34,6 +34,12 @@ var HK_BOSSES = {
     falseKnightDefeated: "False Knight"
 };
 
+var HK_COLOSSEUM = {
+    colosseumBronzeCompleted: "Trial of the Warrior",
+    colosseumSilverCompleted: "Trial of the Conqueror",
+    colosseumGoldCompleted: "Trial of the Fool"
+};
+
 var HK_DREAMERS = {
     lurienDefeated: "Lurien the Watcher",
     monomonDefeated: "Monomon the Teacher",
@@ -46,6 +52,7 @@ function HKCheckCompletion(jsonObject) {
     let divId = "";
     let divIdIntro = "hk-intro";
     let divIdBoss = "hk-bosses";
+    let divIdColosseum = "hk-colosseum";
     let divIdDreamers = "hk-dreamers";
 
     for (i in HKPlayerData) {
@@ -82,6 +89,17 @@ function HKCheckCompletion(jsonObject) {
             else currentDataFalse();
             fillHTML(divId, HK_DREAMERS[j]);
             delete HK_DREAMERS[j];
+        }
+
+        // ---------------- Colosseum of Fools --------------------- //
+
+        divId = divIdColosseum;
+
+        for (j in HK_COLOSSEUM) {
+            if (HKPlayerData[j] === true) currentDataTrue();
+            else currentDataFalse();
+            fillHTML(divId, HK_COLOSSEUM[j]);
+            delete HK_COLOSSEUM[j];
         }
     }
 }
