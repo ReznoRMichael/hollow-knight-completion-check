@@ -46,6 +46,12 @@ var HK_DREAMERS = {
     hegemolDefeated: "Herrah the Beast"
 };
 
+var HK_DREAMNAIL = {
+    hasDreamNail: "Dream Nail acquired",
+    dreamNailUpgraded: "Awakening the Dream Nail",
+    mothDeparted: "Hear the Seer's final words"
+};
+
 function HKCheckCompletion(jsonObject) {
 
     let HKPlayerData = jsonObject.playerData;
@@ -54,6 +60,7 @@ function HKCheckCompletion(jsonObject) {
     let divIdBoss = "hk-bosses";
     let divIdColosseum = "hk-colosseum";
     let divIdDreamers = "hk-dreamers";
+    let divIdDreamNail = "hk-dreamnail";
 
     for (i in HKPlayerData) {
         COMPLETED_CHECK = SYMBOL_FALSE;
@@ -80,6 +87,17 @@ function HKCheckCompletion(jsonObject) {
             delete HK_BOSSES[j];
         }
 
+        // ---------------- Colosseum of Fools --------------------- //
+
+        divId = divIdColosseum;
+
+        for (j in HK_COLOSSEUM) {
+            if (HKPlayerData[j] === true) currentDataTrue();
+            else currentDataFalse();
+            fillHTML(divId, HK_COLOSSEUM[j]);
+            delete HK_COLOSSEUM[j];
+        }
+
         // ---------------- Dreamers --------------------- //
 
         divId = divIdDreamers;
@@ -91,15 +109,15 @@ function HKCheckCompletion(jsonObject) {
             delete HK_DREAMERS[j];
         }
 
-        // ---------------- Colosseum of Fools --------------------- //
+        // ---------------- Dream Nail and Essence --------------------- //
 
-        divId = divIdColosseum;
+        divId = divIdDreamNail;
 
-        for (j in HK_COLOSSEUM) {
+        for (j in HK_DREAMNAIL) {
             if (HKPlayerData[j] === true) currentDataTrue();
             else currentDataFalse();
-            fillHTML(divId, HK_COLOSSEUM[j]);
-            delete HK_COLOSSEUM[j];
+            fillHTML(divId, HK_DREAMNAIL[j]);
+            delete HK_DREAMNAIL[j];
         }
     }
 }
