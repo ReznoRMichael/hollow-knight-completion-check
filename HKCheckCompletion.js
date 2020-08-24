@@ -52,6 +52,16 @@ var HK_DREAMNAIL = {
     mothDeparted: "Hear the Seer's final words"
 };
 
+var HK_EQUIPMENT = {
+    hasKingsBrand: "King's Brand",
+    hasSuperDash: "Crystal Heart",
+    hasWalljump: "Mantis Claw",
+    hasDoubleJump: "Monarch Wings",
+    hasAcidArmour: "Isma's Tear",
+    hasDash: "Mothwing Cloak",
+    hasShadowDash: "Shade Cloak"
+};
+
 function HKCheckCompletion(jsonObject) {
 
     let HKPlayerData = jsonObject.playerData;
@@ -61,6 +71,7 @@ function HKCheckCompletion(jsonObject) {
     let divIdColosseum = "hk-colosseum";
     let divIdDreamers = "hk-dreamers";
     let divIdDreamNail = "hk-dreamnail";
+    let divIdEquipment = "hk-equipment";
 
     for (i in HKPlayerData) {
         COMPLETED_CHECK = SYMBOL_FALSE;
@@ -118,6 +129,17 @@ function HKCheckCompletion(jsonObject) {
             else currentDataFalse();
             fillHTML(divId, HK_DREAMNAIL[j]);
             delete HK_DREAMNAIL[j];
+        }
+
+        // ---------------- Equipment --------------------- //
+
+        divId = divIdEquipment;
+
+        for (j in HK_EQUIPMENT) {
+            if (HKPlayerData[j] === true) currentDataTrue();
+            else currentDataFalse();
+            fillHTML(divId, HK_EQUIPMENT[j]);
+            delete HK_EQUIPMENT[j];
         }
     }
 }
