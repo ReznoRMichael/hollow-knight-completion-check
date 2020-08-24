@@ -34,6 +34,9 @@ const DIV_ID = {
     spells: "hk-spells",
     vesselFragments: "hk-vesselfragments",
     warriorDreams: "hk-warriordreams",
+    grimmTroupe: "hk-grimmtroupe",
+    lifeblood: "hk-lifeblood",
+    godmaster: "hk-godmaster"
 };
 
 const HK_BOSSES = {
@@ -113,7 +116,18 @@ const HK_WARRIORDREAMS = {
     aladarSlugDefeated: "Gorb"
 };
 
+const HK_LIFEBLOOD = {
+    killedHiveKnight: "Hive Knight"
+};
+
+const HK_GODMASTER = {
+    hasGodfinder: "Godtuner"
+};
+
 function HKCheckCompletion(jsonObject) {
+
+    // start benchmark
+    let countBegin = new Date();
 
     // Pre-Cleaning for safety
     for (i in DIV_ID) {
@@ -122,6 +136,8 @@ function HKCheckCompletion(jsonObject) {
 
     let HK_BOSSES_temp = Object.assign({}, HK_BOSSES);
     let HK_WARRIORDREAMS_temp = Object.assign({}, HK_WARRIORDREAMS);
+    let HK_LIFEBLOOD_temp = Object.assign({}, HK_LIFEBLOOD);
+    let HK_GODMASTER_temp = Object.assign({}, HK_GODMASTER);
 
     let HKPlayerData = jsonObject.playerData;
 
@@ -190,7 +206,23 @@ function HKCheckCompletion(jsonObject) {
 
         checkWarriorDreams(DIV_ID.warriorDreams, HK_WARRIORDREAMS_temp, HKPlayerData);
 
+        // ---------------- Grimm Troupe Content Pack --------------------- //
+
+        //
+
+        // ---------------- Lifeblood Content Pack --------------------- //
+
+        checkIfDataTrue(DIV_ID.lifeblood, HK_LIFEBLOOD_temp, HKPlayerData);
+
+        // ---------------- Godmaster Content Pack --------------------- //
+
+        if (HK_GODMASTER_temp) checkIfDataTrue(DIV_ID.godmaster, HK_GODMASTER_temp, HKPlayerData);
+
     }
+
+    // finish and show benchmark
+    let countEnd = new Date();
+    console.info("HKCheckCompletion() time (ms) =", countEnd - countBegin);
 }
 
 function fillHTML(divId = "", textPrefix = "Unknown Completion Element: ", textSuffix = "") {
