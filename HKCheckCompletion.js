@@ -45,19 +45,19 @@ const HK_COLOSSEUM = {
     colosseumGoldCompleted: "Trial of the Fool"
 };
 
-var HK_DREAMERS = {
+const HK_DREAMERS = {
     lurienDefeated: "Lurien the Watcher",
     monomonDefeated: "Monomon the Teacher",
     hegemolDefeated: "Herrah the Beast"
 };
 
-var HK_DREAMNAIL = {
+const HK_DREAMNAIL = {
     hasDreamNail: "Dream Nail acquired",
     dreamNailUpgraded: "Awakening the Dream Nail",
     mothDeparted: "Hear the Seer's final words"
 };
 
-var HK_EQUIPMENT = {
+const HK_EQUIPMENT = {
     hasKingsBrand: "King's Brand",
     hasSuperDash: "Crystal Heart",
     hasWalljump: "Mantis Claw",
@@ -70,7 +70,6 @@ var HK_EQUIPMENT = {
 function HKCheckCompletion(jsonObject) {
 
     let HKPlayerData = jsonObject.playerData;
-    let divId = "";
     let divIdIntro = "hk-intro";
     let divIdBosses = "hk-bosses";
     let divIdColosseum = "hk-colosseum";
@@ -84,12 +83,10 @@ function HKCheckCompletion(jsonObject) {
 
         // ---------------- Game Completion Status ----------------- //
 
-        divId = divIdIntro;
-
         if (i === "completionPercentage") {
             if (HKPlayerData.completionPercentage >= 112) currentDataTrue();
             else currentDataFalse(HKPlayerData.completionPercentage);
-            fillHTML(divId, "Hollow Knight Completion", " %");
+            fillHTML(divIdIntro, "Hollow Knight Completion", " %");
         }
 
         // ---------------- Bosses (Base Game) --------------------- //
@@ -102,36 +99,16 @@ function HKCheckCompletion(jsonObject) {
 
         // ---------------- Dreamers --------------------- //
 
-        divId = divIdDreamers;
-
-        for (j in HK_DREAMERS) {
-            if (HKPlayerData[j] === true) currentDataTrue();
-            else currentDataFalse();
-            fillHTML(divId, HK_DREAMERS[j]);
-            delete HK_DREAMERS[j];
-        }
+        checkIfDataTrue(divIdDreamers, HK_DREAMERS, HKPlayerData);
 
         // ---------------- Dream Nail and Essence --------------------- //
 
-        divId = divIdDreamNail;
-
-        for (j in HK_DREAMNAIL) {
-            if (HKPlayerData[j] === true) currentDataTrue();
-            else currentDataFalse();
-            fillHTML(divId, HK_DREAMNAIL[j]);
-            delete HK_DREAMNAIL[j];
-        }
+        checkIfDataTrue(divIdDreamNail, HK_DREAMNAIL, HKPlayerData);
 
         // ---------------- Equipment --------------------- //
 
-        divId = divIdEquipment;
+        checkIfDataTrue(divIdEquipment, HK_EQUIPMENT, HKPlayerData);
 
-        for (j in HK_EQUIPMENT) {
-            if (HKPlayerData[j] === true) currentDataTrue();
-            else currentDataFalse();
-            fillHTML(divId, HK_EQUIPMENT[j]);
-            delete HK_EQUIPMENT[j];
-        }
     }
 }
 
