@@ -22,6 +22,10 @@ var divEnd = [
 var strongStart = "<strong>"
 var strongEnd = "</strong>"
 
+var divIds = {
+    
+};
+
 var divIdIntro = "hk-intro";
 var divIdBosses = "hk-bosses";
 var divIdColosseum = "hk-colosseum";
@@ -30,6 +34,7 @@ var divIdDreamNail = "hk-dreamnail";
 var divIdEquipment = "hk-equipment";
 var divIdNailArts = "hk-nailarts";
 var divIdNailUpgrades = "hk-nailupgrades";
+var divIdSpells = "hk-spells";
 
 const HK_BOSSES = {
     killedMawlek: "Brooding Mawlek",
@@ -83,6 +88,21 @@ const HK_NAILARTS = {
     hasCyclone: "Cyclone Slash"
 };
 
+const HK_SPELLS = {
+    fireballLevel: {
+        1: "Vengeful Spirit",
+        2: "Shade Soul"
+    },
+    quakeLevel: {
+        1: "Desolate Dive",
+        2: "Descending Dark"
+    },
+    screamLevel: {
+        1: "Howling Wraiths",
+        2: "Abyss Shriek"
+    }
+}
+
 function HKCheckCompletion(jsonObject) {
 
     let HKPlayerData = jsonObject.playerData;
@@ -130,12 +150,15 @@ function HKCheckCompletion(jsonObject) {
             let nailName = ["Old Nail", "Sharpened Nail", "Channeled Nail", "Coiled Nail", "Pure Nail"];
 
             for (let j = 0; j < nailName.length; j++) {
+                currentDataFalse();
                 if (HKPlayerData.nailSmithUpgrades >= j) currentDataTrue();
                 fillHTML(divIdNailUpgrades, nailName[j]);
-                currentDataFalse();
             }
         }
 
+        // ---------------- Spells --------------------- //
+
+        checkSpellLevel(divIdSpells, HK_SPELLS, HKPlayerData);
     }
 }
 
@@ -158,6 +181,17 @@ function checkIfDataTrue(divId, dataObject, playerData) {
         if (playerData[i] === true) currentDataTrue();
         else currentDataFalse();
         fillHTML(divId, dataObject[i]);
+        delete dataObject[i];
+    }
+}
+
+function checkSpellLevel(divId, dataObject, playerData) {
+    for (i in dataObject) {
+        for (let j = 1; j <= 2; j++) {
+            currentDataFalse();
+            if (playerData[i] >= j) currentDataTrue();
+            fillHTML(divId, dataObject[i][j]);
+        }
         delete dataObject[i];
     }
 }
