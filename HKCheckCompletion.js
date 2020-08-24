@@ -29,6 +29,7 @@ var divIdDreamers = "hk-dreamers";
 var divIdDreamNail = "hk-dreamnail";
 var divIdEquipment = "hk-equipment";
 var divIdNailArts = "hk-nailarts";
+var divIdNailUpgrades = "hk-nailupgrades";
 
 const HK_BOSSES = {
     killedMawlek: "Brooding Mawlek",
@@ -121,6 +122,20 @@ function HKCheckCompletion(jsonObject) {
         // ---------------- Nail Arts --------------------- //
 
         checkIfDataTrue(divIdNailArts, HK_NAILARTS, HKPlayerData);
+
+        // ---------------- Nail Upgrades --------------------- //
+
+        if (i === "nailSmithUpgrades") {
+
+            let nailName = ["Old Nail", "Sharpened Nail", "Channeled Nail", "Coiled Nail", "Pure Nail"];
+
+            for (let j = 0; j < nailName.length; j++) {
+                if (HKPlayerData.nailSmithUpgrades >= j) currentDataTrue();
+                fillHTML(divIdNailUpgrades, nailName[j]);
+                currentDataFalse();
+            }
+        }
+
     }
 }
 
