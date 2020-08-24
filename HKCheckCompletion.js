@@ -23,7 +23,7 @@ var strongStart = "<strong>"
 var strongEnd = "</strong>"
 
 var divIds = {
-    
+
 };
 
 var divIdIntro = "hk-intro";
@@ -101,7 +101,7 @@ const HK_SPELLS = {
         1: "Howling Wraiths",
         2: "Abyss Shriek"
     }
-}
+};
 
 function HKCheckCompletion(jsonObject) {
 
