@@ -22,19 +22,17 @@ var divEnd = [
 var strongStart = "<strong>"
 var strongEnd = "</strong>"
 
-var divIds = {
-
+const DIV_ID = {
+    intro: "hk-intro",
+    bosses: "hk-bosses",
+    colosseum: "hk-colosseum",
+    dreamers: "hk-dreamers",
+    dreamNail: "hk-dreamnail",
+    equipment: "hk-equipment",
+    nailArts: "hk-nailarts",
+    nailUpgrades: "hk-nailupgrades",
+    spells: "hk-spells",
 };
-
-var divIdIntro = "hk-intro";
-var divIdBosses = "hk-bosses";
-var divIdColosseum = "hk-colosseum";
-var divIdDreamers = "hk-dreamers";
-var divIdDreamNail = "hk-dreamnail";
-var divIdEquipment = "hk-equipment";
-var divIdNailArts = "hk-nailarts";
-var divIdNailUpgrades = "hk-nailupgrades";
-var divIdSpells = "hk-spells";
 
 const HK_BOSSES = {
     killedMawlek: "Brooding Mawlek",
@@ -116,32 +114,32 @@ function HKCheckCompletion(jsonObject) {
         if (i === "completionPercentage") {
             if (HKPlayerData.completionPercentage >= 112) currentDataTrue();
             else currentDataFalse(HKPlayerData.completionPercentage);
-            fillHTML(divIdIntro, "Hollow Knight Completion", " %");
+            fillHTML(DIV_ID.intro, "Hollow Knight Completion", " %");
         }
 
         // ---------------- Bosses (Base Game) --------------------- //
 
-        checkIfDataTrue(divIdBosses, HK_BOSSES, HKPlayerData);
+        checkIfDataTrue(DIV_ID.bosses, HK_BOSSES, HKPlayerData);
 
         // ---------------- Colosseum of Fools --------------------- //
 
-        checkIfDataTrue(divIdColosseum, HK_COLOSSEUM, HKPlayerData);
+        checkIfDataTrue(DIV_ID.colosseum, HK_COLOSSEUM, HKPlayerData);
 
         // ---------------- Dreamers --------------------- //
 
-        checkIfDataTrue(divIdDreamers, HK_DREAMERS, HKPlayerData);
+        checkIfDataTrue(DIV_ID.dreamers, HK_DREAMERS, HKPlayerData);
 
         // ---------------- Dream Nail and Essence --------------------- //
 
-        checkIfDataTrue(divIdDreamNail, HK_DREAMNAIL, HKPlayerData);
+        checkIfDataTrue(DIV_ID.dreamNail, HK_DREAMNAIL, HKPlayerData);
 
         // ---------------- Equipment --------------------- //
 
-        checkIfDataTrue(divIdEquipment, HK_EQUIPMENT, HKPlayerData);
+        checkIfDataTrue(DIV_ID.equipment, HK_EQUIPMENT, HKPlayerData);
 
         // ---------------- Nail Arts --------------------- //
 
-        checkIfDataTrue(divIdNailArts, HK_NAILARTS, HKPlayerData);
+        checkIfDataTrue(DIV_ID.nailArts, HK_NAILARTS, HKPlayerData);
 
         // ---------------- Nail Upgrades --------------------- //
 
@@ -152,13 +150,13 @@ function HKCheckCompletion(jsonObject) {
             for (let j = 0; j < nailName.length; j++) {
                 currentDataFalse();
                 if (HKPlayerData.nailSmithUpgrades >= j) currentDataTrue();
-                fillHTML(divIdNailUpgrades, nailName[j]);
+                fillHTML(DIV_ID.nailUpgrades, nailName[j]);
             }
         }
 
         // ---------------- Spells --------------------- //
 
-        checkSpellLevel(divIdSpells, HK_SPELLS, HKPlayerData);
+        checkSpellLevel(DIV_ID.spells, HK_SPELLS, HKPlayerData);
     }
 }
 
