@@ -1,23 +1,28 @@
-var DATA_UNKNOWN = "Data unknown";
-var COMPLETED = "Completed";
-var NOT_COMPLETED = "Not Completed";
-var CURRENT_DATA = DATA_UNKNOWN;
-var SYMBOL_FALSE = "❌ ";
-var SYMBOL_TRUE = "✅ ";
-var COMPLETED_CHECK = SYMBOL_FALSE;
+// ---------------- Constants ----------------- //
 
-var DIV_START = [
+const DATA_UNKNOWN = "Data unknown";
+const SYMBOL_FALSE = "❌ ";
+const SYMBOL_TRUE = "✅ ";
+
+// ---------------- Variables ----------------- //
+
+var isCompleted = "Completed";
+var isNotCompleted = "Not Completed";
+var currentData = DATA_UNKNOWN;
+var completionSymbol = SYMBOL_FALSE;
+
+var divStart = [
     "<div>"
 ].join("\n");
 
-var DIV_END = [
+var divEnd = [
     "</div>"
 ].join("\n");
 
-var STRONG_START = "<strong>"
-var STRONG_END = "</strong>"
+var strongStart = "<strong>"
+var strongEnd = "</strong>"
 
-var HK_BOSSES = {
+const HK_BOSSES = {
     killedMawlek: "Brooding Mawlek",
     killedBigBuzzer: "Gruz Mother",
     collectorDefeated: "The Collector",
@@ -34,7 +39,7 @@ var HK_BOSSES = {
     falseKnightDefeated: "False Knight"
 };
 
-var HK_COLOSSEUM = {
+const HK_COLOSSEUM = {
     colosseumBronzeCompleted: "Trial of the Warrior",
     colosseumSilverCompleted: "Trial of the Conqueror",
     colosseumGoldCompleted: "Trial of the Fool"
@@ -67,15 +72,15 @@ function HKCheckCompletion(jsonObject) {
     let HKPlayerData = jsonObject.playerData;
     let divId = "";
     let divIdIntro = "hk-intro";
-    let divIdBoss = "hk-bosses";
+    let divIdBosses = "hk-bosses";
     let divIdColosseum = "hk-colosseum";
     let divIdDreamers = "hk-dreamers";
     let divIdDreamNail = "hk-dreamnail";
     let divIdEquipment = "hk-equipment";
 
     for (i in HKPlayerData) {
-        COMPLETED_CHECK = SYMBOL_FALSE;
-        CURRENT_DATA = DATA_UNKNOWN;
+        completionSymbol = SYMBOL_FALSE;
+        currentData = DATA_UNKNOWN;
 
         // ---------------- Game Completion Status ----------------- //
 
@@ -89,25 +94,11 @@ function HKCheckCompletion(jsonObject) {
 
         // ---------------- Bosses (Base Game) --------------------- //
 
-        divId = divIdBoss;
-
-        for (j in HK_BOSSES) {
-            if (HKPlayerData[j] === true) currentDataTrue();
-            else currentDataFalse();
-            fillHTML(divId, HK_BOSSES[j]);
-            delete HK_BOSSES[j];
-        }
+        checkIfDataTrue(divIdBosses, HK_BOSSES, HKPlayerData);
 
         // ---------------- Colosseum of Fools --------------------- //
 
-        divId = divIdColosseum;
-
-        for (j in HK_COLOSSEUM) {
-            if (HKPlayerData[j] === true) currentDataTrue();
-            else currentDataFalse();
-            fillHTML(divId, HK_COLOSSEUM[j]);
-            delete HK_COLOSSEUM[j];
-        }
+        checkIfDataTrue(divIdColosseum, HK_COLOSSEUM, HKPlayerData);
 
         // ---------------- Dreamers --------------------- //
 
@@ -145,15 +136,24 @@ function HKCheckCompletion(jsonObject) {
 }
 
 function fillHTML(divId = "", textPrefix = "Unknown Completion Element: ", textSuffix = "") {
-    document.getElementById(divId).innerHTML += DIV_START + COMPLETED_CHECK + STRONG_START + textPrefix + ": " + STRONG_END + CURRENT_DATA + textSuffix + DIV_END;
+    document.getElementById(divId).innerHTML += divStart + completionSymbol + strongStart + textPrefix + ": " + strongEnd + currentData + textSuffix + divEnd;
 }
 
-function currentDataTrue(textData = COMPLETED) {
-    COMPLETED_CHECK = SYMBOL_TRUE;
-    CURRENT_DATA = textData;
+function currentDataTrue(textData = isCompleted) {
+    completionSymbol = SYMBOL_TRUE;
+    currentData = textData;
 }
 
-function currentDataFalse(textData = NOT_COMPLETED) {
-    COMPLETED_CHECK = SYMBOL_FALSE;
-    CURRENT_DATA = textData;
+function currentDataFalse(textData = isNotCompleted) {
+    completionSymbol = SYMBOL_FALSE;
+    currentData = textData;
+}
+
+function checkIfDataTrue(divId, dataObject, playerData) {
+    for (i in dataObject) {
+        if (playerData[i] === true) currentDataTrue();
+        else currentDataFalse();
+        fillHTML(divId, dataObject[i]);
+        delete dataObject[i];
+    }
 }
