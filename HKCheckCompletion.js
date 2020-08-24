@@ -103,6 +103,13 @@ const HK_SPELLS = {
 
 function HKCheckCompletion(jsonObject) {
 
+    // Pre-Cleaning for safety
+    for (i in DIV_ID) {
+        document.getElementById(DIV_ID[i]).innerHTML = "";
+    }
+
+    let HK_BOSSES_temp = Object.assign({}, HK_BOSSES);
+
     let HKPlayerData = jsonObject.playerData;
 
     for (i in HKPlayerData) {
@@ -119,7 +126,7 @@ function HKCheckCompletion(jsonObject) {
 
         // ---------------- Bosses (Base Game) --------------------- //
 
-        checkIfDataTrue(DIV_ID.bosses, HK_BOSSES, HKPlayerData);
+        checkIfDataTrue(DIV_ID.bosses, HK_BOSSES_temp, HKPlayerData);
 
         // ---------------- Colosseum of Fools --------------------- //
 
