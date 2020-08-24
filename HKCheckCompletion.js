@@ -22,6 +22,13 @@ var divEnd = [
 var strongStart = "<strong>"
 var strongEnd = "</strong>"
 
+var divIdIntro = "hk-intro";
+var divIdBosses = "hk-bosses";
+var divIdColosseum = "hk-colosseum";
+var divIdDreamers = "hk-dreamers";
+var divIdDreamNail = "hk-dreamnail";
+var divIdEquipment = "hk-equipment";
+
 const HK_BOSSES = {
     killedMawlek: "Brooding Mawlek",
     killedBigBuzzer: "Gruz Mother",
@@ -70,12 +77,6 @@ const HK_EQUIPMENT = {
 function HKCheckCompletion(jsonObject) {
 
     let HKPlayerData = jsonObject.playerData;
-    let divIdIntro = "hk-intro";
-    let divIdBosses = "hk-bosses";
-    let divIdColosseum = "hk-colosseum";
-    let divIdDreamers = "hk-dreamers";
-    let divIdDreamNail = "hk-dreamnail";
-    let divIdEquipment = "hk-equipment";
 
     for (i in HKPlayerData) {
         completionSymbol = SYMBOL_FALSE;
