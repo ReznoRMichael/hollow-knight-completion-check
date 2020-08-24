@@ -4,6 +4,12 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
+h1 {
+    margin: 0.6rem 0;
+}
+h2 {
+    margin: 0.6rem 0;
+}
 p {
     margin-top: 0.6rem;
     margin-bottom: 0.6rem;

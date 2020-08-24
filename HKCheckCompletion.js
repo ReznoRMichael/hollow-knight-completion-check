@@ -28,6 +28,7 @@ var divIdColosseum = "hk-colosseum";
 var divIdDreamers = "hk-dreamers";
 var divIdDreamNail = "hk-dreamnail";
 var divIdEquipment = "hk-equipment";
+var divIdNailArts = "hk-nailarts";
 
 const HK_BOSSES = {
     killedMawlek: "Brooding Mawlek",
@@ -74,6 +75,13 @@ const HK_EQUIPMENT = {
     hasShadowDash: "Shade Cloak"
 };
 
+const HK_NAILARTS = {
+    hasAllNailArts: "All Nail Arts",
+    hasUpwardSlash: "Great Slash",
+    hasDashSlash: "Dash Slash",
+    hasCyclone: "Cyclone Slash"
+};
+
 function HKCheckCompletion(jsonObject) {
 
     let HKPlayerData = jsonObject.playerData;
@@ -110,6 +118,9 @@ function HKCheckCompletion(jsonObject) {
 
         checkIfDataTrue(divIdEquipment, HK_EQUIPMENT, HKPlayerData);
 
+        // ---------------- Nail Arts --------------------- //
+
+        checkIfDataTrue(divIdNailArts, HK_NAILARTS, HKPlayerData);
     }
 }
 
