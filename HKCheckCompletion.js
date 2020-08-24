@@ -32,6 +32,8 @@ const DIV_ID = {
     nailArts: "hk-nailarts",
     nailUpgrades: "hk-nailupgrades",
     spells: "hk-spells",
+    vesselFragments: "hk-vesselfragments",
+    warriorDreams: "hk-warriordreams",
 };
 
 const HK_BOSSES = {
@@ -101,6 +103,16 @@ const HK_SPELLS = {
     }
 };
 
+const HK_WARRIORDREAMS = {
+    galienDefeated: "Galien",
+    mumCaterpillarDefeated: "Marmu",
+    markothDefeated: "Markoth",
+    xeroDefeated: "Xero",
+    noEyesDefeated: "No Eyes",
+    elderHuDefeated: "Elder Hu",
+    aladarSlugDefeated: "Gorb"
+};
+
 function HKCheckCompletion(jsonObject) {
 
     // Pre-Cleaning for safety
@@ -109,6 +121,7 @@ function HKCheckCompletion(jsonObject) {
     }
 
     let HK_BOSSES_temp = Object.assign({}, HK_BOSSES);
+    let HK_WARRIORDREAMS_temp = Object.assign({}, HK_WARRIORDREAMS);
 
     let HKPlayerData = jsonObject.playerData;
 
@@ -144,6 +157,10 @@ function HKCheckCompletion(jsonObject) {
 
         checkIfDataTrue(DIV_ID.equipment, HK_EQUIPMENT, HKPlayerData);
 
+        // ---------------- Mask Shards --------------------- //
+
+        //
+
         // ---------------- Nail Arts --------------------- //
 
         checkIfDataTrue(DIV_ID.nailArts, HK_NAILARTS, HKPlayerData);
@@ -164,6 +181,15 @@ function HKCheckCompletion(jsonObject) {
         // ---------------- Spells --------------------- //
 
         checkSpellLevel(DIV_ID.spells, HK_SPELLS, HKPlayerData);
+
+        // ---------------- Vessel Fragments --------------------- //
+
+        //
+
+        // ---------------- Warrior Dreams --------------------- //
+
+        checkWarriorDreams(DIV_ID.warriorDreams, HK_WARRIORDREAMS_temp, HKPlayerData);
+
     }
 }
 
@@ -197,6 +223,15 @@ function checkSpellLevel(divId, dataObject, playerData) {
             if (playerData[i] >= j) currentDataTrue();
             fillHTML(divId, dataObject[i][j]);
         }
+        delete dataObject[i];
+    }
+}
+
+function checkWarriorDreams(divId, dataObject, playerData) {
+    for (i in dataObject) {
+        if (playerData[i] > 0) currentDataTrue();
+        else currentDataFalse();
+        fillHTML(divId, dataObject[i]);
         delete dataObject[i];
     }
 }
