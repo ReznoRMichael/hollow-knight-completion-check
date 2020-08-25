@@ -129,6 +129,7 @@ const HK_EQUIPMENT = {
 };
 
 // "Heart Piece" sceneData.persistentBoolItems[n].id
+// "Crossroads_13", "Crossroads_38", "Fungus2_01", "Room_Bretta", "Waterways_04b", "Crossroads_09", "Fungus1_36", "Mines_32", "Fungus2_25", "Hive_04"
 // "Reward X" sceneData.persistentBoolItems[n].id
 const HK_MASKSHARDS = {
     slyShellFrag1: "Mask Shard (Sly - 150 Geo)",
@@ -137,7 +138,7 @@ const HK_MASKSHARDS = {
     slyShellFrag4: "Mask Shard (Sly - 1500 Geo)",
     dreamReward7: "Mask Shard (Seer - 1500 Essence)",
     xunRewardGiven: "Mask Shard (Delicate Flower)",
-}
+};
 
 const HK_NAILARTS = {
     hasAllNailArts: "All Nail Arts",
@@ -159,6 +160,15 @@ const HK_SPELLS = {
         1: "Howling Wraiths",
         2: "Abyss Shriek"
     }
+};
+
+// "Vessel Fragment" sceneData.persistentBoolItems[n].id
+// "Crossroads_37", "Ruins2_09", "Fungus1_13", "Abyss_04", "Deepnest_38"
+const HK_VESSELFRAGMENTS = {
+    slyVesselFrag1: "Vessel Fragment (Sly - 550 Geo)",
+    slyVesselFrag2: "Vessel Fragment (Sly - 900 Geo)",
+    dreamReward5: "Vessel Fragment (Seer - 700 Essence)",
+    vesselFragStagNest: "Vessel Fragment (Stag Nest)"
 };
 
 const HK_WARRIORDREAMS = {
@@ -206,6 +216,7 @@ function HKCheckCompletion(jsonObject) {
     let HK_EQUIPMENT_temp = Object.assign({}, HK_EQUIPMENT);
     let HK_MASKSHARDS_temp = Object.assign({}, HK_MASKSHARDS);
     let HK_NAILARTS_temp = Object.assign({}, HK_NAILARTS);
+    let HK_VESSELFRAGMENTS_temp = Object.assign({}, HK_VESSELFRAGMENTS);
     let HK_WARRIORDREAMS_temp = Object.assign({}, HK_WARRIORDREAMS);
     let HK_GRIMMTROUPE_temp = Object.assign({}, HK_GRIMMTROUPE);
     let HK_LIFEBLOOD_temp = Object.assign({}, HK_LIFEBLOOD);
@@ -275,7 +286,7 @@ function HKCheckCompletion(jsonObject) {
 
         // ---------------- Vessel Fragments --------------------- //
 
-        //
+        if (HK_VESSELFRAGMENTS_temp) checkIfDataTrue(DIV_ID.vesselFragments, HK_VESSELFRAGMENTS_temp, HKPlayerData);
 
         // ---------------- Warrior Dreams --------------------- //
 

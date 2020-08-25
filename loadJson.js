@@ -36,6 +36,6 @@ loadJSON(
     function JSONparse(response) {
         // Parse JSON string into object
         jsonObj = JSON.parse(response);
-        console.log(jsonObj);
+        // console.log(jsonObj);
     }
 );
