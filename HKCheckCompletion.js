@@ -27,6 +27,7 @@ var strongEnd = "</strong>"
 const DIV_ID = {
     intro: "hk-intro",
     bosses: "hk-bosses",
+    charms: "hk-charms",
     colosseum: "hk-colosseum",
     dreamers: "hk-dreamers",
     dreamNail: "hk-dreamnail",
@@ -56,6 +57,45 @@ const HK_BOSSES = {
     hornet1Defeated: "Hornet Protector",
     hornetOutskirtsDefeated: "Hornet Sentinel",
     falseKnightDefeated: "False Knight"
+};
+
+const HK_CHARMS = {
+    gotCharm_1: "Wayward Compass", // 1 ?
+    gotCharm_2: "Gathering Swarm", // 1 ?
+    gotCharm_3: "Thorns of Agony", // 1 ?
+    gotCharm_4: "Stalwart Shell", // 2 ?
+    gotCharm_5: "Soul Catcher", // 2 ?
+    gotCharm_6: "Dashmaster", // 2 ?
+    gotCharm_7: "Shaman Stone", // 3 ?
+    gotCharm_8: "Fury of the Fallen", // 2 ?
+    gotCharm_9: "Fragile Strength / Unbreakable Strength", // 3 ?
+    gotCharm_10: "Steady Body", // 1 ?
+    gotCharm_11: "Quick Slash", // 3 ?
+    gotCharm_12: "Defender's Crest", // 1 ?
+    gotCharm_13: "Mark of Pride", // 3 ?
+    gotCharm_14: "Grubsong", // 1 ?
+    gotCharm_15: "Fragile Heart / Unbreakable Heart", // 2 ?
+    gotCharm_16: "Fragile Greed / Unbreakable Greed", // 2 ?
+    gotCharm_17: "Spore Shroom", // 1 ?
+    gotCharm_18: "Spell Twister", // 2 ?
+    gotCharm_19: "Flukenest", // 3 ?
+    gotCharm_20: "Heavy Blow", // 2 ?
+    gotCharm_21: "",
+    gotCharm_22: "",
+    gotCharm_23: "",
+    gotCharm_24: "",
+    gotCharm_25: "",
+    gotCharm_26: "",
+    gotCharm_27: "",
+    gotCharm_28: "",
+    gotCharm_29: "",
+    gotCharm_30: "",
+    gotCharm_31: "",
+    gotCharm_32: "",
+    gotCharm_33: "",
+    gotCharm_34: "",
+    gotCharm_35: "",
+    gotCharm_36: "",
 };
 
 const HK_COLOSSEUM = {
@@ -146,6 +186,7 @@ function HKCheckCompletion(jsonObject) {
 
     // Shallow Clone const objects (used for destructive functions)
     let HK_BOSSES_temp = Object.assign({}, HK_BOSSES);
+    let HK_CHARMS_temp = Object.assign({}, HK_CHARMS);
     let HK_COLOSSEUM_temp = Object.assign({}, HK_COLOSSEUM);
     let HK_DREAMERS_temp = Object.assign({}, HK_DREAMERS);
     let HK_DREAMNAIL_temp = Object.assign({}, HK_DREAMNAIL);
@@ -174,6 +215,10 @@ function HKCheckCompletion(jsonObject) {
         // ---------------- Bosses (Base Game) --------------------- //
 
         if (HK_BOSSES_temp) checkIfDataTrue(DIV_ID.bosses, HK_BOSSES_temp, HKPlayerData);
+
+        // ---------------- Charms --------------------- //
+
+        if (HK_CHARMS_temp) checkIfDataTrue(DIV_ID.charms, HK_CHARMS_temp, HKPlayerData);
 
         // ---------------- Colosseum of Fools --------------------- //
 
