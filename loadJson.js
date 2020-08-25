@@ -39,3 +39,21 @@ loadJSON(
         // console.log(jsonObj);
     }
 );
+
+function HKReadTextArea() {
+    let textAreaId = "save-area";
+    let contents = document.getElementById(textAreaId).value;
+
+    if(contents.length > 0) {
+        jsonObj = contents;
+
+        loadJSON(
+            function JSONparse(response) {
+                // Parse JSON string into object
+                jsonObj = JSON.parse(response);
+                HKCheckCompletion(jsonObj);
+                // console.log(jsonObj);
+            }
+        );
+    }
+}
