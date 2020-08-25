@@ -16,7 +16,7 @@ function loadJSON( callback ) {
     async: true (asynchronous) or false (synchronous)
     user: optional user name
     psw: optional password */
-    xobj.open( 'GET', 'plain.json', true ); // Path to the file
+    xobj.open( 'GET', 'reznor88banish.json', true ); // Path to the file
 
     // Defines a function to be called when the readyState property changes
     xobj.onreadystatechange = function GetResponseText() {

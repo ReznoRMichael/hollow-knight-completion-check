@@ -22,6 +22,8 @@ var divEnd = [
 var strongStart = "<strong>"
 var strongEnd = "</strong>"
 
+// ---------------- Hollow Knight Data Constant Objects ----------------- //
+
 const DIV_ID = {
     intro: "hk-intro",
     bosses: "hk-bosses",
@@ -116,6 +118,13 @@ const HK_WARRIORDREAMS = {
     aladarSlugDefeated: "Gorb"
 };
 
+const HK_GRIMMTROUPE = {
+    gotCharm_40: "Grimmchild / Carefree Melody",
+    gotCharm_38: "Dreamshield",
+    gotCharm_37: "Sprintmaster",
+    gotCharm_39: "Weaversong",
+};
+
 const HK_LIFEBLOOD = {
     killedHiveKnight: "Hive Knight"
 };
@@ -129,13 +138,20 @@ function HKCheckCompletion(jsonObject) {
     // start benchmark
     let countBegin = new Date();
 
-    // Pre-Cleaning for safety
+    // Pre-Cleaning all divs for safety
     for (i in DIV_ID) {
         document.getElementById(DIV_ID[i]).innerHTML = "";
     }
 
+    // Shallow Clone const objects (used for destructive functions)
     let HK_BOSSES_temp = Object.assign({}, HK_BOSSES);
+    let HK_COLOSSEUM_temp = Object.assign({}, HK_COLOSSEUM);
+    let HK_DREAMERS_temp = Object.assign({}, HK_DREAMERS);
+    let HK_DREAMNAIL_temp = Object.assign({}, HK_DREAMNAIL);
+    let HK_EQUIPMENT_temp = Object.assign({}, HK_EQUIPMENT);
+    let HK_NAILARTS_temp = Object.assign({}, HK_NAILARTS);
     let HK_WARRIORDREAMS_temp = Object.assign({}, HK_WARRIORDREAMS);
+    let HK_GRIMMTROUPE_temp = Object.assign({}, HK_GRIMMTROUPE);
     let HK_LIFEBLOOD_temp = Object.assign({}, HK_LIFEBLOOD);
     let HK_GODMASTER_temp = Object.assign({}, HK_GODMASTER);
 
@@ -148,30 +164,30 @@ function HKCheckCompletion(jsonObject) {
         // ---------------- Game Completion Status ----------------- //
 
         if (i === "completionPercentage") {
-            if (HKPlayerData.completionPercentage >= 112) currentDataTrue();
+            if (HKPlayerData.completionPercentage >= 112) currentDataTrue(HKPlayerData.completionPercentage);
             else currentDataFalse(HKPlayerData.completionPercentage);
             fillHTML(DIV_ID.intro, "Hollow Knight Completion", " %");
         }
 
         // ---------------- Bosses (Base Game) --------------------- //
 
-        checkIfDataTrue(DIV_ID.bosses, HK_BOSSES_temp, HKPlayerData);
+        if (HK_BOSSES_temp) checkIfDataTrue(DIV_ID.bosses, HK_BOSSES_temp, HKPlayerData);
 
         // ---------------- Colosseum of Fools --------------------- //
 
-        checkIfDataTrue(DIV_ID.colosseum, HK_COLOSSEUM, HKPlayerData);
+        if (HK_COLOSSEUM_temp) checkIfDataTrue(DIV_ID.colosseum, HK_COLOSSEUM_temp, HKPlayerData);
 
         // ---------------- Dreamers --------------------- //
 
-        checkIfDataTrue(DIV_ID.dreamers, HK_DREAMERS, HKPlayerData);
+        if (HK_DREAMERS_temp) checkIfDataTrue(DIV_ID.dreamers, HK_DREAMERS_temp, HKPlayerData);
 
         // ---------------- Dream Nail and Essence --------------------- //
 
-        checkIfDataTrue(DIV_ID.dreamNail, HK_DREAMNAIL, HKPlayerData);
+        if (HK_DREAMNAIL_temp) checkIfDataTrue(DIV_ID.dreamNail, HK_DREAMNAIL_temp, HKPlayerData);
 
         // ---------------- Equipment --------------------- //
 
-        checkIfDataTrue(DIV_ID.equipment, HK_EQUIPMENT, HKPlayerData);
+        if (HK_EQUIPMENT_temp) checkIfDataTrue(DIV_ID.equipment, HK_EQUIPMENT_temp, HKPlayerData);
 
         // ---------------- Mask Shards --------------------- //
 
@@ -179,7 +195,7 @@ function HKCheckCompletion(jsonObject) {
 
         // ---------------- Nail Arts --------------------- //
 
-        checkIfDataTrue(DIV_ID.nailArts, HK_NAILARTS, HKPlayerData);
+        if (HK_NAILARTS_temp) checkIfDataTrue(DIV_ID.nailArts, HK_NAILARTS_temp, HKPlayerData);
 
         // ---------------- Nail Upgrades --------------------- //
 
@@ -196,7 +212,7 @@ function HKCheckCompletion(jsonObject) {
 
         // ---------------- Spells --------------------- //
 
-        checkSpellLevel(DIV_ID.spells, HK_SPELLS, HKPlayerData);
+        if (HK_SPELLS) checkSpellLevel(DIV_ID.spells, HK_SPELLS, HKPlayerData);
 
         // ---------------- Vessel Fragments --------------------- //
 
@@ -204,15 +220,15 @@ function HKCheckCompletion(jsonObject) {
 
         // ---------------- Warrior Dreams --------------------- //
 
-        checkWarriorDreams(DIV_ID.warriorDreams, HK_WARRIORDREAMS_temp, HKPlayerData);
+        if (HK_WARRIORDREAMS_temp) checkWarriorDreams(DIV_ID.warriorDreams, HK_WARRIORDREAMS_temp, HKPlayerData);
 
         // ---------------- Grimm Troupe Content Pack --------------------- //
 
-        //
+        if (HK_GRIMMTROUPE_temp) checkIfDataTrue(DIV_ID.grimmTroupe, HK_GRIMMTROUPE_temp, HKPlayerData);
 
         // ---------------- Lifeblood Content Pack --------------------- //
 
-        checkIfDataTrue(DIV_ID.lifeblood, HK_LIFEBLOOD_temp, HKPlayerData);
+        if (HK_LIFEBLOOD_temp) checkIfDataTrue(DIV_ID.lifeblood, HK_LIFEBLOOD_temp, HKPlayerData);
 
         // ---------------- Godmaster Content Pack --------------------- //
 
