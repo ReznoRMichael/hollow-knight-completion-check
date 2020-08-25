@@ -5,7 +5,6 @@ var jsonObj = "";
  * @param callback Asynchronous function.
  */
 function loadJSON(callback) {
-    jsonObj = "";
     // new Http request object (asynchronous), both the web page and the XML file it tries to load, must be located on the same server.
     var xobj = new XMLHttpRequest();
 
@@ -37,21 +36,7 @@ loadJSON(
     function JSONparse(response) {
         // Parse JSON string into object
         jsonObj = JSON.parse(response);
+        document.getElementById("save-area").value = response;
         // console.log(jsonObj);
     }
 );
-
-function HKReadTextArea() {
-    jsonObj = "";
-    
-    cleanHTML(DIV_ID);
-
-    let textAreaId = "save-area";
-    let contents = document.getElementById(textAreaId).value;
-
-    if(contents.length > 0) {
-        jsonObj = JSON.parse(contents);
-        HKCheckCompletion(jsonObj);
-        // console.log(jsonObj);
-    }
-}

@@ -374,3 +374,16 @@ function checkWarriorDreams(divId, dataObject, playerData) {
         delete dataObject[i];
     }
 }
+
+function HKReadTextArea() {
+    cleanHTML(DIV_ID);
+
+    let textAreaId = "save-area";
+    let contents = document.getElementById(textAreaId).value;
+
+    if(contents.length > 0) {
+        let jsonObj = JSON.parse(contents);
+        HKCheckCompletion(jsonObj);
+        // console.log(jsonObj);
+    }
+}
