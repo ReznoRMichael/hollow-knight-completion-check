@@ -199,7 +199,8 @@ function HKCheckCompletion(jsonObject) {
     let HK_GODMASTER_temp = Object.assign({}, HK_GODMASTER);
 
     let HKPlayerData = jsonObject.playerData;
-    let bossDoor = ["Pantheon of the Master", "Pantheon of the Artist", "Pantheon of the Sage", "Pantheon of the Knight"]
+    let bossDoor = ["Pantheon of the Master", "Pantheon of the Artist", "Pantheon of the Sage", "Pantheon of the Knight"];
+    let nailName = ["Old Nail", "Sharpened Nail", "Channeled Nail", "Coiled Nail", "Pure Nail"];
 
     for (i in HKPlayerData) {
         completionSymbol = SYMBOL_FALSE;
@@ -248,9 +249,6 @@ function HKCheckCompletion(jsonObject) {
         // ---------------- Nail Upgrades --------------------- //
 
         if (i === "nailSmithUpgrades") {
-
-            let nailName = ["Old Nail", "Sharpened Nail", "Channeled Nail", "Coiled Nail", "Pure Nail"];
-
             for (let j = 0; j < nailName.length; j++) {
                 currentDataFalse();
                 if (HKPlayerData.nailSmithUpgrades >= j) currentDataTrue();
@@ -289,7 +287,7 @@ function HKCheckCompletion(jsonObject) {
         if (HK_GODMASTER_temp) checkIfDataTrue(DIV_ID.godmaster, HK_GODMASTER_temp, HKPlayerData);
 
         if (bossDoor.length) {
-            for (let j=1; j<=4; j++) {
+            for (let j = 1; j <= 4; j++) {
                 currentDataFalse();
                 if (i === ("bossDoorStateTier" + j)) {
                     if (HKPlayerData["bossDoorStateTier" + j].completed === true) currentDataTrue();
