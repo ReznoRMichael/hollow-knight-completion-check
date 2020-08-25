@@ -32,6 +32,7 @@ const DIV_ID = {
     dreamers: "hk-dreamers",
     dreamNail: "hk-dreamnail",
     equipment: "hk-equipment",
+    maskShards: "hk-maskshards",
     nailArts: "hk-nailarts",
     nailUpgrades: "hk-nailupgrades",
     spells: "hk-spells",
@@ -127,6 +128,17 @@ const HK_EQUIPMENT = {
     hasShadowDash: "Shade Cloak"
 };
 
+// "Heart Piece" sceneData.persistentBoolItems[n].id
+// "Reward X" sceneData.persistentBoolItems[n].id
+const HK_MASKSHARDS = {
+    slyShellFrag1: "Mask Shard (Sly - 150 Geo)",
+    slyShellFrag2: "Mask Shard (Sly - 500 Geo)",
+    slyShellFrag3: "Mask Shard (Sly - 800 Geo)",
+    slyShellFrag4: "Mask Shard (Sly - 1500 Geo)",
+    dreamReward7: "Mask Shard (Seer - 1500 Essence)",
+    xunRewardGiven: "Mask Shard (Delicate Flower)",
+}
+
 const HK_NAILARTS = {
     hasAllNailArts: "All Nail Arts",
     hasUpwardSlash: "Great Slash",
@@ -192,6 +204,7 @@ function HKCheckCompletion(jsonObject) {
     let HK_DREAMERS_temp = Object.assign({}, HK_DREAMERS);
     let HK_DREAMNAIL_temp = Object.assign({}, HK_DREAMNAIL);
     let HK_EQUIPMENT_temp = Object.assign({}, HK_EQUIPMENT);
+    let HK_MASKSHARDS_temp = Object.assign({}, HK_MASKSHARDS);
     let HK_NAILARTS_temp = Object.assign({}, HK_NAILARTS);
     let HK_WARRIORDREAMS_temp = Object.assign({}, HK_WARRIORDREAMS);
     let HK_GRIMMTROUPE_temp = Object.assign({}, HK_GRIMMTROUPE);
@@ -240,7 +253,7 @@ function HKCheckCompletion(jsonObject) {
 
         // ---------------- Mask Shards --------------------- //
 
-        //
+        if (HK_MASKSHARDS_temp) checkIfDataTrue(DIV_ID.maskShards, HK_MASKSHARDS_temp, HKPlayerData);
 
         // ---------------- Nail Arts --------------------- //
 
