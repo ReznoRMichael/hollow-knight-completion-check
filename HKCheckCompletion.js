@@ -157,6 +157,7 @@ function HKCheckCompletion(jsonObject) {
     let HK_GODMASTER_temp = Object.assign({}, HK_GODMASTER);
 
     let HKPlayerData = jsonObject.playerData;
+    let bossDoor = ["Pantheon of the Master", "Pantheon of the Artist", "Pantheon of the Sage", "Pantheon of the Knight"]
 
     for (i in HKPlayerData) {
         completionSymbol = SYMBOL_FALSE;
@@ -240,6 +241,17 @@ function HKCheckCompletion(jsonObject) {
         // ---------------- Godmaster Content Pack --------------------- //
 
         if (HK_GODMASTER_temp) checkIfDataTrue(DIV_ID.godmaster, HK_GODMASTER_temp, HKPlayerData);
+
+        if (bossDoor.length) {
+            for (let j=1; j<=4; j++) {
+                currentDataFalse();
+                if (i === ("bossDoorStateTier" + j)) {
+                    if (HKPlayerData["bossDoorStateTier" + j].completed === true) currentDataTrue();
+                    fillHTML(DIV_ID.godmaster, bossDoor[0]);
+                    bossDoor.shift();
+                }
+            }
+        }
 
     }
 
