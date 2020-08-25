@@ -1,10 +1,11 @@
-var jsonObj;
+var jsonObj = "";
 
 /**
  * Reads the .json file and parses it to a JS object (jsonObj).
  * @param callback Asynchronous function.
  */
 function loadJSON(callback) {
+    jsonObj = "";
     // new Http request object (asynchronous), both the web page and the XML file it tries to load, must be located on the same server.
     var xobj = new XMLHttpRequest();
 
@@ -41,19 +42,16 @@ loadJSON(
 );
 
 function HKReadTextArea() {
+    jsonObj = "";
+    
+    cleanHTML(DIV_ID);
+
     let textAreaId = "save-area";
     let contents = document.getElementById(textAreaId).value;
 
     if(contents.length > 0) {
-        jsonObj = contents;
-
-        loadJSON(
-            function JSONparse(response) {
-                // Parse JSON string into object
-                jsonObj = JSON.parse(response);
-                HKCheckCompletion(jsonObj);
-                // console.log(jsonObj);
-            }
-        );
+        jsonObj = JSON.parse(contents);
+        HKCheckCompletion(jsonObj);
+        // console.log(jsonObj);
     }
 }

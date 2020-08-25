@@ -203,9 +203,7 @@ function HKCheckCompletion(jsonObject) {
     let countBegin = new Date();
 
     // Pre-Cleaning all divs for safety
-    for (i in DIV_ID) {
-        document.getElementById(DIV_ID[i]).innerHTML = "";
-    }
+    cleanHTML(DIV_ID);
 
     // Shallow Clone const objects (used for destructive functions)
     let HK_BOSSES_temp = Object.assign({}, HK_BOSSES);
@@ -326,6 +324,12 @@ function HKCheckCompletion(jsonObject) {
     // finish and show benchmark
     let countEnd = new Date();
     console.info("HKCheckCompletion() time (ms) =", countEnd - countBegin);
+}
+
+function cleanHTML(jsObj) {
+    for (i in jsObj) {
+        document.getElementById(jsObj[i]).innerHTML = "";
+    }
 }
 
 function fillHTML(divId = "", textPrefix = "Unknown Completion Element: ", textSuffix = "") {
