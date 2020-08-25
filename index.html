@@ -42,14 +42,28 @@
         - Single Pale Ore locations?
         - Read JSON file from text input
     -->
-    
-    <h1>Hollow Knight Completion % Check</h1>
+
+<div id="content">
+
+    <h1 id="h1-title">Hollow Knight Completion % Check</h1>
 
     <p class="smalltext">Check what you have left for completion.</p>
 
     <div style="margin-bottom: 20px;"></div>
 
-    <button id="startbutton" onclick="HKCheckCompletion( jsonObj );">Run Script</button>
+    <div>
+        <textarea name="save-area" id="save-area"></textarea>
+    </div>
+
+    <div>
+        <button id="save-area-read" onclick="HKReadTextArea();">Analyze</button>
+    </div>
+
+    <div style="margin-bottom: 20px;"></div>
+
+    <div>
+        <button id="startbutton" onclick="HKCheckCompletion( jsonObj );">Run Script</button>
+    </div>
 
     <div style="margin-bottom: 20px;"></div>
 
@@ -100,6 +114,8 @@
 
     <h2>Godmaster Content Pack:</h2>
     <div id="hk-godmaster"></div>
+
+</div> <!-- end content -->
 
 </body>
 </html>

@@ -6,8 +6,8 @@ const SYMBOL_TRUE = "✅ ";
 
 // ---------------- Variables ----------------- //
 
-var isCompleted = "Completed";
-var isNotCompleted = "Not Completed";
+var isCompleted = "";
+var isNotCompleted = "";
 var currentData = DATA_UNKNOWN;
 var completionSymbol = SYMBOL_FALSE;
 
@@ -19,8 +19,8 @@ var divEnd = [
     "</div>"
 ].join("\n");
 
-var strongStart = "<strong>"
-var strongEnd = "</strong>"
+var strongStart = "";
+var strongEnd = "";
 
 // ---------------- Hollow Knight Data Constant Objects ----------------- //
 
@@ -235,7 +235,7 @@ function HKCheckCompletion(jsonObject) {
         if (i === "completionPercentage") {
             if (HKPlayerData.completionPercentage >= 112) currentDataTrue(HKPlayerData.completionPercentage);
             else currentDataFalse(HKPlayerData.completionPercentage);
-            fillHTML(DIV_ID.intro, "Hollow Knight Completion", " %");
+            fillHTML(DIV_ID.intro, "Hollow Knight Completion: ", " %");
         }
 
         // ---------------- Bosses (Base Game) --------------------- //
@@ -329,7 +329,7 @@ function HKCheckCompletion(jsonObject) {
 }
 
 function fillHTML(divId = "", textPrefix = "Unknown Completion Element: ", textSuffix = "") {
-    document.getElementById(divId).innerHTML += divStart + completionSymbol + strongStart + textPrefix + ": " + strongEnd + currentData + textSuffix + divEnd;
+    document.getElementById(divId).innerHTML += divStart + completionSymbol + strongStart + textPrefix + "" + strongEnd + currentData + textSuffix + divEnd;
 }
 
 function currentDataTrue(textData = isCompleted) {
