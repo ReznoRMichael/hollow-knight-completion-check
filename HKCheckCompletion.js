@@ -220,6 +220,9 @@ function HKCheckCompletion(jsonObject) {
     let HK_LIFEBLOOD_temp = Object.assign({}, HK_LIFEBLOOD);
     let HK_GODMASTER_temp = Object.assign({}, HK_GODMASTER);
 
+    // Deep Clone const spells multi-layer object (used for destructive functions)
+    let HK_SPELLS_temp = JSON.parse(JSON.stringify(HK_SPELLS));
+
     let HKPlayerData = jsonObject.playerData;
     let bossDoor = ["Pantheon of the Master", "Pantheon of the Artist", "Pantheon of the Sage", "Pantheon of the Knight"];
     let nailName = ["Old Nail", "Sharpened Nail", "Channeled Nail", "Coiled Nail", "Pure Nail"];
@@ -280,7 +283,7 @@ function HKCheckCompletion(jsonObject) {
 
         // ---------------- Spells --------------------- //
 
-        if (HK_SPELLS) checkSpellLevel(DIV_ID.spells, HK_SPELLS, HKPlayerData);
+        if (HK_SPELLS_temp) checkSpellLevel(DIV_ID.spells, HK_SPELLS_temp, HKPlayerData);
 
         // ---------------- Vessel Fragments --------------------- //
 
