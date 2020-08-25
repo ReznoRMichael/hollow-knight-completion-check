@@ -59,43 +59,44 @@ const HK_BOSSES = {
     falseKnightDefeated: "False Knight"
 };
 
+// reference: https://radiance.host/apidocs/Charms.html
 const HK_CHARMS = {
-    gotCharm_1: "Wayward Compass", // 1 ?
-    gotCharm_2: "Gathering Swarm", // 1 ?
-    gotCharm_3: "Thorns of Agony", // 1 ?
-    gotCharm_4: "Stalwart Shell", // 2 ?
-    gotCharm_5: "Soul Catcher", // 2 ?
-    gotCharm_6: "Dashmaster", // 2 ?
-    gotCharm_7: "Shaman Stone", // 3 ?
-    gotCharm_8: "Fury of the Fallen", // 2 ?
-    gotCharm_9: "Fragile Strength / Unbreakable Strength", // 3 ?
-    gotCharm_10: "Steady Body", // 1 ?
-    gotCharm_11: "Quick Slash", // 3 ?
-    gotCharm_12: "Defender's Crest", // 1 ?
-    gotCharm_13: "Mark of Pride", // 3 ?
-    gotCharm_14: "Grubsong", // 1 ?
-    gotCharm_15: "Fragile Heart / Unbreakable Heart", // 2 ?
-    gotCharm_16: "Fragile Greed / Unbreakable Greed", // 2 ?
-    gotCharm_17: "Spore Shroom", // 1 ?
-    gotCharm_18: "Spell Twister", // 2 ?
-    gotCharm_19: "Flukenest", // 3 ?
-    gotCharm_20: "Heavy Blow", // 2 ?
-    gotCharm_21: "",
-    gotCharm_22: "",
-    gotCharm_23: "",
-    gotCharm_24: "",
-    gotCharm_25: "",
-    gotCharm_26: "",
-    gotCharm_27: "",
-    gotCharm_28: "",
-    gotCharm_29: "",
-    gotCharm_30: "",
-    gotCharm_31: "",
-    gotCharm_32: "",
-    gotCharm_33: "",
-    gotCharm_34: "",
-    gotCharm_35: "",
-    gotCharm_36: "",
+    gotCharm_1: "Gathering Swarm", // 1
+    gotCharm_2: "Wayward Compass", // 1
+    gotCharm_3: "Grubsong", // 1
+    gotCharm_4: "Stalwart Shell", // 2
+    gotCharm_5: "Baldur Shell", // 2
+    gotCharm_6: "Fury of the Fallen", // 2
+    gotCharm_7: "Quick Focus", // 3
+    gotCharm_8: "Lifeblood Heart", // 2
+    gotCharm_9: "Lifeblood Core", // 3
+    gotCharm_10: "Defender's Crest", // 1
+    gotCharm_11: "Flukenest", // 3
+    gotCharm_12: "Thorns of Agony", // 1
+    gotCharm_13: "Mark of Pride", // 3
+    gotCharm_14: "Steady Body", // 1
+    gotCharm_15: "Heavy Blow", // 2
+    gotCharm_16: "Sharp Shadow", // 2
+    gotCharm_17: "Spore Shroom", // 1
+    gotCharm_18: "Longnail", // 2
+    gotCharm_19: "Shaman Stone", // 3
+    gotCharm_20: "Soul Catcher", // 2
+    gotCharm_21: "Soul Eater", // 4
+    gotCharm_22: "Glowing Womb", // 2
+    gotCharm_23: "Fragile Heart / Unbreakable Heart", // 2
+    gotCharm_24: "Fragile Greed / Unbreakable Greed", // 2
+    gotCharm_25: "Fragile Strength / Unbreakable Strength", // 3
+    gotCharm_26: "Nailmaster’s Glory", // 1
+    gotCharm_27: "Joni’s Blessing", // 4
+    gotCharm_28: "Shape of Unn", // 2
+    gotCharm_29: "Hiveblood", // 4
+    gotCharm_30: "Dream Wielder", // 1
+    gotCharm_31: "Dashmaster", // 2
+    gotCharm_32: "Quick Slash", // 3
+    gotCharm_33: "Spell Twister", // 2
+    gotCharm_34: "Deep Focus", // 4
+    gotCharm_35: "Grubberfly’s Elegy", // 3
+    gotCharm_36: "Kingsoul / Void Heart", // 5
 };
 
 const HK_COLOSSEUM = {
