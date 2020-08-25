@@ -123,6 +123,7 @@ const HK_GRIMMTROUPE = {
     gotCharm_38: "Dreamshield",
     gotCharm_37: "Sprintmaster",
     gotCharm_39: "Weaversong",
+    gotGrimmNotch: "Troupe Leader Grimm"
 };
 
 const HK_LIFEBLOOD = {
@@ -225,6 +226,12 @@ function HKCheckCompletion(jsonObject) {
         // ---------------- Grimm Troupe Content Pack --------------------- //
 
         if (HK_GRIMMTROUPE_temp) checkIfDataTrue(DIV_ID.grimmTroupe, HK_GRIMMTROUPE_temp, HKPlayerData);
+
+        if (i === "grimmChildLevel") {
+            if (HKPlayerData.grimmChildLevel >= 4) currentDataTrue();
+            else currentDataFalse();
+            fillHTML(DIV_ID.grimmTroupe, "Nightmare King Grimm / Banishment");
+        }
 
         // ---------------- Lifeblood Content Pack --------------------- //
 
