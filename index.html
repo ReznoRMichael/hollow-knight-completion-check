@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Hollow Knight Completion %</title>
+    <title>Hollow Knight Completion Check</title>
     <meta name="description" content="">
 	<meta name="keywords" content="">
 	
-	<meta property="og:title" content="Hollow Knight Completion %">
+	<meta property="og:title" content="Hollow Knight Completion Check">
 	<meta property="og:description" content="">
 	<meta property="og:image" content="http://reznortech.rf.gd/favicon.png">
-	<meta property="og:url" content="http://reznortech.rf.gd/epic-games-store-version-history">
+	<meta property="og:url" content="http://reznortech.rf.gd/hollow-knight-completion">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta property="og:site_name" content="rezno[R].tech">
 	<meta name="twitter:image:alt" content="">
@@ -22,7 +22,7 @@
     <link rel="icon" href="../favicon.png">
     
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script src="loadJson.js"></script>
+    <!-- <script src="loadJson.js"></script> -->
     <script src="HKCheckCompletion.js"></script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136831794-2"></script>
 	<script>
@@ -40,14 +40,17 @@
         - Single Mask Shards locations
         - Single Vessel Fragments locations
         - Single Pale Ore locations?
-        - Deep clone Spells object
     -->
 
 <div id="content">
 
     <h1 id="h1-title">Hollow Knight Completion % Check</h1>
 
-    <p class="smalltext">Check what you have left for completion.</p>
+    <p class="smalltext">Check what you have left for completion.<br>
+        Use bloodorca's amazing <a href="https://bloodorca.github.io/hollow/" target="_blank">[ Online Hollow Knight Save Editor ]</a> to decode your save file.<br>
+        CTRL+A, CTRL+C the decoded save data and CTRL+V it into the text box below to analyze.<br>
+        This is a very early version. Some data is WIP and some data may be incorrect.
+    </p>
 
     <div style="margin-bottom: 20px;"></div>
 
@@ -61,58 +64,52 @@
 
     <div style="margin-bottom: 20px;"></div>
 
-    <!-- <div>
-        <button id="startbutton" onclick="HKCheckCompletion(jsonObj);">Run Script</button>
-    </div> -->
-
-    <div style="margin-bottom: 20px;"></div>
-
     <h2>Game Completion Status</h2>
     <div id="hk-intro"></div>
 
-    <h2>Bosses:</h2>
+    <h2>Bosses</h2>
     <div id="hk-bosses"></div>
 
-    <h2>Charms:</h2>
+    <h2>Charms</h2>
     <div id="hk-charms"></div>
 
-    <h2>Colosseum of Fools:</h2>
+    <h2>Colosseum of Fools</h2>
     <div id="hk-colosseum"></div>
 
-    <h2>Dreamers:</h2>
+    <h2>Dreamers</h2>
     <div id="hk-dreamers"></div>
 
-    <h2>Dream Nail and Essence:</h2>
+    <h2>Dream Nail and Essence</h2>
     <div id="hk-dreamnail"></div>
     
-    <h2>Equipment:</h2>
+    <h2>Equipment</h2>
     <div id="hk-equipment"></div>
 
-    <h2>Mask Shards:</h2>
+    <h2>Mask Shards (WIP, 6/16)</h2>
     <div id="hk-maskshards"></div>
     
-    <h2>Nail Arts:</h2>
+    <h2>Nail Arts</h2>
     <div id="hk-nailarts"></div>
 
-    <h2>Nail Upgrades:</h2>
+    <h2>Nail Upgrades</h2>
     <div id="hk-nailupgrades"></div>
 
-    <h2>Spells:</h2>
+    <h2>Spells</h2>
     <div id="hk-spells"></div>
 
-    <h2>Vessel Fragments:</h2>
+    <h2>Vessel Fragments (WIP, 4/9)</h2>
     <div id="hk-vesselfragments"></div>
 
-    <h2>Warrior Dreams:</h2>
+    <h2>Warrior Dreams</h2>
     <div id="hk-warriordreams"></div>
 
-    <h2>Grimm Troupe Content Pack:</h2>
+    <h2>Grimm Troupe Content Pack</h2>
     <div id="hk-grimmtroupe"></div>
 
-    <h2>Lifeblood Content Pack:</h2>
+    <h2>Lifeblood Content Pack</h2>
     <div id="hk-lifeblood"></div>
 
-    <h2>Godmaster Content Pack:</h2>
+    <h2>Godmaster Content Pack</h2>
     <div id="hk-godmaster"></div>
 
 </div> <!-- end content -->

@@ -6,12 +6,13 @@ body {
 }
 #content {
     width: max-content;
+    margin: 0 auto;
 }
 h1 {
     margin: 0.6rem 0;
 }
 #h1-title {
-    ;
+    text-align: center;
 }
 #save-area {
     width: 100%;
@@ -19,6 +20,7 @@ h1 {
 }
 h2 {
     margin: 0.6rem 0;
+    color: #737373;
 }
 p {
     margin-top: 0.6rem;
@@ -30,6 +32,7 @@ p {
 }
 .smalltext {
     font-size: 0.8rem;
+    text-align: center;
 }
 .entryNo {
     color: #d1d1d1;

@@ -384,7 +384,7 @@ function HKReadTextArea() {
     let textAreaId = "save-area";
     let contents = document.getElementById(textAreaId).value;
 
-    if(contents.length > 0) {
+    if(contents.length) {
         let jsonObj = JSON.parse(contents);
         HKCheckCompletion(jsonObj);
         // console.log(jsonObj);
