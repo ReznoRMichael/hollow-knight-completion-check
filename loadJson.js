@@ -10,7 +10,7 @@ function loadJSON(callback) {
 
     xobj.overrideMimeType("application/json");
 
-    let fileName = ["reznor88banish.json", "reznor112grimm.json"];
+    let fileName = ["reznor88banish.json", "reznor112grimm.json", "reznor100.json"];
 
     // Specifies the request
     /* method: the request type GET or POST

@@ -2,7 +2,7 @@ html {
     font-size: 16px;
 }
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Heebo', sans-serif;
 }
 #content {
     width: max-content;
@@ -51,4 +51,10 @@ a:visited {
 }
 a:hover {
     text-decoration: underline;
+}
+.icon-cancel {
+    color: #f03a17;
+}
+.icon-ok-squared {
+    color: #16c60c;
 }

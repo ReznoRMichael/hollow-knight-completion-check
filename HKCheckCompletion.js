@@ -1,8 +1,8 @@
 // ---------------- Constants ----------------- //
 
 const DATA_UNKNOWN = "Data unknown";
-const SYMBOL_FALSE = "❌ ";
-const SYMBOL_TRUE = "✅ ";
+const SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ ";
+const SYMBOL_TRUE = "<i class='icon-ok-squared'></i>"; // "✅ ";
 
 // ---------------- Variables ----------------- //
 
@@ -45,7 +45,7 @@ const DIV_ID = {
 
 const HK_BOSSES = {
     killedMawlek: "Brooding Mawlek",
-    killedBigBuzzer: "Gruz Mother",
+    killedBigBuzzer: "Gruz Mother", // wrong
     collectorDefeated: "The Collector",
     defeatedMegaJelly: "Uumuu",
     killedMimicSpider: "Nosk",
