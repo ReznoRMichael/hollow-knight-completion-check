@@ -114,8 +114,8 @@ const HK_DREAMERS = {
 
 const HK_DREAMNAIL = {
     hasDreamNail: "Dream Nail acquired",
-    dreamNailUpgraded: "Awakening the Dream Nail",
-    mothDeparted: "Hear the Seer's final words"
+    dreamNailUpgraded: "Awoken Dream Nail (Seer - 1800 Essence)",
+    mothDeparted: "Hear the Seer's final words (Seer - 2400 Essence)"
 };
 
 const HK_EQUIPMENT = {
