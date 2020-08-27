@@ -239,6 +239,17 @@ function HKCheckCompletion(jsonObject) {
             fillHTML(DIV_ID.intro, "Hollow Knight Completion: ", " %");
         }
 
+        if (i === "playTime") {
+            let seconds = Math.floor(HKPlayerData.playTime);
+            let minutes = Math.floor((seconds / 60) % 60);
+            let hours = Math.floor(seconds / 3600);
+            let sec = Math.floor(seconds % 60);
+            if (sec <= 10) sec = "0" + sec;
+            if (minutes <= 10) minutes = "0" + minutes;
+            currentDataTrue();
+            fillHTML(DIV_ID.intro, "Time Played: " + hours + "h " + minutes + "min " + sec + "sec");
+        }
+
         // ---------------- Bosses (Base Game) --------------------- //
 
         if (HK_BOSSES_temp) checkIfDataTrue(DIV_ID.bosses, HK_BOSSES_temp, HKPlayerData);
@@ -385,8 +396,8 @@ function HKReadTextArea() {
     let contents = document.getElementById(textAreaId).value;
 
     if(contents.length) {
-        let jsonObj = JSON.parse(contents);
-        HKCheckCompletion(jsonObj);
-        // console.log(jsonObj);
+        let jsonObject = JSON.parse(contents);
+        HKCheckCompletion(jsonObject);
+        // console.log(jsonObject);
     }
 }

@@ -10,7 +10,7 @@ function loadJSON(callback) {
 
     xobj.overrideMimeType("application/json");
 
-    let fileName = ["reznor88banish.json", "reznor112grimm.json", "reznor100.json"];
+    let fileName = ["reznor88banish.json", "reznor112grimm.json", "reznor100.json", "reznor0.json"];
 
     // Specifies the request
     /* method: the request type GET or POST
@@ -18,7 +18,7 @@ function loadJSON(callback) {
     async: true (asynchronous) or false (synchronous)
     user: optional user name
     psw: optional password */
-    xobj.open('GET', fileName[0], true); // Path to the file
+    xobj.open('GET', fileName[1], true); // Path to the file
 
     // Defines a function to be called when the readyState property changes
     xobj.onreadystatechange = function GetResponseText() {
