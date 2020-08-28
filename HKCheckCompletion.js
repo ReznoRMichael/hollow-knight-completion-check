@@ -179,7 +179,7 @@ const HK_VESSELFRAGMENTS_WORLD = {
     Crossroads_37: "Vessel Fragment (Forgotten Crossroads - unlock the lift in City of Tears)",
     Ruins2_09: "Vessel Fragment (Above King's Station)",
     Deepnest_38: "Vessel Fragment (Deepnest - Goam platforming challenge)",
-    Abyss_04: "Vessel Fragment (Ancient Basin Fountain - 3000 Geo)",
+    Abyss_04: "Vessel Fragment (Ancient Basin Fountain - 3000 Geo)"
 };
 
 const HK_WARRIORDREAMS = {
@@ -357,27 +357,27 @@ function HKCheckCompletion(jsonObject) {
     // finish and show benchmark
     let countEnd = new Date();
     console.info("HKCheckCompletion() time (ms) =", countEnd - countBegin);
-}
+};
 
 function cleanHTML(jsObj) {
     for (i in jsObj) {
         document.getElementById(jsObj[i]).innerHTML = "";
     }
-}
+};
 
 function fillHTML(divId = "", textPrefix = "Unknown Completion Element: ", textSuffix = "") {
     document.getElementById(divId).innerHTML += divStart + completionSymbol + strongStart + textPrefix + "" + strongEnd + currentData + textSuffix + divEnd;
-}
+};
 
 function currentDataTrue(textData = isCompleted) {
     completionSymbol = SYMBOL_TRUE;
     currentData = textData;
-}
+};
 
 function currentDataFalse(textData = isNotCompleted) {
     completionSymbol = SYMBOL_FALSE;
     currentData = textData;
-}
+};
 
 function checkIfDataTrue(divId, dataObject, playerData) {
     for (i in dataObject) {
@@ -386,7 +386,7 @@ function checkIfDataTrue(divId, dataObject, playerData) {
         fillHTML(divId, dataObject[i]);
         delete dataObject[i];
     }
-}
+};
 
 function checkSpellLevel(divId, dataObject, playerData) {
     for (i in dataObject) {
@@ -397,7 +397,7 @@ function checkSpellLevel(divId, dataObject, playerData) {
         }
         delete dataObject[i];
     }
-}
+};
 
 function checkWarriorDreams(divId, dataObject, playerData) {
     for (i in dataObject) {
@@ -406,13 +406,12 @@ function checkWarriorDreams(divId, dataObject, playerData) {
         fillHTML(divId, dataObject[i]);
         delete dataObject[i];
     }
-}
+};
 
 function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
     let foundData = 0;
     let size = ObjectLength(dataObject);
-    console.log(size);
-    console.log(worldData);
+
     for (let i = 0; i < worldData.length; i++) {
         for (j in dataObject) {
             if (worldData[i].id === idText && worldData[i].sceneName === j && worldData[i].activated === true) {
@@ -430,7 +429,7 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
             delete dataObject[j];
         }
     }
-}
+};
 
 function HKReadTextArea() {
     cleanHTML(DIV_ID);
@@ -443,7 +442,7 @@ function HKReadTextArea() {
         HKCheckCompletion(jsonObject);
         // console.log(jsonObject);
     }
-}
+};
 
 function ObjectLength(object) {
     var length = 0;
