@@ -128,20 +128,27 @@ const HK_EQUIPMENT = {
     hasShadowDash: "Shade Cloak"
 };
 
-// "Heart Piece" sceneData.persistentBoolItems[n].id
-// "Crossroads_13", "Crossroads_38", "Fungus2_01", "Room_Bretta", "Waterways_04b", "Crossroads_09", "Fungus1_36", "Mines_32", "Fungus2_25", "Hive_04"
-// "Reward X" sceneData.persistentBoolItems[n].id
 const HK_MASKSHARDS = {
     slyShellFrag1: "Mask Shard (Sly - 150 Geo)",
     slyShellFrag2: "Mask Shard (Sly - 500 Geo)",
     slyShellFrag3: "Mask Shard (Sly - 800 Geo)",
     slyShellFrag4: "Mask Shard (Sly - 1500 Geo)",
-    dreamReward7: "Mask Shard (Seer - 1500 Essence)",
-    xunRewardGiven: "Mask Shard (Delicate Flower)",
+    dreamReward7: "Mask Shard (Seer - 1500 Essence)"
 };
 
+// "Heart Piece" sceneData.persistentBoolItems[n].id
 const HK_MASKSHARDS_WORLD = {
-
+    Crossroads_13: "Mask Shard (Forgotten Crossroads - below Hot Springs)",
+    Fungus2_01: "Mask Shard (Queen's Station)",
+    Crossroads_38: "Mask Shard (Grubfather - rescue 5 Grubs)",
+    Waterways_04b: "Mask Shard (Royal Waterways)",
+    Fungus1_36: "Mask Shard (Greenpath - Stone Sanctuary)",
+    Crossroads_09: "Mask Shard (Forgotten Crossroads - Brooding Mawlek)",
+    Mines_32: "Mask Shard (Crystal Peak - Enraged Guardian)",
+    Fungus2_25: "Mask Shard (Deepnest - entrance from Fungal Wastes)",
+    Room_Bretta: "Mask Shard (Dirtmouth - Bretta's Room)",
+    Hive_04: "Mask Shard (The Hive)",
+    Room_Mansion: "Mask Shard (Resting Grounds - Delicate Flower)"
 };
 
 const HK_NAILARTS = {
@@ -224,6 +231,7 @@ function HKCheckCompletion(jsonObject) {
     let HK_DREAMNAIL_temp = Object.assign({}, HK_DREAMNAIL);
     let HK_EQUIPMENT_temp = Object.assign({}, HK_EQUIPMENT);
     let HK_MASKSHARDS_temp = Object.assign({}, HK_MASKSHARDS);
+    let HK_MASKSHARDS_WORLD_temp = Object.assign({}, HK_MASKSHARDS_WORLD);
     let HK_NAILARTS_temp = Object.assign({}, HK_NAILARTS);
     let HK_VESSELFRAGMENTS_temp = Object.assign({}, HK_VESSELFRAGMENTS);
     let HK_VESSELFRAGMENTS_WORLD_temp = Object.assign({}, HK_VESSELFRAGMENTS_WORLD);
@@ -350,6 +358,10 @@ function HKCheckCompletion(jsonObject) {
 
     }
 
+    // ---------------- Mask Shards (World Map) --------------------- //
+
+    CheckWorldDataTrue(DIV_ID.maskShards, "Heart Piece", HK_MASKSHARDS_WORLD_temp, HKWorldItems);
+
     // ---------------- Vessel Fragments (World Map) --------------------- //
 
     CheckWorldDataTrue(DIV_ID.vesselFragments, "Vessel Fragment", HK_VESSELFRAGMENTS_WORLD_temp, HKWorldItems);
@@ -423,8 +435,8 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
         }
     }
     if (foundData < size) {
+        currentDataFalse();
         for (j in dataObject) {
-            currentDataFalse();
             fillHTML(divId, dataObject[j]);
             delete dataObject[j];
         }

@@ -3,9 +3,10 @@ html {
 }
 body {
     font-family: 'Heebo', sans-serif;
+    margin: 0;
 }
 #content {
-    width: max-content;
+    max-width: 530px; 
     margin: 0 auto;
 }
 h1 {
@@ -17,6 +18,11 @@ h1 {
 #save-area {
     width: 100%;
     height: calc(0.1 * 100vh);
+    margin: .5rem 0;
+}
+#save-area-read {
+    margin: 0 auto;
+    display: block;
 }
 h2 {
     margin: 0.6rem 0;
