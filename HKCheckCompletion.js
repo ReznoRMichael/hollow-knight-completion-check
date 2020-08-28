@@ -140,6 +140,10 @@ const HK_MASKSHARDS = {
     xunRewardGiven: "Mask Shard (Delicate Flower)",
 };
 
+const HK_MASKSHARDS_WORLD = {
+
+};
+
 const HK_NAILARTS = {
     hasAllNailArts: "All Nail Arts",
     hasUpwardSlash: "Great Slash",
@@ -162,13 +166,20 @@ const HK_SPELLS = {
     }
 };
 
-// "Vessel Fragment" sceneData.persistentBoolItems[n].id
-// "Crossroads_37", "Ruins2_09", "Fungus1_13", "Abyss_04", "Deepnest_38"
 const HK_VESSELFRAGMENTS = {
     slyVesselFrag1: "Vessel Fragment (Sly - 550 Geo)",
     slyVesselFrag2: "Vessel Fragment (Sly - 900 Geo)",
     dreamReward5: "Vessel Fragment (Seer - 700 Essence)",
     vesselFragStagNest: "Vessel Fragment (Stag Nest)"
+};
+
+// "Vessel Fragment" sceneData.persistentBoolItems[n].id
+const HK_VESSELFRAGMENTS_WORLD = {
+    Fungus1_13: "Vessel Fragment (Greenpath - near Queen's Gardens exit)",
+    Crossroads_37: "Vessel Fragment (Forgotten Crossroads - unlock the lift in City of Tears)",
+    Ruins2_09: "Vessel Fragment (Above King's Station)",
+    Deepnest_38: "Vessel Fragment (Deepnest - Goam platforming challenge)",
+    Abyss_04: "Vessel Fragment (Ancient Basin Fountain - 3000 Geo)",
 };
 
 const HK_WARRIORDREAMS = {
@@ -215,6 +226,7 @@ function HKCheckCompletion(jsonObject) {
     let HK_MASKSHARDS_temp = Object.assign({}, HK_MASKSHARDS);
     let HK_NAILARTS_temp = Object.assign({}, HK_NAILARTS);
     let HK_VESSELFRAGMENTS_temp = Object.assign({}, HK_VESSELFRAGMENTS);
+    let HK_VESSELFRAGMENTS_WORLD_temp = Object.assign({}, HK_VESSELFRAGMENTS_WORLD);
     let HK_WARRIORDREAMS_temp = Object.assign({}, HK_WARRIORDREAMS);
     let HK_GRIMMTROUPE_temp = Object.assign({}, HK_GRIMMTROUPE);
     let HK_LIFEBLOOD_temp = Object.assign({}, HK_LIFEBLOOD);
@@ -224,6 +236,7 @@ function HKCheckCompletion(jsonObject) {
     let HK_SPELLS_temp = JSON.parse(JSON.stringify(HK_SPELLS));
 
     let HKPlayerData = jsonObject.playerData;
+    let HKWorldItems = jsonObject.sceneData.persistentBoolItems;
     let bossDoor = ["Pantheon of the Master", "Pantheon of the Artist", "Pantheon of the Sage", "Pantheon of the Knight"];
     let nailName = ["Old Nail", "Sharpened Nail", "Channeled Nail", "Coiled Nail", "Pure Nail"];
 
@@ -337,6 +350,10 @@ function HKCheckCompletion(jsonObject) {
 
     }
 
+    // ---------------- Vessel Fragments (World Map) --------------------- //
+
+    CheckWorldDataTrue(DIV_ID.vesselFragments, "Vessel Fragment", HK_VESSELFRAGMENTS_WORLD_temp, HKWorldItems);
+
     // finish and show benchmark
     let countEnd = new Date();
     console.info("HKCheckCompletion() time (ms) =", countEnd - countBegin);
@@ -391,6 +408,30 @@ function checkWarriorDreams(divId, dataObject, playerData) {
     }
 }
 
+function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
+    let foundData = 0;
+    let size = ObjectLength(dataObject);
+    console.log(size);
+    console.log(worldData);
+    for (let i = 0; i < worldData.length; i++) {
+        for (j in dataObject) {
+            if (worldData[i].id === idText && worldData[i].sceneName === j && worldData[i].activated === true) {
+                currentDataTrue();
+                foundData++;
+                fillHTML(divId, dataObject[j]);
+                delete dataObject[j];
+            }
+        }
+    }
+    if (foundData < size) {
+        for (j in dataObject) {
+            currentDataFalse();
+            fillHTML(divId, dataObject[j]);
+            delete dataObject[j];
+        }
+    }
+}
+
 function HKReadTextArea() {
     cleanHTML(DIV_ID);
 
@@ -403,3 +444,13 @@ function HKReadTextArea() {
         // console.log(jsonObject);
     }
 }
+
+function ObjectLength(object) {
+    var length = 0;
+    for (var key in object) {
+        if (object.hasOwnProperty(key)) {
+            ++length;
+        }
+    }
+    return length;
+};
