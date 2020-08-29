@@ -45,7 +45,7 @@ const DIV_ID = {
 
 const HK_BOSSES = {
     killedMawlek: "Brooding Mawlek",
-    killedBigBuzzer: "Gruz Mother", // wrong
+    killedBurstingBouncer: "Gruz Mother",
     collectorDefeated: "The Collector",
     defeatedMegaJelly: "Uumuu",
     killedMimicSpider: "Nosk",
