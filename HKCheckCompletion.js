@@ -183,7 +183,7 @@ const HK_VESSELFRAGMENTS = {
 // "Vessel Fragment" sceneData.persistentBoolItems[n].id
 const HK_VESSELFRAGMENTS_WORLD = {
     Fungus1_13: "Vessel Fragment (Greenpath - near Queen's Gardens exit)",
-    Crossroads_37: "Vessel Fragment (Forgotten Crossroads - unlock the lift in City of Tears)",
+    Crossroads_37: "Vessel Fragment (Forgotten Crossroads - unlock lift in City of Tears)",
     Ruins2_09: "Vessel Fragment (Above King's Station)",
     Deepnest_38: "Vessel Fragment (Deepnest - Goam platforming challenge)",
     Abyss_04: "Vessel Fragment (Ancient Basin Fountain - 3000 Geo)"
@@ -221,7 +221,7 @@ function HKCheckCompletion(jsonObject) {
     let countBegin = new Date();
 
     // Pre-Cleaning all divs for safety
-    cleanHTML(DIV_ID);
+    CleanHTML(DIV_ID);
 
     // Shallow Clone const objects (used for destructive functions)
     let HK_BOSSES_temp = Object.assign({}, HK_BOSSES);
@@ -255,9 +255,9 @@ function HKCheckCompletion(jsonObject) {
         // ---------------- Game Completion Status ----------------- //
 
         if (i === "completionPercentage") {
-            if (HKPlayerData.completionPercentage >= 112) currentDataTrue(HKPlayerData.completionPercentage);
-            else currentDataFalse(HKPlayerData.completionPercentage);
-            fillHTML(DIV_ID.intro, "Hollow Knight Completion: ", " %");
+            if (HKPlayerData.completionPercentage >= 112) CurrentDataTrue(HKPlayerData.completionPercentage);
+            else CurrentDataFalse(HKPlayerData.completionPercentage);
+            FillHTML(DIV_ID.intro, "Hollow Knight Completion: ", " %");
         }
 
         // ---------------- Time Played ----------------- //
@@ -269,88 +269,88 @@ function HKCheckCompletion(jsonObject) {
             let sec = Math.floor(seconds % 60);
             if (sec <= 10) sec = "0" + sec;
             if (minutes <= 10) minutes = "0" + minutes;
-            currentDataTrue();
-            fillHTML(DIV_ID.intro, "Time Played: " + hours + " h " + minutes + " min " + sec + " sec");
+            CurrentDataTrue();
+            FillHTML(DIV_ID.intro, "Time Played: " + hours + " h " + minutes + " min " + sec + " sec");
         }
 
         // ---------------- Bosses (Base Game) --------------------- //
 
-        if (HK_BOSSES_temp) checkIfDataTrue(DIV_ID.bosses, HK_BOSSES_temp, HKPlayerData);
+        if (HK_BOSSES_temp) CheckIfDataTrue(DIV_ID.bosses, HK_BOSSES_temp, HKPlayerData);
 
         // ---------------- Charms --------------------- //
 
-        if (HK_CHARMS_temp) checkIfDataTrue(DIV_ID.charms, HK_CHARMS_temp, HKPlayerData);
+        if (HK_CHARMS_temp) CheckIfDataTrue(DIV_ID.charms, HK_CHARMS_temp, HKPlayerData);
 
         // ---------------- Colosseum of Fools --------------------- //
 
-        if (HK_COLOSSEUM_temp) checkIfDataTrue(DIV_ID.colosseum, HK_COLOSSEUM_temp, HKPlayerData);
+        if (HK_COLOSSEUM_temp) CheckIfDataTrue(DIV_ID.colosseum, HK_COLOSSEUM_temp, HKPlayerData);
 
         // ---------------- Dreamers --------------------- //
 
-        if (HK_DREAMERS_temp) checkIfDataTrue(DIV_ID.dreamers, HK_DREAMERS_temp, HKPlayerData);
+        if (HK_DREAMERS_temp) CheckIfDataTrue(DIV_ID.dreamers, HK_DREAMERS_temp, HKPlayerData);
 
         // ---------------- Dream Nail and Essence --------------------- //
 
-        if (HK_DREAMNAIL_temp) checkIfDataTrue(DIV_ID.dreamNail, HK_DREAMNAIL_temp, HKPlayerData);
+        if (HK_DREAMNAIL_temp) CheckIfDataTrue(DIV_ID.dreamNail, HK_DREAMNAIL_temp, HKPlayerData);
 
         // ---------------- Equipment --------------------- //
 
-        if (HK_EQUIPMENT_temp) checkIfDataTrue(DIV_ID.equipment, HK_EQUIPMENT_temp, HKPlayerData);
+        if (HK_EQUIPMENT_temp) CheckIfDataTrue(DIV_ID.equipment, HK_EQUIPMENT_temp, HKPlayerData);
 
         // ---------------- Mask Shards --------------------- //
 
-        if (HK_MASKSHARDS_temp) checkIfDataTrue(DIV_ID.maskShards, HK_MASKSHARDS_temp, HKPlayerData);
+        if (HK_MASKSHARDS_temp) CheckIfDataTrue(DIV_ID.maskShards, HK_MASKSHARDS_temp, HKPlayerData);
 
         // ---------------- Nail Arts --------------------- //
 
-        if (HK_NAILARTS_temp) checkIfDataTrue(DIV_ID.nailArts, HK_NAILARTS_temp, HKPlayerData);
+        if (HK_NAILARTS_temp) CheckIfDataTrue(DIV_ID.nailArts, HK_NAILARTS_temp, HKPlayerData);
 
         // ---------------- Nail Upgrades --------------------- //
 
         if (i === "nailSmithUpgrades") {
             for (let j = 0; j < nailName.length; j++) {
-                currentDataFalse();
-                if (HKPlayerData.nailSmithUpgrades >= j) currentDataTrue();
-                fillHTML(DIV_ID.nailUpgrades, nailName[j]);
+                CurrentDataFalse();
+                if (HKPlayerData.nailSmithUpgrades >= j) CurrentDataTrue();
+                FillHTML(DIV_ID.nailUpgrades, nailName[j]);
             }
         }
 
         // ---------------- Spells --------------------- //
 
-        if (HK_SPELLS_temp) checkSpellLevel(DIV_ID.spells, HK_SPELLS_temp, HKPlayerData);
+        if (HK_SPELLS_temp) CheckSpellLevel(DIV_ID.spells, HK_SPELLS_temp, HKPlayerData);
 
         // ---------------- Vessel Fragments --------------------- //
 
-        if (HK_VESSELFRAGMENTS_temp) checkIfDataTrue(DIV_ID.vesselFragments, HK_VESSELFRAGMENTS_temp, HKPlayerData);
+        if (HK_VESSELFRAGMENTS_temp) CheckIfDataTrue(DIV_ID.vesselFragments, HK_VESSELFRAGMENTS_temp, HKPlayerData);
 
         // ---------------- Warrior Dreams --------------------- //
 
-        if (HK_WARRIORDREAMS_temp) checkWarriorDreams(DIV_ID.warriorDreams, HK_WARRIORDREAMS_temp, HKPlayerData);
+        if (HK_WARRIORDREAMS_temp) CheckWarriorDreams(DIV_ID.warriorDreams, HK_WARRIORDREAMS_temp, HKPlayerData);
 
         // ---------------- Grimm Troupe Content Pack --------------------- //
 
-        if (HK_GRIMMTROUPE_temp) checkIfDataTrue(DIV_ID.grimmTroupe, HK_GRIMMTROUPE_temp, HKPlayerData);
+        if (HK_GRIMMTROUPE_temp) CheckIfDataTrue(DIV_ID.grimmTroupe, HK_GRIMMTROUPE_temp, HKPlayerData);
 
         if (i === "grimmChildLevel") {
-            if (HKPlayerData.grimmChildLevel >= 4) currentDataTrue();
-            else currentDataFalse();
-            fillHTML(DIV_ID.grimmTroupe, "Nightmare King Grimm / Banishment");
+            if (HKPlayerData.grimmChildLevel >= 4) CurrentDataTrue();
+            else CurrentDataFalse();
+            FillHTML(DIV_ID.grimmTroupe, "Nightmare King Grimm / Banishment");
         }
 
         // ---------------- Lifeblood Content Pack --------------------- //
 
-        if (HK_LIFEBLOOD_temp) checkIfDataTrue(DIV_ID.lifeblood, HK_LIFEBLOOD_temp, HKPlayerData);
+        if (HK_LIFEBLOOD_temp) CheckIfDataTrue(DIV_ID.lifeblood, HK_LIFEBLOOD_temp, HKPlayerData);
 
         // ---------------- Godmaster Content Pack --------------------- //
 
-        if (HK_GODMASTER_temp) checkIfDataTrue(DIV_ID.godmaster, HK_GODMASTER_temp, HKPlayerData);
+        if (HK_GODMASTER_temp) CheckIfDataTrue(DIV_ID.godmaster, HK_GODMASTER_temp, HKPlayerData);
 
         if (bossDoor.length) {
             for (let j = 1; j <= 4; j++) {
-                currentDataFalse();
+                CurrentDataFalse();
                 if (i === ("bossDoorStateTier" + j)) {
-                    if (HKPlayerData["bossDoorStateTier" + j].completed === true) currentDataTrue();
-                    fillHTML(DIV_ID.godmaster, bossDoor[0]);
+                    if (HKPlayerData["bossDoorStateTier" + j].completed === true) CurrentDataTrue();
+                    FillHTML(DIV_ID.godmaster, bossDoor[0]);
                     bossDoor.shift();
                 }
             }
@@ -371,51 +371,51 @@ function HKCheckCompletion(jsonObject) {
     console.info("HKCheckCompletion() time (ms) =", countEnd - countBegin);
 };
 
-function cleanHTML(jsObj) {
+function CleanHTML(jsObj) {
     for (i in jsObj) {
         document.getElementById(jsObj[i]).innerHTML = "";
     }
 };
 
-function fillHTML(divId = "", textPrefix = "Unknown Completion Element: ", textSuffix = "") {
+function FillHTML(divId = "", textPrefix = "Unknown Completion Element: ", textSuffix = "") {
     document.getElementById(divId).innerHTML += divStart + completionSymbol + strongStart + textPrefix + "" + strongEnd + currentData + textSuffix + divEnd;
 };
 
-function currentDataTrue(textData = isCompleted) {
+function CurrentDataTrue(textData = isCompleted) {
     completionSymbol = SYMBOL_TRUE;
     currentData = textData;
 };
 
-function currentDataFalse(textData = isNotCompleted) {
+function CurrentDataFalse(textData = isNotCompleted) {
     completionSymbol = SYMBOL_FALSE;
     currentData = textData;
 };
 
-function checkIfDataTrue(divId, dataObject, playerData) {
+function CheckIfDataTrue(divId, dataObject, playerData) {
     for (i in dataObject) {
-        if (playerData[i] === true) currentDataTrue();
-        else currentDataFalse();
-        fillHTML(divId, dataObject[i]);
+        if (playerData[i] === true) CurrentDataTrue();
+        else CurrentDataFalse();
+        FillHTML(divId, dataObject[i]);
         delete dataObject[i];
     }
 };
 
-function checkSpellLevel(divId, dataObject, playerData) {
+function CheckSpellLevel(divId, dataObject, playerData) {
     for (i in dataObject) {
         for (let j = 1; j <= 2; j++) {
-            currentDataFalse();
-            if (playerData[i] >= j) currentDataTrue();
-            fillHTML(divId, dataObject[i][j]);
+            CurrentDataFalse();
+            if (playerData[i] >= j) CurrentDataTrue();
+            FillHTML(divId, dataObject[i][j]);
         }
         delete dataObject[i];
     }
 };
 
-function checkWarriorDreams(divId, dataObject, playerData) {
+function CheckWarriorDreams(divId, dataObject, playerData) {
     for (i in dataObject) {
-        if (playerData[i] > 0) currentDataTrue();
-        else currentDataFalse();
-        fillHTML(divId, dataObject[i]);
+        if (playerData[i] > 0) CurrentDataTrue();
+        else CurrentDataFalse();
+        FillHTML(divId, dataObject[i]);
         delete dataObject[i];
     }
 };
@@ -427,24 +427,24 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
     for (let i = 0; i < worldData.length; i++) {
         for (j in dataObject) {
             if (worldData[i].id === idText && worldData[i].sceneName === j && worldData[i].activated === true) {
-                currentDataTrue();
+                CurrentDataTrue();
                 foundData++;
-                fillHTML(divId, dataObject[j]);
+                FillHTML(divId, dataObject[j]);
                 delete dataObject[j];
             }
         }
     }
     if (foundData < size) {
-        currentDataFalse();
+        CurrentDataFalse();
         for (j in dataObject) {
-            fillHTML(divId, dataObject[j]);
+            FillHTML(divId, dataObject[j]);
             delete dataObject[j];
         }
     }
 };
 
 function HKReadTextArea() {
-    cleanHTML(DIV_ID);
+    CleanHTML(DIV_ID);
 
     let textAreaId = "save-area";
     let contents = document.getElementById(textAreaId).value;
