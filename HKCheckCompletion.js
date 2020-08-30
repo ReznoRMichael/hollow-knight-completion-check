@@ -57,7 +57,7 @@ const HK_BOSSES = {
     hornetOutskirtsDefeated: "Hornet Sentinel (Kingdom's Edge)",
     killedInfectedKnight: "Broken Vessel (Ancient Basin)",
     killedMimicSpider: "Nosk (Deepnest)",
-    killedTraitorLord: "Traitor Lord (Queen's Gardens)",
+    killedTraitorLord: "Traitor Lord (Queen's Gardens)"
 };
 
 // reference: https://radiance.host/apidocs/Charms.html
@@ -158,6 +158,14 @@ const HK_NAILARTS = {
     hasCyclone: "Cyclone Slash"
 };
 
+const HK_NAILUPGRADES = [
+    "Old Nail",
+    "Sharpened Nail",
+    "Channeled Nail",
+    "Coiled Nail",
+    "Pure Nail"
+];
+
 const HK_SPELLS = {
     fireballLevel: {
         1: "Vengeful Spirit",
@@ -215,6 +223,13 @@ const HK_GODMASTER = {
     hasGodfinder: "Godtuner"
 };
 
+const HK_GODMASTER_DOORS = [
+    "Pantheon of the Master",
+    "Pantheon of the Artist",
+    "Pantheon of the Sage",
+    "Pantheon of the Knight"
+];
+
 function HKCheckCompletion(jsonObject) {
 
     // start benchmark
@@ -240,13 +255,15 @@ function HKCheckCompletion(jsonObject) {
     let HK_LIFEBLOOD_temp = Object.assign({}, HK_LIFEBLOOD);
     let HK_GODMASTER_temp = Object.assign({}, HK_GODMASTER);
 
+    // Shallow Clone const arrays (used for destructive functions)
+    let HK_GODMASTER_DOORS_temp = Array.from(HK_GODMASTER_DOORS);
+    let HK_NAILUPGRADES_temp = Array.from(HK_NAILUPGRADES);
+
     // Deep Clone const spells multi-layer object (used for destructive functions)
     let HK_SPELLS_temp = JSON.parse(JSON.stringify(HK_SPELLS));
 
     let HKPlayerData = jsonObject.playerData;
     let HKWorldItems = jsonObject.sceneData.persistentBoolItems;
-    let bossDoor = ["Pantheon of the Master", "Pantheon of the Artist", "Pantheon of the Sage", "Pantheon of the Knight"];
-    let nailName = ["Old Nail", "Sharpened Nail", "Channeled Nail", "Coiled Nail", "Pure Nail"];
 
     for (let i in HKPlayerData) {
         completionSymbol = SYMBOL_FALSE;
@@ -308,10 +325,10 @@ function HKCheckCompletion(jsonObject) {
         // ---------------- Nail Upgrades --------------------- //
 
         if (i === "nailSmithUpgrades") {
-            for (let j = 0; j < nailName.length; j++) {
+            for (let j = 0; j < HK_NAILUPGRADES_temp.length; j++) {
                 CurrentDataFalse();
                 if (HKPlayerData.nailSmithUpgrades >= j) CurrentDataTrue();
-                FillHTML(DIV_ID.nailUpgrades, nailName[j]);
+                FillHTML(DIV_ID.nailUpgrades, HK_NAILUPGRADES_temp[j]);
             }
         }
 
@@ -345,13 +362,12 @@ function HKCheckCompletion(jsonObject) {
 
         if (HK_GODMASTER_temp) CheckIfDataTrue(DIV_ID.godmaster, HK_GODMASTER_temp, HKPlayerData);
 
-        if (bossDoor.length) {
+        if (HK_GODMASTER_DOORS_temp.length) {
             for (let j = 1; j <= 4; j++) {
                 CurrentDataFalse();
                 if (i === ("bossDoorStateTier" + j)) {
                     if (HKPlayerData["bossDoorStateTier" + j].completed === true) CurrentDataTrue();
-                    FillHTML(DIV_ID.godmaster, bossDoor[0]);
-                    bossDoor.shift();
+                    FillHTML(DIV_ID.godmaster, HK_GODMASTER_DOORS_temp.shift());
                 }
             }
         }
