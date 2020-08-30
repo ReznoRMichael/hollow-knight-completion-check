@@ -44,20 +44,20 @@ const DIV_ID = {
 };
 
 const HK_BOSSES = {
-    killedMawlek: "Brooding Mawlek",
-    killedBurstingBouncer: "Gruz Mother",
-    collectorDefeated: "The Collector",
-    defeatedMegaJelly: "Uumuu",
-    killedMimicSpider: "Nosk",
-    killedTraitorLord: "Traitor Lord",
-    killedInfectedKnight: "Broken Vessel",
-    killedMageKnight: "Watcher Knights",
-    defeatedDungDefender: "Dung Defender",
-    mageLordDefeated: "Soul Master",
-    defeatedMantisLords: "Mantis Lords",
-    hornet1Defeated: "Hornet Protector",
-    hornetOutskirtsDefeated: "Hornet Sentinel",
-    falseKnightDefeated: "False Knight"
+    falseKnightDefeated: "False Knight (Forgotten Crossroads)",
+    killedMawlek: "Brooding Mawlek (Forgotten Crossroads)",
+    killedBurstingBouncer: "Gruz Mother (Forgotten Crossroads)",
+    defeatedDungDefender: "Dung Defender (Royal Waterways)",
+    mageLordDefeated: "Soul Master (City of Tears)",
+    killedBlackKnight: "Watcher Knights (City of Tears)",
+    collectorDefeated: "The Collector (Tower of Love)",
+    defeatedMantisLords: "Mantis Lords (Mantis Village)",
+    defeatedMegaJelly: "Uumuu (Fog Canyon / Teacher's Archives)",
+    hornet1Defeated: "Hornet Protector (Greenpath)",
+    hornetOutskirtsDefeated: "Hornet Sentinel (Kingdom's Edge)",
+    killedInfectedKnight: "Broken Vessel (Ancient Basin)",
+    killedMimicSpider: "Nosk (Deepnest)",
+    killedTraitorLord: "Traitor Lord (Queen's Gardens)",
 };
 
 // reference: https://radiance.host/apidocs/Charms.html
@@ -84,9 +84,9 @@ const HK_CHARMS = {
     gotCharm_20: "Soul Catcher", // 2
     gotCharm_21: "Soul Eater", // 4
     gotCharm_22: "Glowing Womb", // 2
-    gotCharm_23: "Fragile Heart / Unbreakable Heart", // 2
-    gotCharm_24: "Fragile Greed / Unbreakable Greed", // 2
-    gotCharm_25: "Fragile Strength / Unbreakable Strength", // 3
+    gotCharm_23: "Fragile / Unbreakable Heart", // 2
+    gotCharm_24: "Fragile / Unbreakable Greed", // 2
+    gotCharm_25: "Fragile / Unbreakable Strength", // 3
     gotCharm_26: "Nailmaster’s Glory", // 1
     gotCharm_27: "Joni’s Blessing", // 4
     gotCharm_28: "Shape of Unn", // 2
@@ -457,8 +457,8 @@ function HKReadTextArea() {
 }
 
 function ObjectLength(object) {
-    var length = 0;
-    for (var key in object) {
+    let length = 0;
+    for (let key in object) {
         if (object.hasOwnProperty(key)) {
             ++length;
         }
