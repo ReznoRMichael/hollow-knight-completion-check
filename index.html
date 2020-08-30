@@ -22,24 +22,12 @@
 	<meta name="author" content="ReznoR Michael">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="../favicon.png">
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script src="loadJson.js"></script> -->
-    <script src="HKCheckCompletion.js"></script>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136831794-2"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-136831794-2');
-    </script>
-    
 </head>
 <body>
 
     <!-- To do:
         - Populate all items on page load
+        - Calculate all % in all categories from save data
         - Single Pale Ore locations? (required for completion)
         - Single Keys/Pass locations? (required for completion)
         - Spoiler-free hints where to go next? (ala Elderbug)
@@ -122,3 +110,19 @@
 
 </body>
 </html>
+
+<!-- Instantly load test file (Debugging script) -->
+<!-- <script src="loadJson.js"></script> -->
+
+<!-- Main script -->
+<script src="HKCheckCompletion.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136831794-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-136831794-2');
+</script>
