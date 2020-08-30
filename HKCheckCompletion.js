@@ -129,26 +129,42 @@ const HK_EQUIPMENT = {
 };
 
 const HK_MASKSHARDS = {
-    slyShellFrag1: "Mask Shard (Sly - 150 Geo)",
-    slyShellFrag2: "Mask Shard (Sly - 500 Geo)",
-    slyShellFrag3: "Mask Shard (Sly - 800 Geo)",
-    slyShellFrag4: "Mask Shard (Sly - 1500 Geo)",
-    dreamReward7: "Mask Shard (Seer - 1500 Essence)"
+    slyShellFrag1: "Mask Shard #1 (Sly - 150 Geo)",
+    slyShellFrag2: "Mask Shard #2 (Sly - 500 Geo)",
+    slyShellFrag3: "Mask Shard #3 (Sly - 800 Geo)",
+    slyShellFrag4: "Mask Shard #4 (Sly - 1500 Geo)",
+    dreamReward7: "Mask Shard #5 (Seer - 1500 Essence)"
 };
 
 // "Heart Piece" sceneData.persistentBoolItems[n].id
 const HK_MASKSHARDS_WORLD = {
-    Crossroads_13: "Mask Shard (Forgotten Crossroads - below Hot Springs)",
-    Fungus2_01: "Mask Shard (Queen's Station)",
-    Crossroads_38: "Mask Shard (Grubfather - rescue 5 Grubs)",
-    Waterways_04b: "Mask Shard (Royal Waterways)",
-    Fungus1_36: "Mask Shard (Greenpath - Stone Sanctuary)",
-    Crossroads_09: "Mask Shard (Forgotten Crossroads - Brooding Mawlek)",
-    Mines_32: "Mask Shard (Crystal Peak - Enraged Guardian)",
-    Fungus2_25: "Mask Shard (Deepnest - entrance from Fungal Wastes)",
-    Room_Bretta: "Mask Shard (Dirtmouth - Bretta's Room)",
-    Hive_04: "Mask Shard (The Hive)",
-    Room_Mansion: "Mask Shard (Resting Grounds - Delicate Flower)"
+    Crossroads_13: "Mask Shard #6 (Forgotten Crossroads - below Hot Springs)",
+    Crossroads_09: "Mask Shard #7 (Forgotten Crossroads - Brooding Mawlek)",
+    Crossroads_38: "Mask Shard #8 (Grubfather - rescue 5 Grubs)",
+    Room_Bretta: "Mask Shard #9 (Dirtmouth - Bretta's Room)",
+    Fungus2_01: "Mask Shard #10 (Queen's Station)",
+    Waterways_04b: "Mask Shard #11 (Royal Waterways)",
+    Fungus1_36: "Mask Shard #12 (Greenpath - Stone Sanctuary)",
+    Mines_32: "Mask Shard #13 (Crystal Peak - Enraged Guardian)",
+    Fungus2_25: "Mask Shard #14 (Deepnest - entrance from Fungal Wastes)",
+    Hive_04: "Mask Shard #15 (The Hive)",
+    Room_Mansion: "Mask Shard #16 (Resting Grounds - Delicate Flower)"
+};
+
+const HK_VESSELFRAGMENTS = {
+    slyVesselFrag1: "Vessel Fragment #1 (Sly - 550 Geo)",
+    slyVesselFrag2: "Vessel Fragment #2 (Sly - 900 Geo)",
+    dreamReward5: "Vessel Fragment #3 (Seer - 700 Essence)",
+    vesselFragStagNest: "Vessel Fragment #4 (Stag Nest)"
+};
+
+// "Vessel Fragment" sceneData.persistentBoolItems[n].id
+const HK_VESSELFRAGMENTS_WORLD = {
+    Fungus1_13: "Vessel Fragment #5 (Greenpath - near Queen's Gardens exit)",
+    Crossroads_37: "Vessel Fragment #6 (Forgotten Crossroads - unlock lift in City of Tears)",
+    Ruins2_09: "Vessel Fragment #7 (Above King's Station)",
+    Deepnest_38: "Vessel Fragment #8 (Deepnest - Goam platforming challenge)",
+    Abyss_04: "Vessel Fragment #9 (Ancient Basin Fountain - 3000 Geo)"
 };
 
 const HK_NAILARTS = {
@@ -179,22 +195,6 @@ const HK_SPELLS = {
         1: "Howling Wraiths",
         2: "Abyss Shriek"
     }
-};
-
-const HK_VESSELFRAGMENTS = {
-    slyVesselFrag1: "Vessel Fragment (Sly - 550 Geo)",
-    slyVesselFrag2: "Vessel Fragment (Sly - 900 Geo)",
-    dreamReward5: "Vessel Fragment (Seer - 700 Essence)",
-    vesselFragStagNest: "Vessel Fragment (Stag Nest)"
-};
-
-// "Vessel Fragment" sceneData.persistentBoolItems[n].id
-const HK_VESSELFRAGMENTS_WORLD = {
-    Fungus1_13: "Vessel Fragment (Greenpath - near Queen's Gardens exit)",
-    Crossroads_37: "Vessel Fragment (Forgotten Crossroads - unlock lift in City of Tears)",
-    Ruins2_09: "Vessel Fragment (Above King's Station)",
-    Deepnest_38: "Vessel Fragment (Deepnest - Goam platforming challenge)",
-    Abyss_04: "Vessel Fragment (Ancient Basin Fountain - 3000 Geo)"
 };
 
 const HK_WARRIORDREAMS = {
@@ -438,25 +438,28 @@ function CheckWarriorDreams(divId, dataObject, playerData) {
 }
 
 function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
-    let foundData = 0;
+    let orderedArray = [];
     let size = ObjectLength(dataObject);
 
+    // Order the items before displaying them
+    for (let i in dataObject) {
+        orderedArray.push([i, dataObject[i], false]);
+    }
+
+    // Search for completed items
     for (let i = 0; i < worldData.length; i++) {
-        for (let j in dataObject) {
-            if (worldData[i].id === idText && worldData[i].sceneName === j && worldData[i].activated === true) {
-                CurrentDataTrue();
-                foundData++;
-                FillHTML(divId, dataObject[j]);
-                delete dataObject[j];
+        for (let j = 0; j < size; j++) {
+            if (worldData[i].id === idText && worldData[i].sceneName === orderedArray[j][0] && worldData[i].activated === true) {
+                orderedArray[j][2] = true;
             }
         }
     }
-    if (foundData < size) {
+
+    // Display the items as they were initially ordered
+    for (let i = 0; i < size; i++) {
         CurrentDataFalse();
-        for (let j in dataObject) {
-            FillHTML(divId, dataObject[j]);
-            delete dataObject[j];
-        }
+        if (orderedArray[i][2] === true) CurrentDataTrue();
+        FillHTML(divId, orderedArray[i][1]);
     }
 }
 
