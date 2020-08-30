@@ -248,7 +248,7 @@ function HKCheckCompletion(jsonObject) {
     let bossDoor = ["Pantheon of the Master", "Pantheon of the Artist", "Pantheon of the Sage", "Pantheon of the Knight"];
     let nailName = ["Old Nail", "Sharpened Nail", "Channeled Nail", "Coiled Nail", "Pure Nail"];
 
-    for (i in HKPlayerData) {
+    for (let i in HKPlayerData) {
         completionSymbol = SYMBOL_FALSE;
         currentData = DATA_UNKNOWN;
 
@@ -369,39 +369,39 @@ function HKCheckCompletion(jsonObject) {
     // finish and show benchmark
     let countEnd = new Date();
     console.info("HKCheckCompletion() time (ms) =", countEnd - countBegin);
-};
+}
 
 function CleanHTML(jsObj) {
-    for (i in jsObj) {
+    for (let i in jsObj) {
         document.getElementById(jsObj[i]).innerHTML = "";
     }
-};
+}
 
 function FillHTML(divId = "", textPrefix = "Unknown Completion Element: ", textSuffix = "") {
     document.getElementById(divId).innerHTML += divStart + completionSymbol + strongStart + textPrefix + "" + strongEnd + currentData + textSuffix + divEnd;
-};
+}
 
 function CurrentDataTrue(textData = isCompleted) {
     completionSymbol = SYMBOL_TRUE;
     currentData = textData;
-};
+}
 
 function CurrentDataFalse(textData = isNotCompleted) {
     completionSymbol = SYMBOL_FALSE;
     currentData = textData;
-};
+}
 
 function CheckIfDataTrue(divId, dataObject, playerData) {
-    for (i in dataObject) {
+    for (let i in dataObject) {
         if (playerData[i] === true) CurrentDataTrue();
         else CurrentDataFalse();
         FillHTML(divId, dataObject[i]);
         delete dataObject[i];
     }
-};
+}
 
 function CheckSpellLevel(divId, dataObject, playerData) {
-    for (i in dataObject) {
+    for (let i in dataObject) {
         for (let j = 1; j <= 2; j++) {
             CurrentDataFalse();
             if (playerData[i] >= j) CurrentDataTrue();
@@ -409,23 +409,23 @@ function CheckSpellLevel(divId, dataObject, playerData) {
         }
         delete dataObject[i];
     }
-};
+}
 
 function CheckWarriorDreams(divId, dataObject, playerData) {
-    for (i in dataObject) {
+    for (let i in dataObject) {
         if (playerData[i] > 0) CurrentDataTrue();
         else CurrentDataFalse();
         FillHTML(divId, dataObject[i]);
         delete dataObject[i];
     }
-};
+}
 
 function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
     let foundData = 0;
     let size = ObjectLength(dataObject);
 
     for (let i = 0; i < worldData.length; i++) {
-        for (j in dataObject) {
+        for (let j in dataObject) {
             if (worldData[i].id === idText && worldData[i].sceneName === j && worldData[i].activated === true) {
                 CurrentDataTrue();
                 foundData++;
@@ -436,12 +436,12 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
     }
     if (foundData < size) {
         CurrentDataFalse();
-        for (j in dataObject) {
+        for (let j in dataObject) {
             FillHTML(divId, dataObject[j]);
             delete dataObject[j];
         }
     }
-};
+}
 
 function HKReadTextArea() {
     CleanHTML(DIV_ID);
@@ -454,7 +454,7 @@ function HKReadTextArea() {
         HKCheckCompletion(jsonObject);
         // console.log(jsonObject);
     }
-};
+}
 
 function ObjectLength(object) {
     var length = 0;
@@ -464,4 +464,4 @@ function ObjectLength(object) {
         }
     }
     return length;
-};
+}
