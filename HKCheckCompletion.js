@@ -46,6 +46,7 @@ const DIV_ID = {
 const HK_BOSSES = {
     falseKnightDefeated: ["False Knight", "Forgotten Crossroads"],
     killedMawlek: ["Brooding Mawlek", "Forgotten Crossroads"],
+    hornet1Defeated: ["Hornet Protector", "Greenpath"],
     killedBurstingBouncer: ["Gruz Mother", "Forgotten Crossroads"],
     defeatedDungDefender: ["Dung Defender", "Royal Waterways"],
     mageLordDefeated: ["Soul Master", "City of Tears: Soul Sanctum"],
@@ -53,7 +54,6 @@ const HK_BOSSES = {
     collectorDefeated: ["The Collector", "City of Tears: Tower of Love"],
     defeatedMantisLords: ["Mantis Lords", "Mantis Village"],
     defeatedMegaJelly: ["Uumuu", "Fog Canyon: Teacher's Archives"],
-    hornet1Defeated: ["Hornet Protector", "Greenpath"],
     hornetOutskirtsDefeated: ["Hornet Sentinel", "Kingdom's Edge"],
     killedInfectedKnight: ["Broken Vessel", "Ancient Basin"],
     killedMimicSpider: ["Nosk", "Deepnest"],
@@ -62,42 +62,42 @@ const HK_BOSSES = {
 
 // reference: https://radiance.host/apidocs/Charms.html
 const HK_CHARMS = {
-    gotCharm_1: ["Gathering Swarm", ""], // 1
-    gotCharm_2: ["Wayward Compass", ""], // 1
-    gotCharm_3: ["Grubsong", ""], // 1
-    gotCharm_4: ["Stalwart Shell", ""], // 2
-    gotCharm_5: ["Baldur Shell", ""], // 2
-    gotCharm_6: ["Fury of the Fallen", ""], // 2
-    gotCharm_7: ["Quick Focus", ""], // 3
-    gotCharm_8: ["Lifeblood Heart", ""], // 2
-    gotCharm_9: ["Lifeblood Core", ""], // 3
-    gotCharm_10: ["Defender's Crest", ""], // 1
-    gotCharm_11: ["Flukenest", ""], // 3
-    gotCharm_12: ["Thorns of Agony", ""], // 1
-    gotCharm_13: ["Mark of Pride", ""], // 3
-    gotCharm_14: ["Steady Body", ""], // 1
-    gotCharm_15: ["Heavy Blow", ""], // 2
-    gotCharm_16: ["Sharp Shadow", ""], // 2
-    gotCharm_17: ["Spore Shroom", ""], // 1
-    gotCharm_18: ["Longnail", ""], // 2
-    gotCharm_19: ["Shaman Stone", ""], // 3
-    gotCharm_20: ["Soul Catcher", ""], // 2
-    gotCharm_21: ["Soul Eater", ""], // 4
-    gotCharm_22: ["Glowing Womb", ""], // 2
-    gotCharm_23: ["Fragile / Unbreakable Heart", ""], // 2
-    gotCharm_24: ["Fragile / Unbreakable Greed", ""], // 2
-    gotCharm_25: ["Fragile / Unbreakable Strength", ""], // 3
-    gotCharm_26: ["Nailmaster’s Glory", ""], // 1
-    gotCharm_27: ["Joni’s Blessing", ""], // 4
-    gotCharm_28: ["Shape of Unn", ""], // 2
-    gotCharm_29: ["Hiveblood", ""], // 4
-    gotCharm_30: ["Dream Wielder", ""], // 1
-    gotCharm_31: ["Dashmaster", ""], // 2
-    gotCharm_32: ["Quick Slash", ""], // 3
-    gotCharm_33: ["Spell Twister", ""], // 2
-    gotCharm_34: ["Deep Focus", ""], // 4
-    gotCharm_35: ["Grubberfly’s Elegy", ""], // 3
-    gotCharm_36: ["Kingsoul / Void Heart", ""], // 5
+    gotCharm_1: ["Gathering Swarm", "Sly: 300 Geo"], // 1
+    gotCharm_2: ["Wayward Compass", "Iselda: 220 Geo"], // 1
+    gotCharm_3: ["Grubsong", "Grubfather: 10 Grubs"], // 1
+    gotCharm_4: ["Stalwart Shell", "Sly: 200 Geo"], // 2
+    gotCharm_5: ["Baldur Shell", "Howling Cliffs"], // 2
+    gotCharm_6: ["Fury of the Fallen", "King's Pass"], // 2
+    gotCharm_7: ["Quick Focus", "Salubra: 800 Geo"], // 3
+    gotCharm_8: ["Lifeblood Heart", "Salubra: 250 Geo"], // 2
+    gotCharm_9: ["Lifeblood Core", "The Abyss: 15 Lifeblood masks"], // 3
+    gotCharm_10: ["Defender's Crest", "Royal Waterways"], // 1
+    gotCharm_11: ["Flukenest", "Royal Waterways"], // 3
+    gotCharm_12: ["Thorns of Agony", "Greenpath"], // 1
+    gotCharm_13: ["Mark of Pride", "Mantis Village"], // 3
+    gotCharm_14: ["Steady Body", "Salubra: 120 Geo"], // 1
+    gotCharm_15: ["Heavy Blow", "Sly: 350 Geo + Shopkeeper's Key"], // 2
+    gotCharm_16: ["Sharp Shadow", "Deepnest"], // 2
+    gotCharm_17: ["Spore Shroom", "Fungal Wastes"], // 1
+    gotCharm_18: ["Longnail", "Salubra: 300 Geo"], // 2
+    gotCharm_19: ["Shaman Stone", "Salubra: 220 Geo"], // 3
+    gotCharm_20: ["Soul Catcher", "Forgotten Crossroads: Ancestral Mound"], // 2
+    gotCharm_21: ["Soul Eater", "Resting Grounds"], // 4
+    gotCharm_22: ["Glowing Womb", "Forgotten Crossroads"], // 2
+    gotCharm_23: ["Fragile / Unbreakable Heart", "Leg Eater: 350/280 Geo"], // 2
+    gotCharm_24: ["Fragile / Unbreakable Greed", "Leg Eater: 250/200 Geo"], // 2
+    gotCharm_25: ["Fragile / Unbreakable Strength", "Leg Eater: 600/480 Geo"], // 3
+    gotCharm_26: ["Nailmaster’s Glory", "Sly: All Nail Arts"], // 1
+    gotCharm_27: ["Joni’s Blessing", "Howling Cliffs: Joni's Repose"], // 4
+    gotCharm_28: ["Shape of Unn", "Greenpath: Lake of Unn"], // 2
+    gotCharm_29: ["Hiveblood", "The Hive"], // 4
+    gotCharm_30: ["Dream Wielder", "Seer: 500 Essence"], // 1
+    gotCharm_31: ["Dashmaster", "Fungal Wastes"], // 2
+    gotCharm_32: ["Quick Slash", "Kingdom's Edge"], // 3
+    gotCharm_33: ["Spell Twister", "City of Tears: Soul Sanctum"], // 2
+    gotCharm_34: ["Deep Focus", "Crystal Peak"], // 4
+    gotCharm_35: ["Grubberfly’s Elegy", "Grubfather: 46 Grubs"], // 3
+    gotCharm_36: ["Kingsoul / Void Heart", "Queen's Gardens, Ancient Basin, Birthplace"], // 5
 };
 
 const HK_COLOSSEUM = {
@@ -140,7 +140,7 @@ const HK_MASKSHARDS = {
 const HK_MASKSHARDS_WORLD = {
     Crossroads_13: ["Mask Shard #6", "Forgotten Crossroads: below Hot Springs"],
     Crossroads_09: ["Mask Shard #7", "Forgotten Crossroads: Brooding Mawlek"],
-    Crossroads_38: ["Mask Shard #8", "Grubfather: rescue 5 Grubs"],
+    Crossroads_38: ["Mask Shard #8", "Grubfather: 5 Grubs"],
     Room_Bretta: ["Mask Shard #9", "Dirtmouth: Bretta's Room"],
     Fungus2_01: ["Mask Shard #10", "Queen's Station"],
     Waterways_04b: ["Mask Shard #11", "Royal Waterways"],
@@ -453,7 +453,7 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
         orderedArray.push([i, dataObject[i][0], dataObject[i][1], false]);
     }
 
-    // Search for completed items
+    // Search for completed items and mark them for display
     for (let i = 0; i < worldData.length; i++) {
         for (let j = 0; j < size; j++) {
             if (worldData[i].id === idText && worldData[i].sceneName === orderedArray[j][0] && worldData[i].activated === true) {
