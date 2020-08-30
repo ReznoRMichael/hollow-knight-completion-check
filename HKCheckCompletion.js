@@ -274,20 +274,21 @@ function HKCheckCompletion(jsonObject) {
         if (i === "completionPercentage") {
             if (HKPlayerData.completionPercentage >= 112) CurrentDataTrue(HKPlayerData.completionPercentage);
             else CurrentDataFalse(HKPlayerData.completionPercentage);
-            FillHTML(DIV_ID.intro, "Hollow Knight Completion: ", " %");
+            FillHTML(DIV_ID.intro, "Game Completion: ", " %");
         }
 
         // ---------------- Time Played ----------------- //
 
         if (i === "playTime") {
             let seconds = Math.floor(HKPlayerData.playTime);
-            let minutes = Math.floor((seconds / 60) % 60);
-            let hours = Math.floor(seconds / 3600);
-            let sec = Math.floor(seconds % 60);
+            let minutes = Math.round((seconds / 60) % 60);
+            let hours = Math.round(seconds / 3600);
+            let sec = Math.round(seconds % 60);
             if (sec <= 10) sec = "0" + sec;
             if (minutes <= 10) minutes = "0" + minutes;
             CurrentDataTrue();
             FillHTML(DIV_ID.intro, "Time Played: " + hours + " h " + minutes + " min " + sec + " sec");
+            CurrentDataFalse();
         }
 
         // ---------------- Bosses (Base Game) --------------------- //
