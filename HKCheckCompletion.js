@@ -119,13 +119,13 @@ const HK_DREAMNAIL = {
 };
 
 const HK_EQUIPMENT = {
-    hasDash: "Mothwing Cloak / Dash (Greenpath)",
-    hasWalljump: "Mantis Claw / Wall Jump (Mantis Village)",
-    hasSuperDash: "Crystal Heart / Super Dash (Crystal Peak)",
-    hasAcidArmour: "Isma's Tear / Acid Armour (Royal Waterways)",
-    hasDoubleJump: "Monarch Wings / Double Jump (Ancient Basin)",
+    hasDash: "Mothwing Cloak (Greenpath; Dash ability)",
+    hasWalljump: "Mantis Claw (Mantis Village; Wall Jump ability)",
+    hasSuperDash: "Crystal Heart (Crystal Peak; Super Dash ability)",
+    hasAcidArmour: "Isma's Tear (Royal Waterways; Acid Armour ability)",
+    hasDoubleJump: "Monarch Wings (Ancient Basin; Double Jump ability)",
     hasKingsBrand: "King's Brand (Kingdom's Edge)",
-    hasShadowDash: "Shade Cloak / Shadow Dash (The Abyss)"
+    hasShadowDash: "Shade Cloak (The Abyss; Shadow Dash ability)"
 };
 
 const HK_MASKSHARDS = {
