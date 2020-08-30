@@ -31,7 +31,7 @@ function loadJSON(filename, callback) {
     xobj.send(null);
 }
 
-loadJSON(fileName[1],
+loadJSON(fileName[3],
     function JSONparse(response) {
         // Parse JSON string into object
         jsonObj = JSON.parse(response);

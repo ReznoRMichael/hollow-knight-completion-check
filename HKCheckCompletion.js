@@ -44,189 +44,189 @@ const DIV_ID = {
 };
 
 const HK_BOSSES = {
-    falseKnightDefeated: "False Knight (Forgotten Crossroads)",
-    killedMawlek: "Brooding Mawlek (Forgotten Crossroads)",
-    killedBurstingBouncer: "Gruz Mother (Forgotten Crossroads)",
-    defeatedDungDefender: "Dung Defender (Royal Waterways)",
-    mageLordDefeated: "Soul Master (City of Tears: Soul Sanctum)",
-    killedBlackKnight: "Watcher Knights (City of Tears: Watcher's Spire)",
-    collectorDefeated: "The Collector (City of Tears: Tower of Love)",
-    defeatedMantisLords: "Mantis Lords (Mantis Village)",
-    defeatedMegaJelly: "Uumuu (Fog Canyon: Teacher's Archives)",
-    hornet1Defeated: "Hornet Protector (Greenpath)",
-    hornetOutskirtsDefeated: "Hornet Sentinel (Kingdom's Edge)",
-    killedInfectedKnight: "Broken Vessel (Ancient Basin)",
-    killedMimicSpider: "Nosk (Deepnest)",
-    killedTraitorLord: "Traitor Lord (Queen's Gardens)"
+    falseKnightDefeated: ["False Knight", "Forgotten Crossroads"],
+    killedMawlek: ["Brooding Mawlek", "Forgotten Crossroads"],
+    killedBurstingBouncer: ["Gruz Mother", "Forgotten Crossroads"],
+    defeatedDungDefender: ["Dung Defender", "Royal Waterways"],
+    mageLordDefeated: ["Soul Master", "City of Tears: Soul Sanctum"],
+    killedBlackKnight: ["Watcher Knights", "City of Tears: Watcher's Spire"],
+    collectorDefeated: ["The Collector", "City of Tears: Tower of Love"],
+    defeatedMantisLords: ["Mantis Lords", "Mantis Village"],
+    defeatedMegaJelly: ["Uumuu", "Fog Canyon: Teacher's Archives"],
+    hornet1Defeated: ["Hornet Protector", "Greenpath"],
+    hornetOutskirtsDefeated: ["Hornet Sentinel", "Kingdom's Edge"],
+    killedInfectedKnight: ["Broken Vessel", "Ancient Basin"],
+    killedMimicSpider: ["Nosk", "Deepnest"],
+    killedTraitorLord: ["Traitor Lord", "Queen's Gardens"]
 };
 
 // reference: https://radiance.host/apidocs/Charms.html
 const HK_CHARMS = {
-    gotCharm_1: "Gathering Swarm", // 1
-    gotCharm_2: "Wayward Compass", // 1
-    gotCharm_3: "Grubsong", // 1
-    gotCharm_4: "Stalwart Shell", // 2
-    gotCharm_5: "Baldur Shell", // 2
-    gotCharm_6: "Fury of the Fallen", // 2
-    gotCharm_7: "Quick Focus", // 3
-    gotCharm_8: "Lifeblood Heart", // 2
-    gotCharm_9: "Lifeblood Core", // 3
-    gotCharm_10: "Defender's Crest", // 1
-    gotCharm_11: "Flukenest", // 3
-    gotCharm_12: "Thorns of Agony", // 1
-    gotCharm_13: "Mark of Pride", // 3
-    gotCharm_14: "Steady Body", // 1
-    gotCharm_15: "Heavy Blow", // 2
-    gotCharm_16: "Sharp Shadow", // 2
-    gotCharm_17: "Spore Shroom", // 1
-    gotCharm_18: "Longnail", // 2
-    gotCharm_19: "Shaman Stone", // 3
-    gotCharm_20: "Soul Catcher", // 2
-    gotCharm_21: "Soul Eater", // 4
-    gotCharm_22: "Glowing Womb", // 2
-    gotCharm_23: "Fragile / Unbreakable Heart", // 2
-    gotCharm_24: "Fragile / Unbreakable Greed", // 2
-    gotCharm_25: "Fragile / Unbreakable Strength", // 3
-    gotCharm_26: "Nailmaster’s Glory", // 1
-    gotCharm_27: "Joni’s Blessing", // 4
-    gotCharm_28: "Shape of Unn", // 2
-    gotCharm_29: "Hiveblood", // 4
-    gotCharm_30: "Dream Wielder", // 1
-    gotCharm_31: "Dashmaster", // 2
-    gotCharm_32: "Quick Slash", // 3
-    gotCharm_33: "Spell Twister", // 2
-    gotCharm_34: "Deep Focus", // 4
-    gotCharm_35: "Grubberfly’s Elegy", // 3
-    gotCharm_36: "Kingsoul / Void Heart", // 5
+    gotCharm_1: ["Gathering Swarm", ""], // 1
+    gotCharm_2: ["Wayward Compass", ""], // 1
+    gotCharm_3: ["Grubsong", ""], // 1
+    gotCharm_4: ["Stalwart Shell", ""], // 2
+    gotCharm_5: ["Baldur Shell", ""], // 2
+    gotCharm_6: ["Fury of the Fallen", ""], // 2
+    gotCharm_7: ["Quick Focus", ""], // 3
+    gotCharm_8: ["Lifeblood Heart", ""], // 2
+    gotCharm_9: ["Lifeblood Core", ""], // 3
+    gotCharm_10: ["Defender's Crest", ""], // 1
+    gotCharm_11: ["Flukenest", ""], // 3
+    gotCharm_12: ["Thorns of Agony", ""], // 1
+    gotCharm_13: ["Mark of Pride", ""], // 3
+    gotCharm_14: ["Steady Body", ""], // 1
+    gotCharm_15: ["Heavy Blow", ""], // 2
+    gotCharm_16: ["Sharp Shadow", ""], // 2
+    gotCharm_17: ["Spore Shroom", ""], // 1
+    gotCharm_18: ["Longnail", ""], // 2
+    gotCharm_19: ["Shaman Stone", ""], // 3
+    gotCharm_20: ["Soul Catcher", ""], // 2
+    gotCharm_21: ["Soul Eater", ""], // 4
+    gotCharm_22: ["Glowing Womb", ""], // 2
+    gotCharm_23: ["Fragile / Unbreakable Heart", ""], // 2
+    gotCharm_24: ["Fragile / Unbreakable Greed", ""], // 2
+    gotCharm_25: ["Fragile / Unbreakable Strength", ""], // 3
+    gotCharm_26: ["Nailmaster’s Glory", ""], // 1
+    gotCharm_27: ["Joni’s Blessing", ""], // 4
+    gotCharm_28: ["Shape of Unn", ""], // 2
+    gotCharm_29: ["Hiveblood", ""], // 4
+    gotCharm_30: ["Dream Wielder", ""], // 1
+    gotCharm_31: ["Dashmaster", ""], // 2
+    gotCharm_32: ["Quick Slash", ""], // 3
+    gotCharm_33: ["Spell Twister", ""], // 2
+    gotCharm_34: ["Deep Focus", ""], // 4
+    gotCharm_35: ["Grubberfly’s Elegy", ""], // 3
+    gotCharm_36: ["Kingsoul / Void Heart", ""], // 5
 };
 
 const HK_COLOSSEUM = {
-    colosseumBronzeCompleted: "Trial of the Warrior",
-    colosseumSilverCompleted: "Trial of the Conqueror",
-    colosseumGoldCompleted: "Trial of the Fool"
+    colosseumBronzeCompleted: ["Trial of the Warrior", "Little Fool: 100 Geo"],
+    colosseumSilverCompleted: ["Trial of the Conqueror", "Little Fool: 450 Geo + Warrior completed"],
+    colosseumGoldCompleted: ["Trial of the Fool", "Little Fool: 800 Geo + Conqueror completed"],
 };
 
 const HK_DREAMERS = {
-    lurienDefeated: "Lurien the Watcher (City of Tears: Watcher's Spire)",
-    monomonDefeated: "Monomon the Teacher (Fog Canyon: Teacher's Archives)",
-    hegemolDefeated: "Herrah the Beast (Deepnest: Distant Village)"
+    lurienDefeated: ["Lurien the Watcher", "City of Tears: Watcher's Spire"],
+    monomonDefeated: ["Monomon the Teacher", "Fog Canyon: Teacher's Archives"],
+    hegemolDefeated: ["Herrah the Beast", "Deepnest: Distant Village"]
 };
 
 const HK_DREAMNAIL = {
-    hasDreamNail: "Dream Nail acquired (Resting Grounds)",
-    dreamNailUpgraded: "Awoken Dream Nail (Seer: 1800 Essence)",
-    mothDeparted: "Hear the Seer's final words (Seer: 2400 Essence)"
+    hasDreamNail: ["Dream Nail acquired", "Resting Grounds"],
+    dreamNailUpgraded: ["Awoken Dream Nail", "Seer: 1800 Essence"],
+    mothDeparted: ["Hear the Seer's final words", "Seer: 2400 Essence"]
 };
 
 const HK_EQUIPMENT = {
-    hasDash: "Mothwing Cloak (Greenpath; Dash ability)",
-    hasWalljump: "Mantis Claw (Mantis Village; Wall Jump ability)",
-    hasSuperDash: "Crystal Heart (Crystal Peak; Super Dash ability)",
-    hasAcidArmour: "Isma's Tear (Royal Waterways; Acid Armour ability)",
-    hasDoubleJump: "Monarch Wings (Ancient Basin; Double Jump ability)",
-    hasKingsBrand: "King's Brand (Kingdom's Edge)",
-    hasShadowDash: "Shade Cloak (The Abyss; Shadow Dash ability)"
+    hasDash: ["Mothwing Cloak", "Greenpath; Dash ability"],
+    hasWalljump: ["Mantis Claw", "Mantis Village; Wall Jump ability"],
+    hasSuperDash: ["Crystal Heart", "Crystal Peak; Super Dash ability"],
+    hasAcidArmour: ["Isma's Tear", "Royal Waterways; Acid Armour ability"],
+    hasDoubleJump: ["Monarch Wings", "Ancient Basin; Double Jump ability"],
+    hasKingsBrand: ["King's Brand", "Kingdom's Edge"],
+    hasShadowDash: ["Shade Cloak", "The Abyss; Shadow Dash ability"]
 };
 
 const HK_MASKSHARDS = {
-    slyShellFrag1: "Mask Shard #1 (Sly: 150 Geo)",
-    slyShellFrag2: "Mask Shard #2 (Sly: 500 Geo)",
-    slyShellFrag3: "Mask Shard #3 (Sly: 800 Geo + Shopkeeper's Key)",
-    slyShellFrag4: "Mask Shard #4 (Sly: 1500 Geo + Shopkeeper's Key)",
-    dreamReward7: "Mask Shard #5 (Seer: 1500 Essence)"
+    slyShellFrag1: ["Mask Shard #1", "Sly: 150 Geo"],
+    slyShellFrag2: ["Mask Shard #2", "Sly: 500 Geo"],
+    slyShellFrag3: ["Mask Shard #3", "Sly: 800 Geo + Shopkeeper's Key"],
+    slyShellFrag4: ["Mask Shard #4", "Sly: 1500 Geo + Shopkeeper's Key"],
+    dreamReward7: ["Mask Shard #5", "Seer: 1500 Essence"]
 };
 
 // "Heart Piece" sceneData.persistentBoolItems.id
 const HK_MASKSHARDS_WORLD = {
-    Crossroads_13: "Mask Shard #6 (Forgotten Crossroads: below Hot Springs)",
-    Crossroads_09: "Mask Shard #7 (Forgotten Crossroads: Brooding Mawlek)",
-    Crossroads_38: "Mask Shard #8 (Grubfather: rescue 5 Grubs)",
-    Room_Bretta: "Mask Shard #9 (Dirtmouth: Bretta's Room)",
-    Fungus2_01: "Mask Shard #10 (Queen's Station)",
-    Waterways_04b: "Mask Shard #11 (Royal Waterways)",
-    Fungus1_36: "Mask Shard #12 (Greenpath: Stone Sanctuary)",
-    Mines_32: "Mask Shard #13 (Crystal Peak: Enraged Guardian)",
-    Fungus2_25: "Mask Shard #14 (Deepnest: entrance from Fungal Wastes)",
-    Hive_04: "Mask Shard #15 (The Hive)",
-    Room_Mansion: "Mask Shard #16 (Resting Grounds: Delicate Flower)"
+    Crossroads_13: ["Mask Shard #6", "Forgotten Crossroads: below Hot Springs"],
+    Crossroads_09: ["Mask Shard #7", "Forgotten Crossroads: Brooding Mawlek"],
+    Crossroads_38: ["Mask Shard #8", "Grubfather: rescue 5 Grubs"],
+    Room_Bretta: ["Mask Shard #9", "Dirtmouth: Bretta's Room"],
+    Fungus2_01: ["Mask Shard #10", "Queen's Station"],
+    Waterways_04b: ["Mask Shard #11", "Royal Waterways"],
+    Fungus1_36: ["Mask Shard #12", "Greenpath: Stone Sanctuary"],
+    Mines_32: ["Mask Shard #13", "Crystal Peak: Enraged Guardian"],
+    Fungus2_25: ["Mask Shard #14", "Deepnest: entrance from Fungal Wastes"],
+    Hive_04: ["Mask Shard #15", "The Hive"],
+    Room_Mansion: ["Mask Shard #16", "Resting Grounds: Delicate Flower"]
 };
 
 const HK_VESSELFRAGMENTS = {
-    slyVesselFrag1: "Vessel Fragment #1 (Sly: 550 Geo)",
-    slyVesselFrag2: "Vessel Fragment #2 (Sly: 900 Geo)",
-    dreamReward5: "Vessel Fragment #3 (Seer: 700 Essence)",
-    vesselFragStagNest: "Vessel Fragment #4 (Stag Nest)"
+    slyVesselFrag1: ["Vessel Fragment #1", "Sly: 550 Geo"],
+    slyVesselFrag2: ["Vessel Fragment #2", "Sly: 900 Geo"],
+    dreamReward5: ["Vessel Fragment #3", "Seer: 700 Essence"],
+    vesselFragStagNest: ["Vessel Fragment #4", "Stag Nest"]
 };
 
 // "Vessel Fragment" sceneData.persistentBoolItems.id
 const HK_VESSELFRAGMENTS_WORLD = {
-    Fungus1_13: "Vessel Fragment #5 (Greenpath: near Queen's Gardens exit)",
-    Crossroads_37: "Vessel Fragment #6 (Forgotten Crossroads: unlock City of Tears lift)",
-    Ruins2_09: "Vessel Fragment #7 (Above King's Station)",
-    Deepnest_38: "Vessel Fragment #8 (Deepnest: Goam platforming challenge)",
-    Abyss_04: "Vessel Fragment #9 (Ancient Basin Fountain: 3000 Geo)"
+    Fungus1_13: ["Vessel Fragment #5", "Greenpath: near Queen's Gardens exit"],
+    Crossroads_37: ["Vessel Fragment #6", "Forgotten Crossroads: unlock City of Tears lift"],
+    Ruins2_09: ["Vessel Fragment #7", "Above King's Station"],
+    Deepnest_38: ["Vessel Fragment #8", "Deepnest: Goam platforming challenge"],
+    Abyss_04: ["Vessel Fragment #9", "Ancient Basin Fountain: 3000 Geo"]
 };
 
 const HK_NAILARTS = {
-    hasUpwardSlash: "Great Slash",
-    hasDashSlash: "Dash Slash",
-    hasCyclone: "Cyclone Slash"
+    hasUpwardSlash: ["Great Slash", "Nailmaster Sheo: Greenpath"],
+    hasDashSlash: ["Dash Slash", "Nailmaster Oro: Kingdom's Edge, 800 Geo"],
+    hasCyclone: ["Cyclone Slash", " Nailmaster Mato: Howling Cliffs"],
 };
 
 const HK_NAILUPGRADES = [
-    "#0 Old Nail (Starting Weapon)",
-    "#1 Sharpened Nail (Nailsmith: 250 Geo)",
-    "#2 Channeled Nail (Nailsmith: 800 Geo + 1 Pale Ore)",
-    "#3 Coiled Nail (Nailsmith: 2000 Geo + 2 Pale Ore)",
-    "#4 Pure Nail (Nailsmith: 4000 Geo + 3 Pale Ore)"
+    ["#0 Old Nail", "Starting Weapon"],
+    ["#1 Sharpened Nail", "Nailsmith: 250 Geo"],
+    ["#2 Channeled Nail", "Nailsmith: 800 Geo + 1 Pale Ore"],
+    ["#3 Coiled Nail", "Nailsmith: 2000 Geo + 2 Pale Ore"],
+    ["#4 Pure Nail", "Nailsmith: 4000 Geo + 3 Pale Ore"]
 ];
 
 const HK_SPELLS = {
     fireballLevel: {
-        1: "Vengeful Spirit",
-        2: "Shade Soul"
+        1: ["Vengeful Spirit", "Forgotten Crossroads"],
+        2: ["Shade Soul", "City of Tears: Soul Sanctum + Elegant Key"],
     },
     quakeLevel: {
-        1: "Desolate Dive",
-        2: "Descending Dark"
+        1: ["Desolate Dive", "City of Tears: Soul Sanctum"],
+        2: ["Descending Dark", "Crystal Peak: Crystallised Mound"],
     },
     screamLevel: {
-        1: "Howling Wraiths",
-        2: "Abyss Shriek"
+        1: ["Howling Wraiths", "Fog Canyon: Overgrown Mound"],
+        2: ["Abyss Shriek", "The Abyss"],
     }
 };
 
 const HK_WARRIORDREAMS = {
-    galienDefeated: "Galien",
-    mumCaterpillarDefeated: "Marmu",
-    markothDefeated: "Markoth",
-    xeroDefeated: "Xero",
-    noEyesDefeated: "No Eyes",
-    elderHuDefeated: "Elder Hu",
-    aladarSlugDefeated: "Gorb"
+    xeroDefeated: ["Xero", "Resting Grounds"],
+    noEyesDefeated: ["No Eyes", "Greenpath: Stone Sanctuary"],
+    elderHuDefeated: ["Elder Hu", "Fungal Wastes"],
+    aladarSlugDefeated: ["Gorb", "Howling Cliffs"],
+    mumCaterpillarDefeated: ["Marmu", "Queen's Gardens"],
+    galienDefeated: ["Galien", "Deepnest"],
+    markothDefeated: ["Markoth", "Kingdom's Edge"],
 };
 
 const HK_GRIMMTROUPE = {
-    gotCharm_37: "Charm #37 Sprintmaster (Sly: 400 Geo + Shopkeeper's Key)",
-    gotCharm_38: "Charm #38 Dreamshield (Resting Grounds)",
-    gotCharm_39: "Charm #39 Weaversong (Deepnest: Weaver's Den)",
-    gotCharm_40: "Charm #40 Grimmchild / Carefree Melody (Dirtmouth)",
-    killedGrimm: "Troupe Leader Grimm (Dirtmouth)"
+    gotCharm_37: ["Charm #37 Sprintmaster", "Sly: 400 Geo + Shopkeeper's Key"],
+    gotCharm_38: ["Charm #38 Dreamshield", "Resting Grounds"],
+    gotCharm_39: ["Charm #39 Weaversong", "Deepnest: Weaver's Den"],
+    gotCharm_40: ["Charm #40 Grimmchild / Carefree Melody", "Dirtmouth"],
+    killedGrimm: ["Troupe Leader Grimm", "Dirtmouth"]
 };
 
 const HK_LIFEBLOOD = {
-    killedHiveKnight: "Hive Knight (The Hive)"
+    killedHiveKnight: ["Hive Knight", "The Hive"]
 };
 
 const HK_GODMASTER = {
-    hasGodfinder: "Godtuner (Junk Pit)"
+    hasGodfinder: ["Godtuner", "Junk Pit"]
 };
 
 const HK_GODMASTER_DOORS = [
-    "#1 Pantheon of the Master (Godhome)",
-    "#2 Pantheon of the Artist (Godhome)",
-    "#3 Pantheon of the Sage (Godhome)",
-    "#4 Pantheon of the Knight (Godhome)"
+    ["#1 Pantheon of the Master", "Godhome"],
+    ["#2 Pantheon of the Artist", "Godhome"],
+    ["#3 Pantheon of the Sage", "Godhome"],
+    ["#4 Pantheon of the Knight", "Godhome"]
 ];
 
 function HKCheckCompletion(jsonObject) {
@@ -333,7 +333,7 @@ function HKCheckCompletion(jsonObject) {
             for (let j = 0; j < HK_NAILUPGRADES_temp.length; j++) {
                 CurrentDataFalse();
                 if (HKPlayerData.nailSmithUpgrades >= j) CurrentDataTrue();
-                FillHTML(DIV_ID.nailUpgrades, HK_NAILUPGRADES_temp[j]);
+                FillHTML(DIV_ID.nailUpgrades, HK_NAILUPGRADES_temp[j][0], HK_NAILUPGRADES_temp[j][1]);
             }
         }
 
@@ -356,7 +356,7 @@ function HKCheckCompletion(jsonObject) {
         if (i === "grimmChildLevel") {
             if (HKPlayerData.grimmChildLevel >= 4) CurrentDataTrue();
             else CurrentDataFalse();
-            FillHTML(DIV_ID.grimmTroupe, "Nightmare King Grimm / Banishment");
+            FillHTML(DIV_ID.grimmTroupe, "Nightmare King Grimm / Banishment", "Dirtmouth or Howling Cliffs");
         }
 
         // ---------------- Lifeblood Content Pack --------------------- //
@@ -372,7 +372,8 @@ function HKCheckCompletion(jsonObject) {
                 CurrentDataFalse();
                 if (i === ("bossDoorStateTier" + j)) {
                     if (HKPlayerData["bossDoorStateTier" + j].completed === true) CurrentDataTrue();
-                    FillHTML(DIV_ID.godmaster, HK_GODMASTER_DOORS_temp.shift());
+                    FillHTML(DIV_ID.godmaster, HK_GODMASTER_DOORS_temp[0][0], HK_GODMASTER_DOORS_temp[0][1]);
+                    HK_GODMASTER_DOORS_temp.shift()
                 }
             }
         }
@@ -399,7 +400,9 @@ function CleanHTML(jsObj) {
 }
 
 function FillHTML(divId = "", textPrefix = "Unknown Completion Element: ", textSuffix = "") {
-    document.getElementById(divId).innerHTML += divStart + completionSymbol + strongStart + textPrefix + "" + strongEnd + currentData + textSuffix + divEnd;
+    let dash = "";
+    if (textSuffix.length) dash = " — ";
+    document.getElementById(divId).innerHTML += divStart + completionSymbol + "<b>" + textPrefix + "</b>" + dash + textSuffix + divEnd;
 }
 
 function CurrentDataTrue(textData = isCompleted) {
@@ -414,9 +417,9 @@ function CurrentDataFalse(textData = isNotCompleted) {
 
 function CheckIfDataTrue(divId, dataObject, playerData) {
     for (let i in dataObject) {
+        CurrentDataFalse();
         if (playerData[i] === true) CurrentDataTrue();
-        else CurrentDataFalse();
-        FillHTML(divId, dataObject[i]);
+        FillHTML(divId, dataObject[i][0], dataObject[i][1]);
         delete dataObject[i];
     }
 }
@@ -426,7 +429,7 @@ function CheckSpellLevel(divId, dataObject, playerData) {
         for (let j = 1; j <= 2; j++) {
             CurrentDataFalse();
             if (playerData[i] >= j) CurrentDataTrue();
-            FillHTML(divId, dataObject[i][j]);
+            FillHTML(divId, dataObject[i][j][0], dataObject[i][j][1]);
         }
         delete dataObject[i];
     }
@@ -436,7 +439,7 @@ function CheckWarriorDreams(divId, dataObject, playerData) {
     for (let i in dataObject) {
         if (playerData[i] > 0) CurrentDataTrue();
         else CurrentDataFalse();
-        FillHTML(divId, dataObject[i]);
+        FillHTML(divId, dataObject[i][0], dataObject[i][1]);
         delete dataObject[i];
     }
 }
@@ -447,14 +450,14 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
 
     // Order the items before displaying them
     for (let i in dataObject) {
-        orderedArray.push([i, dataObject[i], false]);
+        orderedArray.push([i, dataObject[i][0], dataObject[i][1], false]);
     }
 
     // Search for completed items
     for (let i = 0; i < worldData.length; i++) {
         for (let j = 0; j < size; j++) {
             if (worldData[i].id === idText && worldData[i].sceneName === orderedArray[j][0] && worldData[i].activated === true) {
-                orderedArray[j][2] = true;
+                orderedArray[j][3] = true;
             }
         }
     }
@@ -462,8 +465,8 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
     // Display the items as they were initially ordered
     for (let i = 0; i < size; i++) {
         CurrentDataFalse();
-        if (orderedArray[i][2] === true) CurrentDataTrue();
-        FillHTML(divId, orderedArray[i][1]);
+        if (orderedArray[i][3] === true) CurrentDataTrue();
+        FillHTML(divId, orderedArray[i][1], orderedArray[i][2]);
     }
 }
 
