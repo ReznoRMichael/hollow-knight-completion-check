@@ -19,9 +19,6 @@ var divEnd = [
     "</div>"
 ].join("\n");
 
-var strongStart = "";
-var strongEnd = "";
-
 // ---------------- Hollow Knight Data Constant Objects ----------------- //
 
 const DIV_ID = {
