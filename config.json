@@ -35,6 +35,12 @@
       "css": "ok-circled",
       "code": 59395,
       "src": "fontawesome"
+    },
+    {
+      "uid": "8663320a860b00f26e94d3d15c9ba99a",
+      "css": "clock",
+      "code": 59396,
+      "src": "entypo"
     }
   ]
 }

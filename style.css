@@ -1,15 +1,23 @@
 html {
-    font-size: 16px;
+    font-size: 17px;
+    font-weight: 300;
 }
 body {
     font-family: 'Heebo', sans-serif;
     margin: 0;
 }
+b {
+    font-weight: 500;
+}
+strong {
+    font-weight: 700;
+}
 #content {
-    max-width: 530px; 
+    max-width: 550px; 
     margin: 0 auto;
 }
 h1 {
+    font-size: 1.9rem;
     margin: 0.6rem 0;
 }
 #h1-title {
@@ -52,7 +60,7 @@ a,
 a:active,
 a:visited {
     color: black;
-    font-weight: bold;
+    font-weight: 700;
     text-decoration: none;
 }
 a:hover {

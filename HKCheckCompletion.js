@@ -48,11 +48,11 @@ const HK_BOSSES = {
     killedMawlek: "Brooding Mawlek (Forgotten Crossroads)",
     killedBurstingBouncer: "Gruz Mother (Forgotten Crossroads)",
     defeatedDungDefender: "Dung Defender (Royal Waterways)",
-    mageLordDefeated: "Soul Master (City of Tears)",
-    killedBlackKnight: "Watcher Knights (City of Tears)",
-    collectorDefeated: "The Collector (Tower of Love)",
+    mageLordDefeated: "Soul Master (City of Tears: Soul Sanctum)",
+    killedBlackKnight: "Watcher Knights (City of Tears: Watcher's Spire)",
+    collectorDefeated: "The Collector (City of Tears: Tower of Love)",
     defeatedMantisLords: "Mantis Lords (Mantis Village)",
-    defeatedMegaJelly: "Uumuu (Fog Canyon / Teacher's Archives)",
+    defeatedMegaJelly: "Uumuu (Fog Canyon: Teacher's Archives)",
     hornet1Defeated: "Hornet Protector (Greenpath)",
     hornetOutskirtsDefeated: "Hornet Sentinel (Kingdom's Edge)",
     killedInfectedKnight: "Broken Vessel (Ancient Basin)",
@@ -107,79 +107,78 @@ const HK_COLOSSEUM = {
 };
 
 const HK_DREAMERS = {
-    lurienDefeated: "Lurien the Watcher",
-    monomonDefeated: "Monomon the Teacher",
-    hegemolDefeated: "Herrah the Beast"
+    lurienDefeated: "Lurien the Watcher (City of Tears: Watcher's Spire)",
+    monomonDefeated: "Monomon the Teacher (Fog Canyon: Teacher's Archives)",
+    hegemolDefeated: "Herrah the Beast (Deepnest: Distant Village)"
 };
 
 const HK_DREAMNAIL = {
-    hasDreamNail: "Dream Nail acquired",
-    dreamNailUpgraded: "Awoken Dream Nail (Seer - 1800 Essence)",
-    mothDeparted: "Hear the Seer's final words (Seer - 2400 Essence)"
+    hasDreamNail: "Dream Nail acquired (Resting Grounds)",
+    dreamNailUpgraded: "Awoken Dream Nail (Seer: 1800 Essence)",
+    mothDeparted: "Hear the Seer's final words (Seer: 2400 Essence)"
 };
 
 const HK_EQUIPMENT = {
-    hasKingsBrand: "King's Brand",
-    hasSuperDash: "Crystal Heart",
-    hasWalljump: "Mantis Claw",
-    hasDoubleJump: "Monarch Wings",
-    hasAcidArmour: "Isma's Tear",
-    hasDash: "Mothwing Cloak",
-    hasShadowDash: "Shade Cloak"
+    hasDash: "Mothwing Cloak / Dash (Greenpath)",
+    hasWalljump: "Mantis Claw / Wall Jump (Mantis Village)",
+    hasSuperDash: "Crystal Heart / Super Dash (Crystal Peak)",
+    hasAcidArmour: "Isma's Tear / Acid Armour (Royal Waterways)",
+    hasDoubleJump: "Monarch Wings / Double Jump (Ancient Basin)",
+    hasKingsBrand: "King's Brand (Kingdom's Edge)",
+    hasShadowDash: "Shade Cloak / Shadow Dash (The Abyss)"
 };
 
 const HK_MASKSHARDS = {
-    slyShellFrag1: "Mask Shard #1 (Sly - 150 Geo)",
-    slyShellFrag2: "Mask Shard #2 (Sly - 500 Geo)",
-    slyShellFrag3: "Mask Shard #3 (Sly - 800 Geo)",
-    slyShellFrag4: "Mask Shard #4 (Sly - 1500 Geo)",
-    dreamReward7: "Mask Shard #5 (Seer - 1500 Essence)"
+    slyShellFrag1: "Mask Shard #1 (Sly: 150 Geo)",
+    slyShellFrag2: "Mask Shard #2 (Sly: 500 Geo)",
+    slyShellFrag3: "Mask Shard #3 (Sly: 800 Geo + Shopkeeper's Key)",
+    slyShellFrag4: "Mask Shard #4 (Sly: 1500 Geo + Shopkeeper's Key)",
+    dreamReward7: "Mask Shard #5 (Seer: 1500 Essence)"
 };
 
-// "Heart Piece" sceneData.persistentBoolItems[n].id
+// "Heart Piece" sceneData.persistentBoolItems.id
 const HK_MASKSHARDS_WORLD = {
-    Crossroads_13: "Mask Shard #6 (Forgotten Crossroads - below Hot Springs)",
-    Crossroads_09: "Mask Shard #7 (Forgotten Crossroads - Brooding Mawlek)",
-    Crossroads_38: "Mask Shard #8 (Grubfather - rescue 5 Grubs)",
-    Room_Bretta: "Mask Shard #9 (Dirtmouth - Bretta's Room)",
+    Crossroads_13: "Mask Shard #6 (Forgotten Crossroads: below Hot Springs)",
+    Crossroads_09: "Mask Shard #7 (Forgotten Crossroads: Brooding Mawlek)",
+    Crossroads_38: "Mask Shard #8 (Grubfather: rescue 5 Grubs)",
+    Room_Bretta: "Mask Shard #9 (Dirtmouth: Bretta's Room)",
     Fungus2_01: "Mask Shard #10 (Queen's Station)",
     Waterways_04b: "Mask Shard #11 (Royal Waterways)",
-    Fungus1_36: "Mask Shard #12 (Greenpath - Stone Sanctuary)",
-    Mines_32: "Mask Shard #13 (Crystal Peak - Enraged Guardian)",
-    Fungus2_25: "Mask Shard #14 (Deepnest - entrance from Fungal Wastes)",
+    Fungus1_36: "Mask Shard #12 (Greenpath: Stone Sanctuary)",
+    Mines_32: "Mask Shard #13 (Crystal Peak: Enraged Guardian)",
+    Fungus2_25: "Mask Shard #14 (Deepnest: entrance from Fungal Wastes)",
     Hive_04: "Mask Shard #15 (The Hive)",
-    Room_Mansion: "Mask Shard #16 (Resting Grounds - Delicate Flower)"
+    Room_Mansion: "Mask Shard #16 (Resting Grounds: Delicate Flower)"
 };
 
 const HK_VESSELFRAGMENTS = {
-    slyVesselFrag1: "Vessel Fragment #1 (Sly - 550 Geo)",
-    slyVesselFrag2: "Vessel Fragment #2 (Sly - 900 Geo)",
-    dreamReward5: "Vessel Fragment #3 (Seer - 700 Essence)",
+    slyVesselFrag1: "Vessel Fragment #1 (Sly: 550 Geo)",
+    slyVesselFrag2: "Vessel Fragment #2 (Sly: 900 Geo)",
+    dreamReward5: "Vessel Fragment #3 (Seer: 700 Essence)",
     vesselFragStagNest: "Vessel Fragment #4 (Stag Nest)"
 };
 
-// "Vessel Fragment" sceneData.persistentBoolItems[n].id
+// "Vessel Fragment" sceneData.persistentBoolItems.id
 const HK_VESSELFRAGMENTS_WORLD = {
-    Fungus1_13: "Vessel Fragment #5 (Greenpath - near Queen's Gardens exit)",
-    Crossroads_37: "Vessel Fragment #6 (Forgotten Crossroads - unlock lift in City of Tears)",
+    Fungus1_13: "Vessel Fragment #5 (Greenpath: near Queen's Gardens exit)",
+    Crossroads_37: "Vessel Fragment #6 (Forgotten Crossroads: unlock City of Tears lift)",
     Ruins2_09: "Vessel Fragment #7 (Above King's Station)",
-    Deepnest_38: "Vessel Fragment #8 (Deepnest - Goam platforming challenge)",
-    Abyss_04: "Vessel Fragment #9 (Ancient Basin Fountain - 3000 Geo)"
+    Deepnest_38: "Vessel Fragment #8 (Deepnest: Goam platforming challenge)",
+    Abyss_04: "Vessel Fragment #9 (Ancient Basin Fountain: 3000 Geo)"
 };
 
 const HK_NAILARTS = {
-    hasAllNailArts: "All Nail Arts",
     hasUpwardSlash: "Great Slash",
     hasDashSlash: "Dash Slash",
     hasCyclone: "Cyclone Slash"
 };
 
 const HK_NAILUPGRADES = [
-    "Old Nail",
-    "Sharpened Nail",
-    "Channeled Nail",
-    "Coiled Nail",
-    "Pure Nail"
+    "#0 Old Nail (Starting Weapon)",
+    "#1 Sharpened Nail (Nailsmith: 250 Geo)",
+    "#2 Channeled Nail (Nailsmith: 800 Geo + 1 Pale Ore)",
+    "#3 Coiled Nail (Nailsmith: 2000 Geo + 2 Pale Ore)",
+    "#4 Pure Nail (Nailsmith: 4000 Geo + 3 Pale Ore)"
 ];
 
 const HK_SPELLS = {
@@ -208,26 +207,26 @@ const HK_WARRIORDREAMS = {
 };
 
 const HK_GRIMMTROUPE = {
-    gotCharm_40: "Grimmchild / Carefree Melody",
-    gotCharm_38: "Dreamshield",
-    gotCharm_37: "Sprintmaster",
-    gotCharm_39: "Weaversong",
-    gotGrimmNotch: "Troupe Leader Grimm"
+    gotCharm_37: "Charm #37 Sprintmaster (Sly: 400 Geo + Shopkeeper's Key)",
+    gotCharm_38: "Charm #38 Dreamshield (Resting Grounds)",
+    gotCharm_39: "Charm #39 Weaversong (Deepnest: Weaver's Den)",
+    gotCharm_40: "Charm #40 Grimmchild / Carefree Melody (Dirtmouth)",
+    killedGrimm: "Troupe Leader Grimm (Dirtmouth)"
 };
 
 const HK_LIFEBLOOD = {
-    killedHiveKnight: "Hive Knight"
+    killedHiveKnight: "Hive Knight (The Hive)"
 };
 
 const HK_GODMASTER = {
-    hasGodfinder: "Godtuner"
+    hasGodfinder: "Godtuner (Junk Pit)"
 };
 
 const HK_GODMASTER_DOORS = [
-    "Pantheon of the Master",
-    "Pantheon of the Artist",
-    "Pantheon of the Sage",
-    "Pantheon of the Knight"
+    "#1 Pantheon of the Master (Godhome)",
+    "#2 Pantheon of the Artist (Godhome)",
+    "#3 Pantheon of the Sage (Godhome)",
+    "#4 Pantheon of the Knight (Godhome)"
 ];
 
 function HKCheckCompletion(jsonObject) {
@@ -272,23 +271,28 @@ function HKCheckCompletion(jsonObject) {
         // ---------------- Game Completion Status ----------------- //
 
         if (i === "completionPercentage") {
-            if (HKPlayerData.completionPercentage >= 112) CurrentDataTrue(HKPlayerData.completionPercentage);
-            else CurrentDataFalse(HKPlayerData.completionPercentage);
-            FillHTML(DIV_ID.intro, "Game Completion: ", " %");
+            if (HKPlayerData.completionPercentage >= 112) CurrentDataTrue();
+
+            let textFill = "Game Completion: <b>" + HKPlayerData.completionPercentage + " %</b> (out of 112 %)";
+            document.getElementById(DIV_ID.intro).innerHTML += divStart + completionSymbol + textFill + divEnd;
+
+            CurrentDataFalse();
         }
 
         // ---------------- Time Played ----------------- //
 
         if (i === "playTime") {
+            let icon = "<i class='icon-clock'></i>";
             let seconds = Math.floor(HKPlayerData.playTime);
             let minutes = Math.round((seconds / 60) % 60);
             let hours = Math.round(seconds / 3600);
             let sec = Math.round(seconds % 60);
+
             if (sec <= 10) sec = "0" + sec;
             if (minutes <= 10) minutes = "0" + minutes;
-            CurrentDataTrue();
-            FillHTML(DIV_ID.intro, "Time Played: " + hours + " h " + minutes + " min " + sec + " sec");
-            CurrentDataFalse();
+            let textFill = "Time Played: <b>" + hours + " h " + minutes + " min " + sec + " sec</b>";
+
+            document.getElementById(DIV_ID.intro).innerHTML += divStart + icon + textFill + divEnd;
         }
 
         // ---------------- Bosses (Base Game) --------------------- //
