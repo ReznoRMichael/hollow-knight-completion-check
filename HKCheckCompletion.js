@@ -42,9 +42,9 @@ const DIV_ID = {
 
 const HK_BOSSES = {
     falseKnightDefeated: ["False Knight", "Forgotten Crossroads"],
-    killedMawlek: ["Brooding Mawlek", "Forgotten Crossroads"],
     hornet1Defeated: ["Hornet Protector", "Greenpath"],
-    killedBurstingBouncer: ["Gruz Mother", "Forgotten Crossroads"],
+    killedBigFly: ["Gruz Mother", "Forgotten Crossroads"], // "Battle Scene" - "Crossroads_04"
+    killedMawlek: ["Brooding Mawlek", "Forgotten Crossroads"],
     defeatedDungDefender: ["Dung Defender", "Royal Waterways"],
     mageLordDefeated: ["Soul Master", "City of Tears: Soul Sanctum"],
     killedBlackKnight: ["Watcher Knights", "City of Tears: Watcher's Spire"],
@@ -180,7 +180,7 @@ const HK_NAILUPGRADES = [
 
 const HK_SPELLS = {
     fireballLevel: {
-        1: ["Vengeful Spirit", "Forgotten Crossroads"],
+        1: ["Vengeful Spirit", "Forgotten Crossroads: Ancestral Mound"],
         2: ["Shade Soul", "City of Tears: Soul Sanctum + Elegant Key"],
     },
     quakeLevel: {
