@@ -296,6 +296,8 @@ const HK_GODMASTER_DOORS = [
     ["#4 Pantheon of the Knight", "Godhome"]
 ];
 
+
+
 /**
  * Checks Hollow Knight game completion by analyzing the save file
  * @param {object} jsonObject Save data in JavaScript Object form
@@ -403,8 +405,7 @@ function HKCheckCompletion(jsonObject) {
 
         if (i === "nailSmithUpgrades") {
             for (let j = 0; j < HK_NAILUPGRADES_temp.length; j++) {
-                CurrentDataFalse();
-                if (HKPlayerData.nailSmithUpgrades >= j) CurrentDataTrue();
+                (HKPlayerData.nailSmithUpgrades >= j) ? CurrentDataTrue(): CurrentDataFalse();
                 FillHTML(DIV_ID.nailUpgrades, HK_NAILUPGRADES_temp[j][0], HK_NAILUPGRADES_temp[j][1]);
             }
         }
@@ -426,8 +427,7 @@ function HKCheckCompletion(jsonObject) {
         if (HK_GRIMMTROUPE_temp) CheckIfDataTrue(DIV_ID.grimmTroupe, HK_GRIMMTROUPE_temp, HKPlayerData);
 
         if (i === "grimmChildLevel") {
-            if (HKPlayerData.grimmChildLevel >= 4) CurrentDataTrue();
-            else CurrentDataFalse();
+            (HKPlayerData.grimmChildLevel >= 4) ? CurrentDataTrue(): CurrentDataFalse();
             FillHTML(DIV_ID.grimmTroupe, "Nightmare King Grimm / Banishment", "Dirtmouth or Howling Cliffs");
         }
 
@@ -532,8 +532,7 @@ function CurrentDataFalse(textData = isNotCompleted) {
  */
 function CheckIfDataTrue(divId, dataObject, playerData) {
     for (let i in dataObject) {
-        CurrentDataFalse();
-        if (playerData[i] === true) CurrentDataTrue();
+        (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
         FillHTML(divId, dataObject[i][0], dataObject[i][1]);
         delete dataObject[i];
     }
@@ -548,8 +547,7 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
 function CheckSpellLevel(divId, dataObject, playerData) {
     for (let i in dataObject) {
         for (let j = 1; j <= 2; j++) {
-            CurrentDataFalse();
-            if (playerData[i] >= j) CurrentDataTrue();
+            (playerData[i] >= j) ? CurrentDataTrue(): CurrentDataFalse();
             FillHTML(divId, dataObject[i][j][0], dataObject[i][j][1]);
         }
         delete dataObject[i];
@@ -564,8 +562,7 @@ function CheckSpellLevel(divId, dataObject, playerData) {
  */
 function CheckWarriorDreams(divId, dataObject, playerData) {
     for (let i in dataObject) {
-        if (playerData[i] > 0) CurrentDataTrue();
-        else CurrentDataFalse();
+        (playerData[i] > 0) ? CurrentDataTrue(): CurrentDataFalse();
         FillHTML(divId, dataObject[i][0], dataObject[i][1]);
         delete dataObject[i];
     }
@@ -654,92 +651,35 @@ function InitialHTMLPopulate(divIdObj) {
     textFill = "Game Completion: <b>0 %</b> (out of 112 %)";
     document.getElementById(divIdObj.intro.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 
-    // Bosses
-    for (let i in HK_BOSSES) {
-        FillHTML(divIdObj.bosses, HK_BOSSES[i][0], HK_BOSSES[i][1]);
-    }
-    for (let i in HK_BOSSES_WORLD) {
-        FillHTML(divIdObj.bosses, HK_BOSSES_WORLD[i][0], HK_BOSSES_WORLD[i][1]);
-    }
+    // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
+    let hkObjArray = [HK_BOSSES, HK_BOSSES_WORLD, HK_CHARMS, HK_EQUIPMENT, HK_NAILARTS, HK_MASKSHARDS, HK_MASKSHARDS_WORLD, HK_VESSELFRAGMENTS, HK_VESSELFRAGMENTS_WORLD, HK_DREAMERS, HK_COLOSSEUM, HK_DREAMNAIL, HK_WARRIORDREAMS, HK_GRIMMTROUPE, HK_LIFEBLOOD, HK_GODMASTER];
 
-    // Charms
-    for (let i in HK_CHARMS) {
-        FillHTML(divIdObj.charms, HK_CHARMS[i][0], HK_CHARMS[i][1]);
-    }
+    let divObjArray = [divIdObj.bosses, divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster];
 
-    // Equipment
-    for (let i in HK_EQUIPMENT) {
-        FillHTML(divIdObj.equipment, HK_EQUIPMENT[i][0], HK_EQUIPMENT[i][1]);
-    }
+    // Looped filling to reduce redundancy
+    do {
+        for (let parameter in hkObjArray[0]) {
+            FillHTML(divObjArray[0], hkObjArray[0][parameter][0], hkObjArray[0][parameter][1]);
+        }
+        divObjArray.shift();
+    } while (hkObjArray.shift());
 
-    // Nail Upgrades
+    // Nail Upgrades Misc
     for (let i = 0; i < HK_NAILUPGRADES.length; i++) {
         FillHTML(divIdObj.nailUpgrades, HK_NAILUPGRADES[i][0], HK_NAILUPGRADES[i][1]);
     }
 
-    // Nail Arts
-    for (let i in HK_NAILARTS) {
-        FillHTML(divIdObj.nailArts, HK_NAILARTS[i][0], HK_NAILARTS[i][1]);
-    }
-
-    // Spells
+    // Spells Misc
     for (let i in HK_SPELLS) {
         for (let j = 1; j <= 2; j++) {
             FillHTML(divIdObj.spells, HK_SPELLS[i][j][0], HK_SPELLS[i][j][1]);
         }
     }
 
-    // Mask Shards
-    for (let i in HK_MASKSHARDS) {
-        FillHTML(divIdObj.maskShards, HK_MASKSHARDS[i][0], HK_MASKSHARDS[i][1]);
-    }
-    for (let i in HK_MASKSHARDS_WORLD) {
-        FillHTML(divIdObj.maskShards, HK_MASKSHARDS_WORLD[i][0], HK_MASKSHARDS_WORLD[i][1]);
-    }
-
-    // Vessel Fragments
-    for (let i in HK_VESSELFRAGMENTS) {
-        FillHTML(divIdObj.vesselFragments, HK_VESSELFRAGMENTS[i][0], HK_VESSELFRAGMENTS[i][1]);
-    }
-    for (let i in HK_VESSELFRAGMENTS_WORLD) {
-        FillHTML(divIdObj.vesselFragments, HK_VESSELFRAGMENTS_WORLD[i][0], HK_VESSELFRAGMENTS_WORLD[i][1]);
-    }
-
-    // Dreamers
-    for (let i in HK_DREAMERS) {
-        FillHTML(divIdObj.dreamers, HK_DREAMERS[i][0], HK_DREAMERS[i][1]);
-    }
-
-    // Colosseum of Fools
-    for (let i in HK_COLOSSEUM) {
-        FillHTML(divIdObj.colosseum, HK_COLOSSEUM[i][0], HK_COLOSSEUM[i][1]);
-    }
-
-    // Dream Nail
-    for (let i in HK_DREAMNAIL) {
-        FillHTML(divIdObj.dreamNail, HK_DREAMNAIL[i][0], HK_DREAMNAIL[i][1]);
-    }
-
-    // Warrior Dreams
-    for (let i in HK_WARRIORDREAMS) {
-        FillHTML(divIdObj.warriorDreams, HK_WARRIORDREAMS[i][0], HK_WARRIORDREAMS[i][1]);
-    }
-
-    // Grimm Troupe
-    for (let i in HK_GRIMMTROUPE) {
-        FillHTML(divIdObj.grimmTroupe, HK_GRIMMTROUPE[i][0], HK_GRIMMTROUPE[i][1]);
-    }
+    // Nightmare King Grimm / Banishment Misc
     FillHTML(divIdObj.grimmTroupe, "Nightmare King Grimm / Banishment", "Dirtmouth or Howling Cliffs");
 
-    // Lifeblood
-    for (let i in HK_LIFEBLOOD) {
-        FillHTML(divIdObj.lifeblood, HK_LIFEBLOOD[i][0], HK_LIFEBLOOD[i][1]);
-    }
-
-    // Godmaster
-    for (let i in HK_GODMASTER) {
-        FillHTML(divIdObj.godmaster, HK_GODMASTER[i][0], HK_GODMASTER[i][1]);
-    }
+    // Godmaster Doors Misc
     for (let i = 0; i < ObjectLength(HK_GODMASTER_DOORS); i++) {
         FillHTML(divIdObj.godmaster, HK_GODMASTER_DOORS[i][0], HK_GODMASTER_DOORS[i][1]);
     }
