@@ -381,6 +381,8 @@ function HKCheckCompletion(jsonObject) {
 
     }
 
+    // Outside playerData checks
+
     // ---------------- Mask Shards (World Map) --------------------- //
 
     CheckWorldDataTrue(DIV_ID.maskShards, "Heart Piece", HK_MASKSHARDS_WORLD_temp, HKWorldItems);
@@ -518,14 +520,16 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
  * Pre-Cleans HTML. Reads contents inside text area and parses it to a JavaScript object. If not empty, runs HKCheckCompletion() to check data.
  */
 function HKReadTextArea() {
-    CleanHTML(DIV_ID);
+    InitialHTMLPopulate(DIV_ID);
 
     let textAreaId = "save-area";
     let contents = document.getElementById(textAreaId).value;
 
     if (contents.length) {
+
         let jsonObject = JSON.parse(contents);
-        HKCheckCompletion(jsonObject);
+        // console.log(jsonObject);
+        if (jsonObject.hasOwnProperty("playerData")) HKCheckCompletion(jsonObject);
         // console.log(jsonObject);
     }
 }
@@ -543,4 +547,109 @@ function ObjectLength(object) {
         }
     }
     return length;
+}
+
+/**
+ * Populate all HTML with given ID and their initial data set as false (used at DOM load)
+ * @param {object} divIdObj JavaScript Object containing all HTML IDs to populate
+ */
+function InitialHTMLPopulate(divIdObj) {
+    CleanHTML(divIdObj);
+    CurrentDataFalse();
+
+    // Play Time
+    let icon = "<i class='icon-clock'></i>";
+    let textFill = "Time Played: <b>0 h 00 min 00 sec</b>";
+    document.getElementById(divIdObj.intro).innerHTML += divStart + icon + textFill + divEnd;
+
+    // Game Completion
+    textFill = "Game Completion: <b>0 %</b> (out of 112 %)";
+    document.getElementById(divIdObj.intro).innerHTML += divStart + completionSymbol + textFill + divEnd;
+
+    // Bosses
+    for (let i in HK_BOSSES) {
+        FillHTML(divIdObj.bosses, HK_BOSSES[i][0], HK_BOSSES[i][1]);
+    }
+
+    // Charms
+    for (let i in HK_CHARMS) {
+        FillHTML(divIdObj.charms, HK_CHARMS[i][0], HK_CHARMS[i][1]);
+    }
+
+    // Equipment
+    for (let i in HK_EQUIPMENT) {
+        FillHTML(divIdObj.equipment, HK_EQUIPMENT[i][0], HK_EQUIPMENT[i][1]);
+    }
+
+    // Nail Upgrades
+    for (let i = 0; i < HK_NAILUPGRADES.length; i++) {
+        FillHTML(divIdObj.nailUpgrades, HK_NAILUPGRADES[i][0], HK_NAILUPGRADES[i][1]);
+    }
+
+    // Nail Arts
+    for (let i in HK_NAILARTS) {
+        FillHTML(divIdObj.nailArts, HK_NAILARTS[i][0], HK_NAILARTS[i][1]);
+    }
+
+    // Spells
+    for (let i in HK_SPELLS) {
+        for (let j = 1; j <= 2; j++) {
+            FillHTML(divIdObj.spells, HK_SPELLS[i][j][0], HK_SPELLS[i][j][1]);
+        }
+    }
+
+    // Mask Shards
+    for (let i in HK_MASKSHARDS) {
+        FillHTML(divIdObj.maskShards, HK_MASKSHARDS[i][0], HK_MASKSHARDS[i][1]);
+    }
+    for (let i in HK_MASKSHARDS_WORLD) {
+        FillHTML(divIdObj.maskShards, HK_MASKSHARDS_WORLD[i][0], HK_MASKSHARDS_WORLD[i][1]);
+    }
+
+    // Vessel Fragments
+    for (let i in HK_VESSELFRAGMENTS) {
+        FillHTML(divIdObj.vesselFragments, HK_VESSELFRAGMENTS[i][0], HK_VESSELFRAGMENTS[i][1]);
+    }
+    for (let i in HK_VESSELFRAGMENTS_WORLD) {
+        FillHTML(divIdObj.vesselFragments, HK_VESSELFRAGMENTS_WORLD[i][0], HK_VESSELFRAGMENTS_WORLD[i][1]);
+    }
+
+    // Dreamers
+    for (let i in HK_DREAMERS) {
+        FillHTML(divIdObj.dreamers, HK_DREAMERS[i][0], HK_DREAMERS[i][1]);
+    }
+
+    // Colosseum of Fools
+    for (let i in HK_COLOSSEUM) {
+        FillHTML(divIdObj.colosseum, HK_COLOSSEUM[i][0], HK_COLOSSEUM[i][1]);
+    }
+
+    // Dream Nail
+    for (let i in HK_DREAMNAIL) {
+        FillHTML(divIdObj.dreamNail, HK_DREAMNAIL[i][0], HK_DREAMNAIL[i][1]);
+    }
+
+    // Warrior Dreams
+    for (let i in HK_WARRIORDREAMS) {
+        FillHTML(divIdObj.warriorDreams, HK_WARRIORDREAMS[i][0], HK_WARRIORDREAMS[i][1]);
+    }
+
+    // Grimm Troupe
+    for (let i in HK_GRIMMTROUPE) {
+        FillHTML(divIdObj.grimmTroupe, HK_GRIMMTROUPE[i][0], HK_GRIMMTROUPE[i][1]);
+    }
+    FillHTML(divIdObj.grimmTroupe, "Nightmare King Grimm / Banishment", "Dirtmouth or Howling Cliffs");
+
+    // Lifeblood
+    for (let i in HK_LIFEBLOOD) {
+        FillHTML(divIdObj.lifeblood, HK_LIFEBLOOD[i][0], HK_LIFEBLOOD[i][1]);
+    }
+
+    // Godmaster
+    for (let i in HK_GODMASTER) {
+        FillHTML(divIdObj.godmaster, HK_GODMASTER[i][0], HK_GODMASTER[i][1]);
+    }
+    for (let i = 0; i < ObjectLength(HK_GODMASTER_DOORS); i++) {
+        FillHTML(divIdObj.godmaster, HK_GODMASTER_DOORS[i][0], HK_GODMASTER_DOORS[i][1]);
+    }
 }

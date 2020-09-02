@@ -109,12 +109,18 @@
 </div> <!-- end content -->
 
 </body>
+</html>
 
 <!-- Instantly load test file (Debugging script) -->
 <!-- <script src="loadJson.js"></script> -->
 
 <!-- Main script -->
 <script src="HKCheckCompletion.js"></script>
+
+<!-- Populate HTML at load (before img and css) -->
+<script>
+    document.addEventListener("DOMContentLoaded", InitialHTMLPopulate(DIV_ID));
+</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136831794-2"></script>
@@ -125,5 +131,3 @@
 
     gtag('config', 'UA-136831794-2');
 </script>
-
-</html>
