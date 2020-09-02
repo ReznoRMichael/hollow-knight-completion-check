@@ -226,6 +226,10 @@ const HK_GODMASTER_DOORS = [
     ["#4 Pantheon of the Knight", "Godhome"]
 ];
 
+/**
+ * Checks Hollow Knight game completion by analyzing the save file
+ * @param {object} jsonObject Save data in JavaScript Object form
+ */
 function HKCheckCompletion(jsonObject) {
 
     // start benchmark
@@ -390,28 +394,52 @@ function HKCheckCompletion(jsonObject) {
     console.info("HKCheckCompletion() time (ms) =", countEnd - countBegin);
 }
 
+/**
+ * Fills all HTML elements of ids from a given list with an empty string
+ * @param {object} jsObj List of ID names of HTML elements
+ */
 function CleanHTML(jsObj) {
     for (let i in jsObj) {
         document.getElementById(jsObj[i]).innerHTML = "";
     }
 }
 
+/**
+ * Generates and appends a new entry inside the HTML of a given ID
+ * @param {string} divId ID of the HTML element
+ * @param {string} textPrefix Main name of the entry
+ * @param {string} textSuffix Optional suffix after the main name
+ */
 function FillHTML(divId = "", textPrefix = "Unknown Completion Element: ", textSuffix = "") {
     let dash = "";
     if (textSuffix.length) dash = " — ";
     document.getElementById(divId).innerHTML += divStart + completionSymbol + "<b>" + textPrefix + "</b>" + dash + textSuffix + divEnd;
 }
 
+/**
+ * Switches global variables to a "completed" symbol
+ * @param {string} textData Optional completion name for use in HTML
+ */
 function CurrentDataTrue(textData = isCompleted) {
     completionSymbol = SYMBOL_TRUE;
     currentData = textData;
 }
 
+/**
+ * Switches global variables to a "not completed" symbol
+ * @param {string} textData Optional completion name for use in HTML
+ */
 function CurrentDataFalse(textData = isNotCompleted) {
     completionSymbol = SYMBOL_FALSE;
     currentData = textData;
 }
 
+/**
+ * Verifies if the data in a specific object is true or false, and appends HTML accordingly. Destructive function.
+ * @param {string} divId ID of the HTML element for data appending
+ * @param {object} dataObject Object containing data to be verified (use copy - data inside this object will be deleted)
+ * @param {object} playerData Reference/pointer to specific data where to search
+ */
 function CheckIfDataTrue(divId, dataObject, playerData) {
     for (let i in dataObject) {
         CurrentDataFalse();
@@ -421,6 +449,12 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
     }
 }
 
+/**
+ * Verifies if the data in a specific object is 0 or > 0, and appends HTML accordingly. Destructive function.
+ * @param {string} divId ID of the HTML element for data appending
+ * @param {object} dataObject Object containing data to be verified (use copy - data inside this object will be deleted)
+ * @param {object} playerData Reference/pointer to specific data where to search
+ */
 function CheckSpellLevel(divId, dataObject, playerData) {
     for (let i in dataObject) {
         for (let j = 1; j <= 2; j++) {
@@ -432,6 +466,12 @@ function CheckSpellLevel(divId, dataObject, playerData) {
     }
 }
 
+/**
+ * Verifies if the data in a specific object is 0 or > 0, and appends HTML accordingly. Destructive function.
+ * @param {string} divId ID of the HTML element for data appending
+ * @param {object} dataObject Object containing data to be verified (use copy - data inside this object will be deleted)
+ * @param {object} playerData Reference/pointer to specific data where to search
+ */
 function CheckWarriorDreams(divId, dataObject, playerData) {
     for (let i in dataObject) {
         if (playerData[i] > 0) CurrentDataTrue();
@@ -441,11 +481,18 @@ function CheckWarriorDreams(divId, dataObject, playerData) {
     }
 }
 
+/**
+ * Verifies if the data in a specific object are true or false, and appends HTML accordingly. Creates a copy of dataObject.
+ * @param {string} divId ID of the HTML element for data appending
+ * @param {string} idText Text string inside save data to search for
+ * @param {object} dataObject Object containing data to be verified
+ * @param {object} worldData Reference/pointer to specific data where to search
+ */
 function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
     let orderedArray = [];
     let size = ObjectLength(dataObject);
 
-    // Order the items before displaying them
+    // Order the items before displaying them (creates a copy of dataObject)
     for (let i in dataObject) {
         orderedArray.push([i, dataObject[i][0], dataObject[i][1], false]);
     }
@@ -467,6 +514,9 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
     }
 }
 
+/**
+ * Pre-Cleans HTML. Reads contents inside text area and parses it to a JavaScript object. If not empty, runs HKCheckCompletion() to check data.
+ */
 function HKReadTextArea() {
     CleanHTML(DIV_ID);
 
@@ -480,6 +530,11 @@ function HKReadTextArea() {
     }
 }
 
+/**
+ * Checks the length of a JavaScript Object like Array.length
+ * @param {object} object JavaScript Object
+ * @return {number} length of the Object
+ */
 function ObjectLength(object) {
     let length = 0;
     for (let key in object) {
