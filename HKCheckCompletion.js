@@ -41,10 +41,10 @@ const DIV_ID = {
 };
 
 const HK_BOSSES = {
-    falseKnightDefeated: ["False Knight", "Forgotten Crossroads"],
+    falseKnightDefeated: ["False Knight", "Forgotten Crossroads"], // "Battle Scene" - "Crossroads_10" ?
     hornet1Defeated: ["Hornet Protector", "Greenpath"],
-    killedBigFly: ["Gruz Mother", "Forgotten Crossroads"], // "Battle Scene" - "Crossroads_04"
-    killedMawlek: ["Brooding Mawlek", "Forgotten Crossroads"],
+    // killedBigFly: ["Gruz Mother", "Forgotten Crossroads"], // "Battle Scene" - "Crossroads_04"
+    // killedMawlek: ["Brooding Mawlek", "Forgotten Crossroads"], // "Battle Scene" - "Crossroads_09" ?
     defeatedDungDefender: ["Dung Defender", "Royal Waterways"],
     mageLordDefeated: ["Soul Master", "City of Tears: Soul Sanctum"],
     killedBlackKnight: ["Watcher Knights", "City of Tears: Watcher's Spire"],
@@ -53,8 +53,13 @@ const HK_BOSSES = {
     defeatedMegaJelly: ["Uumuu", "Fog Canyon: Teacher's Archives"],
     hornetOutskirtsDefeated: ["Hornet Sentinel", "Kingdom's Edge"],
     killedInfectedKnight: ["Broken Vessel", "Ancient Basin"],
-    killedMimicSpider: ["Nosk", "Deepnest"],
-    killedTraitorLord: ["Traitor Lord", "Queen's Gardens"]
+    killedMimicSpider: ["Nosk", "Deepnest"], // "Battle Scene" - "Deepnest_32" ?
+    killedTraitorLord: ["Traitor Lord", "Queen's Gardens"] // "Battle Scene" - "Fungus3_23" ?
+};
+
+const HK_BOSSES_WORLD = {
+    Crossroads_04: ["Gruz Mother", "Forgotten Crossroads"],
+    Crossroads_09: ["Brooding Mawlek", "Forgotten Crossroads"]
 };
 
 // reference: https://radiance.host/apidocs/Charms.html
@@ -240,6 +245,7 @@ function HKCheckCompletion(jsonObject) {
 
     // Shallow Clone const objects (used for destructive functions)
     let HK_BOSSES_temp = Object.assign({}, HK_BOSSES);
+    let HK_BOSSES_WORLD_temp = Object.assign({}, HK_BOSSES_WORLD);
     let HK_CHARMS_temp = Object.assign({}, HK_CHARMS);
     let HK_COLOSSEUM_temp = Object.assign({}, HK_COLOSSEUM);
     let HK_DREAMERS_temp = Object.assign({}, HK_DREAMERS);
@@ -382,6 +388,10 @@ function HKCheckCompletion(jsonObject) {
     }
 
     // Outside playerData checks
+
+    // ---------------- Gruz Mother and Mawlek (World Map) --------------------- //
+
+    CheckWorldDataTrue(DIV_ID.bosses, "Battle Scene", HK_BOSSES_WORLD_temp, HKWorldItems);
 
     // ---------------- Mask Shards (World Map) --------------------- //
 
@@ -569,6 +579,9 @@ function InitialHTMLPopulate(divIdObj) {
     // Bosses
     for (let i in HK_BOSSES) {
         FillHTML(divIdObj.bosses, HK_BOSSES[i][0], HK_BOSSES[i][1]);
+    }
+    for (let i in HK_BOSSES_WORLD) {
+        FillHTML(divIdObj.bosses, HK_BOSSES_WORLD[i][0], HK_BOSSES_WORLD[i][1]);
     }
 
     // Charms
