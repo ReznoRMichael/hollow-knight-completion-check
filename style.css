@@ -26,11 +26,36 @@ h1 {
 #save-area {
     width: 100%;
     height: calc(0.1 * 100vh);
-    margin: .5rem 0;
+    margin: .5rem 0 .3rem 0;
+    font-family: monospace;
 }
 #save-area-read {
-    margin: 0 auto;
-    display: block;
+    ;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button {
+    display: flex;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Heebo', sans-serif;
+    text-align: center;
+    background-color: #1e406c;
+    color: #e3ebf7;
+    border: 2px solid #122c4e;
+    padding: 0.3rem 1rem;
+    margin: 0 .5rem;
+}
+.button:hover {
+    background-color: #285188;
+    cursor: pointer;
+}
+.button:focus {
+    outline: 2px solid #529dff;
+    outline-offset: -2px;
 }
 h2 {
     margin: 0.6rem 0;

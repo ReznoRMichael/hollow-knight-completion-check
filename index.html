@@ -26,6 +26,7 @@
 <body>
 
     <!-- To do:
+        - Upload a save file directly (option) 
         - Calculate all % in all categories from save data
         - Single Pale Ore locations? (required for completion)
         - Single Keys/Pass locations? (required for completion)
@@ -45,7 +46,10 @@
 
     <div>
         <textarea name="save-area" id="save-area"></textarea>
-        <button id="save-area-read" onclick="HKReadTextArea();">Analyze</button>
+        <div class="buttons">
+            <button id="save-area-read" class="button" onclick="HKReadTextArea();">Analyze Text</button>
+            <!-- <button id="save-area-file" class="button" onclick="">Choose File</button> -->
+        </div>
     </div>
 
     <div style="margin-bottom: 20px;"></div>
