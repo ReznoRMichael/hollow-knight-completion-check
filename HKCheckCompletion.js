@@ -22,22 +22,86 @@ var divEnd = [
 // ---------------- Hollow Knight Data Constant Objects ----------------- //
 
 const DIV_ID = {
-    intro: "hk-intro",
-    bosses: "hk-bosses",
-    charms: "hk-charms",
-    colosseum: "hk-colosseum",
-    dreamers: "hk-dreamers",
-    dreamNail: "hk-dreamnail",
-    equipment: "hk-equipment",
-    maskShards: "hk-maskshards",
-    nailArts: "hk-nailarts",
-    nailUpgrades: "hk-nailupgrades",
-    spells: "hk-spells",
-    vesselFragments: "hk-vesselfragments",
-    warriorDreams: "hk-warriordreams",
-    grimmTroupe: "hk-grimmtroupe",
-    lifeblood: "hk-lifeblood",
-    godmaster: "hk-godmaster"
+    intro: {
+        h2: "Game Status",
+        id: "hk-intro",
+        maxPercent: 112
+    },
+    bosses: {
+        h2: "Bosses",
+        id: "hk-bosses",
+        maxPercent: 14
+    },
+    charms: {
+        h2: "Charms",
+        id: "hk-charms",
+        maxPercent: 36
+    },
+    equipment: {
+        h2: "Equipment",
+        id: "hk-equipment",
+        maxPercent: 14
+    },
+    nailUpgrades: {
+        h2: "Nail Upgrades",
+        id: "hk-nailupgrades",
+        maxPercent: 4
+    },
+    nailArts: {
+        h2: "Nail Arts",
+        id: "hk-nailarts",
+        maxPercent: 3
+    },
+    spells: {
+        h2: "Spells",
+        id: "hk-spells",
+        maxPercent: 6
+    },
+    maskShards: {
+        h2: "Mask Shards",
+        id: "hk-maskshards",
+        maxPercent: 4
+    },
+    vesselFragments: {
+        h2: "Vessel Fragments",
+        id: "hk-vesselfragments",
+        maxPercent: 3
+    },
+    dreamers: {
+        h2: "Dreamers",
+        id: "hk-dreamers",
+        maxPercent: 3
+    },
+    colosseum: {
+        h2: "Colosseum of Fools",
+        id: "hk-colosseum",
+        maxPercent: 3
+    },
+    dreamNail: {
+        h2: "Dream Nail and Essence",
+        id: "hk-dreamnail",
+        maxPercent: 3
+    },
+    warriorDreams: {
+        h2: "Warrior Dreams",
+        id: "hk-warriordreams",
+        maxPercent: 7
+    },
+    grimmTroupe: {
+        h2: "Grimm Troupe Content Pack",
+        id: "hk-grimmtroupe",
+        maxPercent: 6
+    },
+    lifeblood: {
+        h2: "Lifeblood Content Pack",
+        id: "hk-lifeblood",
+        maxPercent: 1
+    },
+    godmaster: {
+        h2: "Godmaster Content Pack",
+        id: "hk-godmaster",
+        maxPercent: 5
+    }
 };
 
 const HK_BOSSES = {
@@ -57,6 +121,7 @@ const HK_BOSSES = {
     killedTraitorLord: ["Traitor Lord", "Queen's Gardens"] // "Battle Scene" - "Fungus3_23" ?
 };
 
+// "Battle Scene" sceneData.persistentBoolItems.id
 const HK_BOSSES_WORLD = {
     Crossroads_04: ["Gruz Mother", "Forgotten Crossroads"],
     Crossroads_09: ["Brooding Mawlek", "Forgotten Crossroads"]
@@ -240,8 +305,8 @@ function HKCheckCompletion(jsonObject) {
     // start benchmark
     let countBegin = new Date();
 
-    // Pre-Cleaning all divs for safety
-    CleanHTML(DIV_ID);
+    // Pre-Cleaning and filling initial data
+    PrefillHTML(DIV_ID);
 
     // Shallow Clone const objects (used for destructive functions)
     let HK_BOSSES_temp = Object.assign({}, HK_BOSSES);
@@ -281,7 +346,7 @@ function HKCheckCompletion(jsonObject) {
             if (HKPlayerData.completionPercentage >= 112) CurrentDataTrue();
 
             let textFill = "Game Completion: <b>" + HKPlayerData.completionPercentage + " %</b> (out of 112 %)";
-            document.getElementById(DIV_ID.intro).innerHTML += divStart + completionSymbol + textFill + divEnd;
+            document.getElementById(DIV_ID.intro.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 
             CurrentDataFalse();
         }
@@ -299,7 +364,7 @@ function HKCheckCompletion(jsonObject) {
             if (minutes <= 10) minutes = "0" + minutes;
             let textFill = "Time Played: <b>" + hours + " h " + minutes + " min " + sec + " sec</b>";
 
-            document.getElementById(DIV_ID.intro).innerHTML += divStart + icon + textFill + divEnd;
+            document.getElementById(DIV_ID.intro.id).innerHTML += divStart + icon + textFill + divEnd;
         }
 
         // ---------------- Bosses (Base Game) --------------------- //
@@ -407,25 +472,38 @@ function HKCheckCompletion(jsonObject) {
 }
 
 /**
- * Fills all HTML elements of ids from a given list with an empty string
- * @param {object} jsObj List of ID names of HTML elements
+ * Cleans "generated" and fills all HTML elements of ids from a given list
+ * @param {object} jsObj Object with HTML data to fill
  */
-function CleanHTML(jsObj) {
+function PrefillHTML(jsObj) {
+    // Clean "generated" div
+    document.getElementById("generated").innerHTML = "";
+
+    let h2 = "";
+    let id = "";
+    let mp = "";
+
     for (let i in jsObj) {
-        document.getElementById(jsObj[i]).innerHTML = "";
+        h2 = jsObj[i].h2;
+        id = jsObj[i].id;
+        mp = " (" + jsObj[i].maxPercent + "%)";
+        if (i === "intro") mp = "";
+
+        document.getElementById("generated").innerHTML += "<h2>" + h2 + mp + "</h2>";
+        document.getElementById("generated").innerHTML += "<div id='" + id + "'>" + "</div>";
     }
 }
 
 /**
  * Generates and appends a new entry inside the HTML of a given ID
- * @param {string} divId ID of the HTML element
+ * @param {object} divId ID of the HTML element
  * @param {string} textPrefix Main name of the entry
  * @param {string} textSuffix Optional suffix after the main name
  */
-function FillHTML(divId = "", textPrefix = "Unknown Completion Element: ", textSuffix = "") {
+function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix = "") {
     let dash = "";
     if (textSuffix.length) dash = " — ";
-    document.getElementById(divId).innerHTML += divStart + completionSymbol + "<b>" + textPrefix + "</b>" + dash + textSuffix + divEnd;
+    document.getElementById(divId.id).innerHTML += divStart + completionSymbol + "<b>" + textPrefix + "</b>" + dash + textSuffix + divEnd;
 }
 
 /**
@@ -564,17 +642,17 @@ function ObjectLength(object) {
  * @param {object} divIdObj JavaScript Object containing all HTML IDs to populate
  */
 function InitialHTMLPopulate(divIdObj) {
-    CleanHTML(divIdObj);
+    PrefillHTML(divIdObj);
     CurrentDataFalse();
 
     // Play Time
     let icon = "<i class='icon-clock'></i>";
     let textFill = "Time Played: <b>0 h 00 min 00 sec</b>";
-    document.getElementById(divIdObj.intro).innerHTML += divStart + icon + textFill + divEnd;
+    document.getElementById(divIdObj.intro.id).innerHTML += divStart + icon + textFill + divEnd;
 
     // Game Completion
     textFill = "Game Completion: <b>0 %</b> (out of 112 %)";
-    document.getElementById(divIdObj.intro).innerHTML += divStart + completionSymbol + textFill + divEnd;
+    document.getElementById(divIdObj.intro.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 
     // Bosses
     for (let i in HK_BOSSES) {

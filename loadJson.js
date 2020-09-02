@@ -1,5 +1,15 @@
 var jsonObj = "";
-var fileName = ["save/reznor88banish.json", "save/reznor112grimm.json", "save/reznor100.json", "save/reznor0.json"];
+var fileName = [
+    "reznor0.json",
+    "reznor1beforegruz.json",
+    "reznor2aftergruz.json",
+    "reznor5hornet.json",
+    "reznor29ss.json",
+    "reznor88banish.json",
+    "reznor100.json",
+    "reznor103ss.json",
+    "reznor112grimm.json",
+];
 
 /**
  * Reads the .json file and parses it to a JS object (jsonObj).
@@ -31,7 +41,7 @@ function loadJSON(filename, callback) {
     xobj.send(null);
 }
 
-loadJSON(fileName[3],
+loadJSON("save/" + fileName[5],
     function JSONparse(response) {
         // Parse JSON string into object
         jsonObj = JSON.parse(response);
