@@ -67,16 +67,6 @@ const DIV_ID = {
         id: "hk-vesselfragments",
         maxPercent: 3
     },
-    dreamers: {
-        h2: "Dreamers",
-        id: "hk-dreamers",
-        maxPercent: 3
-    },
-    colosseum: {
-        h2: "Colosseum of Fools",
-        id: "hk-colosseum",
-        maxPercent: 3
-    },
     dreamNail: {
         h2: "Dream Nail and Essence",
         id: "hk-dreamnail",
@@ -86,6 +76,16 @@ const DIV_ID = {
         h2: "Warrior Dreams",
         id: "hk-warriordreams",
         maxPercent: 7
+    },
+    dreamers: {
+        h2: "Dreamers",
+        id: "hk-dreamers",
+        maxPercent: 3
+    },
+    colosseum: {
+        h2: "Colosseum of Fools",
+        id: "hk-colosseum",
+        maxPercent: 3
     },
     grimmTroupe: {
         h2: "Grimm Troupe Content Pack",
@@ -107,8 +107,6 @@ const DIV_ID = {
 const HK_BOSSES = {
     falseKnightDefeated: ["False Knight", "Forgotten Crossroads"], // "Battle Scene" - "Crossroads_10" ?
     hornet1Defeated: ["Hornet Protector", "Greenpath"],
-    // killedBigFly: ["Gruz Mother", "Forgotten Crossroads"], // "Battle Scene" - "Crossroads_04"
-    // killedMawlek: ["Brooding Mawlek", "Forgotten Crossroads"], // "Battle Scene" - "Crossroads_09" ?
     defeatedDungDefender: ["Dung Defender", "Royal Waterways"],
     mageLordDefeated: ["Soul Master", "City of Tears: Soul Sanctum"],
     killedBlackKnight: ["Watcher Knights", "City of Tears: Watcher's Spire"],
@@ -123,8 +121,8 @@ const HK_BOSSES = {
 
 // "Battle Scene" sceneData.persistentBoolItems.id
 const HK_BOSSES_WORLD = {
-    Crossroads_04: ["Gruz Mother", "Forgotten Crossroads"],
-    Crossroads_09: ["Brooding Mawlek", "Forgotten Crossroads"]
+    Crossroads_04: ["Gruz Mother", "Forgotten Crossroads"], // killedBigFly
+    Crossroads_09: ["Brooding Mawlek", "Forgotten Crossroads"] // killedMawlek
 };
 
 // reference: https://radiance.host/apidocs/Charms.html
@@ -648,12 +646,13 @@ function InitialHTMLPopulate(divIdObj) {
     document.getElementById(divIdObj.intro.id).innerHTML += divStart + icon + textFill + divEnd;
 
     // Game Completion
-    textFill = "Game Completion: <b>0 %</b> (out of 112 %)";
+    textFill = "Game Completion: <b>0 %</b> (out of " + divIdObj.intro.maxPercent + " %)";
     document.getElementById(divIdObj.intro.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 
     // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
     let hkObjArray = [HK_BOSSES, HK_BOSSES_WORLD, HK_CHARMS, HK_EQUIPMENT, HK_NAILARTS, HK_MASKSHARDS, HK_MASKSHARDS_WORLD, HK_VESSELFRAGMENTS, HK_VESSELFRAGMENTS_WORLD, HK_DREAMERS, HK_COLOSSEUM, HK_DREAMNAIL, HK_WARRIORDREAMS, HK_GRIMMTROUPE, HK_LIFEBLOOD, HK_GODMASTER];
 
+    // duplicates and order important - must be the same as in hkObjArray[]
     let divObjArray = [divIdObj.bosses, divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster];
 
     // Looped filling to reduce redundancy
