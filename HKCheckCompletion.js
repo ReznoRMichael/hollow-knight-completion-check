@@ -27,6 +27,10 @@ const DIV_ID = {
         id: "hk-intro",
         maxPercent: 112
     },
+    hints: {
+        h2: "My old friend Elderbug once told me about...",
+        id: "hk-hints",
+    },
     bosses: {
         h2: "Bosses",
         id: "hk-bosses",
@@ -102,6 +106,28 @@ const DIV_ID = {
         id: "hk-godmaster",
         maxPercent: 5
     }
+};
+
+const HK_HINTS = {
+    fireballLevel: ["", "...some powerful spell learned below the town of Dirtmouth"],
+    hornet1Defeated: ["", "...a skilled protector guarding ruins in a lush green forest"],
+    hasDash: ["", "...some old cloak lying deep in the lush green forest"],
+    hasWalljump: ["", "...some sharp claw lying forgotten somewhere amidst the insect village"],
+    Crossroads_04: ["", "...a mother sleeping peacefully below the town of Dirtmouth"],
+    slyRescued: ["", "...a fellow town bug who seems to be lost somewhere in the crossroads"],
+    hasLantern: ["", "...a precious item able to carry some light to even the darkest places"],
+    hasSuperDash: ["", "...some powerful crystal beating somewhere deep inside the mines"],
+    hasDreamNail: ["", "...some weapon not from this world only found where the souls can peacefully rest"],
+    killedInfectedKnight: ["", "...a shattered corpse forgotten in a windy cave in the depths below the city"],
+    hasDoubleJump: ["", "...something incredibly light dropped by a monarchfly in the depths below the city"],
+    killedBlackKnight: ["", "...discarded shells of black guards lying on the floor of a high spire"],
+    lurienDefeated: ["", "...a dreamer sleeping somewhere at the top of a high spire"],
+    dungDefenderOrHornet2: ["", "...a skilled combatant living at the heart of the sewers or watching over a shell amidst ash falling from the sky"],
+    ismaTearOrShadeCloak: ["", "...something precious in a grove accessed from the waterways or a massive door guarding a cloak behind the darkness"],
+    defeatedMegaJelly: ["", "...an intelligent being floating inside hidden archives behind the fog"],
+    monomonDefeated: ["", "...a dreamer sleeping somewhere hidden in a foggy area"],
+    hegemolDefeated: ["", "...a dreamer sleeping near a spider nest area"],
+    killedHollowKnight: ["", "...a disturbance inside a black temple"],
 };
 
 const HK_BOSSES = {
@@ -309,6 +335,7 @@ function HKCheckCompletion(jsonObject) {
     PrefillHTML(DIV_ID);
 
     // Shallow Clone const objects (used for destructive functions)
+    let HK_HINTS_temp = Object.assign({}, HK_HINTS);
     let HK_BOSSES_temp = Object.assign({}, HK_BOSSES);
     let HK_BOSSES_WORLD_temp = Object.assign({}, HK_BOSSES_WORLD);
     let HK_CHARMS_temp = Object.assign({}, HK_CHARMS);
@@ -366,6 +393,10 @@ function HKCheckCompletion(jsonObject) {
 
             document.getElementById(DIV_ID.intro.id).innerHTML += divStart + icon + textFill + divEnd;
         }
+
+        // ---------------- Hints --------------------- //
+
+        // function CheckHints()
 
         // ---------------- Bosses (Base Game) --------------------- //
 
@@ -448,7 +479,7 @@ function HKCheckCompletion(jsonObject) {
             }
         }
 
-    }
+    } // end for (let i in HKPlayerData)
 
     // Outside playerData checks
 
@@ -485,10 +516,10 @@ function PrefillHTML(jsObj) {
         h2 = jsObj[i].h2;
         id = jsObj[i].id;
         mp = " (" + jsObj[i].maxPercent + "%)";
-        if (i === "intro") mp = "";
+        if (!jsObj[i].hasOwnProperty("maxPercent") || i === "intro") mp = "";
 
-        document.getElementById("generated").innerHTML += "<h2>" + h2 + mp + "</h2>";
         document.getElementById("generated").innerHTML += "<div id='" + id + "'>" + "</div>";
+        document.getElementById(id).innerHTML += "<h2>" + h2 + mp + "</h2>";
     }
 }
 
@@ -500,7 +531,7 @@ function PrefillHTML(jsObj) {
  */
 function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix = "") {
     let dash = "";
-    if (textSuffix.length) dash = " — ";
+    if (textSuffix.length && textPrefix.length) dash = " — ";
     document.getElementById(divId.id).innerHTML += divStart + completionSymbol + "<b>" + textPrefix + "</b>" + dash + textSuffix + divEnd;
 }
 
@@ -650,10 +681,10 @@ function InitialHTMLPopulate(divIdObj) {
     document.getElementById(divIdObj.intro.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 
     // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
-    let hkObjArray = [HK_BOSSES, HK_BOSSES_WORLD, HK_CHARMS, HK_EQUIPMENT, HK_NAILARTS, HK_MASKSHARDS, HK_MASKSHARDS_WORLD, HK_VESSELFRAGMENTS, HK_VESSELFRAGMENTS_WORLD, HK_DREAMERS, HK_COLOSSEUM, HK_DREAMNAIL, HK_WARRIORDREAMS, HK_GRIMMTROUPE, HK_LIFEBLOOD, HK_GODMASTER];
+    let hkObjArray = [HK_HINTS, HK_BOSSES, HK_BOSSES_WORLD, HK_CHARMS, HK_EQUIPMENT, HK_NAILARTS, HK_MASKSHARDS, HK_MASKSHARDS_WORLD, HK_VESSELFRAGMENTS, HK_VESSELFRAGMENTS_WORLD, HK_DREAMERS, HK_COLOSSEUM, HK_DREAMNAIL, HK_WARRIORDREAMS, HK_GRIMMTROUPE, HK_LIFEBLOOD, HK_GODMASTER];
 
     // duplicates and order important - must be the same as in hkObjArray[]
-    let divObjArray = [divIdObj.bosses, divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster];
+    let divObjArray = [divIdObj.hints, divIdObj.bosses, divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster];
 
     // Looped filling to reduce redundancy
     do {
@@ -681,5 +712,31 @@ function InitialHTMLPopulate(divIdObj) {
     // Godmaster Doors Misc
     for (let i = 0; i < ObjectLength(HK_GODMASTER_DOORS); i++) {
         FillHTML(divIdObj.godmaster, HK_GODMASTER_DOORS[i][0], HK_GODMASTER_DOORS[i][1]);
+    }
+}
+
+function CheckboxHintsToggle(param) {
+    let checkboxId = document.getElementById("checkbox-hints");
+
+    switch (param) {
+        case "hide":
+            document.getElementById("hk-hints").setAttribute("style", "display: none;");
+            checkboxId.value = "hints-off";
+            checkboxId.checked = false;
+            break;
+        case "show":
+            document.getElementById("hk-hints").setAttribute("style", "display: block;");
+            checkboxId.value = "hints-on";
+            checkboxId.checked = true;
+            break;
+        default:
+            if (checkboxId.checked !== true) {
+                document.getElementById("hk-hints").setAttribute("style", "display: none;");
+                checkboxId.value = "hints-off";
+            } else {
+                document.getElementById("hk-hints").setAttribute("style", "display: block;");
+                checkboxId.value = "hints-on";
+            }
+            break;
     }
 }

@@ -25,10 +25,13 @@
 
     <!-- To do:
         - Upload a save file directly (option) 
+        - Hide/Show locations checkbox (show = default)
+        - Hide/Show hints checkbox (hide = default)
         - Calculate all % in all categories from save data
         - Single Pale Ore locations? (required for completion)
         - Single Keys/Pass locations? (required for completion)
         - Spoiler-free hints where to go next? (ala Elderbug)
+        - Show hints only if not yet killed Hollow Knight
     -->
 
 <div id="content">
@@ -49,6 +52,13 @@
         </div>
     </div>
 
+    <div>
+        <label for="checkbox-hints">
+            <input type="checkbox" name="checkboxes" id="checkbox-hints" value="hints-off" onclick="CheckboxHintsToggle();">
+            Show Hints
+        </label>
+    </div>
+
     <div style="margin-bottom: 20px;"></div>
 
     <div id="generated"></div>
@@ -66,7 +76,7 @@
 </html>
 
 <!-- Instantly load test file (Debugging script) -->
-<!-- <script src="loadJson.js"></script> -->
+<script src="loadJson.js"></script>
 
 <!-- Main script -->
 <script src="HKCheckCompletion.js"></script>
