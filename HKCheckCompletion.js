@@ -109,15 +109,15 @@ const DIV_ID = {
 };
 
 const HK_HINTS = {
-    fireballLevel: ["", "...some powerful spell learned below the town of Dirtmouth"],
+    fireballLevel: ["", "...a powerful spell learned below the town of Dirtmouth"],
     hornet1Defeated: ["", "...a skilled protector guarding ruins in a lush green forest"],
-    hasDash: ["", "...some old cloak lying deep in the lush green forest"],
-    hasWalljump: ["", "...some sharp claw lying forgotten somewhere amidst the insect village"],
+    hasDash: ["", "...an old cloak lying on a green path by a broken shell"],
+    hasWalljump: ["", "...a sharp claw lying forgotten somewhere amidst the insect village"],
     Crossroads_04: ["", "...a mother sleeping peacefully below the town of Dirtmouth"],
     slyRescued: ["", "...a fellow town bug who seems to be lost somewhere in the crossroads"],
     hasLantern: ["", "...a precious item able to carry some light to even the darkest places"],
     hasSuperDash: ["", "...some powerful crystal beating somewhere deep inside the mines"],
-    hasDreamNail: ["", "...some weapon not from this world only found where the souls can peacefully rest"],
+    hasDreamNail: ["", "...a weapon from a dream world only found where the souls can peacefully rest"],
     killedInfectedKnight: ["", "...a shattered corpse forgotten in a windy cave in the depths below the city"],
     hasDoubleJump: ["", "...something incredibly light dropped by a monarchfly in the depths below the city"],
     killedBlackKnight: ["", "...discarded shells of black guards lying on the floor of a high spire"],
@@ -639,7 +639,7 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
 
 function CheckHintsTrue(divId, dataObject, playerData, worldData) {
 
-    let initialSize = document.getElementById(divId.id).innerHTML.length;
+    let hollowKnightDefeated = false;
 
     for (let i in dataObject) {
         CurrentDataFalse();
@@ -647,6 +647,9 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
         for (let j in playerData) {
             if (i === j) {
                 if (playerData[i] === true) {
+                    if (i === "killedHollowKnight") {
+                        hollowKnightDefeated = true;
+                    }
                     CurrentDataTrue();
                     // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
                     delete dataObject[i];
@@ -685,25 +688,22 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
 
         if (i === "dungDefenderOrHornet2") {
             for (let k in playerData) {
-                if (k === "defeatedDungDefender") {
-                    if (playerData[k] === true) {
-                        CurrentDataTrue();
-                        // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                        delete dataObject[i];
-                        break;
-                    }
-                } else if (k === "hornetOutskirtsDefeated") {
-                    if (playerData[k] === true) {
-                        CurrentDataTrue();
-                        // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                        delete dataObject[i];
-                        break;
-                    } else {
-                        CurrentDataFalse();
-                        FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                        delete dataObject[i];
-                        break;
-                    }
+                if (k === "defeatedDungDefender" && playerData[k] === true) {
+                    CurrentDataTrue();
+                    // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                    delete dataObject[i];
+                    break;
+                } else if (k === "hornetOutskirtsDefeated" && playerData[k] === true) {
+                    CurrentDataTrue();
+                    // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                    delete dataObject[i];
+                    break;
+                } else if ((k === "defeatedDungDefender" && playerData[k] === false)
+                    && (k === "hornetOutskirtsDefeated" && playerData[k] === false)) {
+                    CurrentDataFalse();
+                    FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                    delete dataObject[i];
+                    break;
                 }
             }
         }
@@ -749,10 +749,8 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
         }
     } // end for (let i in dataObject)
 
-    let afterSize = document.getElementById(divId.id).innerHTML.length;
-
-    if (afterSize === initialSize) {
-        FillHTML(divId, "", "...a successful player who doesn't need these hints anymore");
+    if (hollowKnightDefeated) {
+        FillHTML(divId, "", "...a successful Knight who doesn't need hints anymore");
     }
 }
 

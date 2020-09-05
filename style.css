@@ -1,3 +1,6 @@
+:root {
+    --rt-main: #1e406c;
+}
 html {
     font-size: 17px;
     font-weight: 300;
@@ -99,4 +102,105 @@ a:hover {
 }
 .icon-ok-squared {
     color: #16c60c;
+}
+.radio, .checkbox
+{
+    position: relative;
+    display: block;
+    left: -40px;
+    padding: 4px;
+    margin-left: 10px;
+}
+input[type="checkbox"],
+input[type="radio"]
+{
+    margin-right: 10px;
+}
+.radio-label,
+.checkbox-label
+{
+    display: block;
+    position: relative;
+    padding: 0px 0px 0px 35px;
+    cursor: pointer;
+    font-size: 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: max-content;
+}
+.radiomark,
+.checkmark
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #c1c8d1;
+    border: 1px solid #1e406c;
+    border: 1px solid var(--rt-main);
+}
+.radiomark { border-radius: 50%; }
+
+/* Hide the browser's default checkbox */
+.radio-label input,
+.checkbox-label input
+{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+/* On mouse-over change background color */
+.radio-label:hover input ~ .radiomark,
+.checkbox-label:hover input ~ .checkmark
+{
+    background-color: #e1e6ee;
+}
+/* When the checkbox is checked change background color */
+.radio-label input:checked ~ .radiomark,
+.checkbox-label input:checked ~ .checkmark
+{
+    background-color: #1e406c;
+    background-color: var(--rt-main);
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.radiomark:after,
+.checkmark:after
+{
+    content: "";
+    position: absolute;
+    display: none;
+}
+/* Show the checkmark when checked */
+.radio-label input:checked ~ .radiomark:after,
+.checkbox-label input:checked ~ .checkmark:after
+{
+    display: block;
+}
+/* Style the checkmark/indicator */
+.checkbox-label .checkmark:after
+{
+    left: 7px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid #e3ebf7;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/* Style the checkmark/indicator */
+.radio-label .radiomark:after
+{
+    top: 7px;
+    left: 7px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #000;
 }
