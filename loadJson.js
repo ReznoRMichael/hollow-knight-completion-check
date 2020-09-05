@@ -5,6 +5,7 @@ var fileName = [
     "reznor2aftergruz.json",
     "reznor5hornet.json",
     "reznor29ss.json",
+    "ext48.json",
     "reznor88banish.json",
     "reznor100.json",
     "reznor103ss.json",

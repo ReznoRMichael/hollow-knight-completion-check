@@ -331,6 +331,9 @@ function HKCheckCompletion(jsonObject) {
     // start benchmark
     let countBegin = new Date();
 
+    // Always hide and uncheck the Hints checkbox by default, prevents wrong checkbox behaviour
+    CheckboxHintsToggle("hide");
+
     // Pre-Cleaning and filling initial data
     PrefillHTML(DIV_ID);
 
@@ -481,6 +484,10 @@ function HKCheckCompletion(jsonObject) {
 
     } // end for (let i in HKPlayerData)
 
+    // ---------------- Hints --------------------- //
+
+    CheckHintsTrue(DIV_ID.hints, HK_HINTS_temp, HKPlayerData, HKWorldItems);
+
     // Outside playerData checks
 
     // ---------------- Gruz Mother and Mawlek (World Map) --------------------- //
@@ -614,7 +621,7 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
     }
 
     // Search for completed items and mark them for display
-    for (let i = 0; i < worldData.length; i++) {
+    for (let i = 0, length = worldData.length; i < length; i++) {
         for (let j = 0; j < size; j++) {
             if (worldData[i].id === idText && worldData[i].sceneName === orderedArray[j][0] && worldData[i].activated === true) {
                 orderedArray[j][3] = true;
@@ -627,6 +634,125 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
         CurrentDataFalse();
         if (orderedArray[i][3] === true) CurrentDataTrue();
         FillHTML(divId, orderedArray[i][1], orderedArray[i][2]);
+    }
+}
+
+function CheckHintsTrue(divId, dataObject, playerData, worldData) {
+
+    let initialSize = document.getElementById(divId.id).innerHTML.length;
+
+    for (let i in dataObject) {
+        CurrentDataFalse();
+
+        for (let j in playerData) {
+            if (i === j) {
+                if (playerData[i] === true) {
+                    CurrentDataTrue();
+                    // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                    delete dataObject[i];
+                } else if (i === "fireballLevel") {
+                    if (playerData[i] >= 1) {
+                        CurrentDataTrue();
+                        // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                        delete dataObject[i];
+                    } else {
+                        CurrentDataFalse();
+                        FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                        delete dataObject[i];
+                    }
+                } else {
+                    CurrentDataFalse();
+                    FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                    delete dataObject[i];
+                }
+            }
+        }
+
+        if (i === "Crossroads_04") {
+            for (let k = 0, length = worldData.length; k < length; k++) {
+                if (worldData[k].id === "Battle Scene" && worldData[k].sceneName === "Crossroads_04" && worldData[k].activated === true) {
+                    CurrentDataTrue();
+                    // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                    delete dataObject[i];
+                    break;
+                }
+            }
+            if (completionSymbol === SYMBOL_FALSE) {
+                FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                delete dataObject[i];
+            }
+        }
+
+        if (i === "dungDefenderOrHornet2") {
+            for (let k in playerData) {
+                if (k === "defeatedDungDefender") {
+                    if (playerData[k] === true) {
+                        CurrentDataTrue();
+                        // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                        delete dataObject[i];
+                        break;
+                    }
+                } else if (k === "hornetOutskirtsDefeated") {
+                    if (playerData[k] === true) {
+                        CurrentDataTrue();
+                        // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                        delete dataObject[i];
+                        break;
+                    } else {
+                        CurrentDataFalse();
+                        FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                        delete dataObject[i];
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (i === "ismaTearOrShadeCloak") {
+            for (let k in playerData) {
+                if (k === "hasAcidArmour") {
+                    if (playerData[k] === true) {
+                        CurrentDataTrue();
+                        // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                        delete dataObject[i];
+                        break;
+                    }
+                } else if (k === "hasKingsBrand") {
+                    if (playerData[k] === true) {
+                        for (let l in playerData) {
+                            if (l === "hasShadowDash") {
+                                if (playerData[l] === true) {
+                                    CurrentDataTrue();
+                                    // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                                    delete dataObject[i];
+                                    break;
+                                } else {
+                                    CurrentDataFalse();
+                                    FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                                    delete dataObject[i];
+                                    break;
+                                }
+                            }
+                        }
+                    } else {
+                        CurrentDataFalse();
+                        FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                        delete dataObject[i];
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (completionSymbol === SYMBOL_FALSE) {
+            break;
+        }
+    } // end for (let i in dataObject)
+
+    let afterSize = document.getElementById(divId.id).innerHTML.length;
+
+    if (afterSize === initialSize) {
+        FillHTML(divId, "", "...a successful player who doesn't need these hints anymore");
     }
 }
 
@@ -715,6 +841,10 @@ function InitialHTMLPopulate(divIdObj) {
     }
 }
 
+/**
+ * Toggles display of "hk-hints". On click or when called with a parameter
+ * @param {string} param "hide", "show" or none (optional)
+ */
 function CheckboxHintsToggle(param) {
     let checkboxId = document.getElementById("checkbox-hints");
 

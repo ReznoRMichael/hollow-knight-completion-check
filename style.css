@@ -58,7 +58,7 @@ h1 {
     outline-offset: -2px;
 }
 #hk-hints {
-    /* display: none */;
+    display: none;
 }
 h2 {
     margin: 0.6rem 0;
