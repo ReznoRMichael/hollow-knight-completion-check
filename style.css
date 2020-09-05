@@ -1,3 +1,23 @@
+/* Font license info
+
+## Font Awesome
+
+   Copyright (C) 2016 by Dave Gandy
+
+   Author:    Dave Gandy
+   License:   SIL ()
+   Homepage:  http://fortawesome.github.com/Font-Awesome/
+
+
+## Entypo
+
+   Copyright (C) 2012 by Daniel Bruce
+
+   Author:    Daniel Bruce
+   License:   SIL (http://scripts.sil.org/OFL)
+   Homepage:  http://www.entypo.com
+*/
+
 :root {
     --rt-main: #1e406c;
 }
@@ -60,9 +80,6 @@ h1 {
     outline: 2px solid #529dff;
     outline-offset: -2px;
 }
-#hk-hints {
-    display: none;
-}
 h2 {
     margin: 0.6rem 0;
     color: #737373;
@@ -70,6 +87,9 @@ h2 {
 p {
     margin-top: 0.6rem;
     margin-bottom: 0.6rem;
+}
+.hidden {
+    display: none;
 }
 .horizontal-line {
     padding-bottom: 1px;
@@ -102,6 +122,9 @@ a:hover {
 }
 .icon-ok-squared {
     color: #16c60c;
+}
+.icon-info-circled {
+    color: #0c6cc6;
 }
 .radio, .checkbox
 {

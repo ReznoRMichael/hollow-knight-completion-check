@@ -3,6 +3,7 @@
 const DATA_UNKNOWN = "Data unknown";
 const SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ ";
 const SYMBOL_TRUE = "<i class='icon-ok-squared'></i>"; // "✅ ";
+const SYMBOL_INFO = "<i class='icon-info-circled'></i>"; // "ℹ ";
 
 // ---------------- Variables ----------------- //
 
@@ -320,8 +321,6 @@ const HK_GODMASTER_DOORS = [
     ["#4 Pantheon of the Knight", "Godhome"]
 ];
 
-
-
 /**
  * Checks Hollow Knight game completion by analyzing the save file
  * @param {object} jsonObject Save data in JavaScript Object form
@@ -508,7 +507,7 @@ function HKCheckCompletion(jsonObject) {
 }
 
 /**
- * Cleans "generated" and fills all HTML elements of ids from a given list
+ * Cleans "generated" and fills all HTML elements of ids from a given list. Creates only div with id, and h2 with title inside it.
  * @param {object} jsObj Object with HTML data to fill
  */
 function PrefillHTML(jsObj) {
@@ -517,15 +516,18 @@ function PrefillHTML(jsObj) {
 
     let h2 = "";
     let id = "";
-    let mp = "";
+    let mp = ""; // max Percent
+    let cl = ""; // class
 
     for (let i in jsObj) {
         h2 = jsObj[i].h2;
         id = jsObj[i].id;
+        (i === "hints") ? cl = " class='hidden'": cl = "";
+
         mp = " (" + jsObj[i].maxPercent + "%)";
         if (!jsObj[i].hasOwnProperty("maxPercent") || i === "intro") mp = "";
 
-        document.getElementById("generated").innerHTML += "<div id='" + id + "'>" + "</div>";
+        document.getElementById("generated").innerHTML += "<div id='" + id + "'" + cl + ">" + "</div>";
         document.getElementById(id).innerHTML += "<h2>" + h2 + mp + "</h2>";
     }
 }
@@ -537,9 +539,20 @@ function PrefillHTML(jsObj) {
  * @param {string} textSuffix Optional suffix after the main name
  */
 function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix = "") {
+    let icon = completionSymbol;
+    let b = ["<b>", "</b>"];
+    if (!textPrefix.length) b = ["", ""];
+
+    let span = ["<span class='location'>", "</span>"];
+    if (divId === DIV_ID.hints) {
+        span[0] = "<span>";
+        icon = SYMBOL_INFO;
+    }
+
     let dash = "";
     if (textSuffix.length && textPrefix.length) dash = " — ";
-    document.getElementById(divId.id).innerHTML += divStart + completionSymbol + "<b>" + textPrefix + "</b>" + dash + textSuffix + divEnd;
+
+    document.getElementById(divId.id).innerHTML += divStart + icon + b[0] + textPrefix + b[1] + span[0] + dash + textSuffix + span[1] + divEnd;
 }
 
 /**
@@ -698,8 +711,8 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
                     // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
                     delete dataObject[i];
                     break;
-                } else if ((k === "defeatedDungDefender" && playerData[k] === false)
-                    && (k === "hornetOutskirtsDefeated" && playerData[k] === false)) {
+                } else if ((k === "defeatedDungDefender" && playerData[k] === false) &&
+                    (k === "hornetOutskirtsDefeated" && playerData[k] === false)) {
                     CurrentDataFalse();
                     FillHTML(divId, dataObject[i][0], dataObject[i][1]);
                     delete dataObject[i];
@@ -744,11 +757,13 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
             }
         }
 
+        // show only the last uncompleted hint
         if (completionSymbol === SYMBOL_FALSE) {
             break;
         }
     } // end for (let i in dataObject)
 
+    // prevents showing hints when player already has seen the credits
     if (hollowKnightDefeated) {
         FillHTML(divId, "", "...a successful Knight who doesn't need hints anymore");
     }
@@ -848,21 +863,21 @@ function CheckboxHintsToggle(param) {
 
     switch (param) {
         case "hide":
-            document.getElementById("hk-hints").setAttribute("style", "display: none;");
+            document.getElementById("hk-hints").classList.add("hidden");
             checkboxId.value = "hints-off";
             checkboxId.checked = false;
             break;
         case "show":
-            document.getElementById("hk-hints").setAttribute("style", "display: block;");
+            document.getElementById("hk-hints").classList.remove("hidden");
             checkboxId.value = "hints-on";
             checkboxId.checked = true;
             break;
         default:
             if (checkboxId.checked !== true) {
-                document.getElementById("hk-hints").setAttribute("style", "display: none;");
+                document.getElementById("hk-hints").classList.add("hidden");
                 checkboxId.value = "hints-off";
             } else {
-                document.getElementById("hk-hints").setAttribute("style", "display: block;");
+                document.getElementById("hk-hints").classList.remove("hidden");
                 checkboxId.value = "hints-on";
             }
             break;
