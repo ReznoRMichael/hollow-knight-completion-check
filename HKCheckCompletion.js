@@ -110,7 +110,7 @@ const DIV_ID = {
 };
 
 const HK_HINTS = {
-    fireballLevel: ["", "...a powerful spell learned below the town of Dirtmouth"],
+    fireballLevel: ["", "...a mysterious shaman living in a dwelling below the town of Dirtmouth"],
     hornet1Defeated: ["", "...a skilled protector guarding ruins in a lush green forest"],
     hasDash: ["", "...an old cloak lying on a green path by a broken shell"],
     hasWalljump: ["", "...a sharp claw lying forgotten somewhere amidst the insect village"],
@@ -330,8 +330,9 @@ function HKCheckCompletion(jsonObject) {
     // start benchmark
     let countBegin = new Date();
 
-    // Always hide and uncheck the Hints checkbox by default, prevents wrong checkbox behaviour
+    // Prevents wrong checkbox behaviour
     CheckboxHintsToggle("hide");
+    CheckboxLocationsToggle("show");
 
     // Pre-Cleaning and filling initial data
     PrefillHTML(DIV_ID);
@@ -873,13 +874,49 @@ function CheckboxHintsToggle(param) {
             checkboxId.checked = true;
             break;
         default:
-            if (checkboxId.checked !== true) {
+            if (checkboxId.checked === false) {
                 document.getElementById("hk-hints").classList.add("hidden");
                 checkboxId.value = "hints-off";
             } else {
                 document.getElementById("hk-hints").classList.remove("hidden");
                 checkboxId.value = "hints-on";
             }
-            break;
     }
+}
+
+function CheckboxLocationsToggle(param) {
+    let checkboxId = document.getElementById("checkbox-locations");
+    let allClassElements = document.querySelectorAll(".location");
+    let length = allClassElements.length;
+
+    switch (param) {
+        case "hide":
+            for (let i = 0; i < length; i++) {
+                allClassElements[i].classList.add("hidden");
+            }
+            checkboxId.value = "locations-off";
+            checkboxId.checked = false;
+            break;
+        case "show":
+            for (let i = 0; i < length; i++) {
+                allClassElements[i].classList.remove("hidden");
+            }
+            checkboxId.value = "locations-on";
+            checkboxId.checked = true;
+            break;
+        default:
+            if (checkboxId.checked === false) {
+                for (let i = 0; i < length; i++) {
+                    allClassElements[i].classList.add("hidden");
+                }
+                checkboxId.value = "locations-off";
+            } else {
+                for (let i = 0; i < length; i++) {
+                    allClassElements[i].classList.remove("hidden");
+                }
+                checkboxId.value = "locations-on";
+            }
+    }
+
+    
 }

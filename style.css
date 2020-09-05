@@ -58,7 +58,7 @@ h1 {
 .buttons {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 .button {
     display: flex;
@@ -70,7 +70,7 @@ h1 {
     color: #e3ebf7;
     border: 2px solid #122c4e;
     padding: 0.3rem 1rem;
-    margin: 0 .5rem;
+    margin: 0;
 }
 .button:hover {
     background-color: #285188;
@@ -142,9 +142,10 @@ input[type="radio"]
 .radio-label,
 .checkbox-label
 {
-    display: block;
+    display: inline-block;
     position: relative;
-    padding: 0px 0px 0px 35px;
+    padding: 0 0 0 1.8rem;
+    margin: 0 1rem 0 0;
     cursor: pointer;
     font-size: 1rem;
     -webkit-user-select: none;
@@ -152,6 +153,9 @@ input[type="radio"]
     -ms-user-select: none;
     user-select: none;
     width: max-content;
+}
+.checkbox-label:last-child {
+    margin-right: 0;
 }
 .radiomark,
 .checkmark

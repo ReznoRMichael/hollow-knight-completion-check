@@ -46,18 +46,27 @@
 
     <div>
         <textarea name="save-area" id="save-area"></textarea>
+
         <div class="buttons">
+
             <button id="save-area-read" class="button" onclick="HKReadTextArea();">Analyze Text</button>
             <!-- <button id="save-area-file" class="button" onclick="">Choose File</button> -->
+
+            <div class="checkboxes">
+                <label for="checkbox-hints" class="checkbox-label">
+                    <input type="checkbox" name="checkboxes" id="checkbox-hints" value="hints-off" onclick="CheckboxHintsToggle();">
+                    <span class="checkmark"></span>Hints
+                </label>
+                <label for="checkbox-locations" class="checkbox-label">
+                    <input type="checkbox" name="checkboxes" id="checkbox-locations" value="locations-on" onclick="CheckboxLocationsToggle();" checked>
+                    <span class="checkmark"></span>Locations
+                </label>
+            </div>
+
         </div>
     </div>
 
-    <div>
-        <label for="checkbox-hints" class="checkbox-label">
-            <input type="checkbox" name="checkboxes" id="checkbox-hints" value="hints-off" onclick="CheckboxHintsToggle();">
-            <span class="checkmark"></span>Show Hints
-        </label>
-    </div>
+    
 
     <div style="margin-bottom: 20px;"></div>
 
