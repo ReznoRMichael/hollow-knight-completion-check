@@ -332,7 +332,7 @@ function HKCheckCompletion(jsonObject) {
 
     // Prevents wrong checkbox behaviour
     CheckboxHintsToggle("hide");
-    CheckboxLocationsToggle("show");
+    CheckboxLocationsToggle("hide");
 
     // Pre-Cleaning and filling initial data
     PrefillHTML(DIV_ID);
@@ -396,10 +396,6 @@ function HKCheckCompletion(jsonObject) {
 
             document.getElementById(DIV_ID.intro.id).innerHTML += divStart + icon + textFill + divEnd;
         }
-
-        // ---------------- Hints --------------------- //
-
-        // function CheckHints()
 
         // ---------------- Bosses (Base Game) --------------------- //
 
@@ -544,7 +540,7 @@ function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix
     let b = ["<b>", "</b>"];
     if (!textPrefix.length) b = ["", ""];
 
-    let span = ["<span class='location'>", "</span>"];
+    let span = ["<span class='location hidden'>", "</span>"];
     if (divId === DIV_ID.hints) {
         span[0] = "<span>";
         icon = SYMBOL_INFO;
@@ -856,7 +852,7 @@ function InitialHTMLPopulate(divIdObj) {
 }
 
 /**
- * Toggles display of "hk-hints". On click or when called with a parameter
+ * Toggles display of "hk-hints". On click with no parameters or on demand when called with a parameter
  * @param {string} param "hide", "show" or none (optional)
  */
 function CheckboxHintsToggle(param) {
@@ -884,6 +880,10 @@ function CheckboxHintsToggle(param) {
     }
 }
 
+/**
+ * Toggles display of ".location" class. On click with no parameters or on demand when called with a parameter
+ * @param {string} param "hide", "show" or none (optional)
+ */
 function CheckboxLocationsToggle(param) {
     let checkboxId = document.getElementById("checkbox-locations");
     let allClassElements = document.querySelectorAll(".location");
@@ -917,6 +917,4 @@ function CheckboxLocationsToggle(param) {
                 checkboxId.value = "locations-on";
             }
     }
-
-    
 }
