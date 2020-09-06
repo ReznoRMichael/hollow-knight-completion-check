@@ -531,7 +531,7 @@ function PrefillHTML(jsObj) {
 
 /**
  * Generates and appends a new entry inside the HTML of a given ID
- * @param {object} divId ID of the HTML element
+ * @param {object} divId object containing div ID and h2 title of the HTML element
  * @param {string} textPrefix Main name of the entry
  * @param {string} textSuffix Optional suffix after the main name
  */
@@ -647,8 +647,14 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
     }
 }
 
+/**
+ * Checks, validates and shows hints to the player depending on their save progression, in chronological order. Shows only hint for the last uncompleted event. If Hollow Knight is defeated, shows a dummy text.
+ * @param {object} divId object containing div hints ID and h2 title
+ * @param {object} dataObject object containing all hints data
+ * @param {object} playerData object containing HK Player Data to look in
+ * @param {object} worldData object containing HK World Data to look in
+ */
 function CheckHintsTrue(divId, dataObject, playerData, worldData) {
-
     let hollowKnightDefeated = false;
 
     for (let i in dataObject) {
