@@ -366,37 +366,17 @@ function HKCheckCompletion(jsonObject) {
     let HKPlayerData = jsonObject.playerData;
     let HKWorldItems = jsonObject.sceneData.persistentBoolItems;
 
+    // ---------------- Time Played ----------------- //
+
+    CheckPlayTime(DIV_ID.intro, HKPlayerData.playTime);
+
+    // ---------------- Game Completion Status ----------------- //
+
+    CheckCompletionPercent(DIV_ID.intro, HKPlayerData);
+
     for (let i in HKPlayerData) {
         completionSymbol = SYMBOL_FALSE;
         currentData = DATA_UNKNOWN;
-
-        // ---------------- Game Completion Status ----------------- //
-
-        if (i === "completionPercentage") {
-            if (HKPlayerData.completionPercentage >= 112) CurrentDataTrue();
-
-            let textFill = "Game Completion: <b>" + HKPlayerData.completionPercentage + " %</b> (out of 112 %)";
-            document.getElementById(DIV_ID.intro.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
-
-            CurrentDataFalse();
-        }
-
-        // ---------------- Time Played ----------------- //
-
-        if (i === "playTime") {
-            let icon = "<i class='icon-clock'></i>";
-            let seconds = Math.floor(HKPlayerData.playTime);
-            let minutes = Math.floor((seconds / 60) % 60);
-            let hours = Math.floor(seconds / 3600);
-            let sec = Math.floor(seconds % 60);
-
-            if (sec <= 10) sec = "0" + sec;
-            if (minutes <= 10) minutes = "0" + minutes;
-            
-            let textFill = "Time Played: <b>" + hours + " h " + minutes + " min " + sec + " sec</b>";
-
-            document.getElementById(DIV_ID.intro.id).innerHTML += divStart + icon + textFill + divEnd;
-        }
 
         // ---------------- Bosses (Base Game) --------------------- //
 
@@ -569,6 +549,47 @@ function CurrentDataTrue(textData = isCompleted) {
 function CurrentDataFalse(textData = isNotCompleted) {
     completionSymbol = SYMBOL_FALSE;
     currentData = textData;
+}
+
+/**
+ * Fills HTML with the playTime value of the save file
+ * @param {object} divId ID of the HTML element for data appending
+ * @param {number} playTime Number of total gameplay time in seconds
+ */
+function CheckPlayTime(divId, playTime) {
+
+    let icon = "<i class='icon-clock'></i>";
+    let seconds = Math.floor(playTime);
+    let minutes = Math.floor((seconds / 60) % 60);
+    let hours = Math.floor(seconds / 3600);
+    let sec = Math.floor(seconds % 60);
+
+    if (sec <= 10) sec = "0" + sec;
+    if (minutes <= 10) minutes = "0" + minutes;
+
+    let textFill = "Time Played: <b>" + hours + " h " + minutes + " min " + sec + " sec</b>";
+
+    document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
+}
+
+/**
+ * Searches for completionPercentage in playerData and fills HTML with the value of the save file
+ * @param {object} divId ID of the HTML element for data appending
+ * @param {object} playerData Reference/pointer to specific data where to search
+ */
+function CheckCompletionPercent(divId, playerData) {
+    
+    let textFill = "";
+    CurrentDataFalse();
+
+    for (let i in playerData) {
+        if (i === "completionPercentage") {
+            if (playerData[i] >= 112) CurrentDataTrue();
+    
+            textFill = "Game Completion: <b>" + playerData[i] + " %</b> (out of " + divId.maxPercent + " %)";
+            document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
+        }
+    }
 }
 
 /**
