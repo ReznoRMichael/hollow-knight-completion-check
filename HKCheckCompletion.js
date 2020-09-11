@@ -7,16 +7,14 @@ const SYMBOL_INFO = "<i class='icon-info-circled'></i>"; // "ℹ ";
 
 // ---------------- Variables ----------------- //
 
-var isCompleted = "";
-var isNotCompleted = "";
-var currentData = DATA_UNKNOWN;
-var completionSymbol = SYMBOL_FALSE;
+let currentData = DATA_UNKNOWN;
+let completionSymbol = SYMBOL_FALSE;
 
-var divStart = [
+let divStart = [
     "<div>"
 ].join("\n");
 
-var divEnd = [
+let divEnd = [
     "</div>"
 ].join("\n");
 
@@ -380,6 +378,10 @@ function HKCheckCompletion(jsonObject) {
 
     CheckIfDataTrue(DIV_ID.bosses, HK_BOSSES_temp, HKPlayerData);
 
+    // ---------------- Gruz Mother and Mawlek (World Map) --------------------- //
+
+    CheckWorldDataTrue(DIV_ID.bosses, "Battle Scene", HK_BOSSES_WORLD_temp, HKWorldItems);
+
     // ---------------- Charms --------------------- //
 
     CheckIfDataTrue(DIV_ID.charms, HK_CHARMS_temp, HKPlayerData);
@@ -400,17 +402,36 @@ function HKCheckCompletion(jsonObject) {
 
     CheckIfDataTrue(DIV_ID.equipment, HK_EQUIPMENT_temp, HKPlayerData);
 
+    // ---------------- Nail Upgrades --------------------- //
+
+    for (let i = 0, length = HK_NAILUPGRADES_temp.length; i < length; i++) {
+        (HKPlayerData.nailSmithUpgrades >= i) ? CurrentDataTrue(): CurrentDataFalse();
+        FillHTML(DIV_ID.nailUpgrades, HK_NAILUPGRADES_temp[i][0], HK_NAILUPGRADES_temp[i][1]);
+    }
+
     // ---------------- Mask Shards --------------------- //
 
     CheckIfDataTrue(DIV_ID.maskShards, HK_MASKSHARDS_temp, HKPlayerData);
+
+    // ---------------- Mask Shards (World Map) --------------------- //
+
+    CheckWorldDataTrue(DIV_ID.maskShards, "Heart Piece", HK_MASKSHARDS_WORLD_temp, HKWorldItems);
 
     // ---------------- Nail Arts --------------------- //
 
     CheckIfDataTrue(DIV_ID.nailArts, HK_NAILARTS_temp, HKPlayerData);
 
+    // ---------------- Spells --------------------- //
+
+    CheckSpellLevel(DIV_ID.spells, HK_SPELLS_temp, HKPlayerData);
+
     // ---------------- Vessel Fragments --------------------- //
 
     CheckIfDataTrue(DIV_ID.vesselFragments, HK_VESSELFRAGMENTS_temp, HKPlayerData);
+
+    // ---------------- Vessel Fragments (World Map) --------------------- //
+
+    CheckWorldDataTrue(DIV_ID.vesselFragments, "Vessel Fragment", HK_VESSELFRAGMENTS_WORLD_temp, HKWorldItems);
 
     // ---------------- Warrior Dreams --------------------- //
 
@@ -420,6 +441,9 @@ function HKCheckCompletion(jsonObject) {
 
     CheckIfDataTrue(DIV_ID.grimmTroupe, HK_GRIMMTROUPE_temp, HKPlayerData);
 
+    (HKPlayerData.grimmChildLevel >= 4) ? CurrentDataTrue(): CurrentDataFalse();
+    FillHTML(DIV_ID.grimmTroupe, "Nightmare King Grimm / Banishment", "Dirtmouth or Howling Cliffs");
+
     // ---------------- Lifeblood Content Pack --------------------- //
 
     CheckIfDataTrue(DIV_ID.lifeblood, HK_LIFEBLOOD_temp, HKPlayerData);
@@ -428,64 +452,14 @@ function HKCheckCompletion(jsonObject) {
 
     CheckIfDataTrue(DIV_ID.godmaster, HK_GODMASTER_temp, HKPlayerData);
 
+    for (let i = 1; i <= 4; i++) {
+        (HKPlayerData["bossDoorStateTier" + i].completed === true) ? CurrentDataTrue(): CurrentDataFalse();
+        FillHTML(DIV_ID.godmaster, HK_GODMASTER_DOORS_temp[i - 1][0], HK_GODMASTER_DOORS_temp[i - 1][1]);
+    }
+
     // ------------------------- Hints ----------------------------- //
 
     CheckHintsTrue(DIV_ID.hints, HK_HINTS_temp, HKPlayerData, HKWorldItems);
-
-    for (let i in HKPlayerData) {
-        completionSymbol = SYMBOL_FALSE;
-        currentData = DATA_UNKNOWN;    
-
-        // ---------------- Nail Upgrades --------------------- //
-
-        if (i === "nailSmithUpgrades") {
-            for (let j = 0; j < HK_NAILUPGRADES_temp.length; j++) {
-                (HKPlayerData.nailSmithUpgrades >= j) ? CurrentDataTrue(): CurrentDataFalse();
-                FillHTML(DIV_ID.nailUpgrades, HK_NAILUPGRADES_temp[j][0], HK_NAILUPGRADES_temp[j][1]);
-            }
-        }
-
-        // ---------------- Spells --------------------- //
-
-        if (HK_SPELLS_temp) CheckSpellLevel(DIV_ID.spells, HK_SPELLS_temp, HKPlayerData);
-
-        
-
-        if (i === "grimmChildLevel") {
-            (HKPlayerData.grimmChildLevel >= 4) ? CurrentDataTrue(): CurrentDataFalse();
-            FillHTML(DIV_ID.grimmTroupe, "Nightmare King Grimm / Banishment", "Dirtmouth or Howling Cliffs");
-        }
-
-        
-
-        if (HK_GODMASTER_DOORS_temp.length) {
-            for (let j = 1; j <= 4; j++) {
-                CurrentDataFalse();
-                if (i === ("bossDoorStateTier" + j)) {
-                    if (HKPlayerData["bossDoorStateTier" + j].completed === true) CurrentDataTrue();
-                    FillHTML(DIV_ID.godmaster, HK_GODMASTER_DOORS_temp[0][0], HK_GODMASTER_DOORS_temp[0][1]);
-                    HK_GODMASTER_DOORS_temp.shift()
-                }
-            }
-        }
-
-    } // end for (let i in HKPlayerData)
-
-    
-
-    // Outside playerData checks
-
-    // ---------------- Gruz Mother and Mawlek (World Map) --------------------- //
-
-    CheckWorldDataTrue(DIV_ID.bosses, "Battle Scene", HK_BOSSES_WORLD_temp, HKWorldItems);
-
-    // ---------------- Mask Shards (World Map) --------------------- //
-
-    CheckWorldDataTrue(DIV_ID.maskShards, "Heart Piece", HK_MASKSHARDS_WORLD_temp, HKWorldItems);
-
-    // ---------------- Vessel Fragments (World Map) --------------------- //
-
-    CheckWorldDataTrue(DIV_ID.vesselFragments, "Vessel Fragment", HK_VESSELFRAGMENTS_WORLD_temp, HKWorldItems);
 
     // finish and show benchmark
     let countEnd = new Date();
@@ -545,18 +519,16 @@ function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix
  * Switches global variables to a "completed" symbol
  * @param {string} textData Optional completion name for use in HTML
  */
-function CurrentDataTrue(textData = isCompleted) {
+function CurrentDataTrue() {
     completionSymbol = SYMBOL_TRUE;
-    currentData = textData;
 }
 
 /**
  * Switches global variables to a "not completed" symbol
  * @param {string} textData Optional completion name for use in HTML
  */
-function CurrentDataFalse(textData = isNotCompleted) {
+function CurrentDataFalse() {
     completionSymbol = SYMBOL_FALSE;
-    currentData = textData;
 }
 
 /**
@@ -626,7 +598,6 @@ function CheckSpellLevel(divId, dataObject, playerData) {
             (playerData[i] >= j) ? CurrentDataTrue(): CurrentDataFalse();
             FillHTML(divId, dataObject[i][j][0], dataObject[i][j][1]);
         }
-        delete dataObject[i];
     }
 }
 
@@ -640,7 +611,7 @@ function CheckWarriorDreams(divId, dataObject, playerData) {
     for (let i in dataObject) {
         (playerData[i] > 0) ? CurrentDataTrue(): CurrentDataFalse();
         FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-        delete dataObject[i];
+        // delete dataObject[i];
     }
 }
 
@@ -690,77 +661,52 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
     for (let i in dataObject) {
         CurrentDataFalse();
 
-        for (let j in playerData) {
-            if (i === j) {
-                if (playerData[i] === true) {
-                    if (i === "killedHollowKnight") {
-                        hollowKnightDefeated = true;
-                    }
-                    CurrentDataTrue();
-                    // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                    delete dataObject[i];
-                } else if (i === "fireballLevel") {
-                    if (playerData[i] >= 1) {
-                        CurrentDataTrue();
-                        // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                        delete dataObject[i];
-                    } else {
-                        CurrentDataFalse();
-                        FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                        delete dataObject[i];
-                    }
-                } else {
-                    CurrentDataFalse();
-                    FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                    delete dataObject[i];
-                }
+        if (playerData[i] === true) {
+            if (i === "killedHollowKnight") {
+                hollowKnightDefeated = true;
+                break;
             }
-        }
-
-        if (i === "Crossroads_04") {
+            CurrentDataTrue();
+            continue;
+        } else if (i === "fireballLevel") {
+            if (playerData[i] >= 1) {
+                CurrentDataTrue();
+                continue;
+            } else {
+                CurrentDataFalse();
+                FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                break;
+            }
+        } else if (i === "Crossroads_04") {
             for (let k = 0, length = worldData.length; k < length; k++) {
                 if (worldData[k].id === "Battle Scene" && worldData[k].sceneName === "Crossroads_04" && worldData[k].activated === true) {
                     CurrentDataTrue();
-                    // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                    delete dataObject[i];
                     break;
                 }
             }
             if (completionSymbol === SYMBOL_FALSE) {
                 FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                delete dataObject[i];
             }
-        }
-
-        if (i === "dungDefenderOrHornet2") {
+        } else if (i === "dungDefenderOrHornet2") {
             for (let k in playerData) {
                 if (k === "defeatedDungDefender" && playerData[k] === true) {
                     CurrentDataTrue();
-                    // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                    delete dataObject[i];
                     break;
                 } else if (k === "hornetOutskirtsDefeated" && playerData[k] === true) {
                     CurrentDataTrue();
-                    // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                    delete dataObject[i];
                     break;
                 } else if ((k === "defeatedDungDefender" && playerData[k] === false) &&
                     (k === "hornetOutskirtsDefeated" && playerData[k] === false)) {
                     CurrentDataFalse();
                     FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                    delete dataObject[i];
                     break;
                 }
             }
-        }
-
-        if (i === "ismaTearOrShadeCloak") {
+        } else if (i === "ismaTearOrShadeCloak") {
             for (let k in playerData) {
                 if (k === "hasAcidArmour") {
                     if (playerData[k] === true) {
-                        CurrentDataTrue();
-                        // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                        delete dataObject[i];
+                        CurrentDataTrue();                        
                         break;
                     }
                 } else if (k === "hasKingsBrand") {
@@ -769,13 +715,10 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
                             if (l === "hasShadowDash") {
                                 if (playerData[l] === true) {
                                     CurrentDataTrue();
-                                    // FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                                    delete dataObject[i];
                                     break;
                                 } else {
                                     CurrentDataFalse();
                                     FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                                    delete dataObject[i];
                                     break;
                                 }
                             }
@@ -783,18 +726,16 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
                     } else {
                         CurrentDataFalse();
                         FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                        delete dataObject[i];
                         break;
                     }
                 }
             }
-        }
-
-        // show only the last uncompleted hint
-        if (completionSymbol === SYMBOL_FALSE) {
+        } else {
+            CurrentDataFalse();
+            FillHTML(divId, dataObject[i][0], dataObject[i][1]);
             break;
         }
-    } // end for (let i in dataObject)
+    } // end: for (let i in dataObject)
 
     // prevents showing hints when player already has seen the credits
     if (hollowKnightDefeated) {
