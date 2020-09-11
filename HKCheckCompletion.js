@@ -386,12 +386,13 @@ function HKCheckCompletion(jsonObject) {
         if (i === "playTime") {
             let icon = "<i class='icon-clock'></i>";
             let seconds = Math.floor(HKPlayerData.playTime);
-            let minutes = Math.round((seconds / 60) % 60);
-            let hours = Math.round(seconds / 3600);
-            let sec = Math.round(seconds % 60);
+            let minutes = Math.floor((seconds / 60) % 60);
+            let hours = Math.floor(seconds / 3600);
+            let sec = Math.floor(seconds % 60);
 
             if (sec <= 10) sec = "0" + sec;
             if (minutes <= 10) minutes = "0" + minutes;
+            
             let textFill = "Time Played: <b>" + hours + " h " + minutes + " min " + sec + " sec</b>";
 
             document.getElementById(DIV_ID.intro.id).innerHTML += divStart + icon + textFill + divEnd;

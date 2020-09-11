@@ -42,7 +42,7 @@ function loadJSON(filename, callback) {
     xobj.send(null);
 }
 
-loadJSON("save/" + fileName[5],
+loadJSON("save/" + fileName[1],
     function JSONparse(response) {
         // Parse JSON string into object
         jsonObj = JSON.parse(response);
