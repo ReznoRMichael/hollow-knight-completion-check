@@ -1,4 +1,6 @@
 var jsonObj = "";
+
+// save file names list in the save/ folder
 var fileName = [
     "reznor0.json",
     "reznor1beforegruz.json",
@@ -42,7 +44,7 @@ function loadJSON(filename, callback) {
     xobj.send(null);
 }
 
-loadJSON("save/" + fileName[1],
+loadJSON("save/" + fileName[5],
     function JSONparse(response) {
         // Parse JSON string into object
         jsonObj = JSON.parse(response);

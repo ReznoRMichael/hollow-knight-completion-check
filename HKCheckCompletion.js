@@ -366,6 +366,8 @@ function HKCheckCompletion(jsonObject) {
     let HKPlayerData = jsonObject.playerData;
     let HKWorldItems = jsonObject.sceneData.persistentBoolItems;
 
+    // ================================================================================== //
+
     // ---------------- Time Played ----------------- //
 
     CheckPlayTime(DIV_ID.intro, HKPlayerData.playTime);
@@ -374,41 +376,65 @@ function HKCheckCompletion(jsonObject) {
 
     CheckCompletionPercent(DIV_ID.intro, HKPlayerData);
 
+    // ---------------- Bosses (Base Game) --------------------- //
+
+    CheckIfDataTrue(DIV_ID.bosses, HK_BOSSES_temp, HKPlayerData);
+
+    // ---------------- Charms --------------------- //
+
+    CheckIfDataTrue(DIV_ID.charms, HK_CHARMS_temp, HKPlayerData);
+
+    // ---------------- Colosseum of Fools --------------------- //
+
+    CheckIfDataTrue(DIV_ID.colosseum, HK_COLOSSEUM_temp, HKPlayerData);
+
+    // ---------------- Dreamers --------------------- //
+
+    CheckIfDataTrue(DIV_ID.dreamers, HK_DREAMERS_temp, HKPlayerData);
+
+    // ---------------- Dream Nail and Essence --------------------- //
+
+    CheckIfDataTrue(DIV_ID.dreamNail, HK_DREAMNAIL_temp, HKPlayerData);
+
+    // ---------------- Equipment --------------------- //
+
+    CheckIfDataTrue(DIV_ID.equipment, HK_EQUIPMENT_temp, HKPlayerData);
+
+    // ---------------- Mask Shards --------------------- //
+
+    CheckIfDataTrue(DIV_ID.maskShards, HK_MASKSHARDS_temp, HKPlayerData);
+
+    // ---------------- Nail Arts --------------------- //
+
+    CheckIfDataTrue(DIV_ID.nailArts, HK_NAILARTS_temp, HKPlayerData);
+
+    // ---------------- Vessel Fragments --------------------- //
+
+    CheckIfDataTrue(DIV_ID.vesselFragments, HK_VESSELFRAGMENTS_temp, HKPlayerData);
+
+    // ---------------- Warrior Dreams --------------------- //
+
+    CheckWarriorDreams(DIV_ID.warriorDreams, HK_WARRIORDREAMS_temp, HKPlayerData);
+
+    // ---------------- Grimm Troupe Content Pack --------------------- //
+
+    CheckIfDataTrue(DIV_ID.grimmTroupe, HK_GRIMMTROUPE_temp, HKPlayerData);
+
+    // ---------------- Lifeblood Content Pack --------------------- //
+
+    CheckIfDataTrue(DIV_ID.lifeblood, HK_LIFEBLOOD_temp, HKPlayerData);
+
+    // ---------------- Godmaster Content Pack --------------------- //
+
+    CheckIfDataTrue(DIV_ID.godmaster, HK_GODMASTER_temp, HKPlayerData);
+
+    // ------------------------- Hints ----------------------------- //
+
+    CheckHintsTrue(DIV_ID.hints, HK_HINTS_temp, HKPlayerData, HKWorldItems);
+
     for (let i in HKPlayerData) {
         completionSymbol = SYMBOL_FALSE;
-        currentData = DATA_UNKNOWN;
-
-        // ---------------- Bosses (Base Game) --------------------- //
-
-        if (HK_BOSSES_temp) CheckIfDataTrue(DIV_ID.bosses, HK_BOSSES_temp, HKPlayerData);
-
-        // ---------------- Charms --------------------- //
-
-        if (HK_CHARMS_temp) CheckIfDataTrue(DIV_ID.charms, HK_CHARMS_temp, HKPlayerData);
-
-        // ---------------- Colosseum of Fools --------------------- //
-
-        if (HK_COLOSSEUM_temp) CheckIfDataTrue(DIV_ID.colosseum, HK_COLOSSEUM_temp, HKPlayerData);
-
-        // ---------------- Dreamers --------------------- //
-
-        if (HK_DREAMERS_temp) CheckIfDataTrue(DIV_ID.dreamers, HK_DREAMERS_temp, HKPlayerData);
-
-        // ---------------- Dream Nail and Essence --------------------- //
-
-        if (HK_DREAMNAIL_temp) CheckIfDataTrue(DIV_ID.dreamNail, HK_DREAMNAIL_temp, HKPlayerData);
-
-        // ---------------- Equipment --------------------- //
-
-        if (HK_EQUIPMENT_temp) CheckIfDataTrue(DIV_ID.equipment, HK_EQUIPMENT_temp, HKPlayerData);
-
-        // ---------------- Mask Shards --------------------- //
-
-        if (HK_MASKSHARDS_temp) CheckIfDataTrue(DIV_ID.maskShards, HK_MASKSHARDS_temp, HKPlayerData);
-
-        // ---------------- Nail Arts --------------------- //
-
-        if (HK_NAILARTS_temp) CheckIfDataTrue(DIV_ID.nailArts, HK_NAILARTS_temp, HKPlayerData);
+        currentData = DATA_UNKNOWN;    
 
         // ---------------- Nail Upgrades --------------------- //
 
@@ -423,30 +449,14 @@ function HKCheckCompletion(jsonObject) {
 
         if (HK_SPELLS_temp) CheckSpellLevel(DIV_ID.spells, HK_SPELLS_temp, HKPlayerData);
 
-        // ---------------- Vessel Fragments --------------------- //
-
-        if (HK_VESSELFRAGMENTS_temp) CheckIfDataTrue(DIV_ID.vesselFragments, HK_VESSELFRAGMENTS_temp, HKPlayerData);
-
-        // ---------------- Warrior Dreams --------------------- //
-
-        if (HK_WARRIORDREAMS_temp) CheckWarriorDreams(DIV_ID.warriorDreams, HK_WARRIORDREAMS_temp, HKPlayerData);
-
-        // ---------------- Grimm Troupe Content Pack --------------------- //
-
-        if (HK_GRIMMTROUPE_temp) CheckIfDataTrue(DIV_ID.grimmTroupe, HK_GRIMMTROUPE_temp, HKPlayerData);
+        
 
         if (i === "grimmChildLevel") {
             (HKPlayerData.grimmChildLevel >= 4) ? CurrentDataTrue(): CurrentDataFalse();
             FillHTML(DIV_ID.grimmTroupe, "Nightmare King Grimm / Banishment", "Dirtmouth or Howling Cliffs");
         }
 
-        // ---------------- Lifeblood Content Pack --------------------- //
-
-        if (HK_LIFEBLOOD_temp) CheckIfDataTrue(DIV_ID.lifeblood, HK_LIFEBLOOD_temp, HKPlayerData);
-
-        // ---------------- Godmaster Content Pack --------------------- //
-
-        if (HK_GODMASTER_temp) CheckIfDataTrue(DIV_ID.godmaster, HK_GODMASTER_temp, HKPlayerData);
+        
 
         if (HK_GODMASTER_DOORS_temp.length) {
             for (let j = 1; j <= 4; j++) {
@@ -461,9 +471,7 @@ function HKCheckCompletion(jsonObject) {
 
     } // end for (let i in HKPlayerData)
 
-    // ---------------- Hints --------------------- //
-
-    CheckHintsTrue(DIV_ID.hints, HK_HINTS_temp, HKPlayerData, HKWorldItems);
+    
 
     // Outside playerData checks
 
