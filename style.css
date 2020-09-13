@@ -31,6 +31,7 @@ body {
 }
 b {
     font-weight: 500;
+    color: #1e406c;
 }
 strong {
     font-weight: 700;
@@ -40,7 +41,8 @@ strong {
     margin: 0 auto;
 }
 h1 {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
+    color: #1e406c;
     margin: 0.6rem 0;
 }
 #h1-title {
@@ -82,7 +84,7 @@ h1 {
 }
 h2 {
     margin: 0.6rem 0;
-    color: #737373;
+    color: #6f7583;
 }
 p {
     margin-top: 0.6rem;
@@ -110,12 +112,13 @@ p {
 a,
 a:active,
 a:visited {
-    color: black;
+    color: #1e406c;
     font-weight: 700;
     text-decoration: none;
 }
 a:hover {
-    text-decoration: underline;
+    color: #529dff;
+    text-decoration: none;
 }
 .icon-cancel {
     color: #f03a17;
@@ -193,6 +196,12 @@ input[type="radio"]
 {
     background-color: #1e406c;
     background-color: var(--rt-main);
+}
+/* When the checkbox is checked change background color on hover */
+.radio-label:hover input:checked ~ .radiomark,
+.checkbox-label:hover input:checked ~ .checkmark
+{
+    background-color: #285188;
 }
 /* Create the checkmark/indicator (hidden when not checked) */
 .radiomark:after,

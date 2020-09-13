@@ -209,13 +209,13 @@ const HK_DREAMNAIL = {
 };
 
 const HK_EQUIPMENT = {
-    hasDash: ["Mothwing Cloak", "Greenpath; Dash ability"],
-    hasWalljump: ["Mantis Claw", "Mantis Village; Wall Jump ability"],
-    hasSuperDash: ["Crystal Heart", "Crystal Peak; Super Dash ability"],
-    hasAcidArmour: ["Isma's Tear", "Royal Waterways; Acid Armour ability"],
-    hasDoubleJump: ["Monarch Wings", "Ancient Basin; Double Jump ability"],
+    hasDash: ["Mothwing Cloak", "Greenpath: Dash ability"],
+    hasWalljump: ["Mantis Claw", "Mantis Village: Wall Jump ability"],
+    hasSuperDash: ["Crystal Heart", "Crystal Peak: Super Dash ability"],
+    hasDoubleJump: ["Monarch Wings", "Ancient Basin: Double Jump ability"],
+    hasAcidArmour: ["Isma's Tear", "Royal Waterways: Acid Armour ability"],
     hasKingsBrand: ["King's Brand", "Kingdom's Edge"],
-    hasShadowDash: ["Shade Cloak", "The Abyss; Shadow Dash ability"]
+    hasShadowDash: ["Shade Cloak", "The Abyss: Shadow Dash ability"]
 };
 
 const HK_MASKSHARDS = {
@@ -321,7 +321,7 @@ const HK_GODMASTER_DOORS = [
 
 /**
  * Checks Hollow Knight game completion by analyzing the save file
- * @param {object} jsonObject Save data in JavaScript Object form
+ * @param {object} jsonObject Decoded save data in JavaScript Object Notation form (JSON)
  */
 function HKCheckCompletion(jsonObject) {
 
@@ -332,7 +332,7 @@ function HKCheckCompletion(jsonObject) {
     CheckboxHintsToggle("hide");
     CheckboxLocationsToggle("hide");
 
-    // Pre-Cleaning and filling initial data
+    // Pre-Cleaning and filling initial data (h2, id) needed for FillHTML()
     PrefillHTML(DIV_ID);
 
     // Shallow Clone const objects (used for destructive functions)
@@ -558,14 +558,14 @@ function CheckPlayTime(divId, playTime) {
  * @param {object} playerData Reference/pointer to specific data where to search
  */
 function CheckCompletionPercent(divId, playerData) {
-    
+
     let textFill = "";
     CurrentDataFalse();
 
     for (let i in playerData) {
         if (i === "completionPercentage") {
             if (playerData[i] >= 112) CurrentDataTrue();
-    
+
             textFill = "Game Completion: <b>" + playerData[i] + " %</b> (out of " + divId.maxPercent + " %)";
             document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
         }
@@ -656,92 +656,66 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
  * @param {object} worldData object containing HK World Data to look in
  */
 function CheckHintsTrue(divId, dataObject, playerData, worldData) {
-    let hollowKnightDefeated = false;
 
     for (let i in dataObject) {
-        CurrentDataFalse();
-
         if (playerData[i] === true) {
             if (i === "killedHollowKnight") {
-                hollowKnightDefeated = true;
+                // a text to show when player already finished their first playthrough (killed Hollow Knight first time)
+                FillHTML(divId, "", "...a successful Knight who doesn't need hints anymore");
                 break;
             }
-            CurrentDataTrue();
             continue;
         } else if (i === "fireballLevel") {
             if (playerData[i] >= 1) {
-                CurrentDataTrue();
                 continue;
             } else {
-                CurrentDataFalse();
                 FillHTML(divId, dataObject[i][0], dataObject[i][1]);
                 break;
             }
         } else if (i === "Crossroads_04") {
+            let GruzMotherDefeated = false;
+
             for (let k = 0, length = worldData.length; k < length; k++) {
                 if (worldData[k].id === "Battle Scene" && worldData[k].sceneName === "Crossroads_04" && worldData[k].activated === true) {
-                    CurrentDataTrue();
+                    GruzMotherDefeated = true;
                     break;
                 }
             }
-            if (completionSymbol === SYMBOL_FALSE) {
+            if (GruzMotherDefeated) {
+                continue; // next dataObject (i)
+            } else {
                 FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                break;
             }
         } else if (i === "dungDefenderOrHornet2") {
-            for (let k in playerData) {
-                if (k === "defeatedDungDefender" && playerData[k] === true) {
-                    CurrentDataTrue();
-                    break;
-                } else if (k === "hornetOutskirtsDefeated" && playerData[k] === true) {
-                    CurrentDataTrue();
-                    break;
-                } else if ((k === "defeatedDungDefender" && playerData[k] === false) &&
-                    (k === "hornetOutskirtsDefeated" && playerData[k] === false)) {
-                    CurrentDataFalse();
+            if (playerData.defeatedDungDefender === true) {
+                continue;
+            } else if (playerData.hornetOutskirtsDefeated === true) {
+                continue;
+            } else { // if no Dung Defender or Hornet 2
+                FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                break;
+            }
+        } else if (i === "ismaTearOrShadeCloak") {
+            if (playerData.hasAcidArmour === true) {
+                continue;
+            } else if (playerData.hasKingsBrand === true) {
+                if (playerData.hasShadowDash === true) {
+                    continue;
+                } else { // if Kings Brand but no Shade Cloak
                     FillHTML(divId, dataObject[i][0], dataObject[i][1]);
                     break;
                 }
+            } else { // if no Isma's Tear or Kings Brand
+                FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                break;
             }
-        } else if (i === "ismaTearOrShadeCloak") {
-            for (let k in playerData) {
-                if (k === "hasAcidArmour") {
-                    if (playerData[k] === true) {
-                        CurrentDataTrue();                        
-                        break;
-                    }
-                } else if (k === "hasKingsBrand") {
-                    if (playerData[k] === true) {
-                        for (let l in playerData) {
-                            if (l === "hasShadowDash") {
-                                if (playerData[l] === true) {
-                                    CurrentDataTrue();
-                                    break;
-                                } else {
-                                    CurrentDataFalse();
-                                    FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                                    break;
-                                }
-                            }
-                        }
-                    } else {
-                        CurrentDataFalse();
-                        FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                        break;
-                    }
-                }
-            }
-        } else {
-            CurrentDataFalse();
+        } else { // if anything from the hints list is not done
             FillHTML(divId, dataObject[i][0], dataObject[i][1]);
             break;
         }
     } // end: for (let i in dataObject)
-
-    // prevents showing hints when player already has seen the credits
-    if (hollowKnightDefeated) {
-        FillHTML(divId, "", "...a successful Knight who doesn't need hints anymore");
-    }
-}
+} // function CheckHintsTrue()
 
 /**
  * Pre-Cleans HTML. Reads contents inside text area and parses it to a JavaScript object. If not empty, runs HKCheckCompletion() to check data.
