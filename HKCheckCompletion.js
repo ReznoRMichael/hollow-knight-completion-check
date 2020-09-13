@@ -258,8 +258,8 @@ const HK_VESSELFRAGMENTS_WORLD = {
 };
 
 const HK_NAILARTS = {
-    hasUpwardSlash: ["Great Slash", "Nailmaster Sheo: Greenpath"],
-    hasDashSlash: ["Dash Slash", "Nailmaster Oro: Kingdom's Edge, 800 Geo"],
+    hasDashSlash: ["Great Slash", "Nailmaster Sheo: Greenpath"],
+    hasUpwardSlash: ["Dash Slash", "Nailmaster Oro: Kingdom's Edge, 800 Geo"],
     hasCyclone: ["Cyclone Slash", " Nailmaster Mato: Howling Cliffs"],
 };
 
@@ -516,16 +516,14 @@ function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix
 }
 
 /**
- * Switches global variables to a "completed" symbol
- * @param {string} textData Optional completion name for use in HTML
+ * Switches global variable to a "completed" symbol
  */
 function CurrentDataTrue() {
     completionSymbol = SYMBOL_TRUE;
 }
 
 /**
- * Switches global variables to a "not completed" symbol
- * @param {string} textData Optional completion name for use in HTML
+ * Switches global variable to a "not completed" symbol
  */
 function CurrentDataFalse() {
     completionSymbol = SYMBOL_FALSE;
