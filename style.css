@@ -34,6 +34,27 @@ body {
     margin: 0;
 }
 
+body::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #040813;
+}
+
+body::-webkit-scrollbar-track-piece {
+    background-color: #040813;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #1e4d6c;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #2e5d7c;
+}
+
 #background {
     position: fixed;
     padding: 0;
