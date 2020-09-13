@@ -19,132 +19,171 @@
 */
 
 :root {
-    --rt-main: #1e406c;
+    --rt-main: #1e4d6c;
 }
+
 html {
     font-size: 17px;
     font-weight: 300;
 }
+
 body {
     font-family: 'Heebo', sans-serif;
+    color: #fff;
+    background-color: #040813;
     margin: 0;
 }
+
+#background {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/hk-background.jpg");
+    background-size: auto 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+#content {
+    max-width: 550px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1000;
+}
+
 b {
     font-weight: 500;
-    color: #1e406c;
+    color: #aac7d4;
 }
+
 strong {
     font-weight: 700;
 }
-#content {
-    max-width: 550px; 
-    margin: 0 auto;
-}
+
 h1 {
     font-size: 1.7rem;
-    color: #1e406c;
+    color: #aac7d4;
     margin: 0.6rem 0;
 }
+
 #h1-title {
     text-align: center;
 }
+
+h2 {
+    margin: 0.6rem 0;
+    color: rgba(231, 251, 255, 0.6);
+}
+
+textarea {
+    font-family: 'Consolas', monospace;
+    font-size: 0.8rem;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    border: 1px solid #e3ebf7;
+}
+
 #save-area {
     width: 100%;
     height: calc(0.1 * 100vh);
     margin: .5rem 0 .3rem 0;
-    font-family: monospace;
 }
-#save-area-read {
-    ;
-}
+
 .buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .button {
     display: flex;
     font-size: 1rem;
     font-weight: 500;
     font-family: 'Heebo', sans-serif;
     text-align: center;
-    background-color: #1e406c;
-    color: #e3ebf7;
-    border: 2px solid #122c4e;
+    background-color: #1e4d6c;
+    color: #aac7d4;
+    border: 2px solid #183c55;
     padding: 0.3rem 1rem;
     margin: 0;
 }
+
 .button:hover {
-    background-color: #285188;
+    background-color: #2e5d7c;
+    border-color: #2e5d7c;
     cursor: pointer;
 }
+
 .button:focus {
-    outline: 2px solid #529dff;
+    outline: 2px solid #5e8dac;
     outline-offset: -2px;
 }
-h2 {
-    margin: 0.6rem 0;
-    color: #6f7583;
-}
+
 p {
     margin-top: 0.6rem;
     margin-bottom: 0.6rem;
 }
+
 .hidden {
     display: none;
 }
+
 .horizontal-line {
     padding-bottom: 1px;
     background: linear-gradient(90deg, #e9e9e9 0%, #FFFFFF 75%);
 }
+
 .smalltext {
     font-size: 0.8rem;
     text-align: center;
 }
-.entryNo {
-    color: #d1d1d1;
-}
-.date {
-    font-size: 0.8rem;
-    color: #737373;
-    margin-left: 1rem;
-}
+
 a,
 a:active,
 a:visited {
-    color: #1e406c;
+    color: #aac7d4;
     font-weight: 700;
     text-decoration: none;
 }
+
 a:hover {
-    color: #529dff;
+    color: #d9f3ff;
     text-decoration: none;
 }
+
 .icon-cancel {
     color: #f03a17;
 }
+
 .icon-ok-squared {
     color: #16c60c;
 }
+
 .icon-info-circled {
-    color: #0c6cc6;
+    color: #479ae7;
 }
-.radio, .checkbox
-{
+
+.radio,
+.checkbox {
     position: relative;
     display: block;
     left: -40px;
     padding: 4px;
     margin-left: 10px;
 }
+
 input[type="checkbox"],
-input[type="radio"]
-{
+input[type="radio"] {
     margin-right: 10px;
 }
+
 .radio-label,
-.checkbox-label
-{
+.checkbox-label {
     display: inline-block;
     position: relative;
     padding: 0 0 0 1.8rem;
@@ -157,82 +196,86 @@ input[type="radio"]
     user-select: none;
     width: max-content;
 }
+
 .checkbox-label:last-child {
     margin-right: 0;
 }
+
 .radiomark,
-.checkmark
-{
+.checkmark {
     position: absolute;
     top: 0;
     left: 0;
     height: 22px;
     width: 22px;
-    background-color: #c1c8d1;
-    border: 1px solid #1e406c;
+    background-color: #aac7d4;
+    border: 1px solid #1e4d6c;
     border: 1px solid var(--rt-main);
 }
-.radiomark { border-radius: 50%; }
+
+.radiomark {
+    border-radius: 50%;
+}
 
 /* Hide the browser's default checkbox */
 .radio-label input,
-.checkbox-label input
-{
+.checkbox-label input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
 }
+
 /* On mouse-over change background color */
-.radio-label:hover input ~ .radiomark,
-.checkbox-label:hover input ~ .checkmark
-{
-    background-color: #e1e6ee;
+.radio-label:hover input~.radiomark,
+.checkbox-label:hover input~.checkmark {
+    background-color: #d9f3ff;
 }
+
 /* When the checkbox is checked change background color */
-.radio-label input:checked ~ .radiomark,
-.checkbox-label input:checked ~ .checkmark
-{
-    background-color: #1e406c;
+.radio-label input:checked~.radiomark,
+.checkbox-label input:checked~.checkmark {
+    background-color: #1e4d6c;
     background-color: var(--rt-main);
 }
+
 /* When the checkbox is checked change background color on hover */
-.radio-label:hover input:checked ~ .radiomark,
-.checkbox-label:hover input:checked ~ .checkmark
-{
-    background-color: #285188;
+.radio-label:hover input:checked~.radiomark,
+.checkbox-label:hover input:checked~.checkmark {
+    background-color: #2e5d7c;
+    border-color: #2e5d7c;
 }
+
 /* Create the checkmark/indicator (hidden when not checked) */
 .radiomark:after,
-.checkmark:after
-{
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
+
 /* Show the checkmark when checked */
-.radio-label input:checked ~ .radiomark:after,
-.checkbox-label input:checked ~ .checkmark:after
-{
+.radio-label input:checked~.radiomark:after,
+.checkbox-label input:checked~.checkmark:after {
     display: block;
 }
+
 /* Style the checkmark/indicator */
-.checkbox-label .checkmark:after
-{
+.checkbox-label .checkmark:after {
     left: 7px;
     top: 2px;
     width: 6px;
     height: 12px;
-    border: solid #e3ebf7;
+    border: solid #aac7d4;
     border-width: 0 2px 2px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
 /* Style the checkmark/indicator */
-.radio-label .radiomark:after
-{
+.radio-label .radiomark:after {
     top: 7px;
     left: 7px;
     width: 10px;

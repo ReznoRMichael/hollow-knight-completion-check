@@ -30,9 +30,11 @@
         - Single Keys/Pass locations? (required for completion)
     -->
 
+<div id="background"></div>
+
 <div id="content">
 
-    <h1 id="h1-title">Hollow Knight Analyze Save Completion</h1>
+    <h1 id="h1-title">Hollow Knight: Analyze Save Completion</h1>
 
     <p class="smalltext">Check what you have left for completion. Hints for first playthrough.<br>
         Use bloodorca's amazing <a href="https://bloodorca.github.io/hollow/" target="_blank">[ Online Hollow Knight Save Editor ]</a> to decode your save file.<br>
@@ -46,7 +48,7 @@
         <div class="buttons">
 
             <button id="save-area-read" class="button" onclick="HKReadTextArea();">Analyze Text</button>
-            <!-- <button id="save-area-file" class="button" onclick="">Choose File</button> -->
+            <!-- <button id="save-area-file" class="button" onclick="">Load Save</button> -->
 
             <div class="checkboxes">
                 <label for="checkbox-hints" class="checkbox-label">
@@ -81,7 +83,7 @@
 </html>
 
 <!-- Instantly load test file (Debugging script) -->
-<!-- <script src="loadJson.js"></script> -->
+<script src="loadJson.js"></script>
 
 <!-- Main script -->
 <script src="HKCheckCompletion.js"></script>
