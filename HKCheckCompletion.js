@@ -117,12 +117,12 @@ const HK_HINTS = {
     hasLantern: ["", "...a precious item able to carry some light to even the darkest places"],
     hasSuperDash: ["", "...some powerful crystal beating somewhere deep inside the mines"],
     hasDreamNail: ["", "...a weapon from a dream world only found where the souls can peacefully rest"],
-    killedInfectedKnight: ["", "...a shattered corpse forgotten in a windy cave in the depths below the city"],
-    hasDoubleJump: ["", "...something incredibly light dropped by a monarchfly in the depths below the city"],
+    killedInfectedKnight: ["", "...a shattered corpse forgotten in a windy cave in the ancient depths below the city"],
+    hasDoubleJump: ["", "...something incredibly light dropped by a monarchfly in the ancient depths below the city"],
     killedBlackKnight: ["", "...discarded shells of black guards lying on the floor of a high spire"],
     lurienDefeated: ["", "...a dreamer sleeping somewhere at the top of a high spire"],
     dungDefenderOrHornet2: ["", "...a skilled combatant living at the heart of the sewers or watching over a shell amidst ash falling from the sky"],
-    ismaTearOrShadeCloak: ["", "...something precious in a grove accessed from the waterways or a massive door guarding a cloak behind the darkness"],
+    ismaTearOrShadeCloak: ["", "...something precious in a grove accessed from the waterways or a massive royal door guarding a cloak behind the darkness"],
     defeatedMegaJelly: ["", "...an intelligent being floating inside hidden archives behind the fog"],
     monomonDefeated: ["", "...a dreamer sleeping somewhere hidden in a foggy area"],
     hegemolDefeated: ["", "...a dreamer sleeping near a spider nest area"],
@@ -654,23 +654,25 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
  * @param {object} dataObject object containing all hints data
  * @param {object} playerData object containing HK Player Data to look in
  * @param {object} worldData object containing HK World Data to look in
+ * @returns {bool} true when defeated Hollow Knight, false if not
  */
 function CheckHintsTrue(divId, dataObject, playerData, worldData) {
 
+    if (playerData.killedHollowKnight === true) {
+        // a text to show when player already finished their first playthrough (killed Hollow Knight first time)
+        FillHTML(divId, "", "...a successful Knight who doesn't need hints anymore");
+        return true;
+    }
+
     for (let i in dataObject) {
         if (playerData[i] === true) {
-            if (i === "killedHollowKnight") {
-                // a text to show when player already finished their first playthrough (killed Hollow Knight first time)
-                FillHTML(divId, "", "...a successful Knight who doesn't need hints anymore");
-                break;
-            }
             continue;
         } else if (i === "fireballLevel") {
             if (playerData[i] >= 1) {
                 continue;
             } else {
                 FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                break;
+                return false;
             }
         } else if (i === "Crossroads_04") {
             let GruzMotherDefeated = false;
@@ -685,7 +687,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
                 continue; // next dataObject (i)
             } else {
                 FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                break;
+                return false;
             }
         } else if (i === "dungDefenderOrHornet2") {
             if (playerData.defeatedDungDefender === true) {
@@ -694,7 +696,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
                 continue;
             } else { // if no Dung Defender or Hornet 2
                 FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                break;
+                return false;
             }
         } else if (i === "ismaTearOrShadeCloak") {
             if (playerData.hasAcidArmour === true) {
@@ -704,15 +706,15 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
                     continue;
                 } else { // if Kings Brand but no Shade Cloak
                     FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                    break;
+                    return false;
                 }
             } else { // if no Isma's Tear or Kings Brand
                 FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-                break;
+                return false;
             }
         } else { // if anything from the hints list is not done
             FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-            break;
+            return false;
         }
     } // end: for (let i in dataObject)
 } // function CheckHintsTrue()
