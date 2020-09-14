@@ -14,7 +14,7 @@ I will show you all individual Mask Shards and Vessel Fragments as well as locat
 
 ## How to use
 
-* Use bloodorca's amazing [Online Save File Editor](https://bloodorca.github.io/hollow/) to decode your Hollow Knight **user*.dat** save file into text.
+* Use bloodorca's amazing [Online Save File Editor](https://bloodorca.github.io/hollow/) to decode your Hollow Knight **user\*.dat** save file into text.
 
 * **CTRL+A** (Select All) inside the text box after decoding the save. **CTRL+C** (Copy) to copy the whole contents inside the text box. Be careful not to copy the whole webpage! Only the text inside the text box.
 
