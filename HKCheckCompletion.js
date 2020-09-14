@@ -332,6 +332,19 @@ function HKCheckCompletion(jsonObject) {
     CheckboxHintsToggle("hide");
     CheckboxLocationsToggle("hide");
 
+    let HKPlayerData;
+    let HKWorldItems;
+
+    if (jsonObject.hasOwnProperty("playerData")) {
+        HKPlayerData = jsonObject.playerData;
+    } else return false;
+
+    if (jsonObject.hasOwnProperty("sceneData")) {
+        if (jsonObject.sceneData.hasOwnProperty("persistentBoolItems")) {
+            HKWorldItems = jsonObject.sceneData.persistentBoolItems;
+        } else return false;
+    } else return false;
+
     // Pre-Cleaning and filling initial data (h2, id) needed for FillHTML()
     PrefillHTML(DIV_ID);
 
@@ -361,9 +374,6 @@ function HKCheckCompletion(jsonObject) {
     // Deep Clone const spells multi-layer object (used for destructive functions)
     let HK_SPELLS_temp = JSON.parse(JSON.stringify(HK_SPELLS));
 
-    let HKPlayerData = jsonObject.playerData;
-    let HKWorldItems = jsonObject.sceneData.persistentBoolItems;
-
     // ================================================================================== //
 
     // ---------------- Time Played ----------------- //
@@ -380,7 +390,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Gruz Mother and Mawlek (World Map) --------------------- //
 
-    CheckWorldDataTrue(DIV_ID.bosses, "Battle Scene", HK_BOSSES_WORLD_temp, HKWorldItems);
+    if (HKWorldItems) CheckWorldDataTrue(DIV_ID.bosses, "Battle Scene", HK_BOSSES_WORLD_temp, HKWorldItems);
 
     // ---------------- Charms --------------------- //
 
@@ -464,6 +474,8 @@ function HKCheckCompletion(jsonObject) {
     // finish and show benchmark
     let countEnd = new Date();
     console.info("HKCheckCompletion() time (ms) =", countEnd - countBegin);
+
+    return true;
 }
 
 /**

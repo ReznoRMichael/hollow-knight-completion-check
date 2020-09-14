@@ -107,9 +107,16 @@ h2 {
 textarea {
     font-family: 'Consolas', monospace;
     font-size: 0.8rem;
+    text-align: left;
     background-color: rgba(0, 0, 0, 0);
     color: #fff;
     border: 1px solid #e3ebf7;
+}
+
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    text-align: center;
 }
 
 #save-area {
