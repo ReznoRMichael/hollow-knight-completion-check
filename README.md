@@ -40,7 +40,7 @@ I will show you all individual Mask Shards and Vessel Fragments as well as locat
 
 ## Support and feedback
 
-All feedback/problems/wrong data are appreciated. Feel free to write them in the [Steam Discussion](https://steamcommunity.com/sharedfiles/filedetails/?id=2209910193) thread for the Tool.
+All feedback/problems/wrong data are appreciated. Feel free to write them in the [Steam Discussion](https://steamcommunity.com/app/367520/discussions/0/2915472677711090083/) thread for the Tool or under the [Steam Guide](https://steamcommunity.com/sharedfiles/filedetails/?id=2209910193).
 
 Currently only things that are necessary for Game Completion % achievements are shown. The tool doesn't show all the optional things, bosses, challenges, relics found, geo caches opened etc. that are not required for completion %.
 
