@@ -51,6 +51,7 @@ If you like the tool and want it developed further with more functions, consider
 * 2020-09-13:
 
   — changed theme to a more Hollow k[N]ight atmosphere.
+
   — fixed switched Dash Slash and Great Slash check.
 
 * 2020-09-06:
