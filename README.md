@@ -35,7 +35,7 @@ I will show you all individual Mask Shards and Vessel Fragments as well as locat
 
 #### Filenames
 
-**user\*.dat** — main save file. Where * is a number between 1 and 4, and it is the appropriate save slot inside the game.
+**user\*.dat** — main save file. Where \* is a number between 1 and 4, and it is the appropriate save slot inside the game.
 **user\*.dat.bakX** — backup save files. Where X is a number in ascending order meaning how many backups were made during the whole playthrough of that save. The higher the number, the more recent the backup. There are usually 3 save backups at one time, older backups are deleted.
 
 ## Support and feedback
@@ -51,9 +51,8 @@ If you like the tool and want it developed further with more functions, consider
 * 2020-09-13:
 
   — changed theme to a more Hollow k[N]ight atmosphere.
-
   — fixed switched Dash Slash and Great Slash check.
-  
+
 * 2020-09-06:
 
   — Introduced: **Optional Hints** - if this is your first playthrough and you feel completely lost, analyze your save, and I will give you a small hint where you can investigate next (based on your progress in the game). Inspired by Elderbug (and people on the forums asking where to go next).
