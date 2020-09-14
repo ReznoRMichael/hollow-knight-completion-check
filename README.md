@@ -14,7 +14,7 @@ I will show you all individual Mask Shards and Vessel Fragments as well as locat
 
 ## How to use
 
-* Use bloodorca's amazing [Online Save File Editor](https://bloodorca.github.io/hollow/) to decode your Hollow Knight user*.dat save file into text.
+* Use bloodorca's amazing [Online Save File Editor](https://bloodorca.github.io/hollow/) to decode your Hollow Knight **user*.dat** save file into text.
 
 * **CTRL+A** (Select All) inside the text box after decoding the save. **CTRL+C** (Copy) to copy the whole contents inside the text box. Be careful not to copy the whole webpage! Only the text inside the text box.
 
@@ -35,8 +35,8 @@ I will show you all individual Mask Shards and Vessel Fragments as well as locat
 
 #### Filenames
 
-**user*.dat** — main save file. Where * is a number between 1 and 4, and it is the appropriate save slot inside the game.
-**user*.dat.bakX** — backup save files. Where X is a number in ascending order meaning how many backups were made during the whole playthrough of that save. The higher the number, the more recent the backup. There are usually 3 save backups at one time, older backups are deleted.
+**user\*.dat** — main save file. Where * is a number between 1 and 4, and it is the appropriate save slot inside the game.
+**user\*.dat.bakX** — backup save files. Where X is a number in ascending order meaning how many backups were made during the whole playthrough of that save. The higher the number, the more recent the backup. There are usually 3 save backups at one time, older backups are deleted.
 
 ## Support and feedback
 
@@ -49,22 +49,39 @@ If you like the tool and want it developed further with more functions, consider
 ## Version History
 
 * 2020-09-13:
+
   — changed theme to a more Hollow k[N]ight atmosphere.
+
   — fixed switched Dash Slash and Great Slash check.
+  
 * 2020-09-06:
+
   — Introduced: **Optional Hints** - if this is your first playthrough and you feel completely lost, analyze your save, and I will give you a small hint where you can investigate next (based on your progress in the game). Inspired by Elderbug (and people on the forums asking where to go next).
+
   — Introduced: **Show/Hide Locations and Hints** - Now hidden by default if you don't like spoilers! Just click the checkboxes to instantly toggle their visibility.
+
 * 2020-09-02:
+
   — Gruz Mother and Brooding Mawlek check should work now even for extremely rare cases
+
   — Showing all Completion Data by default on page load
+
 * 2020-08-30:
+
   — Added all locations and costs of all individual items
+
   — Fixed Watcher Knights incorrect data check, should be okay now
+
   — Showing total percentage of all categories (not calculated)
+
   — Cosmetic improvements
+
 * 2020-08-29:
+
   — All individual 16 Mask Shards and 9 Vessel Fragments as well as their locations are shown now as requested
+
   — Fixed Gruz Mother incorrect data check, should be okay now
+
   — Added save's Play Time
 
 ## Using
