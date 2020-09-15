@@ -258,8 +258,8 @@ const HK_VESSELFRAGMENTS_WORLD = {
 };
 
 const HK_NAILARTS = {
-    hasDashSlash: ["Great Slash", "Nailmaster Sheo: Greenpath"],
-    hasUpwardSlash: ["Dash Slash", "Nailmaster Oro: Kingdom's Edge, 800 Geo"],
+    hasDashSlash: ["Great Slash", "Nailmaster Sheo: Greenpath"], // this is correct
+    hasUpwardSlash: ["Dash Slash", "Nailmaster Oro: Kingdom's Edge, 800 Geo"], // this is correct
     hasCyclone: ["Cyclone Slash", " Nailmaster Mato: Howling Cliffs"],
 };
 
