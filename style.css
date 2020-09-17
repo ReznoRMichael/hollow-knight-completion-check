@@ -30,7 +30,7 @@ html {
 body {
     font-family: 'Heebo', sans-serif;
     color: #fff;
-    background-color: #040813;
+    background-color: #050d18;
     margin: 0;
 }
 
@@ -45,7 +45,7 @@ textarea::-webkit-scrollbar-track,
 body::-webkit-scrollbar-track-piece,
 textarea::-webkit-scrollbar-track-piece,
 textarea::-webkit-resizer {
-    background-color: #040813;
+    background-color: #050d18;
 }
 
 body::-webkit-scrollbar-thumb,
