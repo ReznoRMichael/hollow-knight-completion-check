@@ -121,7 +121,6 @@ textarea::placeholder {
 
 #save-area {
     width: 100%;
-    height: calc(0.1 * 100vh);
     margin: .5rem 0 .3rem 0;
 }
 

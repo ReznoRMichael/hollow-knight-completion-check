@@ -44,13 +44,13 @@
     <h1 id="h1-title">Hollow Knight: Analyze Save Completion</h1>
 
     <p class="smalltext">Check what you have left for completion. Hints for first playthrough.<br>
-        Use bloodorca's amazing <a href="https://bloodorca.github.io/hollow/" target="_blank">[ Online Hollow Knight Save Editor ]</a> to decode your save file.<br>
-        CTRL+A, CTRL+C the decoded save data and CTRL+V it into the text box below to analyze.<br>
+        Decode your save file: <a href="https://bloodorca.github.io/hollow/" target="_blank">[ Online Hollow Knight Save Decode ]</a><br>
+        CTRL+A, CTRL+C the decoded save. CTRL+V into the text box below. <a href="https://pastebin.com/raw/shfZ4Vqs" target="_blank">[ Sample ]</a><br>
         <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2209910193" target="_blank">Steam Guide</a> 🉑 <a href="https://github.com/ReznoRMichael/hollow-knight-completion-check" target="_blank">Source Code</a> 🉑 <a href="https://www.youtube.com/c/MichaelReznoR" target="_blank">Youtube</a> 🉑 <a href="https://www.paypal.me/ReznoRMichael" target="_blank">Support Tool development</a>
     </p>
 
     <div>
-        <textarea name="save-area" id="save-area" autofocus spellcheck="false" placeholder="Paste (Ctrl + V) your decoded save here..."></textarea>
+        <textarea name="save-area" id="save-area" rows="6" autofocus spellcheck="false" placeholder="Paste (Ctrl + V) your decoded save here..."></textarea>
 
         <div class="buttons">
 
@@ -58,11 +58,11 @@
             <!-- <button id="save-area-file" class="button" onclick="">Load Save</button> -->
 
             <div class="checkboxes">
-                <label for="checkbox-hints" class="checkbox-label">
+                <label for="checkbox-hints" class="checkbox-label" title="Check to see an optional clue for your first playthrough based on your save's progress.">
                     <input type="checkbox" name="checkboxes" id="checkbox-hints" value="hints-off" onclick="CheckboxHintsToggle();">
                     <span class="checkmark"></span>Hints
                 </label>
-                <label for="checkbox-locations" class="checkbox-label">
+                <label for="checkbox-locations" class="checkbox-label" title="Check to show every item's locations and costs. Hidden by default.">
                     <input type="checkbox" name="checkboxes" id="checkbox-locations" value="locations-off" onclick="CheckboxLocationsToggle();">
                     <span class="checkmark"></span>Locations
                 </label>
