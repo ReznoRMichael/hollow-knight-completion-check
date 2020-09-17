@@ -174,9 +174,9 @@ const HK_CHARMS = {
     gotCharm_20: ["Soul Catcher", "Forgotten Crossroads: Ancestral Mound"], // 2
     gotCharm_21: ["Soul Eater", "Resting Grounds"], // 4
     gotCharm_22: ["Glowing Womb", "Forgotten Crossroads"], // 2
-    gotCharm_23: ["Fragile / Unbreakable Heart", "Leg Eater: 350/280 Geo"], // 2
-    gotCharm_24: ["Fragile / Unbreakable Greed", "Leg Eater: 250/200 Geo"], // 2
-    gotCharm_25: ["Fragile / Unbreakable Strength", "Leg Eater: 600/480 Geo"], // 3
+    gotCharm_23: ["Fragile Heart", "Leg Eater: 350/280 Geo"], // 2
+    gotCharm_24: ["Fragile Greed", "Leg Eater: 250/200 Geo"], // 2
+    gotCharm_25: ["Fragile Strength", "Leg Eater: 600/480 Geo"], // 3
     gotCharm_26: ["Nailmaster’s Glory", "Sly: All Nail Arts"], // 1
     gotCharm_27: ["Joni’s Blessing", "Howling Cliffs: Joni's Repose"], // 4
     gotCharm_28: ["Shape of Unn", "Greenpath: Lake of Unn"], // 2
@@ -187,7 +187,7 @@ const HK_CHARMS = {
     gotCharm_33: ["Spell Twister", "City of Tears: Soul Sanctum"], // 2
     gotCharm_34: ["Deep Focus", "Crystal Peak"], // 4
     gotCharm_35: ["Grubberfly’s Elegy", "Grubfather: 46 Grubs"], // 3
-    gotCharm_36: ["Kingsoul / Void Heart", "Queen's Gardens, Ancient Basin, Birthplace"], // 5
+    gotCharm_36: ["Kingsoul", "Queen's Gardens + Ancient Basin"], // 5
 };
 
 const HK_COLOSSEUM = {
