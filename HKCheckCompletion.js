@@ -343,10 +343,6 @@ function HKCheckCompletion(jsonObject) {
     // start benchmark
     let countBegin = new Date();
 
-    // Prevents wrong checkbox behaviour
-    CheckboxHintsToggle("hide");
-    CheckboxLocationsToggle("hide");
-
     let HKPlayerData;
     let HKWorldItems;
 
@@ -362,6 +358,13 @@ function HKCheckCompletion(jsonObject) {
 
     // Pre-Cleaning and filling initial data (h2, id) needed for FillHTML()
     PrefillHTML(DIV_ID);
+
+    // Prevents adding current percent data after each function call (each click of Analyze button)
+    ResetCompletion(DIV_ID);
+
+    // Prevents wrong checkbox behaviour
+    CheckboxHintsToggle("hide");
+    CheckboxLocationsToggle("hide");
 
     // Shallow Clone const objects (used for destructive functions)
     let HK_HINTS_temp = Object.assign({}, HK_HINTS);
@@ -927,5 +930,16 @@ function CheckboxLocationsToggle(param) {
                 }
                 checkboxId.value = "locations-on";
             }
+    }
+}
+
+/**
+ * Zero-fill all "percent" properties in the JSON Object (reset to default)
+ * @param {object} jsObj object containing the "percent" properties to be reset to 0
+ */
+function ResetCompletion(jsObj) {
+
+    for (let i in jsObj) {
+        if (jsObj[i].hasOwnProperty("percent")) jsObj[i].percent = 0;
     }
 }
