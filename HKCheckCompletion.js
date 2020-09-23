@@ -352,6 +352,7 @@ const HK_ESSENTIAL = {
     ancientBasinSimpleKey: ["Simple Key #3", "Ancient Basin"],
     gotLurkerKey: ["Simple Key #4", "Kingdom's Edge: Colosseum of Fools"],
     hasTramPass: ["Tram Pass", "Deepnest"],
+    fountainGeo: ["Geo in Fountain", "Ancient Basin", 3000],
     nightmareLanternLit: ["Nightmare Lantern Lit", "Howling Cliffs"],
 };
 
@@ -698,8 +699,8 @@ function CheckGeo(divId, geoValue) {
 }
 
 /**
- * Verifies if the data in a specific object is true or false, and appends HTML accordingly. Destructive function.
- * @param {string} divId ID of the HTML element for data appending
+ * Verifies if the data in a specific object is true or false, and appends HTML accordingly.
+ * @param {object} divId ID of the HTML element for data appending
  * @param {object} dataObject Object containing data to be verified (use copy - data inside this object will be deleted)
  * @param {object} playerData Reference/pointer to specific data where to search
  */
@@ -707,13 +708,12 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
     for (let i in dataObject) {
         (playerData[i] === true) ? CurrentDataTrue(divId): CurrentDataFalse();
         FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-        // delete dataObject[i];
     }
 }
 
 /**
- * Verifies if the data in a specific object is 0 or > 0, and appends HTML accordingly. Destructive function.
- * @param {string} divId ID of the HTML element for data appending
+ * Verifies if the data in a specific object is 0 or > 0, and appends HTML accordingly.
+ * @param {object} divId ID of the HTML element for data appending
  * @param {object} dataObject Object containing data to be verified (use copy - data inside this object will be deleted)
  * @param {object} playerData Reference/pointer to specific data where to search
  */
@@ -727,8 +727,8 @@ function CheckSpellLevel(divId, dataObject, playerData) {
 }
 
 /**
- * Verifies if the data in a specific object is 0 or > 0, and appends HTML accordingly. Destructive function.
- * @param {string} divId ID of the HTML element for data appending
+ * Verifies if the data in a specific object is 0 or > 0, and appends HTML accordingly.
+ * @param {object} divId ID of the HTML element for data appending
  * @param {object} dataObject Object containing data to be verified (use copy - data inside this object will be deleted)
  * @param {object} playerData Reference/pointer to specific data where to search
  */
@@ -736,13 +736,12 @@ function CheckWarriorDreams(divId, dataObject, playerData) {
     for (let i in dataObject) {
         (playerData[i] > 0) ? CurrentDataTrue(divId): CurrentDataFalse();
         FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-        // delete dataObject[i];
     }
 }
 
 /**
  * Verifies if the data in a specific object are true or false, and appends HTML accordingly. Creates a copy of dataObject.
- * @param {string} divId ID of the HTML element for data appending
+ * @param {object} divId ID of the HTML element for data appending
  * @param {string} idText Text string inside save data to search for
  * @param {object} dataObject Object containing data to be verified
  * @param {object} worldData Reference/pointer to specific data where to search
@@ -773,11 +772,24 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
     }
 }
 
+/**
+ * Verifies if the data in a specific object are true or false, or checks what values they have, and appends HTML accordingly.
+ * @param {object} divId ID of the HTML element for data appending
+ * @param {object} dataObject Object containing data to be verified
+ * @param {object} playerData Reference/pointer to specific data where to search
+ * @param {object} worldData Reference/pointer to specific data where to search
+ */
 function CheckEssential(divId, dataObject, playerData, worldData) {
 
     let textPrefix = "";
     let textSuffix = "";
 
+    /**
+     * Searches for a given item in the in-game area and returns true when found and collected.
+     * @param {string} itemArea Code of the in-game area on the map
+     * @param {string} itemId Name of the item
+     * @returns {boolean}
+     */
     function FindWorldItem(itemArea = "", itemId = "Shiny Item") {
         for (let i = 0, length = worldData.length; i < length; i++) {
             if (worldData[i].id === itemId) {
@@ -796,6 +808,7 @@ function CheckEssential(divId, dataObject, playerData, worldData) {
         switch (i) {
             case "grubsCollected":
             case "dreamOrbs":
+            case "fountainGeo":
                 textPrefix += ": " + playerData[i];
                 (playerData[i] >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataInfo();
                 break;
