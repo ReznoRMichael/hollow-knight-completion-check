@@ -120,9 +120,9 @@ const DIV_ID = {
         percent: 0,
         maxPercent: 5
     },
-    additional: {
-        h2: "Outside Game Completion",
-        id: "hk-additional"
+    essential: {
+        h2: "Essential for % Game Completion",
+        id: "hk-essential"
     }
 };
 
@@ -338,10 +338,21 @@ const HK_GODMASTER_DOORS = [
     ["#4 Pantheon of the Knight", "Godhome"]
 ];
 
-const HK_ADDITIONAL = {
+const HK_ESSENTIAL = {
     grubsCollected: ["Grubs Rescued", "out of 46 total", 46],
     dreamOrbs: ["Essence Collected", "Enemies, Whispering Roots, Dream Bosses", 2400],
-    hasLantern: ["Lumafly Lantern", "Sly: 1800 Geo"]
+    slyRescued: ["Sly Rescued", "Forgotten Crossroads"],
+    brettaRescued: ["Bretta Rescued", "Fungal Wastes"],
+    hasLantern: ["Lumafly Lantern", "Sly: 1800 Geo"],
+    shopkeeperKey: ["Shopkeeper's Key", "Crystal Peak"],
+    elegantKey: ["Elegant Key", "Sly: 800 Geo + Shopkeeper's Key"],
+    loveKey: ["Love Key", "Queen's Gardens"],
+    slySimpleKey: ["Simple Key #1", "Sly: 950 Geo"],
+    cityOfTearsSimpleKey: ["Simple Key #2", "City of Tears"],
+    ancientBasinSimpleKey: ["Simple Key #3", "Ancient Basin"],
+    gotLurkerKey: ["Simple Key #4", "Kingdom's Edge: Colosseum of Fools"],
+    hasTramPass: ["Tram Pass", "Deepnest"],
+    nightmareLanternLit: ["Nightmare Lantern Lit", "Howling Cliffs"],
 };
 
 /**
@@ -496,9 +507,9 @@ function HKCheckCompletion(jsonObject) {
         FillHTML(DIV_ID.godmaster, HK_GODMASTER_DOORS_temp[i - 1][0], HK_GODMASTER_DOORS_temp[i - 1][1]);
     }
 
-    // ------------------------- Additional Things ----------------------------- //
+    // ------------------------- Essential Things ----------------------------- //
 
-    CheckAdditional(DIV_ID.additional, HK_ADDITIONAL, HKPlayerData);
+    CheckEssential(DIV_ID.essential, HK_ESSENTIAL, HKPlayerData, HKWorldItems);
 
     // ------------------------- Hints ----------------------------- //
 
@@ -622,6 +633,13 @@ function CurrentDataFalse() {
 }
 
 /**
+ * Switches global variable to an "information" symbol
+ */
+function CurrentDataInfo() {
+    completionSymbol = SYMBOL_INFO;
+}
+
+/**
  * Fills HTML with the playTime value of the save file
  * @param {object} divId ID of the HTML element for data appending
  * @param {number} playTime Number of total gameplay time in seconds
@@ -738,20 +756,49 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
     }
 }
 
-function CheckAdditional(divId, dataObject, playerData) {
+function CheckEssential(divId, dataObject, playerData, worldData) {
 
     let textPrefix = "";
     let textSuffix = "";
+
+    function FindWorldItem(itemArea = "", itemId = "Shiny Item") {
+        for (let i = 0, length = worldData.length; i < length; i++) {
+            if (worldData[i].id === itemId) {
+                if (worldData[i].sceneName === itemArea) {
+                    if (worldData[i].activated === true) return true;
+                }
+            }
+        }
+        return false;
+    }
 
     for (let i in dataObject) {
         textPrefix = dataObject[i][0];
         textSuffix = dataObject[i][1];
 
-        if (i === "grubsCollected" || i === "dreamOrbs") {
-            textPrefix += ": " + playerData[i];
-            (playerData[i] >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataFalse();
-        } else {
-            (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
+        switch (i) {
+            case "grubsCollected":
+            case "dreamOrbs":
+                textPrefix += ": " + playerData[i];
+                (playerData[i] >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataInfo();
+                break;
+            case "shopkeeperKey":
+                (playerData.hasSlykey === true || playerData.gaveSlykey === true) ? CurrentDataTrue(): CurrentDataFalse();
+                break;
+            case "elegantKey":
+                (playerData.hasWhiteKey === true || playerData.usedWhiteKey === true) ? CurrentDataTrue(): CurrentDataFalse();
+                break;
+            case "loveKey":
+                (playerData.hasLoveKey === true || playerData.openedLoveDoor === true) ? CurrentDataTrue(): CurrentDataFalse();
+                break;
+            case "cityOfTearsSimpleKey":
+                (FindWorldItem("Ruins1_17", "Shiny Item")) ? CurrentDataTrue(): CurrentDataFalse();
+                break;
+            case "ancientBasinSimpleKey":
+                (FindWorldItem("Abyss_20", "Shiny Item Stand")) ? CurrentDataTrue(): CurrentDataFalse();
+                break;
+            default:
+                (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
         }
 
         FillHTML(divId, textPrefix, textSuffix);
@@ -883,10 +930,10 @@ function InitialHTMLPopulate(divIdObj) {
     FillHTML(divIdObj.hints, HK_HINTS.fireballLevel[0], HK_HINTS.fireballLevel[1]);
 
     // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
-    let hkObjArray = [HK_BOSSES, HK_BOSSES_WORLD, HK_CHARMS, HK_EQUIPMENT, HK_NAILARTS, HK_MASKSHARDS, HK_MASKSHARDS_WORLD, HK_VESSELFRAGMENTS, HK_VESSELFRAGMENTS_WORLD, HK_DREAMERS, HK_COLOSSEUM, HK_DREAMNAIL, HK_WARRIORDREAMS, HK_GRIMMTROUPE, HK_LIFEBLOOD, HK_GODMASTER, HK_ADDITIONAL];
+    let hkObjArray = [HK_BOSSES, HK_BOSSES_WORLD, HK_CHARMS, HK_EQUIPMENT, HK_NAILARTS, HK_MASKSHARDS, HK_MASKSHARDS_WORLD, HK_VESSELFRAGMENTS, HK_VESSELFRAGMENTS_WORLD, HK_DREAMERS, HK_COLOSSEUM, HK_DREAMNAIL, HK_WARRIORDREAMS, HK_GRIMMTROUPE, HK_LIFEBLOOD, HK_GODMASTER, HK_ESSENTIAL];
 
     // duplicates and order important - must be the same as in hkObjArray[]
-    let divObjArray = [divIdObj.bosses, divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.additional];
+    let divObjArray = [divIdObj.bosses, divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.essential];
 
     // Looped filling to reduce redundancy
     do {
