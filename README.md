@@ -48,9 +48,13 @@ If you like the tool and want it developed further with more functions, consider
 
 ## Version History
 
+* *2020-09-23:
+
+  — now showing current % completion of all sub-categories (Bosses, Charms, Mask Shards etc.) in addition to total Game Completion % after analyzing a save.
+
 * 2020-09-13:
 
-  — changed theme to a more Hollow k[N]ight atmosphere.
+  — changed theme to a more Hollow k\[N\]ight atmosphere.
 
   — fixed switched Dash Slash and Great Slash check.
 
