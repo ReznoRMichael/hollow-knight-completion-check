@@ -528,6 +528,10 @@ function PrefillHTML(jsObj) {
     }
 }
 
+/**
+ * Replaces the h2 titles with a current percent/max percent values as read from the save file
+ * @param {object} jsObj Object with HTML data to fill
+ */
 function CompletionHTML(jsObj) {
 
     let h2 = "";
