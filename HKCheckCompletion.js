@@ -544,11 +544,21 @@ function CompletionHTML(jsObj) {
         h2 = jsObj[i].h2;
         h2id = "h2-" + jsObj[i].id;
 
-        (jsObj[i].hasOwnProperty("percent")) ? cp = jsObj[i].percent + "/": cp = "";
+        (jsObj[i].hasOwnProperty("percent")) ? cp = jsObj[i].percent: cp = "";
 
         if (!jsObj[i].hasOwnProperty("maxPercent") || i === "intro") {
             mp = "";
         } else {
+
+            if (i === "maskShards") {
+                let perc = jsObj[i].percent;
+                (perc % 4) ? cp = Math.floor(perc / 4): cp = perc / 4;
+            } else if (i === "vesselFragments") {
+                let perc = jsObj[i].percent;
+                (perc % 3) ? cp = Math.floor(perc / 3): cp = perc / 3;
+            }
+
+            if (jsObj[i].hasOwnProperty("percent")) cp += "/";
             mp = " (" + cp + jsObj[i].maxPercent + "%)";
         }
 
