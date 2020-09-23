@@ -33,76 +33,91 @@ const DIV_ID = {
     bosses: {
         h2: "Bosses",
         id: "hk-bosses",
+        percent: 0,
         maxPercent: 14
     },
     charms: {
         h2: "Charms",
         id: "hk-charms",
+        percent: 0,
         maxPercent: 36
     },
     equipment: {
         h2: "Equipment",
         id: "hk-equipment",
+        percent: 0,
         maxPercent: 14
     },
     nailUpgrades: {
         h2: "Nail Upgrades",
         id: "hk-nailupgrades",
+        percent: 0,
         maxPercent: 4
     },
     nailArts: {
         h2: "Nail Arts",
         id: "hk-nailarts",
+        percent: 0,
         maxPercent: 3
     },
     spells: {
         h2: "Spells",
         id: "hk-spells",
+        percent: 0,
         maxPercent: 6
     },
     maskShards: {
         h2: "Mask Shards",
         id: "hk-maskshards",
+        percent: 0,
         maxPercent: 4
     },
     vesselFragments: {
         h2: "Vessel Fragments",
         id: "hk-vesselfragments",
+        percent: 0,
         maxPercent: 3
     },
     dreamNail: {
         h2: "Dream Nail and Essence",
         id: "hk-dreamnail",
+        percent: 0,
         maxPercent: 3
     },
     warriorDreams: {
         h2: "Warrior Dreams",
         id: "hk-warriordreams",
+        percent: 0,
         maxPercent: 7
     },
     dreamers: {
         h2: "Dreamers",
         id: "hk-dreamers",
+        percent: 0,
         maxPercent: 3
     },
     colosseum: {
         h2: "Colosseum of Fools",
         id: "hk-colosseum",
+        percent: 0,
         maxPercent: 3
     },
     grimmTroupe: {
         h2: "Grimm Troupe Content Pack",
         id: "hk-grimmtroupe",
+        percent: 0,
         maxPercent: 6
     },
     lifeblood: {
         h2: "Lifeblood Content Pack",
         id: "hk-lifeblood",
+        percent: 0,
         maxPercent: 1
     },
     godmaster: {
         h2: "Godmaster Content Pack",
         id: "hk-godmaster",
+        percent: 0,
         maxPercent: 5
     }
 };
@@ -471,6 +486,10 @@ function HKCheckCompletion(jsonObject) {
 
     CheckHintsTrue(DIV_ID.hints, HK_HINTS_temp, HKPlayerData, HKWorldItems);
 
+    // ------------------------- Fill completion ----------------------------- //
+
+    CompletionHTML(DIV_ID);
+
     // finish and show benchmark
     let countEnd = new Date();
     console.info("HKCheckCompletion() time (ms) =", countEnd - countBegin);
@@ -486,21 +505,46 @@ function PrefillHTML(jsObj) {
     // Clean "generated" div
     document.getElementById("generated").innerHTML = "";
 
-    let h2 = "";
     let id = "";
+    let h2 = "";
+    let h2id = "";
     let mp = ""; // max Percent
     let cl = ""; // class
 
     for (let i in jsObj) {
-        h2 = jsObj[i].h2;
         id = jsObj[i].id;
+        h2 = jsObj[i].h2;
+        h2id = "h2-" + jsObj[i].id;
         (i === "hints") ? cl = " class='hidden'": cl = "";
 
         mp = " (" + jsObj[i].maxPercent + "%)";
         if (!jsObj[i].hasOwnProperty("maxPercent") || i === "intro") mp = "";
 
         document.getElementById("generated").innerHTML += "<div id='" + id + "'" + cl + ">" + "</div>";
-        document.getElementById(id).innerHTML += "<h2>" + h2 + mp + "</h2>";
+        document.getElementById(id).innerHTML += "<h2 id='" + h2id + "'>" + h2 + mp + "</h2>";
+    }
+}
+
+function CompletionHTML(jsObj) {
+
+    let h2 = "";
+    let h2id = "";
+    let cp = ""; // current Percent
+    let mp = ""; // max Percent
+
+    for (let i in jsObj) {
+        h2 = jsObj[i].h2;
+        h2id = "h2-" + jsObj[i].id;
+
+        (jsObj[i].hasOwnProperty("percent")) ? cp = jsObj[i].percent + "/": cp = "";
+
+        if (!jsObj[i].hasOwnProperty("maxPercent") || i === "intro") {
+            mp = "";
+        } else {
+            mp = " (" + cp + jsObj[i].maxPercent + "%)";
+        }
+
+        document.getElementById(h2id).innerHTML = h2 + mp;
     }
 }
 
@@ -530,8 +574,9 @@ function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix
 /**
  * Switches global variable to a "completed" symbol
  */
-function CurrentDataTrue() {
+function CurrentDataTrue(divId = "") {
     completionSymbol = SYMBOL_TRUE;
+    if (divId) divId.percent++;
 }
 
 /**
@@ -590,7 +635,7 @@ function CheckCompletionPercent(divId, playerData) {
  */
 function CheckIfDataTrue(divId, dataObject, playerData) {
     for (let i in dataObject) {
-        (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
+        (playerData[i] === true) ? CurrentDataTrue(divId): CurrentDataFalse();
         FillHTML(divId, dataObject[i][0], dataObject[i][1]);
         delete dataObject[i];
     }

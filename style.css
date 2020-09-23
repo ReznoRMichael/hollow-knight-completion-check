@@ -100,6 +100,7 @@ h1 {
 }
 
 h2 {
+    text-align: center;
     margin: 0.6rem 0;
     color: rgba(231, 251, 255, 0.6);
 }
