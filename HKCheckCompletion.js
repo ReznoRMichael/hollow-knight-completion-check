@@ -433,9 +433,10 @@ function HKCheckCompletion(jsonObject) {
     // ---------------- Nail Upgrades --------------------- //
 
     for (let i = 0, length = HK_NAILUPGRADES_temp.length; i < length; i++) {
-        (HKPlayerData.nailSmithUpgrades >= i) ? CurrentDataTrue(): CurrentDataFalse();
+        (HKPlayerData.nailSmithUpgrades >= i) ? CurrentDataTrue(DIV_ID.nailUpgrades): CurrentDataFalse();
         FillHTML(DIV_ID.nailUpgrades, HK_NAILUPGRADES_temp[i][0], HK_NAILUPGRADES_temp[i][1]);
     }
+    if (DIV_ID.nailUpgrades.percent) DIV_ID.nailUpgrades.percent--; // subject one for the Old Nail
 
     // ---------------- Mask Shards --------------------- //
 
@@ -469,7 +470,7 @@ function HKCheckCompletion(jsonObject) {
 
     CheckIfDataTrue(DIV_ID.grimmTroupe, HK_GRIMMTROUPE_temp, HKPlayerData);
 
-    (HKPlayerData.grimmChildLevel >= 4) ? CurrentDataTrue(): CurrentDataFalse();
+    (HKPlayerData.grimmChildLevel >= 4) ? CurrentDataTrue(DIV_ID.grimmTroupe): CurrentDataFalse();
     FillHTML(DIV_ID.grimmTroupe, "Nightmare King Grimm / Banishment", "Dirtmouth or Howling Cliffs");
 
     // ---------------- Lifeblood Content Pack --------------------- //
@@ -481,7 +482,7 @@ function HKCheckCompletion(jsonObject) {
     CheckIfDataTrue(DIV_ID.godmaster, HK_GODMASTER_temp, HKPlayerData);
 
     for (let i = 1; i <= 4; i++) {
-        (HKPlayerData["bossDoorStateTier" + i].completed === true) ? CurrentDataTrue(): CurrentDataFalse();
+        (HKPlayerData["bossDoorStateTier" + i].completed === true) ? CurrentDataTrue(DIV_ID.godmaster): CurrentDataFalse();
         FillHTML(DIV_ID.godmaster, HK_GODMASTER_DOORS_temp[i - 1][0], HK_GODMASTER_DOORS_temp[i - 1][1]);
     }
 
@@ -579,11 +580,14 @@ function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix
 }
 
 /**
- * Switches global variable to a "completed" symbol
+ * Switches global variable to a "completed" symbol. Adds +1 or +2 to percent property.
  */
 function CurrentDataTrue(divId = "") {
     completionSymbol = SYMBOL_TRUE;
-    if (divId) divId.percent++;
+    if (divId) {
+        divId.percent++;
+        if (divId.id === "hk-equipment") divId.percent++; // double % for equipment
+    }
 }
 
 /**
@@ -644,7 +648,7 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
     for (let i in dataObject) {
         (playerData[i] === true) ? CurrentDataTrue(divId): CurrentDataFalse();
         FillHTML(divId, dataObject[i][0], dataObject[i][1]);
-        delete dataObject[i];
+        // delete dataObject[i];
     }
 }
 
@@ -657,7 +661,7 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
 function CheckSpellLevel(divId, dataObject, playerData) {
     for (let i in dataObject) {
         for (let j = 1; j <= 2; j++) {
-            (playerData[i] >= j) ? CurrentDataTrue(): CurrentDataFalse();
+            (playerData[i] >= j) ? CurrentDataTrue(divId): CurrentDataFalse();
             FillHTML(divId, dataObject[i][j][0], dataObject[i][j][1]);
         }
     }
@@ -671,7 +675,7 @@ function CheckSpellLevel(divId, dataObject, playerData) {
  */
 function CheckWarriorDreams(divId, dataObject, playerData) {
     for (let i in dataObject) {
-        (playerData[i] > 0) ? CurrentDataTrue(): CurrentDataFalse();
+        (playerData[i] > 0) ? CurrentDataTrue(divId): CurrentDataFalse();
         FillHTML(divId, dataObject[i][0], dataObject[i][1]);
         // delete dataObject[i];
     }
@@ -705,7 +709,7 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
     // Display the items as they were initially ordered
     for (let i = 0; i < size; i++) {
         CurrentDataFalse();
-        if (orderedArray[i][3] === true) CurrentDataTrue();
+        if (orderedArray[i][3] === true) CurrentDataTrue(divId);
         FillHTML(divId, orderedArray[i][1], orderedArray[i][2]);
     }
 }
