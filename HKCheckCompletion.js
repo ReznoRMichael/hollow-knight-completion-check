@@ -423,6 +423,10 @@ function HKCheckCompletion(jsonObject) {
 
     CheckCompletionPercent(DIV_ID.intro, HKPlayerData);
 
+    // ---------------- Geo Amount ----------------- //
+
+    CheckGeo(DIV_ID.intro, HKPlayerData.geo);
+
     // ---------------- Bosses (Base Game) --------------------- //
 
     CheckIfDataTrue(DIV_ID.bosses, HK_BOSSES_temp, HKPlayerData);
@@ -681,6 +685,19 @@ function CheckCompletionPercent(divId, playerData) {
 }
 
 /**
+ * Fills HTML with the Geo value of the save file
+ * @param {object} divId ID of the HTML element for data appending
+ * @param {number} geoValue Number of total Geo value
+ */
+function CheckGeo(divId, geoValue) {
+
+    let icon = SYMBOL_INFO;
+    let textFill = "Geo Amount: <b>" + geoValue + "</b>";
+
+    document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
+}
+
+/**
  * Verifies if the data in a specific object is true or false, and appends HTML accordingly. Destructive function.
  * @param {string} divId ID of the HTML element for data appending
  * @param {object} dataObject Object containing data to be verified (use copy - data inside this object will be deleted)
@@ -914,17 +931,26 @@ function ObjectLength(object) {
  * @param {object} divIdObj JavaScript Object containing all HTML IDs to populate
  */
 function InitialHTMLPopulate(divIdObj) {
+
+    let icon = "";
+    let textFill = "";
+
     PrefillHTML(divIdObj);
     CurrentDataFalse();
 
     // Play Time
-    let icon = "<i class='icon-clock'></i>";
-    let textFill = "Time Played: <b>0 h 00 min 00 sec</b>";
+    icon = "<i class='icon-clock'></i>";
+    textFill = "Time Played: <b>0 h 00 min 00 sec</b>";
     document.getElementById(divIdObj.intro.id).innerHTML += divStart + icon + textFill + divEnd;
 
     // Game Completion
     textFill = "Game Completion: <b>0 %</b> (out of " + divIdObj.intro.maxPercent + " %)";
     document.getElementById(divIdObj.intro.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
+
+    // Geo
+    icon = SYMBOL_INFO;
+    textFill = "Geo Amount: <b>0</b>";
+    document.getElementById(divIdObj.intro.id).innerHTML += divStart + icon + textFill + divEnd;
 
     // First Hint Only
     FillHTML(divIdObj.hints, HK_HINTS.fireballLevel[0], HK_HINTS.fireballLevel[1]);
