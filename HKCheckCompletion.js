@@ -119,6 +119,10 @@ const DIV_ID = {
         id: "hk-godmaster",
         percent: 0,
         maxPercent: 5
+    },
+    additional: {
+        h2: "Outside Game Completion",
+        id: "hk-additional"
     }
 };
 
@@ -167,42 +171,42 @@ const HK_BOSSES_WORLD = {
 
 // reference: https://radiance.host/apidocs/Charms.html
 const HK_CHARMS = {
-    gotCharm_1: ["Gathering Swarm", "Sly: 300 Geo"], // 1
-    gotCharm_2: ["Wayward Compass", "Iselda: 220 Geo"], // 1
-    gotCharm_3: ["Grubsong", "Grubfather: 10 Grubs"], // 1
-    gotCharm_4: ["Stalwart Shell", "Sly: 200 Geo"], // 2
-    gotCharm_5: ["Baldur Shell", "Howling Cliffs"], // 2
-    gotCharm_6: ["Fury of the Fallen", "King's Pass"], // 2
-    gotCharm_7: ["Quick Focus", "Salubra: 800 Geo"], // 3
-    gotCharm_8: ["Lifeblood Heart", "Salubra: 250 Geo"], // 2
-    gotCharm_9: ["Lifeblood Core", "The Abyss: 15 Lifeblood masks"], // 3
-    gotCharm_10: ["Defender's Crest", "Royal Waterways"], // 1
-    gotCharm_11: ["Flukenest", "Royal Waterways"], // 3
-    gotCharm_12: ["Thorns of Agony", "Greenpath"], // 1
-    gotCharm_13: ["Mark of Pride", "Mantis Village"], // 3
-    gotCharm_14: ["Steady Body", "Salubra: 120 Geo"], // 1
-    gotCharm_15: ["Heavy Blow", "Sly: 350 Geo + Shopkeeper's Key"], // 2
-    gotCharm_16: ["Sharp Shadow", "Deepnest"], // 2
-    gotCharm_17: ["Spore Shroom", "Fungal Wastes"], // 1
-    gotCharm_18: ["Longnail", "Salubra: 300 Geo"], // 2
-    gotCharm_19: ["Shaman Stone", "Salubra: 220 Geo"], // 3
-    gotCharm_20: ["Soul Catcher", "Forgotten Crossroads: Ancestral Mound"], // 2
-    gotCharm_21: ["Soul Eater", "Resting Grounds"], // 4
-    gotCharm_22: ["Glowing Womb", "Forgotten Crossroads"], // 2
-    gotCharm_23: ["Fragile Heart", "Leg Eater: 350/280 Geo"], // 2
-    gotCharm_24: ["Fragile Greed", "Leg Eater: 250/200 Geo"], // 2
-    gotCharm_25: ["Fragile Strength", "Leg Eater: 600/480 Geo"], // 3
-    gotCharm_26: ["Nailmaster’s Glory", "Sly: All Nail Arts"], // 1
-    gotCharm_27: ["Joni’s Blessing", "Howling Cliffs: Joni's Repose"], // 4
-    gotCharm_28: ["Shape of Unn", "Greenpath: Lake of Unn"], // 2
-    gotCharm_29: ["Hiveblood", "The Hive"], // 4
-    gotCharm_30: ["Dream Wielder", "Seer: 500 Essence"], // 1
-    gotCharm_31: ["Dashmaster", "Fungal Wastes"], // 2
-    gotCharm_32: ["Quick Slash", "Kingdom's Edge"], // 3
-    gotCharm_33: ["Spell Twister", "City of Tears: Soul Sanctum"], // 2
-    gotCharm_34: ["Deep Focus", "Crystal Peak"], // 4
-    gotCharm_35: ["Grubberfly’s Elegy", "Grubfather: 46 Grubs"], // 3
-    gotCharm_36: ["Kingsoul", "Queen's Gardens + Ancient Basin"], // 5
+    gotCharm_1: ["#1 Gathering Swarm", "Sly: 300 Geo"], // 1
+    gotCharm_2: ["#2 Wayward Compass", "Iselda: 220 Geo"], // 1
+    gotCharm_3: ["#3 Grubsong", "Grubfather: 10 Grubs"], // 1
+    gotCharm_4: ["#4 Stalwart Shell", "Sly: 200 Geo"], // 2
+    gotCharm_5: ["#5 Baldur Shell", "Howling Cliffs"], // 2
+    gotCharm_6: ["#6 Fury of the Fallen", "King's Pass"], // 2
+    gotCharm_7: ["#7 Quick Focus", "Salubra: 800 Geo"], // 3
+    gotCharm_8: ["#8 Lifeblood Heart", "Salubra: 250 Geo"], // 2
+    gotCharm_9: ["#9 Lifeblood Core", "The Abyss: 15 Lifeblood masks"], // 3
+    gotCharm_10: ["#10 Defender's Crest", "Royal Waterways"], // 1
+    gotCharm_11: ["#11 Flukenest", "Royal Waterways"], // 3
+    gotCharm_12: ["#12 Thorns of Agony", "Greenpath"], // 1
+    gotCharm_13: ["#13 Mark of Pride", "Mantis Village"], // 3
+    gotCharm_14: ["#14 Steady Body", "Salubra: 120 Geo"], // 1
+    gotCharm_15: ["#15 Heavy Blow", "Sly: 350 Geo + Shopkeeper's Key"], // 2
+    gotCharm_16: ["#16 Sharp Shadow", "Deepnest"], // 2
+    gotCharm_17: ["#17 Spore Shroom", "Fungal Wastes"], // 1
+    gotCharm_18: ["#18 Longnail", "Salubra: 300 Geo"], // 2
+    gotCharm_19: ["#19 Shaman Stone", "Salubra: 220 Geo"], // 3
+    gotCharm_20: ["#20 Soul Catcher", "Forgotten Crossroads: Ancestral Mound"], // 2
+    gotCharm_21: ["#21 Soul Eater", "Resting Grounds"], // 4
+    gotCharm_22: ["#22 Glowing Womb", "Forgotten Crossroads"], // 2
+    gotCharm_23: ["#23 Fragile Heart", "Leg Eater: 350/280 Geo"], // 2
+    gotCharm_24: ["#24 Fragile Greed", "Leg Eater: 250/200 Geo"], // 2
+    gotCharm_25: ["#25 Fragile Strength", "Leg Eater: 600/480 Geo"], // 3
+    gotCharm_26: ["#26 Nailmaster’s Glory", "Sly: All Nail Arts"], // 1
+    gotCharm_27: ["#27 Joni’s Blessing", "Howling Cliffs: Joni's Repose"], // 4
+    gotCharm_28: ["#28 Shape of Unn", "Greenpath: Lake of Unn"], // 2
+    gotCharm_29: ["#29 Hiveblood", "The Hive"], // 4
+    gotCharm_30: ["#30 Dream Wielder", "Seer: 500 Essence"], // 1
+    gotCharm_31: ["#31 Dashmaster", "Fungal Wastes"], // 2
+    gotCharm_32: ["#32 Quick Slash", "Kingdom's Edge"], // 3
+    gotCharm_33: ["#33 Spell Twister", "City of Tears: Soul Sanctum"], // 2
+    gotCharm_34: ["#34 Deep Focus", "Crystal Peak"], // 4
+    gotCharm_35: ["#35 Grubberfly’s Elegy", "Grubfather: 46 Grubs"], // 3
+    gotCharm_36: ["#36 Kingsoul", "Queen's Gardens + Ancient Basin"], // 5
 };
 
 const HK_COLOSSEUM = {
@@ -333,6 +337,12 @@ const HK_GODMASTER_DOORS = [
     ["#3 Pantheon of the Sage", "Godhome"],
     ["#4 Pantheon of the Knight", "Godhome"]
 ];
+
+const HK_ADDITIONAL = {
+    grubsCollected: ["Grubs Rescued", "out of 46 total", 46],
+    dreamOrbs: ["Essence Collected", "Enemies, Whispering Roots, Dream Bosses", 2400],
+    hasLantern: ["Lumafly Lantern", "Sly: 1800 Geo"]
+};
 
 /**
  * Checks Hollow Knight game completion by analyzing the save file
@@ -485,6 +495,10 @@ function HKCheckCompletion(jsonObject) {
         (HKPlayerData["bossDoorStateTier" + i].completed === true) ? CurrentDataTrue(DIV_ID.godmaster): CurrentDataFalse();
         FillHTML(DIV_ID.godmaster, HK_GODMASTER_DOORS_temp[i - 1][0], HK_GODMASTER_DOORS_temp[i - 1][1]);
     }
+
+    // ------------------------- Additional Things ----------------------------- //
+
+    CheckAdditional(DIV_ID.additional, HK_ADDITIONAL, HKPlayerData);
 
     // ------------------------- Hints ----------------------------- //
 
@@ -724,6 +738,26 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
     }
 }
 
+function CheckAdditional(divId, dataObject, playerData) {
+
+    let textPrefix = "";
+    let textSuffix = "";
+
+    for (let i in dataObject) {
+        textPrefix = dataObject[i][0];
+        textSuffix = dataObject[i][1];
+
+        if (i === "grubsCollected" || i === "dreamOrbs") {
+            textPrefix += ": " + playerData[i];
+            (playerData[i] >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataFalse();
+        } else {
+            (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
+        }
+
+        FillHTML(divId, textPrefix, textSuffix);
+    }
+}
+
 /**
  * Checks, validates and shows hints to the player depending on their save progression, in chronological order. Shows only hint for the last uncompleted event. If Hollow Knight is defeated, shows a dummy text.
  * @param {object} divId object containing div hints ID and h2 title
@@ -849,10 +883,10 @@ function InitialHTMLPopulate(divIdObj) {
     FillHTML(divIdObj.hints, HK_HINTS.fireballLevel[0], HK_HINTS.fireballLevel[1]);
 
     // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
-    let hkObjArray = [HK_BOSSES, HK_BOSSES_WORLD, HK_CHARMS, HK_EQUIPMENT, HK_NAILARTS, HK_MASKSHARDS, HK_MASKSHARDS_WORLD, HK_VESSELFRAGMENTS, HK_VESSELFRAGMENTS_WORLD, HK_DREAMERS, HK_COLOSSEUM, HK_DREAMNAIL, HK_WARRIORDREAMS, HK_GRIMMTROUPE, HK_LIFEBLOOD, HK_GODMASTER];
+    let hkObjArray = [HK_BOSSES, HK_BOSSES_WORLD, HK_CHARMS, HK_EQUIPMENT, HK_NAILARTS, HK_MASKSHARDS, HK_MASKSHARDS_WORLD, HK_VESSELFRAGMENTS, HK_VESSELFRAGMENTS_WORLD, HK_DREAMERS, HK_COLOSSEUM, HK_DREAMNAIL, HK_WARRIORDREAMS, HK_GRIMMTROUPE, HK_LIFEBLOOD, HK_GODMASTER, HK_ADDITIONAL];
 
     // duplicates and order important - must be the same as in hkObjArray[]
-    let divObjArray = [divIdObj.bosses, divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster];
+    let divObjArray = [divIdObj.bosses, divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.additional];
 
     // Looped filling to reduce redundancy
     do {
