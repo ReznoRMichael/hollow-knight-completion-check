@@ -123,7 +123,7 @@ const DIV_ID = {
         maxPercent: 5
     },
     essential: {
-        h2: "Essential for % Game Completion",
+        h2: "Game Completion Essentials",
         id: "hk-essential"
     }
 };
@@ -531,6 +531,10 @@ function HKCheckCompletion(jsonObject) {
         (HKPlayerData["bossDoorStateTier" + i].completed === true) ? CurrentDataTrue(DIV_ID.godmaster): CurrentDataFalse();
         FillHTML(DIV_ID.godmaster, HK_GODMASTER_DOORS_temp[i - 1][0], HK_GODMASTER_DOORS_temp[i - 1][1]);
     }
+
+    // ---------------- Fleur Divide ----------------- //
+
+    AppendHTML(DIV_ID.godmaster, FLEUR_DIVIDE);
 
     // ------------------------- Essential Things ----------------------------- //
 
@@ -1086,6 +1090,9 @@ function InitialHTMLPopulate(divIdObj) {
     for (let i = 0; i < ObjectLength(HK_GODMASTER_DOORS); i++) {
         FillHTML(divIdObj.godmaster, HK_GODMASTER_DOORS[i][0], HK_GODMASTER_DOORS[i][1]);
     }
+
+    // Fleur Divide
+    AppendHTML(divIdObj.godmaster, FLEUR_DIVIDE);
 }
 
 /**
