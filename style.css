@@ -199,6 +199,29 @@ a:hover {
     color: #479ae7;
 }
 
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.health-mask,
+.geo-symbol {
+    display: flex;
+    width: auto;
+    height: 1.48rem;
+    margin: 0 0 0 0.3rem;
+}
+
+.geo-symbol {
+    margin-right: 0.15rem;
+}
+
+.padding-left {
+    display: flex;
+    padding-left: 1.4rem;
+}
+
 .radio,
 .checkbox {
     position: relative;

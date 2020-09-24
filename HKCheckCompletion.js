@@ -1,9 +1,10 @@
 // ---------------- Constants ----------------- //
 
 const DATA_UNKNOWN = "Data unknown";
-const SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ ";
-const SYMBOL_TRUE = "<i class='icon-ok-squared'></i>"; // "✅ ";
-const SYMBOL_INFO = "<i class='icon-info-circled'></i>"; // "ℹ ";
+const SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ "
+const SYMBOL_TRUE = "<i class='icon-ok-squared'></i>"; // "✅ "
+const SYMBOL_INFO = "<i class='icon-info-circled'></i>"; // "ℹ "
+const SYMBOL_EMPTY = "<span class='padding-left'></span>";
 
 // ---------------- Variables ----------------- //
 
@@ -340,7 +341,7 @@ const HK_GODMASTER_DOORS = [
 
 const HK_ESSENTIAL = {
     grubsCollected: ["Grubs Rescued", "out of 46 total", 46],
-    dreamOrbs: ["Essence Collected", "Enemies, Whispering Roots, Dream Bosses", 2400],
+    dreamOrbs: ["Essence Collected", "out of 2400", 2400],
     slyRescued: ["Sly Rescued", "Forgotten Crossroads"],
     brettaRescued: ["Bretta Rescued", "Fungal Wastes"],
     hasLantern: ["Lumafly Lantern", "Sly: 1800 Geo"],
@@ -428,15 +429,15 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Game Completion Status ----------------- //
 
-    CheckCompletionPercent(DIV_ID.intro, HKPlayerData);
+    CheckCompletionPercent(DIV_ID.intro, HKPlayerData.completionPercentage);
+
+    // ---------------- Health Masks ----------------- //
+
+    CheckHealthMasks(DIV_ID.intro, HKPlayerData.maxHealth, HKPlayerData.permadeathMode);
 
     // ---------------- Geo Amount ----------------- //
 
     CheckGeo(DIV_ID.intro, HKPlayerData.geo);
-
-    // ---------------- Steel Soul Mode ----------------- //
-
-    CheckSteelSoul(DIV_ID.intro, HKPlayerData.permadeathMode);
 
     // ---------------- Bosses (Base Game) --------------------- //
 
@@ -678,21 +679,38 @@ function CheckPlayTime(divId, playTime) {
 /**
  * Searches for completionPercentage in playerData and fills HTML with the value of the save file
  * @param {object} divId ID of the HTML element for data appending
- * @param {object} playerData Reference/pointer to specific data where to search
+ * @param {number} completionPercentage Number of completion percentage
  */
-function CheckCompletionPercent(divId, playerData) {
+function CheckCompletionPercent(divId, completionPercentage) {
 
-    let textFill = "";
-    CurrentDataFalse();
+    (completionPercentage >= 112) ? CurrentDataTrue(): CurrentDataFalse();
 
-    for (let i in playerData) {
-        if (i === "completionPercentage") {
-            if (playerData[i] >= 112) CurrentDataTrue();
+    let textFill = "Game Completion: <b>" + completionPercentage + " %</b> (out of " + divId.maxPercent + " %)";
+    document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
+}
 
-            textFill = "Game Completion: <b>" + playerData[i] + " %</b> (out of " + divId.maxPercent + " %)";
-            document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
-        }
+/**
+ * Fills HTML with appriopriate number of health mask images
+ * @param {object} divId ID of the HTML element for data appending
+ * @param {number} masks Number of max health masks from the save
+ * @param {number} permadeathMode Value of permadeathMode property. 0 = Normal, 1 = Steel Soul
+ */
+function CheckHealthMasks(divId, masks, permadeathMode) {
+
+    let icon = SYMBOL_EMPTY;
+    let textFill = "Health:";
+    let maskImages = "";
+    let maskNormal = "<img src='img/health-mask.png' class='health-mask'>";
+    let maskSteel = "<img src='img/health-mask-steel.png' class='health-mask'>";
+    let maskImg = "";
+
+    (permadeathMode === 1) ? maskImg = maskSteel: maskImg = maskNormal;
+
+    for (let i = 0; i < masks; i++) {
+        maskImages += maskImg;
     }
+
+    document.getElementById(divId.id).innerHTML += "<div class='flex-container'>" + icon + textFill + maskImages + divEnd;
 }
 
 /**
@@ -702,26 +720,10 @@ function CheckCompletionPercent(divId, playerData) {
  */
 function CheckGeo(divId, geoValue) {
 
-    let icon = SYMBOL_INFO;
-    let textFill = "Geo Amount: <b>" + geoValue + "</b>";
+    let icon = SYMBOL_EMPTY;
+    let textFill = "Geo:<img src='img/geo.png' class='geo-symbol'><b>" + geoValue + "</b>";
 
-    document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
-}
-
-/**
- * Appends HTML with "Steel Soul" when it's enabled in the save file. When not enabled, don't show anything.
- * @param {object} divId ID of the HTML element for data appending
- * @param {number} permadeathMode Value of permadeathMode property
- */
-function CheckSteelSoul(divId, permadeathMode) {
-
-    // append HTML only when enabled
-    if (permadeathMode === 1) {
-        let icon = SYMBOL_INFO;
-        let textFill = "<b>Steel Soul Mode</b>";
-
-        document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
-    }
+    document.getElementById(divId.id).innerHTML += "<div class='flex-container'>" + icon + textFill + divEnd;
 }
 
 /**
@@ -989,25 +991,20 @@ function ObjectLength(object) {
  */
 function InitialHTMLPopulate(divIdObj) {
 
-    let icon = "";
-    let textFill = "";
-
     PrefillHTML(divIdObj);
     CurrentDataFalse();
 
     // Play Time
-    icon = "<i class='icon-clock'></i>";
-    textFill = "Time Played: <b>0 h 00 min 00 sec</b>";
-    document.getElementById(divIdObj.intro.id).innerHTML += divStart + icon + textFill + divEnd;
+    CheckPlayTime(divIdObj.intro, 0)
 
     // Game Completion
-    textFill = "Game Completion: <b>0 %</b> (out of " + divIdObj.intro.maxPercent + " %)";
-    document.getElementById(divIdObj.intro.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
+    CheckCompletionPercent(divIdObj.intro, 0);
+
+    // Health Masks
+    CheckHealthMasks(divIdObj.intro, 5, 0);
 
     // Geo
-    icon = SYMBOL_INFO;
-    textFill = "Geo Amount: <b>0</b>";
-    document.getElementById(divIdObj.intro.id).innerHTML += divStart + icon + textFill + divEnd;
+    CheckGeo(divIdObj.intro, 0);
 
     // First Hint Only
     FillHTML(divIdObj.hints, HK_HINTS.fireballLevel[0], HK_HINTS.fireballLevel[1]);
