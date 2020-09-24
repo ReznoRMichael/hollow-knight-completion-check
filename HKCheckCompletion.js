@@ -667,8 +667,8 @@ function CheckPlayTime(divId, playTime) {
     let hours = Math.floor(seconds / 3600);
     let sec = Math.floor(seconds % 60);
 
-    if (sec <= 10) sec = "0" + sec;
-    if (minutes <= 10) minutes = "0" + minutes;
+    if (sec < 10) sec = "0" + sec;
+    if (minutes < 10) minutes = "0" + minutes;
 
     let textFill = "Time Played: <b>" + hours + " h " + minutes + " min " + sec + " sec</b>";
 
