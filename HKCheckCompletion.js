@@ -341,7 +341,7 @@ const HK_GODMASTER_DOORS = [
 
 const HK_ESSENTIAL = {
     grubsCollected: ["Grubs Rescued", "out of 46 total", 46],
-    dreamOrbs: ["Essence Collected", "out of 2400", 2400],
+    dreamOrbs: ["Essence Collected", "Dream Nail: 2400 for completion", 2400],
     slyRescued: ["Sly Rescued", "Forgotten Crossroads"],
     brettaRescued: ["Bretta Rescued", "Fungal Wastes"],
     hasLantern: ["Lumafly Lantern", "Sly: 1800 Geo"],
@@ -358,7 +358,7 @@ const HK_ESSENTIAL = {
     paleOreDeepnest: ["Pale Ore #4", "Deepnest"],
     paleOreGrubfather: ["Pale Ore #5", "Grubfather: 31 Grubs"],
     paleOreColosseum: ["Pale Ore #6", "Colosseum of Fools: Trial of the Conqueror"],
-    fountainGeo: ["Geo in Fountain", "Ancient Basin", 3000],
+    fountainGeo: ["Geo in Fountain", "Ancient Basin: 3000 Geo maximum", 3000],
     hasTramPass: ["Tram Pass", "Deepnest"],
     nightmareLanternLit: ["Nightmare Lantern Lit", "Howling Cliffs"]
 };
@@ -433,7 +433,11 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Health Masks ----------------- //
 
-    CheckHealthMasks(DIV_ID.intro, HKPlayerData.maxHealth, HKPlayerData.permadeathMode);
+    CheckHealthMasks(DIV_ID.intro, HKPlayerData.maxHealthBase, HKPlayerData.permadeathMode);
+
+    // ---------------- Soul Orbs ----------------- //
+
+    CheckSoulOrbs(DIV_ID.intro, HKPlayerData.maxMP + HKPlayerData.MPReserveMax);
 
     // ---------------- Geo Amount ----------------- //
 
@@ -562,7 +566,7 @@ function PrefillHTML(jsObj) {
         h2id = "h2-" + jsObj[i].id;
         (i === "hints") ? cl = " class='hidden'": cl = "";
 
-        mp = " (" + jsObj[i].maxPercent + "%)";
+        mp = " = " + jsObj[i].maxPercent + "%";
         if (!jsObj[i].hasOwnProperty("maxPercent") || i === "intro") mp = "";
 
         document.getElementById("generated").innerHTML += "<div id='" + id + "'" + cl + ">" + "</div>";
@@ -600,7 +604,7 @@ function CompletionHTML(jsObj) {
             }
 
             if (jsObj[i].hasOwnProperty("percent")) cp += "/";
-            mp = " (" + cp + jsObj[i].maxPercent + "%)";
+            mp = " = " + cp + jsObj[i].maxPercent + "%";
         }
 
         document.getElementById(h2id).innerHTML = h2 + mp;
@@ -711,6 +715,26 @@ function CheckHealthMasks(divId, masks, permadeathMode) {
     }
 
     document.getElementById(divId.id).innerHTML += "<div class='flex-container'>" + icon + textFill + maskImages + divEnd;
+}
+
+/**
+ * Fills HTML with appriopriate number of soul orbs images
+ * @param {object} divId ID of the HTML element for data appending
+ * @param {number} totalSoul Number of max Soul reserve from the save. 99 = full Soul Orb
+ */
+function CheckSoulOrbs(divId, totalSoul) {
+
+    let icon = SYMBOL_EMPTY;
+    let textFill = "Soul:";
+    let soulImages = "";
+    let soulNormal = "<img src='img/soul-orb.png' class='soul-orb'>";
+    let soulImg = soulNormal;
+
+    for (let i = 0, total = totalSoul / 33; i < total; i++) {
+        soulImages += soulImg;
+    }
+
+    document.getElementById(divId.id).innerHTML += "<div class='flex-container'>" + icon + textFill + soulImages + divEnd;
 }
 
 /**
@@ -1002,6 +1026,9 @@ function InitialHTMLPopulate(divIdObj) {
 
     // Health Masks
     CheckHealthMasks(divIdObj.intro, 5, 0);
+
+    // Soul Orbs
+    CheckSoulOrbs(divIdObj.intro, 99);
 
     // Geo
     CheckGeo(divIdObj.intro, 0);

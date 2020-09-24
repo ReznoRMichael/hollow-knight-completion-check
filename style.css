@@ -206,11 +206,16 @@ a:hover {
 }
 
 .health-mask,
+.soul-orb,
 .geo-symbol {
     display: flex;
     width: auto;
     height: 1.48rem;
     margin: 0 0 0 0.3rem;
+}
+
+.soul-orb {
+    height: 1.3rem;
 }
 
 .geo-symbol {
