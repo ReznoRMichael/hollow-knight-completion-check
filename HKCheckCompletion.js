@@ -5,6 +5,7 @@ const SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ "
 const SYMBOL_TRUE = "<i class='icon-ok-squared'></i>"; // "✅ "
 const SYMBOL_INFO = "<i class='icon-info-circled'></i>"; // "ℹ "
 const SYMBOL_EMPTY = "<span class='padding-left'></span>";
+const FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
 
 // ---------------- Variables ----------------- //
 
@@ -431,6 +432,10 @@ function HKCheckCompletion(jsonObject) {
 
     CheckCompletionPercent(DIV_ID.intro, HKPlayerData.completionPercentage);
 
+    // ---------------- Fleur Divide ----------------- //
+
+    AppendHTML(DIV_ID.intro, FLEUR_DIVIDE);
+
     // ---------------- Health Masks ----------------- //
 
     CheckHealthMasks(DIV_ID.intro, HKPlayerData.maxHealthBase, HKPlayerData.permadeathMode);
@@ -566,7 +571,7 @@ function PrefillHTML(jsObj) {
         h2id = "h2-" + jsObj[i].id;
         (i === "hints") ? cl = " class='hidden'": cl = "";
 
-        mp = " = " + jsObj[i].maxPercent + "%";
+        mp = " – " + jsObj[i].maxPercent + "%";
         if (!jsObj[i].hasOwnProperty("maxPercent") || i === "intro") mp = "";
 
         document.getElementById("generated").innerHTML += "<div id='" + id + "'" + cl + ">" + "</div>";
@@ -604,7 +609,7 @@ function CompletionHTML(jsObj) {
             }
 
             if (jsObj[i].hasOwnProperty("percent")) cp += "/";
-            mp = " = " + cp + jsObj[i].maxPercent + "%";
+            mp = " – " + cp + jsObj[i].maxPercent + "%";
         }
 
         document.getElementById(h2id).innerHTML = h2 + mp;
@@ -632,6 +637,15 @@ function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix
     if (textSuffix.length && textPrefix.length) dash = " — ";
 
     document.getElementById(divId.id).innerHTML += divStart + icon + b[0] + textPrefix + b[1] + span[0] + dash + textSuffix + span[1] + divEnd;
+}
+
+/**
+ * Adds HTML string to an element with a given ID.
+ * @param {object} divId object containing div ID of the HTML element to append to
+ * @param {string} content HTML contents to append
+ */
+function AppendHTML(divId, content) {
+    document.getElementById(divId.id).innerHTML += "\n" + content;
 }
 
 /**
@@ -1023,6 +1037,9 @@ function InitialHTMLPopulate(divIdObj) {
 
     // Game Completion
     CheckCompletionPercent(divIdObj.intro, 0);
+
+    // Fleur Divide
+    AppendHTML(divIdObj.intro, FLEUR_DIVIDE);
 
     // Health Masks
     CheckHealthMasks(divIdObj.intro, 5, 0);
