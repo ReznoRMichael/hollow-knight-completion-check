@@ -348,12 +348,18 @@ const HK_ESSENTIAL = {
     elegantKey: ["Elegant Key", "Sly: 800 Geo + Shopkeeper's Key"],
     loveKey: ["Love Key", "Queen's Gardens"],
     slySimpleKey: ["Simple Key #1", "Sly: 950 Geo"],
-    cityOfTearsSimpleKey: ["Simple Key #2", "City of Tears"],
-    ancientBasinSimpleKey: ["Simple Key #3", "Ancient Basin"],
+    simpleKeyCityOfTears: ["Simple Key #2", "City of Tears"],
+    simpleKeyAncientBasin: ["Simple Key #3", "Ancient Basin"],
     gotLurkerKey: ["Simple Key #4", "Kingdom's Edge: Colosseum of Fools"],
-    hasTramPass: ["Tram Pass", "Deepnest"],
+    paleOreAncientBasin: ["Pale Ore #1", "Ancient Basin"],
+    paleOreSeer: ["Pale Ore #2", "Seer: 300 Essence"],
+    paleOreCrystalPeak: ["Pale Ore #3", "Crystal Peak: Hallownest's Crown"],
+    paleOreDeepnest: ["Pale Ore #4", "Deepnest"],
+    paleOreGrubfather: ["Pale Ore #5", "Grubfather: 31 Grubs"],
+    paleOreColosseum: ["Pale Ore #6", "Colosseum of Fools: Trial of the Conqueror"],
     fountainGeo: ["Geo in Fountain", "Ancient Basin", 3000],
-    nightmareLanternLit: ["Nightmare Lantern Lit", "Howling Cliffs"],
+    hasTramPass: ["Tram Pass", "Deepnest"],
+    nightmareLanternLit: ["Nightmare Lantern Lit", "Howling Cliffs"]
 };
 
 /**
@@ -821,11 +827,29 @@ function CheckEssential(divId, dataObject, playerData, worldData) {
             case "loveKey":
                 (playerData.hasLoveKey === true || playerData.openedLoveDoor === true) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
-            case "cityOfTearsSimpleKey":
+            case "simpleKeyCityOfTears": // #2
                 (FindWorldItem("Ruins1_17", "Shiny Item")) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
-            case "ancientBasinSimpleKey":
+            case "simpleKeyAncientBasin": // #3
                 (FindWorldItem("Abyss_20", "Shiny Item Stand")) ? CurrentDataTrue(): CurrentDataFalse();
+                break;
+            case "paleOreAncientBasin": // #1
+                (FindWorldItem("Abyss_17", "Battle Scene Ore")) ? CurrentDataTrue(): CurrentDataFalse();
+                break;
+            case "paleOreSeer": // #2
+                (playerData.dreamReward2 === true) ? CurrentDataTrue(): CurrentDataFalse();
+                break;
+            case "paleOreCrystalPeak": // #3
+                (FindWorldItem("Mines_34", "Shiny Item Stand")) ? CurrentDataTrue(): CurrentDataFalse();
+                break;
+            case "paleOreDeepnest": // #4
+                (FindWorldItem("Deepnest_32", "Shiny Item Stand")) ? CurrentDataTrue(): CurrentDataFalse();
+                break;
+            case "paleOreGrubfather": // #5
+                (FindWorldItem("Crossroads_38", "Shiny Item Ore")) ? CurrentDataTrue(): CurrentDataFalse();
+                break;
+            case "paleOreColosseum": // #6
+                (FindWorldItem("Room_Colosseum_Silver", "Shiny Item")) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             default:
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
