@@ -434,6 +434,10 @@ function HKCheckCompletion(jsonObject) {
 
     CheckGeo(DIV_ID.intro, HKPlayerData.geo);
 
+    // ---------------- Steel Soul Mode ----------------- //
+
+    CheckSteelSoul(DIV_ID.intro, HKPlayerData.permadeathMode);
+
     // ---------------- Bosses (Base Game) --------------------- //
 
     CheckIfDataTrue(DIV_ID.bosses, HK_BOSSES_temp, HKPlayerData);
@@ -702,6 +706,22 @@ function CheckGeo(divId, geoValue) {
     let textFill = "Geo Amount: <b>" + geoValue + "</b>";
 
     document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
+}
+
+/**
+ * Appends HTML with "Steel Soul" when it's enabled in the save file. When not enabled, don't show anything.
+ * @param {object} divId ID of the HTML element for data appending
+ * @param {number} permadeathMode Value of permadeathMode property
+ */
+function CheckSteelSoul(divId, permadeathMode) {
+
+    // append HTML only when enabled
+    if (permadeathMode === 1) {
+        let icon = SYMBOL_INFO;
+        let textFill = "<b>Steel Soul Mode</b>";
+
+        document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
+    }
 }
 
 /**
