@@ -48,7 +48,19 @@ If you like the tool and want it developed further with more functions, consider
 
 ## Version History
 
-* *2020-09-23:
+* 2020-09-25:
+
+  — showing Health Masks, Soul and Geo
+
+  — Game Completion Essentials: showing all things that don't count towards 112% Game Completion, but are necessary to achieve it
+
+  — Additional Information: game statistics mode. Data outside % Game Completion, like Nail damage, notches, things found
+
+  — visual additions: health masks, soul orbs, geo, separators
+
+  — small bug fixes and name changes
+
+* 2020-09-23:
 
   — now showing current % completion of all sub-categories (Bosses, Charms, Mask Shards etc.) in addition to total Game Completion % after analyzing a save.
 

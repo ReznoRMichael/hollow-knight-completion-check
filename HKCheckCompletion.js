@@ -347,6 +347,7 @@ const HK_GODMASTER_DOORS = [
 const HK_ESSENTIAL = {
     grubsCollected: ["Grubs Rescued", "out of 46 total", 46],
     dreamOrbs: ["Essence Collected", "Dream Nail + 2400 for completion", 2400],
+    stationsOpened: ["Stag Stations opened", "out of 9 total", 9],
     slyRescued: ["Sly Rescued", "Forgotten Crossroads"],
     brettaRescued: ["Bretta Rescued", "Fungal Wastes"],
     hasLantern: ["Lumafly Lantern", "Sly: 1800 Geo"],
@@ -372,7 +373,6 @@ const HK_ADDITIONAL = {
     nailDamage: ["Nail Damage", "Nailsmith upgrades", 21],
     charmSlots: ["Charm Notches", "out of 11 total", 11],
     dreamOrbsSpent: ["Essence spent", "on Dream Gate travelling"],
-    stationsOpened: ["Stag Stations opened", "Hallownest", 9],
     relicsWandererJournal: ["Relic #1 found total", "Wanderer's Journal (out of 14)", 14, "trinket1", "soldTrinket1"],
     relicsHallownestSeal: ["Relic #2 found total", "Hallownest Seal (out of 17)", 17, "trinket2", "soldTrinket2"],
     relicsKingsIdol: ["Relic #3 found total", "King's Idol (out of 8)", 8, "trinket3", "soldTrinket3"],
