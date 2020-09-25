@@ -125,6 +125,10 @@ const DIV_ID = {
     essential: {
         h2: "Game Completion Essentials",
         id: "hk-essential"
+    },
+    additional: {
+        h2: "Additional Information",
+        id: "hk-additional"
     }
 };
 
@@ -342,7 +346,7 @@ const HK_GODMASTER_DOORS = [
 
 const HK_ESSENTIAL = {
     grubsCollected: ["Grubs Rescued", "out of 46 total", 46],
-    dreamOrbs: ["Essence Collected", "Dream Nail: 2400 for completion", 2400],
+    dreamOrbs: ["Essence Collected", "Dream Nail + 2400 for completion", 2400],
     slyRescued: ["Sly Rescued", "Forgotten Crossroads"],
     brettaRescued: ["Bretta Rescued", "Fungal Wastes"],
     hasLantern: ["Lumafly Lantern", "Sly: 1800 Geo"],
@@ -362,6 +366,12 @@ const HK_ESSENTIAL = {
     fountainGeo: ["Geo in Fountain", "Ancient Basin: 3000 Geo maximum", 3000],
     hasTramPass: ["Tram Pass", "Deepnest"],
     nightmareLanternLit: ["Nightmare Lantern Lit", "Howling Cliffs"]
+};
+
+const HK_ADDITIONAL = {
+    nailDamage: ["Nail Damage", "Nailsmith upgrades", 21],
+    hasDreamGate: ["Dream Gate", "Seer: 900 Essence"],
+    dreamOrbsSpent: ["Essence spent", "Dream Nail", 1],
 };
 
 /**
@@ -538,8 +548,16 @@ function HKCheckCompletion(jsonObject) {
 
     // ------------------------- Essential Things ----------------------------- //
 
-    CheckEssential(DIV_ID.essential, HK_ESSENTIAL, HKPlayerData, HKWorldItems);
+    CheckAdditionalThings(DIV_ID.essential, HK_ESSENTIAL, HKPlayerData, HKWorldItems);
 
+    // ---------------- Fleur Divide ----------------- //
+
+    AppendHTML(DIV_ID.essential, FLEUR_DIVIDE);
+
+    // ------------------------- Additional Things ----------------------------- //
+
+    CheckAdditionalThings(DIV_ID.additional, HK_ADDITIONAL, HKPlayerData, HKWorldItems);
+    
     // ------------------------- Hints ----------------------------- //
 
     CheckHintsTrue(DIV_ID.hints, HK_HINTS_temp, HKPlayerData, HKWorldItems);
@@ -849,7 +867,7 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
  * @param {object} playerData Reference/pointer to specific data where to search
  * @param {object} worldData Reference/pointer to specific data where to search
  */
-function CheckEssential(divId, dataObject, playerData, worldData) {
+function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
 
     let textPrefix = "";
     let textSuffix = "";
@@ -873,13 +891,15 @@ function CheckEssential(divId, dataObject, playerData, worldData) {
 
     for (let i in dataObject) {
         textPrefix = dataObject[i][0];
-        textSuffix = dataObject[i][1];
+        (dataObject[i][1]) ? textSuffix = dataObject[i][1]: textSuffix = "";
 
         switch (i) {
             case "grubsCollected":
             case "dreamOrbs":
             case "fountainGeo":
-                textPrefix += ": " + playerData[i];
+            case "nailDamage":
+            case "dreamOrbsSpent":
+                textPrefix += ": " + Math.abs(playerData[i]);
                 (playerData[i] >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataInfo();
                 break;
             case "shopkeeperKey":
@@ -1058,10 +1078,10 @@ function InitialHTMLPopulate(divIdObj) {
     FillHTML(divIdObj.hints, HK_HINTS.fireballLevel[0], HK_HINTS.fireballLevel[1]);
 
     // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
-    let hkObjArray = [HK_BOSSES, HK_BOSSES_WORLD, HK_CHARMS, HK_EQUIPMENT, HK_NAILARTS, HK_MASKSHARDS, HK_MASKSHARDS_WORLD, HK_VESSELFRAGMENTS, HK_VESSELFRAGMENTS_WORLD, HK_DREAMERS, HK_COLOSSEUM, HK_DREAMNAIL, HK_WARRIORDREAMS, HK_GRIMMTROUPE, HK_LIFEBLOOD, HK_GODMASTER, HK_ESSENTIAL];
+    let hkObjArray = [HK_BOSSES, HK_BOSSES_WORLD, HK_CHARMS, HK_EQUIPMENT, HK_NAILARTS, HK_MASKSHARDS, HK_MASKSHARDS_WORLD, HK_VESSELFRAGMENTS, HK_VESSELFRAGMENTS_WORLD, HK_DREAMERS, HK_COLOSSEUM, HK_DREAMNAIL, HK_WARRIORDREAMS, HK_GRIMMTROUPE, HK_LIFEBLOOD, HK_GODMASTER, HK_ESSENTIAL, HK_ADDITIONAL];
 
     // duplicates and order important - must be the same as in hkObjArray[]
-    let divObjArray = [divIdObj.bosses, divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.essential];
+    let divObjArray = [divIdObj.bosses, divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.essential, divIdObj.additional];
 
     // Looped filling to reduce redundancy
     do {
@@ -1091,8 +1111,9 @@ function InitialHTMLPopulate(divIdObj) {
         FillHTML(divIdObj.godmaster, HK_GODMASTER_DOORS[i][0], HK_GODMASTER_DOORS[i][1]);
     }
 
-    // Fleur Divide
+    // Fleur Dividers
     AppendHTML(divIdObj.godmaster, FLEUR_DIVIDE);
+    AppendHTML(divIdObj.essential, FLEUR_DIVIDE);
 }
 
 /**
