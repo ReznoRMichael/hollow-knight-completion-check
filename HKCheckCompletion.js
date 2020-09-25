@@ -370,8 +370,22 @@ const HK_ESSENTIAL = {
 
 const HK_ADDITIONAL = {
     nailDamage: ["Nail Damage", "Nailsmith upgrades", 21],
+    charmSlots: ["Charm Notches", "out of 11 total", 11],
+    dreamOrbsSpent: ["Essence spent", "on Dream Gate travelling"],
+    stationsOpened: ["Stag Stations opened", "Hallownest", 9],
+    relicsWandererJournal: ["Relic #1 found total", "Wanderer's Journal (out of 14)", 14, "trinket1", "soldTrinket1"],
+    relicsHallownestSeal: ["Relic #2 found total", "Hallownest Seal (out of 17)", 17, "trinket2", "soldTrinket2"],
+    relicsKingsIdol: ["Relic #3 found total", "King's Idol (out of 8)", 8, "trinket3", "soldTrinket3"],
+    relicsArcaneEgg: ["Relic #4 found total", "Arcane Egg (out of 4)", 4, "trinket4", "soldTrinket4"],
+    rancidEggs: ["Rancid Eggs", "Hallownest, Sly, Tuk"],
+    xunFlowerBrokeTimes: ["Delicate Flowers broken", "Resting Grounds: Grey Mourner"],
     hasDreamGate: ["Dream Gate", "Seer: 900 Essence"],
-    dreamOrbsSpent: ["Essence spent", "Dream Nail", 1],
+    gotShadeCharm: ["Void Heart", "Kingsoul + Birthplace"],
+    fragileHealth_unbreakable: ["Unbreakable Heart", "Divine: 12000 Geo"],
+    fragileGreed_unbreakable: ["Unbreakable Greed", "Divine: 9000 Geo"],
+    fragileStrength_unbreakable: ["Unbreakable Strength", "Divine: 15000 Geo"],
+    zoteDead: ["Optimal Zote", "Greenpath + Deepnest"],
+    nailsmithSpared: ["Optimal Nailsmith", "City of Tears"],
 };
 
 /**
@@ -557,7 +571,7 @@ function HKCheckCompletion(jsonObject) {
     // ------------------------- Additional Things ----------------------------- //
 
     CheckAdditionalThings(DIV_ID.additional, HK_ADDITIONAL, HKPlayerData, HKWorldItems);
-    
+
     // ------------------------- Hints ----------------------------- //
 
     CheckHintsTrue(DIV_ID.hints, HK_HINTS_temp, HKPlayerData, HKWorldItems);
@@ -898,9 +912,16 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
             case "dreamOrbs":
             case "fountainGeo":
             case "nailDamage":
-            case "dreamOrbsSpent":
-                textPrefix += ": " + Math.abs(playerData[i]);
+            case "stationsOpened":
+            case "charmSlots":
+                textPrefix += ": " + playerData[i];
                 (playerData[i] >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataInfo();
+                break;
+            case "dreamOrbsSpent":
+            case "rancidEggs":
+            case "xunFlowerBrokeTimes":
+                CurrentDataInfo();
+                textPrefix += ": " + Math.abs(playerData[i]);
                 break;
             case "shopkeeperKey":
                 (playerData.hasSlykey === true || playerData.gaveSlykey === true) ? CurrentDataTrue(): CurrentDataFalse();
@@ -934,6 +955,14 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
                 break;
             case "paleOreColosseum": // #6
                 (FindWorldItem("Room_Colosseum_Silver", "Shiny Item")) ? CurrentDataTrue(): CurrentDataFalse();
+                break;
+            case "relicsWandererJournal":
+            case "relicsHallownestSeal":
+            case "relicsKingsIdol":
+            case "relicsArcaneEgg":
+                let total = playerData[dataObject[i][3]] + playerData[dataObject[i][4]];
+                (total >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataInfo();
+                textPrefix += ": " + total;
                 break;
             default:
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
