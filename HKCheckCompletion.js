@@ -348,7 +348,7 @@ const HK_GODMASTER_DOORS = [
 
 const HK_ESSENTIAL = {
     grubsCollected: ["Grubs Rescued", "out of 46 total", 46],
-    dreamOrbs: ["Essence Collected", "Dream Nail + 2400 for completion", 2400],
+    dreamOrbs: ["Essence Collected", "Dream Nail (2400 for completion)", 2400],
     stationsOpened: ["Stag Stations opened", "out of 10 total", 10],
     slyRescued: ["Sly Rescued", "Forgotten Crossroads"],
     brettaRescued: ["Bretta Rescued", "Fungal Wastes"],
@@ -374,20 +374,27 @@ const HK_ESSENTIAL = {
 const HK_ADDITIONAL = {
     nailDamage: ["Nail Damage", "Nailsmith upgrades", 21],
     charmSlots: ["Charm Notches", "out of 11 total", 11],
-    dreamOrbsSpent: ["Essence spent", "on Dream Gate travelling"],
+    dreamOrbsSpent: ["Essence spent", "Dream Gate travelling"],
     relicsWandererJournal: ["Relic #1 found total", "Wanderer's Journal (out of 14)", 14, "trinket1", "soldTrinket1"],
     relicsHallownestSeal: ["Relic #2 found total", "Hallownest Seal (out of 17)", 17, "trinket2", "soldTrinket2"],
     relicsKingsIdol: ["Relic #3 found total", "King's Idol (out of 8)", 8, "trinket3", "soldTrinket3"],
     relicsArcaneEgg: ["Relic #4 found total", "Arcane Egg (out of 4)", 4, "trinket4", "soldTrinket4"],
     rancidEggs: ["Rancid Eggs", "Hallownest, Sly, Tuk"],
     xunFlowerBrokeTimes: ["Delicate Flowers broken", "Resting Grounds: Grey Mourner"],
+    hasJournal: ["Hunter's Journal", "Greenpath: Hunter"],
+    hasHuntersMark: ["Hunter's Mark", "Greenpath: Hunter"],
+    journalEntriesCompleted: ["Creatures Encountered", "Hunter's Journal (164 max)", 164],
+    journalNotesCompleted: ["Hunter Notes Completed", "Hunter's Journal (164 max)", 164],
     hasDreamGate: ["Dream Gate", "Seer: 900 Essence"],
     gotShadeCharm: ["Void Heart", "Kingsoul + Birthplace"],
     fragileHealth_unbreakable: ["Unbreakable Heart", "Divine: 12000 Geo"],
     fragileGreed_unbreakable: ["Unbreakable Greed", "Divine: 9000 Geo"],
     fragileStrength_unbreakable: ["Unbreakable Strength", "Divine: 15000 Geo"],
-    zoteDead: ["Optimal Zote", "Greenpath + Deepnest"],
-    nailsmithSpared: ["Optimal Nailsmith", "City of Tears"],
+    whiteDefenderDefeats: ["White Defender times defeated", "Royal Waterways (5 max)", 5],
+    greyPrinceDefeats: ["Grey Prince Zote times defeated", "Dirtmouth (10 max)", 10],
+    bossDoorStateTier5: ["Pantheon of Hallownest", "Godhome"],
+    zoteDead: ["Optimal Zote", "Neglect"],
+    nailsmithSpared: ["Optimal Nailsmith", "Happy Couple"],
 };
 
 /**
@@ -923,11 +930,19 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
             case "nailDamage":
             case "stationsOpened":
             case "charmSlots":
+            case "journalEntriesCompleted":
+            case "journalNotesCompleted":
+            case "whiteDefenderDefeats":
+            case "greyPrinceDefeats":
                 let amount = playerData[i];
                 if (i === "stationsOpened") {
                     if (playerData.openedHiddenStation === true) amount++;
                 }
-                textPrefix += ": " + amount;
+                let countTotal = amount;
+                if (i === "journalEntriesCompleted" || i === "journalNotesCompleted") {
+                    countTotal = amount + " / " + playerData.journalEntriesTotal;
+                }
+                textPrefix += ": " + countTotal;
                 (amount >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataBlank();
                 break;
             case "dreamOrbsSpent":
@@ -976,6 +991,9 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
                 let total = playerData[dataObject[i][3]] + playerData[dataObject[i][4]];
                 (total >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataBlank();
                 textPrefix += ": " + total;
+                break;
+            case "bossDoorStateTier5":
+                (playerData[i].completed === true) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             default:
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
