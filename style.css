@@ -160,10 +160,6 @@ p {
     margin-bottom: 0.6rem;
 }
 
-.hidden {
-    display: none;
-}
-
 .horizontal-line {
     margin: 1rem 0;
     height: 1.5rem;
@@ -206,14 +202,18 @@ a:hover {
 
 .flex-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: left;
+}
+
+.flex-row {
+    flex-direction: row;
 }
 
 .health-mask,
 .soul-orb,
 .geo-symbol {
-    display: flex;
     width: auto;
     height: 1.48rem;
     margin: 0 0 0 0.3rem;
@@ -228,8 +228,17 @@ a:hover {
 }
 
 .padding-left {
-    display: flex;
     padding-left: 1.4rem;
+    height: 1.47rem;
+}
+
+.p-left-small {
+    padding-left: 0.3rem;
+    height: 1.47rem;
+}
+
+.hidden {
+    display: none;
 }
 
 .radio,

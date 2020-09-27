@@ -13,12 +13,14 @@ let currentData = DATA_UNKNOWN;
 let completionSymbol = SYMBOL_FALSE;
 
 let divStart = [
-    "<div>"
+    "<div class='flex-container'>"
 ].join("\n");
 
 let divEnd = [
     "</div>"
 ].join("\n");
+
+let pSpan = "<span class='p-left-small'></span>";
 
 // ---------------- Hollow Knight Data Constant Objects ----------------- //
 
@@ -347,7 +349,7 @@ const HK_GODMASTER_DOORS = [
 const HK_ESSENTIAL = {
     grubsCollected: ["Grubs Rescued", "out of 46 total", 46],
     dreamOrbs: ["Essence Collected", "Dream Nail + 2400 for completion", 2400],
-    stationsOpened: ["Stag Stations opened", "out of 9 total", 9],
+    stationsOpened: ["Stag Stations opened", "out of 10 total", 10],
     slyRescued: ["Sly Rescued", "Forgotten Crossroads"],
     brettaRescued: ["Bretta Rescued", "Fungal Wastes"],
     hasLantern: ["Lumafly Lantern", "Sly: 1800 Geo"],
@@ -663,7 +665,7 @@ function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix
     let b = ["<b>", "</b>"];
     if (!textPrefix.length) b = ["", ""];
 
-    let span = ["<span class='location hidden'>", "</span>"];
+    let span = ["<span class='flex-row location hidden'>", "</span>"];
     if (divId === DIV_ID.hints) {
         span[0] = "<span>";
         icon = SYMBOL_INFO;
@@ -672,7 +674,7 @@ function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix
     let dash = "";
     if (textSuffix.length && textPrefix.length) dash = " — ";
 
-    document.getElementById(divId.id).innerHTML += divStart + icon + b[0] + textPrefix + b[1] + span[0] + dash + textSuffix + span[1] + divEnd;
+    document.getElementById(divId.id).innerHTML += divStart + icon + b[0] + textPrefix + b[1] + span[0] + pSpan + dash + textSuffix + span[1] + divEnd;
 }
 
 /**
@@ -710,6 +712,13 @@ function CurrentDataInfo() {
 }
 
 /**
+ * Switches global variable to no symbol (span with left padding)
+ */
+function CurrentDataBlank() {
+    completionSymbol = SYMBOL_EMPTY;
+}
+
+/**
  * Fills HTML with the playTime value of the save file
  * @param {object} divId ID of the HTML element for data appending
  * @param {number} playTime Number of total gameplay time in seconds
@@ -725,7 +734,7 @@ function CheckPlayTime(divId, playTime) {
     if (sec < 10) sec = "0" + sec;
     if (minutes < 10) minutes = "0" + minutes;
 
-    let textFill = "Time Played: <b>" + hours + " h " + minutes + " min " + sec + " sec</b>";
+    let textFill = "Time Played:" + pSpan + "<b>" + hours + " h " + minutes + " min " + sec + " sec</b>";
 
     document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
 }
@@ -739,7 +748,7 @@ function CheckCompletionPercent(divId, completionPercentage) {
 
     (completionPercentage >= 112) ? CurrentDataTrue(): CurrentDataFalse();
 
-    let textFill = "Game Completion: <b>" + completionPercentage + " %</b> (out of " + divId.maxPercent + " %)";
+    let textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + divId.maxPercent + " %)";
     document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }
 
@@ -752,7 +761,7 @@ function CheckCompletionPercent(divId, completionPercentage) {
 function CheckHealthMasks(divId, masks, permadeathMode) {
 
     let icon = SYMBOL_EMPTY;
-    let textFill = "Health:";
+    let textFill = "<span>Health:</span>";
     let maskImages = "";
     let maskNormal = "<img src='img/health-mask.png' class='health-mask'>";
     let maskSteel = "<img src='img/health-mask-steel.png' class='health-mask'>";
@@ -764,7 +773,7 @@ function CheckHealthMasks(divId, masks, permadeathMode) {
         maskImages += maskImg;
     }
 
-    document.getElementById(divId.id).innerHTML += "<div class='flex-container'>" + icon + textFill + maskImages + divEnd;
+    document.getElementById(divId.id).innerHTML += divStart + icon + textFill + maskImages + divEnd;
 }
 
 /**
@@ -775,7 +784,7 @@ function CheckHealthMasks(divId, masks, permadeathMode) {
 function CheckSoulOrbs(divId, totalSoul) {
 
     let icon = SYMBOL_EMPTY;
-    let textFill = "Soul:";
+    let textFill = "<span>Soul:</span>";
     let soulImages = "";
     let soulNormal = "<img src='img/soul-orb.png' class='soul-orb'>";
     let soulImg = soulNormal;
@@ -784,7 +793,7 @@ function CheckSoulOrbs(divId, totalSoul) {
         soulImages += soulImg;
     }
 
-    document.getElementById(divId.id).innerHTML += "<div class='flex-container'>" + icon + textFill + soulImages + divEnd;
+    document.getElementById(divId.id).innerHTML += divStart + icon + textFill + soulImages + divEnd;
 }
 
 /**
@@ -795,9 +804,9 @@ function CheckSoulOrbs(divId, totalSoul) {
 function CheckGeo(divId, geoValue) {
 
     let icon = SYMBOL_EMPTY;
-    let textFill = "Geo:<img src='img/geo.png' class='geo-symbol'><b>" + geoValue + "</b>";
+    let textFill = "<span>Geo:</span><img src='img/geo.png' class='geo-symbol'><b>" + geoValue + "</b>";
 
-    document.getElementById(divId.id).innerHTML += "<div class='flex-container'>" + icon + textFill + divEnd;
+    document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
 }
 
 /**
@@ -914,13 +923,17 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
             case "nailDamage":
             case "stationsOpened":
             case "charmSlots":
-                textPrefix += ": " + playerData[i];
-                (playerData[i] >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataInfo();
+                let amount = playerData[i];
+                if (i === "stationsOpened") {
+                    if (playerData.openedHiddenStation === true) amount++;
+                }
+                textPrefix += ": " + amount;
+                (amount >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataBlank();
                 break;
             case "dreamOrbsSpent":
             case "rancidEggs":
             case "xunFlowerBrokeTimes":
-                CurrentDataInfo();
+                CurrentDataBlank();
                 textPrefix += ": " + Math.abs(playerData[i]);
                 break;
             case "shopkeeperKey":
@@ -961,7 +974,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
             case "relicsKingsIdol":
             case "relicsArcaneEgg":
                 let total = playerData[dataObject[i][3]] + playerData[dataObject[i][4]];
-                (total >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataInfo();
+                (total >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataBlank();
                 textPrefix += ": " + total;
                 break;
             default:
