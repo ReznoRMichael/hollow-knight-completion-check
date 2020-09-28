@@ -48,7 +48,7 @@ If you like the tool and want it developed further with more functions, consider
 
 ## Version History
 
-* 2020-09-25:
+* 2020-09-28:
 
   — showing Health Masks, Soul and Geo
 
