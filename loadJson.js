@@ -2,16 +2,17 @@ var jsonObj = "";
 
 // save file names list in the save/ folder
 var fileName = [
-    "reznor0.json",
-    "reznor1beforegruz.json",
-    "reznor2aftergruz.json",
-    "reznor5hornet.json",
-    "reznor29ss.json",
-    "ext48.json",
-    "reznor88banish.json",
-    "reznor100.json",
-    "reznor103ss.json",
-    "reznor112grimm.json",
+    "reznor0.json", // 0
+    "reznor1beforegruz.json", // 1
+    "reznor2aftergruz.json", // 2
+    "reznor5hornet.json", // 3
+    "reznor29ss.json", // 4
+    "ext48.json", // 5
+    "reznor88banish.json", // 6
+    "reznor99whitefragment.json", // 7
+    "reznor100.json", // 8
+    "reznor103ss.json", // 9
+    "reznor112grimm.json", // 10
 ];
 
 /**
@@ -44,7 +45,7 @@ function loadJSON(filename, callback) {
     xobj.send(null);
 }
 
-loadJSON("save/" + fileName[4],
+loadJSON("save/" + fileName[7],
     function JSONparse(response) {
         // Parse JSON string into object
         jsonObj = JSON.parse(response);

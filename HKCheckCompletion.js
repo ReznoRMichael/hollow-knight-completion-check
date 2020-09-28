@@ -834,7 +834,14 @@ function CheckGeo(divId, geoValue) {
  */
 function CheckIfDataTrue(divId, dataObject, playerData) {
     for (let i in dataObject) {
-        (playerData[i] === true) ? CurrentDataTrue(divId): CurrentDataFalse();
+        switch (i) {
+            case "gotCharm_36":
+                // prevents green checkbox and adding 1% when only got one white fragment
+                (playerData.gotQueenFragment === true && playerData.gotKingFragment === true) ? CurrentDataTrue(divId): CurrentDataFalse();
+                break;
+            default:
+                (playerData[i] === true) ? CurrentDataTrue(divId): CurrentDataFalse();
+        }
         FillHTML(divId, dataObject[i][0], dataObject[i][1]);
     }
 }
