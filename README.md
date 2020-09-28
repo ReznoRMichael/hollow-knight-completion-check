@@ -52,9 +52,11 @@ If you like the tool and want it developed further with more functions, consider
 
   — showing Health Masks, Soul and Geo
 
-  — Game Completion Essentials: showing all things that don't count towards 112% Game Completion, but are necessary to achieve it
+  — Game Completion Essentials: showing all things that don't count towards 112% Game Completion, but are necessary to achieve it, like number of Grubs, Essence, individual Simple Keys & Pale Ore, Keys, Tram Pass etc.
 
-  — Additional Information: game statistics mode. Data outside % Game Completion, like Nail damage, notches, things found
+  — Achievements Essentials: all things that matter for achievements like Hunter's Journal, fifth Pantheon, Void Heart, Zote, Nailsmith and others
+
+  — Game Statistics: everything else like Nail damage, notches, relics found and many others
 
   — visual additions: health masks, soul orbs, geo, separators
 

@@ -128,9 +128,13 @@ const DIV_ID = {
         h2: "Game Completion Essentials",
         id: "hk-essential"
     },
-    additional: {
-        h2: "Additional Information",
-        id: "hk-additional"
+    achievements: {
+        h2: "Achievements Essentials",
+        id: "hk-achievements"
+    },
+    statistics: {
+        h2: "Game Statistics",
+        id: "hk-statistics"
     }
 };
 
@@ -371,30 +375,32 @@ const HK_ESSENTIAL = {
     nightmareLanternLit: ["Nightmare Lantern Lit", "Howling Cliffs"]
 };
 
-const HK_ADDITIONAL = {
+const HK_ACHIEVEMENTS = {
+    hasJournal: ["Hunter's Journal", "Greenpath: Hunter"],
+    hasHuntersMark: ["Hunter's Mark", "Greenpath: Hunter"],
+    journalEntriesCompleted: ["Creatures Encountered", "Hunter's Journal (164 max)", 164],
+    journalNotesCompleted: ["Hunter Notes Completed", "Hunter's Journal (164 max)", 164],
+    gotShadeCharm: ["Void Heart", "Kingsoul + Birthplace"],
+    bossDoorStateTier5: ["Pantheon of Hallownest", "Godhome"],
+    zoteDead: ["Optimal Zote", "Neglect"],
+    nailsmithSpared: ["Optimal Nailsmith", "Happy Couple"],
+};
+
+const HK_STATISTICS = {
     nailDamage: ["Nail Damage", "Nailsmith upgrades", 21],
     charmSlots: ["Charm Notches", "out of 11 total", 11],
-    dreamOrbsSpent: ["Essence spent", "Dream Gate travelling"],
     relicsWandererJournal: ["Relic #1 found total", "Wanderer's Journal (out of 14)", 14, "trinket1", "soldTrinket1"],
     relicsHallownestSeal: ["Relic #2 found total", "Hallownest Seal (out of 17)", 17, "trinket2", "soldTrinket2"],
     relicsKingsIdol: ["Relic #3 found total", "King's Idol (out of 8)", 8, "trinket3", "soldTrinket3"],
     relicsArcaneEgg: ["Relic #4 found total", "Arcane Egg (out of 4)", 4, "trinket4", "soldTrinket4"],
     rancidEggs: ["Rancid Eggs", "Hallownest, Sly, Tuk"],
     xunFlowerBrokeTimes: ["Delicate Flowers broken", "Resting Grounds: Grey Mourner"],
-    hasJournal: ["Hunter's Journal", "Greenpath: Hunter"],
-    hasHuntersMark: ["Hunter's Mark", "Greenpath: Hunter"],
-    journalEntriesCompleted: ["Creatures Encountered", "Hunter's Journal (164 max)", 164],
-    journalNotesCompleted: ["Hunter Notes Completed", "Hunter's Journal (164 max)", 164],
     hasDreamGate: ["Dream Gate", "Seer: 900 Essence"],
-    gotShadeCharm: ["Void Heart", "Kingsoul + Birthplace"],
     fragileHealth_unbreakable: ["Unbreakable Heart", "Divine: 12000 Geo"],
     fragileGreed_unbreakable: ["Unbreakable Greed", "Divine: 9000 Geo"],
     fragileStrength_unbreakable: ["Unbreakable Strength", "Divine: 15000 Geo"],
     whiteDefenderDefeats: ["White Defender times defeated", "Royal Waterways (5 max)", 5],
     greyPrinceDefeats: ["Grey Prince Zote times defeated", "Dirtmouth (10 max)", 10],
-    bossDoorStateTier5: ["Pantheon of Hallownest", "Godhome"],
-    zoteDead: ["Optimal Zote", "Neglect"],
-    nailsmithSpared: ["Optimal Nailsmith", "Happy Couple"],
 };
 
 /**
@@ -577,9 +583,13 @@ function HKCheckCompletion(jsonObject) {
 
     AppendHTML(DIV_ID.essential, FLEUR_DIVIDE);
 
-    // ------------------------- Additional Things ----------------------------- //
+    // ------------------------- Achievements ----------------------------- //
 
-    CheckAdditionalThings(DIV_ID.additional, HK_ADDITIONAL, HKPlayerData, HKWorldItems);
+    CheckAdditionalThings(DIV_ID.achievements, HK_ACHIEVEMENTS, HKPlayerData, HKWorldItems);
+
+    // ------------------------- Game Statistics ----------------------------- //
+
+    CheckAdditionalThings(DIV_ID.statistics, HK_STATISTICS, HKPlayerData, HKWorldItems);
 
     // ------------------------- Hints ----------------------------- //
 
@@ -945,7 +955,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
                 textPrefix += ": " + countTotal;
                 (amount >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataBlank();
                 break;
-            case "dreamOrbsSpent":
             case "rancidEggs":
             case "xunFlowerBrokeTimes":
                 CurrentDataBlank();
@@ -1138,10 +1147,10 @@ function InitialHTMLPopulate(divIdObj) {
     FillHTML(divIdObj.hints, HK_HINTS.fireballLevel[0], HK_HINTS.fireballLevel[1]);
 
     // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
-    let hkObjArray = [HK_BOSSES, HK_BOSSES_WORLD, HK_CHARMS, HK_EQUIPMENT, HK_NAILARTS, HK_MASKSHARDS, HK_MASKSHARDS_WORLD, HK_VESSELFRAGMENTS, HK_VESSELFRAGMENTS_WORLD, HK_DREAMERS, HK_COLOSSEUM, HK_DREAMNAIL, HK_WARRIORDREAMS, HK_GRIMMTROUPE, HK_LIFEBLOOD, HK_GODMASTER, HK_ESSENTIAL, HK_ADDITIONAL];
+    let hkObjArray = [HK_BOSSES, HK_BOSSES_WORLD, HK_CHARMS, HK_EQUIPMENT, HK_NAILARTS, HK_MASKSHARDS, HK_MASKSHARDS_WORLD, HK_VESSELFRAGMENTS, HK_VESSELFRAGMENTS_WORLD, HK_DREAMERS, HK_COLOSSEUM, HK_DREAMNAIL, HK_WARRIORDREAMS, HK_GRIMMTROUPE, HK_LIFEBLOOD, HK_GODMASTER, HK_ESSENTIAL, HK_ACHIEVEMENTS, HK_STATISTICS];
 
     // duplicates and order important - must be the same as in hkObjArray[]
-    let divObjArray = [divIdObj.bosses, divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.essential, divIdObj.additional];
+    let divObjArray = [divIdObj.bosses, divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.essential, divIdObj.achievements, divIdObj.statistics];
 
     // Looped filling to reduce redundancy
     do {
