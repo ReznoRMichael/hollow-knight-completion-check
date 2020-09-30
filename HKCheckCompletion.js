@@ -376,6 +376,10 @@ const HK_ESSENTIAL = {
 };
 
 const HK_ACHIEVEMENTS = {
+    areaMaps: ["Area Maps", "Cornifer and Iselda (out of 13)", 13, [
+            "mapCrossroads", "mapGreenpath", "mapFogCanyon", "mapRoyalGardens", "mapFungalWastes", "mapCity", "mapWaterways", "mapMines", "mapDeepnest", "mapCliffs", "mapOutskirts", "mapRestingGrounds", "mapAbyss"
+        ]
+    ],
     hasJournal: ["Hunter's Journal", "Greenpath: Hunter"],
     hasHuntersMark: ["Hunter's Mark", "Greenpath: Hunter"],
     journalEntriesCompleted: ["Creatures Encountered", "Hunter's Journal (164 max)", 164],
@@ -407,6 +411,7 @@ const HK_STATISTICS = {
     fragileGreed_unbreakable: ["Unbreakable Greed", "Divine: 9000 Geo"],
     fragileHealth_unbreakable: ["Unbreakable Heart", "Divine: 12000 Geo"],
     fragileStrength_unbreakable: ["Unbreakable Strength", "Divine: 15000 Geo"],
+    killedMenderBug: ["Menderbug", "Forgotten Crossroads + destroy sign"],
     whiteDefenderDefeats: ["White Defender times defeated", "Royal Waterways (5 max)", 5],
     greyPrinceDefeats: ["Grey Prince Zote times defeated", "Dirtmouth (10 max)", 10],
 };
@@ -944,11 +949,25 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
         return false;
     }
 
+    /**
+     * Counts the number of maps the player has acquired (from the list in an array)
+     * @param {array} mapArray Array of strings with area map names
+     * @returns {number}
+     */
+    function CountMaps(mapArray) {
+        let totalMaps = 0;
+        for (i = 0, len = mapArray.length; i < len; i++) {
+            if (playerData[mapArray[i]] === true) totalMaps++
+        }
+        return totalMaps;
+    }
+
     for (let i in dataObject) {
         textPrefix = dataObject[i][0];
         (dataObject[i][1]) ? textSuffix = dataObject[i][1]: textSuffix = "";
 
         switch (i) {
+            case "areaMaps":
             case "grubsCollected":
             case "dreamOrbs":
             case "fountainGeo":
@@ -959,7 +978,12 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
             case "journalNotesCompleted":
             case "whiteDefenderDefeats":
             case "greyPrinceDefeats":
-                let amount = playerData[i];
+                let amount = 0;
+                if (i === "areaMaps") {
+                    amount = CountMaps(dataObject[i][3]);
+                } else {
+                    amount = playerData[i];
+                }
                 if (i === "stationsOpened") {
                     if (playerData.openedHiddenStation === true) amount++;
                 }
