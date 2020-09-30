@@ -414,6 +414,7 @@ const HK_STATISTICS = {
     killedMenderBug: ["Menderbug", "Forgotten Crossroads + destroy sign"],
     whiteDefenderDefeats: ["White Defender times defeated", "Royal Waterways (5 max)", 5],
     greyPrinceDefeats: ["Grey Prince Zote times defeated", "Dirtmouth (10 max)", 10],
+    whitePalaceSecretRoomVisited: ["Path of Pain", "White Palace"]
 };
 
 /**
