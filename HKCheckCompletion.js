@@ -408,6 +408,7 @@ const HK_STATISTICS = {
     rancidEggs: ["Rancid Eggs", "Hallownest, Sly, Tuk"],
     xunFlowerBrokeTimes: ["Delicate Flowers broken", "Resting Grounds: Grey Mourner"],
     hasDreamGate: ["Dream Gate", "Seer: 900 Essence"],
+    whisperingRoots: ["Whispering Roots completed", "Dream Nail (out of 15)", 15],
     fragileGreed_unbreakable: ["Unbreakable Greed", "Divine: 9000 Geo"],
     fragileHealth_unbreakable: ["Unbreakable Heart", "Divine: 12000 Geo"],
     fragileStrength_unbreakable: ["Unbreakable Strength", "Divine: 15000 Geo"],
@@ -951,6 +952,21 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
     }
 
     /**
+     * Searches for a given item that the player has found and returns the amount of them that the player completed.
+     * @param {string} itemId Name of the item
+     * @returns {number}
+     */
+    function CountWorldItem(itemId = "") {
+        let total = 0;
+        for (let i = 0, length = worldData.length; i < length; i++) {
+            if (worldData[i].id === itemId) {
+                if (worldData[i].activated === true) total++;
+            }
+        }
+        return total;
+    }
+
+    /**
      * Counts the number of maps the player has acquired (from the list in an array)
      * @param {array} mapArray Array of strings with area map names
      * @returns {number}
@@ -975,6 +991,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
             case "nailDamage":
             case "stationsOpened":
             case "charmSlots":
+            case "whisperingRoots":
             case "journalEntriesCompleted":
             case "journalNotesCompleted":
             case "whiteDefenderDefeats":
@@ -982,6 +999,8 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
                 let amount = 0;
                 if (i === "areaMaps") {
                     amount = CountMaps(dataObject[i][3]);
+                } else if (i === "whisperingRoots") {
+                    amount = CountWorldItem("Dream Plant");
                 } else {
                     amount = playerData[i];
                 }
