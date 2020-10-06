@@ -12,7 +12,8 @@ var fileName = [
     "reznor99whitefragment.json", // 7
     "reznor100.json", // 8
     "reznor103ss.json", // 9
-    "reznor112grimm.json", // 10
+    "reznor107.json", // 10
+    "reznor112grimm.json", // 11
 ];
 
 /**
@@ -45,7 +46,7 @@ function loadJSON(filename, callback) {
     xobj.send(null);
 }
 
-loadJSON("save/" + fileName[3],
+loadJSON("save/" + fileName[5],
     function JSONparse(response) {
         // Parse JSON string into object
         jsonObj = JSON.parse(response);
