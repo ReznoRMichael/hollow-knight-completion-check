@@ -1,20 +1,24 @@
 # Hollow Knight: Analyze Save Completion Online Tool
 
-> Analyze your saves. See precisely what you missed and where. See Completion %, locations (also Shards/Fragments), costs. I even designed spoiler-free hints based on your progress, if you are completely lost.
+> Analyze your saves. See precisely what you missed and where. See Completion %, locations (also Shards/Fragments), costs, Game Statistics. I even designed spoiler-free hints based on your progress, if you are completely lost.
 
 ## General info
 
 Hollow Knight doesn't have a game completion list. There is no way to easily check what specific things someone forgot to do for full 112% Game Completion. So I wrote a tool for that. It can also give an optional hint if stuck, based on the in-game progress.
 
-Inspirations: discussions on the forum, KayDeeTee and bloodorca's Save Editors, programming learning, Elderbug.
+Inspirations: discussions on the forum, [KayDeeTee](https://github.com/KayDeeTee/Hollow-Knight-SaveManager) and [bloodorca](https://bloodorca.github.io/hollow)'s Save Editors, programming learning, Elderbug.
 
 If this is your first playthrough and you feel completely lost, I will give you a very slight optional hint which should point you in the right direction (no major spoilers). Hidden by default.
 
-I will show you all individual Mask Shards and Vessel Fragments as well as locations and costs of every item on the list. Locations/costs are hidden by default if you don't want spoilers.
+I will show you all individual Mask Shards and Vessel Fragments as well as locations and costs of every item on the list. Hidden by default to avoid spoilers. Tick "Spoiler Mode" to show them.
+
+I will show you all things that don't count towards 112% Game Completion, but are necessary to achieve it. Also all the completely optional things that matter for achievements.
+
+For all number and stats fans, I will show you Game Statistics. Everything you wish to know like Nail damage, notches, total relics found and many others.
 
 ## How to use
 
-* Use bloodorca's amazing [Online Save File Editor](https://bloodorca.github.io/hollow/) to decode your Hollow Knight **user\*.dat** save file into text.
+* Use bloodorca's amazing [Online Save File Editor](https://bloodorca.github.io/hollow) to decode your Hollow Knight **user\*.dat** save file into text.
 
 * **CTRL+A** (Select All) inside the text box after decoding the save. **CTRL+C** (Copy) to copy the whole contents inside the text box. Be careful not to copy the whole webpage! Only the text inside the text box.
 
@@ -42,9 +46,7 @@ I will show you all individual Mask Shards and Vessel Fragments as well as locat
 
 All feedback/problems/wrong data are appreciated. Feel free to write them in the [Steam Discussion](https://steamcommunity.com/app/367520/discussions/0/2915472677711090083/) thread for the Tool or under the [Steam Guide](https://steamcommunity.com/sharedfiles/filedetails/?id=2209910193).
 
-Currently only things that are necessary for Game Completion % achievements are shown. The tool doesn't show all the optional things, bosses, challenges, relics found, geo caches opened etc. that are not required for completion %.
-
-If you like the tool and want it developed further with more functions, consider supporting on [PayPal](https://www.paypal.me/ReznoRMichael).
+If you like the tool and wish it developed further with more functions, consider supporting on [PayPal](https://www.paypal.me/ReznoRMichael).
 
 ## Version History
 
