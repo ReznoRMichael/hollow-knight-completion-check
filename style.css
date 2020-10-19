@@ -30,32 +30,32 @@ html {
 body {
     font-family: 'Heebo', sans-serif;
     color: #fff;
-    background-color: #050d18;
+    background-color: #050d19;
     margin: 0;
+    overflow: auto;
 }
 
-body::-webkit-scrollbar,
-textarea::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
 
-body::-webkit-scrollbar-track,
-textarea::-webkit-scrollbar-track,
-body::-webkit-scrollbar-track-piece,
-textarea::-webkit-scrollbar-track-piece,
-textarea::-webkit-resizer {
-    background-color: #050d18;
-}
-
-body::-webkit-scrollbar-thumb,
-textarea::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: #1e4d6c;
 }
 
-body::-webkit-scrollbar-thumb:hover,
-textarea::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background-color: #2e5d7c;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+    background: url("img/scrollbar-track.png") repeat-y !important;
+}
+
+::-webkit-resizer {
+    background-color: #050d19;
+    color: #1e4d6c;
 }
 
 #background {
@@ -70,12 +70,14 @@ textarea::-webkit-scrollbar-thumb:hover {
     background-size: auto 100%;
     background-position: center top;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     z-index: 1;
 }
 
 #content {
     max-width: 550px;
     margin: 0 auto;
+    padding: 0 .6rem;
     position: relative;
     z-index: 1000;
 }
@@ -112,6 +114,11 @@ textarea {
     background-color: rgba(0, 0, 0, 0);
     color: #fff;
     border: 1px solid #e3ebf7;
+    padding: 0;
+    margin: 2px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    overflow-wrap: normal;
 }
 
 textarea::placeholder {
@@ -122,7 +129,8 @@ textarea::placeholder {
 
 #save-area {
     width: 100%;
-    margin: .5rem 0 .3rem 0;
+    height: 5.65rem;
+    margin: .5rem 2px .3rem 2px;
 }
 
 .buttons {
@@ -202,13 +210,18 @@ a:hover {
 
 .flex-container {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    align-items: center;
+    align-items: normal;
     justify-content: left;
 }
 
 .flex-row {
     flex-direction: row;
+}
+
+.align-center {
+    align-items: center;
 }
 
 .health-mask,

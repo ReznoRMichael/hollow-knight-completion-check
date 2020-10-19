@@ -16,6 +16,10 @@ let divStart = [
     "<div class='flex-container'>"
 ].join("\n");
 
+let divStartCenter = [
+    "<div class='flex-container align-center'>"
+].join("\n");
+
 let divEnd = [
     "</div>"
 ].join("\n");
@@ -813,7 +817,7 @@ function CheckHealthMasks(divId, masks, permadeathMode) {
         maskImages += maskImg;
     }
 
-    document.getElementById(divId.id).innerHTML += divStart + icon + textFill + maskImages + divEnd;
+    document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + maskImages + divEnd;
 }
 
 /**
@@ -833,7 +837,7 @@ function CheckSoulOrbs(divId, totalSoul) {
         soulImages += soulImg;
     }
 
-    document.getElementById(divId.id).innerHTML += divStart + icon + textFill + soulImages + divEnd;
+    document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + soulImages + divEnd;
 }
 
 /**
@@ -846,7 +850,7 @@ function CheckGeo(divId, geoValue) {
     let icon = SYMBOL_EMPTY;
     let textFill = "<span>Geo:</span><img src='img/geo.png' class='geo-symbol'><b>" + geoValue + "</b>";
 
-    document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
+    document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + divEnd;
 }
 
 /**
