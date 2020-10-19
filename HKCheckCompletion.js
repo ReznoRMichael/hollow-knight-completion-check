@@ -712,7 +712,7 @@ function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix
     let span = ["<span class='flex-row location hidden'>", "</span>"];
     if (divId === DIV_ID.hints) {
         span[0] = "<span>";
-        icon = SYMBOL_INFO;
+        icon = "";
     }
 
     let dash = "";
