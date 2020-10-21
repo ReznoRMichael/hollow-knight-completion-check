@@ -50,7 +50,7 @@ body {
 
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-track-piece {
-    background: url("img/scrollbar-track.png") repeat-y !important;
+    background: url("../img/scrollbar-track.png") repeat-y !important;
 }
 
 ::-webkit-resizer {
@@ -66,7 +66,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("img/hk-background.jpg");
+    background-image: url("../img/hk-background.jpg");
     background-size: auto 100%;
     background-position: center top;
     background-repeat: no-repeat;
@@ -172,7 +172,7 @@ p {
     margin: 1rem 0;
     height: 1.5rem;
     width: 100%;
-    background-image: url("img/fleur-divide.png");
+    background-image: url("../img/fleur-divide.png");
     background-size: auto 100%;
     background-position: center top;
     background-repeat: no-repeat;

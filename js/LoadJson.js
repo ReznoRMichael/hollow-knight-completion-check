@@ -18,9 +18,9 @@ var fileName = [
 
 /**
  * Reads the .json file and parses it to a JS object (jsonObj).
- * @param callback Asynchronous function.
+ * @param callback Function to be called when the request completes
  */
-function loadJSON(filename, callback) {
+function LoadJSON(filename, callback) {
     // new Http request object (asynchronous), both the web page and the XML file it tries to load, must be located on the same server.
     var xobj = new XMLHttpRequest();
 
@@ -39,18 +39,19 @@ function loadJSON(filename, callback) {
         if (xobj.readyState == 4 && xobj.status == "200") {
             // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
             // Returns the response data as a string
-            callback(xobj.responseText);
-        }
+            return callback(xobj.responseText);
+        } else return false;
     };
     // Sends the request to the server - Used for GET requests
     xobj.send(null);
 }
 
-loadJSON("save/" + fileName[5],
-    function JSONparse(response) {
-        // Parse JSON string into object
-        jsonObj = JSON.parse(response);
-        document.getElementById("save-area").value = response;
-        // console.log(jsonObj);
-    }
-);
+function JSONparse(response) {
+    // Parse JSON string into object
+    let jsonObject = JSON.parse(response);
+    document.getElementById("save-area").value = response;
+    return jsonObject;
+    // console.log(jsonObj);
+}
+
+jsonObj = LoadJSON("../save/" + fileName[5], JSONparse(response));
