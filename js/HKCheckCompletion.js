@@ -189,7 +189,7 @@ const HK_BOSSES_WORLD = {
 const HK_CHARMS = {
     gotCharm_1: ["#1 Gathering Swarm", "Sly: 300 Geo"], // 1
     gotCharm_2: ["#2 Wayward Compass", "Iselda: 220 Geo"], // 1
-    gotCharm_3: ["#3 Grubsong", "Grubfather: 10 Grubs"], // 1
+    gotCharm_3: ["#3 Grubsong", "Grubfather: 10 Grubs rescued"], // 1
     gotCharm_4: ["#4 Stalwart Shell", "Sly: 200 Geo"], // 2
     gotCharm_5: ["#5 Baldur Shell", "Howling Cliffs"], // 2
     gotCharm_6: ["#6 Fury of the Fallen", "King's Pass"], // 2
@@ -221,7 +221,7 @@ const HK_CHARMS = {
     gotCharm_32: ["#32 Quick Slash", "Kingdom's Edge"], // 3
     gotCharm_33: ["#33 Spell Twister", "City of Tears: Soul Sanctum"], // 2
     gotCharm_34: ["#34 Deep Focus", "Crystal Peak"], // 4
-    gotCharm_35: ["#35 Grubberfly’s Elegy", "Grubfather: 46 Grubs"], // 3
+    gotCharm_35: ["#35 Grubberfly’s Elegy", "Grubfather: 46 Grubs rescued"], // 3
     gotCharm_36: ["#36 Kingsoul", "Queen's Gardens + Ancient Basin"], // 5
 };
 
@@ -265,7 +265,7 @@ const HK_MASKSHARDS = {
 const HK_MASKSHARDS_WORLD = {
     Crossroads_13: ["Mask Shard #6", "Forgotten Crossroads: below Hot Springs"],
     Crossroads_09: ["Mask Shard #7", "Forgotten Crossroads: Brooding Mawlek"],
-    Crossroads_38: ["Mask Shard #8", "Grubfather: 5 Grubs"],
+    Crossroads_38: ["Mask Shard #8", "Grubfather: 5 Grubs rescued"],
     Room_Bretta: ["Mask Shard #9", "Dirtmouth: Bretta's Room"],
     Fungus2_01: ["Mask Shard #10", "Queen's Station"],
     Waterways_04b: ["Mask Shard #11", "Royal Waterways"],
@@ -278,7 +278,7 @@ const HK_MASKSHARDS_WORLD = {
 
 const HK_VESSELFRAGMENTS = {
     slyVesselFrag1: ["Vessel Fragment #1", "Sly: 550 Geo"],
-    slyVesselFrag2: ["Vessel Fragment #2", "Sly: 900 Geo"],
+    slyVesselFrag2: ["Vessel Fragment #2", "Sly: 900 Geo + Shopkeeper's Key"],
     dreamReward5: ["Vessel Fragment #3", "Seer: 700 Essence"],
     vesselFragStagNest: ["Vessel Fragment #4", "Stag Nest"]
 };
@@ -372,7 +372,7 @@ const HK_ESSENTIAL = {
     paleOreSeer: ["Pale Ore #2", "Seer: 300 Essence"],
     paleOreCrystalPeak: ["Pale Ore #3", "Crystal Peak: Hallownest's Crown"],
     paleOreDeepnest: ["Pale Ore #4", "Deepnest"],
-    paleOreGrubfather: ["Pale Ore #5", "Grubfather: 31 Grubs"],
+    paleOreGrubfather: ["Pale Ore #5", "Grubfather: 31 Grubs rescued"],
     paleOreColosseum: ["Pale Ore #6", "Colosseum of Fools: Trial of the Conqueror"],
     fountainGeo: ["Geo in Fountain", "Ancient Basin: 3000 Geo maximum", 3000],
     hasTramPass: ["Tram Pass", "Deepnest"],
@@ -388,7 +388,7 @@ const HK_ACHIEVEMENTS = {
     hasHuntersMark: ["Hunter's Mark", "Greenpath: Hunter"],
     journalEntriesCompleted: ["Creatures Encountered", "Hunter's Journal (164 max)", 164],
     journalNotesCompleted: ["Hunter Notes Completed", "Hunter's Journal (164 max)", 164],
-    salubraBlessing: ["Salubra's Blessing", "Salubra: 800 Geo + 40 Charms"],
+    salubraBlessing: ["Salubra's Blessing", "Salubra: 800 Geo + 40 Charms found"],
     falseKnightDreamDefeated: ["Failed Champion", "Forgotten Crossroads"],
     mageLordDreamDefeated: ["Soul Tyrant", "City of Tears: Soul Sanctum"],
     infectedKnightDreamDefeated: ["Lost Kin", "Ancient Basin"],
@@ -405,11 +405,11 @@ const HK_ACHIEVEMENTS = {
 const HK_STATISTICS = {
     nailDamage: ["Nail Damage", "Nailsmith upgrades", 21],
     charmSlots: ["Charm Notches", "out of 11 total", 11],
-    notchShroomOgres: ["Charm Notch #1", "Fungal Wastes: Shroom Ogres"],
-    salubraNotch1: ["Charm Notch #2", "Salubra: 120 Geo + 5 Charms"],
-    salubraNotch2: ["Charm Notch #3", "Salubra: 500 Geo + 10 Charms"],
-    salubraNotch3: ["Charm Notch #4", "Salubra: 900 Geo + 18 Charms"],
-    salubraNotch4: ["Charm Notch #5", "Salubra: 1400 Geo + 25 Charms"],
+    notchShroomOgres: ["Charm Notch #1", "Fungal Wastes: Shroom Ogres room"],
+    salubraNotch1: ["Charm Notch #2", "Salubra: 120 Geo + 5 Charms found"],
+    salubraNotch2: ["Charm Notch #3", "Salubra: 500 Geo + 10 Charms found"],
+    salubraNotch3: ["Charm Notch #4", "Salubra: 900 Geo + 18 Charms found"],
+    salubraNotch4: ["Charm Notch #5", "Salubra: 1400 Geo + 25 Charms found"],
     colosseumBronzeCompleted: ["Charm Notch #6", "Colosseum of Fools: Trial of the Warrior"],
     notchFogCanyon: ["Charm Notch #7", "Fog Canyon: explosive eggs room"],
     gotGrimmNotch: ["Charm Notch #8", "Dirtmouth: Troupe Leader Grimm"],
@@ -421,13 +421,13 @@ const HK_STATISTICS = {
     xunFlowerBrokeTimes: ["Delicate Flowers broken", "Resting Grounds: Grey Mourner"],
     hasDreamGate: ["Dream Gate", "Seer: 900 Essence"],
     whisperingRoots: ["Whispering Roots completed", "Dream Nail (out of 15)", 15],
-    fragileGreed_unbreakable: ["Unbreakable Greed", "Divine: 9000 Geo"],
-    fragileHealth_unbreakable: ["Unbreakable Heart", "Divine: 12000 Geo"],
-    fragileStrength_unbreakable: ["Unbreakable Strength", "Divine: 15000 Geo"],
+    fragileGreed_unbreakable: ["Unbreakable Greed", "Divine: Fragile Greed + 9000 Geo"],
+    fragileHealth_unbreakable: ["Unbreakable Heart", "Divine: Fragile Heart + 12000 Geo"],
+    fragileStrength_unbreakable: ["Unbreakable Strength", "Divine: Fragile Strength + 15000 Geo"],
     killedMenderBug: ["Menderbug", "Forgotten Crossroads + destroy sign"],
     whiteDefenderDefeats: ["White Defender times defeated", "Royal Waterways (5 max)", 5],
     greyPrinceDefeats: ["Grey Prince Zote times defeated", "Dirtmouth (10 max)", 10],
-    whitePalaceSecretRoomVisited: ["Path of Pain", "White Palace"]
+    whitePalaceSecretRoomVisited: ["Path of Pain", "White Palace: secret room"]
 };
 
 /**
