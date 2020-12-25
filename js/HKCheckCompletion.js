@@ -405,17 +405,17 @@ const HK_ACHIEVEMENTS = {
     ✅ Garpede
     ✅ Void Tendrils
     */
-    killedLazyFlyer: ["Journal: Aluba", "Lake of Unn, Queen's Gardens (near White Lady)"],
-    killedZapBug: ["Journal: Charged Lumafly", "Fog Canyon: Teacher's Archives (tank)"],
-    killedGorgeousHusk: ["Journal: Gorgeous Husk", "City of Tears: secret room"],
     killedPrayerSlug: ["Journal: Maggot", "Forgotten Crossroads: False Knight secret room"],
-    killedPlantShooter: ["Journal: Gulka", "Greenpath: west of Stone Sanctuary"],
+    killedOrangeScuttler: ["Journal: Lightseed", "Infected Crossroads"],
+    killedPigeon: ["Journal: Maskfly", "Greenpath, Queen's Gardens"],
+    killedLazyFlyer: ["Journal: Aluba", "Lake of Unn, Queen's Gardens (near White Lady)"],
     killedAcidFlyer: ["Journal: Duranda", "Greenpath: Nailmaster Sheo's tent path"],
     killedAcidWalker: ["Journal: Durandoo", "Greenpath, Queen's Gardens"],
+    killedPlantShooter: ["Journal: Gulka", "Greenpath: west of Stone Sanctuary"],
     killedMushroomTurret: ["Journal: Sporg", "Fungal Wastes"],
-    killedPigeon: ["Journal: Maskfly", "Greenpath, Queen's Gardens"],
+    killedZapBug: ["Journal: Charged Lumafly", "Fog Canyon: Teacher's Archives (tank)"],
     killedCrystalCrawler: ["Journal: Crystal Crawler", "Crystal Peak"],
-    killedOrangeScuttler: ["Journal: Lightseed", "Infected Crossroads"],
+    killedGorgeousHusk: ["Journal: Gorgeous Husk", "City of Tears: secret room"],
     killedWorm: ["Journal: Goam", "Infected Crossroads: near Fungal Wastes entrance"],
     killedBigCentipede: ["Journal: Garpede", "Deepnest: east of Hot Spring"],
     killedAbyssTendril: ["Journal: Void Tendrils", "The Abyss: secret room"],
