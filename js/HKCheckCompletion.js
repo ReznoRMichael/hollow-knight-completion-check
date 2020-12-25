@@ -401,8 +401,8 @@ const HK_ACHIEVEMENTS = {
     ✅ Crystal Crawler
     ✅ Lightseed
     Goam
-    Garpede
-    Void Tendrils
+    ✅ Garpede
+    ✅ Void Tendrils
     */
     killedLazyFlyer: ["Journal: Aluba", "Lake of Unn, Queen's Gardens (near White Lady)"],
     killedZapBug: ["Journal: Charged Lumafly", "Fog Canyon: Teacher's Archives (tank)"],
@@ -415,6 +415,8 @@ const HK_ACHIEVEMENTS = {
     killedPigeon: ["Journal: Maskfly", "Greenpath, Queen's Gardens"],
     killedCrystalCrawler: ["Journal: Crystal Crawler", "Crystal Peak"],
     killedOrangeScuttler: ["Journal: Lightseed", "Infected Crossroads"],
+    killedBigCentipede: ["Journal: Garpede", "Deepnest: east of Hot Spring"],
+    killedAbyssTendril: ["Journal: Void Tendrils", "The Abyss: secret room"],
     falseKnightDreamDefeated: ["Failed Champion", "Forgotten Crossroads"],
     mageLordDreamDefeated: ["Soul Tyrant", "City of Tears: Soul Sanctum"],
     infectedKnightDreamDefeated: ["Lost Kin", "Ancient Basin"],
