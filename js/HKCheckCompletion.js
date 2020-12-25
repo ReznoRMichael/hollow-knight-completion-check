@@ -389,6 +389,7 @@ const HK_ACHIEVEMENTS = {
     journalEntriesCompleted: ["Creatures Encountered", "Hunter's Journal (164 max)", 164],
     journalNotesCompleted: ["Hunter Notes Completed", "Hunter's Journal (164 max)", 164],
     /* 
+    Rare (Missable) Journal Enemies:
     ✅ Maggot
     ✅ Gulka
     ✅ Sporg
@@ -400,7 +401,7 @@ const HK_ACHIEVEMENTS = {
     ✅ Gorgeous Husk
     ✅ Crystal Crawler
     ✅ Lightseed
-    Goam
+    ✅ Goam
     ✅ Garpede
     ✅ Void Tendrils
     */
@@ -415,6 +416,7 @@ const HK_ACHIEVEMENTS = {
     killedPigeon: ["Journal: Maskfly", "Greenpath, Queen's Gardens"],
     killedCrystalCrawler: ["Journal: Crystal Crawler", "Crystal Peak"],
     killedOrangeScuttler: ["Journal: Lightseed", "Infected Crossroads"],
+    killedWorm: ["Journal: Goam", "Infected Crossroads: near Fungal Wastes entrance"],
     killedBigCentipede: ["Journal: Garpede", "Deepnest: east of Hot Spring"],
     killedAbyssTendril: ["Journal: Void Tendrils", "The Abyss: secret room"],
     falseKnightDreamDefeated: ["Failed Champion", "Forgotten Crossroads"],
