@@ -388,13 +388,40 @@ const HK_ACHIEVEMENTS = {
     hasHuntersMark: ["Hunter's Mark", "Greenpath: Hunter"],
     journalEntriesCompleted: ["Creatures Encountered", "Hunter's Journal (164 max)", 164],
     journalNotesCompleted: ["Hunter Notes Completed", "Hunter's Journal (164 max)", 164],
-    salubraBlessing: ["Salubra's Blessing", "Salubra: 800 Geo + 40 Charms found"],
+    /* 
+    ✅ Maggot
+    ✅ Gulka
+    ✅ Sporg
+    ✅ Maskfly
+    ✅ Aluba
+    ✅ Durandoo
+    ✅ Duranda
+    ✅ Charged Lumafly
+    ✅ Gorgeous Husk
+    ✅ Crystal Crawler
+    ✅ Lightseed
+    Goam
+    Garpede
+    Void Tendrils
+    */
+    killedLazyFlyer: ["Journal: Aluba", "Lake of Unn, Queen's Gardens (near White Lady)"],
+    killedZapBug: ["Journal: Charged Lumafly", "Fog Canyon: Teacher's Archives (tank)"],
+    killedGorgeousHusk: ["Journal: Gorgeous Husk", "City of Tears: secret room"],
+    killedPrayerSlug: ["Journal: Maggot", "Forgotten Crossroads: False Knight secret room"],
+    killedPlantShooter: ["Journal: Gulka", "Greenpath: west of Stone Sanctuary"],
+    killedAcidFlyer: ["Journal: Duranda", "Greenpath: Nailmaster Sheo's tent path"],
+    killedAcidWalker: ["Journal: Durandoo", "Greenpath, Queen's Gardens"],
+    killedMushroomTurret: ["Journal: Sporg", "Fungal Wastes"],
+    killedPigeon: ["Journal: Maskfly", "Greenpath, Queen's Gardens"],
+    killedCrystalCrawler: ["Journal: Crystal Crawler", "Crystal Peak"],
+    killedOrangeScuttler: ["Journal: Lightseed", "Infected Crossroads"],
     falseKnightDreamDefeated: ["Failed Champion", "Forgotten Crossroads"],
     mageLordDreamDefeated: ["Soul Tyrant", "City of Tears: Soul Sanctum"],
     infectedKnightDreamDefeated: ["Lost Kin", "Ancient Basin"],
     whiteDefenderDefeated: ["White Defender", "Royal Waterways"],
-    greyPrinceDefeated: ["Grey Prince Zote", "Dirtmouth"],
+    greyPrinceDefeated: ["Grey Prince Zote", "Dirtmouth: Bretta's Room"],
     killedHollowKnight: ["Hollow Knight", "Forgotten Crossroads: Black Egg Temple"],
+    salubraBlessing: ["Salubra's Blessing", "Salubra: 800 Geo + 40 Charms found"],
     gotShadeCharm: ["Void Heart", "Kingsoul + Birthplace"],
     killedFinalBoss: ["Radiance", "Forgotten Crossroads: Black Egg Temple"],
     bossDoorStateTier5: ["Embrace the Void", "Godhome: Pantheon of Hallownest"],
@@ -424,10 +451,12 @@ const HK_STATISTICS = {
     fragileGreed_unbreakable: ["Unbreakable Greed", "Divine: Fragile Greed + 9000 Geo"],
     fragileHealth_unbreakable: ["Unbreakable Heart", "Divine: Fragile Heart + 12000 Geo"],
     fragileStrength_unbreakable: ["Unbreakable Strength", "Divine: Fragile Strength + 15000 Geo"],
-    killedMenderBug: ["Menderbug", "Forgotten Crossroads + destroy sign"],
+    killedMenderBug: ["Journal: Menderbug", "Forgotten Crossroads + destroy sign"],
+    killedBindingSeal: ["Journal: Seal of Binding", "Awarded for Path of Pain completion"],
     whiteDefenderDefeats: ["White Defender times defeated", "Royal Waterways (5 max)", 5],
     greyPrinceDefeats: ["Grey Prince Zote times defeated", "Dirtmouth (10 max)", 10],
-    whitePalaceSecretRoomVisited: ["Path of Pain", "White Palace: secret room"]
+    // whitePalaceSecretRoomVisited: ["White Palace Secret Room visited", "White Palace: one of the secret rooms"],
+    killsBindingSeal: ["Path of Pain", "White Palace: main secret area"],
 };
 
 /**
@@ -1075,6 +1104,9 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
             case "bossDoorStateTier5":
                 (playerData[i].completed === true) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
+            case "killsBindingSeal":
+                (playerData[i] == 0) ? CurrentDataTrue(): CurrentDataFalse();
+                break;
             default:
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
         }
@@ -1095,7 +1127,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
 
     if (playerData.killedHollowKnight === true) {
         // a text to show when player already finished their first playthrough (killed Hollow Knight first time)
-        FillHTML(divId, "", "...a successful Knight who doesn't need hints anymore");
+        FillHTML(divId, "", "...a successful Knight who doesn't need hints anymore. The Knight explores the world of Hallownest patiently in constant search of its remaining secrets...");
         return true;
     }
 

@@ -14,6 +14,9 @@ var fileName = [
     "reznor103ss.json", // 9
     "reznor107.json", // 10
     "reznor112grimm.json", // 11
+    "PoP/kanna.json", // 12
+    "PoP/Reaper4578.json", // 13
+    "PoP/tintingaroo.json", // 14
 ];
 
 /**
@@ -54,4 +57,4 @@ function JSONparse(response) {
     // console.log(jsonObj);
 }
 
-jsonObj = LoadJSON("../save/" + fileName[5], JSONparse(response));
+jsonObj = LoadJSON("../save/" + fileName[13], JSONparse(response));
