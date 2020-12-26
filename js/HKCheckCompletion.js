@@ -425,7 +425,7 @@ const HK_ACHIEVEMENTS = {
     whiteDefenderDefeated: ["White Defender", "Royal Waterways"],
     greyPrinceDefeated: ["Grey Prince Zote", "Dirtmouth: Bretta's Room"],
     killedHollowKnight: ["Hollow Knight", "Forgotten Crossroads: Black Egg Temple"],
-    salubraBlessing: ["Salubra's Blessing", "Salubra: 800 Geo + 40 Charms found"],
+    salubraBlessing: ["Salubra's Blessing", "Salubra: 800 Geo + all 40 Charms found"],
     gotShadeCharm: ["Void Heart", "Kingsoul + Birthplace"],
     killedFinalBoss: ["Radiance", "Forgotten Crossroads: Black Egg Temple"],
     bossDoorStateTier5: ["Embrace the Void", "Godhome: Pantheon of Hallownest"],
