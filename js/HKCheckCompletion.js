@@ -1116,6 +1116,11 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
             case "killsBindingSeal":
                 (playerData[i] == 0) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
+            case "greyPrinceDefeated":
+            case "zoteDead":
+            case "nailsmithSpared":
+                (playerData[i] === true) ? CurrentDataTrue(): CurrentDataBlank();
+                break;
             default:
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
         }
