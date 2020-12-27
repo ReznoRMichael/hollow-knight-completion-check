@@ -419,6 +419,7 @@ const HK_ACHIEVEMENTS = {
     killedWorm: ["Journal: Goam", "Infected Crossroads: near Fungal Wastes entrance"],
     killedBigCentipede: ["Journal: Garpede", "Deepnest: east of Hot Spring"],
     killedAbyssTendril: ["Journal: Void Tendrils", "The Abyss: secret room"],
+    killedPaleLurker: ["Journal: Pale Lurker", "Colosseum of Fools: secret area"],
     falseKnightDreamDefeated: ["Failed Champion", "Forgotten Crossroads"],
     mageLordDreamDefeated: ["Soul Tyrant", "City of Tears: Soul Sanctum"],
     infectedKnightDreamDefeated: ["Lost Kin", "Ancient Basin"],
