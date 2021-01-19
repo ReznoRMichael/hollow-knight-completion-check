@@ -48,8 +48,9 @@
 
         <div class="buttons">
 
-            <button id="save-area-read" class="button" onclick="HKReadTextArea();">Analyze Text</button>
             <!-- <button id="save-area-file" class="button" onclick="">Load Save</button> -->
+            <button id="save-area-read" class="button" onclick="HKReadTextArea();">Analyze Text</button>
+            <input id="save-area-file" class="button" type="file" name="file" accept=".dat,.bak*" onchange="ShowFile(this)">
 
             <div class="checkboxes">
                 <label for="checkbox-hints" class="checkbox-label" title="Check to see an optional clue for your first playthrough based on your save's progress.">
@@ -87,6 +88,9 @@
 
 <!-- Instantly load test file (Debugging script) -->
 <script src="js/LoadJson.js"></script>
+
+<!-- Load Save File testing -->
+<script src="js/LoadSaveFile.js"></script>
 
 <!-- Main script -->
 <script src="js/HKCheckCompletion.js"></script>
