@@ -4,9 +4,9 @@
 
 ## General info
 
-Hollow Knight doesn't have a game completion list. There is no way to easily check what specific things someone forgot to do for full 112% Game Completion. There are no Game Statistics as well. So I decided to write a tool for that.
+Hollow Knight doesn't have a game completion list. There is no way to easily check what specific things you forgot to do or missed for full 112% Game Completion, Hunter's Journal and Achievements. Until now! I wrote a tool for that for you.
 
-Inspirations: discussions on the forum, [KayDeeTee](https://github.com/KayDeeTee/Hollow-Knight-SaveManager) and [bloodorca](https://bloodorca.github.io/hollow)'s Save Editors, programming learning, Elderbug.
+*Inspirations: love for Hollow Knight, discussions on the forum, [KayDeeTee](https://github.com/KayDeeTee/Hollow-Knight-SaveManager) and [bloodorca](https://bloodorca.github.io/hollow)'s Save Editors, programming learning, Elderbug.*
 
 ## Steam Guide
 
@@ -24,8 +24,14 @@ More info with features and visual previews can be found in the official [Steam 
 
 ## Hollow Knight Save game locations
 
+#### Your Steam Cloud
+If you have Steam Cloud enabled for Hollow Knight, you can download your save [directly from here.](https://store.steampowered.com/account/remotestorageapp/?appid=367520)
+You can use this if you want to check your save progress without access to your PC (on mobile/tablet for example) or if you don't want to search manually for the save files.
+
 #### Windows
 `%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight\`
+**Pro Tip:** Copy and paste this code into the folder path bar of the Windows File Explorer window and press Enter to go there instantly (Windows 10).
+*Example path: C:\Users\your-username\AppData\LocalLow\Team Cherry\Hollow Knight*
 
 #### Linux
 `~/.config/unity3d/Team Cherry/Hollow Knight/`
@@ -42,9 +48,41 @@ More info with features and visual previews can be found in the official [Steam 
 
 All feedback/problems/wrong data are appreciated. Feel free to write them in the [Steam Discussion](https://steamcommunity.com/app/367520/discussions/0/2915472677711090083/) thread for the Tool or under the [Steam Guide](https://steamcommunity.com/sharedfiles/filedetails/?id=2209910193).
 
-If you like the tool and wish it developed further with more functions, consider supporting on [PayPal](https://www.paypal.me/ReznoRMichael).
+If you like the tool and wish it developed further with more functions and easier usage, consider supporting on [PayPal](https://www.paypal.me/ReznoRMichael).
 
 ## Version History
+
+* 2020-01-19:
+  — Changed the site address to GitHub Pages using https. Now the site is published directly from the GitHub source. This should fix the problem for some people who were not able to visit the previous webpage.
+
+* 2020-12-27:
+  — added Journal: Pale Lurker
+
+* 2020-12-25:
+  — fixed the Path of Pain check (thanks to Reaper4578, kanna, tintingaroo for greatly helping in this, and kiotosmith, Reaper4578 for bringing this to my attention)
+  — added some new journal entries
+
+  **Achievements Essentials additions**
+  (rare missable enemies/entries for the Keen Hunter/True Hunter/Hunter's Mark achievements)
+  ✅ Journal: Maggot
+  ✅ Journal: Lightseed
+  ✅ Journal: Maskfly
+  ✅ Journal: Aluba
+  ✅ Journal: Duranda
+  ✅ Journal: Durandoo
+  ✅ Journal: Gulka
+  ✅ Journal: Sporg
+  ✅ Journal: Charged Lumafly
+  ✅ Journal: Crystal Crawler
+  ✅ Journal: Gorgeous Husk
+  ✅ Journal: Goam
+  ✅ Journal: Garpede
+  ✅ Journal: Void Tendrils
+  ✅ Journal: Pale Lurker
+
+  **Game Statistics additions**
+  ✅ Journal: Seal of Binding
+  ✅ Journal: Weathered Mask
 
 * 2020-09-28:
 
