@@ -25,12 +25,12 @@ More info with features and visual previews can be found in the official [Steam 
 ## Hollow Knight Save game locations
 
 #### Your Steam Cloud
-If you have Steam Cloud enabled for Hollow Knight, you can download your save [directly from here.](https://store.steampowered.com/account/remotestorageapp/?appid=367520)
+If you have Steam Cloud enabled for Hollow Knight, you can download your save [directly from here.](https://store.steampowered.com/account/remotestorageapp/?appid=367520)  
 You can use this if you want to check your save progress without access to your PC (on mobile/tablet for example) or if you don't want to search manually for the save files.
 
 #### Windows
-`%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight\`
-**Pro Tip:** Copy and paste this code into the folder path bar of the Windows File Explorer window and press Enter to go there instantly (Windows 10).
+`%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight\`  
+**Pro Tip:** Copy and paste this code into the folder path bar of the Windows File Explorer window and press Enter to go there instantly (Windows 10).  
 *Example path: C:\Users\your-username\AppData\LocalLow\Team Cherry\Hollow Knight*
 
 #### Linux
@@ -41,7 +41,7 @@ You can use this if you want to check your save progress without access to your 
 
 #### Filenames
 
-**user\*.dat** — main save file. Where \* is a number between 1 and 4, and it is the appropriate save slot inside the game.
+**user\*.dat** — main save file. Where \* is a number between 1 and 4, and it is the appropriate save slot inside the game.  
 **user\*.dat.bakX** — backup save files. Where X is a number in ascending order meaning how many backups were made during the whole playthrough of that save. The higher the number, the more recent the backup. There are usually 3 save backups at one time, older backups are deleted.
 
 ## Support and feedback
@@ -53,36 +53,40 @@ If you like the tool and wish it developed further with more functions and easie
 ## Version History
 
 * 2020-01-19:
+
   — Changed the site address to GitHub Pages using https. Now the site is published directly from the GitHub source. This should fix the problem for some people who were not able to visit the previous webpage.
 
 * 2020-12-27:
+
   — added Journal: Pale Lurker
 
 * 2020-12-25:
+
   — fixed the Path of Pain check (thanks to Reaper4578, kanna, tintingaroo for greatly helping in this, and kiotosmith, Reaper4578 for bringing this to my attention)
+
   — added some new journal entries
 
-  **Achievements Essentials additions**
-  (rare missable enemies/entries for the Keen Hunter/True Hunter/Hunter's Mark achievements)
-  ✅ Journal: Maggot
-  ✅ Journal: Lightseed
-  ✅ Journal: Maskfly
-  ✅ Journal: Aluba
-  ✅ Journal: Duranda
-  ✅ Journal: Durandoo
-  ✅ Journal: Gulka
-  ✅ Journal: Sporg
-  ✅ Journal: Charged Lumafly
-  ✅ Journal: Crystal Crawler
-  ✅ Journal: Gorgeous Husk
-  ✅ Journal: Goam
-  ✅ Journal: Garpede
-  ✅ Journal: Void Tendrils
-  ✅ Journal: Pale Lurker
+  **Achievements Essentials additions**  
+  (rare missable enemies/entries for the Keen Hunter/True Hunter/Hunter's Mark achievements)  
+  ✅ Journal: Maggot  
+  ✅ Journal: Lightseed  
+  ✅ Journal: Maskfly  
+  ✅ Journal: Aluba  
+  ✅ Journal: Duranda  
+  ✅ Journal: Durandoo  
+  ✅ Journal: Gulka  
+  ✅ Journal: Sporg  
+  ✅ Journal: Charged Lumafly  
+  ✅ Journal: Crystal Crawler  
+  ✅ Journal: Gorgeous Husk  
+  ✅ Journal: Goam  
+  ✅ Journal: Garpede  
+  ✅ Journal: Void Tendrils  
+  ✅ Journal: Pale Lurker  
 
-  **Game Statistics additions**
-  ✅ Journal: Seal of Binding
-  ✅ Journal: Weathered Mask
+  **Game Statistics additions**  
+  ✅ Journal: Seal of Binding  
+  ✅ Journal: Weathered Mask  
 
 * 2020-09-28:
 
