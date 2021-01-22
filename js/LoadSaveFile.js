@@ -15,20 +15,14 @@ function LoadSaveFile(input) {
     // It is an array of bytes, often referred to in other languages as a "byte array".
 
     // new FileReader()
-    // readAsArrayBuffer(file)
-    // addEventListener("load", function) - to decode the file when loaded
-
     let inputReader = new FileReader();
+    // readAsArrayBuffer(file)
     inputReader.readAsArrayBuffer(inputFileObject);
-
+    // addEventListener("load", function) - to decode the file when loaded
     inputReader.addEventListener("load", FileObjectToArrayBuffer);
 
     // 2. Decode file
-    // The slice() method copies up to, but not including, the byte indicated by the end parameter.
-
-    // Uint8Array(ArrayBuffer)
-    // ArrayBuffer.slice()
-    // remove C# header (ArrayBuffer)
+    
     // base64 Decoding (ArrayBuffer)
     // AES decryption (ECB) removes pkcs7 padding (ArrayBuffer)
     // Convert ArrayBuffer to string/text TextDecoder().decode(ArrayBuffer)
@@ -44,9 +38,23 @@ function FileObjectToArrayBuffer() {
     let inputArrayBuffer = this.result;
 
     try {
+        // Uint8Array(ArrayBuffer)
+        inputArrayBuffer = new Uint8Array(inputArrayBuffer);
+
+        // ArrayBuffer.slice()
+        // The slice() method copies up to, but not including, the byte indicated by the end parameter.
+        inputArrayBuffer.slice();
+
+        // remove C# header (ArrayBuffer)
+
+
         alert(`File: ${inputArrayBuffer}`);
     } 
     catch (error) {
-        alert(`The file cannot be decoded. Error: ${error}`);
+        alert(`The file cannot be read. Error: ${error}`);
     }
+}
+
+function RemoveCSharpHeader() {
+    
 }
