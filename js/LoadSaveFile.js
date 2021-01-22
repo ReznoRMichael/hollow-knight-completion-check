@@ -48,7 +48,7 @@ function FileObjectToArrayBuffer() {
         inputArrayBuffer.slice();
 
         // remove C# header (ArrayBuffer)
-
+        inputArrayBuffer = RemoveCSharpHeader(inputArrayBuffer);
 
         alert(`File: ${inputArrayBuffer}`);
     } catch (error) {
