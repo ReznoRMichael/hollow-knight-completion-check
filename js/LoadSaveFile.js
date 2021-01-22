@@ -21,16 +21,7 @@ function LoadSaveFile(input) {
     let inputReader = new FileReader();
     inputReader.readAsArrayBuffer(inputFileObject);
 
-    inputReader.addEventListener("load", () => {
-        let inputArrayBuffer = inputReader.result;
-
-        try {
-            alert(`File: ${inputArrayBuffer}`);
-        } 
-        catch (error) {
-            alert(`The file cannot be decoded. Error: ${error}`);
-        }
-    });
+    inputReader.addEventListener("load", FileObjectToArrayBuffer);
 
     // 2. Decode file
     // The slice() method copies up to, but not including, the byte indicated by the end parameter.
@@ -48,3 +39,14 @@ function LoadSaveFile(input) {
     // 4. Paste decoded string file to text area
 }
 
+// reads the File object as an Array Buffer
+function FileObjectToArrayBuffer() {
+    let inputArrayBuffer = this.result;
+
+    try {
+        alert(`File: ${inputArrayBuffer}`);
+    } 
+    catch (error) {
+        alert(`The file cannot be decoded. Error: ${error}`);
+    }
+}
