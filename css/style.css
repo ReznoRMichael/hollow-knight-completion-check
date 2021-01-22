@@ -113,18 +113,25 @@ textarea {
     text-align: left;
     background-color: rgba(0, 0, 0, 0);
     color: #fff;
+    caret-color: #fff;
     border: 1px solid #e3ebf7;
-    padding: 0;
+    padding: 2px;
     margin: 2px;
     overflow-x: hidden;
     overflow-y: scroll;
     overflow-wrap: normal;
 }
 
+textarea:focus {
+    outline: #fff 1px solid;
+    outline-offset: 0;
+}
+
 textarea::placeholder {
     color: rgba(255, 255, 255, 0.5);
     font-size: 1rem;
     text-align: center;
+    caret-color: #fff;
 }
 
 #save-area {
