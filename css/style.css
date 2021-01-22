@@ -280,7 +280,7 @@ input[type="radio"] {
     display: inline-block;
     position: relative;
     padding: 0 0 0 1.8rem;
-    margin: 0 1rem 0 0;
+    margin: 0.25rem 1rem 0.25rem 0.5rem;
     cursor: pointer;
     font-size: 1rem;
     -webkit-user-select: none;
