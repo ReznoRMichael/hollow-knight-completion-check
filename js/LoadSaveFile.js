@@ -1,3 +1,5 @@
+const CSHARP_HEADER = [0, 1, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 0, 0];
+
 function ShowFile(input) {
     let inputFileObject = input.files[0];
 
@@ -22,7 +24,7 @@ function LoadSaveFile(input) {
     inputReader.addEventListener("load", FileObjectToArrayBuffer);
 
     // 2. Decode file
-    
+
     // base64 Decoding (ArrayBuffer)
     // AES decryption (ECB) removes pkcs7 padding (ArrayBuffer)
     // Convert ArrayBuffer to string/text TextDecoder().decode(ArrayBuffer)
@@ -49,12 +51,26 @@ function FileObjectToArrayBuffer() {
 
 
         alert(`File: ${inputArrayBuffer}`);
-    } 
-    catch (error) {
+    } catch (error) {
         alert(`The file cannot be read. Error: ${error}`);
     }
 }
 
-function RemoveCSharpHeader() {
-    
+// removes C# header, LengthPrefixedString header and byte 11 at the end of the Uint8 Array Buffer
+function RemoveCSharpHeader(buffer) {
+    // Remove the fixed C# header and byte 11 at the end. 
+    buffer = buffer.subarray(CSHARP_HEADER.length, buffer.length - 1);
+
+    // Remove LengthPrefixedString header
+    let lengthCount = 0;
+    for (let i = 0; i < 5; i++) {
+        lengthCount++;
+        if ((buffer[i] & 0x80) == 0) {
+            break;
+        }
+    }
+
+    let fixedArrayBuffer = buffer.subarray(lengthCount);
+
+    return fixedArrayBuffer;
 }
