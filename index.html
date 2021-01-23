@@ -38,19 +38,26 @@
 
     <p class="smalltext">
         Please check the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2209910193" target="_blank">[ Official Steam Guide ]</a> on how to use this Tool.<br>
-        Shortcuts: <a href="https://bloodorca.github.io/hollow/" target="_blank">[ Decode ]</a> your Hollow Knight user*.dat <a href="https://store.steampowered.com/account/remotestorageapp/?appid=367520" target="_blank">[ Save File ]</a><br>
+        Choose a Hollow Knight user*.dat save OR <a href="https://bloodorca.github.io/hollow/" target="_blank">[ Decode ]</a> it from your <a href="https://store.steampowered.com/account/remotestorageapp/?appid=367520" target="_blank">[ Steam Cloud ]</a><br>
         <a href="https://pastebin.com/raw/shfZ4Vqs" target="_blank">[ Decoded 5% Save Example ]</a><br>
         <a href="https://www.paypal.me/ReznoRMichael" target="_blank">Support Tool development</a> 🉑 <a href="https://www.youtube.com/c/MichaelReznoR" target="_blank">Youtube</a> 🉑 <a href="https://github.com/ReznoRMichael/hollow-knight-completion-check" target="_blank">Source Code</a>
     </p>
 
     <div>
-        <textarea name="save-area" id="save-area" rows="6" spellcheck="false" placeholder="Paste (Ctrl + V) your decoded save here..." autofocus></textarea>
+        <div class="buttons centered">
+
+            <div class="input-buttons">
+                <input id="save-area-file" class="" type="file" name="file" accept=".dat,.bak*" onchange="LoadSaveFile(this)">
+            </div>
+
+        </div>
+        <textarea name="save-area" id="save-area" rows="6" spellcheck="false" placeholder="Choose a user*.dat save file OR paste (Ctrl + V) your decoded save here manually..." autofocus></textarea>
 
         <div class="buttons">
 
             <div class="input-buttons">
                 <!-- <button id="save-area-file" class="button" onclick="">Load Save</button> -->
-                <input id="save-area-file" class="" type="file" name="file" accept=".dat,.bak*" onchange="LoadSaveFile(this)">
+                <!-- <input id="save-area-file" class="" type="file" name="file" accept=".dat,.bak*" onchange="LoadSaveFile(this)"> -->
                 <button id="save-area-read" class="button" onclick="HKReadTextArea();">Analyze Text</button>
             </div>
 

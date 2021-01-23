@@ -141,7 +141,7 @@ textarea::placeholder {
 }
 
 input[type="file"] {
-    max-width: 14rem;
+    max-width: 500px;
     margin: 0.5rem;
 }
 
@@ -154,7 +154,7 @@ input[type="file"] {
 .buttons {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -164,17 +164,14 @@ input[type="file"] {
 }
 
 .checkboxes {
-    margin-top: 1rem;
-    margin-bottom: 0.4rem;
-    margin-left: -1rem;
-    padding-left: 1.5rem;
+    margin-top: 0rem;
 }
 
 .button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: max-content;
     font-size: 1rem;
     font-weight: 500;
     font-family: 'Heebo', sans-serif;
@@ -187,7 +184,7 @@ input[type="file"] {
 }
 
 .button:first-child {
-    margin-left: 0;
+    margin-left: 0.25rem;
 }
 
 .button:hover {
@@ -201,6 +198,11 @@ input[type="file"] {
     outline-offset: -2px;
 }
 
+.centered {
+    flex-direction: column;
+    align-items: center;
+}
+
 @media screen and (max-width: 400px) {
     .buttons {
         flex-direction: column;
@@ -209,6 +211,13 @@ input[type="file"] {
     .input-buttons {
         align-items: center;
         justify-content: center;
+    }
+    .centered {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .checkboxes {
+        margin-top: 0.8rem;
     }
 }
 
