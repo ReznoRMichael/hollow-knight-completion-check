@@ -6,8 +6,8 @@ const BASE64_DECODE_TABLE = new Map(BASE64_ARRAY.map((ord, i) => [ord, i]));
 const AES_KEY = new TextEncoder().encode('UKu52ePUBwetZ9wNX88o54dnfKRu0T1l'); // encodes to Uint8Array
 const ECB_STREAM_CIPHER = new aesjs.ModeOfOperation.ecb(AES_KEY); // create a new AES stream cipher object
 
-console.log(`AES_KEY: ${AES_KEY}`);
-console.log(`ECB_STREAM_CIPHER: ${ECB_STREAM_CIPHER}`);
+// console.log(`AES_KEY: ${AES_KEY}`);
+// console.log(`ECB_STREAM_CIPHER: ${ECB_STREAM_CIPHER}`);
 
 function ShowFile(input) {
     let inputFileObject = input.files[0];
@@ -31,18 +31,14 @@ function LoadSaveFile(input) {
     inputReader.readAsArrayBuffer(inputFileObject);
     // addEventListener("load", function) - to decode the file when loaded
     inputReader.addEventListener("load", ProcessFileObject);
-
-    // 2. Decode file
-
-    // 3. Convert file to JSON string (optional?)
-    // JSON.stringify(JSON.parse(decrypted), undefined, 2)
-
-    // 4. Paste decoded string file to text area
 }
 
 // reads the File object as an Array Buffer and does all other operations (decoding, decryption, conversion to string, pasting to text area)
 function ProcessFileObject() {
     let inputArrayBuffer = this.result;
+    let decodedString;
+
+    // 2. Decode file
 
     try {
         // Uint8Array(ArrayBuffer) uint8_t equivalent in C
@@ -62,9 +58,18 @@ function ProcessFileObject() {
         inputArrayBuffer = AESDecryption(inputArrayBuffer);
 
         // Convert ArrayBuffer to string/text TextDecoder().decode(ArrayBuffer)
+        decodedString = new TextDecoder().decode(inputArrayBuffer);
 
+    // 4. Paste decoded string file to text area
 
-        alert(`Array Buffer: ${inputArrayBuffer}`);
+        document.getElementById("save-area").value = "";
+        document.getElementById("save-area").value = decodedString;
+
+        // after pasting the decoded string, launch the main analyzing function immediately
+        HKReadTextArea();
+
+        // alert(`Decoded String: ${decodedString}`);
+        // alert(`Array Buffer: ${inputArrayBuffer}`);
     } catch (error) {
         alert(`The file cannot be decoded. Error: ${error}`);
     }
