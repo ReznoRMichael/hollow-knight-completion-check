@@ -30,11 +30,9 @@ function LoadSaveFile(input) {
     // readAsArrayBuffer(file)
     inputReader.readAsArrayBuffer(inputFileObject);
     // addEventListener("load", function) - to decode the file when loaded
-    inputReader.addEventListener("load", FileObjectToArrayBuffer);
+    inputReader.addEventListener("load", ProcessFileObject);
 
     // 2. Decode file
-
-    // Convert ArrayBuffer to string/text TextDecoder().decode(ArrayBuffer)
 
     // 3. Convert file to JSON string (optional?)
     // JSON.stringify(JSON.parse(decrypted), undefined, 2)
@@ -42,8 +40,8 @@ function LoadSaveFile(input) {
     // 4. Paste decoded string file to text area
 }
 
-// reads the File object as an Array Buffer
-function FileObjectToArrayBuffer() {
+// reads the File object as an Array Buffer and does all other operations (decoding, decryption, conversion to string, pasting to text area)
+function ProcessFileObject() {
     let inputArrayBuffer = this.result;
 
     try {
@@ -62,6 +60,9 @@ function FileObjectToArrayBuffer() {
 
         // AES decryption (ECB) removes pkcs7 padding (ArrayBuffer)
         inputArrayBuffer = AESDecryption(inputArrayBuffer);
+
+        // Convert ArrayBuffer to string/text TextDecoder().decode(ArrayBuffer)
+
 
         alert(`Array Buffer: ${inputArrayBuffer}`);
     } catch (error) {
