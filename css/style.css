@@ -107,6 +107,12 @@ h2 {
     color: rgba(231, 251, 255, 0.6);
 }
 
+input {
+    font-family: 'Heebo', sans-serif;
+    font-size: 1rem;
+    text-align: left;
+}
+
 textarea {
     font-family: 'Consolas', monospace;
     font-size: 0.8rem;
@@ -135,7 +141,7 @@ textarea::placeholder {
 }
 
 input[type="file"] {
-    max-width: 12rem;
+    max-width: 14rem;
     margin: 0.5rem;
 }
 
@@ -159,12 +165,16 @@ input[type="file"] {
 
 .checkboxes {
     margin-top: 1rem;
+    margin-bottom: 0.4rem;
+    margin-left: -1rem;
+    padding-left: 1.5rem;
 }
 
 .button {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    max-width: max-content;
+    width: 100%;
     font-size: 1rem;
     font-weight: 500;
     font-family: 'Heebo', sans-serif;
@@ -191,7 +201,7 @@ input[type="file"] {
     outline-offset: -2px;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 400px) {
     .buttons {
         flex-direction: column;
         align-items: center;
