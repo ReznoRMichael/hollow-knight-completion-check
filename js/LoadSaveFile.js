@@ -3,6 +3,12 @@ const CSHARP_HEADER = [0, 1, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0
 const BASE64_ARRAY = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".split("").map(c => c.charCodeAt(0));
 const BASE64_DECODE_TABLE = new Map(BASE64_ARRAY.map((ord, i) => [ord, i]));
 
+const AES_KEY = new TextEncoder().encode('UKu52ePUBwetZ9wNX88o54dnfKRu0T1l'); // encodes to Uint8Array
+const ECB_STREAM_CIPHER = new aesjs.ModeOfOperation.ecb(AES_KEY); // create a new AES stream cipher object
+
+console.log(`AES_KEY: ${AES_KEY}`);
+console.log(`ECB_STREAM_CIPHER: ${ECB_STREAM_CIPHER}`);
+
 function ShowFile(input) {
     let inputFileObject = input.files[0];
 
@@ -28,7 +34,6 @@ function LoadSaveFile(input) {
 
     // 2. Decode file
 
-    // AES decryption (ECB) removes pkcs7 padding (ArrayBuffer)
     // Convert ArrayBuffer to string/text TextDecoder().decode(ArrayBuffer)
 
     // 3. Convert file to JSON string (optional?)
@@ -55,9 +60,12 @@ function FileObjectToArrayBuffer() {
         // base64 Decoding (ArrayBuffer)
         inputArrayBuffer = Base64Decode(inputArrayBuffer);
 
-        alert(`File: ${inputArrayBuffer}`);
+        // AES decryption (ECB) removes pkcs7 padding (ArrayBuffer)
+        inputArrayBuffer = AESDecryption(inputArrayBuffer);
+
+        alert(`Array Buffer: ${inputArrayBuffer}`);
     } catch (error) {
-        alert(`The file cannot be read. Error: ${error}`);
+        alert(`The file cannot be decoded. Error: ${error}`);
     }
 }
 
@@ -80,7 +88,7 @@ function RemoveCSharpHeader(buffer) {
     return fixedArrayBuffer;
 }
 
-// From bloodorca https://github.com/bloodorca/hollow based on KayDeeTee https://github.com/KayDeeTee/Hollow-Knight-SaveManager
+// Thanks to KayDeeTee https://github.com/KayDeeTee/Hollow-Knight-SaveManager and bloodorca https://github.com/bloodorca/hollow (base64.js)
 function Base64Decode(buffer) {
     buffer = new Uint8Array(buffer).slice();
     buffer = buffer.map(v => BASE64_DECODE_TABLE.get(v))
@@ -104,4 +112,11 @@ function Base64Decode(buffer) {
         }
     }
     return output;
+}
+
+// Thanks to KayDeeTee https://github.com/KayDeeTee/Hollow-Knight-SaveManager and bloodorca https://github.com/bloodorca/hollow (functions.js)
+// Decrypt the Uint8Array Buffer using aesjs and a predefined AES key + remove pkcs7 padding
+function AESDecryption(buffer) {
+    let output = ECB_STREAM_CIPHER.decrypt(buffer);
+    return output.subarray(0, -output[output.length - 1]);
 }
