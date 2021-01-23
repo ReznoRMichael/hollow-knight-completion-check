@@ -1,22 +1,17 @@
+/* 
+    Parts of the code thanks to bloodorca https://github.com/bloodorca/hollow (base64.js, functions.js) with slight modifications.
+    The steps used there for decryption were taken from KayDeeTee https://github.com/KayDeeTee/Hollow-Knight-SaveManager
+*/
+
 const CSHARP_HEADER = [0, 1, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 0, 0]; // 22 bytes
 
 const BASE64_ARRAY = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".split("").map(c => c.charCodeAt(0));
 const BASE64_DECODE_TABLE = new Map(BASE64_ARRAY.map((ord, i) => [ord, i]));
 
-const AES_KEY = new TextEncoder().encode('UKu52ePUBwetZ9wNX88o54dnfKRu0T1l'); // encodes to Uint8Array
-const ECB_STREAM_CIPHER = new aesjs.ModeOfOperation.ecb(AES_KEY); // create a new AES stream cipher object
+const AES_KEY = new TextEncoder().encode('UKu52ePUBwetZ9wNX88o54dnfKRu0T1l'); // encodes a string to Uint8Array (prepare for AES JS)
+const ECB_STREAM_CIPHER = new aesjs.ModeOfOperation.ecb(AES_KEY); // create a new AES stream cipher object using the encoded key
 
 let bench = { begin: 0, end: 0 };
-
-// console.log(`AES_KEY: ${AES_KEY}`);
-// console.log(`ECB_STREAM_CIPHER: ${ECB_STREAM_CIPHER}`);
-
-function ShowFile(input) {
-    let inputFileObject = input.files[0];
-
-    alert(`File name: ${inputFileObject.name}`);
-    alert(`Last modified: ${inputFileObject.lastModified}`);
-}
 
 // main input tag file function
 function LoadSaveFile(input) {
