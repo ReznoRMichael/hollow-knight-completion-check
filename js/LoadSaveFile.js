@@ -113,14 +113,21 @@ function RemoveHeaders(buffer, csHeader = CSHARP_HEADER) {
     return buffer.subarray(lengthCount);
 }
 
-// Thanks to KayDeeTee https://github.com/KayDeeTee/Hollow-Knight-SaveManager and bloodorca https://github.com/bloodorca/hollow (base64.js)
 function Base64Decode(buffer) {
     buffer = new Uint8Array(buffer).slice();
-    buffer = buffer.map(v => BASE64_DECODE_TABLE.get(v))
-    {
-        let p = buffer.indexOf(64);
-        buffer = buffer.subarray(0, p != -1 ? p : buffer.length);
+    buffer = buffer.map(v => BASE64_DECODE_TABLE.get(v));
+
+    // The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.
+    let p = buffer.indexOf(64);
+    let end;
+
+    if (p != -1) {
+        end = p;
+    } else {
+        end = buffer.length;
     }
+
+    buffer = buffer.subarray(0, end);
 
     let output = new Uint8Array(3 * buffer.length / 4);
     let continuous = Math.floor(buffer.length / 4) * 4;
@@ -138,11 +145,10 @@ function Base64Decode(buffer) {
             output[k + 1] = (buffer[continuous + 1] & 0x0F) << 4 | buffer[continuous + 2] >> 2;
         }
     }
-    
+
     return output;
 }
 
-// Thanks to KayDeeTee https://github.com/KayDeeTee/Hollow-Knight-SaveManager and bloodorca https://github.com/bloodorca/hollow (functions.js)
 // Decrypt the Uint8Array Buffer using aesjs and a predefined AES key + remove pkcs7 padding
 function AESDecryption(buffer) {
     let output = ECB_STREAM_CIPHER.decrypt(buffer);
