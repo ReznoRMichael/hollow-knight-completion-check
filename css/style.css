@@ -134,24 +134,37 @@ textarea::placeholder {
     caret-color: #fff;
 }
 
+input[type="file"] {
+    max-width: 12rem;
+    margin: 0.5rem;
+}
+
 #save-area {
     width: 100%;
     height: 5.65rem;
-    margin: .5rem 2px .3rem 2px;
+    margin: 0.5rem 2px 0.3rem 2px;
 }
 
 .buttons {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-end;
     justify-content: space-between;
 }
 
 .input-buttons {
+    display: flex;
     flex-direction: column;
+}
+
+.checkboxes {
+    margin-top: 1rem;
 }
 
 .button {
     display: flex;
+    align-items: center;
+    max-width: max-content;
     font-size: 1rem;
     font-weight: 500;
     font-family: 'Heebo', sans-serif;
@@ -176,6 +189,17 @@ textarea::placeholder {
 .button:focus {
     outline: 2px solid #5e8dac;
     outline-offset: -2px;
+}
+
+@media screen and (max-width: 360px) {
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .input-buttons {
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 p {
