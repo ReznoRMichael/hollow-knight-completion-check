@@ -451,6 +451,8 @@ const HK_STATISTICS = {
     killsBindingSeal: ["Path of Pain", "White Palace: main secret area"],
 };
 
+// ---------------- Functions ----------------- //
+
 /**
  * Checks Hollow Knight game completion by analyzing the save file
  * @param {object} jsonObject Decoded save data in JavaScript Object Notation form (JSON)

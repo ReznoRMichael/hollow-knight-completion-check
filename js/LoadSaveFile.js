@@ -1,7 +1,10 @@
 /* 
     Parts of the code thanks to bloodorca https://github.com/bloodorca/hollow (base64.js, functions.js) with slight modifications.
     The steps used there for decryption were taken from KayDeeTee https://github.com/KayDeeTee/Hollow-Knight-SaveManager
+    Without these two people the existence of this tool wouldn't be possible :)
 */
+
+// ---------------- Constants ----------------- //
 
 const CSHARP_HEADER = [0, 1, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 0, 0]; // 22 bytes
 
@@ -11,7 +14,11 @@ const BASE64_DECODE_TABLE = new Map(BASE64_ARRAY.map((ord, i) => [ord, i]));
 const AES_KEY = new TextEncoder().encode('UKu52ePUBwetZ9wNX88o54dnfKRu0T1l'); // encodes a string to Uint8Array (prepare for AES JS)
 const ECB_STREAM_CIPHER = new aesjs.ModeOfOperation.ecb(AES_KEY); // create a new AES stream cipher object using the encoded key
 
+// ---------------- Variables ----------------- //
+
 let bench = { begin: 0, end: 0 };
+
+// ---------------- Functions ----------------- //
 
 // main input tag file function
 function LoadSaveFile(input) {
@@ -48,8 +55,8 @@ function ProcessFileObject() {
         // The slice() method copies up to, but not including, the byte indicated by the end parameter.
         inputArrayBuffer.slice();
 
-        // remove C# header (ArrayBuffer)
-        inputArrayBuffer = RemoveCSharpHeader(inputArrayBuffer);
+        // remove C# header and LengthPrefixedString header (ArrayBuffer)
+        inputArrayBuffer = RemoveHeaders(inputArrayBuffer);
 
         // base64 Decoding (ArrayBuffer)
         inputArrayBuffer = Base64Decode(inputArrayBuffer);
@@ -80,9 +87,9 @@ function ProcessFileObject() {
 }
 
 // removes C# header, LengthPrefixedString header and byte 11 at the end of the Uint8 Array Buffer
-function RemoveCSharpHeader(buffer) {
+function RemoveHeaders(buffer, csHeader = CSHARP_HEADER) {
     // Remove the fixed C# header and byte 11 at the end. 
-    buffer = buffer.subarray(CSHARP_HEADER.length, buffer.length - 1);
+    buffer = buffer.subarray(csHeader.length, buffer.length - 1);
 
     // Remove LengthPrefixedString header
     let lengthCount = 0;
@@ -93,9 +100,7 @@ function RemoveCSharpHeader(buffer) {
         }
     }
 
-    let fixedArrayBuffer = buffer.subarray(lengthCount);
-
-    return fixedArrayBuffer;
+    return buffer.subarray(lengthCount);
 }
 
 // Thanks to KayDeeTee https://github.com/KayDeeTee/Hollow-Knight-SaveManager and bloodorca https://github.com/bloodorca/hollow (base64.js)
