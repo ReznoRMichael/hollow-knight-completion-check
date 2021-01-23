@@ -129,8 +129,11 @@ textarea {
 }
 
 textarea:focus {
-    outline: #fff 1px solid;
-    outline-offset: 0;
+    border-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 0 4px 2px #fff;
+    outline: 0;
+    /* outline: #fff 2px solid;
+    outline-offset: 1px; */
 }
 
 textarea::placeholder {
@@ -142,7 +145,7 @@ textarea::placeholder {
 
 input[type="file"] {
     max-width: 500px;
-    margin: 0.5rem;
+    margin: 0.5rem 0.5rem 0.5rem 0.25rem;
 }
 
 #save-area {
@@ -200,7 +203,7 @@ input[type="file"] {
 
 .centered {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 @media screen and (max-width: 400px) {
