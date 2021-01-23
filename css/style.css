@@ -146,6 +146,10 @@ textarea::placeholder {
     justify-content: space-between;
 }
 
+.input-buttons {
+    flex-direction: column;
+}
+
 .button {
     display: flex;
     font-size: 1rem;

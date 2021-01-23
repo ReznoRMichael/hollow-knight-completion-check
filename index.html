@@ -48,9 +48,11 @@
 
         <div class="buttons">
 
-            <!-- <button id="save-area-file" class="button" onclick="">Load Save</button> -->
-            <button id="save-area-read" class="button" onclick="HKReadTextArea();">Analyze</button>
-            <input id="save-area-file" class="" type="file" name="file" accept=".dat,.bak*" onchange="LoadSaveFile(this)">
+            <div class="input-buttons">
+                <!-- <button id="save-area-file" class="button" onclick="">Load Save</button> -->
+                <input id="save-area-file" class="" type="file" name="file" accept=".dat,.bak*" onchange="LoadSaveFile(this)">
+                <button id="save-area-read" class="button" onclick="HKReadTextArea();">Analyze</button>
+            </div>
 
             <div class="checkboxes">
                 <label for="checkbox-hints" class="checkbox-label" title="Check to see an optional clue for your first playthrough based on your save's progress.">
