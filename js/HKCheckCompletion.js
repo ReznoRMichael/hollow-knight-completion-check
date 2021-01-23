@@ -460,7 +460,7 @@ const HK_STATISTICS = {
 function HKCheckCompletion(jsonObject) {
 
     // start benchmark
-    let countBegin = new Date();
+    bench.begin.HKCC = new Date();
 
     let HKPlayerData;
     let HKWorldItems;
@@ -650,8 +650,8 @@ function HKCheckCompletion(jsonObject) {
     CompletionHTML(DIV_ID);
 
     // finish and show benchmark
-    let countEnd = new Date();
-    console.info("HKCheckCompletion() time (ms) =", countEnd - countBegin);
+    bench.end.HKCC = new Date();
+    console.info("HKCheckCompletion() time (ms) =", bench.end.HKCC - bench.begin.HKCC);
 
     return true;
 }

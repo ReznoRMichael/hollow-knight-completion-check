@@ -16,14 +16,23 @@ const ECB_STREAM_CIPHER = new aesjs.ModeOfOperation.ecb(AES_KEY); // create a ne
 
 // ---------------- Variables ----------------- //
 
-let bench = { begin: 0, end: 0 };
+let bench = {
+    begin: {
+        LSF: 0,
+        HKCC: 0,
+    },
+    end: {
+        LSF: 0,
+        HKCC: 0,
+    }
+};
 
 // ---------------- Functions ----------------- //
 
 // main input tag file function
 function LoadSaveFile(input) {
     // start benchmark
-    bench.begin = new Date();
+    bench.begin.LSF = new Date();
 
     // Prepares a File object from the first file of the input files for reading as an Array Buffer
     let inputFileObject = input.files[0];
@@ -67,14 +76,14 @@ function ProcessFileObject() {
         // Convert ArrayBuffer to string/text TextDecoder().decode(ArrayBuffer)
         decodedString = new TextDecoder().decode(inputArrayBuffer);
 
-    // 4. Paste decoded string file to text area
+        // 4. Paste decoded string file to text area
 
         document.getElementById("save-area").value = "";
         document.getElementById("save-area").value = decodedString;
 
         // finish and show benchmark
-        bench.end = new Date();
-        console.info("LoadSaveFile() time (ms) =", bench.end - bench.begin);
+        bench.end.LSF = new Date();
+        console.info("LoadSaveFile() time (ms) =", bench.end.LSF - bench.begin.LSF);
 
         // after pasting the decoded string, launch the main analyzing function immediately
         HKReadTextArea();
@@ -83,6 +92,7 @@ function ProcessFileObject() {
         // alert(`Array Buffer: ${inputArrayBuffer}`);
     } catch (error) {
         alert(`The file cannot be decoded. Error: ${error}`);
+        console.info(`The file cannot be decoded. Error: ${error}`);
     }
 }
 
@@ -111,8 +121,10 @@ function Base64Decode(buffer) {
         let p = buffer.indexOf(64);
         buffer = buffer.subarray(0, p != -1 ? p : buffer.length);
     }
+
     let output = new Uint8Array(3 * buffer.length / 4);
     let continuous = Math.floor(buffer.length / 4) * 4;
+
     for (let i = 0; i < continuous; i += 4) {
         let k = 3 * i / 4;
         output[k] = buffer[i] << 2 | buffer[i + 1] >> 4;
@@ -126,6 +138,7 @@ function Base64Decode(buffer) {
             output[k + 1] = (buffer[continuous + 1] & 0x0F) << 4 | buffer[continuous + 2] >> 2;
         }
     }
+    
     return output;
 }
 
