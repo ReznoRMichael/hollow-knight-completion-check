@@ -24,6 +24,7 @@ let bench = {
     end: {
         LSF: 0,
         HKCC: 0,
+        total: 0,
     }
 };
 
@@ -34,9 +35,9 @@ let bench = {
  * Starts benchmarking.
  * @param {FileList} input FileList object containing a list of File objects. The FileList behaves like an array, so you can check its length property to get the number of selected files.
  */
-function LoadSaveFile(input) {
+function LoadSaveFile(input, startTime = new Date()) {
     // start benchmark
-    bench.begin.LSF = new Date();
+    bench.begin.LSF = startTime;
 
     // Prepares a File object from the first file of the input files for reading as an Array Buffer
     let inputFileObject = input.files[0];
@@ -94,6 +95,10 @@ function ProcessFileObject() {
 
         // after pasting the decoded string, launch the main analyzing function immediately
         HKReadTextArea();
+
+        // finish total and show benchmark
+        bench.end.total = new Date();
+        console.info("Total time (ms) =", bench.end.total - bench.begin.LSF);
 
         // alert(`Decoded String: ${decodedString}`);
         // alert(`Array Buffer: ${inputArrayBuffer}`);
