@@ -388,23 +388,6 @@ const HK_ACHIEVEMENTS = {
     hasHuntersMark: ["Hunter's Mark", "Greenpath: Hunter"],
     journalEntriesCompleted: ["Creatures Encountered", "Hunter's Journal (164 max)", 164],
     journalNotesCompleted: ["Hunter Notes Completed", "Hunter's Journal (164 max)", 164],
-    /* 
-    Rare (Missable) Journal Enemies:
-    ✅ Maggot
-    ✅ Gulka
-    ✅ Sporg
-    ✅ Maskfly
-    ✅ Aluba
-    ✅ Durandoo
-    ✅ Duranda
-    ✅ Charged Lumafly
-    ✅ Gorgeous Husk
-    ✅ Crystal Crawler
-    ✅ Lightseed
-    ✅ Goam
-    ✅ Garpede
-    ✅ Void Tendrils
-    */
     killedPrayerSlug: ["Journal: Maggot", "Forgotten Crossroads: False Knight secret room"],
     killedOrangeScuttler: ["Journal: Lightseed", "Infected Crossroads"],
     killedPigeon: ["Journal: Maskfly", "Greenpath, Queen's Gardens"],
