@@ -156,7 +156,11 @@ textarea::placeholder {
     color: #aac7d4;
     border: 2px solid #183c55;
     padding: 0.3rem 1rem;
-    margin: 0;
+    margin: 0.25rem 0.5rem 0.25rem 0.25rem;
+}
+
+.button:first-child {
+    margin-left: 0;
 }
 
 .button:hover {
