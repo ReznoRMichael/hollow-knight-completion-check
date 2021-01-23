@@ -6,6 +6,8 @@ const BASE64_DECODE_TABLE = new Map(BASE64_ARRAY.map((ord, i) => [ord, i]));
 const AES_KEY = new TextEncoder().encode('UKu52ePUBwetZ9wNX88o54dnfKRu0T1l'); // encodes to Uint8Array
 const ECB_STREAM_CIPHER = new aesjs.ModeOfOperation.ecb(AES_KEY); // create a new AES stream cipher object
 
+let bench = { begin: 0, end: 0 };
+
 // console.log(`AES_KEY: ${AES_KEY}`);
 // console.log(`ECB_STREAM_CIPHER: ${ECB_STREAM_CIPHER}`);
 
@@ -18,6 +20,9 @@ function ShowFile(input) {
 
 // main input tag file function
 function LoadSaveFile(input) {
+    // start benchmark
+    bench.begin = new Date();
+
     // Prepares a File object from the first file of the input files for reading as an Array Buffer
     let inputFileObject = input.files[0];
 
@@ -64,6 +69,10 @@ function ProcessFileObject() {
 
         document.getElementById("save-area").value = "";
         document.getElementById("save-area").value = decodedString;
+
+        // finish and show benchmark
+        bench.end = new Date();
+        console.info("LoadSaveFile() time (ms) =", bench.end - bench.begin);
 
         // after pasting the decoded string, launch the main analyzing function immediately
         HKReadTextArea();
