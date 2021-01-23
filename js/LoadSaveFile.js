@@ -98,8 +98,8 @@ function ProcessFileObject() {
         // alert(`Decoded String: ${decodedString}`);
         // alert(`Array Buffer: ${inputArrayBuffer}`);
     } catch (error) {
-        alert(`The file cannot be decoded. Error: ${error}`);
-        console.info(`The file cannot be decoded. Error: ${error}`);
+        alert(`The file cannot be decoded. ${error}`);
+        console.info(`The file cannot be decoded. ${error}`);
     }
 }
 
@@ -171,7 +171,7 @@ function Base64Decode(buffer) {
  * @param {Uint8Array} buffer Uint8Array buffer to decrypt
  * @returns {Uint8Array}
  */
-function AESDecryption(buffer) {
-    let output = ECB_STREAM_CIPHER.decrypt(buffer);
+function AESDecryption(buffer, cipherObject = ECB_STREAM_CIPHER) {
+    let output = cipherObject.decrypt(buffer);
     return output.subarray(0, -output[output.length - 1]);
 }
