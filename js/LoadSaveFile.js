@@ -29,7 +29,11 @@ let bench = {
 
 // ---------------- Functions ----------------- //
 
-// main input tag file function
+/**
+ * Main input tag file function. Selects the first file, reads it as an Array Buffer, starts the processing of the file when loaded.
+ * Starts benchmarking.
+ * @param {FileList} input FileList object containing a list of File objects. The FileList behaves like an array, so you can check its length property to get the number of selected files.
+ */
 function LoadSaveFile(input) {
     // start benchmark
     bench.begin.LSF = new Date();
@@ -49,7 +53,10 @@ function LoadSaveFile(input) {
     inputReader.addEventListener("load", ProcessFileObject);
 }
 
-// reads the File object as an Array Buffer and does all other operations (decoding, decryption, conversion to string, pasting to text area)
+/**
+ * Reads the File object as an Array Buffer and does all other operations (decoding, decryption, conversion to string, pasting to text area).
+ * Launches the HKReadTextArea() function automatically after pasting the string to text area
+ */
 function ProcessFileObject() {
     let inputArrayBuffer = this.result;
     let decodedString;
@@ -96,7 +103,12 @@ function ProcessFileObject() {
     }
 }
 
-// removes C# header, LengthPrefixedString header and byte 11 at the end of the Uint8 Array Buffer
+/**
+ * Removes C# header, LengthPrefixedString header and byte 11 at the end of the Uint8 Array Buffer
+ * @param {Uint8Array} buffer Uint8Array buffer for removing the header from
+ * @param {Uint8Array} csHeader Uint8Array for the C# header length calculation
+ * @returns {Uint8Array}
+ */
 function RemoveHeaders(buffer, csHeader = CSHARP_HEADER) {
     // Remove the fixed C# header and byte 11 at the end. 
     buffer = buffer.subarray(csHeader.length, buffer.length - 1);
@@ -113,6 +125,11 @@ function RemoveHeaders(buffer, csHeader = CSHARP_HEADER) {
     return buffer.subarray(lengthCount);
 }
 
+/**
+ * Decodes an Array Buffer using a Base64 decode table
+ * @param {Uint8Array} buffer Uint8Array Buffer to decode
+ * @returns {Uint8Array}
+ */
 function Base64Decode(buffer) {
     buffer = new Uint8Array(buffer).slice();
     buffer = buffer.map(v => BASE64_DECODE_TABLE.get(v));
@@ -149,7 +166,11 @@ function Base64Decode(buffer) {
     return output;
 }
 
-// Decrypt the Uint8Array Buffer using aesjs and a predefined AES key + remove pkcs7 padding
+/**
+ * Decrypt an Uint8Array Buffer using aesjs (ECB) and a predefined AES key + remove pkcs7 padding
+ * @param {Uint8Array} buffer Uint8Array buffer to decrypt
+ * @returns {Uint8Array}
+ */
 function AESDecryption(buffer) {
     let output = ECB_STREAM_CIPHER.decrypt(buffer);
     return output.subarray(0, -output[output.length - 1]);
