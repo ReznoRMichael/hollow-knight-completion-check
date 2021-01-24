@@ -1,3 +1,4 @@
+/* global aesjs, HKReadTextArea */
 /* 
     Parts of the code thanks to bloodorca https://github.com/bloodorca/hollow (base64.js, functions.js) with slight modifications.
     The steps used there for decryption were taken from KayDeeTee https://github.com/KayDeeTee/Hollow-Knight-SaveManager
@@ -35,6 +36,7 @@ let bench = {
  * Starts benchmarking.
  * @param {FileList} input FileList object containing a list of File objects. The FileList behaves like an array, so you can check its length property to get the number of selected files.
  */
+// eslint-disable-next-line no-unused-vars
 function LoadSaveFile(input, startTime = new Date()) {
 
     // console.info("Input length: " + input.files.length)

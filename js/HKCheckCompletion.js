@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* global bench */
+/* eslint-disable no-prototype-builtins */
 // ---------------- Constants ----------------- //
 
 const DATA_UNKNOWN = "Data unknown";
@@ -1008,7 +1011,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
      */
     function CountMaps(mapArray) {
         let totalMaps = 0;
-        for (i = 0, len = mapArray.length; i < len; i++) {
+        for (let i = 0, len = mapArray.length; i < len; i++) {
             if (playerData[mapArray[i]] === true) totalMaps++
         }
         return totalMaps;
@@ -1017,6 +1020,10 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
     for (let i in dataObject) {
         textPrefix = dataObject[i][0];
         (dataObject[i][1]) ? textSuffix = dataObject[i][1]: textSuffix = "";
+
+        let amount = 0;
+        let countTotal = 0;
+        let total = 0;
 
         switch (i) {
             case "areaMaps":
@@ -1031,7 +1038,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
             case "journalNotesCompleted":
             case "whiteDefenderDefeats":
             case "greyPrinceDefeats":
-                let amount = 0;
                 if (i === "areaMaps") {
                     amount = CountMaps(dataObject[i][3]);
                 } else if (i === "whisperingRoots") {
@@ -1042,7 +1048,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
                 if (i === "stationsOpened") {
                     if (playerData.openedHiddenStation === true) amount++;
                 }
-                let countTotal = amount;
+                countTotal = amount;
                 if (i === "journalEntriesCompleted" || i === "journalNotesCompleted") {
                     countTotal = amount + " / " + playerData.journalEntriesTotal;
                 }
@@ -1091,7 +1097,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
             case "relicsHallownestSeal":
             case "relicsKingsIdol":
             case "relicsArcaneEgg":
-                let total = playerData[dataObject[i][3]] + playerData[dataObject[i][4]];
+                total = playerData[dataObject[i][3]] + playerData[dataObject[i][4]];
                 (total >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataBlank();
                 textPrefix += ": " + total;
                 break;

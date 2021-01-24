@@ -1,6 +1,5 @@
-var jsonObj = "";
-
 // save file names list in the save/ folder
+
 var fileName = [
     "reznor0", // 0
     "reznor1beforegruz", // 1
@@ -24,7 +23,7 @@ var fileName = [
  * @param {string} filename Path and .json file name to be loaded
  * @param callback Function to be called when the request completes
  */
-function LoadJSON(filename, callback) {
+function LoadJSON(filename) {
     // new Http request object (asynchronous), both the web page and the XML file it tries to load, must be located on the same server.
     var xobj = new XMLHttpRequest();
 
@@ -70,4 +69,4 @@ function LoadJSON(filename, callback) {
 } */
 
 // jsonObj = LoadJSON("../save/" + fileName[5], JSONparse(response));
-jsonObj = LoadJSON("save/" + fileName[5] + ".json");
+LoadJSON("save/" + fileName[5] + ".json");

@@ -8,3 +8,4 @@ config.json
 package.json
 package-lock.json
 workspace.code-workspace
+.eslintrc.js
