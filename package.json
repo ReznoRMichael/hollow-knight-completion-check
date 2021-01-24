@@ -4,7 +4,8 @@
   "description": "Hollow Knight Analyze Save Completion Online Tool",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,9 @@
   "homepage": "https://github.com/ReznoRMichael/hollow-knight-completion-check#readme",
   "dependencies": {},
   "devDependencies": {
+    "css-loader": "^5.0.1",
     "eslint": "^7.18.0",
+    "style-loader": "^2.0.0",
     "webpack": "^5.17.0",
     "webpack-cli": "^4.4.0"
   }
