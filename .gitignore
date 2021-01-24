@@ -5,7 +5,3 @@ files/
 node_modules/
 js/LoadJson.js
 config.json
-package.json
-package-lock.json
-workspace.code-workspace
-.eslintrc.js

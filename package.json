@@ -1,0 +1,35 @@
+{
+  "name": "hollow-knight-completion-check",
+  "version": "1.0.0",
+  "description": "Hollow Knight Analyze Save Completion Online Tool",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReznoRMichael/hollow-knight-completion-check.git"
+  },
+  "keywords": [
+    "hollow",
+    "knight",
+    "save",
+    "analyzer",
+    "analyze",
+    "file",
+    "completion",
+    "check",
+    "online",
+    "tool"
+  ],
+  "author": "Michael ReznoR",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ReznoRMichael/hollow-knight-completion-check/issues"
+  },
+  "homepage": "https://github.com/ReznoRMichael/hollow-knight-completion-check#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.18.0"
+  }
+}
