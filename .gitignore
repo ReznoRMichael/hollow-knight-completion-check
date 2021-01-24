@@ -2,5 +2,8 @@ fontello/
 images/
 save/
 files/
+node_modules/
 js/LoadJson.js
 config.json
+package.json
+package-lock.json
