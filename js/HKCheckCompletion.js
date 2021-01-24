@@ -1,6 +1,7 @@
-/* eslint-disable no-unused-vars */
 /* global bench */
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-prototype-builtins */
+
 // ---------------- Constants ----------------- //
 
 const DATA_UNKNOWN = "Data unknown";
