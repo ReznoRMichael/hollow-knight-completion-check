@@ -107,6 +107,17 @@ h2 {
     color: rgba(231, 251, 255, 0.6);
 }
 
+code {
+    font-family: 'Consolas', monospace;
+    font-size: 0.75rem;
+    display: inline-block;
+    background-color: rgba(128, 128, 128, 0.5);
+    margin: 0.4rem 0;
+    padding: 0.16rem 0.5rem;
+    border: 1px solid rgba(231, 251, 255, 0.6);
+    border-radius: 3px;
+}
+
 input {
     font-family: 'Heebo', sans-serif;
     font-size: 1rem;
