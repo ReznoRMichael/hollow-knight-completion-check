@@ -30,6 +30,8 @@
   "homepage": "https://github.com/ReznoRMichael/hollow-knight-completion-check#readme",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^7.18.0"
+    "eslint": "^7.18.0",
+    "webpack": "^5.17.0",
+    "webpack-cli": "^4.4.0"
   }
 }
