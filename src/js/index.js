@@ -1,3 +1,4 @@
+/* global require */
 require("../css/fontello.css");
 require("../css/style.css");
 // AES JS
