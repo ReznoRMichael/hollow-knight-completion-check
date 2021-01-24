@@ -7,3 +7,4 @@ js/LoadJson.js
 config.json
 package.json
 package-lock.json
+workspace.code-workspace
