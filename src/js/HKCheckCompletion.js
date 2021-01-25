@@ -442,6 +442,7 @@ const HK_STATISTICS = {
     relicsHallownestSeal: ["Relic #2 found total", "Hallownest Seal (out of 17)", 17, "trinket2", "soldTrinket2"],
     relicsKingsIdol: ["Relic #3 found total", "King's Idol (out of 8)", 8, "trinket3", "soldTrinket3"],
     relicsArcaneEgg: ["Relic #4 found total", "Arcane Egg (out of 4)", 4, "trinket4", "soldTrinket4"],
+    ghostCoins: ["Shade Geo", "Amount of Geo the Shade is currently holding", 0],
     rancidEggs: ["Rancid Eggs", "Hallownest, Sly, Tuk"],
     xunFlowerBrokeTimes: ["Delicate Flowers broken", "Resting Grounds: Grey Mourner"],
     hasDreamGate: ["Dream Gate", "Seer: 900 Essence"],
@@ -1062,10 +1063,12 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
                 textPrefix += ": " + countTotal;
                 (amount >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataBlank();
                 break;
+            case "ghostCoins":
             case "rancidEggs":
             case "xunFlowerBrokeTimes":
                 CurrentDataBlank();
                 textPrefix += ": " + Math.abs(playerData[i]);
+                if (i === "ghostCoins" && playerData[i] <= 0) CurrentDataTrue();
                 break;
             case "shopkeeperKey":
                 (playerData.hasSlykey === true || playerData.gaveSlykey === true) ? CurrentDataTrue(): CurrentDataFalse();
