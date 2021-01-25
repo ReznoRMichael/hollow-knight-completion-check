@@ -183,4 +183,5 @@ function AESDecryption(buffer, cipherObject = ECB_STREAM_CIPHER) {
     return output.subarray(0, -output[output.length - 1]);
 }
 
+// Make functions global so they can be used on click and change events (for Webpack)
 window.LoadSaveFile = LoadSaveFile;
