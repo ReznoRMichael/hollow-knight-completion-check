@@ -1,4 +1,3 @@
-/* global bench */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-prototype-builtins */
 
@@ -34,6 +33,8 @@ let divEnd = [
 ].join("\n");
 
 let pSpan = "<span class='p-left-small'></span>";
+
+let benchHKCCBegin, benchHKCCEnd;
 
 // ---------------- Hollow Knight Data Constant Objects ----------------- //
 
@@ -469,7 +470,7 @@ const HK_STATISTICS = {
 function HKCheckCompletion(jsonObject) {
 
     // start benchmark
-    bench.begin.HKCC = new Date();
+    benchHKCCBegin = new Date();
 
     let HKPlayerData;
     let HKWorldItems;
@@ -659,8 +660,8 @@ function HKCheckCompletion(jsonObject) {
     CompletionHTML(DIV_ID);
 
     // finish and show benchmark
-    bench.end.HKCC = new Date();
-    console.info("HKCheckCompletion() time (ms) =", bench.end.HKCC - bench.begin.HKCC);
+    benchHKCCEnd = new Date();
+    console.info("HKCheckCompletion() time (ms) =", benchHKCCEnd - benchHKCCBegin);
 
     return true;
 }
@@ -1200,7 +1201,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
 /**
  * Pre-Cleans HTML. Reads contents inside text area and parses it to a JavaScript object. If not empty, runs HKCheckCompletion() to check data.
  */
-function HKReadTextArea() {
+window.HKReadTextArea = function HKReadTextArea() {
     InitialHTMLPopulate(DIV_ID);
 
     let textAreaId = "save-area";
@@ -1379,3 +1380,5 @@ function ResetCompletion(jsObj) {
 }
 
 document.addEventListener("DOMContentLoaded", InitialHTMLPopulate(DIV_ID));
+
+// document.getElementById("save-area-read").addEventListener("onclick", HKReadTextArea());

@@ -19,17 +19,7 @@ const ECB_STREAM_CIPHER = new aesjs.ModeOfOperation.ecb(AES_KEY); // create a ne
 
 // ---------------- Variables ----------------- //
 
-let bench = {
-    begin: {
-        LSF: 0,
-        HKCC: 0,
-    },
-    end: {
-        LSF: 0,
-        HKCC: 0,
-        total: 0,
-    }
-};
+let benchLSFBegin, benchLSFEnd, benchTotal;
 
 // ---------------- Functions ----------------- //
 
@@ -39,14 +29,14 @@ let bench = {
  * @param {FileList} input FileList object containing a list of File objects. The FileList behaves like an array, so you can check its length property to get the number of selected files.
  */
 // eslint-disable-next-line no-unused-vars
-function LoadSaveFile(input, startTime = new Date()) {
+window.LoadSaveFile = function LoadSaveFile(input, startTime = new Date()) {
 
     // console.info("Input length: " + input.files.length)
     // Cease further processing if user canceled the file input dialog
     if (input.files.length < 1) return false;
 
     // start benchmark
-    bench.begin.LSF = startTime;
+    benchLSFBegin = startTime;
 
     // Prepares a File object from the first file of the input files for reading as an Array Buffer
     let inputFileObject = input.files[0];
@@ -102,15 +92,15 @@ function ProcessFileObject() {
         document.getElementById("save-area").value = decodedString;
 
         // finish and show benchmark
-        bench.end.LSF = new Date();
-        console.info("LoadSaveFile() time (ms) =", bench.end.LSF - bench.begin.LSF);
+        benchLSFEnd = new Date();
+        console.info("LoadSaveFile() time (ms) =", benchLSFEnd - benchLSFBegin);
 
         // after pasting the decoded string, launch the main analyzing function immediately
         HKReadTextArea();
 
         // finish total and show benchmark
-        bench.end.total = new Date();
-        console.info("Total time (ms) =", bench.end.total - bench.begin.LSF);
+        benchTotal = new Date();
+        console.info("Total time (ms) =", benchTotal - benchLSFBegin);
 
         // alert(`Decoded String: ${decodedString}`);
         // alert(`Array Buffer: ${inputArrayBuffer}`);
@@ -192,3 +182,5 @@ function AESDecryption(buffer, cipherObject = ECB_STREAM_CIPHER) {
     let output = cipherObject.decrypt(buffer);
     return output.subarray(0, -output[output.length - 1]);
 }
+
+// document.getElementById("save-area-file").addEventListener("onchange", LoadSaveFile(this));
