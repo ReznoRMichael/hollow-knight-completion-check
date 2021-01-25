@@ -2,6 +2,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-prototype-builtins */
 
+import healthMaskImage from "../img/health-mask.png";
+import healthMaskSteelImage from "../img/health-mask-steel.png";
+import soulOrbImage from "../img/soul-orb.png";
+import geoImage from "../img/geo.png";
+
 // ---------------- Constants ----------------- //
 
 const DATA_UNKNOWN = "Data unknown";
@@ -834,8 +839,8 @@ function CheckHealthMasks(divId, masks, permadeathMode) {
     let icon = SYMBOL_EMPTY;
     let textFill = "<span>Health:</span>";
     let maskImages = "";
-    let maskNormal = "<img src='img/health-mask.png' class='health-mask'>";
-    let maskSteel = "<img src='img/health-mask-steel.png' class='health-mask'>";
+    let maskNormal = `<img src='${healthMaskImage}' class='health-mask'>`;
+    let maskSteel = `<img src='${healthMaskSteelImage}' class='health-mask'>`;
     let maskImg = "";
 
     (permadeathMode === 1) ? maskImg = maskSteel: maskImg = maskNormal;
@@ -857,7 +862,7 @@ function CheckSoulOrbs(divId, totalSoul) {
     let icon = SYMBOL_EMPTY;
     let textFill = "<span>Soul:</span>";
     let soulImages = "";
-    let soulNormal = "<img src='img/soul-orb.png' class='soul-orb'>";
+    let soulNormal = `<img src='${soulOrbImage}' class='soul-orb'>`;
     let soulImg = soulNormal;
 
     for (let i = 0, total = totalSoul / 33; i < total; i++) {
@@ -875,7 +880,7 @@ function CheckSoulOrbs(divId, totalSoul) {
 function CheckGeo(divId, geoValue) {
 
     let icon = SYMBOL_EMPTY;
-    let textFill = "<span>Geo:</span><img src='img/geo.png' class='geo-symbol'><b>" + geoValue + "</b>";
+    let textFill = `<span>Geo:</span><img src='${geoImage}' class='geo-symbol'><b>${geoValue}</b>`;
 
     document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + divEnd;
 }

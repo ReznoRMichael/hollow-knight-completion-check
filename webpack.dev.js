@@ -10,6 +10,7 @@ module.exports = {
     output: {
         path: `${__dirname}/docs`,
         filename: 'app.js',
+        assetModuleFilename: 'img/[hash][ext][query]',
     },
     plugins: [
         new MiniCssExtractPlugin(),
@@ -17,7 +18,8 @@ module.exports = {
             template: './src/index.html',
             inject: true,
             chunks: ['index'],
-            filename: 'index.html'
+            filename: 'index.html',
+            favicon: "./src/favicon.png",
         })
     ],
     module: {
@@ -46,7 +48,7 @@ module.exports = {
             },
             {
                 test: /\.(svg|jpg|png|ttf|eot|woff|woff2)$/,
-                type: 'asset/resource',
+                type: 'asset',
             },
         ],
     },
