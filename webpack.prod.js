@@ -3,12 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
         index: './src/js/index.js',
     },
-    mode: 'production', // or development
+    mode: 'production',
     optimization: {
         minimize: true,
         minimizer: [
@@ -21,14 +22,17 @@ module.exports = {
     output: {
         path: `${__dirname}/docs`,
         filename: 'app.js',
+        assetModuleFilename: 'img/[hash][ext][query]',
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             inject: true,
             chunks: ['index'],
-            filename: 'index.html'
+            filename: 'index.html',
+            favicon: "./src/favicon.png",
         })
     ],
     module: {
@@ -44,8 +48,12 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
+                use: [{
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: "",
+                        },
+                    },
                     // 'style-loader',
                     'css-loader',
                     // 'sass-loader',
@@ -53,9 +61,7 @@ module.exports = {
             },
             {
                 test: /\.(svg|jpg|png|ttf|eot|woff|woff2)$/,
-                use: [
-                    'url-loader',
-                ],
+                type: 'asset',
             },
         ],
     },

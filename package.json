@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --config webpack.dev.js --mode development"
+    "start": "webpack --config webpack.dev.js --mode development",
+    "prod": "webpack --config webpack.prod.js --mode production"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.0.1",
     "css-minimizer-webpack-plugin": "^1.2.0",
     "eslint": "^7.18.0",
