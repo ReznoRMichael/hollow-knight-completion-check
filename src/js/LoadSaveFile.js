@@ -1,4 +1,6 @@
-/* global aesjs, HKReadTextArea */
+/* global require HKReadTextArea */
+// AES JS
+var aesjs = require("./aes-js.js");
 /* 
     Parts of the code thanks to bloodorca https://github.com/bloodorca/hollow (base64.js, functions.js) with slight modifications.
     The steps used there for decryption were taken from KayDeeTee https://github.com/KayDeeTee/Hollow-Knight-SaveManager

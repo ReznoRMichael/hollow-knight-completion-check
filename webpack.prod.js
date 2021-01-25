@@ -1,10 +1,13 @@
 /* global require module __dirname */
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-    entry: './src/js/index.js',
+    entry: {
+        index: './src/js/index.js',
+    },
     mode: 'production', // or development
     optimization: {
         minimize: true,
@@ -12,18 +15,32 @@ module.exports = {
             new TerserPlugin({
                 extractComments: false,
             }),
-            new OptimizeCssAssetsPlugin(),
+            new CssMinimizerPlugin(),
         ],
     },
     output: {
         path: `${__dirname}/docs`,
         filename: 'app.js',
     },
-    plugins: [new MiniCssExtractPlugin()],
+    plugins: [
+        new MiniCssExtractPlugin(),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            inject: true,
+            chunks: ['index'],
+            filename: 'index.html'
+        })
+    ],
     module: {
         rules: [{
                 test: /\.js$/,
-                exclude: /node_modules/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                    },
+                },
             },
             {
                 test: /\.css$/,
@@ -31,6 +48,7 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     // 'style-loader',
                     'css-loader',
+                    // 'sass-loader',
                 ],
             },
             {

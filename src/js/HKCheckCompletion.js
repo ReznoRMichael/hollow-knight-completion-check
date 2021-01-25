@@ -1372,3 +1372,5 @@ function ResetCompletion(jsObj) {
         if (jsObj[i].hasOwnProperty("percent")) jsObj[i].percent = 0;
     }
 }
+
+document.addEventListener("DOMContentLoaded", InitialHTMLPopulate(DIV_ID));
