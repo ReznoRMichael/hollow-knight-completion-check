@@ -64,6 +64,13 @@ module.exports = {
                 ],
             },
             {
+                test: /thumbnail1200x628.jpg/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'img/thumbnail1200x628.jpg'
+                }
+            },
+            {
                 test: /\.(svg|jpg|png|ttf|eot|woff|woff2)$/,
                 type: 'asset',
             },
