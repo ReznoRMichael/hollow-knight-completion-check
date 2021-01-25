@@ -8,7 +8,7 @@ import geoImage from "../img/geo.png";
 
 // ---------------- Constants ----------------- //
 
-const DATA_UNKNOWN = "Data unknown";
+// const DATA_UNKNOWN = "Data unknown";
 const SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ "
 const SYMBOL_TRUE = "<i class='icon-ok-squared'></i>"; // "✅ "
 const SYMBOL_INFO = "<i class='icon-info-circled'></i>"; // "ℹ "
@@ -17,7 +17,7 @@ const FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
 
 // ---------------- Variables ----------------- //
 
-let currentData = DATA_UNKNOWN;
+// let currentData = DATA_UNKNOWN;
 let completionSymbol = SYMBOL_FALSE;
 
 let divStart = [
@@ -1201,7 +1201,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
 /**
  * Pre-Cleans HTML. Reads contents inside text area and parses it to a JavaScript object. If not empty, runs HKCheckCompletion() to check data.
  */
-window.HKReadTextArea = function HKReadTextArea() {
+function HKReadTextArea() {
     InitialHTMLPopulate(DIV_ID);
 
     let textAreaId = "save-area";
@@ -1379,6 +1379,11 @@ function ResetCompletion(jsObj) {
     }
 }
 
+// Populate HTML at load (before img and css)
 document.addEventListener("DOMContentLoaded", InitialHTMLPopulate(DIV_ID));
 
-// document.getElementById("save-area-read").addEventListener("onclick", HKReadTextArea());
+// Make functions global so they can be used on click and change events (for Webpack)
+window.HKReadTextArea = HKReadTextArea;
+window.InitialHTMLPopulate = InitialHTMLPopulate;
+window.CheckboxLocationsToggle = CheckboxLocationsToggle;
+window.CheckboxHintsToggle = CheckboxHintsToggle;

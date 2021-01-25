@@ -29,7 +29,7 @@ let benchLSFBegin, benchLSFEnd, benchTotal;
  * @param {FileList} input FileList object containing a list of File objects. The FileList behaves like an array, so you can check its length property to get the number of selected files.
  */
 // eslint-disable-next-line no-unused-vars
-window.LoadSaveFile = function LoadSaveFile(input, startTime = new Date()) {
+function LoadSaveFile(input, startTime = new Date()) {
 
     // console.info("Input length: " + input.files.length)
     // Cease further processing if user canceled the file input dialog
@@ -183,4 +183,4 @@ function AESDecryption(buffer, cipherObject = ECB_STREAM_CIPHER) {
     return output.subarray(0, -output[output.length - 1]);
 }
 
-// document.getElementById("save-area-file").addEventListener("onchange", LoadSaveFile(this));
+window.LoadSaveFile = LoadSaveFile;
