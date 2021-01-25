@@ -53,10 +53,10 @@ module.exports = {
                 ],
             },
             {
-                test: /thumbnail1200x628.jpg/,
+                test: /thumbnail1200x628\.jpg/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'img/thumbnail1200x628.jpg'
+                    filename: 'img/[name][ext]'
                 }
             },
             {
