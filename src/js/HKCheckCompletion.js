@@ -249,7 +249,7 @@ function HKCheckCompletion(jsonObject) {
     CheckAdditionalThings(DIV_ID.achievements, HK_ACHIEVEMENTS, HKPlayerData, HKWorldItems);
 
     // ---------------- Fleur Divide ----------------- //
-    
+
     AppendHTML(DIV_ID.achievements, FLEUR_DIVIDE);
 
     // ------------------------- Game Statistics ----------------------------- //
@@ -440,7 +440,7 @@ function CheckCompletionPercent(divId, completionPercentage) {
  * @param {number} masks Number of max health masks from the save
  * @param {number} permadeathMode Value of permadeathMode property. 0 = Normal, 1 = Steel Soul
  */
-function CheckHealthMasks(divId, masks, permadeathMode) {
+function CheckHealthMasks(divId, masks = 5, permadeathMode = 0) {
 
     let icon = SYMBOL_EMPTY;
     let textFill = "<span>Health:</span>";
@@ -857,7 +857,7 @@ function InitialHTMLPopulate(divIdObj) {
     AppendHTML(divIdObj.intro, FLEUR_DIVIDE);
 
     // Health Masks
-    CheckHealthMasks(divIdObj.intro, 5, 0);
+    CheckHealthMasks(divIdObj.intro);
 
     // Soul Orbs
     CheckSoulOrbs(divIdObj.intro, 99);
