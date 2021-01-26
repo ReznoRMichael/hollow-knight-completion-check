@@ -249,6 +249,18 @@ p {
     background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 460px) {
+    .horizontal-line {
+        height: 1.15rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .horizontal-line {
+        height: 0.9rem;
+    }
+}
+
 .smalltext {
     font-size: 0.8rem;
     text-align: center;
