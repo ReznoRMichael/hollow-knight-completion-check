@@ -35,3 +35,7 @@
 .simpleicon-github:before {
     content: url("../img/github.svg");
 }
+
+.simpleicon-instagram:before {
+    content: url("../img/instagram.svg");
+}
