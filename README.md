@@ -1,8 +1,23 @@
+<p align="center">
+  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2209910193" target="_blank">
+  <img src="https://img.shields.io/static/v1?label=Steam&message=Guide&color=grey&style=for-the-badge&logo=Steam"></a>
+  <a href="https://www.paypal.me/ReznoRMichael" target="_blank">
+  <img src="https://img.shields.io/static/v1?label=Donate&message=PayPal&color=blue&labelColor=lightgrey&style=for-the-badge&logo=paypal"></a><br>
+  <a href="https://twitter.com/intent/follow?screen_name=ReznoRMichael" target="_blank">
+  <img src="https://img.shields.io/twitter/follow/ReznoRMichael?style=social&logo=twitter"></a>
+  <a href="https://www.youtube.com/c/MichaelReznoR" target="_blank">
+  <img src="https://img.shields.io/static/v1?label=Youtube&message=reznor.technology&labelColor=lightgrey&color=FF0000&style=flat&logo=youtube"></a>
+  <a href="https://www.instagram.com/reznormichael/" target="_blank">
+  <img src="https://img.shields.io/static/v1?label=Instagram&message=reznormichael&labelColor=lightgrey&color=E4405F&style=flat&logo=Instagram"></a>
+</p>
+
 # Hollow Knight: Analyze Save Completion Online Tool
 
 > Now you can see what you missed easily! Game Completion %, every Shard/Fragment/Ore, costs, locations, Game Statistics, Hunter's Journal, Achievements, Game Completion essentials. And if you are completely lost, I designed a spoiler-free Hint system based on your individual game progress.
 
 ## Support Tool (PayPal)
+
+![donate](https://img.shields.io/static/v1?label=Donate&message=PayPal&color=blue&labelColor=lightgrey&style=for-the-badge&logo=paypal&link=https://www.paypal.com/paypalme/ReznoRMichael)
 
 Every single penny counts: [Donate any amount](https://www.paypal.me/ReznoRMichael). By donating you directly contribute to the purpose of improving the tool for yourself and everyone else.
 
@@ -20,7 +35,8 @@ More info with features and visual previews can be found in the official [Steam 
 
 There are two ways to use this online tool:
 
-1. **Simple way**: just choose your **user\*.dat** save file and see the magic happen! See [save game locations paragraph](#hollow-knight-save-game-locations) below on where to find your Hollow Knight save files.
+1. **Simple way**: just choose your **user\*.dat** save file and see the magic happen! See [save game locations paragraph](#hollow-knight-save-game-locations) below on where to find your Hollow Knight save files.  
+The tool doesn't have the power to modify *any* of your files, but *always* do backups just in case.
 
 2. **Advanced way**: for people who wish to share saves on forums in text format through [pastebin.com](https://pastebin.com/). Step by step tutorial:
 
