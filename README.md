@@ -99,6 +99,8 @@ If you like the tool and wish it developed further with more functions and easie
 
   — Improved text area graphics and readability
 
+  — Increased brightness of the Steel Soul Health Masks when analyzing a Steel Soul save file
+
 * 2021-01-19:
 
   — Changed the site address to GitHub Pages using https. Now the site is published directly from the GitHub source. This should fix the problem for some people who were not able to visit the previous webpage.
