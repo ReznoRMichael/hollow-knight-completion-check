@@ -1,6 +1,7 @@
 /* global require */
 // CSS
 require("../css/fontello.css");
+require("../css/simpleicon.css");
 require("../css/style.css");
 
 // meta tags (social)

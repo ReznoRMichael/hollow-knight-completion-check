@@ -62,6 +62,38 @@
 .icon-clock:before { content: '\e804'; } /* '' */
 .icon-info-circled:before { content: '\e805'; } /* '' */
 .icon-ok-squared:before { content: '\f14a'; } /* '' */
+/* SVG from Simple Icons https://github.com/simple-icons/simple-icons */
+
+[class^="simpleicon-"],
+[class*=" simpleicon-"] {
+    position: relative;
+    padding-left: 1.6em;
+}
+
+[class^="simpleicon-"]:before,
+[class*=" simpleicon-"]:before {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: .2em;
+    text-align: center;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 0;
+
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.simpleicon-youtube:before {
+    padding-top: 0.2em;
+    content: url(data:image/svg+xml;base64,PHN2ZyByb2xlPSJpbWciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI0IDI0Ij48dGl0bGU+WW91VHViZSBpY29uPC90aXRsZT48cGF0aCBmaWxsPSIjRkYwMDAwIiBkPSJNMjMuNDk4IDYuMTg2YTMuMDE2IDMuMDE2IDAgMCAwLTIuMTIyLTIuMTM2QzE5LjUwNSAzLjU0NSAxMiAzLjU0NSAxMiAzLjU0NXMtNy41MDUgMC05LjM3Ny41MDVBMy4wMTcgMy4wMTcgMCAwIDAgLjUwMiA2LjE4NkMwIDguMDcgMCAxMiAwIDEyczAgMy45My41MDIgNS44MTRhMy4wMTYgMy4wMTYgMCAwIDAgMi4xMjIgMi4xMzZjMS44NzEuNTA1IDkuMzc2LjUwNSA5LjM3Ni41MDVzNy41MDUgMCA5LjM3Ny0uNTA1YTMuMDE1IDMuMDE1IDAgMCAwIDIuMTIyLTIuMTM2QzI0IDE1LjkzIDI0IDEyIDI0IDEyczAtMy45My0uNTAyLTUuODE0ek05LjU0NSAxNS41NjhWOC40MzJMMTUuODE4IDEybC02LjI3MyAzLjU2OHoiLz48L3N2Zz4=);
+}
 /* Font license info
 
 ## Font Awesome

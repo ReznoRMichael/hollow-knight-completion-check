@@ -1,0 +1,32 @@
+/* SVG from Simple Icons https://github.com/simple-icons/simple-icons */
+
+[class^="simpleicon-"],
+[class*=" simpleicon-"] {
+    position: relative;
+    padding-left: 1.6em;
+}
+
+[class^="simpleicon-"]:before,
+[class*=" simpleicon-"]:before {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: .2em;
+    text-align: center;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 0;
+
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.simpleicon-youtube:before {
+    padding-top: 0.2em;
+    content: url("../img/youtube.svg");
+}

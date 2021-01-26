@@ -42,7 +42,7 @@ The tool doesn't have the power to modify *any* of your files, but *always* do b
 
    * Use bloodorca's amazing [Online Save File Editor](https://bloodorca.github.io/hollow) to decode your Hollow Knight **user\*.dat** save file into text.
 
-   * Left-click anywhere inside the text box in the Editor after decoding the save and press **CTRL+A** (or Right-click -> Select All). Only the text inside the text box (decoded save file contents) should be selected.
+   * Left-click inside the text box in the Editor after decoding the save and press **CTRL+A** (or Right-click -> Select All). Only the text inside the text box (decoded save file contents) should be selected.
   
    * Press **CTRL+C** (or Right-click -> Copy) to copy the whole contents inside the text box.
 
