@@ -33,3 +33,8 @@
     padding-top: 0.15em;
     content: url("../img/paypal.svg");
 }
+
+.simpleicon-github:before {
+    padding-top: 0.15em;
+    content: url("../img/github.svg");
+}
