@@ -20,11 +20,16 @@
 }
 
 .simpleicon-youtube:before {
-    padding-top: 0.2em;
+    padding-top: 0.15em;
     content: url("../img/youtube.svg");
 }
 
 .simpleicon-steam:before {
     padding-top: 0.15em;
     content: url("../img/steam.svg");
+}
+
+.simpleicon-paypal:before {
+    padding-top: 0.15em;
+    content: url("../img/paypal.svg");
 }
