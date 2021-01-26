@@ -11,6 +11,7 @@
     position: absolute;
     display: inline-block;
     left: 0;
+    top: 0;
     width: 1.2em;
     height: 1.2em;
     margin-right: .2em;
