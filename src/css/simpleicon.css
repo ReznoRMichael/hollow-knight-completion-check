@@ -39,3 +39,7 @@
 .simpleicon-instagram:before {
     content: url("../img/instagram.svg");
 }
+
+.simpleicon-twitter:before {
+    content: url("../img/twitter.svg");
+}
