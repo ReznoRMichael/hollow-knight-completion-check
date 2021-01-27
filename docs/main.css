@@ -242,7 +242,7 @@ textarea {
     color: #fff;
     caret-color: #fff;
     border: 1px solid #e3ebf7;
-    padding: 2px 2px 2px 0;
+    padding: 2px;
     margin: 0.5rem 2px 0.3rem 2px;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -322,8 +322,15 @@ input[type="file"] {
 }
 
 .centered {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
+}
+
+@media screen and (max-width: 566px) {
+    .centered {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -336,7 +343,7 @@ input[type="file"] {
         justify-content: center;
     }
     .centered {
-        flex-direction: row;
+        flex-direction: column;
         align-items: flex-start;
     }
     .checkboxes {
