@@ -92,10 +92,6 @@ function HKCheckCompletion(jsonObject) {
     // Prevents adding current percent data after each function call (each click of Analyze button)
     ResetCompletion(DIV_ID);
 
-    // Prevents wrong checkbox behaviour
-    CheckboxHintsToggle("hide");
-    CheckboxLocationsToggle("hide");
-
     // Shallow Clone const objects (used for destructive functions)
     let HK_HINTS_temp = Object.assign({}, HK_HINTS);
     let HK_BOSSES_temp = Object.assign({}, HK_BOSSES);
@@ -263,6 +259,10 @@ function HKCheckCompletion(jsonObject) {
     // ------------------------- Fill completion ----------------------------- //
 
     CompletionHTML(DIV_ID);
+
+    // Prevents wrong checkbox behaviour (must run after everything is finished)
+    CheckboxHintsToggle();
+    CheckboxLocationsToggle();
 
     // finish and show benchmark
     benchHKCCEnd = new Date();
@@ -921,7 +921,7 @@ function InitialHTMLPopulate(divIdObj) {
  * Toggles display of "hk-hints". On click with no parameters or on demand when called with a parameter
  * @param {string} param "hide", "show" or none (optional)
  */
-function CheckboxHintsToggle(param) {
+function CheckboxHintsToggle(param = "none") {
     let checkboxId = document.getElementById("checkbox-hints");
 
     switch (param) {
@@ -950,7 +950,7 @@ function CheckboxHintsToggle(param) {
  * Toggles display of ".location" class. On click with no parameters or on demand when called with a parameter
  * @param {string} param "hide", "show" or none (optional)
  */
-function CheckboxLocationsToggle(param) {
+function CheckboxLocationsToggle(param = "none") {
     let checkboxId = document.getElementById("checkbox-locations");
     let allClassElements = document.querySelectorAll(".location");
     let length = allClassElements.length;
