@@ -93,11 +93,11 @@ If you like the tool and wish it developed further with more functions and easie
   — **Optimized:** Now smaller, faster and more web- and mobile-friendly than before. At least I hope 😉
 
   — Added to **Game Statistics:**  
-  ✅ Shade Geo (Amount of Geo the Shade is currently holding)
-  ✅ Journal: Void Idol Attuned
-  ✅ Journal: Void Idol Ascended
-  ✅ Journal: Void Idol Radiant
-  ✅ White Palace Secret Room visited (Unidentified secret room, help identify this room!)
+  ✅ Shade Geo (Amount of Geo the Shade is currently holding)  
+  ✅ Journal: Void Idol Attuned  
+  ✅ Journal: Void Idol Ascended  
+  ✅ Journal: Void Idol Radiant  
+  ✅ White Palace Secret Room visited (Unidentified secret room, help identify this room!)  
 
   — Windows HK Save files location in a code box for easy copy-paste in the Windows File Explorer address bar
 
