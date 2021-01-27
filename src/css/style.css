@@ -280,6 +280,10 @@ a:hover {
     text-decoration: none;
 }
 
+.link-social {
+    margin: 0.25rem;
+}
+
 .icon-cancel {
     color: #f03a17;
 }
