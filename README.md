@@ -92,7 +92,7 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **Much easier to use:** Just choose a \*.dat or \*.bak save file to analyze. And that's it! You don't even have to press "Analyze", because programming magic does that for you.
 
-  — Go to **your Steam Cloud Storage for Hollow Knight** instantly with a press of a button! It can't get any easier to get your save file than this. Steam Cloud can be also useful if you want to quickly check your in-game progress on mobile outside your PC. Saves in the Cloud are updated after exiting the game.
+  — Go to **your Steam Cloud Storage for Hollow Knight** instantly with a press of a button! It can't get any easier to get your save file than this. Steam Cloud can be also useful if you want to quickly check your in-game progress on mobile outside your PC. Saves in the Steam Cloud are updated after exiting the game.
 
   — **Optimized:** Now smaller, faster and more web- and mobile-friendly than before. At least I hope 😉
 
@@ -105,7 +105,7 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **Hints/Spoilers Checkboxes now don't reset** each time a save is analyzed (you don't have to click them again)
 
-  — Windows HK Save files location in a code box for easy copy-paste in the Windows File Explorer address bar (just paste this text and press Enter!)
+  — Windows HK Save files location in a code box for easy copy-paste in the Windows File Explorer address bar. Just Left-click this text three times, copy it, click Choose File/Browse..., and paste into address bar to go there instantly!
 
   — Improved text area focus, graphics and readability
 
