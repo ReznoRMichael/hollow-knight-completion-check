@@ -446,8 +446,8 @@ function CheckHealthMasks(divId, masks = 5, permadeathMode = 0) {
     let icon = SYMBOL_EMPTY;
     let textFill = "<span>Health:</span>";
     let maskImages = "";
-    let maskNormal = `<img src='${healthMaskImage}' class='health-mask'>`;
-    let maskSteel = `<img src='${healthMaskSteelImage}' class='health-mask'>`;
+    let maskNormal = `<img src='${healthMaskImage}' class='health-mask' alt='health mask image'>`;
+    let maskSteel = `<img src='${healthMaskSteelImage}' class='health-mask' alt='steel health mask image'>`;
     let maskImg = "";
 
     (permadeathMode === 1) ? maskImg = maskSteel: maskImg = maskNormal;
@@ -469,7 +469,7 @@ function CheckSoulOrbs(divId, totalSoul) {
     let icon = SYMBOL_EMPTY;
     let textFill = "<span>Soul:</span>";
     let soulImages = "";
-    let soulNormal = `<img src='${soulOrbImage}' class='soul-orb'>`;
+    let soulNormal = `<img src='${soulOrbImage}' class='soul-orb' alt='soul orb image'>`;
     let soulImg = soulNormal;
 
     for (let i = 0, total = totalSoul / 33; i < total; i++) {
@@ -487,7 +487,7 @@ function CheckSoulOrbs(divId, totalSoul) {
 function CheckGeo(divId, geoValue) {
 
     let icon = SYMBOL_EMPTY;
-    let textFill = `<span>Geo:</span><img src='${geoImage}' class='geo-symbol'><b>${geoValue}</b>`;
+    let textFill = `<span>Geo:</span><img src='${geoImage}' class='geo-symbol' alt='geo symbol image'><b>${geoValue}</b>`;
 
     document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + divEnd;
 }
