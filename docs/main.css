@@ -302,6 +302,7 @@ input[type="file"] {
     background-color: #1e4d6c;
     color: #aac7d4;
     border: 2px solid #183c55;
+    border-radius: 2px;
     padding: 0.3rem 1rem;
     margin: 0.25rem 0.5rem 0.25rem 0.25rem;
 }
