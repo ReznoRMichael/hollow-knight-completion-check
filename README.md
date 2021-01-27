@@ -103,7 +103,7 @@ If you like the tool and wish it developed further with more functions and easie
 
   — Windows HK Save files location in a code box for easy copy-paste in the Windows File Explorer address bar
 
-  — Improved text area graphics and readability
+  — Improved text area focus, graphics and readability
 
   — Increased brightness of the Steel Soul Health Masks when analyzing a Steel Soul save file
 

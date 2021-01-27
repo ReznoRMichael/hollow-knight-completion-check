@@ -132,7 +132,7 @@ textarea {
     color: #fff;
     caret-color: #fff;
     border: 1px solid #e3ebf7;
-    padding: 2px 2px 2px 0;
+    padding: 2px;
     margin: 0.5rem 2px 0.3rem 2px;
     overflow-x: hidden;
     overflow-y: scroll;
