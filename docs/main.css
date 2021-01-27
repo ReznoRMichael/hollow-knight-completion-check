@@ -448,6 +448,10 @@ a:hover {
     display: none;
 }
 
+.spoiler-text {
+    display: inline-block;
+}
+
 .radio,
 .checkbox {
     position: relative;

@@ -340,14 +340,15 @@ function CompletionHTML(jsObj) {
  * Generates and appends a new entry inside the HTML of a given ID
  * @param {object} divId object containing div ID and h2 title of the HTML element
  * @param {string} textPrefix Main name of the entry
- * @param {string} textSuffix Optional suffix after the main name
+ * @param {string} textSuffix Optional suffix after the main name (locations, costs etc.)
  */
-function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix = "") {
+function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix = "Unknown Description Element") {
     let icon = completionSymbol;
     let b = ["<b>", "</b>"];
     if (!textPrefix.length) b = ["", ""];
 
     let span = ["<span class='flex-row location hidden'>", "</span>"];
+    let spoilerSpan = ["<span class='spoiler-text'>", "</span>"];
     if (divId === DIV_ID.hints) {
         span[0] = "<span>";
         icon = "";
@@ -356,7 +357,7 @@ function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix
     let dash = "";
     if (textSuffix.length && textPrefix.length) dash = " — ";
 
-    document.getElementById(divId.id).innerHTML += divStart + icon + b[0] + textPrefix + b[1] + span[0] + pSpan + dash + textSuffix + span[1] + divEnd;
+    document.getElementById(divId.id).innerHTML += divStart + icon + b[0] + textPrefix + b[1] + span[0] + pSpan + spoilerSpan[0] + dash + textSuffix + spoilerSpan[1] + span[1] + divEnd;
 }
 
 /**
