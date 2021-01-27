@@ -722,6 +722,14 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
             case "killsBindingSeal":
                 (playerData[i] == 0) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
+            case "killedVoidIdol_1":
+                (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
+                if (playerData[i] === false && (playerData.killedVoidIdol_2 === true || playerData.killedVoidIdol_3 === true)) CurrentDataTrue();
+                break;
+            case "killedVoidIdol_2":
+                (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
+                if (playerData[i] === false && playerData.killedVoidIdol_3 === true) CurrentDataTrue();
+                break;
             case "greyPrinceDefeated":
             case "zoteDead":
             case "nailsmithSpared":

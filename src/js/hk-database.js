@@ -417,12 +417,12 @@ const HK_STATISTICS = {
     killedMenderBug: ["Journal: Menderbug", "Forgotten Crossroads + destroy sign"],
     killedBindingSeal: ["Journal: Seal of Binding", "White Palace: Path of Pain completion"],
     killedGodseekerMask: ["Journal: Weathered Mask", "Godhome: Land of Storms"],
-    // killedVoidIdol_1: ["Journal: Void Idol Attuned", "Godhome: Hall of Gods, all bosses"],
-    // killedVoidIdol_2: ["Journal: Void Idol Ascended", "Godhome: Hall of Gods, all bosses"],
-    // killedVoidIdol_3: ["Journal: Void Idol Radiant", "Godhome: Hall of Gods, all bosses"],
+    killedVoidIdol_1: ["Journal: Void Idol Attuned", "Godhome: Hall of Gods, defeat all"],
+    killedVoidIdol_2: ["Journal: Void Idol Ascended", "Godhome: Hall of Gods, defeat all"],
+    killedVoidIdol_3: ["Journal: Void Idol Radiant", "Godhome: Hall of Gods, defeat all"],
     whiteDefenderDefeats: ["White Defender times defeated", "Royal Waterways (5 max)", 5],
     greyPrinceDefeats: ["Grey Prince Zote times defeated", "Dirtmouth (10 max)", 10],
-    // whitePalaceSecretRoomVisited: ["White Palace Secret Room visited", "White Palace: one of the secret rooms"],
+    whitePalaceSecretRoomVisited: ["White Palace Secret Room visited", "Help identify this room!"],
     killsBindingSeal: ["Path of Pain", "White Palace: main secret area"],
 };
 
