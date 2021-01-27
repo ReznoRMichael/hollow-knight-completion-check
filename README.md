@@ -84,11 +84,15 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
-* 2021-01-XX:
+* 2021-XX-XX:
 
   — **Major New Release v1.0.0!** Finally out of Beta.
 
+  — I want to sincerely thank **one single person** (from my country - Poland) who donated a total of 60 PLN ($15.38 / €12.73) to my PayPal account since the first release of my tool in August 2020. This is currently the *only person* who donated *anything at all* since the tool's release, and I am very grateful for the support, especially in these dark times, which are hard for everyone. This update and 1.0 release is dedicated mainly to this person, as well as all other people who supported the tool in other ways: by beta-testing, giving comments, new ideas, saves, Steam Points rewards, Steam Guide likes, favourites or sharing this tool with others or giving emotional support. I hope you all will enjoy this version even more 😊
+
   — **Much easier to use:** Just choose a \*.dat or \*.bak save file to analyze. And that's it! You don't even have to press "Analyze", because programming magic does that for you.
+
+  — Go to **your Steam Cloud Storage for Hollow Knight** instantly with a press of a button! It can't get any easier to get your save file than this. Steam Cloud can be also useful if you want to quickly check your in-game progress on mobile outside your PC. Saves in the Cloud are updated after exiting the game.
 
   — **Optimized:** Now smaller, faster and more web- and mobile-friendly than before. At least I hope 😉
 
@@ -97,11 +101,11 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Journal: Void Idol Attuned  
   ✅ Journal: Void Idol Ascended  
   ✅ Journal: Void Idol Radiant  
-  ✅ White Palace Secret Room visited (Unidentified secret room, help identify this room!)  
+  ✅ White Palace Secret Room visited (Unidentified secret room, help us identify this room!)  
 
-  — Hints/Spoilers Checkboxes now don't reset themselves each time a save is analyzed (you don't have to click them again)
+  — **Hints/Spoilers Checkboxes now don't reset** each time a save is analyzed (you don't have to click them again)
 
-  — Windows HK Save files location in a code box for easy copy-paste in the Windows File Explorer address bar
+  — Windows HK Save files location in a code box for easy copy-paste in the Windows File Explorer address bar (just paste this text and press Enter!)
 
   — Improved text area focus, graphics and readability
 
@@ -109,7 +113,7 @@ If you like the tool and wish it developed further with more functions and easie
 
 * 2021-01-19:
 
-  — Changed the site address to GitHub Pages using https. Now the site is published directly from the GitHub source. This should fix the problem for some people who were not able to visit the previous webpage.
+  — Changed the site address to GitHub Pages using https. Now the site is published directly from the GitHub source. This should fix the problem for some people who were not able to visit the previous webpage, as well as the "this site is not safe" notifications in some browsers.
 
 * 2020-12-27:
 
