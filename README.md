@@ -99,6 +99,8 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Journal: Void Idol Radiant  
   ✅ White Palace Secret Room visited (Unidentified secret room, help identify this room!)  
 
+  — Hints/Spoilers Checkboxes now don't reset themselves each time a save is analyzed (you don't have to click them again)
+
   — Windows HK Save files location in a code box for easy copy-paste in the Windows File Explorer address bar
 
   — Improved text area graphics and readability
