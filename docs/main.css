@@ -431,16 +431,28 @@ a:hover {
     align-items: center;
 }
 
+.soul-orb:first-child {
+    margin-left: 0.3rem;
+}
+
 .health-mask,
 .soul-orb,
-.geo-symbol {
+.geo-symbol,
+.notch {
     width: auto;
     height: 1.48rem;
     margin: 0 0 0 0.3rem;
 }
 
+.notch {
+    padding-left: 0.3rem;
+    margin-left: -0.6rem;
+}
+
 .soul-orb {
     height: 1.3rem;
+    padding-left: 0.3rem;
+    margin-left: -0.15rem;
 }
 
 .geo-symbol {

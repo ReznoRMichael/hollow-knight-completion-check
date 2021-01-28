@@ -30,6 +30,7 @@ import {
 import healthMaskImage from "../img/health-mask.png";
 import healthMaskSteelImage from "../img/health-mask-steel.png";
 import soulOrbImage from "../img/soul-orb.png";
+import notchImage from "../img/notch.png";
 import geoImage from "../img/geo.png";
 
 // ---------------- Constants ----------------- //
@@ -139,6 +140,10 @@ function HKCheckCompletion(jsonObject) {
     // ---------------- Soul Orbs ----------------- //
 
     CheckSoulOrbs(DIV_ID.intro, HKPlayerData.maxMP + HKPlayerData.MPReserveMax);
+
+    // ---------------- Charm Notches (Slots) ----------------- //
+
+    CheckNotches(DIV_ID.intro, HKPlayerData.charmSlots);
 
     // ---------------- Geo Amount ----------------- //
 
@@ -490,6 +495,25 @@ function CheckGeo(divId, geoValue) {
     let textFill = `<span>Geo:</span><img src='${geoImage}' class='geo-symbol' alt='geo symbol image'><b>${geoValue}</b>`;
 
     document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + divEnd;
+}
+
+/**
+ * Fills HTML with appriopriate number of notch images
+ * @param {object} divId ID of the HTML element for data appending
+ * @param {number} totalNotches Number of total Charm Notches the player has. 11 = max
+ */
+function CheckNotches(divId, totalNotches = 3) {
+
+    let icon = SYMBOL_EMPTY;
+    let textFill = `<span>Notches:</span>${pSpan}`;
+    let notchImages = "";
+    let notchImg = `<img src='${notchImage}' class='notch' alt='notch image'>`;
+
+    for (let i = 0; i < totalNotches; i++) {
+        notchImages += notchImg;
+    }
+
+    document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + notchImages + divEnd;
 }
 
 /**
@@ -870,6 +894,9 @@ function InitialHTMLPopulate(divIdObj) {
 
     // Soul Orbs
     CheckSoulOrbs(divIdObj.intro, 99);
+
+    // Charm Notches
+    CheckNotches(divIdObj.intro);
 
     // Geo
     CheckGeo(divIdObj.intro, 0);
