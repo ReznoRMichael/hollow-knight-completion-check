@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-prototype-builtins */
 
 // ---------------- Load main Hollow Knight database file ----------------- //
