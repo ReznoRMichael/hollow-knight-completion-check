@@ -1,12 +1,17 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-prototype-builtins */
 
+// ---------------- Load main Hollow Knight database file ----------------- //
+
 import * as HK from "./hk-database.js";
-import healthMaskImage from "../img/health-mask.png";
-import healthMaskSteelImage from "../img/health-mask-steel.png";
-import soulOrbImage from "../img/soul-orb.png";
-import notchImage from "../img/notch.png";
-import geoImage from "../img/geo.png";
+
+// ---------------- Load image files (necessary for Webpack) ----------------- //
+
+import HEALTH_MASK_IMAGE from "../img/health-mask.png";
+import HEALTH_MASK_STEEL_IMAGE from "../img/health-mask-steel.png";
+import SOUL_ORB_IMAGE from "../img/soul-orb.png";
+import NOTCH_IMAGE from "../img/notch.png";
+import GEO_IMAGE from "../img/geo.png";
 
 // ---------------- Constants ----------------- //
 
@@ -426,8 +431,8 @@ function CheckHealthMasks(divId, masks = 5, permadeathMode = 0) {
     let icon = SYMBOL_EMPTY;
     let textFill = "<span>Health:</span>";
     let maskImages = "";
-    let maskNormal = `<img src='${healthMaskImage}' class='health-mask' alt='health mask image'>`;
-    let maskSteel = `<img src='${healthMaskSteelImage}' class='health-mask' alt='steel health mask image'>`;
+    let maskNormal = `<img src='${HEALTH_MASK_IMAGE}' class='health-mask' alt='health mask image'>`;
+    let maskSteel = `<img src='${HEALTH_MASK_STEEL_IMAGE}' class='health-mask' alt='steel health mask image'>`;
     let maskImg = "";
 
     (permadeathMode === 1) ? maskImg = maskSteel: maskImg = maskNormal;
@@ -449,7 +454,7 @@ function CheckSoulOrbs(divId, totalSoul) {
     let icon = SYMBOL_EMPTY;
     let textFill = "<span>Soul:</span>";
     let soulImages = "";
-    let soulNormal = `<img src='${soulOrbImage}' class='soul-orb' alt='soul orb image'>`;
+    let soulNormal = `<img src='${SOUL_ORB_IMAGE}' class='soul-orb' alt='soul orb image'>`;
     let soulImg = soulNormal;
 
     for (let i = 0, total = totalSoul / 33; i < total; i++) {
@@ -467,7 +472,7 @@ function CheckSoulOrbs(divId, totalSoul) {
 function CheckGeo(divId, geoValue) {
 
     let icon = SYMBOL_EMPTY;
-    let textFill = `<span>Geo:</span><img src='${geoImage}' class='geo-symbol' alt='geo symbol image'><b>${geoValue}</b>`;
+    let textFill = `<span>Geo:</span><img src='${GEO_IMAGE}' class='geo-symbol' alt='geo symbol image'><b>${geoValue}</b>`;
 
     document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + divEnd;
 }
@@ -482,7 +487,7 @@ function CheckNotches(divId, totalNotches = 3) {
     let icon = SYMBOL_EMPTY;
     let textFill = `<span>Notches:</span>${pSpan}`;
     let notchImages = "";
-    let notchImg = `<img src='${notchImage}' class='notch' alt='notch image'>`;
+    let notchImg = `<img src='${NOTCH_IMAGE}' class='notch' alt='notch image'>`;
 
     for (let i = 0; i < totalNotches; i++) {
         notchImages += notchImg;
