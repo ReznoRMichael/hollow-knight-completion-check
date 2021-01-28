@@ -441,7 +441,7 @@ function CheckCompletionPercent(divId, completionPercentage) {
 }
 
 /**
- * Fills HTML with appriopriate number of health mask images
+ * Fills HTML with appropriate number of health mask images
  * @param {object} divId ID of the HTML element for data appending
  * @param {number} masks Number of max health masks from the save
  * @param {number} permadeathMode Value of permadeathMode property. 0 = Normal, 1 = Steel Soul
@@ -465,7 +465,7 @@ function CheckHealthMasks(divId, masks = 5, permadeathMode = 0) {
 }
 
 /**
- * Fills HTML with appriopriate number of soul orbs images
+ * Fills HTML with appropriate number of soul orbs images
  * @param {object} divId ID of the HTML element for data appending
  * @param {number} totalSoul Number of max Soul reserve from the save. 99 = full Soul Orb
  */
@@ -498,7 +498,7 @@ function CheckGeo(divId, geoValue) {
 }
 
 /**
- * Fills HTML with appriopriate number of notch images
+ * Fills HTML with appropriate number of notch images
  * @param {object} divId ID of the HTML element for data appending
  * @param {number} totalNotches Number of total Charm Notches the player has. 11 = max
  */
