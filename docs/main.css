@@ -313,6 +313,7 @@ input[type="file"] {
 }
 
 .button:hover {
+    color: #d9f3ff;
     background-color: #2e5d7c;
     border-color: #2e5d7c;
     cursor: pointer;
@@ -397,6 +398,11 @@ a:visited {
 a:hover {
     color: #d9f3ff;
     text-decoration: none;
+}
+
+a.button:active,
+a.button:visited {
+    font-weight: 500;
 }
 
 .link-social {
