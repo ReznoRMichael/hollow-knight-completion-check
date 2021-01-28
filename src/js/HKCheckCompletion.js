@@ -443,7 +443,7 @@ function CheckCompletionPercent(divId, completionPercentage) {
 /**
  * Fills HTML with appropriate number of health mask images
  * @param {object} divId ID of the HTML element for data appending
- * @param {number} masks Number of max health masks from the save
+ * @param {number} masks Number of max health masks from the save (baseline without charms and lifeblood)
  * @param {number} permadeathMode Value of permadeathMode property. 0 = Normal, 1 = Steel Soul
  */
 function CheckHealthMasks(divId, masks = 5, permadeathMode = 0) {
