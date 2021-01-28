@@ -41,6 +41,16 @@ eval("/* eslint-disable */\n\n\n(function (root) {\n  function checkInt(value) {
 
 /***/ }),
 
+/***/ "./src/js/analytics.js":
+/*!*****************************!*\
+  !*** ./src/js/analytics.js ***!
+  \*****************************/
+/***/ (() => {
+
+eval("/* eslint-disable no-undef */\n// Temporarily disable the tracking for testing (set to false to enable Analytics)\nwindow['ga-disable-UA-136831794-2'] = true;\nwindow.dataLayer = window.dataLayer || [];\n\nfunction gtag() {\n  dataLayer.push(arguments);\n} // Default no consent to share cookie data\n\n\ngtag('consent', 'default', {\n  'ad_storage': 'denied',\n  'analytics_storage': 'denied'\n});\ngtag('js', new Date());\ngtag('config', 'UA-136831794-2');\n\n//# sourceURL=webpack://hollow-knight-completion-check/./src/js/analytics.js?");
+
+/***/ }),
+
 /***/ "./src/js/hk-database.js":
 /*!*******************************!*\
   !*** ./src/js/hk-database.js ***!
@@ -242,7 +252,7 @@ eval("module.exports = __webpack_require__.p + \"img/thumbnail1200x628.jpg\";\n\
 /*!*************************!*\
   !*** ./src/js/index.js ***!
   \*************************/
-eval("/* global require */\n// CSS\n__webpack_require__(/*! ../css/fontello.css */ \"./src/css/fontello.css\");\n\n__webpack_require__(/*! ../css/simpleicon.css */ \"./src/css/simpleicon.css\");\n\n__webpack_require__(/*! ../css/style.css */ \"./src/css/style.css\"); // meta tags (social)\n\n\n__webpack_require__(/*! ../img/thumbnail1200x628.jpg */ \"./src/img/thumbnail1200x628.jpg\"); // Instantly load test file (Debugging script)\n// require(\"./LoadJson.js\");\n// Load Save File for opening files, decoding, decryption\n\n\n__webpack_require__(/*! ./LoadSaveFile.js */ \"./src/js/LoadSaveFile.js\"); // Main script for analyzing the decoded save file\n\n\n__webpack_require__(/*! ./HKCheckCompletion.js */ \"./src/js/HKCheckCompletion.js\");\n\n//# sourceURL=webpack://hollow-knight-completion-check/./src/js/index.js?");
+eval("/* global require */\n// CSS\n__webpack_require__(/*! ../css/fontello.css */ \"./src/css/fontello.css\");\n\n__webpack_require__(/*! ../css/simpleicon.css */ \"./src/css/simpleicon.css\");\n\n__webpack_require__(/*! ../css/style.css */ \"./src/css/style.css\"); // meta tags (social)\n\n\n__webpack_require__(/*! ../img/thumbnail1200x628.jpg */ \"./src/img/thumbnail1200x628.jpg\"); // Instantly load test file (Debugging script)\n// require(\"./LoadJson.js\");\n// \n\n\n__webpack_require__(/*! ./analytics.js */ \"./src/js/analytics.js\"); // Load Save File for opening files, decoding, decryption\n\n\n__webpack_require__(/*! ./LoadSaveFile.js */ \"./src/js/LoadSaveFile.js\"); // Main script for analyzing the decoded save file\n\n\n__webpack_require__(/*! ./HKCheckCompletion.js */ \"./src/js/HKCheckCompletion.js\");\n\n//# sourceURL=webpack://hollow-knight-completion-check/./src/js/index.js?");
 })();
 
 /******/ })()
