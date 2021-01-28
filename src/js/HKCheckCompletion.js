@@ -452,7 +452,7 @@ function CheckSoulOrbs(divId, totalSoul) {
     let icon = SYMBOL_EMPTY;
     let textFill = "<span>Soul:</span>";
     let soulImages = "";
-    let soulNormal = `<img src='${SOUL_ORB_IMAGE}' class='soul-orb' alt='soul orb image'>`;
+    let soulNormal = `<img src='${SOUL_ORB_IMAGE}' class='soul-orb' alt='soul orb image' title='Single Soul Orb (33% Soul)'>`;
     let soulImg = soulNormal;
 
     for (let i = 0, total = totalSoul / 33; i < total; i++) {
