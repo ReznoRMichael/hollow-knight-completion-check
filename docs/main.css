@@ -326,7 +326,7 @@ input[type="file"] {
 
 .centered {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
 }
 
 @media screen and (max-width: 566px) {
