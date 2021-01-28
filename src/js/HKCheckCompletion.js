@@ -45,7 +45,7 @@ let benchHKCCBegin, benchHKCCEnd;
 // ---------------- Functions ----------------- //
 
 /**
- * Checks Hollow Knight game completion by analyzing the save file
+ * Main Function. Checks Hollow Knight game completion by analyzing the save file
  * @param {object} jsonObject Decoded save data in JavaScript Object Notation form (JSON)
  */
 function HKCheckCompletion(jsonObject) {
@@ -273,7 +273,6 @@ function PrefillHTML(jsObj) {
         id = jsObj[i].id;
         h2 = jsObj[i].h2;
         h2id = "h2-" + jsObj[i].id;
-        (i === "hints") ? cl = " class='hidden'": cl = "";
 
         mp = " – " + jsObj[i].maxPercent + "%";
         if (!jsObj[i].hasOwnProperty("maxPercent") || i === "intro") mp = "";
@@ -331,7 +330,7 @@ function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix
     let b = ["<b>", "</b>"];
     if (!textPrefix.length) b = ["", ""];
 
-    let span = ["<span class='flex-row location hidden'>", "</span>"];
+    let span = ["<span class='flex-row location'>", "</span>"];
     let spoilerSpan = ["<span class='spoiler-text'>", "</span>"];
     if (divId === HK.DIV_ID.hints) {
         span[0] = "<span>";
@@ -921,6 +920,10 @@ function InitialHTMLPopulate(divIdObj) {
     AppendHTML(divIdObj.godmaster, FLEUR_DIVIDE);
     AppendHTML(divIdObj.essential, FLEUR_DIVIDE);
     AppendHTML(divIdObj.achievements, FLEUR_DIVIDE);
+
+    // Prevents wrong checkbox behaviour (must run after everything is finished)
+    CheckboxHintsToggle();
+    CheckboxLocationsToggle();
 }
 
 /**
