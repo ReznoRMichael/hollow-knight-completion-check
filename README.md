@@ -103,6 +103,8 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Journal: Void Idol Radiant  
   ✅ White Palace Secret Room visited (Unidentified secret room, help us identify this room!)  
 
+  — **Charm Notches** added to Game Status
+
   — **Hints/Spoilers Checkboxes now don't reset** each time a save is analyzed (you don't have to click them again)
 
   — Windows HK Save files location in a code box for easy copy-paste in the Windows File Explorer address bar. Just Left-click this text three times, copy it, click Choose File/Browse..., and paste into address bar to go there instantly!
