@@ -117,7 +117,7 @@ const DIV_ID = {
     }
 };
 
-const HK_HINTS = {
+const HINTS = {
     fireballLevel: ["", "...a mysterious shaman living in a dwelling below the town of Dirtmouth"],
     hornet1Defeated: ["", "...a skilled protector guarding ruins in a lush green forest"],
     hasDash: ["", "...an old cloak lying on a green path by a broken shell"],
@@ -139,7 +139,7 @@ const HK_HINTS = {
     killedHollowKnight: ["", "...a disturbance inside a black temple"],
 };
 
-const HK_BOSSES = {
+const BOSSES = {
     falseKnightDefeated: ["False Knight", "Forgotten Crossroads"], // "Battle Scene" - "Crossroads_10" ?
     hornet1Defeated: ["Hornet Protector", "Greenpath"],
     defeatedDungDefender: ["Dung Defender", "Royal Waterways"],
@@ -155,13 +155,13 @@ const HK_BOSSES = {
 };
 
 // "Battle Scene" sceneData.persistentBoolItems.id
-const HK_BOSSES_WORLD = {
+const BOSSES_WORLD = {
     Crossroads_04: ["Gruz Mother", "Forgotten Crossroads"], // killedBigFly
     Crossroads_09: ["Brooding Mawlek", "Forgotten Crossroads"] // killedMawlek
 };
 
 // reference: https://radiance.host/apidocs/Charms.html
-const HK_CHARMS = {
+const CHARMS = {
     gotCharm_1: ["#1 Gathering Swarm", "Sly: 300 Geo"], // 1
     gotCharm_2: ["#2 Wayward Compass", "Iselda: 220 Geo"], // 1
     gotCharm_3: ["#3 Grubsong", "Grubfather: 10 Grubs rescued"], // 1
@@ -200,25 +200,25 @@ const HK_CHARMS = {
     gotCharm_36: ["#36 Kingsoul", "Queen's Gardens + Ancient Basin"], // 5
 };
 
-const HK_COLOSSEUM = {
+const COLOSSEUM = {
     colosseumBronzeCompleted: ["Trial of the Warrior", "Little Fool: 100 Geo"],
     colosseumSilverCompleted: ["Trial of the Conqueror", "Little Fool: 450 Geo + Warrior completed"],
     colosseumGoldCompleted: ["Trial of the Fool", "Little Fool: 800 Geo + Conqueror completed"],
 };
 
-const HK_DREAMERS = {
+const DREAMERS = {
     lurienDefeated: ["Lurien the Watcher", "City of Tears: Watcher's Spire"],
     monomonDefeated: ["Monomon the Teacher", "Fog Canyon: Teacher's Archives"],
     hegemolDefeated: ["Herrah the Beast", "Deepnest: Distant Village"]
 };
 
-const HK_DREAMNAIL = {
+const DREAMNAIL = {
     hasDreamNail: ["Dream Nail acquired", "Resting Grounds"],
     dreamNailUpgraded: ["Awoken Dream Nail", "Seer: 1800 Essence"],
     mothDeparted: ["Hear the Seer's final words", "Seer: 2400 Essence"]
 };
 
-const HK_EQUIPMENT = {
+const EQUIPMENT = {
     hasDash: ["Mothwing Cloak", "Greenpath: Dash ability"],
     hasWalljump: ["Mantis Claw", "Mantis Village: Wall Jump ability"],
     hasSuperDash: ["Crystal Heart", "Crystal Peak: Super Dash ability"],
@@ -228,7 +228,7 @@ const HK_EQUIPMENT = {
     hasShadowDash: ["Shade Cloak", "The Abyss: Shadow Dash ability"]
 };
 
-const HK_MASKSHARDS = {
+const MASKSHARDS = {
     slyShellFrag1: ["Mask Shard #1", "Sly: 150 Geo"],
     slyShellFrag2: ["Mask Shard #2", "Sly: 500 Geo"],
     slyShellFrag3: ["Mask Shard #3", "Sly: 800 Geo + Shopkeeper's Key"],
@@ -237,7 +237,7 @@ const HK_MASKSHARDS = {
 };
 
 // "Heart Piece" sceneData.persistentBoolItems.id
-const HK_MASKSHARDS_WORLD = {
+const MASKSHARDS_WORLD = {
     Crossroads_13: ["Mask Shard #6", "Forgotten Crossroads: below Hot Springs"],
     Crossroads_09: ["Mask Shard #7", "Forgotten Crossroads: Brooding Mawlek"],
     Crossroads_38: ["Mask Shard #8", "Grubfather: 5 Grubs rescued"],
@@ -251,7 +251,7 @@ const HK_MASKSHARDS_WORLD = {
     Room_Mansion: ["Mask Shard #16", "Resting Grounds: Delicate Flower"]
 };
 
-const HK_VESSELFRAGMENTS = {
+const VESSELFRAGMENTS = {
     slyVesselFrag1: ["Vessel Fragment #1", "Sly: 550 Geo"],
     slyVesselFrag2: ["Vessel Fragment #2", "Sly: 900 Geo + Shopkeeper's Key"],
     dreamReward5: ["Vessel Fragment #3", "Seer: 700 Essence"],
@@ -259,7 +259,7 @@ const HK_VESSELFRAGMENTS = {
 };
 
 // "Vessel Fragment" sceneData.persistentBoolItems.id
-const HK_VESSELFRAGMENTS_WORLD = {
+const VESSELFRAGMENTS_WORLD = {
     Fungus1_13: ["Vessel Fragment #5", "Greenpath: near Queen's Gardens exit"],
     Crossroads_37: ["Vessel Fragment #6", "Forgotten Crossroads: unlock City of Tears lift"],
     Ruins2_09: ["Vessel Fragment #7", "Above King's Station"],
@@ -267,13 +267,13 @@ const HK_VESSELFRAGMENTS_WORLD = {
     Abyss_04: ["Vessel Fragment #9", "Ancient Basin Fountain: 3000 Geo"]
 };
 
-const HK_NAILARTS = {
+const NAILARTS = {
     hasDashSlash: ["Great Slash", "Nailmaster Sheo: Greenpath"], // this is correct
     hasUpwardSlash: ["Dash Slash", "Nailmaster Oro: Kingdom's Edge, 800 Geo"], // this is correct
     hasCyclone: ["Cyclone Slash", " Nailmaster Mato: Howling Cliffs"],
 };
 
-const HK_NAILUPGRADES = [
+const NAILUPGRADES = [
     ["#0 Old Nail", "Starting Weapon"],
     ["#1 Sharpened Nail", "Nailsmith: 250 Geo"],
     ["#2 Channeled Nail", "Nailsmith: 800 Geo + 1 Pale Ore"],
@@ -281,7 +281,7 @@ const HK_NAILUPGRADES = [
     ["#4 Pure Nail", "Nailsmith: 4000 Geo + 3 Pale Ore"]
 ];
 
-const HK_SPELLS = {
+const SPELLS = {
     fireballLevel: {
         1: ["Vengeful Spirit", "Forgotten Crossroads: Ancestral Mound"],
         2: ["Shade Soul", "City of Tears: Soul Sanctum + Elegant Key"],
@@ -296,7 +296,7 @@ const HK_SPELLS = {
     }
 };
 
-const HK_WARRIORDREAMS = {
+const WARRIORDREAMS = {
     xeroDefeated: ["Xero", "Resting Grounds"],
     noEyesDefeated: ["No Eyes", "Greenpath: Stone Sanctuary"],
     elderHuDefeated: ["Elder Hu", "Fungal Wastes"],
@@ -306,7 +306,7 @@ const HK_WARRIORDREAMS = {
     markothDefeated: ["Markoth", "Kingdom's Edge"],
 };
 
-const HK_GRIMMTROUPE = {
+const GRIMMTROUPE = {
     gotCharm_37: ["Charm #37 Sprintmaster", "Sly: 400 Geo + Shopkeeper's Key"],
     gotCharm_38: ["Charm #38 Dreamshield", "Resting Grounds"],
     gotCharm_39: ["Charm #39 Weaversong", "Deepnest: Weaver's Den"],
@@ -314,22 +314,22 @@ const HK_GRIMMTROUPE = {
     killedGrimm: ["Troupe Leader Grimm", "Dirtmouth"]
 };
 
-const HK_LIFEBLOOD = {
+const LIFEBLOOD = {
     killedHiveKnight: ["Hive Knight", "The Hive"]
 };
 
-const HK_GODMASTER = {
+const GODMASTER = {
     hasGodfinder: ["Godtuner", "Junk Pit"]
 };
 
-const HK_GODMASTER_DOORS = [
+const GODMASTER_DOORS = [
     ["#1 Pantheon of the Master", "Godhome"],
     ["#2 Pantheon of the Artist", "Godhome"],
     ["#3 Pantheon of the Sage", "Godhome"],
     ["#4 Pantheon of the Knight", "Godhome"]
 ];
 
-const HK_ESSENTIAL = {
+const ESSENTIAL = {
     grubsCollected: ["Grubs Rescued", "out of 46 total", 46],
     dreamOrbs: ["Essence Collected", "Dream Nail (2400 for completion)", 2400],
     stationsOpened: ["Stag Stations opened", "out of 10 total", 10],
@@ -354,7 +354,7 @@ const HK_ESSENTIAL = {
     nightmareLanternLit: ["Nightmare Lantern Lit", "Howling Cliffs"]
 };
 
-const HK_ACHIEVEMENTS = {
+const ACHIEVEMENTS = {
     areaMaps: ["Area Maps", "Cornifer and Iselda (out of 13)", 13, [
         "mapCrossroads", "mapGreenpath", "mapFogCanyon", "mapRoyalGardens", "mapFungalWastes", "mapCity", "mapWaterways", "mapMines", "mapDeepnest", "mapCliffs", "mapOutskirts", "mapRestingGrounds", "mapAbyss"
     ]],
@@ -391,7 +391,7 @@ const HK_ACHIEVEMENTS = {
     nailsmithSpared: ["Optimal Nailsmith", "Happy Couple"],
 };
 
-const HK_STATISTICS = {
+const STATISTICS = {
     nailDamage: ["Nail Damage", "Nailsmith upgrades", 21],
     charmSlots: ["Charm Notches", "out of 11 total", 11],
     notchShroomOgres: ["Charm Notch #1", "Fungal Wastes: Shroom Ogres room"],
@@ -428,27 +428,27 @@ const HK_STATISTICS = {
 
 export {
     DIV_ID,
-    HK_HINTS,
-    HK_BOSSES,
-    HK_BOSSES_WORLD,
-    HK_CHARMS,
-    HK_EQUIPMENT,
-    HK_NAILARTS,
-    HK_NAILUPGRADES,
-    HK_SPELLS,
-    HK_MASKSHARDS,
-    HK_MASKSHARDS_WORLD,
-    HK_VESSELFRAGMENTS,
-    HK_VESSELFRAGMENTS_WORLD,
-    HK_DREAMERS,
-    HK_COLOSSEUM,
-    HK_DREAMNAIL,
-    HK_WARRIORDREAMS,
-    HK_GRIMMTROUPE,
-    HK_LIFEBLOOD,
-    HK_GODMASTER,
-    HK_GODMASTER_DOORS,
-    HK_ESSENTIAL,
-    HK_ACHIEVEMENTS,
-    HK_STATISTICS
+    HINTS,
+    BOSSES,
+    BOSSES_WORLD,
+    CHARMS,
+    EQUIPMENT,
+    NAILARTS,
+    NAILUPGRADES,
+    SPELLS,
+    MASKSHARDS,
+    MASKSHARDS_WORLD,
+    VESSELFRAGMENTS,
+    VESSELFRAGMENTS_WORLD,
+    DREAMERS,
+    COLOSSEUM,
+    DREAMNAIL,
+    WARRIORDREAMS,
+    GRIMMTROUPE,
+    LIFEBLOOD,
+    GODMASTER,
+    GODMASTER_DOORS,
+    ESSENTIAL,
+    ACHIEVEMENTS,
+    STATISTICS
 };
