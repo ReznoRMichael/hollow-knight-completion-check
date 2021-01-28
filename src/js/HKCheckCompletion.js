@@ -431,8 +431,8 @@ function CheckHealthMasks(divId, masks = 5, permadeathMode = 0) {
     let icon = SYMBOL_EMPTY;
     let textFill = "<span>Health:</span>";
     let maskImages = "";
-    let maskNormal = `<img src='${HEALTH_MASK_IMAGE}' class='health-mask' alt='health mask image'>`;
-    let maskSteel = `<img src='${HEALTH_MASK_STEEL_IMAGE}' class='health-mask' alt='steel health mask image'>`;
+    let maskNormal = `<img src='${HEALTH_MASK_IMAGE}' class='health-mask' alt='health mask image' title='Health Mask'>`;
+    let maskSteel = `<img src='${HEALTH_MASK_STEEL_IMAGE}' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>`;
     let maskImg = "";
 
     (permadeathMode === 1) ? maskImg = maskSteel: maskImg = maskNormal;
@@ -472,7 +472,7 @@ function CheckSoulOrbs(divId, totalSoul) {
 function CheckGeo(divId, geoValue) {
 
     let icon = SYMBOL_EMPTY;
-    let textFill = `<span>Geo:</span><img src='${GEO_IMAGE}' class='geo-symbol' alt='geo symbol image'><b>${geoValue}</b>`;
+    let textFill = `<span>Geo:</span><img src='${GEO_IMAGE}' class='geo-symbol' alt='geo symbol image' title='Geo'><b>${geoValue}</b>`;
 
     document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + divEnd;
 }
@@ -487,7 +487,7 @@ function CheckNotches(divId, totalNotches = 3) {
     let icon = SYMBOL_EMPTY;
     let textFill = `<span>Notches:</span>${pSpan}`;
     let notchImages = "";
-    let notchImg = `<img src='${NOTCH_IMAGE}' class='notch' alt='notch image'>`;
+    let notchImg = `<img src='${NOTCH_IMAGE}' class='notch' alt='notch image' title='Charm Notch'>`;
 
     for (let i = 0; i < totalNotches; i++) {
         notchImages += notchImg;
