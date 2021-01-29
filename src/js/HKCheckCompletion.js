@@ -27,7 +27,7 @@ const FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
 let completionSymbol = SYMBOL_FALSE;
 
 let divStart = [
-    "<div class='flex-container'>"
+    "<div class='single-entry'>"
 ].join("\n");
 
 let divStartCenter = [
@@ -330,7 +330,7 @@ function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix
     let b = ["<b>", "</b>"];
     if (!textPrefix.length) b = ["", ""];
 
-    let span = ["<span class='flex-row location'>", "</span>"];
+    let span = ["<span class='location'>", "</span>"];
     let spoilerSpan = ["<span class='spoiler-text'>", "</span>"];
     if (divId === HK.DIV_ID.hints) {
         span[0] = "<span>";
@@ -338,7 +338,7 @@ function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix
     }
 
     let dash = "";
-    if (textSuffix.length && textPrefix.length) dash = " — ";
+    if (textSuffix.length && textPrefix.length) dash = "— ";
 
     document.getElementById(divId.id).innerHTML += divStart + icon + b[0] + textPrefix + b[1] + span[0] + pSpan + spoilerSpan[0] + dash + textSuffix + spoilerSpan[1] + span[1] + divEnd;
 }
