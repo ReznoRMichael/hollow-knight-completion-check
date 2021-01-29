@@ -921,6 +921,10 @@ function InitialHTMLPopulate(divIdObj) {
     AppendHTML(divIdObj.essential, FLEUR_DIVIDE);
     AppendHTML(divIdObj.achievements, FLEUR_DIVIDE);
 
+    // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
+    if (localStorage.getItem("checkboxHints") === "checked") document.getElementById("checkbox-hints").checked = true;
+    if (localStorage.getItem("checkboxSpoilers") === "checked") document.getElementById("checkbox-locations").checked = true;
+
     // Prevents wrong checkbox behaviour (must run after everything is finished)
     CheckboxHintsToggle();
     CheckboxLocationsToggle();
@@ -938,19 +942,34 @@ function CheckboxHintsToggle(param = "none") {
             document.getElementById("hk-hints").classList.add("hidden");
             checkboxId.value = "hints-off";
             checkboxId.checked = false;
+
+            // remember this choice for subsequent page visits and browser restarts
+            localStorage.setItem("checkboxHints", "unchecked");
             break;
         case "show":
             document.getElementById("hk-hints").classList.remove("hidden");
             checkboxId.value = "hints-on";
             checkboxId.checked = true;
+
+            // remember this choice for subsequent page visits and browser restarts
+            localStorage.setItem("checkboxHints", "checked");
             break;
         default:
+            // This runs when the checkbox is not checked
             if (checkboxId.checked === false) {
                 document.getElementById("hk-hints").classList.add("hidden");
                 checkboxId.value = "hints-off";
-            } else {
+
+                // remember this choice for subsequent page visits and browser restarts
+                localStorage.setItem("checkboxHints", "unchecked");
+            }
+            // This runs when the checkbox is checked
+            else {
                 document.getElementById("hk-hints").classList.remove("hidden");
                 checkboxId.value = "hints-on";
+
+                // remember this choice for subsequent page visits and browser restarts
+                localStorage.setItem("checkboxHints", "checked");
             }
     }
 }
@@ -971,6 +990,9 @@ function CheckboxLocationsToggle(param = "none") {
             }
             checkboxId.value = "locations-off";
             checkboxId.checked = false;
+
+            // remember this choice for subsequent page visits and browser restarts
+            localStorage.setItem("checkboxSpoilers", "unchecked");
             break;
         case "show":
             for (let i = 0; i < length; i++) {
@@ -978,18 +1000,30 @@ function CheckboxLocationsToggle(param = "none") {
             }
             checkboxId.value = "locations-on";
             checkboxId.checked = true;
+
+            // remember this choice for subsequent page visits and browser restarts
+            localStorage.setItem("checkboxSpoilers", "checked");
             break;
         default:
+            // This runs when the checkbox is not checked
             if (checkboxId.checked === false) {
                 for (let i = 0; i < length; i++) {
                     allClassElements[i].classList.add("hidden");
                 }
                 checkboxId.value = "locations-off";
-            } else {
+
+                // remember this choice for subsequent page visits and browser restarts
+                localStorage.setItem("checkboxSpoilers", "unchecked");
+            }
+            // This runs when the checkbox is checked
+            else {
                 for (let i = 0; i < length; i++) {
                     allClassElements[i].classList.remove("hidden");
                 }
                 checkboxId.value = "locations-on";
+
+                // remember this choice for subsequent page visits and browser restarts
+                localStorage.setItem("checkboxSpoilers", "checked");
             }
     }
 }
