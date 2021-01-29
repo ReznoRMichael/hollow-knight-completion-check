@@ -183,7 +183,7 @@ input[type="file"] {
 
 .button {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     width: max-content;
     font-size: 1rem;
@@ -219,7 +219,7 @@ input[type="file"] {
     align-items: center;
 }
 
-@media screen and (max-width: 566px) {
+@media screen and (max-width: 570px) {
     .centered {
         flex-direction: column;
         align-items: flex-start;
@@ -309,6 +309,10 @@ a.button:visited {
 
 .icon-info-circled {
     color: #479ae7;
+}
+
+.icon-download-cloud {
+    color: #d9f3ff;
 }
 
 .flex-container {
