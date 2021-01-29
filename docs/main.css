@@ -317,8 +317,10 @@ input[type="file"] {
 }
 
 .button:focus {
-    outline: 2px solid #5e8dac;
-    outline-offset: -2px;
+    /* outline: 2px solid #5e8dac; */
+    outline: 0;
+    border-color: #5e8dac;
+    /* outline-offset: -2px; */
 }
 
 .centered {
