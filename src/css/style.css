@@ -113,9 +113,9 @@ h2 {
     text-align: center;
     width: max-content;
     color: #fff;
-    display: inline-block;
+    display: block;
     background-color: rgba(128, 128, 128, 0.5);
-    margin: 0.4rem 0 0.6rem 0;
+    margin: 0.4rem auto 0.6rem auto;
     padding: 0.16rem 0.5rem 0.25rem 0.5rem;
     border: 1px solid rgba(231, 251, 255, 0.6);
     border-radius: 3px;
@@ -144,7 +144,7 @@ textarea {
     margin: 0.5rem 2px 0.5rem 2px;
     overflow-x: hidden;
     overflow-y: scroll;
-    
+
     /* These are technically the same, but use both */
     overflow-wrap: break-word;
     word-wrap: break-word;
@@ -256,14 +256,17 @@ input[type="file"] {
         flex-direction: column;
         align-items: center;
     }
+
     .input-buttons {
         align-items: center;
         justify-content: center;
     }
+
     .centered {
         flex-direction: column;
         align-items: flex-start;
     }
+
     .checkboxes {
         margin-top: 0.8rem;
     }
@@ -532,4 +535,41 @@ input[type="radio"] {
     height: 10px;
     border-radius: 50%;
     background: #000;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: max-content;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }

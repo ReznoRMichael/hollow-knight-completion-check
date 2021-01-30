@@ -1046,7 +1046,7 @@ function ResetCompletion(jsObj) {
     }
 }
 
-function SelectCopyInputText(mouseEvent) {
+function SelectCopyInputText(mouseEvent, tooltipId = "", tooltipFill = "") {
 
     const element = document.getElementById(mouseEvent.target.id);
 
@@ -1054,11 +1054,22 @@ function SelectCopyInputText(mouseEvent) {
     element.select();
     element.setSelectionRange(0, 99999); // for mobile devices
 
-    /* Copy the text inside the text field */
+    // Copy the text inside the text field to clipboard
     document.execCommand("copy");
 
-    /* Alert the copied text */
-    console.log("Copied the text: " + element.value);
+    if (tooltipFill.length && tooltipId.length) ShowTooltip(tooltipId, tooltipFill);
+}
+
+function ShowTooltip(tooltipId, tooltipFill) {
+    
+    const tooltip = document.getElementById(tooltipId);
+    tooltip.innerHTML = tooltipFill;
+}
+
+function FillInnerHTML(elementId, textFill) {
+
+    const element = document.getElementById(elementId);
+    element.innerHTML = textFill;
 }
 
 // Populate HTML at load (before img and css)
@@ -1066,7 +1077,11 @@ document.addEventListener("DOMContentLoaded", InitialHTMLPopulate(HK.DIV_ID));
 
 // Does an action when the save file location input text is clicked once (auto select & copy to clipboard)
 document.getElementById("save-location-input").addEventListener("click", (e) => {
-    SelectCopyInputText(e);
+    SelectCopyInputText(e, "save-location-input-tooltip", "Copied save file location to clipboard");
+}, false);
+
+document.getElementById("save-location-input").addEventListener("mouseout", () => {
+    FillInnerHTML("save-location-input-tooltip", "Click once to copy to clipboard");
 }, false);
 
 // Make functions global so they can be used on click and change events (for Webpack)
@@ -1074,4 +1089,3 @@ window.HKReadTextArea = HKReadTextArea;
 window.InitialHTMLPopulate = InitialHTMLPopulate;
 window.CheckboxSpoilersToggle = CheckboxSpoilersToggle;
 window.CheckboxHintsToggle = CheckboxHintsToggle;
-window.SelectCopyInputText = SelectCopyInputText;
