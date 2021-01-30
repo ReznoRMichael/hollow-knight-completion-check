@@ -96,14 +96,16 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **Optimized:** Now smaller, faster and more web- and mobile-friendly than before. At least I hope 😉
 
-  — Added to **Game Statistics:**  
+  — **Game Status** additions:  
+  ✅ **Charm Notches** + images  
+  ✅ **Shade Geo** + image. Will appear only if the Shade is holding at least 1 Geo. If you have at least 1 Geo alongside the Shade Geo, a total amount (Geo + Shade Geo) will be displayed as well.  
+
+  — **Game Statistics** additions:  
   ✅ Shade Geo (Amount of Geo the Shade is currently holding)  
   ✅ Journal: Void Idol Attuned  
   ✅ Journal: Void Idol Ascended  
   ✅ Journal: Void Idol Radiant  
   ✅ White Palace Secret Room visited (Unidentified secret room, help us identify this room!)  
-
-  — **Charm Notches** added to Game Status
 
   — **Hints/Spoilers Checkboxes now don't reset** each time a save is analyzed (you don't have to click them again). Your choice is also remembered between different visits, system restarts or page reloads!
 

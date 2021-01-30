@@ -11,6 +11,7 @@ import HEALTH_MASK_STEEL_IMAGE from "../img/health-mask-steel.png";
 import SOUL_ORB_IMAGE from "../img/soul-orb.png";
 import NOTCH_IMAGE from "../img/notch.png";
 import GEO_IMAGE from "../img/geo.png";
+import GEO_SHADE_IMAGE from "../img/geo-shade.png";
 
 // ---------------- Constants ----------------- //
 
@@ -126,7 +127,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Geo Amount ----------------- //
 
-    CheckGeo(HK.DIV_ID.intro, HKPlayerData.geo);
+    CheckGeo(HK.DIV_ID.intro, HKPlayerData.geo, HKPlayerData.geoPool);
 
     // ---------------- Bosses (Base Game) --------------------- //
 
@@ -467,10 +468,17 @@ function CheckSoulOrbs(divId, totalSoul) {
  * @param {object} divId ID of the HTML element for data appending
  * @param {number} geoValue Number of total Geo value
  */
-function CheckGeo(divId, geoValue) {
+function CheckGeo(divId, geoValue = 0, geoPoolValue = 0) {
 
     let icon = SYMBOL_EMPTY;
     let textFill = `<span>Geo:</span><img src='${GEO_IMAGE}' class='geo-symbol' alt='geo symbol image' title='Geo'><b>${geoValue}</b>`;
+
+    // Show Shade Geo value and image only if Shade has at least 1 Geo on it
+    if (geoPoolValue > 0) textFill += `
+    ${pSpan}+<img src='${GEO_SHADE_IMAGE}' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'><b>${geoPoolValue}</b>`;
+
+    // Show also total Geo (Geo + Shade Geo) if player has at least 1 geo alongside the shade geo
+    if (geoValue > 0 && geoPoolValue > 0) textFill += `${pSpan}=${pSpan}<b>${geoValue+geoPoolValue}</b>`;
 
     document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + divEnd;
 }
@@ -876,7 +884,7 @@ function InitialHTMLPopulate(divIdObj) {
     CheckNotches(divIdObj.intro);
 
     // Geo
-    CheckGeo(divIdObj.intro, 0);
+    CheckGeo(divIdObj.intro);
 
     // First Hint Only
     FillHTML(divIdObj.hints, HK.HINTS.fireballLevel[0], HK.HINTS.fireballLevel[1]);
