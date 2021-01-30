@@ -670,11 +670,11 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
                 textPrefix += ": " + countTotal;
                 (amount >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataBlank();
                 break;
-            case "ghostCoins":
+            case "geoPool":
             case "rancidEggs":
             case "xunFlowerBrokeTimes":
                 textPrefix += ": " + Math.abs(playerData[i]);
-                (i === "ghostCoins" && playerData[i] > 0) ? CurrentDataBlank(): CurrentDataTrue();
+                (i === "geoPool" && playerData[i] > 0) ? CurrentDataBlank(): CurrentDataTrue();
                 break;
             case "shopkeeperKey":
                 (playerData.hasSlykey === true || playerData.gaveSlykey === true) ? CurrentDataTrue(): CurrentDataFalse();
