@@ -214,15 +214,23 @@ h2 {
     color: rgba(231, 251, 255, 0.6);
 }
 
-code {
+#save-location-input {
     font-family: 'Consolas', monospace;
     font-size: 0.75rem;
+    text-align: center;
+    width: max-content;
+    color: #fff;
     display: inline-block;
     background-color: rgba(128, 128, 128, 0.5);
-    margin: 0.4rem 0;
-    padding: 0.16rem 0.5rem;
+    margin: 0.4rem 0 0.6rem 0;
+    padding: 0.16rem 0.5rem 0.25rem 0.5rem;
     border: 1px solid rgba(231, 251, 255, 0.6);
     border-radius: 3px;
+}
+
+#save-location-input:focus {
+    outline: 0;
+    border: 1px solid rgba(231, 251, 255, 0.8);
 }
 
 input {
