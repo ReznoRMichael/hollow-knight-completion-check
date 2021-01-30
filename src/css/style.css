@@ -539,21 +539,24 @@ input[type="radio"] {
 
 .tooltip {
     position: relative;
+    margin: 0 auto;
+    width: max-content;
 }
 
 .tooltip .tooltip-text {
     visibility: hidden;
     width: max-content;
-    background-color: #555;
-    color: #fff;
+    background-color: #1e4d6c;
+    color: #d9f3ff;
+    font-size: 0.85rem;
     text-align: center;
-    border-radius: 6px;
-    padding: 5px;
+    border-radius: 3px;
+    padding: 0.16rem 0.7rem;
     position: absolute;
     z-index: 1;
-    bottom: 150%;
-    left: 50%;
-    margin-left: -75px;
+    bottom: 130%;
+    left: 25%;
+    /* margin-left: -115px; */
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -566,7 +569,7 @@ input[type="radio"] {
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: #555 transparent transparent transparent;
+    border-color: #1e4d6c transparent transparent transparent;
 }
 
 .tooltip:hover .tooltip-text {

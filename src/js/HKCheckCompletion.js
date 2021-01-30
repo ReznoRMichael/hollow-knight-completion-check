@@ -1050,6 +1050,11 @@ function SelectCopyInputText(mouseEvent, tooltipId = "", tooltipFill = "") {
 
     const element = document.getElementById(mouseEvent.target.id);
 
+    // this prevents the un-selected effect after clicking the second time (clears all selection first)
+    if (window.getSelection) {
+        window.getSelection().removeAllRanges();
+    }
+
     element.focus(); // best to focus the element first before selecting
     element.select();
     element.setSelectionRange(0, 99999); // for mobile devices
@@ -1061,7 +1066,7 @@ function SelectCopyInputText(mouseEvent, tooltipId = "", tooltipFill = "") {
 }
 
 function ShowTooltip(tooltipId, tooltipFill) {
-    
+
     const tooltip = document.getElementById(tooltipId);
     tooltip.innerHTML = tooltipFill;
 }
