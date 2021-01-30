@@ -673,9 +673,8 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
             case "ghostCoins":
             case "rancidEggs":
             case "xunFlowerBrokeTimes":
-                CurrentDataBlank();
                 textPrefix += ": " + Math.abs(playerData[i]);
-                if (i === "ghostCoins" && playerData[i] <= 0) CurrentDataTrue();
+                (i === "ghostCoins" && playerData[i] > 0) ? CurrentDataBlank(): CurrentDataTrue();
                 break;
             case "shopkeeperKey":
                 (playerData.hasSlykey === true || playerData.gaveSlykey === true) ? CurrentDataTrue(): CurrentDataFalse();
