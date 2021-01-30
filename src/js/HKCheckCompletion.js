@@ -1046,11 +1046,32 @@ function ResetCompletion(jsObj) {
     }
 }
 
+function SelectCopyInputText(mouseEvent) {
+
+    const element = document.getElementById(mouseEvent.target.id);
+
+    element.focus(); // best to focus the element first before selecting
+    element.select();
+    element.setSelectionRange(0, 99999); // for mobile devices
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+    /* Alert the copied text */
+    console.log("Copied the text: " + element.value);
+}
+
 // Populate HTML at load (before img and css)
 document.addEventListener("DOMContentLoaded", InitialHTMLPopulate(HK.DIV_ID));
+
+// Does an action when the save file location input text is clicked once (auto select & copy to clipboard)
+document.getElementById("save-location-input").addEventListener("click", (e) => {
+    SelectCopyInputText(e);
+}, false);
 
 // Make functions global so they can be used on click and change events (for Webpack)
 window.HKReadTextArea = HKReadTextArea;
 window.InitialHTMLPopulate = InitialHTMLPopulate;
 window.CheckboxSpoilersToggle = CheckboxSpoilersToggle;
 window.CheckboxHintsToggle = CheckboxHintsToggle;
+window.SelectCopyInputText = SelectCopyInputText;
