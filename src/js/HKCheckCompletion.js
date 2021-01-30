@@ -246,7 +246,7 @@ function HKCheckCompletion(jsonObject) {
 
     // Prevents wrong checkbox behaviour (must run after everything is finished)
     CheckboxHintsToggle();
-    CheckboxLocationsToggle();
+    CheckboxSpoilersToggle();
 
     // finish and show benchmark
     benchHKCCEnd = new Date();
@@ -323,14 +323,14 @@ function CompletionHTML(jsObj) {
  * Generates and appends a new entry inside the HTML of a given ID
  * @param {object} divId object containing div ID and h2 title of the HTML element
  * @param {string} textPrefix Main name of the entry
- * @param {string} textSuffix Optional suffix after the main name (locations, costs etc.)
+ * @param {string} textSuffix Optional suffix after the main name (spoilers: locations, costs etc.)
  */
 function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix = "Unknown Description Element") {
     let icon = completionSymbol;
     let b = ["<b>", "</b>"];
     if (!textPrefix.length) b = ["", ""];
 
-    let span = ["<span class='location'>", "</span>"];
+    let span = ["<span class='spoiler-span'>", "</span>"];
     let spoilerSpan = ["<span class='spoiler-text'>", "</span>"];
     if (divId === HK.DIV_ID.hints) {
         span[0] = "<span>";
@@ -922,12 +922,12 @@ function InitialHTMLPopulate(divIdObj) {
     AppendHTML(divIdObj.achievements, FLEUR_DIVIDE);
 
     // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
-    if (localStorage.getItem("checkboxHints") === "checked") document.getElementById("checkbox-hints").checked = true;
-    if (localStorage.getItem("checkboxSpoilers") === "checked") document.getElementById("checkbox-locations").checked = true;
+    if (localStorage.getItem("hkCheckboxHints") === "checked") document.getElementById("checkbox-hints").checked = true;
+    if (localStorage.getItem("hkCheckboxSpoilers") === "checked") document.getElementById("checkbox-spoilers").checked = true;
 
     // Prevents wrong checkbox behaviour (must run after everything is finished)
     CheckboxHintsToggle();
-    CheckboxLocationsToggle();
+    CheckboxSpoilersToggle();
 }
 
 /**
@@ -944,7 +944,7 @@ function CheckboxHintsToggle(param = "none") {
             checkboxId.checked = false;
 
             // remember this choice for subsequent page visits and browser restarts
-            localStorage.setItem("checkboxHints", "unchecked");
+            localStorage.setItem("hkCheckboxHints", "unchecked");
             break;
         case "show":
             document.getElementById("hk-hints").classList.remove("hidden");
@@ -952,7 +952,7 @@ function CheckboxHintsToggle(param = "none") {
             checkboxId.checked = true;
 
             // remember this choice for subsequent page visits and browser restarts
-            localStorage.setItem("checkboxHints", "checked");
+            localStorage.setItem("hkCheckboxHints", "checked");
             break;
         default:
             // This runs when the checkbox is not checked
@@ -961,7 +961,7 @@ function CheckboxHintsToggle(param = "none") {
                 checkboxId.value = "hints-off";
 
                 // remember this choice for subsequent page visits and browser restarts
-                localStorage.setItem("checkboxHints", "unchecked");
+                localStorage.setItem("hkCheckboxHints", "unchecked");
             }
             // This runs when the checkbox is checked
             else {
@@ -969,18 +969,18 @@ function CheckboxHintsToggle(param = "none") {
                 checkboxId.value = "hints-on";
 
                 // remember this choice for subsequent page visits and browser restarts
-                localStorage.setItem("checkboxHints", "checked");
+                localStorage.setItem("hkCheckboxHints", "checked");
             }
     }
 }
 
 /**
- * Toggles display of ".location" class. On click with no parameters or on demand when called with a parameter
+ * Toggles display of ".spoiler-span" class. On click with no parameters or on demand when called with a parameter
  * @param {string} param "hide", "show" or none (optional)
  */
-function CheckboxLocationsToggle(param = "none") {
-    let checkboxId = document.getElementById("checkbox-locations");
-    let allClassElements = document.querySelectorAll(".location");
+function CheckboxSpoilersToggle(param = "none") {
+    let checkboxId = document.getElementById("checkbox-spoilers");
+    let allClassElements = document.querySelectorAll(".spoiler-span");
     let length = allClassElements.length;
 
     switch (param) {
@@ -988,21 +988,21 @@ function CheckboxLocationsToggle(param = "none") {
             for (let i = 0; i < length; i++) {
                 allClassElements[i].classList.add("hidden");
             }
-            checkboxId.value = "locations-off";
+            checkboxId.value = "spoilers-off";
             checkboxId.checked = false;
 
             // remember this choice for subsequent page visits and browser restarts
-            localStorage.setItem("checkboxSpoilers", "unchecked");
+            localStorage.setItem("hkCheckboxSpoilers", "unchecked");
             break;
         case "show":
             for (let i = 0; i < length; i++) {
                 allClassElements[i].classList.remove("hidden");
             }
-            checkboxId.value = "locations-on";
+            checkboxId.value = "spoilers-on";
             checkboxId.checked = true;
 
             // remember this choice for subsequent page visits and browser restarts
-            localStorage.setItem("checkboxSpoilers", "checked");
+            localStorage.setItem("hkCheckboxSpoilers", "checked");
             break;
         default:
             // This runs when the checkbox is not checked
@@ -1010,20 +1010,20 @@ function CheckboxLocationsToggle(param = "none") {
                 for (let i = 0; i < length; i++) {
                     allClassElements[i].classList.add("hidden");
                 }
-                checkboxId.value = "locations-off";
+                checkboxId.value = "spoilers-off";
 
                 // remember this choice for subsequent page visits and browser restarts
-                localStorage.setItem("checkboxSpoilers", "unchecked");
+                localStorage.setItem("hkCheckboxSpoilers", "unchecked");
             }
             // This runs when the checkbox is checked
             else {
                 for (let i = 0; i < length; i++) {
                     allClassElements[i].classList.remove("hidden");
                 }
-                checkboxId.value = "locations-on";
+                checkboxId.value = "spoilers-on";
 
                 // remember this choice for subsequent page visits and browser restarts
-                localStorage.setItem("checkboxSpoilers", "checked");
+                localStorage.setItem("hkCheckboxSpoilers", "checked");
             }
     }
 }
@@ -1045,5 +1045,5 @@ document.addEventListener("DOMContentLoaded", InitialHTMLPopulate(HK.DIV_ID));
 // Make functions global so they can be used on click and change events (for Webpack)
 window.HKReadTextArea = HKReadTextArea;
 window.InitialHTMLPopulate = InitialHTMLPopulate;
-window.CheckboxLocationsToggle = CheckboxLocationsToggle;
+window.CheckboxSpoilersToggle = CheckboxSpoilersToggle;
 window.CheckboxHintsToggle = CheckboxHintsToggle;
