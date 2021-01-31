@@ -96,9 +96,11 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **Optimized:** Now smaller, faster and more web- and mobile-friendly than before. At least I hope 😉
 
+  — **Visual completion percentages** in all sections for better readability (blue = partially completed, green = fully completed)
+
   — **Game Status** additions:  
-  ✅ **Charm Notches** + images  
-  ✅ **Shade Geo** + image. Will appear only if the Shade is holding at least 1 Geo. If you have at least 1 Geo alongside the Shade Geo, a total amount (Geo + Shade Geo) will be displayed as well.  
+  ✅ **Charm Notches** + visuals  
+  ✅ **Shade Geo** + visuals. Will appear only if the Shade is holding at least 1 Geo. If you have at least 1 Geo alongside the Shade Geo, a total amount (Geo + Shade Geo) will be displayed as well.  
 
   — **Game Statistics** additions:  
   ✅ Shade Geo (Amount of Geo the Shade is currently holding)  
@@ -109,7 +111,7 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **Hints/Spoilers Checkboxes now don't reset** each time a save is analyzed (you don't have to click them again). Your choice is also remembered between different visits, system restarts or page reloads!
 
-  —  **Easy auto-copy Windows HK Save files location to clipboard.** Just Left-click the text, then click Choose File/Browse..., and paste into address bar to go to the HK Windows save file location instantly!
+  —  **Easy auto-copy Windows HK Save files location to clipboard.** Just Left-click the text, then click Choose File/Browse..., and paste into top address bar to go to the HK Windows save file location instantly without searching!
 
   — Improved text area focus, graphics and readability
 
