@@ -421,7 +421,7 @@ const STATISTICS = {
     killedVoidIdol_2: ["Journal: Void Idol Ascended", "Godhome: Hall of Gods, defeat all"],
     killedVoidIdol_3: ["Journal: Void Idol Radiant", "Godhome: Hall of Gods, defeat all"],
     whiteDefenderDefeats: ["White Defender times defeated", "Royal Waterways (5 max)", 5],
-    greyPrinceDefeats: ["Grey Prince Zote times defeated", "Dirtmouth (10 max)", 10],
+    greyPrinceDefeats: ["Grey Prince Zote times defeated", "Dirtmouth (10 max), (save choice)", 10],
     whitePalaceSecretRoomVisited: ["White Palace Secret Room visited", "Help identify this room!"],
     killsBindingSeal: ["Path of Pain", "White Palace: main secret area"],
 };
