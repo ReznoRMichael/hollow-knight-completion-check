@@ -514,6 +514,7 @@ function CheckGeo(divId, geoValue = 0, geoPoolValue = 0) {
  * Fills HTML with appropriate number of notch images
  * @param {object} divId ID of the HTML element for data appending
  * @param {number} totalNotches Number of total Charm Notches the player has. 11 = max
+ * @param {number} filledNotches Number of total used Charm Notches (including overcharmed notches). 15 = max
  */
 function CheckNotches(divId, totalNotches = 3, filledNotches = 0) {
 
