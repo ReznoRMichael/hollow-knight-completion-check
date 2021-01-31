@@ -84,7 +84,7 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
-* 2021-XX-XX:
+* 2021-01-31:
 
   — **Major New Release v1.0!** Finally out of Beta/Early Access.
 
