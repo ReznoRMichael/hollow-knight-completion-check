@@ -826,18 +826,24 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
 /**
  * Pre-Cleans HTML. Reads contents inside text area and parses it to a JavaScript object. If not empty, runs HKCheckCompletion() to check data.
  */
-function HKReadTextArea() {
+function HKReadTextArea(textAreaId = "") {
+
+    // refresh and prepare document for filling with data from the save
     InitialHTMLPopulate(HK.DIV_ID);
 
-    let textAreaId = "save-area";
     let contents = document.getElementById(textAreaId).value;
 
     if (contents.length) {
 
-        let jsonObject = JSON.parse(contents);
-        // console.log(jsonObject);
-        if (jsonObject.hasOwnProperty("playerData")) HKCheckCompletion(jsonObject);
-        // console.log(jsonObject);
+        try {
+            let jsonObject = JSON.parse(contents);
+            // console.log(jsonObject);
+            if (jsonObject.hasOwnProperty("playerData")) HKCheckCompletion(jsonObject);
+            // console.log(jsonObject);
+        } catch (error) {
+            alert(`This seems like not a valid Hollow Knight save. ${error}`);
+            console.info(`This seems like not a valid Hollow Knight save. ${error}`);
+        }
     }
 }
 

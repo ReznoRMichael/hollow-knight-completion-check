@@ -97,7 +97,7 @@ function ProcessFileObject() {
         console.info("LoadSaveFile() time (ms) =", benchLSFEnd - benchLSFBegin);
 
         // after pasting the decoded string, launch the main analyzing function immediately
-        HKReadTextArea();
+        HKReadTextArea("save-area");
 
         // finish total and show benchmark
         benchTotal = new Date();
