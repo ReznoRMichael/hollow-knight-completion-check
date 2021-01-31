@@ -10,6 +10,8 @@ import HEALTH_MASK_IMAGE from "../img/health-mask.png";
 import HEALTH_MASK_STEEL_IMAGE from "../img/health-mask-steel.png";
 import SOUL_ORB_IMAGE from "../img/soul-orb.png";
 import NOTCH_IMAGE from "../img/notch.png";
+import NOTCH_FILLED_IMAGE from "../img/notch-filled.png";
+import NOTCH_OVERCHARMED_IMAGE from "../img/notch-overcharmed.png";
 import GEO_IMAGE from "../img/geo.png";
 import GEO_SHADE_IMAGE from "../img/geo-shade.png";
 
@@ -123,7 +125,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Charm Notches (Slots) ----------------- //
 
-    CheckNotches(HK.DIV_ID.intro, HKPlayerData.charmSlots);
+    CheckNotches(HK.DIV_ID.intro, HKPlayerData.charmSlots, HKPlayerData.charmSlotsFilled);
 
     // ---------------- Geo Amount ----------------- //
 
@@ -513,16 +515,51 @@ function CheckGeo(divId, geoValue = 0, geoPoolValue = 0) {
  * @param {object} divId ID of the HTML element for data appending
  * @param {number} totalNotches Number of total Charm Notches the player has. 11 = max
  */
-function CheckNotches(divId, totalNotches = 3) {
+function CheckNotches(divId, totalNotches = 3, filledNotches = 0) {
+
+    let {
+        overcharmedNotches,
+        unusedNotches
+    } = 0;
+
+    overcharmedNotches = filledNotches - totalNotches;
+    if (overcharmedNotches < 1) overcharmedNotches = 0;
+
+    unusedNotches = totalNotches - filledNotches;
+    if (unusedNotches < 1) unusedNotches = 0;
+
+    if (filledNotches > totalNotches) filledNotches = totalNotches;
 
     let icon = SYMBOL_EMPTY;
     let textFill = `<span>Notches:</span>${pSpan}`;
-    let notchImages = "";
-    let notchImg = `<img src='${NOTCH_IMAGE}' class='notch' alt='notch image' title='Charm Notch'>`;
 
-    for (let i = 0; i < totalNotches; i++) {
-        notchImages += notchImg;
+    let notchImages = "";
+    // let notchImage = "";
+    let notchNormalImage = `<img src='${NOTCH_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Free)'>`;
+    let notchFilledImage = `<img src='${NOTCH_FILLED_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Used)'>`;
+    let notchOvercharmedImage = `<img src='${NOTCH_OVERCHARMED_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>`;
+
+    if (filledNotches > 0) {
+        for (let i = 0; i < filledNotches; i++) {
+            notchImages += notchFilledImage;
+        }
     }
+
+    if (overcharmedNotches > 0) {
+        for (let i = 0; i < overcharmedNotches; i++) {
+            notchImages += notchOvercharmedImage;
+        }
+    }
+
+    if (unusedNotches > 0) {
+        for (let i = 0; i < unusedNotches; i++) {
+            notchImages += notchNormalImage;
+        }
+    }
+
+    /* for (let i = 0; i < totalNotches; i++) {
+        notchImages += notchImage;
+    } */
 
     document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + notchImages + divEnd;
 }
