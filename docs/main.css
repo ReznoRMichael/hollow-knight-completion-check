@@ -696,3 +696,9 @@ input[type="radio"] {
     border: 2px solid #3e6d8c;
     border-radius: 4px;
 }
+
+.box-green {
+    color: #ddffd9;
+    background: #1e6c1e;
+    border: 2px solid #2d8a2d;
+}
