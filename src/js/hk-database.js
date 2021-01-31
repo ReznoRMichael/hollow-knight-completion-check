@@ -241,13 +241,13 @@ const MASKSHARDS_WORLD = {
     Crossroads_13: ["Mask Shard #6", "Forgotten Crossroads: below Hot Springs"],
     Crossroads_09: ["Mask Shard #7", "Forgotten Crossroads: Brooding Mawlek"],
     Crossroads_38: ["Mask Shard #8", "Grubfather: 5 Grubs rescued"],
-    Room_Bretta: ["Mask Shard #9", "Dirtmouth: Bretta's Room"],
-    Fungus2_01: ["Mask Shard #10", "Queen's Station"],
+    Room_Bretta: ["Mask Shard #9", "Dirtmouth: Bretta's Room, rescue Bretta"],
+    Fungus2_01: ["Mask Shard #10", "Queen's Station, requires Mantis Claw"],
     Waterways_04b: ["Mask Shard #11", "Royal Waterways"],
     Fungus1_36: ["Mask Shard #12", "Greenpath: Stone Sanctuary"],
     Mines_32: ["Mask Shard #13", "Crystal Peak: Enraged Guardian"],
     Fungus2_25: ["Mask Shard #14", "Deepnest: entrance from Fungal Wastes"],
-    Hive_04: ["Mask Shard #15", "The Hive"],
+    Hive_04: ["Mask Shard #15", "The Hive, use Hive Guardian"],
     Room_Mansion: ["Mask Shard #16", "Resting Grounds: Delicate Flower"]
 };
 
@@ -303,7 +303,7 @@ const WARRIORDREAMS = {
     aladarSlugDefeated: ["Gorb", "Howling Cliffs"],
     mumCaterpillarDefeated: ["Marmu", "Queen's Gardens"],
     galienDefeated: ["Galien", "Deepnest"],
-    markothDefeated: ["Markoth", "Kingdom's Edge"],
+    markothDefeated: ["Markoth", "Kingdom's Edge, requires Shade Cloak"],
 };
 
 const GRIMMTROUPE = {
@@ -319,7 +319,7 @@ const LIFEBLOOD = {
 };
 
 const GODMASTER = {
-    hasGodfinder: ["Godtuner", "Junk Pit"]
+    hasGodfinder: ["Godtuner", "Junk Pit, requires Simple Key"]
 };
 
 const GODMASTER_DOORS = [
@@ -333,12 +333,12 @@ const ESSENTIAL = {
     grubsCollected: ["Grubs Rescued", "out of 46 total", 46],
     dreamOrbs: ["Essence Collected", "Dream Nail (2400 for completion)", 2400],
     stationsOpened: ["Stag Stations opened", "out of 10 total", 10],
-    slyRescued: ["Sly Rescued", "Forgotten Crossroads"],
-    brettaRescued: ["Bretta Rescued", "Fungal Wastes"],
+    slyRescued: ["Sly Rescued", "Forgotten Crossroads, near Gruz Mother"],
+    brettaRescued: ["Bretta Rescued", "Fungal Wastes, near Dashmaster charm statue"],
     hasLantern: ["Lumafly Lantern", "Sly: 1800 Geo"],
     shopkeeperKey: ["Shopkeeper's Key", "Crystal Peak"],
     elegantKey: ["Elegant Key", "Sly: 800 Geo + Shopkeeper's Key"],
-    loveKey: ["Love Key", "Queen's Gardens"],
+    loveKey: ["Love Key", "Queen's Gardens, near Fungal Wastes"],
     slySimpleKey: ["Simple Key #1", "Sly: 950 Geo"],
     simpleKeyCityOfTears: ["Simple Key #2", "City of Tears"],
     simpleKeyAncientBasin: ["Simple Key #3", "Ancient Basin"],
@@ -346,12 +346,12 @@ const ESSENTIAL = {
     paleOreAncientBasin: ["Pale Ore #1", "Ancient Basin"],
     paleOreSeer: ["Pale Ore #2", "Seer: 300 Essence"],
     paleOreCrystalPeak: ["Pale Ore #3", "Crystal Peak: Hallownest's Crown"],
-    paleOreDeepnest: ["Pale Ore #4", "Deepnest"],
+    paleOreDeepnest: ["Pale Ore #4", "Deepnest, Nosk reward"],
     paleOreGrubfather: ["Pale Ore #5", "Grubfather: 31 Grubs rescued"],
     paleOreColosseum: ["Pale Ore #6", "Colosseum of Fools: Trial of the Conqueror"],
     fountainGeo: ["Geo in Fountain", "Ancient Basin: 3000 Geo maximum", 3000],
-    hasTramPass: ["Tram Pass", "Deepnest"],
-    nightmareLanternLit: ["Nightmare Lantern Lit", "Howling Cliffs"]
+    hasTramPass: ["Tram Pass", "Deepnest, Failed Tramway"],
+    nightmareLanternLit: ["Nightmare Lantern Lit", "Howling Cliffs, corpse of a large bug"]
 };
 
 const ACHIEVEMENTS = {
@@ -381,18 +381,18 @@ const ACHIEVEMENTS = {
     mageLordDreamDefeated: ["Soul Tyrant", "City of Tears: Soul Sanctum"],
     infectedKnightDreamDefeated: ["Lost Kin", "Ancient Basin"],
     whiteDefenderDefeated: ["White Defender", "Royal Waterways"],
-    greyPrinceDefeated: ["Grey Prince Zote", "Dirtmouth: Bretta's Room"],
+    greyPrinceDefeated: ["Grey Prince Zote", "Dirtmouth: Bretta's Room (per save choice)"],
     killedHollowKnight: ["Hollow Knight", "Forgotten Crossroads: Black Egg Temple"],
     salubraBlessing: ["Salubra's Blessing", "Salubra: 800 Geo + all 40 Charms found"],
     gotShadeCharm: ["Void Heart", "Kingsoul + Birthplace"],
     killedFinalBoss: ["Radiance", "Forgotten Crossroads: Black Egg Temple"],
     bossDoorStateTier5: ["Embrace the Void", "Godhome: Pantheon of Hallownest"],
-    zoteDead: ["Optimal Zote", "Neglect"],
-    nailsmithSpared: ["Optimal Nailsmith", "Happy Couple"],
+    zoteDead: ["Optimal Zote", "Neglect achievement (per save choice)"],
+    nailsmithSpared: ["Optimal Nailsmith", "Happy Couple achievement (per save choice)"],
 };
 
 const STATISTICS = {
-    nailDamage: ["Nail Damage", "Nailsmith upgrades", 21],
+    nailDamage: ["Nail Damage", "Nailsmith upgrades, City of Tears", 21],
     charmSlots: ["Charm Notches", "out of 11 total", 11],
     notchShroomOgres: ["Charm Notch #1", "Fungal Wastes: Shroom Ogres room"],
     salubraNotch1: ["Charm Notch #2", "Salubra: 120 Geo + 5 Charms found"],
