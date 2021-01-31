@@ -86,15 +86,15 @@ If you like the tool and wish it developed further with more functions and easie
 
 * 2021-XX-XX:
 
-  — **Major New Release v1.0.0!** Finally out of Beta/Early Access.
+  — **Major New Release v1.0!** Finally out of Beta/Early Access.
 
-  — I want to sincerely thank **one single person** (from my country - Poland) who donated a total of 60 PLN ($15.38 / €12.73) to my PayPal account since the first release of my tool in August 2020. This is currently the *only person* who donated *anything at all* since the tool's release, and I am very grateful for the support, especially in these dark times, which are hard for everyone (myself included). This update and 1.0 release is dedicated mainly to this person, as well as all other people who supported the tool in other ways: by beta-testing, giving comments, new ideas, saves, Steam Points rewards, Steam Guide likes, favourites or sharing this tool with others or giving emotional support. I hope you all will enjoy this version even more 😊
+  — I want to sincerely thank **one single person** (from my country - Poland) who donated a total of 60 PLN ($15.38 / €12.73) to my PayPal account since the first release of my tool in August 2020. This is currently the *only person* who donated *anything at all* since the tool's release, and I am very grateful for the support, especially in these dark times, which are hard for everyone (myself included). This update and 1.0 release is dedicated mainly to this person. I wish to also give my thanks to all people who supported the tool in other ways: by beta-testing, giving comments, new ideas, saves, Steam Points rewards, Steam Guide likes, favourites or sharing this tool with others or giving emotional support. I hope you all will enjoy this version even more and find it much easier to use 😊
 
-  — **Much easier to use:** Just choose a \*.dat or \*.bak save file to analyze. And that's it! You don't even have to press "Analyze", because programming magic does that for you.
+  — **Much easier to use:** Just choose a \*.dat or \*.bak save file to analyze. And that's it! You don't even have to press "Analyze", because *programming magic* does that for you.
 
   — Go to **your Steam Cloud Storage ☁ for Hollow Knight** instantly with a press of a button! It can't get any easier to get your save file than this. Steam Cloud can be also useful if you want to quickly check your in-game progress on mobile outside your PC. Saves in the Steam Cloud are updated after exiting the game.
 
-  — **Optimized:** Now smaller, faster and more web- and mobile-friendly than before. At least I hope 😉
+  — **Optimized:** Now tool is compressed, works faster and is more web- and mobile-friendly than before. At least I hope 😉
 
   — **Visual completion percentages** in all sections for better readability (red = not started yet (0%), blue = partially completed, green = fully completed)
 
