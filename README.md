@@ -86,7 +86,7 @@ If you like the tool and wish it developed further with more functions and easie
 
 * 2021-XX-XX:
 
-  — **Major New Release v1.0.0!** Finally out of Beta.
+  — **Major New Release v1.0.0!** Finally out of Beta/Early Access.
 
   — I want to sincerely thank **one single person** (from my country - Poland) who donated a total of 60 PLN ($15.38 / €12.73) to my PayPal account since the first release of my tool in August 2020. This is currently the *only person* who donated *anything at all* since the tool's release, and I am very grateful for the support, especially in these dark times, which are hard for everyone (myself included). This update and 1.0 release is dedicated mainly to this person, as well as all other people who supported the tool in other ways: by beta-testing, giving comments, new ideas, saves, Steam Points rewards, Steam Guide likes, favourites or sharing this tool with others or giving emotional support. I hope you all will enjoy this version even more 😊
 
@@ -109,11 +109,13 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **Hints/Spoilers Checkboxes now don't reset** each time a save is analyzed (you don't have to click them again). Your choice is also remembered between different visits, system restarts or page reloads!
 
-  — Windows HK Save files location in a code box for easy copy-paste in the Windows File Explorer address bar. Just Left-click this text three times, copy it, click Choose File/Browse..., and paste into address bar to go there instantly!
+  —  **Easy auto-copy Windows HK Save files location to clipboard.** Just Left-click the text, then click Choose File/Browse..., and paste into address bar to go to the HK Windows save file location instantly!
 
   — Improved text area focus, graphics and readability
 
   — Increased brightness of the Steel Soul Health Masks when analyzing a Steel Soul save file
+
+  — Error messages when chosen an invalid file, or when the text inside the text area is not a valid HK save file
 
 * 2021-01-19:
 
