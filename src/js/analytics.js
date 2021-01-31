@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 // Temporarily disable the tracking for testing (set to false to enable Analytics)
-window['ga-disable-UA-136831794-2'] = true;
+window['ga-disable-UA-136831794-2'] = false;
 
 window.dataLayer = window.dataLayer || [];
 
