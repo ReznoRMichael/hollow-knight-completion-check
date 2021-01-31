@@ -294,6 +294,7 @@ function CompletionHTML(jsObj, hkGameCompletion) {
     let h2id = "";
     let cl = "";
     let clGreen = "box-green";
+    let clRed = "box-red";
     let cp = 0; // current Percent
     let mp = 0; // max Percent
     let fillText = "";
@@ -322,8 +323,16 @@ function CompletionHTML(jsObj, hkGameCompletion) {
                 (perc % 3) ? cp = Math.floor(perc / 3): cp = perc / 3;
             }
 
+            // switches the box to red when a section (h2) is 0
+            if (cp === 0) {
+                cl = ` ${clRed}`;
+            }
             // switches the box to green when a section (h2) is completed
-            (cp === mp) ? cl = ` ${clGreen}`: cl = "";
+            else if (cp === mp) {
+                cl = ` ${clGreen}`;
+            }
+            // default is blue (partially completed and starting value)
+            else cl = "";
 
             // needed for Game Status to show percentage properly (adds a slash for all boxes except the Game Status one)
             if (jsObj[i].hasOwnProperty("percent")) cp += "/";

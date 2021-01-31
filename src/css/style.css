@@ -590,6 +590,12 @@ input[type="radio"] {
     border-radius: 4px;
 }
 
+.box-red {
+    color: #ffe2dd;
+    background: #c22e14;
+    border: 2px solid #e24e34;
+}
+
 .box-green {
     color: #ddffd9;
     background: #1e6c1e;

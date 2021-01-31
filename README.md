@@ -96,7 +96,7 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **Optimized:** Now smaller, faster and more web- and mobile-friendly than before. At least I hope 😉
 
-  — **Visual completion percentages** in all sections for better readability (blue = partially completed, green = fully completed)
+  — **Visual completion percentages** in all sections for better readability (red = not started yet (0%), blue = partially completed, green = fully completed)
 
   — **Game Status** additions:  
   ✅ **Charm Notches** + visuals  
