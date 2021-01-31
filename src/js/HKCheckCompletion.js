@@ -275,11 +275,12 @@ function PrefillHTML(jsObj) {
         h2 = jsObj[i].h2;
         h2id = "h2-" + jsObj[i].id;
 
-        mp = " – " + jsObj[i].maxPercent + "%";
-        if (!jsObj[i].hasOwnProperty("maxPercent") || i === "intro") mp = "";
+        mp = `<div class='percent-box'>${(i === "intro") ? 0: jsObj[i].maxPercent}%</div>`;
+        if (!jsObj[i].hasOwnProperty("maxPercent")) mp = "";
 
         document.getElementById("generated").innerHTML += "<div id='" + id + "'" + cl + ">" + "</div>";
-        document.getElementById(id).innerHTML += "<h2 id='" + h2id + "'>" + h2 + mp + "</h2>";
+        // document.getElementById(id).innerHTML += "<h2 id='" + h2id + "'>" + h2 + mp + "</h2>";
+        document.getElementById(id).innerHTML += `<h2 id='${h2id}'>${h2}${mp}</h2>`;
     }
 }
 

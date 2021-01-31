@@ -683,3 +683,16 @@ input[type="radio"] {
     visibility: visible;
     opacity: 1;
 }
+
+.percent-box {
+    display: inline-block;
+    text-align: center;
+    font-size: 1.1rem;
+    vertical-align: middle;
+    color: #d9f3ff;
+    margin: 0 0.5rem 0rem 0.5rem;
+    padding: 0.2rem 1.2rem 0.2rem 1.2rem;
+    background: #1e4d6c;
+    border: 2px solid #3e6d8c;
+    border-radius: 4px;
+}
