@@ -1115,6 +1115,12 @@ function ResetCompletion(jsObj) {
     }
 }
 
+/**
+ * Focuses, selects and copies to clipboard contents inside a clicked element. Includes optional tooltip update after the copying is done.
+ * @param {MouseEvent} mouseEvent from the clicked element (AddEventListener)
+ * @param {string} tooltipId Element ID of the tooltip to update
+ * @param {string} tooltipFill Updated contents of the tooltip
+ */
 function SelectCopyInputText(mouseEvent, tooltipId = "", tooltipFill = "") {
 
     const element = document.getElementById(mouseEvent.target.id);
@@ -1131,15 +1137,15 @@ function SelectCopyInputText(mouseEvent, tooltipId = "", tooltipFill = "") {
     // Copy the text inside the text field to clipboard
     document.execCommand("copy");
 
-    if (tooltipFill.length && tooltipId.length) ShowTooltip(tooltipId, tooltipFill);
+    // optional tooltip showing
+    if (tooltipFill.length && tooltipId.length) FillInnerHTML(tooltipId, tooltipFill);
 }
 
-function ShowTooltip(tooltipId, tooltipFill) {
-
-    const tooltip = document.getElementById(tooltipId);
-    tooltip.innerHTML = tooltipFill;
-}
-
+/**
+ * Fills the innerHTML of a given HTML Element with provided contents
+ * @param {string} elementId Element ID to update
+ * @param {string} textFill Updated contents (innerHTML)
+ */
 function FillInnerHTML(elementId, textFill) {
 
     const element = document.getElementById(elementId);
