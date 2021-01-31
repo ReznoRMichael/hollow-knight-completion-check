@@ -119,6 +119,8 @@ If you like the tool and wish it developed further with more functions and easie
 
   — Error messages when chosen an invalid file, or when the text inside the text area is not a valid HK save file
 
+  — Rearranged some entries and added + corrected some spoiler/location descriptions
+
 * 2021-01-19:
 
   — Changed the site address to GitHub Pages using https. Now the site is published directly from the GitHub source. This should fix the problem for some people who were not able to visit the previous webpage, as well as the "this site is not safe" notifications in some browsers.

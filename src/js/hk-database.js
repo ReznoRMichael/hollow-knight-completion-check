@@ -333,6 +333,7 @@ const ESSENTIAL = {
     grubsCollected: ["Grubs Rescued", "out of 46 total", 46],
     dreamOrbs: ["Essence Collected", "Dream Nail (2400 for completion)", 2400],
     stationsOpened: ["Stag Stations opened", "out of 10 total", 10],
+    fountainGeo: ["Geo in Fountain", "Ancient Basin: 3000 Geo maximum", 3000],
     slyRescued: ["Sly Rescued", "Forgotten Crossroads, near Gruz Mother"],
     brettaRescued: ["Bretta Rescued", "Fungal Wastes, near Dashmaster charm statue"],
     hasLantern: ["Lumafly Lantern", "Sly: 1800 Geo"],
@@ -349,7 +350,6 @@ const ESSENTIAL = {
     paleOreDeepnest: ["Pale Ore #4", "Deepnest, Nosk reward"],
     paleOreGrubfather: ["Pale Ore #5", "Grubfather: 31 Grubs rescued"],
     paleOreColosseum: ["Pale Ore #6", "Colosseum of Fools: Trial of the Conqueror"],
-    fountainGeo: ["Geo in Fountain", "Ancient Basin: 3000 Geo maximum", 3000],
     hasTramPass: ["Tram Pass", "Deepnest, Failed Tramway"],
     nightmareLanternLit: ["Nightmare Lantern Lit", "Howling Cliffs, corpse of a large bug"]
 };
@@ -358,10 +358,10 @@ const ACHIEVEMENTS = {
     areaMaps: ["Area Maps", "Cornifer and Iselda (out of 13)", 13, [
         "mapCrossroads", "mapGreenpath", "mapFogCanyon", "mapRoyalGardens", "mapFungalWastes", "mapCity", "mapWaterways", "mapMines", "mapDeepnest", "mapCliffs", "mapOutskirts", "mapRestingGrounds", "mapAbyss"
     ]],
-    hasJournal: ["Hunter's Journal", "Greenpath: Hunter"],
-    hasHuntersMark: ["Hunter's Mark", "Greenpath: Hunter"],
     journalEntriesCompleted: ["Creatures Encountered", "Hunter's Journal (164 max)", 164],
     journalNotesCompleted: ["Hunter Notes Completed", "Hunter's Journal (164 max)", 164],
+    hasJournal: ["Hunter's Journal", "Greenpath: Hunter"],
+    hasHuntersMark: ["Hunter's Mark", "Greenpath: Hunter"],
     killedPrayerSlug: ["Journal: Maggot", "Forgotten Crossroads: False Knight secret room"],
     killedOrangeScuttler: ["Journal: Lightseed", "Infected Crossroads"],
     killedPigeon: ["Journal: Maskfly", "Greenpath, Queen's Gardens"],
@@ -394,6 +394,14 @@ const ACHIEVEMENTS = {
 const STATISTICS = {
     nailDamage: ["Nail Damage", "Nailsmith upgrades, City of Tears", 21],
     charmSlots: ["Charm Notches", "out of 11 total", 11],
+    whisperingRoots: ["Whispering Roots completed", "Dream Nail (out of 15)", 15],
+    relicsWandererJournal: ["Relic #1 found total", "Wanderer's Journal (out of 14)", 14, "trinket1", "soldTrinket1"],
+    relicsHallownestSeal: ["Relic #2 found total", "Hallownest Seal (out of 17)", 17, "trinket2", "soldTrinket2"],
+    relicsKingsIdol: ["Relic #3 found total", "King's Idol (out of 8)", 8, "trinket3", "soldTrinket3"],
+    relicsArcaneEgg: ["Relic #4 found total", "Arcane Egg (4 max, 1 missable)", 4, "trinket4", "soldTrinket4"],
+    geoPool: ["Shade Geo", "Amount of Geo the Shade is currently holding", 0], // not ghostCoins
+    rancidEggs: ["Rancid Eggs", "Find: Hallownest, Buy: Sly, Tuk"],
+    xunFlowerBrokeTimes: ["Delicate Flowers broken", "Resting Grounds: Grey Mourner"],
     notchShroomOgres: ["Charm Notch #1", "Fungal Wastes: Shroom Ogres room"],
     salubraNotch1: ["Charm Notch #2", "Salubra: 120 Geo + 5 Charms found"],
     salubraNotch2: ["Charm Notch #3", "Salubra: 500 Geo + 10 Charms found"],
@@ -402,15 +410,7 @@ const STATISTICS = {
     colosseumBronzeCompleted: ["Charm Notch #6", "Colosseum of Fools: Trial of the Warrior"],
     notchFogCanyon: ["Charm Notch #7", "Fog Canyon: explosive eggs room"],
     gotGrimmNotch: ["Charm Notch #8", "Dirtmouth: Troupe Leader Grimm"],
-    relicsWandererJournal: ["Relic #1 found total", "Wanderer's Journal (out of 14)", 14, "trinket1", "soldTrinket1"],
-    relicsHallownestSeal: ["Relic #2 found total", "Hallownest Seal (out of 17)", 17, "trinket2", "soldTrinket2"],
-    relicsKingsIdol: ["Relic #3 found total", "King's Idol (out of 8)", 8, "trinket3", "soldTrinket3"],
-    relicsArcaneEgg: ["Relic #4 found total", "Arcane Egg (out of 4)", 4, "trinket4", "soldTrinket4"],
-    geoPool: ["Shade Geo", "Amount of Geo the Shade is currently holding", 0], // not ghostCoins
-    rancidEggs: ["Rancid Eggs", "Hallownest, Sly, Tuk"],
-    xunFlowerBrokeTimes: ["Delicate Flowers broken", "Resting Grounds: Grey Mourner"],
     hasDreamGate: ["Dream Gate", "Seer: 900 Essence"],
-    whisperingRoots: ["Whispering Roots completed", "Dream Nail (out of 15)", 15],
     fragileGreed_unbreakable: ["Unbreakable Greed", "Divine: Fragile Greed + 9000 Geo"],
     fragileHealth_unbreakable: ["Unbreakable Heart", "Divine: Fragile Heart + 12000 Geo"],
     fragileStrength_unbreakable: ["Unbreakable Strength", "Divine: Fragile Strength + 15000 Geo"],
