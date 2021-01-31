@@ -522,44 +522,45 @@ function CheckNotches(divId, totalNotches = 3, filledNotches = 0) {
         unusedNotches
     } = 0;
 
+    // How many overcharmed notches images to show
     overcharmedNotches = filledNotches - totalNotches;
     if (overcharmedNotches < 1) overcharmedNotches = 0;
 
+    // How many unused notches images to show
     unusedNotches = totalNotches - filledNotches;
     if (unusedNotches < 1) unusedNotches = 0;
 
+    // Correct number of filled/used notches images to show when player is overcharmed
     if (filledNotches > totalNotches) filledNotches = totalNotches;
 
     let icon = SYMBOL_EMPTY;
     let textFill = `<span>Notches:</span>${pSpan}`;
 
     let notchImages = "";
-    // let notchImage = "";
     let notchNormalImage = `<img src='${NOTCH_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Free)'>`;
     let notchFilledImage = `<img src='${NOTCH_FILLED_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Used)'>`;
     let notchOvercharmedImage = `<img src='${NOTCH_OVERCHARMED_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>`;
 
+    // First check filled (used) notches and fill them (skips if no filled notches)
     if (filledNotches > 0) {
         for (let i = 0; i < filledNotches; i++) {
             notchImages += notchFilledImage;
         }
     }
 
+    // Second check overcharmed notches and fill them (skips if player is not overcharmed)
     if (overcharmedNotches > 0) {
         for (let i = 0; i < overcharmedNotches; i++) {
             notchImages += notchOvercharmedImage;
         }
     }
 
+    // Lastly, fill all unused notches
     if (unusedNotches > 0) {
         for (let i = 0; i < unusedNotches; i++) {
             notchImages += notchNormalImage;
         }
     }
-
-    /* for (let i = 0; i < totalNotches; i++) {
-        notchImages += notchImage;
-    } */
 
     document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + notchImages + divEnd;
 }
