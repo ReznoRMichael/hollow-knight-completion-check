@@ -450,7 +450,7 @@ function CheckCompletionPercent(divId, completionPercentage) {
  * Fills HTML with appropriate number of health mask images
  * @param {object} divId ID of the HTML element for data appending
  * @param {number} masks Number of max health masks from the save (baseline without charms and lifeblood)
- * @param {number} permadeathMode Value of permadeathMode property. 0 = Normal, 1 = Steel Soul
+ * @param {number} permadeathMode Value of permadeathMode property. 0 = Normal, 1 = Steel Soul, 2 = Steel Soul broken save
  */
 function CheckHealthMasks(divId, masks = 5, permadeathMode = 0) {
 
@@ -461,7 +461,7 @@ function CheckHealthMasks(divId, masks = 5, permadeathMode = 0) {
     let maskSteel = `<img src='${HEALTH_MASK_STEEL_IMAGE}' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>`;
     let maskImg = "";
 
-    (permadeathMode === 1) ? maskImg = maskSteel: maskImg = maskNormal;
+    (permadeathMode > 0) ? maskImg = maskSteel: maskImg = maskNormal;
 
     for (let i = 0; i < masks; i++) {
         maskImages += maskImg;
