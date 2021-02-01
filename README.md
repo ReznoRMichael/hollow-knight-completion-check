@@ -84,6 +84,10 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
+* v1.0.1 2021-02-01:
+
+  — Quick hotfix for windows save file input text on mobile and broken steel soul save detection
+
 * 2021-01-31:
 
   — **Major New Release v1.0!** Finally out of Beta/Early Access.
