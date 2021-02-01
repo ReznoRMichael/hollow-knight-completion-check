@@ -108,12 +108,13 @@ h2 {
 }
 
 #save-location-input {
+    display: block;
     font-family: 'Consolas', monospace;
     font-size: 0.75rem;
     text-align: center;
-    width: max-content;
+    width: 100%;
+    max-width: 32em;
     color: #fff;
-    display: block;
     background-color: rgba(128, 128, 128, 0.5);
     margin: 0.4rem auto 0.6rem auto;
     padding: 0.16rem 0.5rem 0.25rem 0.5rem;
@@ -185,6 +186,7 @@ input[type="file"] {
 #save-area {
     display: block;
     width: 100%;
+    max-width: 542px;
     height: 5.65rem;
 }
 
@@ -539,8 +541,10 @@ input[type="radio"] {
 
 .tooltip {
     position: relative;
+    display: block;
     margin: 0 auto;
-    width: max-content;
+    width: 100%;
+    max-width: 550px;
 }
 
 .tooltip .tooltip-text {
@@ -575,6 +579,12 @@ input[type="radio"] {
 .tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
+}
+
+@media screen and (max-width: 570px) {
+    .tooltip {
+        display: none;
+    }
 }
 
 .percent-box {
