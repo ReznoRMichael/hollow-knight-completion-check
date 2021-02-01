@@ -10,9 +10,6 @@ require("../img/thumbnail1200x628.jpg");
 // Instantly load test save file from .json (fast Debugging script)
 // require("./LoadJson.js");
 
-// Google Analytics start script
-// require("./analytics.js")
-
 // Load Save File for opening files, decoding, decryption
 require("./LoadSaveFile.js");
 

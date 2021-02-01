@@ -1,0 +1,22 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%= ga_property_id %>"></script>
+<script>
+    // Temporarily disable the tracking for testing (set to false to enable Analytics)
+    window['ga-disable-<%= ga_property_id %>'] = true;
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    // Default no consent to share cookie data
+    /* gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied'
+    }); */
+
+    gtag('js', new Date());
+
+    gtag('config', '<%= ga_property_id %>');
+</script>

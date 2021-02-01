@@ -1,8 +1,9 @@
 /* global require module __dirname */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
+// const TerserPlugin = require('terser-webpack-plugin');
 const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin');
@@ -14,12 +15,12 @@ module.exports = {
     mode: 'production',
     optimization: {
         minimize: true,
-        minimizer: [
+        /* minimizer: [
             new TerserPlugin({
                 extractComments: false,
             }),
             new CssMinimizerPlugin(),
-        ],
+        ], */
     },
     output: {
         path: `${__dirname}/docs`,
@@ -37,7 +38,28 @@ module.exports = {
             chunks: ['index'],
             filename: 'index.html',
             favicon: "./src/favicon.png",
-        })
+            minify: {
+                // Begin HTML Webpack Plugin Default
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true,
+                // End HTML Webpack Plugin Default
+                minifyJS: true,
+                minifyCSS: true,
+            },
+        }),
+        new HtmlWebpackPartialsPlugin({
+            path: './src/partials/analytics.html',
+            location: 'head',
+            priority: 'high',
+            options: {
+                ga_property_id: 'UA-136831794-2'
+            }
+        }),
+        new CssMinimizerPlugin(),
     ],
     module: {
         rules: [{
