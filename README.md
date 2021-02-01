@@ -33,7 +33,7 @@ More info with features and visual previews can be found in the official [Steam 
 
 ## How to use
 
-There are two ways to use this online tool:
+There are two ways to use this web tool:
 
 1. **Simple way**: just choose your **user\*.dat** save file and see the magic happen! See [save game locations paragraph](#hollow-knight-save-game-locations) below on where to find your Hollow Knight save files.  
 The tool doesn't have the power to modify *any* of your files, but *always* do backups just in case.
@@ -76,11 +76,18 @@ You can use this if you want to check your save progress without access to your 
 **user\*.dat** — main save file. Where \* is a number between 1 and 4, and it is the appropriate save slot inside the game.  
 **user\*.dat.bakX** — backup save files. Where X is a number in ascending order meaning how many backups were made during the whole playthrough of that save. The higher the number, the more recent the backup. There are usually 3 save backups at one time, older backups are deleted.
 
+## Use offline or online (web) - your choice
+
+My tool uses client-side Javascript, so it runs on anything that has a modern browser. Even without internet access. You can use it locally on your PC, on mobile or on any operating system you desire (Windows, MacOS, Linux) without internet connection — everything is done on your device and your CPU. To do that, you can either download the source code [directly from GitHub](https://github.com/ReznoRMichael/hollow-knight-completion-check/archive/master.zip), go to `/docs` folder and launch `index.html`, or go to the tool's webpage and choose *Page -> Save As...* like you would save a normal program. Only contents inside the `/docs` folder are required for the program to run.  
+On Android running the tool locally requires manually typing the address `file:///storage/emulated/0` in your browser and from there pointing to the `index.html` file in the folder you saved the tool into. Then you can save it in your bookmarks for easy subsequent usage.
+
 ## Support and feedback
 
 All feedback/problems/wrong data are appreciated. Feel free to write them in the [Steam Discussion](https://steamcommunity.com/app/367520/discussions/0/2915472677711090083/) thread for the Tool or under the [Steam Guide](https://steamcommunity.com/sharedfiles/filedetails/?id=2209910193).
 
 If you like the tool and wish it developed further with more functions and easier usage, consider supporting on [PayPal](https://www.paypal.me/ReznoRMichael).
+
+![donate](https://img.shields.io/static/v1?label=Donate&message=PayPal&color=blue&labelColor=lightgrey&style=for-the-badge&logo=paypal&link=https://www.paypal.com/paypalme/ReznoRMichael)
 
 ## Version History
 
