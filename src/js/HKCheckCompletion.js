@@ -58,12 +58,14 @@ function HKCheckCompletion(jsonObject) {
 
     let HKPlayerData;
     let HKWorldItems;
+    let HKSceneData;
 
     if (jsonObject.hasOwnProperty("playerData")) {
         HKPlayerData = jsonObject.playerData;
     } else return false;
 
     if (jsonObject.hasOwnProperty("sceneData")) {
+        HKSceneData = jsonObject.sceneData;
         if (jsonObject.sceneData.hasOwnProperty("persistentBoolItems")) {
             HKWorldItems = jsonObject.sceneData.persistentBoolItems;
         } else return false;
@@ -237,7 +239,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ------------------------- Game Statistics ----------------------------- //
 
-    CheckAdditionalThings(HK.DIV_ID.statistics, HK.STATISTICS, HKPlayerData, HKWorldItems);
+    CheckAdditionalThings(HK.DIV_ID.statistics, HK.STATISTICS, HKPlayerData, HKWorldItems, HKSceneData);
 
     // ------------------------- Hints ----------------------------- //
 
@@ -654,7 +656,7 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
  * @param {object} playerData Reference/pointer to specific data where to search
  * @param {object} worldData Reference/pointer to specific data where to search
  */
-function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
+function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneData) {
 
     let textPrefix = "";
     let textSuffix = "";
@@ -704,13 +706,35 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
         return totalMaps;
     }
 
+    function CountGeoRocks(geoRocksArray, arrayLength, mode = "unbroken") {
+
+        let countTotal = 0;
+
+        if (mode === "unbroken") {
+            for (let i = 0; i < arrayLength; i++) {
+                if (geoRocksArray[i].hitsLeft > 0) countTotal++;
+            }
+        } else {
+            for (let i = 0; i < arrayLength; i++) {
+                if (geoRocksArray[i].hitsLeft === 0) countTotal++;
+            }
+        }
+        
+        return countTotal;
+    }
+
     for (let i in dataObject) {
         textPrefix = dataObject[i][0];
         (dataObject[i][1]) ? textSuffix = dataObject[i][1]: textSuffix = "";
 
-        let amount = 0;
-        let countTotal = 0;
-        let total = 0;
+        let {
+            amount,
+            countTotal,
+            total,
+            unbroken,
+            broken,
+            discoveredTotal
+        } = 0;
 
         switch (i) {
             case "areaMaps":
@@ -747,6 +771,15 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData) {
             case "xunFlowerBrokeTimes":
                 textPrefix += ": " + Math.abs(playerData[i]);
                 (i === "geoPool" && playerData[i] > 0) ? CurrentDataBlank(): CurrentDataTrue();
+                break;
+            case "geoRocks":
+                discoveredTotal = sceneData.geoRocks.length;
+
+                unbroken = CountGeoRocks(sceneData.geoRocks, discoveredTotal, "unbroken");
+                broken = CountGeoRocks(sceneData.geoRocks, discoveredTotal, "broken");
+
+                textPrefix += `: ${unbroken}/${broken}/${discoveredTotal}`;
+                CurrentDataTrue();
                 break;
             case "shopkeeperKey":
                 (playerData.hasSlykey === true || playerData.gaveSlykey === true) ? CurrentDataTrue(): CurrentDataFalse();

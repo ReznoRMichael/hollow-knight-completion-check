@@ -399,6 +399,7 @@ const STATISTICS = {
     relicsHallownestSeal: ["Relic #2 found total", "Hallownest Seal (out of 17)", 17, "trinket2", "soldTrinket2"],
     relicsKingsIdol: ["Relic #3 found total", "King's Idol (out of 8)", 8, "trinket3", "soldTrinket3"],
     relicsArcaneEgg: ["Relic #4 found total", "Arcane Egg (4 max, 1 missable)", 4, "trinket4", "soldTrinket4"],
+    geoRocks: ["Geo Rocks", "Unbroken/Broken/Discovered Total"],
     geoPool: ["Shade Geo", "Amount of Geo the Shade is currently holding", 0], // not ghostCoins
     rancidEggs: ["Rancid Eggs", "Find: Hallownest, Buy: Sly, Tuk"],
     xunFlowerBrokeTimes: ["Delicate Flowers broken", "Resting Grounds: Grey Mourner"],
