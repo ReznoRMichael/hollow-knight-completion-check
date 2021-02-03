@@ -10,7 +10,7 @@ const DIV_ID = {
         maxPercent: 112
     },
     hints: {
-        h2: "My old friend Elderbug once told me about...",
+        h2: "My friend Elderbug once told me about...",
         id: "hk-hints",
     },
     bosses: {
@@ -120,7 +120,7 @@ const DIV_ID = {
 const HINTS = {
     fireballLevel: ["", "...a mysterious shaman living in a dwelling below the town of Dirtmouth"],
     hornet1Defeated: ["", "...a skilled protector guarding ruins in a lush green forest"],
-    hasDash: ["", "...an old cloak lying on a green path by a broken shell"],
+    hasDash: ["", "...an old cloak lying on a green path near a broken shell"],
     hasWalljump: ["", "...a sharp claw lying forgotten somewhere amidst the insect village"],
     Crossroads_04: ["", "...a mother sleeping peacefully below the town of Dirtmouth"],
     slyRescued: ["", "...a fellow town bug who seems to be lost somewhere in the crossroads"],
