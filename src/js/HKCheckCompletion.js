@@ -706,17 +706,20 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         return totalMaps;
     }
 
-    function CountGeoRocks(geoRocksArray, arrayLength, mode = "unbroken") {
+    function CountGeoRocks(arrayLength, mode = "unbroken") {
 
         let countTotal = 0;
 
         if (mode === "unbroken") {
             for (let i = 0; i < arrayLength; i++) {
-                if (geoRocksArray[i].hitsLeft > 0) countTotal++;
+                if (sceneData.geoRocks[i].hitsLeft > 0) {
+                    countTotal++;
+                    console.log(`Unbroken ID: ${sceneData.geoRocks[i].id}, sceneName: ${sceneData.geoRocks[i].sceneName}`);
+                }
             }
         } else {
             for (let i = 0; i < arrayLength; i++) {
-                if (geoRocksArray[i].hitsLeft === 0) countTotal++;
+                if (sceneData.geoRocks[i].hitsLeft === 0) countTotal++;
             }
         }
         
@@ -775,8 +778,8 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             case "geoRocks":
                 discoveredTotal = sceneData.geoRocks.length;
 
-                unbroken = CountGeoRocks(sceneData.geoRocks, discoveredTotal, "unbroken");
-                broken = CountGeoRocks(sceneData.geoRocks, discoveredTotal, "broken");
+                unbroken = CountGeoRocks(discoveredTotal, "unbroken");
+                broken = CountGeoRocks(discoveredTotal, "broken");
 
                 textPrefix += `: ${unbroken}/${broken}/${discoveredTotal}`;
                 CurrentDataTrue();
