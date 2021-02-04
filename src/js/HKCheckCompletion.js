@@ -714,7 +714,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             for (let i = 0; i < arrayLength; i++) {
                 if (sceneData.geoRocks[i].hitsLeft > 0) {
                     countTotal++;
-                    console.log(`Unbroken ID: ${sceneData.geoRocks[i].id}, sceneName: ${sceneData.geoRocks[i].sceneName}`);
+                    console.log(`Unbroken ID: ${sceneData.geoRocks[i].id}, Map location: ${sceneData.geoRocks[i].sceneName}`);
                 }
             }
         } else {
@@ -781,7 +781,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 unbroken = CountGeoRocks(discoveredTotal, "unbroken");
                 broken = CountGeoRocks(discoveredTotal, "broken");
 
-                textPrefix += `: ${unbroken}/${broken}/${discoveredTotal}`;
+                textPrefix += `: ${unbroken} | ${broken} | ${discoveredTotal}`;
                 CurrentDataTrue();
                 break;
             case "shopkeeperKey":
