@@ -706,6 +706,11 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         return totalMaps;
     }
 
+    /**
+     * Counts the total amount of Geo Rocks Unbroken or Broken. Logs to console all the Unbroken IDs and Map locations.
+     * @param {number} arrayLength How many items the Geo Rocks array is currently storing (for iteration)
+     * @param {string} mode Choose which Geo Rocks to count (broken or unbroken)
+     */
     function CountGeoRocks(arrayLength, mode = "unbroken") {
 
         let countTotal = 0;
@@ -726,6 +731,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         return countTotal;
     }
 
+    // Start main loop
     for (let i in dataObject) {
         textPrefix = dataObject[i][0];
         (dataObject[i][1]) ? textSuffix = dataObject[i][1]: textSuffix = "";
@@ -846,7 +852,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 break;
             default:
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
-        }
+        } // end main for loop
 
         FillHTML(divId, textPrefix, textSuffix);
     }
