@@ -716,19 +716,60 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         let countTotal = 0;
 
         if (mode === "unbroken") {
+            console.groupCollapsed("%cUnbroken Geo Rocks List:", "color: #16c60c;");
             for (let i = 0; i < arrayLength; i++) {
                 if (sceneData.geoRocks[i].hitsLeft > 0) {
                     countTotal++;
-                    console.log(`Unbroken ID: ${sceneData.geoRocks[i].id}, Map location: ${sceneData.geoRocks[i].sceneName}`);
+                    console.log(`#${countTotal} | ${sceneData.geoRocks[i].id} | Map location: ${sceneData.geoRocks[i].sceneName}`);
                 }
             }
+            console.groupEnd();
         } else {
             for (let i = 0; i < arrayLength; i++) {
                 if (sceneData.geoRocks[i].hitsLeft === 0) countTotal++;
             }
         }
-        
+
         return countTotal;
+    }
+
+    function LogMissingGrubs() {
+
+        let unrescuedGrubsSceneList = [];
+        let rescuedGrubsSceneList = [];
+        
+        for (let i = 0, length = worldData.length; i < length; i++) {
+            if (worldData[i].id.includes("Grub Bottle")) {
+                if (worldData[i].activated === false) {
+                    unrescuedGrubsSceneList.push(worldData[i].sceneName);
+                }
+            }
+        }
+        
+        // console.info(grubArray);
+
+        let missingGrubsList = HK.GRUBS_LIST.filter(x => !rescuedGrubsSceneList.includes(x));
+        let length = missingGrubsList.length;
+
+        if (length) {
+            console.groupCollapsed("%cUnrescued Grubs List:", "color: #16c60c;");
+            for (let i = 0; i < length; i++) {
+                console.log(`#${HK.GRUBS_LIST.indexOf(missingGrubsList[i]) + 1} | Map location: ${missingGrubsList[i]}`);
+            }
+            console.groupEnd();
+        }
+        /* let missingGrubsList = HK.GRUBS_LIST.filter(x => !playerData.scenesGrubRescued.includes(x));
+        let length = missingGrubsList.length;
+
+        if (length) {
+            console.groupCollapsed("Unrescued Grubs List:");
+            for (let i = 0; i < length; i++) {
+                console.log(`#${HK.GRUBS_LIST.indexOf(missingGrubsList[i]) + 1} Map location: ${missingGrubsList[i]}`);
+            }
+            console.groupEnd();
+        } */
+
+        return false;
     }
 
     // Start main loop
@@ -772,6 +813,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 if (i === "journalEntriesCompleted" || i === "journalNotesCompleted") {
                     countTotal = amount + " / " + playerData.journalEntriesTotal;
                 }
+                if (i === "grubsCollected") LogMissingGrubs();
                 textPrefix += ": " + countTotal;
                 (amount >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataBlank();
                 break;
