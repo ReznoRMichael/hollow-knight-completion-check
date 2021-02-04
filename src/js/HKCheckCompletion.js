@@ -735,19 +735,26 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
 
     function LogMissingGrubs() {
 
-        let unrescuedGrubsSceneList = [];
         let rescuedGrubsSceneList = [];
-        
+
         for (let i = 0, length = worldData.length; i < length; i++) {
             if (worldData[i].id.includes("Grub Bottle")) {
-                if (worldData[i].activated === false) {
-                    unrescuedGrubsSceneList.push(worldData[i].sceneName);
+                if (worldData[i].activated === true) {
+                    // There are 3 duplicates of the same map scene name, so we need to assign each one its unique name
+                    if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle") {
+                        rescuedGrubsSceneList.push("Ruins2_11_1");
+                    } else if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (1)") {
+                        rescuedGrubsSceneList.push("Ruins2_11_2");
+                    } else if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (2)") {
+                        rescuedGrubsSceneList.push("Ruins2_11_3");
+                    } else {
+                        rescuedGrubsSceneList.push(worldData[i].sceneName);
+                    }
                 }
             }
         }
-        
-        // console.info(grubArray);
 
+        // Filtering the reference database Grub list to include only the missing values
         let missingGrubsList = HK.GRUBS_LIST.filter(x => !rescuedGrubsSceneList.includes(x));
         let length = missingGrubsList.length;
 
@@ -758,16 +765,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             }
             console.groupEnd();
         }
-        /* let missingGrubsList = HK.GRUBS_LIST.filter(x => !playerData.scenesGrubRescued.includes(x));
-        let length = missingGrubsList.length;
-
-        if (length) {
-            console.groupCollapsed("Unrescued Grubs List:");
-            for (let i = 0; i < length; i++) {
-                console.log(`#${HK.GRUBS_LIST.indexOf(missingGrubsList[i]) + 1} Map location: ${missingGrubsList[i]}`);
-            }
-            console.groupEnd();
-        } */
 
         return false;
     }
