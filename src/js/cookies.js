@@ -1,5 +1,6 @@
+/* global require */
 // Cookie Consent https://github.com/osano/cookieconsent
-import CC from "./cookieconsent.min.js";
+const CC = require("./cookieconsent.min.js");
 
 const cc = new CC({
     //...options,

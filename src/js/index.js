@@ -1,7 +1,7 @@
 /* global require */
 
 // Handle cookies
-require("./cookies.js");
+// require("./cookies.js");
 
 // CSS
 require("../css/cookieconsent.css");
