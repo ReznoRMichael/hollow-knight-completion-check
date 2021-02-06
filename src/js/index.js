@@ -1,5 +1,10 @@
 /* global require */
+
+// Cookie Consent https://github.com/osano/cookieconsent
+require("./cookieconsent.js");
+
 // CSS
+require("../css/cookieconsent.css");
 require("../css/fontello.css");
 require("../css/simpleicon.css");
 require("../css/style.css");
