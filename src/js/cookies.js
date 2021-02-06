@@ -1,4 +1,5 @@
-import CC from "CookieConsent";
+// Cookie Consent https://github.com/osano/cookieconsent
+import CC from "./cookieconsent.min.js";
 
 const cc = new CC({
     //...options,

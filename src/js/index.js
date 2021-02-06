@@ -1,7 +1,7 @@
 /* global require */
 
-// Cookie Consent https://github.com/osano/cookieconsent
-require("./cookieconsent.js");
+// Handle cookies
+require("./cookies.js");
 
 // CSS
 require("../css/cookieconsent.css");
