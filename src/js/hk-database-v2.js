@@ -181,51 +181,63 @@ const HK = {
     BOSSES: {
         falseKnightDefeated: {
             name: "False Knight",
-            spoiler: "Forgotten Crossroads"
+            spoiler: "Forgotten Crossroads",
+            wiki: "False_Knight"
         }, // "Battle Scene" - "Crossroads_10" ?
         hornet1Defeated: {
             name: "Hornet Protector",
-            spoiler: "Greenpath"
+            spoiler: "Greenpath",
+            wiki: "Hornet_Protector"
         },
         defeatedDungDefender: {
             name: "Dung Defender",
-            spoiler: "Royal Waterways"
+            spoiler: "Royal Waterways",
+            wiki: "Dung_Defender"
         },
         mageLordDefeated: {
             name: "Soul Master",
-            spoiler: "City of Tears: Soul Sanctum"
+            spoiler: "City of Tears: Soul Sanctum",
+            wiki: "Soul_Master"
         },
         killedBlackKnight: {
             name: "Watcher Knights",
-            spoiler: "City of Tears: Watcher's Spire"
+            spoiler: "City of Tears: Watcher's Spire",
+            wiki: "Watcher_Knight"
         },
         collectorDefeated: {
             name: "The Collector",
-            spoiler: "City of Tears: Tower of Love"
+            spoiler: "City of Tears: Tower of Love",
+            wiki: "Collector"
         },
         defeatedMantisLords: {
             name: "Mantis Lords",
-            spoiler: "Mantis Village"
+            spoiler: "Mantis Village",
+            wiki: "Mantis_Lords"
         },
         defeatedMegaJelly: {
             name: "Uumuu",
-            spoiler: "Fog Canyon: Teacher's Archives"
+            spoiler: "Fog Canyon: Teacher's Archives",
+            wiki: "Uumuu"
         },
         hornetOutskirtsDefeated: {
             name: "Hornet Sentinel",
-            spoiler: "Kingdom's Edge"
+            spoiler: "Kingdom's Edge",
+            wiki: "Hornet_Sentinel"
         },
         killedInfectedKnight: {
             name: "Broken Vessel",
-            spoiler: "Ancient Basin"
+            spoiler: "Ancient Basin",
+            wiki: "Broken_Vessel"
         },
         killedMimicSpider: {
             name: "Nosk",
-            spoiler: "Deepnest"
+            spoiler: "Deepnest",
+            wiki: "Nosk"
         }, // "Battle Scene" - "Deepnest_32" ?
         killedTraitorLord: {
             name: "Traitor Lord",
-            spoiler: "Queen's Gardens"
+            spoiler: "Queen's Gardens",
+            wiki: "Traitor_Lord"
         } // "Battle Scene" - "Fungus3_23" ?
     },
     // hk-bosses
@@ -233,11 +245,13 @@ const HK = {
     BOSSES_WORLD: {
         Crossroads_04: {
             name: "Gruz Mother",
-            spoiler: "Forgotten Crossroads"
+            spoiler: "Forgotten Crossroads",
+            wiki: "Gruz_Mother"
         }, // killedBigFly
         Crossroads_09: {
             name: "Brooding Mawlek",
-            spoiler: "Forgotten Crossroads"
+            spoiler: "Forgotten Crossroads",
+            wiki: "Brooding_Mawlek"
         } // killedMawlek
     },
     // reference: https://radiance.host/apidocs/Charms.html
