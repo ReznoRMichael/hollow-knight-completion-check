@@ -19,4 +19,5 @@ require("../img/thumbnail1200x628.jpg");
 require("./LoadSaveFile.js");
 
 // Main script for analyzing the decoded save file and generating the page on the fly
-require("./HKCheckCompletion.js");
+// require("./HKCheckCompletion.js");
+require("./HKCheckCompletion-v2.js");
