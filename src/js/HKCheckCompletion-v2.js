@@ -163,12 +163,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Nail Upgrades --------------------- //
 
-    // make it a function
-    for (let i = 0, length = HK.NAILUPGRADES.length; i < length; i++) {
-        (HKPlayerData.nailSmithUpgrades >= i) ? CurrentDataTrue(HK.DIV_ID.nailUpgrades): CurrentDataFalse();
-        FillHTML(HK.DIV_ID.nailUpgrades, HK.NAILUPGRADES[i][0], HK.NAILUPGRADES[i][1]);
-    }
-    if (HK.DIV_ID.nailUpgrades.percent) HK.DIV_ID.nailUpgrades.percent--; // subject one for the Old Nail
+    CheckNailUpgrades(HK.DIV_ID.nailUpgrades, HK.NAILUPGRADES, HKPlayerData);
 
     // ---------------- Mask Shards --------------------- //
 
@@ -630,6 +625,25 @@ function CheckGodmasterDoors(divId, dataObject, playerData) {
         (playerData["bossDoorStateTier" + (i + 1)].completed === true) ? CurrentDataTrue(divId): CurrentDataFalse();
         FillHTML(divId, dataObject[pantheon[i]].name, dataObject[pantheon[i]].spoiler);
     }
+}
+
+/**
+ * Verifies the level of player's nail upgrades, and appends HTML accordingly.
+ * @param {object} divId ID of the HTML element for data appending
+ * @param {object} dataObject Object containing nail upgrades data to be verified
+ * @param {object} playerData Reference/pointer to specific data where to search in the save file
+ */
+function CheckNailUpgrades(divId, dataObject, playerData) {
+
+    // appends "Nail" to every array element
+    // same as names in the database object
+    let nail = ["old", "sharpened", "channeled", "coiled", "pure"].map((element) => element + "Nail");
+    
+    for (let i = 0; i < 5; i++) {
+        (playerData.nailSmithUpgrades >= i) ? CurrentDataTrue(divId): CurrentDataFalse();
+        FillHTML(divId, dataObject[nail[i]].name, dataObject[nail[i]].spoiler);
+    }
+    if (divId.percent) divId.percent--; // subject one for the Old Nail
 }
 
 /**
