@@ -77,32 +77,6 @@ function HKCheckCompletion(jsonObject) {
     // Prevents adding current percent data after each function call (each click of Analyze button)
     ResetCompletion(HK.DIV_ID);
 
-    // Shallow Clone const objects (used for destructive functions)
-    /* let HK_HINTS_temp = Object.assign({}, HK.HINTS);
-    let HK_BOSSES_temp = Object.assign({}, HK.BOSSES);
-    let HK_BOSSES_WORLD_temp = Object.assign({}, HK.BOSSES_WORLD);
-    let HK_CHARMS_temp = Object.assign({}, HK.CHARMS);
-    let HK_COLOSSEUM_temp = Object.assign({}, HK.COLOSSEUM);
-    let HK_DREAMERS_temp = Object.assign({}, HK.DREAMERS);
-    let HK_DREAMNAIL_temp = Object.assign({}, HK.DREAMNAIL);
-    let HK_EQUIPMENT_temp = Object.assign({}, HK.EQUIPMENT);
-    let HK_MASKSHARDS_temp = Object.assign({}, HK.MASKSHARDS);
-    let HK_MASKSHARDS_WORLD_temp = Object.assign({}, HK.MASKSHARDS_WORLD);
-    let HK_NAILARTS_temp = Object.assign({}, HK.NAILARTS);
-    let HK_VESSELFRAGMENTS_temp = Object.assign({}, HK.VESSELFRAGMENTS);
-    let HK_VESSELFRAGMENTS_WORLD_temp = Object.assign({}, HK.VESSELFRAGMENTS_WORLD);
-    let HK_WARRIORDREAMS_temp = Object.assign({}, HK.WARRIORDREAMS);
-    let HK_GRIMMTROUPE_temp = Object.assign({}, HK.GRIMMTROUPE);
-    let HK_LIFEBLOOD_temp = Object.assign({}, HK.LIFEBLOOD);
-    let HK_GODMASTER_temp = Object.assign({}, HK.GODMASTER);
-
-    // Shallow Clone const arrays (used for destructive functions)
-    let HK_GODMASTER_DOORS_temp = Array.from(HK.GODMASTER_DOORS);
-    let HK_NAILUPGRADES_temp = Array.from(HK.NAILUPGRADES);
-
-    // Deep Clone const spells multi-layer object (used for destructive functions)
-    let HK_SPELLS_temp = JSON.parse(JSON.stringify(HK.SPELLS)); */
-
     // ================================================================================== //
 
     // ---------------- Time Played ----------------- //
