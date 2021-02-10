@@ -604,7 +604,7 @@ function CheckSpellLevel(divId, dataObject, playerData) {
 /**
  * Verifies if the data in a specific object is 0 or > 0, and appends HTML accordingly.
  * @param {object} divId ID of the HTML element for data appending
- * @param {object} dataObject Object containing data to be verified (use copy - data inside this object will be deleted)
+ * @param {object} dataObject Object containing data to be verified
  * @param {object} playerData Reference/pointer to specific data where to search
  */
 function CheckWarriorDreams(divId, dataObject, playerData) {
@@ -614,6 +614,12 @@ function CheckWarriorDreams(divId, dataObject, playerData) {
     }
 }
 
+/**
+ * Verifies if the Godmaster Pantheons 1-4 are completed by the player, and appends HTML accordingly.
+ * @param {object} divId ID of the HTML element for data appending
+ * @param {object} dataObject Object containing pantheon data to be verified
+ * @param {object} playerData Reference/pointer to specific data where to search in the save file
+ */
 function CheckGodmasterDoors(divId, dataObject, playerData) {
 
     // appends "pantheon" to every array element
