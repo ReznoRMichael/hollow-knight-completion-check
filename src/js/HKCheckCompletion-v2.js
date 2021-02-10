@@ -833,7 +833,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 }
                 if (i === "grubsCollected") LogMissingGrubs();
                 textPrefix += ": " + countTotal;
-                (amount >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataBlank();
+                (amount >= dataObject[i].max) ? CurrentDataTrue(): CurrentDataBlank();
                 break;
             case "geoPool":
             case "rancidEggs":
