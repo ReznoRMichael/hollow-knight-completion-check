@@ -2,7 +2,7 @@
 
 // ---------------- Load main Hollow Knight database file ----------------- //
 
-import HK from "./hk-database-v2.js";
+import * as HK from "./hk-database.js";
 
 // ---------------- Load image files (necessary for Webpack) ----------------- //
 
@@ -77,6 +77,32 @@ function HKCheckCompletion(jsonObject) {
     // Prevents adding current percent data after each function call (each click of Analyze button)
     ResetCompletion(HK.DIV_ID);
 
+    // Shallow Clone const objects (used for destructive functions)
+    let HK_HINTS_temp = Object.assign({}, HK.HINTS);
+    let HK_BOSSES_temp = Object.assign({}, HK.BOSSES);
+    let HK_BOSSES_WORLD_temp = Object.assign({}, HK.BOSSES_WORLD);
+    let HK_CHARMS_temp = Object.assign({}, HK.CHARMS);
+    let HK_COLOSSEUM_temp = Object.assign({}, HK.COLOSSEUM);
+    let HK_DREAMERS_temp = Object.assign({}, HK.DREAMERS);
+    let HK_DREAMNAIL_temp = Object.assign({}, HK.DREAMNAIL);
+    let HK_EQUIPMENT_temp = Object.assign({}, HK.EQUIPMENT);
+    let HK_MASKSHARDS_temp = Object.assign({}, HK.MASKSHARDS);
+    let HK_MASKSHARDS_WORLD_temp = Object.assign({}, HK.MASKSHARDS_WORLD);
+    let HK_NAILARTS_temp = Object.assign({}, HK.NAILARTS);
+    let HK_VESSELFRAGMENTS_temp = Object.assign({}, HK.VESSELFRAGMENTS);
+    let HK_VESSELFRAGMENTS_WORLD_temp = Object.assign({}, HK.VESSELFRAGMENTS_WORLD);
+    let HK_WARRIORDREAMS_temp = Object.assign({}, HK.WARRIORDREAMS);
+    let HK_GRIMMTROUPE_temp = Object.assign({}, HK.GRIMMTROUPE);
+    let HK_LIFEBLOOD_temp = Object.assign({}, HK.LIFEBLOOD);
+    let HK_GODMASTER_temp = Object.assign({}, HK.GODMASTER);
+
+    // Shallow Clone const arrays (used for destructive functions)
+    let HK_GODMASTER_DOORS_temp = Array.from(HK.GODMASTER_DOORS);
+    let HK_NAILUPGRADES_temp = Array.from(HK.NAILUPGRADES);
+
+    // Deep Clone const spells multi-layer object (used for destructive functions)
+    let HK_SPELLS_temp = JSON.parse(JSON.stringify(HK.SPELLS));
+
     // ================================================================================== //
 
     // ---------------- Time Played ----------------- //
@@ -109,80 +135,87 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Bosses (Base Game) --------------------- //
 
-    CheckIfDataTrue(HK.DIV_ID.bosses, HK.BOSSES, HKPlayerData);
+    CheckIfDataTrue(HK.DIV_ID.bosses, HK_BOSSES_temp, HKPlayerData);
 
     // ---------------- Gruz Mother and Mawlek (World Map) --------------------- //
 
-    if (HKWorldItems) CheckWorldDataTrue(HK.DIV_ID.bosses, "Battle Scene", HK.BOSSES_WORLD, HKWorldItems);
+    if (HKWorldItems) CheckWorldDataTrue(HK.DIV_ID.bosses, "Battle Scene", HK_BOSSES_WORLD_temp, HKWorldItems);
 
     // ---------------- Charms --------------------- //
 
-    CheckIfDataTrue(HK.DIV_ID.charms, HK.CHARMS, HKPlayerData);
+    CheckIfDataTrue(HK.DIV_ID.charms, HK_CHARMS_temp, HKPlayerData);
 
     // ---------------- Colosseum of Fools --------------------- //
 
-    CheckIfDataTrue(HK.DIV_ID.colosseum, HK.COLOSSEUM, HKPlayerData);
+    CheckIfDataTrue(HK.DIV_ID.colosseum, HK_COLOSSEUM_temp, HKPlayerData);
 
     // ---------------- Dreamers --------------------- //
 
-    CheckIfDataTrue(HK.DIV_ID.dreamers, HK.DREAMERS, HKPlayerData);
+    CheckIfDataTrue(HK.DIV_ID.dreamers, HK_DREAMERS_temp, HKPlayerData);
 
     // ---------------- Dream Nail and Essence --------------------- //
 
-    CheckIfDataTrue(HK.DIV_ID.dreamNail, HK.DREAMNAIL, HKPlayerData);
+    CheckIfDataTrue(HK.DIV_ID.dreamNail, HK_DREAMNAIL_temp, HKPlayerData);
 
     // ---------------- Equipment --------------------- //
 
-    CheckIfDataTrue(HK.DIV_ID.equipment, HK.EQUIPMENT, HKPlayerData);
+    CheckIfDataTrue(HK.DIV_ID.equipment, HK_EQUIPMENT_temp, HKPlayerData);
 
     // ---------------- Nail Upgrades --------------------- //
 
-    CheckNailUpgrades(HK.DIV_ID.nailUpgrades, HK.NAILUPGRADES, HKPlayerData);
+    for (let i = 0, length = HK_NAILUPGRADES_temp.length; i < length; i++) {
+        (HKPlayerData.nailSmithUpgrades >= i) ? CurrentDataTrue(HK.DIV_ID.nailUpgrades): CurrentDataFalse();
+        FillHTML(HK.DIV_ID.nailUpgrades, HK_NAILUPGRADES_temp[i][0], HK_NAILUPGRADES_temp[i][1]);
+    }
+    if (HK.DIV_ID.nailUpgrades.percent) HK.DIV_ID.nailUpgrades.percent--; // subject one for the Old Nail
 
     // ---------------- Mask Shards --------------------- //
 
-    CheckIfDataTrue(HK.DIV_ID.maskShards, HK.MASKSHARDS, HKPlayerData);
+    CheckIfDataTrue(HK.DIV_ID.maskShards, HK_MASKSHARDS_temp, HKPlayerData);
 
     // ---------------- Mask Shards (World Map) --------------------- //
 
-    CheckWorldDataTrue(HK.DIV_ID.maskShards, "Heart Piece", HK.MASKSHARDS_WORLD, HKWorldItems);
+    CheckWorldDataTrue(HK.DIV_ID.maskShards, "Heart Piece", HK_MASKSHARDS_WORLD_temp, HKWorldItems);
 
     // ---------------- Nail Arts --------------------- //
 
-    CheckIfDataTrue(HK.DIV_ID.nailArts, HK.NAILARTS, HKPlayerData);
+    CheckIfDataTrue(HK.DIV_ID.nailArts, HK_NAILARTS_temp, HKPlayerData);
 
     // ---------------- Spells --------------------- //
 
-    CheckSpellLevel(HK.DIV_ID.spells, HK.SPELLS, HKPlayerData);
+    CheckSpellLevel(HK.DIV_ID.spells, HK_SPELLS_temp, HKPlayerData);
 
     // ---------------- Vessel Fragments --------------------- //
 
-    CheckIfDataTrue(HK.DIV_ID.vesselFragments, HK.VESSELFRAGMENTS, HKPlayerData);
+    CheckIfDataTrue(HK.DIV_ID.vesselFragments, HK_VESSELFRAGMENTS_temp, HKPlayerData);
 
     // ---------------- Vessel Fragments (World Map) --------------------- //
 
-    CheckWorldDataTrue(HK.DIV_ID.vesselFragments, "Vessel Fragment", HK.VESSELFRAGMENTS_WORLD, HKWorldItems);
+    CheckWorldDataTrue(HK.DIV_ID.vesselFragments, "Vessel Fragment", HK_VESSELFRAGMENTS_WORLD_temp, HKWorldItems);
 
     // ---------------- Warrior Dreams --------------------- //
 
-    CheckWarriorDreams(HK.DIV_ID.warriorDreams, HK.WARRIORDREAMS, HKPlayerData);
+    CheckWarriorDreams(HK.DIV_ID.warriorDreams, HK_WARRIORDREAMS_temp, HKPlayerData);
 
     // ---------------- Grimm Troupe Content Pack --------------------- //
 
-    CheckIfDataTrue(HK.DIV_ID.grimmTroupe, HK.GRIMMTROUPE, HKPlayerData);
+    CheckIfDataTrue(HK.DIV_ID.grimmTroupe, HK_GRIMMTROUPE_temp, HKPlayerData);
 
     (HKPlayerData.grimmChildLevel >= 4) ? CurrentDataTrue(HK.DIV_ID.grimmTroupe): CurrentDataFalse();
     FillHTML(HK.DIV_ID.grimmTroupe, "Nightmare King Grimm / Banishment", "Dirtmouth or Howling Cliffs");
 
     // ---------------- Lifeblood Content Pack --------------------- //
 
-    CheckIfDataTrue(HK.DIV_ID.lifeblood, HK.LIFEBLOOD, HKPlayerData);
+    CheckIfDataTrue(HK.DIV_ID.lifeblood, HK_LIFEBLOOD_temp, HKPlayerData);
 
     // ---------------- Godmaster Content Pack --------------------- //
 
-    CheckIfDataTrue(HK.DIV_ID.godmaster, HK.GODMASTER, HKPlayerData);
+    CheckIfDataTrue(HK.DIV_ID.godmaster, HK_GODMASTER_temp, HKPlayerData);
 
-    CheckGodmasterDoors(HK.DIV_ID.godmaster, HK.GODMASTER_DOORS, HKPlayerData);
+    for (let i = 1; i <= 4; i++) {
+        (HKPlayerData["bossDoorStateTier" + i].completed === true) ? CurrentDataTrue(HK.DIV_ID.godmaster): CurrentDataFalse();
+        FillHTML(HK.DIV_ID.godmaster, HK_GODMASTER_DOORS_temp[i - 1][0], HK_GODMASTER_DOORS_temp[i - 1][1]);
+    }
 
     // ---------------- Fleur Divide ----------------- //
 
@@ -210,7 +243,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ------------------------- Hints ----------------------------- //
 
-    CheckHintsTrue(HK.DIV_ID.hints, HK.HINTS, HKPlayerData, HKWorldItems);
+    CheckHintsTrue(HK.DIV_ID.hints, HK_HINTS_temp, HKPlayerData, HKWorldItems);
 
     // ------------------------- Fill completion ----------------------------- //
 
@@ -551,7 +584,7 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
             default:
                 (playerData[i] === true) ? CurrentDataTrue(divId): CurrentDataFalse();
         }
-        FillHTML(divId, dataObject[i].name, dataObject[i].spoiler);
+        FillHTML(divId, dataObject[i][0], dataObject[i][1]);
     }
 }
 
@@ -562,26 +595,10 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
  * @param {object} playerData Reference/pointer to specific data where to search
  */
 function CheckSpellLevel(divId, dataObject, playerData) {
-
     for (let i in dataObject) {
-        switch (i) {
-            case "vengefulSpirit":
-            case "shadeSoul":
-                (playerData.fireballLevel >= dataObject[i].fireballLevel) ? CurrentDataTrue(divId): CurrentDataFalse();
-                FillHTML(divId, dataObject[i].name, dataObject[i].spoiler);
-                break;
-            case "desolateDive":
-            case "descendingDark":
-                (playerData.quakeLevel >= dataObject[i].quakeLevel) ? CurrentDataTrue(divId): CurrentDataFalse();
-                FillHTML(divId, dataObject[i].name, dataObject[i].spoiler);
-                break;
-            case "howlingWraiths":
-            case "abyssShriek":
-                (playerData.screamLevel >= dataObject[i].screamLevel) ? CurrentDataTrue(divId): CurrentDataFalse();
-                FillHTML(divId, dataObject[i].name, dataObject[i].spoiler);
-                break;
-            default:
-                break;
+        for (let j = 1; j <= 2; j++) {
+            (playerData[i] >= j) ? CurrentDataTrue(divId): CurrentDataFalse();
+            FillHTML(divId, dataObject[i][j][0], dataObject[i][j][1]);
         }
     }
 }
@@ -589,52 +606,14 @@ function CheckSpellLevel(divId, dataObject, playerData) {
 /**
  * Verifies if the data in a specific object is 0 or > 0, and appends HTML accordingly.
  * @param {object} divId ID of the HTML element for data appending
- * @param {object} dataObject Object containing data to be verified
+ * @param {object} dataObject Object containing data to be verified (use copy - data inside this object will be deleted)
  * @param {object} playerData Reference/pointer to specific data where to search
  */
 function CheckWarriorDreams(divId, dataObject, playerData) {
-
     for (let i in dataObject) {
-        (playerData[i] >= 2) ? CurrentDataTrue(divId): CurrentDataFalse();
-        FillHTML(divId, dataObject[i].name, dataObject[i].spoiler);
+        (playerData[i] > 0) ? CurrentDataTrue(divId): CurrentDataFalse();
+        FillHTML(divId, dataObject[i][0], dataObject[i][1]);
     }
-}
-
-/**
- * Verifies if the Godmaster Pantheons 1-4 are completed by the player, and appends HTML accordingly.
- * @param {object} divId ID of the HTML element for data appending
- * @param {object} dataObject Object containing pantheon data to be verified
- * @param {object} playerData Reference/pointer to specific data where to search in the save file
- */
-function CheckGodmasterDoors(divId, dataObject, playerData) {
-
-    // appends "pantheon" to every array element
-    // same as names in the database object
-    let pantheon = ["Master", "Artist", "Sage", "Knight"].map((element) => "pantheon" + element);
-    
-    for (let i = 0; i < 4; i++) {
-        (playerData["bossDoorStateTier" + (i + 1)].completed === true) ? CurrentDataTrue(divId): CurrentDataFalse();
-        FillHTML(divId, dataObject[pantheon[i]].name, dataObject[pantheon[i]].spoiler);
-    }
-}
-
-/**
- * Verifies the level of player's nail upgrades, and appends HTML accordingly.
- * @param {object} divId ID of the HTML element for data appending
- * @param {object} dataObject Object containing nail upgrades data to be verified
- * @param {object} playerData Reference/pointer to specific data where to search in the save file
- */
-function CheckNailUpgrades(divId, dataObject, playerData) {
-
-    // appends "Nail" to every array element
-    // same as names in the database object
-    let nail = ["old", "sharpened", "channeled", "coiled", "pure"].map((element) => element + "Nail");
-    
-    for (let i = 0; i < 5; i++) {
-        (playerData.nailSmithUpgrades >= i) ? CurrentDataTrue(divId): CurrentDataFalse();
-        FillHTML(divId, dataObject[nail[i]].name, dataObject[nail[i]].spoiler);
-    }
-    if (divId.percent) divId.percent--; // subject one for the Old Nail
 }
 
 /**
@@ -650,7 +629,7 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
 
     // Order the items before displaying them (creates a copy of dataObject)
     for (let i in dataObject) {
-        orderedArray.push([i, dataObject[i].name, dataObject[i].spoiler, false]);
+        orderedArray.push([i, dataObject[i][0], dataObject[i][1], false]);
     }
 
     // Search for completed items and mark them for display
@@ -741,7 +720,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             for (let i = 0; i < arrayLength; i++) {
                 if (sceneData.geoRocks[i].hitsLeft > 0) {
                     countTotal++;
-                    console.log(`#${countTotal} | ${sceneData.geoRocks[i].id} | ${sceneData.geoRocks[i].sceneName}`);
+                    console.log(`#${countTotal} | ${sceneData.geoRocks[i].id} | Map location: ${sceneData.geoRocks[i].sceneName}`);
                 }
             }
             console.groupEnd();
@@ -782,7 +761,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         if (length) {
             console.groupCollapsed("%cUnrescued Grubs List:", "color: #16c60c;");
             for (let i = 0; i < length; i++) {
-                console.log(`#${HK.GRUBS_LIST.indexOf(missingGrubsList[i]) + 1} | ${missingGrubsList[i]}`);
+                console.log(`#${HK.GRUBS_LIST.indexOf(missingGrubsList[i]) + 1} | Map location: ${missingGrubsList[i]}`);
             }
             console.groupEnd();
         }
@@ -792,8 +771,8 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
 
     // Start main loop
     for (let i in dataObject) {
-        textPrefix = dataObject[i].name;
-        (dataObject[i].hasOwnProperty("spoiler")) ? textSuffix = dataObject[i].spoiler: textSuffix = "";
+        textPrefix = dataObject[i][0];
+        (dataObject[i][1]) ? textSuffix = dataObject[i][1]: textSuffix = "";
 
         let {
             amount,
@@ -818,7 +797,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             case "whiteDefenderDefeats":
             case "greyPrinceDefeats":
                 if (i === "areaMaps") {
-                    amount = CountMaps(dataObject[i].list);
+                    amount = CountMaps(dataObject[i][3]);
                 } else if (i === "whisperingRoots") {
                     amount = CountWorldItem("Dream Plant");
                 } else {
@@ -833,7 +812,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 }
                 if (i === "grubsCollected") LogMissingGrubs();
                 textPrefix += ": " + countTotal;
-                (amount >= dataObject[i].max) ? CurrentDataTrue(): CurrentDataBlank();
+                (amount >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataBlank();
                 break;
             case "geoPool":
             case "rancidEggs":
@@ -887,8 +866,8 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             case "relicsHallownestSeal":
             case "relicsKingsIdol":
             case "relicsArcaneEgg":
-                total = playerData[dataObject[i].nameHeld] + playerData[dataObject[i].nameSold];
-                (total >= dataObject[i].max) ? CurrentDataTrue(): CurrentDataBlank();
+                total = playerData[dataObject[i][3]] + playerData[dataObject[i][4]];
+                (total >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataBlank();
                 textPrefix += ": " + total;
                 break;
             case "bossDoorStateTier5":
@@ -941,7 +920,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
             if (playerData[i] >= 1) {
                 continue;
             } else {
-                FillHTML(divId, "", dataObject[i].spoiler);
+                FillHTML(divId, dataObject[i][0], dataObject[i][1]);
                 return false;
             }
         } else if (i === "Crossroads_04") {
@@ -956,7 +935,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
             if (GruzMotherDefeated) {
                 continue; // next dataObject (i)
             } else {
-                FillHTML(divId, "", dataObject[i].spoiler);
+                FillHTML(divId, dataObject[i][0], dataObject[i][1]);
                 return false;
             }
         } else if (i === "dungDefenderOrHornet2") {
@@ -965,7 +944,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
             } else if (playerData.hornetOutskirtsDefeated === true) {
                 continue;
             } else { // if no Dung Defender or Hornet 2
-                FillHTML(divId, "", dataObject[i].spoiler);
+                FillHTML(divId, dataObject[i][0], dataObject[i][1]);
                 return false;
             }
         } else if (i === "ismaTearOrShadeCloak") {
@@ -975,15 +954,15 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
                 if (playerData.hasShadowDash === true) {
                     continue;
                 } else { // if Kings Brand but no Shade Cloak
-                    FillHTML(divId, "", dataObject[i].spoiler);
+                    FillHTML(divId, dataObject[i][0], dataObject[i][1]);
                     return false;
                 }
             } else { // if no Isma's Tear or Kings Brand
-                FillHTML(divId, "", dataObject[i].spoiler);
+                FillHTML(divId, dataObject[i][0], dataObject[i][1]);
                 return false;
             }
         } else { // if anything from the hints list is not done
-            FillHTML(divId, "", dataObject[i].spoiler);
+            FillHTML(divId, dataObject[i][0], dataObject[i][1]);
             return false;
         }
     } // end: for (let i in dataObject)
@@ -1059,7 +1038,7 @@ function InitialHTMLPopulate(divIdObj) {
     CheckGeo(divIdObj.intro);
 
     // First Hint Only
-    FillHTML(divIdObj.hints, "", HK.HINTS.fireballLevel.spoiler);
+    FillHTML(divIdObj.hints, HK.HINTS.fireballLevel[0], HK.HINTS.fireballLevel[1]);
 
     // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
     let hkObjArray = [HK.BOSSES, HK.BOSSES_WORLD, HK.CHARMS, HK.EQUIPMENT, HK.NAILARTS, HK.MASKSHARDS, HK.MASKSHARDS_WORLD, HK.VESSELFRAGMENTS, HK.VESSELFRAGMENTS_WORLD, HK.DREAMERS, HK.COLOSSEUM, HK.DREAMNAIL, HK.WARRIORDREAMS, HK.GRIMMTROUPE, HK.LIFEBLOOD, HK.GODMASTER, HK.ESSENTIAL, HK.ACHIEVEMENTS, HK.STATISTICS];
@@ -1070,27 +1049,29 @@ function InitialHTMLPopulate(divIdObj) {
     // Looped filling to reduce redundancy
     do {
         for (let parameter in hkObjArray[0]) {
-            FillHTML(divObjArray[0], hkObjArray[0][parameter].name, hkObjArray[0][parameter].spoiler);
+            FillHTML(divObjArray[0], hkObjArray[0][parameter][0], hkObjArray[0][parameter][1]);
         }
         divObjArray.shift();
     } while (hkObjArray.shift());
 
     // Nail Upgrades Misc
-    for (let i in HK.NAILUPGRADES) {
-        FillHTML(divIdObj.nailUpgrades, HK.NAILUPGRADES[i].name, HK.NAILUPGRADES[i].spoiler);
+    for (let i = 0; i < HK.NAILUPGRADES.length; i++) {
+        FillHTML(divIdObj.nailUpgrades, HK.NAILUPGRADES[i][0], HK.NAILUPGRADES[i][1]);
     }
 
     // Spells Misc
     for (let i in HK.SPELLS) {
-        FillHTML(divIdObj.spells, HK.SPELLS[i].name, HK.SPELLS[i].spoiler);
+        for (let j = 1; j <= 2; j++) {
+            FillHTML(divIdObj.spells, HK.SPELLS[i][j][0], HK.SPELLS[i][j][1]);
+        }
     }
 
     // Nightmare King Grimm / Banishment Misc
     FillHTML(divIdObj.grimmTroupe, "Nightmare King Grimm / Banishment", "Dirtmouth or Howling Cliffs");
 
     // Godmaster Doors Misc
-    for (let i in HK.GODMASTER_DOORS) {
-        FillHTML(divIdObj.godmaster, HK.GODMASTER_DOORS[i].name, HK.GODMASTER_DOORS[i].spoiler);
+    for (let i = 0; i < ObjectLength(HK.GODMASTER_DOORS); i++) {
+        FillHTML(divIdObj.godmaster, HK.GODMASTER_DOORS[i][0], HK.GODMASTER_DOORS[i][1]);
     }
 
     // Fleur Dividers
