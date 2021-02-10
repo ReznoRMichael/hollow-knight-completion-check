@@ -1042,7 +1042,7 @@ function InitialHTMLPopulate(divIdObj) {
     CheckGeo(divIdObj.intro);
 
     // First Hint Only
-    FillHTML(divIdObj.hints, HK.HINTS.fireballLevel[0], HK.HINTS.fireballLevel[1]);
+    FillHTML(divIdObj.hints, "", HK.HINTS.fireballLevel.spoiler);
 
     // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
     let hkObjArray = [HK.BOSSES, HK.BOSSES_WORLD, HK.CHARMS, HK.EQUIPMENT, HK.NAILARTS, HK.MASKSHARDS, HK.MASKSHARDS_WORLD, HK.VESSELFRAGMENTS, HK.VESSELFRAGMENTS_WORLD, HK.DREAMERS, HK.COLOSSEUM, HK.DREAMNAIL, HK.WARRIORDREAMS, HK.GRIMMTROUPE, HK.LIFEBLOOD, HK.GODMASTER, HK.ESSENTIAL, HK.ACHIEVEMENTS, HK.STATISTICS];
