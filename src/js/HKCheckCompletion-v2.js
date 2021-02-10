@@ -633,7 +633,7 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
 
     // Order the items before displaying them (creates a copy of dataObject)
     for (let i in dataObject) {
-        orderedArray.push([i, dataObject[i][0], dataObject[i][1], false]);
+        orderedArray.push([i, dataObject[i].name, dataObject[i].spoiler, false]);
     }
 
     // Search for completed items and mark them for display
