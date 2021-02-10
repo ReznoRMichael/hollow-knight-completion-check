@@ -394,6 +394,4 @@ const MAP = {
     "GG_Workshop": "Godhome_Hall_Of_Gods"
 };
 
-export {
-    MAP
-};
+export default MAP;

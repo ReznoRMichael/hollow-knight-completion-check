@@ -3,6 +3,7 @@
 // ---------------- Load main Hollow Knight database file ----------------- //
 
 import HK from "./hk-database.js";
+import MAP from "./hk-dictionary.js";
 
 // ---------------- Load image files (necessary for Webpack) ----------------- //
 
@@ -741,7 +742,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             for (let i = 0; i < arrayLength; i++) {
                 if (sceneData.geoRocks[i].hitsLeft > 0) {
                     countTotal++;
-                    console.log(`#${countTotal} | ${sceneData.geoRocks[i].id} | ${sceneData.geoRocks[i].sceneName}`);
+                    console.log(`#${countTotal} | ${sceneData.geoRocks[i].id} | ${TranslateMapName(sceneData.geoRocks[i].sceneName)}`);
                 }
             }
             console.groupEnd();
@@ -782,7 +783,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         if (length) {
             console.groupCollapsed("%cUnrescued Grubs List:", "color: #16c60c;");
             for (let i = 0; i < length; i++) {
-                console.log(`#${HK.GRUBS_LIST.indexOf(missingGrubsList[i]) + 1} | ${missingGrubsList[i]}`);
+                console.log(`#${HK.GRUBS_LIST.indexOf(missingGrubsList[i]) + 1} | ${TranslateMapName(missingGrubsList[i])}`);
             }
             console.groupEnd();
         }
@@ -1251,6 +1252,14 @@ function FillInnerHTML(elementId, textFill) {
 
     const element = document.getElementById(elementId);
     element.innerHTML = textFill;
+}
+
+function TranslateMapName(mapCode, dictionary = MAP) {
+
+    let translation = mapCode;
+    if (dictionary.hasOwnProperty(mapCode)) translation = dictionary[mapCode];
+
+    return translation;
 }
 
 // Populate HTML at load (before img and css)
