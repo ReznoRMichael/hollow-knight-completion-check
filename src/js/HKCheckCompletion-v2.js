@@ -616,9 +616,9 @@ function CheckWarriorDreams(divId, dataObject, playerData) {
 
 function CheckGodmasterDoors(divId, dataObject, playerData) {
 
-    let pantheon = ["Master", "Artist", "Sage", "Knight"];
-    pantheon.forEach((element) => "pantheon" + element);
-    console.log(pantheon);
+    // appends "pantheon" to every array element
+    // same as names in the database object
+    let pantheon = ["Master", "Artist", "Sage", "Knight"].map((element) => "pantheon" + element);
     
     for (let i = 0; i < 4; i++) {
         (playerData["bossDoorStateTier" + i + 1].completed === true) ? CurrentDataTrue(divId): CurrentDataFalse();
