@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // save file names list in the save/ folder
 
 var fileName = [
@@ -70,3 +71,43 @@ function LoadJSON(filename) {
 
 // jsonObj = LoadJSON("../save/" + fileName[5], JSONparse(response));
 LoadJSON("../save/" + fileName[11] + ".json");
+
+/**
+ * Reads the .xml file and parses it to a JS object (jsonObj).
+ * @param {string} filename Path and .xml file name to be loaded
+ */
+function XMLtoJSON(filename) {
+    
+    var request = new XMLHttpRequest();
+
+    request.open('GET', filename, true); // Path to the file
+
+    request.send();
+
+    request.onload = function XMLparse() {
+
+        const xml = request.responseXML;
+
+        // console.log(xml);
+
+        let dictionary = xml.getElementsByTagName("Entry");
+    
+        let oldName = "";
+        let newName = "";
+        let dictionaryObject = new Object();
+
+        for (let i = 0, length = dictionary.length; i < length; i++) {
+            
+            oldName = dictionary[i].getElementsByTagName("oldName")[0].childNodes[0].nodeValue;
+            newName = dictionary[i].getElementsByTagName("newName")[0].childNodes[0].nodeValue;
+
+            dictionaryObject[oldName] = newName;
+        }
+
+        // console.log(JSON.stringify(dictionaryObject));
+
+        return dictionaryObject;
+    }
+}
+
+// XMLtoJSON("../files/TranslatorDictionary.xml");
