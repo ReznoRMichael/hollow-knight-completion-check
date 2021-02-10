@@ -762,13 +762,11 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         for (let i = 0, length = worldData.length; i < length; i++) {
             if (worldData[i].id.includes("Grub Bottle")) {
                 if (worldData[i].activated === true) {
-                    // There are 3 duplicates of the same map scene name, so we need to assign each one its unique name
-                    if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle") {
-                        rescuedGrubsSceneList.push("Ruins2_11_1");
-                    } else if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (1)") {
-                        rescuedGrubsSceneList.push("Ruins2_11_2");
+                    // There are 3 duplicates of the same map scene name from older game save files. Prevents adding duplicates
+                    if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (1)") {
+                        continue;
                     } else if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (2)") {
-                        rescuedGrubsSceneList.push("Ruins2_11_3");
+                        continue;
                     } else {
                         rescuedGrubsSceneList.push(worldData[i].sceneName);
                     }
