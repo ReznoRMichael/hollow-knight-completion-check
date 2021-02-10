@@ -562,10 +562,26 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
  * @param {object} playerData Reference/pointer to specific data where to search
  */
 function CheckSpellLevel(divId, dataObject, playerData) {
+
     for (let i in dataObject) {
-        for (let j = 1; j <= 2; j++) {
-            (playerData[i] >= j) ? CurrentDataTrue(divId): CurrentDataFalse();
-            FillHTML(divId, dataObject[i][j][0], dataObject[i][j][1]);
+        switch (i) {
+            case "vengefulSpirit":
+            case "shadeSoul":
+                (playerData.fireballLevel >= dataObject[i].fireballLevel) ? CurrentDataTrue(divId): CurrentDataFalse();
+                FillHTML(divId, dataObject[i].name, dataObject[i].spoiler);
+                break;
+            case "desolateDive":
+            case "descendingDark":
+                (playerData.quakeLevel >= dataObject[i].quakeLevel) ? CurrentDataTrue(divId): CurrentDataFalse();
+                FillHTML(divId, dataObject[i].name, dataObject[i].spoiler);
+                break;
+            case "howlingWraiths":
+            case "abyssShriek":
+                (playerData.screamLevel >= dataObject[i].screamLevel) ? CurrentDataTrue(divId): CurrentDataFalse();
+                FillHTML(divId, dataObject[i].name, dataObject[i].spoiler);
+                break;
+            default:
+                break;
         }
     }
 }
