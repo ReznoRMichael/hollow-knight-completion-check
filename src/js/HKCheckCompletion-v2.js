@@ -941,7 +941,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
             if (playerData[i] >= 1) {
                 continue;
             } else {
-                FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                FillHTML(divId, "", dataObject[i].spoiler);
                 return false;
             }
         } else if (i === "Crossroads_04") {
@@ -956,7 +956,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
             if (GruzMotherDefeated) {
                 continue; // next dataObject (i)
             } else {
-                FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                FillHTML(divId, "", dataObject[i].spoiler);
                 return false;
             }
         } else if (i === "dungDefenderOrHornet2") {
@@ -965,7 +965,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
             } else if (playerData.hornetOutskirtsDefeated === true) {
                 continue;
             } else { // if no Dung Defender or Hornet 2
-                FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                FillHTML(divId, "", dataObject[i].spoiler);
                 return false;
             }
         } else if (i === "ismaTearOrShadeCloak") {
@@ -975,15 +975,15 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
                 if (playerData.hasShadowDash === true) {
                     continue;
                 } else { // if Kings Brand but no Shade Cloak
-                    FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                    FillHTML(divId, "", dataObject[i].spoiler);
                     return false;
                 }
             } else { // if no Isma's Tear or Kings Brand
-                FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+                FillHTML(divId, "", dataObject[i].spoiler);
                 return false;
             }
         } else { // if anything from the hints list is not done
-            FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+            FillHTML(divId, "", dataObject[i].spoiler);
             return false;
         }
     } // end: for (let i in dataObject)
