@@ -620,35 +620,35 @@ const HK = {
         }
     },
     SPELLS: {
-        fireballLevel: {
-            1: {
-                name: "Vengeful Spirit",
-                spoiler: "Forgotten Crossroads: Ancestral Mound"
-            },
-            2: {
-                name: "Shade Soul",
-                spoiler: "City of Tears: Soul Sanctum + Elegant Key"
-            },
+        vengefulSpirit: {
+            fireballLevel: 1,
+            name: "Vengeful Spirit",
+            spoiler: "Forgotten Crossroads: Ancestral Mound"
         },
-        quakeLevel: {
-            1: {
-                name: "Desolate Dive",
-                spoiler: "City of Tears: Soul Sanctum"
-            },
-            2: {
-                name: "Descending Dark",
-                spoiler: "Crystal Peak: Crystallised Mound"
-            },
+        shadeSoul: {
+            fireballLevel: 2,
+            name: "Shade Soul",
+            spoiler: "City of Tears: Soul Sanctum + Elegant Key"
         },
-        screamLevel: {
-            1: {
-                name: "Howling Wraiths",
-                spoiler: "Fog Canyon: Overgrown Mound"
-            },
-            2: {
-                name: "Abyss Shriek",
-                spoiler: "The Abyss"
-            },
+        desolateDive: {
+            quakeLevel: 1,
+            name: "Desolate Dive",
+            spoiler: "City of Tears: Soul Sanctum"
+        },
+        descendingDark: {
+            quakeLevel: 2,
+            name: "Descending Dark",
+            spoiler: "Crystal Peak: Crystallised Mound"
+        },
+        howlingWraiths: {
+            screamLevel: 1,
+            name: "Howling Wraiths",
+            spoiler: "Fog Canyon: Overgrown Mound"
+        },
+        abyssShriek: {
+            screamLevel: 2,
+            name: "Abyss Shriek",
+            spoiler: "The Abyss"
         }
     },
     WARRIORDREAMS: {
