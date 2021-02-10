@@ -1085,8 +1085,8 @@ function InitialHTMLPopulate(divIdObj) {
     } while (hkObjArray.shift());
 
     // Nail Upgrades Misc
-    for (let i = 0; i < HK.NAILUPGRADES.length; i++) {
-        FillHTML(divIdObj.nailUpgrades, HK.NAILUPGRADES[i][0], HK.NAILUPGRADES[i][1]);
+    for (let i in HK.NAILUPGRADES) {
+        FillHTML(divIdObj.nailUpgrades, HK.NAILUPGRADES[i].name, HK.NAILUPGRADES[i].spoiler);
     }
 
     // Spells Misc
