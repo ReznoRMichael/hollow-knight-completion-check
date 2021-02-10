@@ -1254,6 +1254,11 @@ function FillInnerHTML(elementId, textFill) {
     element.innerHTML = textFill;
 }
 
+/**
+ * Returns a translated map location name string.
+ * @param {string} mapCode Code of the Hollow Knight map location the game developers use
+ * @param {object} dictionary Main data source for translation
+ */
 function TranslateMapName(mapCode, dictionary = MAP) {
 
     let translation = mapCode;
