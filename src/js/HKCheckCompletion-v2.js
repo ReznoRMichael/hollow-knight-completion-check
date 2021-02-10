@@ -1080,8 +1080,8 @@ function InitialHTMLPopulate(divIdObj) {
     FillHTML(divIdObj.grimmTroupe, "Nightmare King Grimm / Banishment", "Dirtmouth or Howling Cliffs");
 
     // Godmaster Doors Misc
-    for (let i = 0; i < ObjectLength(HK.GODMASTER_DOORS); i++) {
-        FillHTML(divIdObj.godmaster, HK.GODMASTER_DOORS[i][0], HK.GODMASTER_DOORS[i][1]);
+    for (let i in HK.GODMASTER_DOORS) {
+        FillHTML(divIdObj.godmaster, HK.GODMASTER_DOORS[i].name, HK.GODMASTER_DOORS[i].spoiler);
     }
 
     // Fleur Dividers
