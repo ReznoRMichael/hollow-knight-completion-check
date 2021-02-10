@@ -13,7 +13,7 @@ require("../css/style.css");
 require("../img/thumbnail1200x628.jpg");
 
 // Instantly load test save file from .json (fast Debugging script)
-// require("./LoadJson.js");
+require("./LoadJson.js");
 
 // Load Save File for opening files, decoding, decryption
 require("./LoadSaveFile.js");

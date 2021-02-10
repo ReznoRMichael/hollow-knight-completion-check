@@ -1079,7 +1079,7 @@ function InitialHTMLPopulate(divIdObj) {
     // Looped filling to reduce redundancy
     do {
         for (let parameter in hkObjArray[0]) {
-            FillHTML(divObjArray[0], hkObjArray[0][parameter][0], hkObjArray[0][parameter][1]);
+            FillHTML(divObjArray[0], hkObjArray[0][parameter].name, hkObjArray[0][parameter].spoiler);
         }
         divObjArray.shift();
     } while (hkObjArray.shift());
