@@ -750,7 +750,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             for (let i = 0; i < arrayLength; i++) {
                 if (sceneData.geoRocks[i].hitsLeft > 0) {
                     countTotal++;
-                    console.log(`#${countTotal} | ${sceneData.geoRocks[i].id} | Map location: ${sceneData.geoRocks[i].sceneName}`);
+                    console.log(`#${countTotal} | ${sceneData.geoRocks[i].id} | ${sceneData.geoRocks[i].sceneName}`);
                 }
             }
             console.groupEnd();
@@ -791,7 +791,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         if (length) {
             console.groupCollapsed("%cUnrescued Grubs List:", "color: #16c60c;");
             for (let i = 0; i < length; i++) {
-                console.log(`#${HK.GRUBS_LIST.indexOf(missingGrubsList[i]) + 1} | Map location: ${missingGrubsList[i]}`);
+                console.log(`#${HK.GRUBS_LIST.indexOf(missingGrubsList[i]) + 1} | ${missingGrubsList[i]}`);
             }
             console.groupEnd();
         }
@@ -801,8 +801,8 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
 
     // Start main loop
     for (let i in dataObject) {
-        textPrefix = dataObject[i][0];
-        (dataObject[i][1]) ? textSuffix = dataObject[i][1]: textSuffix = "";
+        textPrefix = dataObject[i].name;
+        (dataObject[i].hasOwnProperty("spoiler")) ? textSuffix = dataObject[i].spoiler: textSuffix = "";
 
         let {
             amount,
