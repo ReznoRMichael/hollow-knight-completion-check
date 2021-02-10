@@ -818,7 +818,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             case "whiteDefenderDefeats":
             case "greyPrinceDefeats":
                 if (i === "areaMaps") {
-                    amount = CountMaps(dataObject[i][3]);
+                    amount = CountMaps(dataObject[i].list);
                 } else if (i === "whisperingRoots") {
                     amount = CountWorldItem("Dream Plant");
                 } else {
