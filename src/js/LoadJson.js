@@ -69,4 +69,4 @@ function LoadJSON(filename) {
 } */
 
 // jsonObj = LoadJSON("../save/" + fileName[5], JSONparse(response));
-LoadJSON("../save/" + fileName[5] + ".json");
+LoadJSON("../save/" + fileName[11] + ".json");

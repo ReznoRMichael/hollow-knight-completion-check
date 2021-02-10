@@ -887,8 +887,8 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             case "relicsHallownestSeal":
             case "relicsKingsIdol":
             case "relicsArcaneEgg":
-                total = playerData[dataObject[i][3]] + playerData[dataObject[i][4]];
-                (total >= dataObject[i][2]) ? CurrentDataTrue(): CurrentDataBlank();
+                total = playerData[dataObject[i].nameHeld] + playerData[dataObject[i].nameSold];
+                (total >= dataObject[i].max) ? CurrentDataTrue(): CurrentDataBlank();
                 textPrefix += ": " + total;
                 break;
             case "bossDoorStateTier5":
