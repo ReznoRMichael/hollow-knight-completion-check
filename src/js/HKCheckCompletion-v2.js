@@ -1065,9 +1065,7 @@ function InitialHTMLPopulate(divIdObj) {
 
     // Spells Misc
     for (let i in HK.SPELLS) {
-        for (let j = 1; j <= 2; j++) {
-            FillHTML(divIdObj.spells, HK.SPELLS[i][j][0], HK.SPELLS[i][j][1]);
-        }
+        FillHTML(divIdObj.spells, HK.SPELLS[i].name, HK.SPELLS[i].spoiler);
     }
 
     // Nightmare King Grimm / Banishment Misc
