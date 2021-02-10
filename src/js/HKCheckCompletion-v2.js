@@ -593,9 +593,10 @@ function CheckSpellLevel(divId, dataObject, playerData) {
  * @param {object} playerData Reference/pointer to specific data where to search
  */
 function CheckWarriorDreams(divId, dataObject, playerData) {
+
     for (let i in dataObject) {
-        (playerData[i] > 0) ? CurrentDataTrue(divId): CurrentDataFalse();
-        FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+        (playerData[i] >= 2) ? CurrentDataTrue(divId): CurrentDataFalse();
+        FillHTML(divId, dataObject[i].name, dataObject[i].spoiler);
     }
 }
 
