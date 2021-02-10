@@ -577,7 +577,7 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
             default:
                 (playerData[i] === true) ? CurrentDataTrue(divId): CurrentDataFalse();
         }
-        FillHTML(divId, dataObject[i][0], dataObject[i][1]);
+        FillHTML(divId, dataObject[i].name, dataObject[i].spoiler);
     }
 }
 
