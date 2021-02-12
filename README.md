@@ -91,7 +91,7 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
-* v1.0.2 2021-xx-xx:
+* v1.0.2 2021-02-12:
 
   — Prototype Lists: Unrescued Grubs, Unbroken Geo Rocks (Beta). If you want to see them, press **Ctrl + Shift + I** and select Console tab.
 

@@ -938,6 +938,12 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
     } // end for (let i in dataObject)
 }
 
+/**
+ * Checks and fills all the 7 locations of Mr Mushroom.
+ * @param {object} divId ID of the HTML element for data appending
+ * @param {object} dataObject object containing the Mr Mushroom name and spoilers/locations
+ * @param {number} mrMushroomState playerData.mrMushroomState read from the save file. (0-8)
+ */
 function CheckMrMushroomState(divId, dataObject, mrMushroomState = 0) {
 
     if (mrMushroomState > 1) {
