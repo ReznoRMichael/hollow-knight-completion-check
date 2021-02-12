@@ -973,6 +973,8 @@ const HK = {
         case SplitName.MrMushroom6: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 7; break;
         case SplitName.MrMushroom7: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 8; break;
 
+        "mrMushroomState": 4, < this is the current location of Mr Mushroom (Howling Cliffs)
+
         1. Spawn of self, their minds unite, (Fungal Wastes)
         2. Aside the source of acid blight, (Kingdom's Edge, near Isma's Grove)
         3. Aglow in darkest, winding depths, (Deepnest, near Galien)
