@@ -971,7 +971,7 @@ const HK = {
             spoiler4: "Howling Cliffs, near Nailmaster Mato",
             spoiler5: "Ancient Basin, near Monarch Wings",
             spoiler6: "Fog Canyon, near Overgrown Mound",
-            spoiler7: "King's Pass, game start location",
+            spoiler7: "King's Pass, game starting location",
         }
         /* 
         Mr Mushroom data
