@@ -736,16 +736,28 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
     function CountGeoRocks(arrayLength, mode = "unbroken") {
 
         let countTotal = 0;
+        let geoRocksLog = [];
 
         if (mode === "unbroken") {
-            console.groupCollapsed("%cUnbroken Geo Rocks List:", "color: #16c60c;");
             for (let i = 0; i < arrayLength; i++) {
                 if (sceneData.geoRocks[i].hitsLeft > 0) {
                     countTotal++;
-                    console.log(`#${countTotal} 🏔️ ${sceneData.geoRocks[i].id} 🗺️ ${TranslateMapName(sceneData.geoRocks[i].sceneName)} ⌨️ ${sceneData.geoRocks[i].sceneName}`);
+                    geoRocksLog.push(`#${countTotal} 🏔️ ${sceneData.geoRocks[i].id} 🗺️ ${TranslateMapName(sceneData.geoRocks[i].sceneName)} ⌨️ ${sceneData.geoRocks[i].sceneName}`);
                 }
             }
-            console.groupEnd();
+
+            if (!countTotal) {
+                console.log("%cAll Geo Rocks Broken!", "color: #16c60c; font-weight: 700;");
+            }
+            else {
+                console.groupCollapsed("%cUnbroken Geo Rocks List:", "color: #16c60c; font-weight: 700;");
+
+                for (let i = 0, length = geoRocksLog.length; i < length; i++ ) {
+                    console.log(geoRocksLog[i]);
+                }
+
+                console.groupEnd();
+            }
         } else {
             for (let i = 0; i < arrayLength; i++) {
                 if (sceneData.geoRocks[i].hitsLeft === 0) countTotal++;
@@ -778,11 +790,16 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         let missingGrubsList = HK.GRUBS_LIST.filter(x => !rescuedGrubsSceneList.includes(x));
         let length = missingGrubsList.length;
 
-        if (length) {
-            console.groupCollapsed("%cUnrescued Grubs List:", "color: #16c60c;");
+        if (!length) {
+            console.log("%cAll Grubs Rescued!", "color: #16c60c; font-weight: 700;");
+        }
+        else {
+            console.groupCollapsed("%cUnrescued Grubs List:", "color: #16c60c; font-weight: 700;");
+
             for (let i = 0; i < length; i++) {
                 console.log(`#${HK.GRUBS_LIST.indexOf(missingGrubsList[i]) + 1} 🗺️ ${TranslateMapName(missingGrubsList[i])} ⌨️ ${missingGrubsList[i]}`);
             }
+
             console.groupEnd();
         }
 
