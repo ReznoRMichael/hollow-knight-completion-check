@@ -963,6 +963,16 @@ const HK = {
             name: "Optimal Nailsmith",
             spoiler: "Happy Couple achievement (per save choice)"
         },
+        mrMushroomState: {
+            name: "Mr Mushroom",
+            spoiler1: "Fungal Wastes, near Cornifer",
+            spoiler2: "Kingdom's Edge, near Isma's Grove",
+            spoiler3: "Deepnest, near Galien",
+            spoiler4: "Howling Cliffs",
+            spoiler5: "Ancient Basin, near Monarch Wings",
+            spoiler6: "Fog Canyon, near Overgrown Mound",
+            spoiler7: "King's Pass",
+        }
         /* 
         Mr Mushroom data
         case SplitName.MrMushroom1: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 2; break;
