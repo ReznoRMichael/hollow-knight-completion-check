@@ -972,6 +972,15 @@ const HK = {
         case SplitName.MrMushroom5: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 6; break;
         case SplitName.MrMushroom6: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 7; break;
         case SplitName.MrMushroom7: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 8; break;
+
+        1. Spawn of self, their minds unite, (Fungal Wastes)
+        2. Aside the source of acid blight, (Kingdom's Edge, near Isma's Grove)
+        3. Aglow in darkest, winding depths, (Deepnest, near Galien)
+        4. Winds all howl above fossilstone steps, (Howling Cliffs)
+        5. Monarchflys in air set still, (Ancient Basin, near the Monarch Wings location)
+        6. To Root's domain and snail once shrill, (Fog Canyon, near Overgrown Mound)
+        7. Path of Wyrm, at new lands entered, (King's Pass)
+        8. There journeys end. The kingdom ventured.
         */
     },
     STATISTICS: {
