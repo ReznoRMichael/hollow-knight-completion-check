@@ -926,11 +926,30 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             case "nailsmithSpared":
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataBlank();
                 break;
+            case "mrMushroomState":
+
+                break;
             default:
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
         } // end main for loop
 
         FillHTML(divId, textPrefix, textSuffix);
+    }
+}
+
+function CheckMrMushroomState(divId, dataObject, mrMushroomState = 0) {
+
+    if (mrMushroomState > 1) {
+        for (let i = 1; i <= 7; i++) {
+            (mrMushroomState > i) ? CurrentDataTrue(): CurrentDataFalse();
+            FillHTML(divId, `${dataObject.name} #${i}`, dataObject["spoiler" + i]);
+        }
+    }
+    else {
+        CurrentDataFalse();
+        for (let i = 1; i <= 7; i++) {
+            FillHTML(divId, `${dataObject.name} #${i}`, dataObject["spoiler" + i]);
+        }
     }
 }
 
