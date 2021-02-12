@@ -1130,6 +1130,9 @@ function InitialHTMLPopulate(divIdObj) {
         FillHTML(divIdObj.godmaster, HK.GODMASTER_DOORS[i].name, HK.GODMASTER_DOORS[i].spoiler);
     }
 
+    // Mr Mushroom 1 - 7
+    CheckMrMushroomState(divIdObj.achievements, HK.ACHIEVEMENTS.mrMushroomState);
+
     // Fleur Dividers
     AppendHTML(divIdObj.godmaster, FLEUR_DIVIDE);
     AppendHTML(divIdObj.essential, FLEUR_DIVIDE);
