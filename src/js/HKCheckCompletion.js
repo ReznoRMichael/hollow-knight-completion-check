@@ -1105,8 +1105,9 @@ function InitialHTMLPopulate(divIdObj) {
 
     // Looped filling to reduce redundancy
     do {
-        for (let parameter in hkObjArray[0]) {
-            FillHTML(divObjArray[0], hkObjArray[0][parameter].name, hkObjArray[0][parameter].spoiler);
+        for (let entry in hkObjArray[0]) {
+            if (entry === "mrMushroomState") continue;
+            FillHTML(divObjArray[0], hkObjArray[0][entry].name, hkObjArray[0][entry].spoiler);
         }
         divObjArray.shift();
     } while (hkObjArray.shift());
