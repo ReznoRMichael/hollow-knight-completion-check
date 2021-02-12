@@ -91,6 +91,16 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
+* v1.0.2 2021-xx-xx:
+
+  — Prototype Lists: Unrescued Grubs, Unbroken Geo Rocks (Beta). If you want to see them, press **Ctrl + Shift + I** and select Console tab.
+
+  — **Achievements Essentials** additions:  
+  ✅ Mr Mushroom #1–7 locations
+
+  — **Game Statistics** additions:  
+  ✅ Geo Rocks Unbroken/Broken/Discovered Total
+
 * v1.0.1 2021-02-01:
 
   — Quick hotfix for windows save file input text on mobile and broken steel soul save detection

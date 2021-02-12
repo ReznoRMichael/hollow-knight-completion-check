@@ -968,10 +968,10 @@ const HK = {
             spoiler1: "Fungal Wastes, near Cornifer",
             spoiler2: "Kingdom's Edge, near Isma's Grove",
             spoiler3: "Deepnest, near Galien",
-            spoiler4: "Howling Cliffs",
+            spoiler4: "Howling Cliffs, near Nailmaster Mato",
             spoiler5: "Ancient Basin, near Monarch Wings",
             spoiler6: "Fog Canyon, near Overgrown Mound",
-            spoiler7: "King's Pass",
+            spoiler7: "King's Pass, game start location",
         }
         /* 
         Mr Mushroom data
