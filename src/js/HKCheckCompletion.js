@@ -927,14 +927,15 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataBlank();
                 break;
             case "mrMushroomState":
-
+                CheckMrMushroomState(divId, dataObject[i], playerData[i]);
                 break;
             default:
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
-        } // end main for loop
+        } // end switch (i)
 
+        if (i === "mrMushroomState") continue;
         FillHTML(divId, textPrefix, textSuffix);
-    }
+    } // end for (let i in dataObject)
 }
 
 function CheckMrMushroomState(divId, dataObject, mrMushroomState = 0) {
