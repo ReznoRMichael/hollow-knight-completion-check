@@ -925,6 +925,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataBlank();
                 break;
             case "zoteStatus":
+                CurrentDataBlank();
                 if (playerData.zoteDead === true) {
                     textPrefix = dataObject[i].nameNeglect;
                     textSuffix = dataObject[i].spoilerNeglect;
@@ -936,7 +937,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                     CurrentDataTrue();
                 }
                 else if (playerData.zoteRescuedBuzzer === false) {
-                    CurrentDataBlank();
                     if (playerData.hasWalljump === false) {
                         textPrefix = dataObject[i].nameTrappedVengefly;
                         textSuffix = dataObject[i].spoilerTrappedVengefly;
@@ -944,6 +944,12 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                     else {
                         textPrefix = dataObject[i].nameNotRescuedVengefly;
                         textSuffix = dataObject[i].spoilerNotRescuedVengefly;
+                    }
+                }
+                else if (playerData.zoteRescuedBuzzer === true) {
+                    if (playerData.zoteRescuedDeepnest === false) {
+                        textPrefix = dataObject[i].nameTrappedDeepnest;
+                        textSuffix = dataObject[i].spoilerTrappedDeepnest;
                     }
                 }
                 else {
