@@ -941,7 +941,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                         textPrefix = dataObject[i].nameTrappedVengefly;
                         textSuffix = dataObject[i].spoilerTrappedVengefly;
                     }
-                    else {
+                    else if (playerData.hasWalljump === true) {
                         textPrefix = dataObject[i].nameNotRescuedVengefly;
                         textSuffix = dataObject[i].spoilerNotRescuedVengefly;
                     }
