@@ -951,9 +951,12 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                         textPrefix = dataObject[i].nameTrappedDeepnest;
                         textSuffix = dataObject[i].spoilerTrappedDeepnest;
                     }
-                }
-                else {
-                    CurrentDataFalse();
+                    else if (playerData.zoteRescuedDeepnest === true) {
+                        if (playerData.zoteDefeated === false) {
+                            textPrefix = dataObject[i].nameColosseum;
+                            textSuffix = dataObject[i].spoilerColosseum;
+                        }
+                    }
                 }
                 break;
             case "nailsmithStatus":
