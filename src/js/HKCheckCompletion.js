@@ -922,9 +922,35 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 if (playerData[i] === false && playerData.killedVoidIdol_3 === true) CurrentDataTrue();
                 break;
             case "greyPrinceDefeated":
-            case "zoteDead":
-            case "nailsmithSpared":
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataBlank();
+                break;
+            case "zoteStatus":
+                if (playerData.zoteDead === true) {
+                    textPrefix = dataObject[i].nameNeglect;
+                    textSuffix = dataObject[i].spoilerNeglect;
+                    CurrentDataTrue();
+                }
+                else if (playerData.zoteDefeated === true) {
+                    textPrefix = dataObject[i].nameRivalry;
+                    textSuffix = dataObject[i].spoilerRivalry;
+                    CurrentDataTrue();
+                }
+                else if (playerData.zoteRescuedBuzzer === false) {
+                    CurrentDataBlank();
+                    if (playerData.hasWalljump === false) {
+                        textPrefix = dataObject[i].nameTrappedVengefly;
+                        textSuffix = dataObject[i].spoilerTrappedVengefly;
+                    }
+                    else {
+                        textPrefix = dataObject[i].nameNotRescuedVengefly;
+                        textSuffix = dataObject[i].spoilerNotRescuedVengefly;
+                    }
+                }
+                else {
+                    CurrentDataFalse();
+                }
+                break;
+            case "nailsmithStatus":
                 break;
             case "mrMushroomState":
                 CheckMrMushroomState(divId, dataObject[i], playerData[i]);

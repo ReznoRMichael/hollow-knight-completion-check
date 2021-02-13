@@ -955,13 +955,21 @@ const HK = {
             name: "Embrace the Void",
             spoiler: "Godhome: Pantheon of Hallownest"
         },
-        zoteDead: {
-            name: "Optimal Zote",
-            spoiler: "Neglect achievement (per save choice)"
+        zoteStatus: {
+            name: "Zote Status",
+            nameNeglect: "Zote Status",
+            nameRivalry: "Zote Status",
+            spoiler: "Neglect achievement (per save choice)",
+            spoilerNeglect: "Neglect achievement (per save choice)",
+            spoilerRivalry: "Neglect achievement (per save choice)",
         },
-        nailsmithSpared: {
-            name: "Optimal Nailsmith",
-            spoiler: "Happy Couple achievement (per save choice)"
+        nailsmithStatus: {
+            name: "Nailsmith Status",
+            nameHappyCouple: "Nailsmith Status",
+            namePurity: "Nailsmith Status",
+            spoiler: "Happy Couple achievement (per save choice)",
+            spoilerHappyCouple: "Happy Couple achievement (per save choice)",
+            spoilerPurity: "Happy Couple achievement (per save choice)",
         },
         mrMushroomState: {
             name: "Mr Mushroom",
