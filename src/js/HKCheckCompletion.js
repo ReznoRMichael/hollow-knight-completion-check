@@ -931,7 +931,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                     textSuffix = dataObject[i].spoilerNeglect;
                     CurrentDataTrue();
                 }
-                else if (playerData.zoteDefeated === true) {
+                else if (playerData.killedZote === true) {
                     textPrefix = dataObject[i].nameRivalry;
                     textSuffix = dataObject[i].spoilerRivalry;
                     CurrentDataTrue();
