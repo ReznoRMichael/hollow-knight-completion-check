@@ -242,6 +242,11 @@ If you like the tool and wish it developed further with more functions and easie
 
   — Added save's Play Time
 
+* v1.0.4 2021-xx-xx:
+
+  — **Game Completion Essentials** additions:  
+  ✅ Acid Drained Waterways
+
 ## Using
 
 * JavaScript (compiled to ES 6 / ES 2015)
