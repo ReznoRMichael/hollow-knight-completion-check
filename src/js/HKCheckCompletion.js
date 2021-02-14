@@ -736,11 +736,28 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 textPrefix += ": " + countTotal;
 
                 if (i === "greyPrinceDefeats") {
-                    if (playerData.zoteDead === true || (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
+                    // backwards compatibility with earlier game versions
+                    if (playerData.hasOwnProperty("greyPrinceDefeats") === false) {
+                        CurrentDataBlank();
+                        textPrefix = `<del>${dataObject[i].name}</del>`;
+                        textSuffix = `<del>${textSuffix}</del>`;
+                        break;
+                    }
+                    else if (playerData.zoteDead === true || (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
                         textPrefix = `<del>${textPrefix}</del>`;
                         textSuffix = `<del>${textSuffix}</del>`;
                     }
-                } 
+                }
+                
+                if (i === "whiteDefenderDefeats") {
+                    // backwards compatibility with earlier game versions
+                    if (playerData.hasOwnProperty("whiteDefenderDefeats") === false) {
+                        CurrentDataBlank();
+                        textPrefix = `<del>${dataObject[i].name}</del>`;
+                        textSuffix = `<del>${textSuffix}</del>`;
+                        break;
+                    }
+                }
                 (amount >= dataObject[i].max) ? CurrentDataTrue(): CurrentDataBlank();
                 break;
             case "geoPool":
