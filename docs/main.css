@@ -570,6 +570,11 @@ b {
     color: #aac7d4;
 }
 
+del {
+    text-decoration: none;
+    opacity: 0.5;
+}
+
 strong {
     font-weight: 700;
 }

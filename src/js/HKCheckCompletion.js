@@ -848,7 +848,15 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                     countTotal = amount + " / " + playerData.journalEntriesTotal;
                 }
                 if (i === "grubsCollected") LogMissingGrubs();
+
                 textPrefix += ": " + countTotal;
+
+                if (i === "greyPrinceDefeats") {
+                    if (playerData.zoteDead === true || (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
+                        textPrefix = `<del>${textPrefix}</del>`;
+                        textSuffix = `<del>${textSuffix}</del>`;
+                    }
+                } 
                 (amount >= dataObject[i].max) ? CurrentDataTrue(): CurrentDataBlank();
                 break;
             case "geoPool":
@@ -922,6 +930,10 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 if (playerData[i] === false && playerData.killedVoidIdol_3 === true) CurrentDataTrue();
                 break;
             case "greyPrinceDefeated":
+                if (playerData.zoteDead === true || (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
+                    textPrefix = `<del>${textPrefix}</del>`;
+                    textSuffix = `<del>${textSuffix}</del>`;
+                }
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataBlank();
                 break;
             case "zoteStatus":
