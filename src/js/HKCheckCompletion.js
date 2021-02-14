@@ -925,7 +925,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataBlank();
                 break;
             case "zoteStatus":
-                CurrentDataBlank();
+                CurrentDataFalse();
                 if (playerData.zoteDead === true) {
                     textPrefix = dataObject[i].nameNeglect;
                     textSuffix = dataObject[i].spoilerNeglect;
@@ -960,7 +960,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 }
                 break;
             case "nailsmithStatus":
-                CurrentDataBlank();
+                CurrentDataFalse();
                 if (playerData.nailsmithKilled === true) {
                     textPrefix = dataObject[i].namePurity;
                     textSuffix = dataObject[i].spoilerPurity;
@@ -974,6 +974,10 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 else if (playerData.nailsmithSpared === true) {
                     textPrefix = dataObject[i].nameSheoHutWaiting;
                     textSuffix = dataObject[i].spoilerSheoHutWaiting;
+                }
+                else {
+                    textPrefix = dataObject[i].nameUpgradeNail;
+                    textSuffix = dataObject[i].spoilerUpgradeNail;
                 }
                 break;
             case "mrMushroomState":

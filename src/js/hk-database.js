@@ -976,10 +976,12 @@ const HK = {
             nameHappyCouple: "Nailsmith Status",
             namePurity: "Nailsmith Status",
             nameSheoHutWaiting: "Nailsmith Status",
+            nameUpgradeNail: "Nailsmith Status",
             spoiler: "Happy Couple achievement (per save choice)",
             spoilerHappyCouple: "Happy Couple achievement (per save choice)",
             spoilerPurity: "Happy Couple achievement (per save choice)",
             spoilerSheoHutWaiting: "Happy Couple achievement (per save choice)",
+            spoilerUpgradeNail: "Happy Couple achievement (per save choice)",
         },
         mrMushroomState: {
             name: "Mr Mushroom",
