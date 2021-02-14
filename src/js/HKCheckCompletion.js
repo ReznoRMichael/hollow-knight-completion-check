@@ -964,7 +964,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                         textSuffix = dataObject[i].spoilerTrappedDeepnest;
                     }
                     else if (playerData.zoteRescuedDeepnest === true) {
-                        if (playerData.zoteDefeated === false) {
+                        if (playerData.killedZote === false) {
                             textPrefix = dataObject[i].nameColosseum;
                             textSuffix = dataObject[i].spoilerColosseum;
                         }
