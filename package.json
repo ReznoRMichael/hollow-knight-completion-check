@@ -1,6 +1,6 @@
 {
   "name": "hollow-knight-completion-check",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Hollow Knight Save Game Completion Analyzer Web Tool",
   "main": "index.html",
   "scripts": {
