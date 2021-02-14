@@ -700,13 +700,13 @@ const HK = {
         },
         killedGrimm: {
             name: "Troupe Leader Grimm",
-            spoiler: "Dirtmouth"
+            spoiler: "Dirtmouth, collect 6 flames"
         }
     },
     LIFEBLOOD: {
         killedHiveKnight: {
             name: "Hive Knight",
-            spoiler: "The Hive"
+            spoiler: "The Hive, guards Hiveblood charm"
         }
     },
     GODMASTER_DOORS: {
@@ -724,7 +724,7 @@ const HK = {
         },
         pantheonKnight: {
             name: "#4 Pantheon of the Knight",
-            spoiler: "Godhome"
+            spoiler: "Godhome, complete #1, #2 and #3"
         }
     },
     GODMASTER: {
@@ -768,7 +768,7 @@ const HK = {
         },
         shopkeeperKey: {
             name: "Shopkeeper's Key",
-            spoiler: "Crystal Peak"
+            spoiler: "Crystal Peak, below Quirrel location"
         },
         elegantKey: {
             name: "Elegant Key",
@@ -784,11 +784,11 @@ const HK = {
         },
         simpleKeyCityOfTears: {
             name: "Simple Key #2",
-            spoiler: "City of Tears"
+            spoiler: "City of Tears, below west Stag Station"
         },
         simpleKeyAncientBasin: {
             name: "Simple Key #3",
-            spoiler: "Ancient Basin"
+            spoiler: "Ancient Basin, below Broken Vessel"
         },
         gotLurkerKey: {
             name: "Simple Key #4",
@@ -796,7 +796,7 @@ const HK = {
         },
         paleOreAncientBasin: {
             name: "Pale Ore #1",
-            spoiler: "Ancient Basin"
+            spoiler: "Ancient Basin, near Cloth location"
         },
         paleOreSeer: {
             name: "Pale Ore #2",
