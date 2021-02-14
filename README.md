@@ -91,14 +91,14 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
-* v1.0.3 2021-xx-xx:
+* v1.0.3 2021-02-14:
 
-  — Prototype Unrescued Grubs and Unbroken Geo Rocks lists now include number of items in the title. Additionally, number of Grubs is now shown correctly – error was due to the fact, that in 1.4.3.2 HK version the 3 Collector's Arena Grubs are treated as one by the game, instead of individually, like in 1.0.0.6. They have now one number (#32) but the rest is numbered normally until #46.
+  — Prototype Unrescued Grubs and Unbroken Geo Rocks lists now include number of items in the title. Additionally, number of Grubs is now shown correctly – error was due to the fact, that in 1.4.3.2 HK version the 3 Collector's Arena Grubs are treated as one by the game, instead of individually, like in 1.0.0.6. They have now one number (#32) but the rest is numbered normally from #35 until #46.
 
   — **Achievements Essentials** changes:  
   ✅ Altered "Optimal Zote". Instead this line now shows the current Zote save file state (Trapped Greenpath, Not Rescued, Dead, Trapped Deepnest, Colosseum, Defeated)  
   ✅ Altered "Optimal Nailsmith". Instead this line now shows the current Nailsmith save file state (Waiting for Upgrade, Waiting in Sheo's Hut, Spared, Slain)  
-  ✅ "Grey Prince Zote" and "Grey Prince Zote defeats total" gets faded out if Zote is dead.
+  ✅ "Grey Prince Zote" and "Grey Prince Zote defeats total" get faded out if Zote is dead.
   ✅ "Grey Prince Zote" line gets a red cross if Zote was rescued in Greenpath and GPZ is not yet defeated.
 
 * v1.0.2 2021-02-12:
