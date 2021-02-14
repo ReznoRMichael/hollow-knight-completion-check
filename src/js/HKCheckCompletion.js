@@ -799,7 +799,14 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 textPrefix += ": " + total;
                 break;
             case "bossDoorStateTier5":
-                (playerData[i].completed === true) ? CurrentDataTrue(): CurrentDataFalse();
+                if (playerData.hasOwnProperty("bossDoorStateTier5") === false) {
+                    CurrentDataBlank();
+                    textPrefix = `<del>${textPrefix}</del>`;
+                    textSuffix = `<del>${textSuffix}</del>`;
+                }
+                else {
+                    (playerData[i].completed === true) ? CurrentDataTrue(): CurrentDataFalse();
+                }
                 break;
             case "killsBindingSeal":
                 (playerData[i] == 0) ? CurrentDataTrue(): CurrentDataFalse();
