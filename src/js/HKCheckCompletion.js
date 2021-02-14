@@ -935,6 +935,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                     textSuffix = `<del>${textSuffix}</del>`;
                 }
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataBlank();
+                if (playerData.zoteRescuedBuzzer === true && playerData[i] === false) CurrentDataFalse();
                 break;
             case "zoteStatus":
                 CurrentDataFalse();
