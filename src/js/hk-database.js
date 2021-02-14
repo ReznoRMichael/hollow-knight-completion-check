@@ -818,6 +818,10 @@ const HK = {
             name: "Pale Ore #6",
             spoiler: "Colosseum of Fools: Trial of the Conqueror"
         },
+        waterwaysAcidDrained: {
+            name: "Acid Drained",
+            spoiler: "Royal Waterways, lever after Dung Defender"
+        },
         hasTramPass: {
             name: "Tram Pass",
             spoiler: "Deepnest, Failed Tramway"
