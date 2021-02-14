@@ -614,8 +614,14 @@ function CheckGodmasterDoors(divId, dataObject, playerData) {
     let pantheon = ["Master", "Artist", "Sage", "Knight"].map((element) => "pantheon" + element);
     
     for (let i = 0; i < 4; i++) {
-        (playerData["bossDoorStateTier" + (i + 1)].completed === true) ? CurrentDataTrue(divId): CurrentDataFalse();
-        FillHTML(divId, dataObject[pantheon[i]].name, dataObject[pantheon[i]].spoiler);
+        if (playerData.hasOwnProperty("bossDoorStateTier" + (i + 1)) === false) {
+            CurrentDataBlank();
+            FillHTML(divId, `<del>${dataObject[pantheon[i]].name}</del>`, `<del>${dataObject[pantheon[i]].spoiler}</del>`);
+        }
+        else {
+            (playerData["bossDoorStateTier" + (i + 1)].completed === true) ? CurrentDataTrue(divId): CurrentDataFalse();
+            FillHTML(divId, dataObject[pantheon[i]].name, dataObject[pantheon[i]].spoiler);
+        }
     }
 }
 
