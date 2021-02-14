@@ -91,6 +91,13 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
+* v1.0.3 2021-xx-xx:
+
+  — **Achievements Essentials** changes:  
+  ✅ Altered "Optimal Zote". Instead this line now shows the current Zote save file state (Trapped Greenpath, Not Rescued, Dead, Trapped Deepnest, Colosseum, Defeated)  
+  ✅ Altered "Optimal Nailsmith". Instead this line now shows the current Nailsmith save file state (Waiting for Upgrade, Waiting in Sheo's Hut, Spared, Slain)  
+  ✅ Grey Prince Zote and Grey Prince Zote defeats total gets faded out if Zote is dead. Additionally, Grey Prince Zote line gets a red cross if Zote was rescued in Greenpath and is not yet defeated.
+
 * v1.0.2 2021-02-12:
 
   — Prototype Lists: Unrescued Grubs, Unbroken Geo Rocks (Beta). If you want to see them, press **Ctrl + Shift + I** and select Console tab.
