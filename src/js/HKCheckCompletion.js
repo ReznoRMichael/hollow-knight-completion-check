@@ -683,129 +683,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
     let textPrefix = "";
     let textSuffix = "";
 
-    /**
-     * Searches for a given item in the in-game area and returns true when found and collected.
-     * @param {string} itemArea Code of the in-game area on the map
-     * @param {string} itemId Name of the item
-     * @returns {boolean}
-     */
-    function FindWorldItem(itemArea = "", itemId = "Shiny Item") {
-        for (let i = 0, length = worldData.length; i < length; i++) {
-            if (worldData[i].id === itemId) {
-                if (worldData[i].sceneName === itemArea) {
-                    if (worldData[i].activated === true) return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    /**
-     * Searches for a given item that the player has found and returns the amount of them that the player completed.
-     * @param {string} itemId Name of the item
-     * @returns {number}
-     */
-    function CountWorldItem(itemId = "") {
-        let total = 0;
-        for (let i = 0, length = worldData.length; i < length; i++) {
-            if (worldData[i].id === itemId) {
-                if (worldData[i].activated === true) total++;
-            }
-        }
-        return total;
-    }
-
-    /**
-     * Counts the number of maps the player has acquired (from the list in an array)
-     * @param {array} mapArray Array of strings with area map names
-     * @returns {number}
-     */
-    function CountMaps(mapArray) {
-        let totalMaps = 0;
-        for (let i = 0, len = mapArray.length; i < len; i++) {
-            if (playerData[mapArray[i]] === true) totalMaps++
-        }
-        return totalMaps;
-    }
-
-    /**
-     * Counts the total amount of Geo Rocks Unbroken or Broken. Logs to console all the Unbroken IDs and Map locations.
-     * @param {number} arrayLength How many items the Geo Rocks array is currently storing (for iteration)
-     * @param {string} mode Choose which Geo Rocks to count (broken or unbroken)
-     */
-    function CountGeoRocks(arrayLength, mode = "unbroken") {
-
-        let countTotal = 0;
-        let geoRocksLog = [];
-
-        if (mode === "unbroken") {
-            for (let i = 0; i < arrayLength; i++) {
-                if (sceneData.geoRocks[i].hitsLeft > 0) {
-                    countTotal++;
-                    geoRocksLog.push(`#${countTotal} 🏔️ ${sceneData.geoRocks[i].id} 🗺️ ${TranslateMapName(sceneData.geoRocks[i].sceneName)} ⌨️ ${sceneData.geoRocks[i].sceneName}`);
-                }
-            }
-
-            if (!countTotal) {
-                console.log("%cAll Geo Rocks Broken!", "color: #16c60c; font-weight: 700;");
-            }
-            else {
-                console.groupCollapsed(`%cUnbroken Geo Rocks (${countTotal}):`, "color: #16c60c; font-weight: 700;");
-
-                for (let i = 0, length = geoRocksLog.length; i < length; i++ ) {
-                    console.log(geoRocksLog[i]);
-                }
-
-                console.groupEnd();
-            }
-        } else {
-            for (let i = 0; i < arrayLength; i++) {
-                if (sceneData.geoRocks[i].hitsLeft === 0) countTotal++;
-            }
-        }
-
-        return countTotal;
-    }
-
-    function LogMissingGrubs() {
-
-        let rescuedGrubsSceneList = [];
-
-        for (let i = 0, length = worldData.length; i < length; i++) {
-            if (worldData[i].id.includes("Grub Bottle")) {
-                if (worldData[i].activated === true) {
-                    // There are 3 duplicates of the same map scene name from older game save files. Prevents adding duplicates
-                    /* if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (1)") {
-                        continue;
-                    } else if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (2)") {
-                        continue;
-                    } else { */
-                        rescuedGrubsSceneList.push(worldData[i].sceneName);
-                    // }
-                }
-            }
-        }
-
-        // Filtering the reference database Grub list to include only the missing values
-        let missingGrubsList = HK.GRUBS_LIST.filter(x => !rescuedGrubsSceneList.includes(x));
-        let length = missingGrubsList.length;
-
-        if (!length) {
-            console.log("%cAll Grubs Rescued!", "color: #16c60c; font-weight: 700;");
-        }
-        else {
-            console.groupCollapsed(`%cUnrescued Grubs (${length}):`, "color: #16c60c; font-weight: 700;");
-
-            for (let i = 0; i < length; i++) {
-                console.log(`#${HK.GRUBS_LIST.indexOf(missingGrubsList[i]) + 1} 🗺️ ${TranslateMapName(missingGrubsList[i])} ⌨️ ${missingGrubsList[i]}`);
-            }
-
-            console.groupEnd();
-        }
-
-        return false;
-    }
-
     // Start main loop
     for (let i in dataObject) {
         textPrefix = dataObject[i].name;
@@ -1003,6 +880,135 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         if (i === "mrMushroomState") continue;
         FillHTML(divId, textPrefix, textSuffix);
     } // end for (let i in dataObject)
+
+    // ==========================================
+    // -------------- Methods ---------------- //
+
+    /**
+     * Searches for a given item in the in-game area and returns true when found and collected.
+     * @param {string} itemArea Code of the in-game area on the map
+     * @param {string} itemId Name of the item
+     * @returns {boolean}
+     */
+    function FindWorldItem(itemArea = "", itemId = "Shiny Item") {
+        for (let i = 0, length = worldData.length; i < length; i++) {
+            if (worldData[i].id === itemId) {
+                if (worldData[i].sceneName === itemArea) {
+                    if (worldData[i].activated === true) return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Searches for a given item that the player has found and returns the amount of them that the player completed.
+     * @param {string} itemId Name of the item
+     * @returns {number}
+     */
+    function CountWorldItem(itemId = "") {
+        let total = 0;
+        for (let i = 0, length = worldData.length; i < length; i++) {
+            if (worldData[i].id === itemId) {
+                if (worldData[i].activated === true) total++;
+            }
+        }
+        return total;
+    }
+
+    /**
+     * Counts the number of maps the player has acquired (from the list in an array)
+     * @param {array} mapArray Array of strings with area map names
+     * @returns {number}
+     */
+    function CountMaps(mapArray) {
+        let totalMaps = 0;
+        for (let i = 0, len = mapArray.length; i < len; i++) {
+            if (playerData[mapArray[i]] === true) totalMaps++
+        }
+        return totalMaps;
+    }
+
+    /**
+     * Counts the total amount of Geo Rocks Unbroken or Broken. Logs to console all the Unbroken IDs and Map locations.
+     * @param {number} arrayLength How many items the Geo Rocks array is currently storing (for iteration)
+     * @param {string} mode Choose which Geo Rocks to count (broken or unbroken)
+     */
+    function CountGeoRocks(arrayLength, mode = "unbroken") {
+
+        let countTotal = 0;
+        let geoRocksLog = [];
+
+        if (mode === "unbroken") {
+            for (let i = 0; i < arrayLength; i++) {
+                if (sceneData.geoRocks[i].hitsLeft > 0) {
+                    countTotal++;
+                    geoRocksLog.push(`#${countTotal} 🏔️ ${sceneData.geoRocks[i].id} 🗺️ ${TranslateMapName(sceneData.geoRocks[i].sceneName)} ⌨️ ${sceneData.geoRocks[i].sceneName}`);
+                }
+            }
+
+            if (!countTotal) {
+                console.log("%cAll Geo Rocks Broken!", "color: #16c60c; font-weight: 700;");
+            }
+            else {
+                console.groupCollapsed(`%cUnbroken Geo Rocks (${countTotal}):`, "color: #16c60c; font-weight: 700;");
+
+                for (let i = 0, length = geoRocksLog.length; i < length; i++ ) {
+                    console.log(geoRocksLog[i]);
+                }
+
+                console.groupEnd();
+            }
+        } else {
+            for (let i = 0; i < arrayLength; i++) {
+                if (sceneData.geoRocks[i].hitsLeft === 0) countTotal++;
+            }
+        }
+
+        return countTotal;
+    }
+
+    /**
+     * Compares and logs all unrescued Grubs in a list: IDs and map locations
+     */
+    function LogMissingGrubs() {
+
+        let rescuedGrubsSceneList = [];
+
+        for (let i = 0, length = worldData.length; i < length; i++) {
+            if (worldData[i].id.includes("Grub Bottle")) {
+                if (worldData[i].activated === true) {
+                    // There are 3 duplicates of the same map scene name from older game save files. Prevents adding duplicates
+                    /* if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (1)") {
+                        continue;
+                    } else if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (2)") {
+                        continue;
+                    } else { */
+                        rescuedGrubsSceneList.push(worldData[i].sceneName);
+                    // }
+                }
+            }
+        }
+
+        // Filtering the reference database Grub list to include only the missing values
+        let missingGrubsList = HK.GRUBS_LIST.filter(x => !rescuedGrubsSceneList.includes(x));
+        let length = missingGrubsList.length;
+
+        if (!length) {
+            console.log("%cAll Grubs Rescued!", "color: #16c60c; font-weight: 700;");
+        }
+        else {
+            console.groupCollapsed(`%cUnrescued Grubs (${length}):`, "color: #16c60c; font-weight: 700;");
+
+            for (let i = 0; i < length; i++) {
+                console.log(`#${HK.GRUBS_LIST.indexOf(missingGrubsList[i]) + 1} 🗺️ ${TranslateMapName(missingGrubsList[i])} ⌨️ ${missingGrubsList[i]}`);
+            }
+
+            console.groupEnd();
+        }
+
+        return false;
+    }
 }
 
 /**
