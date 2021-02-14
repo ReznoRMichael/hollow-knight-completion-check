@@ -11,7 +11,7 @@ module.exports = {
     },
     mode: 'development',
     output: {
-        path: `${__dirname}/docs`,
+        path: `${__dirname}/build`,
         filename: 'app.js',
         assetModuleFilename: 'img/[hash][ext][query]'
     },
