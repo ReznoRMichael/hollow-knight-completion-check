@@ -960,6 +960,21 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 }
                 break;
             case "nailsmithStatus":
+                CurrentDataBlank();
+                if (playerData.nailsmithKilled === true) {
+                    textPrefix = dataObject[i].namePurity;
+                    textSuffix = dataObject[i].spoilerPurity;
+                    CurrentDataTrue();
+                }
+                else if (playerData.nailsmithConvoArt === true) {
+                    textPrefix = dataObject[i].nameHappyCouple;
+                    textSuffix = dataObject[i].spoilerHappyCouple;
+                    CurrentDataTrue();
+                }
+                else if (playerData.nailsmithSpared === true) {
+                    textPrefix = dataObject[i].nameSheoHutWaiting;
+                    textSuffix = dataObject[i].spoilerSheoHutWaiting;
+                }
                 break;
             case "mrMushroomState":
                 CheckMrMushroomState(divId, dataObject[i], playerData[i]);
