@@ -775,13 +775,13 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             if (worldData[i].id.includes("Grub Bottle")) {
                 if (worldData[i].activated === true) {
                     // There are 3 duplicates of the same map scene name from older game save files. Prevents adding duplicates
-                    if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (1)") {
+                    /* if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (1)") {
                         continue;
                     } else if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (2)") {
                         continue;
-                    } else {
+                    } else { */
                         rescuedGrubsSceneList.push(worldData[i].sceneName);
-                    }
+                    // }
                 }
             }
         }
