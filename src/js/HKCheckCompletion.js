@@ -614,6 +614,7 @@ function CheckGodmasterDoors(divId, dataObject, playerData) {
     let pantheon = ["Master", "Artist", "Sage", "Knight"].map((element) => "pantheon" + element);
     
     for (let i = 0; i < 4; i++) {
+        // compatibility with earlier game versions
         if (playerData.hasOwnProperty("bossDoorStateTier" + (i + 1)) === false) {
             CurrentDataBlank();
             FillHTML(divId, `<del>${dataObject[pantheon[i]].name}</del>`, `<del>${dataObject[pantheon[i]].spoiler}</del>`);
@@ -820,7 +821,14 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 if (playerData[i] === false && playerData.killedVoidIdol_3 === true) CurrentDataTrue();
                 break;
             case "greyPrinceDefeated":
-                if (playerData.zoteDead === true || (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
+                // compatibility with earlier game versions
+                if (playerData.hasOwnProperty("greyPrinceDefeated") === false) {
+                    CurrentDataBlank();
+                    textPrefix = `<del>${textPrefix}</del>`;
+                    textSuffix = `<del>${textSuffix}</del>`;
+                    break;
+                }
+                else if (playerData.zoteDead === true || (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
                     textPrefix = `<del>${textPrefix}</del>`;
                     textSuffix = `<del>${textSuffix}</del>`;
                 }
