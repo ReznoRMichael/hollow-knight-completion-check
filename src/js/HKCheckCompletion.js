@@ -1200,8 +1200,9 @@ function ObjectLength(object) {
  */
 function InitialHTMLPopulate(divIdObj) {
 
-    PrefillHTML(divIdObj);
     CurrentDataFalse();
+
+    PrefillHTML(divIdObj);
 
     // Play Time
     CheckPlayTime(divIdObj.intro, 0)
@@ -1226,6 +1227,9 @@ function InitialHTMLPopulate(divIdObj) {
 
     // Geo
     CheckGeo(divIdObj.intro);
+
+    // Keep symbol False
+    CurrentDataFalse();
 
     // First Hint Only
     FillHTML(divIdObj.hints, "", HK.HINTS.fireballLevel.spoiler);
@@ -1443,7 +1447,9 @@ function TranslateMapName(mapCode, dictionary = MAP) {
 // window.InitialHTMLPopulate = InitialHTMLPopulate;
 
 // Populate HTML at load (before img and css)
-document.addEventListener("DOMContentLoaded", InitialHTMLPopulate(HK.DIV_ID));
+document.addEventListener("DOMContentLoaded", () => {
+    InitialHTMLPopulate(HK.DIV_ID);
+});
 
 // Does an action when the save file location input text is clicked once (auto select & copy to clipboard)
 document.getElementById("save-location-input").addEventListener("click", (e) => {
