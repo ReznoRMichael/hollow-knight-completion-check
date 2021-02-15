@@ -30,17 +30,20 @@ let benchLSFBegin, benchLSFEnd, benchTotal;
  * @param {FileList} input FileList object containing a list of File objects. The FileList behaves like an array, so you can check its length property to get the number of selected files.
  */
 // eslint-disable-next-line no-unused-vars
-function LoadSaveFile(input, startTime = new Date()) {
+function LoadSaveFile() {
 
+    let startTime = new Date();
+
+    const inputFileList = this.files;
     // console.info("Input length: " + input.files.length)
     // Cease further processing if user canceled the file input dialog
-    if (input.files.length < 1) return false;
+    if (inputFileList.length < 1) return false;
 
     // start benchmark
     benchLSFBegin = startTime;
 
     // Prepares a File object from the first file of the input files for reading as an Array Buffer
-    let inputFileObject = input.files[0];
+    let inputFileObject = inputFileList[0];
 
     // Cleans the file list to avoid problems after subsequent use
     // document.getElementById("save-area-file").value = "";
@@ -185,4 +188,9 @@ function AESDecryption(buffer, cipherObject = ECB_STREAM_CIPHER) {
 }
 
 // Make functions global so they can be used on click and change events (for Webpack)
-window.LoadSaveFile = LoadSaveFile;
+// window.LoadSaveFile = LoadSaveFile;
+
+document.getElementById("save-area-file").addEventListener("change", LoadSaveFile);
+document.getElementById("save-area-file").addEventListener("click", (mouseEvent) => {
+    mouseEvent.target.value = "";
+});
