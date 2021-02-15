@@ -246,6 +246,8 @@ If you like the tool and wish it developed further with more functions and easie
 
   — Backwards Compatibility with Hollow Knight version 1.0.0.6 save files (February 2017 release version).
 
+  — File Reading now launches automatically when you choose the same file again. Useful for quick analyzing the same save file after modification without reloading the page.
+
   — **Game Completion Essentials** additions:  
   ✅ Acid Drained Waterways  
 
