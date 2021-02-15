@@ -762,9 +762,21 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 break;
             case "geoPool":
             case "rancidEggs":
+            case "jinnEggsSold":
             case "xunFlowerBrokeTimes":
                 textPrefix += ": " + Math.abs(playerData[i]);
                 (i === "geoPool" && playerData[i] > 0) ? CurrentDataBlank(): CurrentDataTrue();
+
+                if (i === "jinnEggsSold") {
+                    // fade out if not on Steel Soul
+                    if (playerData.permadeathMode < 1) {
+                        CurrentDataBlank();
+                        textPrefix = `<del>${textPrefix}</del>`;
+                        textSuffix = `<del>${textSuffix}</del>`;
+                        break;
+                    }
+                }
+
                 break;
             case "geoRocks":
                 discoveredTotal = sceneData.geoRocks.length;

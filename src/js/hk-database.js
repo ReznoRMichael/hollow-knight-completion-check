@@ -1076,6 +1076,10 @@ const HK = {
             name: "Rancid Eggs",
             spoiler: "Find: Hallownest, Buy: Sly, Tuk"
         },
+        jinnEggsSold: {
+            name: "Rancid Eggs sold to Jinn",
+            spoiler: "Only in Steel Soul Mode"
+        },
         xunFlowerBrokeTimes: {
             name: "Delicate Flowers broken",
             spoiler: "Resting Grounds: Grey Mourner"
