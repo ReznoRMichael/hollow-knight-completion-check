@@ -245,7 +245,9 @@ If you like the tool and wish it developed further with more functions and easie
 * v1.0.4 2021-xx-xx:
 
   — **Game Completion Essentials** additions:  
-  ✅ Acid Drained Waterways
+  ✅ Acid Drained Waterways  
+
+  — Backwards Compatibility with Hollow Knight version 1.0.0.6 save files (February 2017 release version).
 
 ## Using
 

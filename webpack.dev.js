@@ -1,5 +1,6 @@
 /* global require module __dirname */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {
     CleanWebpackPlugin
@@ -26,6 +27,12 @@ module.exports = {
             chunks: ['index'],
             filename: 'index.html',
             favicon: "./src/favicon.png"
+        }),
+        new HtmlWebpackPartialsPlugin({
+            path: './src/partials/cookiealert.html',
+            location: 'head',
+            priority: 'high',
+            options: {}
         })
     ],
     module: {
