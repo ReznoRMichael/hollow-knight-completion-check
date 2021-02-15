@@ -63,17 +63,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/css/cookieconsent.css":
-/*!***********************************!*\
-  !*** ./src/css/cookieconsent.css ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://hollow-knight-completion-check/./src/css/cookieconsent.css?");
-
-/***/ }),
-
 /***/ "./src/css/fontello.css":
 /*!******************************!*\
   !*** ./src/css/fontello.css ***!
@@ -297,7 +286,7 @@ eval("module.exports = __webpack_require__.p + \"img/thumbnail1200x628.jpg\";\n\
 /*!*************************!*\
   !*** ./src/js/index.js ***!
   \*************************/
-eval("/* global require */\n// Handle cookies\n// require(\"./cookies.js\");\n// CSS\n__webpack_require__(/*! ../css/cookieconsent.css */ \"./src/css/cookieconsent.css\");\n\n__webpack_require__(/*! ../css/fontello.css */ \"./src/css/fontello.css\");\n\n__webpack_require__(/*! ../css/simpleicon.css */ \"./src/css/simpleicon.css\");\n\n__webpack_require__(/*! ../css/style.css */ \"./src/css/style.css\"); // required for meta tags (social) to be visible by Webpack\n\n\n__webpack_require__(/*! ../img/thumbnail1200x628.jpg */ \"./src/img/thumbnail1200x628.jpg\"); // Instantly load test save file from .json (fast Debugging script)\n// require(\"./LoadJson.js\");\n// Load Save File for opening files, decoding, decryption\n\n\n__webpack_require__(/*! ./LoadSaveFile.js */ \"./src/js/LoadSaveFile.js\"); // Main script for analyzing the decoded save file and generating the page on the fly\n// require(\"./HKCheckCompletion.js\");\n\n\n__webpack_require__(/*! ./HKCheckCompletion.js */ \"./src/js/HKCheckCompletion.js\");\n\n//# sourceURL=webpack://hollow-knight-completion-check/./src/js/index.js?");
+eval("/* global require */\n// Handle cookies\n// require(\"./cookies.js\");\n// CSS\n// require(\"../css/cookieconsent.css\");\n__webpack_require__(/*! ../css/fontello.css */ \"./src/css/fontello.css\");\n\n__webpack_require__(/*! ../css/simpleicon.css */ \"./src/css/simpleicon.css\");\n\n__webpack_require__(/*! ../css/style.css */ \"./src/css/style.css\"); // required for meta tags (social) to be visible by Webpack\n\n\n__webpack_require__(/*! ../img/thumbnail1200x628.jpg */ \"./src/img/thumbnail1200x628.jpg\"); // Instantly load test save file from .json (fast Debugging script)\n// require(\"./LoadJson.js\");\n// Load Save File for opening files, decoding, decryption\n\n\n__webpack_require__(/*! ./LoadSaveFile.js */ \"./src/js/LoadSaveFile.js\"); // Main script for analyzing the decoded save file and generating the page on the fly\n// require(\"./HKCheckCompletion.js\");\n\n\n__webpack_require__(/*! ./HKCheckCompletion.js */ \"./src/js/HKCheckCompletion.js\");\n\n//# sourceURL=webpack://hollow-knight-completion-check/./src/js/index.js?");
 })();
 
 /******/ })()

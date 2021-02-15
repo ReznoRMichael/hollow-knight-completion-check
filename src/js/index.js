@@ -4,7 +4,7 @@
 // require("./cookies.js");
 
 // CSS
-require("../css/cookieconsent.css");
+// require("../css/cookieconsent.css");
 require("../css/fontello.css");
 require("../css/simpleicon.css");
 require("../css/style.css");
