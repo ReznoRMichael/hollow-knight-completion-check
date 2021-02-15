@@ -88,6 +88,10 @@ function HKCheckCompletion(jsonObject) {
 
     CheckCompletionPercent(HK.DIV_ID.intro, HKPlayerData.completionPercentage);
 
+    // ---------------- Game Completion Status ----------------- //
+
+    CheckSaveFileVersion(HK.DIV_ID.intro, HKPlayerData.version);
+
     // ---------------- Fleur Divide ----------------- //
 
     AppendHTML(HK.DIV_ID.intro, FLEUR_DIVIDE);
@@ -413,6 +417,18 @@ function CheckCompletionPercent(divId, completionPercentage) {
     (completionPercentage >= 112) ? CurrentDataTrue(): CurrentDataFalse();
 
     let textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + divId.maxPercent + " %)";
+    document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
+}
+
+/**
+ * Reads the "version" string from the save file and appends it to the selected div ID element
+ * @param {object} divId ID of the HTML element for data appending
+ * @param {string} saveVersion Save File version in format 0.0.0.0
+ */
+function CheckSaveFileVersion(divId, saveVersion = HK.DIV_ID.intro.saveVersion) {
+
+    CurrentDataBlank();
+    let textFill = `Save Version:${pSpan}<b>${saveVersion}</b>${pSpan}`;
     document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }
 
@@ -1207,6 +1223,9 @@ function InitialHTMLPopulate(divIdObj) {
 
     // Game Completion
     CheckCompletionPercent(divIdObj.intro, 0);
+
+    // Save File Version
+    CheckSaveFileVersion(divIdObj.intro);
 
     // Fleur Divide
     AppendHTML(divIdObj.intro, FLEUR_DIVIDE);

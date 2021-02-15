@@ -8,7 +8,8 @@ const HK = {
         intro: {
             h2: "Game Status",
             id: "hk-intro",
-            maxPercent: 112
+            maxPercent: 112,
+            saveVersion: "0.0.0.0"
         },
         hints: {
             h2: "My friend Elderbug once told me about...",
