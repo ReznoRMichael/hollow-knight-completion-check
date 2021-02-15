@@ -1276,8 +1276,20 @@ function InitialHTMLPopulate(divIdObj) {
     AppendHTML(divIdObj.achievements, FLEUR_DIVIDE);
 
     // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
-    if (localStorage.getItem("hkCheckboxHints") === "checked") document.getElementById("checkbox-hints").checked = true;
-    if (localStorage.getItem("hkCheckboxSpoilers") === "checked") document.getElementById("checkbox-spoilers").checked = true;
+    try {
+        if (localStorage.getItem("hkCheckboxHints") === "checked") document.getElementById("checkbox-hints").checked = true;
+    }
+    catch (error) {
+        console.log(error);
+    }
+    try {
+        if (localStorage.getItem("hkCheckboxSpoilers") === "checked") document.getElementById("checkbox-spoilers").checked = true;
+    }
+    catch (error) {
+        console.log(error);
+    }
+    // if (localStorage.getItem("hkCheckboxHints") === "checked") document.getElementById("checkbox-hints").checked = true;
+    // if (localStorage.getItem("hkCheckboxSpoilers") === "checked") document.getElementById("checkbox-spoilers").checked = true;
 
     // Prevents wrong checkbox behaviour (must run after everything is finished)
     CheckboxHintsToggle();
@@ -1315,7 +1327,12 @@ function CheckboxHintsToggle(param = "none") {
                 checkboxId.value = "hints-off";
 
                 // remember this choice for subsequent page visits and browser restarts
-                localStorage.setItem("hkCheckboxHints", "unchecked");
+                try {
+                    localStorage.setItem("hkCheckboxHints", "unchecked");
+                }
+                catch (error) {
+                    console.log(error);
+                }
             }
             // This runs when the checkbox is checked
             else {
@@ -1323,7 +1340,12 @@ function CheckboxHintsToggle(param = "none") {
                 checkboxId.value = "hints-on";
 
                 // remember this choice for subsequent page visits and browser restarts
-                localStorage.setItem("hkCheckboxHints", "checked");
+                try {
+                    localStorage.setItem("hkCheckboxHints", "checked");
+                }
+                catch (error) {
+                    console.log(error);
+                }
             }
     }
 }
@@ -1346,7 +1368,12 @@ function CheckboxSpoilersToggle(param = "none") {
             checkboxId.checked = false;
 
             // remember this choice for subsequent page visits and browser restarts
-            localStorage.setItem("hkCheckboxSpoilers", "unchecked");
+            try {
+                localStorage.setItem("hkCheckboxSpoilers", "unchecked");
+            }
+            catch (error) {
+                console.log(error);
+            }
             break;
         case "show":
             for (let i = 0; i < length; i++) {
@@ -1356,7 +1383,12 @@ function CheckboxSpoilersToggle(param = "none") {
             checkboxId.checked = true;
 
             // remember this choice for subsequent page visits and browser restarts
-            localStorage.setItem("hkCheckboxSpoilers", "checked");
+            try {
+                localStorage.setItem("hkCheckboxSpoilers", "checked");
+            }
+            catch (error) {
+                console.log(error);
+            }
             break;
         default:
             // This runs when the checkbox is not checked
@@ -1367,7 +1399,13 @@ function CheckboxSpoilersToggle(param = "none") {
                 checkboxId.value = "spoilers-off";
 
                 // remember this choice for subsequent page visits and browser restarts
-                localStorage.setItem("hkCheckboxSpoilers", "unchecked");
+                try {
+                    localStorage.setItem("hkCheckboxSpoilers", "unchecked");
+                }
+                catch (error) {
+                    console.log(error);
+                }
+                break;
             }
             // This runs when the checkbox is checked
             else {
@@ -1377,7 +1415,12 @@ function CheckboxSpoilersToggle(param = "none") {
                 checkboxId.value = "spoilers-on";
 
                 // remember this choice for subsequent page visits and browser restarts
-                localStorage.setItem("hkCheckboxSpoilers", "checked");
+                try {
+                    localStorage.setItem("hkCheckboxSpoilers", "checked");
+                }
+                catch (error) {
+                    console.log(error);
+                }
             }
     }
 }
