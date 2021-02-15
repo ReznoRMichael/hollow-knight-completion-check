@@ -628,14 +628,13 @@ function CheckGodmasterDoors(divId, dataObject, playerData) {
     // appends "pantheon" to every array element
     // same as names in the database object
     let pantheon = ["Master", "Artist", "Sage", "Knight"].map((element) => "pantheon" + element);
-    
+
     for (let i = 0; i < 4; i++) {
         // compatibility with earlier game versions
         if (playerData.hasOwnProperty("bossDoorStateTier" + (i + 1)) === false) {
             CurrentDataBlank();
             FillHTML(divId, `<del>${dataObject[pantheon[i]].name}</del>`, `<del>${dataObject[pantheon[i]].spoiler}</del>`);
-        }
-        else {
+        } else {
             (playerData["bossDoorStateTier" + (i + 1)].completed === true) ? CurrentDataTrue(divId): CurrentDataFalse();
             FillHTML(divId, dataObject[pantheon[i]].name, dataObject[pantheon[i]].spoiler);
         }
@@ -653,7 +652,7 @@ function CheckNailUpgrades(divId, dataObject, playerData) {
     // appends "Nail" to every array element
     // same as names in the database object
     let nail = ["old", "sharpened", "channeled", "coiled", "pure"].map((element) => element + "Nail");
-    
+
     for (let i = 0; i < 5; i++) {
         (playerData.nailSmithUpgrades >= i) ? CurrentDataTrue(divId): CurrentDataFalse();
         FillHTML(divId, dataObject[nail[i]].name, dataObject[nail[i]].spoiler);
@@ -758,13 +757,12 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                         textPrefix = `<del>${dataObject[i].name}</del>`;
                         textSuffix = `<del>${textSuffix}</del>`;
                         break;
-                    }
-                    else if (playerData.zoteDead === true || (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
+                    } else if (playerData.zoteDead === true || (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
                         textPrefix = `<del>${textPrefix}</del>`;
                         textSuffix = `<del>${textSuffix}</del>`;
                     }
                 }
-                
+
                 if (i === "whiteDefenderDefeats") {
                     // backwards compatibility with earlier game versions
                     if (playerData.hasOwnProperty("whiteDefenderDefeats") === false) {
@@ -849,8 +847,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                     CurrentDataBlank();
                     textPrefix = `<del>${textPrefix}</del>`;
                     textSuffix = `<del>${textSuffix}</del>`;
-                }
-                else {
+                } else {
                     (playerData[i].completed === true) ? CurrentDataTrue(): CurrentDataFalse();
                 }
                 break;
@@ -872,8 +869,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                     textPrefix = `<del>${textPrefix}</del>`;
                     textSuffix = `<del>${textSuffix}</del>`;
                     break;
-                }
-                else if (playerData.zoteDead === true || (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
+                } else if (playerData.zoteDead === true || (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
                     textPrefix = `<del>${textPrefix}</del>`;
                     textSuffix = `<del>${textSuffix}</del>`;
                 }
@@ -886,28 +882,23 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                     textPrefix = dataObject[i].nameNeglect;
                     textSuffix = dataObject[i].spoilerNeglect;
                     CurrentDataTrue();
-                }
-                else if (playerData.killedZote === true) {
+                } else if (playerData.killedZote === true) {
                     textPrefix = dataObject[i].nameRivalry;
                     textSuffix = dataObject[i].spoilerRivalry;
                     CurrentDataTrue();
-                }
-                else if (playerData.zoteRescuedBuzzer === false) {
+                } else if (playerData.zoteRescuedBuzzer === false) {
                     if (playerData.hasWalljump === false) {
                         textPrefix = dataObject[i].nameTrappedVengefly;
                         textSuffix = dataObject[i].spoilerTrappedVengefly;
-                    }
-                    else if (playerData.hasWalljump === true) {
+                    } else if (playerData.hasWalljump === true) {
                         textPrefix = dataObject[i].nameNotRescuedVengefly;
                         textSuffix = dataObject[i].spoilerNotRescuedVengefly;
                     }
-                }
-                else if (playerData.zoteRescuedBuzzer === true) {
+                } else if (playerData.zoteRescuedBuzzer === true) {
                     if (playerData.zoteRescuedDeepnest === false) {
                         textPrefix = dataObject[i].nameTrappedDeepnest;
                         textSuffix = dataObject[i].spoilerTrappedDeepnest;
-                    }
-                    else if (playerData.zoteRescuedDeepnest === true) {
+                    } else if (playerData.zoteRescuedDeepnest === true) {
                         if (playerData.killedZote === false) {
                             textPrefix = dataObject[i].nameColosseum;
                             textSuffix = dataObject[i].spoilerColosseum;
@@ -921,17 +912,14 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                     textPrefix = dataObject[i].namePurity;
                     textSuffix = dataObject[i].spoilerPurity;
                     CurrentDataTrue();
-                }
-                else if (playerData.nailsmithConvoArt === true) {
+                } else if (playerData.nailsmithConvoArt === true) {
                     textPrefix = dataObject[i].nameHappyCouple;
                     textSuffix = dataObject[i].spoilerHappyCouple;
                     CurrentDataTrue();
-                }
-                else if (playerData.nailsmithSpared === true) {
+                } else if (playerData.nailsmithSpared === true) {
                     textPrefix = dataObject[i].nameSheoHutWaiting;
                     textSuffix = dataObject[i].spoilerSheoHutWaiting;
-                }
-                else {
+                } else {
                     textPrefix = dataObject[i].nameUpgradeNail;
                     textSuffix = dataObject[i].spoilerUpgradeNail;
                 }
@@ -1015,11 +1003,10 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
 
             if (!countTotal) {
                 console.log("%cAll Geo Rocks Broken!", "color: #16c60c; font-weight: 700;");
-            }
-            else {
+            } else {
                 console.groupCollapsed(`%cUnbroken Geo Rocks (${countTotal}):`, "color: #16c60c; font-weight: 700;");
 
-                for (let i = 0, length = geoRocksLog.length; i < length; i++ ) {
+                for (let i = 0, length = geoRocksLog.length; i < length; i++) {
                     console.log(geoRocksLog[i]);
                 }
 
@@ -1050,7 +1037,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                     } else if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (2)") {
                         continue;
                     } else { */
-                        rescuedGrubsSceneList.push(worldData[i].sceneName);
+                    rescuedGrubsSceneList.push(worldData[i].sceneName);
                     // }
                 }
             }
@@ -1062,8 +1049,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
 
         if (!length) {
             console.log("%cAll Grubs Rescued!", "color: #16c60c; font-weight: 700;");
-        }
-        else {
+        } else {
             console.groupCollapsed(`%cUnrescued Grubs (${length}):`, "color: #16c60c; font-weight: 700;");
 
             for (let i = 0; i < length; i++) {
@@ -1090,8 +1076,7 @@ function CheckMrMushroomState(divId, dataObject, mrMushroomState = 0) {
             (mrMushroomState > i) ? CurrentDataTrue(): CurrentDataFalse();
             FillHTML(divId, `${dataObject.name} #${i}`, dataObject["spoiler" + i]);
         }
-    }
-    else {
+    } else {
         CurrentDataFalse();
         for (let i = 1; i <= 7; i++) {
             FillHTML(divId, `${dataObject.name} #${i}`, dataObject["spoiler" + i]);
@@ -1175,6 +1160,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
  */
 function HKReadTextArea(textAreaId = "") {
 
+    console.log("HKReadTextArea()");
     // refresh and prepare document for filling with data from the save
     InitialHTMLPopulate(HK.DIV_ID);
 
@@ -1454,8 +1440,6 @@ function TranslateMapName(mapCode, dictionary = MAP) {
     return translation;
 }
 
-export { HKReadTextArea };
-
 // Make functions global so they can be used on click and change events (for Webpack)
 // window.InitialHTMLPopulate = InitialHTMLPopulate;
 
@@ -1476,4 +1460,10 @@ document.getElementById("save-location-input").addEventListener("mouseout", () =
 window.CheckboxSpoilersToggle = CheckboxSpoilersToggle;
 window.CheckboxHintsToggle = CheckboxHintsToggle;
 
-document.getElementById("save-area-read").addEventListener("click", HKReadTextArea("save-area"));
+document.getElementById("save-area-read").addEventListener("click", () => {
+    HKReadTextArea("save-area");
+}, false);
+
+export {
+    HKReadTextArea
+};
