@@ -33,7 +33,7 @@ module.exports = {
             location: 'head',
             priority: 'high',
             options: {
-                mainColor: "#43ce6d"
+                mainColor: "#59d1da"
             }
         })
     ],

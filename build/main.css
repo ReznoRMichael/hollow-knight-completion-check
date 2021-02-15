@@ -723,3 +723,7 @@ input[type="radio"] {
     background: #1e6c1e;
     border: 2px solid #2d8a49;
 }
+
+.test {
+    color: #59d1da;
+}
