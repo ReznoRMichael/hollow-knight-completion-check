@@ -1067,11 +1067,12 @@ const HK = {
             name: "Geo Rocks",
             spoiler: "Unbroken/Broken/Discovered Total"
         },
+        // not ghostCoins
         geoPool: {
             name: "Shade Geo",
             spoiler: "Amount of Geo the Shade is currently holding",
             min: 0
-        }, // not ghostCoins
+        },
         rancidEggs: {
             name: "Rancid Eggs",
             spoiler: "Find: Hallownest, Buy: Sly, Tuk"
