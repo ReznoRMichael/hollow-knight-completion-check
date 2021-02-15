@@ -32,7 +32,9 @@ module.exports = {
             path: './src/partials/cookiealert.html',
             location: 'head',
             priority: 'high',
-            options: {}
+            options: {
+                mainColor: "#43ce6d"
+            }
         })
     ],
     module: {
