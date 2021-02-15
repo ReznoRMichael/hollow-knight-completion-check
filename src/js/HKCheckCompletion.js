@@ -1160,7 +1160,6 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
  */
 function HKReadTextArea(textAreaId = "") {
 
-    console.log("HKReadTextArea()");
     // refresh and prepare document for filling with data from the save
     InitialHTMLPopulate(HK.DIV_ID);
 
@@ -1451,19 +1450,21 @@ document.getElementById("save-location-input").addEventListener("click", (e) => 
     SelectCopyInputText(e, "save-location-input-tooltip", "Copied save file location to clipboard");
 }, false);
 
+// Choose File input field
 document.getElementById("save-location-input").addEventListener("mouseout", () => {
     FillInnerHTML("save-location-input-tooltip", "Click once to copy to clipboard");
 }, false);
 
-// Make functions global so they can be used on click and change events (for Webpack)
-// window.HKReadTextArea = HKReadTextArea;
-window.CheckboxSpoilersToggle = CheckboxSpoilersToggle;
-window.CheckboxHintsToggle = CheckboxHintsToggle;
-
+// Analyze Text button
 document.getElementById("save-area-read").addEventListener("click", () => {
     HKReadTextArea("save-area");
 }, false);
 
+// Checkboxes functions
+document.getElementById("checkbox-hints").addEventListener("click", CheckboxHintsToggle, false);
+document.getElementById("checkbox-spoilers").addEventListener("click", CheckboxSpoilersToggle, false);
+
 export {
+    // to use in LoadSaveFile.js for auto-analyzing file after decoding
     HKReadTextArea
 };
