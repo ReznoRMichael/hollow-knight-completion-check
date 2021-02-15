@@ -1276,18 +1276,11 @@ function InitialHTMLPopulate(divIdObj) {
     AppendHTML(divIdObj.achievements, FLEUR_DIVIDE);
 
     // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
-    try {
+    if (StorageAvailable('localStorage')) {
         if (localStorage.getItem("hkCheckboxHints") === "checked") document.getElementById("checkbox-hints").checked = true;
-    }
-    catch (error) {
-        console.log(error);
-    }
-    try {
         if (localStorage.getItem("hkCheckboxSpoilers") === "checked") document.getElementById("checkbox-spoilers").checked = true;
     }
-    catch (error) {
-        console.log(error);
-    }
+
     // if (localStorage.getItem("hkCheckboxHints") === "checked") document.getElementById("checkbox-hints").checked = true;
     // if (localStorage.getItem("hkCheckboxSpoilers") === "checked") document.getElementById("checkbox-spoilers").checked = true;
 
@@ -1310,7 +1303,9 @@ function CheckboxHintsToggle(param = "none") {
             checkboxId.checked = false;
 
             // remember this choice for subsequent page visits and browser restarts
-            localStorage.setItem("hkCheckboxHints", "unchecked");
+            if (StorageAvailable('localStorage')) {
+                localStorage.setItem("hkCheckboxHints", "unchecked");
+            }
             break;
         case "show":
             document.getElementById("hk-hints").classList.remove("hidden");
@@ -1318,7 +1313,9 @@ function CheckboxHintsToggle(param = "none") {
             checkboxId.checked = true;
 
             // remember this choice for subsequent page visits and browser restarts
-            localStorage.setItem("hkCheckboxHints", "checked");
+            if (StorageAvailable('localStorage')) {
+                localStorage.setItem("hkCheckboxHints", "checked");
+            }
             break;
         default:
             // This runs when the checkbox is not checked
@@ -1327,11 +1324,8 @@ function CheckboxHintsToggle(param = "none") {
                 checkboxId.value = "hints-off";
 
                 // remember this choice for subsequent page visits and browser restarts
-                try {
+                if (StorageAvailable('localStorage')) {
                     localStorage.setItem("hkCheckboxHints", "unchecked");
-                }
-                catch (error) {
-                    console.log(error);
                 }
             }
             // This runs when the checkbox is checked
@@ -1340,11 +1334,8 @@ function CheckboxHintsToggle(param = "none") {
                 checkboxId.value = "hints-on";
 
                 // remember this choice for subsequent page visits and browser restarts
-                try {
+                if (StorageAvailable('localStorage')) {
                     localStorage.setItem("hkCheckboxHints", "checked");
-                }
-                catch (error) {
-                    console.log(error);
                 }
             }
     }
@@ -1368,11 +1359,8 @@ function CheckboxSpoilersToggle(param = "none") {
             checkboxId.checked = false;
 
             // remember this choice for subsequent page visits and browser restarts
-            try {
+            if (StorageAvailable('localStorage')) {
                 localStorage.setItem("hkCheckboxSpoilers", "unchecked");
-            }
-            catch (error) {
-                console.log(error);
             }
             break;
         case "show":
@@ -1383,11 +1371,8 @@ function CheckboxSpoilersToggle(param = "none") {
             checkboxId.checked = true;
 
             // remember this choice for subsequent page visits and browser restarts
-            try {
+            if (StorageAvailable('localStorage')) {
                 localStorage.setItem("hkCheckboxSpoilers", "checked");
-            }
-            catch (error) {
-                console.log(error);
             }
             break;
         default:
@@ -1399,11 +1384,8 @@ function CheckboxSpoilersToggle(param = "none") {
                 checkboxId.value = "spoilers-off";
 
                 // remember this choice for subsequent page visits and browser restarts
-                try {
+                if (StorageAvailable('localStorage')) {
                     localStorage.setItem("hkCheckboxSpoilers", "unchecked");
-                }
-                catch (error) {
-                    console.log(error);
                 }
                 break;
             }
@@ -1415,11 +1397,8 @@ function CheckboxSpoilersToggle(param = "none") {
                 checkboxId.value = "spoilers-on";
 
                 // remember this choice for subsequent page visits and browser restarts
-                try {
+                if (StorageAvailable('localStorage')) {
                     localStorage.setItem("hkCheckboxSpoilers", "checked");
-                }
-                catch (error) {
-                    console.log(error);
                 }
             }
     }
@@ -1484,6 +1463,36 @@ function TranslateMapName(mapCode, dictionary = MAP) {
     if (dictionary.hasOwnProperty(mapCode)) translation = dictionary[mapCode];
 
     return translation;
+}
+
+/**
+ * Detects whether Storage is both supported and available.
+ * MDN WebDocs https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API#feature-detecting_localstorage
+ * @param {Storage} type type of storage. Ex. "localStorage" or "sessionStorage"
+ * @returns {Boolean}
+ */
+function StorageAvailable(type) {
+    var storage;
+    try {
+        storage = window[type];
+        var x = '__storage_test__';
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        return true;
+    } catch (e) {
+        return e instanceof DOMException && (
+                // everything except Firefox
+                e.code === 22 ||
+                // Firefox
+                e.code === 1014 ||
+                // test name field too, because code might not be present
+                // everything except Firefox
+                e.name === 'QuotaExceededError' ||
+                // Firefox
+                e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+            // acknowledge QuotaExceededError only if there's something already stored
+            (storage && storage.length !== 0);
+    }
 }
 
 // Make functions global so they can be used on click and change events (for Webpack)
