@@ -8,6 +8,8 @@
 
 // AES JS for file decryption
 const aesjs = require("./aes-js.js");
+// For reading the text area after save decoding
+import { HKReadTextArea } from "./HKCheckCompletion.js";
 
 const CSHARP_HEADER = [0, 1, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 0, 0]; // 22 bytes
 

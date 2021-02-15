@@ -1173,7 +1173,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
 /**
  * Pre-Cleans HTML. Reads contents inside text area and parses it to a JavaScript object. If not empty, runs HKCheckCompletion() to check data.
  */
-export function HKReadTextArea(textAreaId = "") {
+function HKReadTextArea(textAreaId = "") {
 
     // refresh and prepare document for filling with data from the save
     InitialHTMLPopulate(HK.DIV_ID);
@@ -1453,6 +1453,8 @@ function TranslateMapName(mapCode, dictionary = MAP) {
 
     return translation;
 }
+
+export { HKReadTextArea };
 
 // Make functions global so they can be used on click and change events (for Webpack)
 // window.InitialHTMLPopulate = InitialHTMLPopulate;
