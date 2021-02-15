@@ -1173,7 +1173,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
 /**
  * Pre-Cleans HTML. Reads contents inside text area and parses it to a JavaScript object. If not empty, runs HKCheckCompletion() to check data.
  */
-function HKReadTextArea(textAreaId = "") {
+export function HKReadTextArea(textAreaId = "") {
 
     // refresh and prepare document for filling with data from the save
     InitialHTMLPopulate(HK.DIV_ID);
@@ -1454,6 +1454,9 @@ function TranslateMapName(mapCode, dictionary = MAP) {
     return translation;
 }
 
+// Make functions global so they can be used on click and change events (for Webpack)
+// window.InitialHTMLPopulate = InitialHTMLPopulate;
+
 // Populate HTML at load (before img and css)
 document.addEventListener("DOMContentLoaded", InitialHTMLPopulate(HK.DIV_ID));
 
@@ -1467,7 +1470,8 @@ document.getElementById("save-location-input").addEventListener("mouseout", () =
 }, false);
 
 // Make functions global so they can be used on click and change events (for Webpack)
-window.HKReadTextArea = HKReadTextArea;
-window.InitialHTMLPopulate = InitialHTMLPopulate;
+// window.HKReadTextArea = HKReadTextArea;
 window.CheckboxSpoilersToggle = CheckboxSpoilersToggle;
 window.CheckboxHintsToggle = CheckboxHintsToggle;
+
+document.getElementById("save-area-read").addEventListener("click", HKReadTextArea("save-area"));

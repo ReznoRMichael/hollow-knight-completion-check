@@ -1,5 +1,3 @@
-/* global require */
-
 // Handle cookies
 // require("./cookies.js");
 
@@ -15,9 +13,9 @@ require("../img/thumbnail1200x628.jpg");
 // Instantly load test save file from .json (fast Debugging script)
 // require("./LoadJson.js");
 
-// Load Save File for opening files, decoding, decryption
-require("./LoadSaveFile.js");
-
 // Main script for analyzing the decoded save file and generating the page on the fly
 // require("./HKCheckCompletion.js");
 require("./HKCheckCompletion.js");
+
+// Load Save File for opening files, decoding, decryption
+require("./LoadSaveFile.js");

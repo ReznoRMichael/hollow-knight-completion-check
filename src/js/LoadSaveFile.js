@@ -1,4 +1,3 @@
-/* global require HKReadTextArea */
 /* 
     Parts of the code thanks to bloodorca https://github.com/bloodorca/hollow (base64.js, functions.js) with slight modifications.
     The steps used there for decryption were taken from KayDeeTee https://github.com/KayDeeTee/Hollow-Knight-SaveManager
@@ -190,6 +189,7 @@ function AESDecryption(buffer, cipherObject = ECB_STREAM_CIPHER) {
 // Make functions global so they can be used on click and change events (for Webpack)
 // window.LoadSaveFile = LoadSaveFile;
 
+// Assign actions (functions) to launch when a specific element is used
 document.getElementById("save-area-file").addEventListener("change", LoadSaveFile);
 document.getElementById("save-area-file").addEventListener("click", (mouseEvent) => {
     mouseEvent.target.value = "";
