@@ -843,7 +843,8 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 (FindWorldItem("Abyss_20", "Shiny Item Stand")) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             case "gotLurkerKey":
-                if (playerData.hasOwnProperty("gotLurkerKey") === false) {
+            case "nightmareLanternLit":
+                if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank();
                     textPrefix = `<del>${textPrefix}</del>`;
                     textSuffix = `<del>${textSuffix}</del>`;
