@@ -516,12 +516,33 @@ a.button:visited {
     width: 50px;
     height: 50px;
     text-decoration: none;
+    background-color: #1e4d6c;
+    border: 0;
+    outline: 0;
     position: fixed;
     right: 1px;
     bottom: 0;
     z-index: 1100;
     opacity: 0;
     transition: all 0.3s ease;
+}
+
+.scroll-up-button:hover {
+    background-color: #2e5d7c;
+    cursor: pointer;
+}
+
+.scroll-up-button-arrow {
+    position: relative;
+    left: 12px;
+    top: 3px;
+    width: 12px;
+    height: 12px;
+    border: solid #aac7d4;
+    border-width: 2px 0px 0px 2px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .hidden {
