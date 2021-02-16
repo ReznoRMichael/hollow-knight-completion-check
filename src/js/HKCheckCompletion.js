@@ -575,6 +575,7 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
             case "gotCharm_40":
             case "killedGrimm":
             case "grimmChildLevel":
+            case "killedHiveKnight":
                 // fades out the entries if save file is from older game versions
                 if (!playerData.hasOwnProperty(i)) {
                     CurrentDataBlank();
@@ -1282,9 +1283,6 @@ function InitialHTMLPopulate(divIdObj) {
     for (let i in HK.SPELLS) {
         FillHTML(divIdObj.spells, HK.SPELLS[i].name, HK.SPELLS[i].spoiler);
     }
-
-    // Nightmare King Grimm / Banishment Misc
-    FillHTML(divIdObj.grimmTroupe, "Nightmare King Grimm / Banishment", "Dirtmouth or Howling Cliffs");
 
     // Godmaster Doors Misc
     for (let i in HK.GODMASTER_DOORS) {
