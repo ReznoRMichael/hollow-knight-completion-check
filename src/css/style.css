@@ -413,6 +413,14 @@ a.button:visited {
     display: block;
 }
 
+.opacity-none {
+    opacity: 0;
+}
+
+.opacity-full {
+    opacity: 1;
+}
+
 .spoiler-text {
     display: inline;
     /* These are technically the same, but use both */
@@ -628,8 +636,8 @@ input[type="radio"] {
     position: fixed;
     right: 1px;
     bottom: 0;
-    display: none;
     z-index: 1100;
+    transition: all 0.3s ease;
 }
 
 .test {

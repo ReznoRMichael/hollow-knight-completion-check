@@ -10,13 +10,19 @@ function ScrollTo(element) {
 function ShowElement(element) {
 
     element.classList.toggle("hidden");
+    element.classList.toggle("opacity-none");
+
     element.classList.add("visible");
+    element.classList.add("opacity-full");
 }
 
 function HideElement(element) {
 
     element.classList.toggle("visible");
+    element.classList.toggle("opacity-full");
+    
     element.classList.add("hidden");
+    element.classList.add("opacity-none");
 }
 
 function TogglePageScrollElement(root, element, ratio) {
