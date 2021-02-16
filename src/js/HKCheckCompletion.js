@@ -847,6 +847,9 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             case "killedPaleLurker":
             case "whiteDefenderDefeated":
             case "gotGrimmNotch":
+            case "fragileGreed_unbreakable":
+            case "fragileHealth_unbreakable":
+            case "fragileStrength_unbreakable":
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank();
                     textPrefix = `<del>${textPrefix}</del>`;
