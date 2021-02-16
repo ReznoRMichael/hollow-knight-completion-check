@@ -851,6 +851,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             case "fragileHealth_unbreakable":
             case "fragileStrength_unbreakable":
             case "killedBindingSeal":
+            case "killedGodseekerMask":
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank();
                     textPrefix = `<del>${textPrefix}</del>`;
