@@ -578,7 +578,7 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
             case "killedHiveKnight":
             case "hasGodfinder":
                 // fades out the entries if save file is from older game versions
-                if (!playerData.hasOwnProperty(i)) {
+                if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank();
                     textPrefix = `<del>${textPrefix}</del>`;
                     textSuffix = `<del>${textSuffix}</del>`;
@@ -841,6 +841,15 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 break;
             case "simpleKeyAncientBasin": // #3
                 (FindWorldItem("Abyss_20", "Shiny Item Stand")) ? CurrentDataTrue(): CurrentDataFalse();
+                break;
+            case "gotLurkerKey":
+                if (playerData.hasOwnProperty("gotLurkerKey") === false) {
+                    CurrentDataBlank();
+                    textPrefix = `<del>${textPrefix}</del>`;
+                    textSuffix = `<del>${textSuffix}</del>`;
+                    break;
+                }
+                (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             case "paleOreAncientBasin": // #1
                 (FindWorldItem("Abyss_17", "Battle Scene Ore")) ? CurrentDataTrue(): CurrentDataFalse();

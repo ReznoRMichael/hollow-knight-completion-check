@@ -797,7 +797,7 @@ const HK = {
         },
         gotLurkerKey: {
             name: "Simple Key #4",
-            spoiler: "Kingdom's Edge: Colosseum of Fools"
+            spoiler: "Colosseum of Fools: Pale Lurker's Retreat"
         },
         paleOreAncientBasin: {
             name: "Pale Ore #1",
