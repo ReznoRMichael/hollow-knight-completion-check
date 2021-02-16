@@ -244,7 +244,7 @@ If you like the tool and wish it developed further with more functions and easie
 
 * v1.0.4 2021-xx-xx:
 
-  — Backwards Compatibility with Hollow Knight version 1.0.0.6 save files (February 2017 release version) and all above.
+  — **General Backwards Compatibility** with Hollow Knight version 1.0.0.6 save files (February 2017 release version) and all above.
 
   — File Reading now launches automatically when you open the same file subsequently. Useful for quick analyzing the same save file after modification without reloading the page.
 
