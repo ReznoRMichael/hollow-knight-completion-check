@@ -852,6 +852,10 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             case "fragileStrength_unbreakable":
             case "killedBindingSeal":
             case "killedGodseekerMask":
+            case "givenGodseekerFlower":
+            case "givenOroFlower":
+            case "givenWhiteLadyFlower":
+            case "givenEmilitiaFlower":
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank();
                     textPrefix = `<del>${textPrefix}</del>`;
