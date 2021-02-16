@@ -409,6 +409,10 @@ a.button:visited {
     display: none;
 }
 
+.visible-block {
+    display: block;
+}
+
 .spoiler-text {
     display: inline;
     /* These are technically the same, but use both */
