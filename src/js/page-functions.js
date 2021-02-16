@@ -1,5 +1,10 @@
-function ScrollTo() {
+function ScrollTo(element) {
 
+    /* Scroll to the element top */
+    element.ScrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 function ShowElement(element) {
@@ -36,4 +41,8 @@ document.addEventListener("scroll", () => {
         document.querySelector(".scroll-up-button"),
         /* How far the user has to scroll to show the element */
         0.50);
+});
+
+document.querySelector(".scroll-up-button").addEventListener("click", () => {
+    ScrollTo(document.documentElement);
 });
