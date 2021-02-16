@@ -246,13 +246,14 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **General Backwards Compatibility** with Hollow Knight version 1.0.0.6 save files (February 2017 release version) and all above.
 
-  — File Reading now launches automatically when you open the same file subsequently. Useful for quick analyzing the same save file after modification without reloading the page.
-
   — **Game Completion Essentials** additions:  
   ✅ Acid Drained in Waterways  
 
   — **Game Statistics** additions:  
+  ✅ Delicate Flowers given to NPCs (Elderbug, Godseeker, Oro, White Lady, Emilitia)  
   ✅ Rancid Eggs sold to Jinn — relevant to Steel Soul Mode  
+  
+  — File Reading now launches automatically when you open the same file subsequently. Useful for quick analyzing the same save file after modification without reloading the page.
 
   — The tool can now be used even when you disabled all cookies in your browser. You won't have the ability to remember your selected checkboxes in this case, but all else will work.
 
