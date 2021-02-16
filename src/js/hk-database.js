@@ -1180,6 +1180,26 @@ const HK = {
             name: "Path of Pain",
             spoiler: "White Palace: main secret area"
         },
+        elderbugGaveFlower: {
+            name: "Delicate Flower: Elderbug",
+            spoiler: "From Traitor's Child Grave"
+        },
+        givenGodseekerFlower: {
+            name: "Delicate Flower: Godseeker",
+            spoiler: "From Traitor's Child Grave"
+        },
+        givenOroFlower: {
+            name: "Delicate Flower: Nailmaster Oro",
+            spoiler: "From Traitor's Child Grave"
+        },
+        givenWhiteLadyFlower: {
+            name: "Delicate Flower: White Lady",
+            spoiler: "From Traitor's Child Grave"
+        },
+        givenEmilitiaFlower: {
+            name: "Delicate Flower: Emilitia",
+            spoiler: "From Traitor's Child Grave"
+        },
     }
 };
 
