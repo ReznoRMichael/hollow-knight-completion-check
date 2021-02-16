@@ -845,6 +845,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             case "gotLurkerKey":
             case "nightmareLanternLit":
             case "killedPaleLurker":
+            case "whiteDefenderDefeated":
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank();
                     textPrefix = `<del>${textPrefix}</del>`;
