@@ -557,7 +557,10 @@ function CheckNotches(divId, totalNotches = 3, filledNotches = 0) {
  */
 function CheckIfDataTrue(divId, dataObject, playerData) {
 
-    let {textPrefix, textSuffix} = "";
+    let {
+        textPrefix,
+        textSuffix
+    } = "";
 
     for (let i in dataObject) {
 
