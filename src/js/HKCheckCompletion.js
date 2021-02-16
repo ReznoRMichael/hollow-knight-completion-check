@@ -778,7 +778,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
 
                 if (i === "greyPrinceDefeats") {
                     // backwards compatibility with earlier game versions
-                    if (playerData.hasOwnProperty("greyPrinceDefeats") === false) {
+                    if (playerData.hasOwnProperty(i) === false) {
                         CurrentDataBlank();
                         textPrefix = `<del>${dataObject[i].name}</del>`;
                         textSuffix = `<del>${textSuffix}</del>`;
@@ -791,7 +791,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
 
                 if (i === "whiteDefenderDefeats") {
                     // backwards compatibility with earlier game versions
-                    if (playerData.hasOwnProperty("whiteDefenderDefeats") === false) {
+                    if (playerData.hasOwnProperty(i) === false) {
                         CurrentDataBlank();
                         textPrefix = `<del>${dataObject[i].name}</del>`;
                         textSuffix = `<del>${textSuffix}</del>`;
@@ -896,19 +896,46 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 }
                 break;
             case "killsBindingSeal":
+                if (playerData.hasOwnProperty(i) === false) {
+                    CurrentDataBlank();
+                    textPrefix = `<del>${textPrefix}</del>`;
+                    textSuffix = `<del>${textSuffix}</del>`;
+                    break;
+                }
                 (playerData[i] == 0) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             case "killedVoidIdol_1":
+                if (playerData.hasOwnProperty(i) === false) {
+                    CurrentDataBlank();
+                    textPrefix = `<del>${textPrefix}</del>`;
+                    textSuffix = `<del>${textSuffix}</del>`;
+                    break;
+                }
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
                 if (playerData[i] === false && (playerData.killedVoidIdol_2 === true || playerData.killedVoidIdol_3 === true)) CurrentDataTrue();
                 break;
             case "killedVoidIdol_2":
+                if (playerData.hasOwnProperty(i) === false) {
+                    CurrentDataBlank();
+                    textPrefix = `<del>${textPrefix}</del>`;
+                    textSuffix = `<del>${textSuffix}</del>`;
+                    break;
+                }
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
                 if (playerData[i] === false && playerData.killedVoidIdol_3 === true) CurrentDataTrue();
                 break;
+            case "killedVoidIdol_3":
+                if (playerData.hasOwnProperty(i) === false) {
+                    CurrentDataBlank();
+                    textPrefix = `<del>${textPrefix}</del>`;
+                    textSuffix = `<del>${textSuffix}</del>`;
+                    break;
+                }
+                (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
+                break;
             case "greyPrinceDefeated":
                 // compatibility with earlier game versions
-                if (playerData.hasOwnProperty("greyPrinceDefeated") === false) {
+                if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank();
                     textPrefix = `<del>${textPrefix}</del>`;
                     textSuffix = `<del>${textSuffix}</del>`;
