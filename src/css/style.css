@@ -405,6 +405,18 @@ a.button:visited {
     height: 1.47rem;
 }
 
+.scroll-up-button {
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    position: fixed;
+    right: 1px;
+    bottom: 0;
+    z-index: 1100;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
 .hidden {
     display: none;
 }
@@ -627,17 +639,6 @@ input[type="radio"] {
     color: #ddffd9;
     background: #1e6c1e;
     border: 2px solid #2d8a49;
-}
-
-.scroll-up-button {
-    width: 50px;
-    height: 50px;
-    text-decoration: none;
-    position: fixed;
-    right: 1px;
-    bottom: 0;
-    z-index: 1100;
-    transition: all 0.3s ease;
 }
 
 .test {

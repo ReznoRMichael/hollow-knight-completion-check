@@ -1,7 +1,10 @@
-function ScrollTo(element) {
+const ROOT = document.documentElement;
+const SCROLL_BUTTON = document.querySelector(".scroll-up-button");
+
+function ScrollToElement(element) {
 
     /* Scroll to the element top */
-    element.ScrollTo({
+    element.scrollTo({
         top: 0,
         behavior: "smooth"
     });
@@ -9,20 +12,16 @@ function ScrollTo(element) {
 
 function ShowElement(element) {
 
-    element.classList.toggle("hidden");
-    element.classList.toggle("opacity-none");
-
-    element.classList.add("visible");
+    element.classList.add("visible-block");
     element.classList.add("opacity-full");
+    element.classList.remove("hidden");
 }
 
 function HideElement(element) {
 
-    element.classList.toggle("visible");
-    element.classList.toggle("opacity-full");
-    
+    element.classList.remove("visible-block");
+    element.classList.remove("opacity-full");
     element.classList.add("hidden");
-    element.classList.add("opacity-none");
 }
 
 function TogglePageScrollElement(root, element, ratio) {
@@ -42,13 +41,13 @@ function TogglePageScrollElement(root, element, ratio) {
 document.addEventListener("scroll", () => {
     TogglePageScrollElement(
         /* the document element root (<html>) */
-        document.documentElement,
+        ROOT,
         /* Which element to toggle visibility */
-        document.querySelector(".scroll-up-button"),
+        SCROLL_BUTTON,
         /* How far the user has to scroll to show the element */
-        0.50);
+        0.1);
 });
 
-document.querySelector(".scroll-up-button").addEventListener("click", () => {
-    ScrollTo(document.documentElement);
+SCROLL_BUTTON.addEventListener("click", () => {
+    ScrollToElement(ROOT);
 });
