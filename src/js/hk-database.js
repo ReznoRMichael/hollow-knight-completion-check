@@ -702,6 +702,10 @@ const HK = {
         killedGrimm: {
             name: "Troupe Leader Grimm",
             spoiler: "Dirtmouth, collect 6 flames"
+        },
+        grimmChildLevel: {
+            name: "Nightmare King Grimm / Banishment",
+            spoiler: "Dirtmouth or Howling Cliffs"
         }
     },
     LIFEBLOOD: {

@@ -176,9 +176,6 @@ function HKCheckCompletion(jsonObject) {
 
     CheckIfDataTrue(HK.DIV_ID.grimmTroupe, HK.GRIMMTROUPE, HKPlayerData);
 
-    (HKPlayerData.grimmChildLevel >= 4) ? CurrentDataTrue(HK.DIV_ID.grimmTroupe): CurrentDataFalse();
-    FillHTML(HK.DIV_ID.grimmTroupe, "Nightmare King Grimm / Banishment", "Dirtmouth or Howling Cliffs");
-
     // ---------------- Lifeblood Content Pack --------------------- //
 
     CheckIfDataTrue(HK.DIV_ID.lifeblood, HK.LIFEBLOOD, HKPlayerData);
@@ -559,16 +556,43 @@ function CheckNotches(divId, totalNotches = 3, filledNotches = 0) {
  * @param {object} playerData Reference/pointer to specific data where to search
  */
 function CheckIfDataTrue(divId, dataObject, playerData) {
+
+    let {textPrefix, textSuffix} = "";
+
     for (let i in dataObject) {
+
+        textPrefix = dataObject[i].name;
+        textSuffix = dataObject[i].spoiler;
+
         switch (i) {
             case "gotCharm_36":
                 // prevents green checkbox and adding 1% when only got one white fragment
                 (playerData.gotQueenFragment === true && playerData.gotKingFragment === true) ? CurrentDataTrue(divId): CurrentDataFalse();
                 break;
+            case "gotCharm_37":
+            case "gotCharm_38":
+            case "gotCharm_39":
+            case "gotCharm_40":
+            case "killedGrimm":
+            case "grimmChildLevel":
+                // fades out the entries if save file is from older game versions
+                if (!playerData.hasOwnProperty(i)) {
+                    CurrentDataBlank();
+                    textPrefix = `<del>${textPrefix}</del>`;
+                    textSuffix = `<del>${textSuffix}</del>`;
+                    break;
+                }
+                if (i === "grimmChildLevel") {
+                    (playerData.grimmChildLevel >= 4) ? CurrentDataTrue(divId): CurrentDataFalse();
+                    break;
+                }
+                (playerData[i] === true) ? CurrentDataTrue(divId): CurrentDataFalse();
+                break;
             default:
                 (playerData[i] === true) ? CurrentDataTrue(divId): CurrentDataFalse();
         }
-        FillHTML(divId, dataObject[i].name, dataObject[i].spoiler);
+
+        FillHTML(divId, textPrefix, textSuffix);
     }
 }
 
