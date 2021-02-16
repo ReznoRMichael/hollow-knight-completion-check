@@ -1162,15 +1162,25 @@ const HK = {
             name: "Journal: Void Idol Radiant",
             spoiler: "Godhome: Hall of Gods, defeat all"
         },
-        whiteDefenderDefeats: {
-            name: "White Defender times defeated",
-            spoiler: "Royal Waterways (5 max)",
-            max: 5
+        elderbugGaveFlower: {
+            name: "Delicate Flower: Elderbug",
+            spoiler: "Delivered from Traitor's Child Grave"
         },
-        greyPrinceDefeats: {
-            name: "Grey Prince Zote times defeated",
-            spoiler: "Dirtmouth (10 max)",
-            max: 10
+        givenGodseekerFlower: {
+            name: "Delicate Flower: Godseeker",
+            spoiler: "Delivered from Traitor's Child Grave"
+        },
+        givenOroFlower: {
+            name: "Delicate Flower: Nailmaster Oro",
+            spoiler: "D. from Traitor's Child Grave"
+        },
+        givenWhiteLadyFlower: {
+            name: "Delicate Flower: White Lady",
+            spoiler: "Delivered from Traitor's Child Grave"
+        },
+        givenEmilitiaFlower: {
+            name: "Delicate Flower: Emilitia",
+            spoiler: "Delivered from Traitor's Child Grave"
         },
         whitePalaceSecretRoomVisited: {
             name: "White Palace Secret Room visited",
@@ -1180,25 +1190,15 @@ const HK = {
             name: "Path of Pain",
             spoiler: "White Palace: main secret area"
         },
-        elderbugGaveFlower: {
-            name: "Delicate Flower: Elderbug",
-            spoiler: "From Traitor's Child Grave"
+        whiteDefenderDefeats: {
+            name: "White Defender times defeated",
+            spoiler: "Royal Waterways (5 max)",
+            max: 5
         },
-        givenGodseekerFlower: {
-            name: "Delicate Flower: Godseeker",
-            spoiler: "From Traitor's Child Grave"
-        },
-        givenOroFlower: {
-            name: "Delicate Flower: Nailmaster Oro",
-            spoiler: "From Traitor's Child Grave"
-        },
-        givenWhiteLadyFlower: {
-            name: "Delicate Flower: White Lady",
-            spoiler: "From Traitor's Child Grave"
-        },
-        givenEmilitiaFlower: {
-            name: "Delicate Flower: Emilitia",
-            spoiler: "From Traitor's Child Grave"
+        greyPrinceDefeats: {
+            name: "Grey Prince Zote times defeated",
+            spoiler: "Dirtmouth (10 max)",
+            max: 10
         },
     }
 };
