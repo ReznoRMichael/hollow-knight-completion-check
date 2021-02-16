@@ -10,6 +10,8 @@ require("../css/style.css");
 // required for meta tags (social) to be visible by Webpack
 require("../img/thumbnail1200x628.jpg");
 
+require("./page-functions.js");
+
 // Instantly load test save file from .json (fast Debugging script)
 // require("./LoadJson.js");
 

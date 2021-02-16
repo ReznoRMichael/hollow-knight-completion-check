@@ -617,6 +617,17 @@ input[type="radio"] {
     border: 2px solid #2d8a49;
 }
 
+.scroll-up-button {
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    position: fixed;
+    right: 1px;
+    bottom: 0;
+    display: none;
+    z-index: 1100;
+}
+
 .test {
     color: #59d1da;
 }

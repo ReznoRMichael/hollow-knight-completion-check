@@ -1,6 +1,6 @@
 /* eslint-disable no-prototype-builtins */
 
-// ---------------- Load main Hollow Knight database file ----------------- //
+// ---------------- Load main Hollow Knight database files ----------------- //
 
 import HK from "./hk-database.js";
 import MAP from "./hk-dictionary.js";
