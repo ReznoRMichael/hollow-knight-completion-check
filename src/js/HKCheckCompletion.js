@@ -576,6 +576,7 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
             case "killedGrimm":
             case "grimmChildLevel":
             case "killedHiveKnight":
+            case "hasGodfinder":
                 // fades out the entries if save file is from older game versions
                 if (!playerData.hasOwnProperty(i)) {
                     CurrentDataBlank();
