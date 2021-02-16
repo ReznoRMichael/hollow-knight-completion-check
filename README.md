@@ -257,6 +257,8 @@ If you like the tool and wish it developed further with more functions and easie
 
   — The tool can now be used even when you disabled all cookies in your browser. You won't have the ability to remember your selected checkboxes in this case, but all else will work.
 
+  — Added a small scroll up arrow for fast returning to top.
+
 ## Using
 
 * JavaScript (compiled to ES 6 / ES 2015)
