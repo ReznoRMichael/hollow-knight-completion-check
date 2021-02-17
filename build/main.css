@@ -205,7 +205,7 @@ strong {
 
 h1 {
     font-size: 1.7rem;
-    color: #aac7d4;
+    color: #8abbab;
     margin: 0.6rem 0;
 }
 
@@ -224,7 +224,7 @@ h6 {
     font-size: 1.2rem;
     font-weight: 500;
     margin: 0.6rem 0;
-    color: rgba(231, 251, 255, 0.6);
+    color: rgba(0, 255, 220, 0.6);
 }
 
 #save-location-input {
@@ -787,6 +787,14 @@ input[type="radio"] {
     color: #ddffd9;
     background: #1e6c1e;
     border: 2px solid #2d8a49;
+}
+
+.pp-gold {
+    color: #ffbc00;
+}
+
+.pp-silver {
+    color: #ebf9ff;
 }
 
 .test {
