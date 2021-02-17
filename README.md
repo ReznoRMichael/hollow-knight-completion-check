@@ -21,6 +21,8 @@
 
 Every single penny counts: [Donate any amount](https://www.paypal.me/ReznoRMichael). By donating you directly contribute to the purpose of improving the tool for yourself and everyone else.
 
+> **PayPal supporters are immortalized on the Tool's Web page** with a Lvl indicating the amount of support for the Tool. You can get your name/nick immortalized too! Donate at least $1 for the Tool development 🙂 You can include the name or nick in the PayPal donation message (optional) or "Anonymous" if you wish to be featured anonymously. If you don't want to be featured on the page, please write it in the message too.
+
 ## General info
 
 Hollow Knight doesn't have a game completion list in-game. There is no easy way to check in-game what specific things you forgot to do or missed for full 112% Game Completion, Hunter's Journal and Achievements. Until now! I wrote a tool for that for you.
@@ -85,11 +87,35 @@ On Android running the tool locally requires manually typing the address `file:/
 
 All feedback/problems/wrong data are appreciated. Feel free to write them in the [Steam Discussion](https://steamcommunity.com/app/367520/discussions/0/2915472677711090083/) thread for the Tool or under the [Steam Guide](https://steamcommunity.com/sharedfiles/filedetails/?id=2209910193).
 
-If you like the tool and wish it developed further with more functions and easier usage, consider supporting on [PayPal](https://www.paypal.me/ReznoRMichael).
+If you like the tool and wish it developed further with more functions and easier usage, consider supporting on [PayPal](https://www.paypal.me/ReznoRMichael). PayPal supporters with at least $1 are **immortalized on the Tool's Web page.**
 
 ![donate](https://img.shields.io/static/v1?label=Donate&message=PayPal&color=blue&labelColor=lightgrey&style=for-the-badge&logo=paypal&link=https://www.paypal.com/paypalme/ReznoRMichael)
 
 ## Version History
+
+* v1.1.0 2021-02-17:
+
+  — **PayPal supporters are immortalized on the Tool's Web page** with a Lvl indicating the amount of support for the Tool. You can get your name/nick immortalized too! Donate at least $1 for the Tool development 🙂 You can include the name or nick in the PayPal donation message (optional) or "Anonymous" if you wish to be featured anonymously. If you don't want to be featured on the page, please write it in the message too.
+
+  — **Hollow Knight Wiki links** to every entry in the tool for quick and easy access/map locations etc. No need to search manually now.
+
+  — **General Backwards Compatibility** with Hollow Knight version 1.0.0.6 save files (February 2017 release version) and all newer HK versions.
+
+  — **Game Completion Essentials** additions:  
+  ✅ Acid Drained in Waterways  
+  ✅ Two White Fragments (Queen and King)  
+
+  — **Game Statistics** additions:  
+  ✅ Delicate Flowers given to NPCs (Elderbug, Godseeker, Oro, White Lady, Emilitia)  
+  ✅ Rancid Eggs sold to Jinn — relevant to Steel Soul Mode  
+  
+  — File Reading now launches automatically when you open the same file subsequently. Useful for quick analyzing the same save file after modification without reloading the page.
+
+  — The tool can now be used even when you disabled all cookies in your browser. You won't have the ability to remember your selected checkboxes in this case, but all else will work.
+
+  — Added a small scroll up arrow for fast returning to top.
+
+  — Performance optimizations. Should work ~2x faster. Difference may be noticeable rather more on mobile devices than on PCs.
 
 * v1.0.3 2021-02-14:
 
@@ -241,28 +267,6 @@ If you like the tool and wish it developed further with more functions and easie
   — Fixed Gruz Mother incorrect data check, should be okay now
 
   — Added save's Play Time
-
-* v1.1.0 2021-xx-xx:
-
-  — **Hollow Knight Wiki links** to every entry in the tool for quick and easy access/map locations etc. No need to search manually now.
-
-  — **General Backwards Compatibility** with Hollow Knight version 1.0.0.6 save files (February 2017 release version) and all newer HK versions.
-
-  — **Game Completion Essentials** additions:  
-  ✅ Acid Drained in Waterways  
-  ✅ Two White Fragments (Queen and King)  
-
-  — **Game Statistics** additions:  
-  ✅ Delicate Flowers given to NPCs (Elderbug, Godseeker, Oro, White Lady, Emilitia)  
-  ✅ Rancid Eggs sold to Jinn — relevant to Steel Soul Mode  
-  
-  — File Reading now launches automatically when you open the same file subsequently. Useful for quick analyzing the same save file after modification without reloading the page.
-
-  — The tool can now be used even when you disabled all cookies in your browser. You won't have the ability to remember your selected checkboxes in this case, but all else will work.
-
-  — Added a small scroll up arrow for fast returning to top.
-
-  — Performance optimizations. Should work ~2x faster. Difference may be noticeable rather more on mobile devices than on PCs.
 
 ## Using
 
