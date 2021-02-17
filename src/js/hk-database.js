@@ -749,37 +749,37 @@ const HK = {
         xeroDefeated: {
             name: "Xero",
             spoiler: "Resting Grounds",
-            wiki: ""
+            wiki: "Xero"
         },
         noEyesDefeated: {
             name: "No Eyes",
             spoiler: "Greenpath: Stone Sanctuary",
-            wiki: ""
+            wiki: "No_Eyes"
         },
         elderHuDefeated: {
             name: "Elder Hu",
             spoiler: "Fungal Wastes",
-            wiki: ""
+            wiki: "Elder_Hu"
         },
         aladarSlugDefeated: {
             name: "Gorb",
             spoiler: "Howling Cliffs",
-            wiki: ""
+            wiki: "Gorb"
         },
         mumCaterpillarDefeated: {
             name: "Marmu",
             spoiler: "Queen's Gardens",
-            wiki: ""
+            wiki: "Marmu"
         },
         galienDefeated: {
             name: "Galien",
             spoiler: "Deepnest",
-            wiki: ""
+            wiki: "Galien"
         },
         markothDefeated: {
             name: "Markoth",
             spoiler: "Kingdom's Edge, requires Shade Cloak",
-            wiki: ""
+            wiki: "Markoth"
         },
     },
     GRIMMTROUPE: {
