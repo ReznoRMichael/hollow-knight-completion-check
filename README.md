@@ -23,9 +23,9 @@ Every single penny counts: [Donate any amount](https://www.paypal.me/ReznoRMicha
 
 ## General info
 
-Hollow Knight doesn't have a game completion list in-game. There is no way to easily check what specific things you forgot to do or missed for full 112% Game Completion, Hunter's Journal and Achievements. Until now! I wrote a tool for that for you.
+Hollow Knight doesn't have a game completion list in-game. There is no easy way to check in-game what specific things you forgot to do or missed for full 112% Game Completion, Hunter's Journal and Achievements. Until now! I wrote a tool for that for you.
 
-*Inspirations: love for Hollow Knight, discussions on the forum, [KayDeeTee](https://github.com/KayDeeTee/Hollow-Knight-SaveManager) and [bloodorca](https://bloodorca.github.io/hollow)'s Save Editors, programming learning, Elderbug.*
+*Inspirations and thanks: love for Hollow Knight, discussions on the forum, [KayDeeTee](https://github.com/KayDeeTee/Hollow-Knight-SaveManager) and [bloodorca](https://bloodorca.github.io/hollow)'s Save Editors, programming learning, Elderbug, ManicJamie for their [HKTranslator](https://github.com/ManicJamie/HKTranslator).*
 
 ## Steam Guide
 
@@ -246,7 +246,7 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **Hollow Knight Wiki links** to every entry in the tool for quick and easy access/map locations etc. No need to search manually now.
 
-  — **General Backwards Compatibility** with Hollow Knight version 1.0.0.6 save files (February 2017 release version) and all versions above it.
+  — **General Backwards Compatibility** with Hollow Knight version 1.0.0.6 save files (February 2017 release version) and all newer HK versions.
 
   — **Game Completion Essentials** additions:  
   ✅ Acid Drained in Waterways  
