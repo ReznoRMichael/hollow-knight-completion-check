@@ -8,6 +8,7 @@ import HK from "./hk-database.js";
 
 import {
     PrefillHTML,
+    CompletionHTML,
     CheckboxHintsToggle,
     CheckboxSpoilersToggle,
     StorageAvailable
@@ -240,66 +241,6 @@ function HKCheckCompletion(jsonObject) {
     console.info("HKCheckCompletion() time (ms) =", benchHKCCEnd - benchHKCCBegin);
 
     return true;
-}
-
-/**
- * Replaces the h2 titles with a current percent/max percent values as read from the save file
- * @param {object} jsObj Object with HTML data to fill
- */
-function CompletionHTML(jsObj, hkGameCompletion) {
-
-    let h2 = "";
-    let h2id = "";
-    let cl = "";
-    let clGreen = "box-green";
-    let clRed = "box-red";
-    let cp = 0; // current Percent
-    let mp = 0; // max Percent
-    let fillText = "";
-
-    for (let i in jsObj) {
-        h2 = jsObj[i].h2;
-        h2id = "h2-" + jsObj[i].id;
-
-        (jsObj[i].hasOwnProperty("percent")) ? cp = jsObj[i].percent: cp = 0;
-        if (i === "intro") cp = hkGameCompletion;
-
-        // Don't use percent-box for Essentials, Achievements, Statistics
-        if (!jsObj[i].hasOwnProperty("maxPercent")) {
-            fillText = "";
-        }
-        // otherwise use percent-box with values cp/mp%
-        else {
-
-            mp = jsObj[i].maxPercent;
-
-            if (i === "maskShards") {
-                let perc = jsObj[i].percent;
-                (perc % 4) ? cp = Math.floor(perc / 4): cp = perc / 4;
-            } else if (i === "vesselFragments") {
-                let perc = jsObj[i].percent;
-                (perc % 3) ? cp = Math.floor(perc / 3): cp = perc / 3;
-            }
-
-            // switches the box to red when a section (h2) is 0
-            if (cp === 0) {
-                cl = ` ${clRed}`;
-            }
-            // switches the box to green when a section (h2) is completed
-            else if (cp === mp) {
-                cl = ` ${clGreen}`;
-            }
-            // default is blue (partially completed and starting value)
-            else cl = "";
-
-            // needed for Game Status to show percentage properly (adds a slash for all boxes except the Game Status one)
-            if (jsObj[i].hasOwnProperty("percent")) cp += "/";
-
-            fillText = `<div class='percent-box${cl}'>${(i === "intro") ? cp: cp + jsObj[i].maxPercent}%</div>`;
-        }
-
-        document.getElementById(h2id).innerHTML = h2 + fillText;
-    }
 }
 
 /**
