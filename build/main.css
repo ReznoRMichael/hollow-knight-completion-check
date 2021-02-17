@@ -430,7 +430,7 @@ a:visited {
 a:hover {
     color: #d9f3ff;
     text-decoration: none;
-    text-shadow: 0 0 0.25em #54ff95;
+    text-shadow: 0 0 0.6em #1bff73;
 }
 
 a.button:active,
