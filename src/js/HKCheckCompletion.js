@@ -946,7 +946,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 }
                 break;
             case "mrMushroomState":
-                CheckMrMushroomState(divId, dataObject[i], playerData[i]);
+                sFillText += CheckMrMushroomState(divId, dataObject[i], playerData[i]);
                 break;
             default:
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
@@ -1108,7 +1108,7 @@ function CheckMrMushroomState(divId, dataObject, mrMushroomState = 0) {
         }
     }
 
-    AppendHTML(divId, sFillText);
+    return sFillText;
 }
 
 /**
@@ -1293,7 +1293,8 @@ function InitialHTMLPopulate(divIdObj) {
     AppendHTML(divIdObj.godmaster, sFillText);
 
     // Mr Mushroom 1 - 7
-    CheckMrMushroomState(divIdObj.achievements, HK.ACHIEVEMENTS.mrMushroomState);
+    sFillText = CheckMrMushroomState(divIdObj.achievements, HK.ACHIEVEMENTS.mrMushroomState);
+    AppendHTML(divIdObj.achievements, sFillText);
 
     // Fleur Dividers
     AppendHTML(divIdObj.godmaster, FLEUR_DIVIDE);
