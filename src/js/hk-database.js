@@ -442,115 +442,115 @@ const HK = {
         colosseumBronzeCompleted: {
             name: "Trial of the Warrior",
             spoiler: "Little Fool: 100 Geo",
-            wiki: ""
+            wiki: "Trial_of_the_Warrior"
         },
         colosseumSilverCompleted: {
             name: "Trial of the Conqueror",
             spoiler: "Little Fool: 450 Geo + Warrior completed",
-            wiki: ""
+            wiki: "Trial_of_the_Conqueror"
         },
         colosseumGoldCompleted: {
             name: "Trial of the Fool",
             spoiler: "Little Fool: 800 Geo + Conqueror completed",
-            wiki: ""
+            wiki: "Trial_of_the_Fool"
         },
     },
     DREAMERS: {
         lurienDefeated: {
             name: "Lurien the Watcher",
             spoiler: "City of Tears: Watcher's Spire",
-            wiki: ""
+            wiki: "Lurien"
         },
         monomonDefeated: {
             name: "Monomon the Teacher",
             spoiler: "Fog Canyon: Teacher's Archives",
-            wiki: ""
+            wiki: "Monomon"
         },
         hegemolDefeated: {
             name: "Herrah the Beast",
             spoiler: "Deepnest: Distant Village",
-            wiki: ""
+            wiki: "Herrah"
         }
     },
     DREAMNAIL: {
         hasDreamNail: {
             name: "Dream Nail acquired",
             spoiler: "Resting Grounds",
-            wiki: ""
+            wiki: "Dream_Nail"
         },
         dreamNailUpgraded: {
             name: "Awoken Dream Nail",
             spoiler: "Seer: 1800 Essence",
-            wiki: ""
+            wiki: "Dream_Nail"
         },
         mothDeparted: {
             name: "Hear the Seer's final words",
             spoiler: "Seer: 2400 Essence",
-            wiki: ""
+            wiki: "Seer"
         }
     },
     EQUIPMENT: {
         hasDash: {
             name: "Mothwing Cloak",
             spoiler: "Greenpath: Dash ability",
-            wiki: ""
+            wiki: "Mothwing_Cloak"
         },
         hasWalljump: {
             name: "Mantis Claw",
             spoiler: "Mantis Village: Wall Jump ability",
-            wiki: ""
+            wiki: "Mantis_Claw"
         },
         hasSuperDash: {
             name: "Crystal Heart",
             spoiler: "Crystal Peak: Super Dash ability",
-            wiki: ""
+            wiki: "Crystal_Heart"
         },
         hasDoubleJump: {
             name: "Monarch Wings",
             spoiler: "Ancient Basin: Double Jump ability",
-            wiki: ""
+            wiki: "Monarch_Wings"
         },
         hasAcidArmour: {
             name: "Isma's Tear",
             spoiler: "Royal Waterways: Acid Armour ability",
-            wiki: ""
+            wiki: "Isma's_Tear"
         },
         hasKingsBrand: {
             name: "King's Brand",
             spoiler: "Kingdom's Edge",
-            wiki: ""
+            wiki: "King's_Brand"
         },
         hasShadowDash: {
             name: "Shade Cloak",
             spoiler: "The Abyss: Shadow Dash ability",
-            wiki: ""
+            wiki: "Shade_Cloak"
         }
     },
     MASKSHARDS: {
         slyShellFrag1: {
             name: "Mask Shard #1",
             spoiler: "Sly: 150 Geo",
-            wiki: ""
+            wiki: "Mask_Shard"
         },
         slyShellFrag2: {
             name: "Mask Shard #2",
             spoiler: "Sly: 500 Geo",
-            wiki: ""
+            wiki: "Mask_Shard"
         },
         slyShellFrag3: {
             name: "Mask Shard #3",
             spoiler: "Sly: 800 Geo + Shopkeeper's Key",
-            wiki: ""
+            wiki: "Mask_Shard"
         },
         slyShellFrag4: {
             name: "Mask Shard #4",
             spoiler: "Sly: 1500 Geo + Shopkeeper's Key",
-            wiki: ""
+            wiki: "Mask_Shard"
         },
         dreamReward7: {
             name: "Mask Shard #5",
             spoiler: "Seer: 1500 Essence",
-            wiki: ""
+            wiki: "Mask_Shard"
         }
     },
     // "Heart Piece" sceneData.persistentBoolItems.id
@@ -558,79 +558,79 @@ const HK = {
         Crossroads_13: {
             name: "Mask Shard #6",
             spoiler: "Forgotten Crossroads: below Hot Springs",
-            wiki: ""
+            wiki: "Mask_Shard"
         },
         Crossroads_09: {
             name: "Mask Shard #7",
             spoiler: "Forgotten Crossroads: Brooding Mawlek",
-            wiki: ""
+            wiki: "Mask_Shard"
         },
         Crossroads_38: {
             name: "Mask Shard #8",
             spoiler: "Grubfather: 5 Grubs rescued",
-            wiki: ""
+            wiki: "Mask_Shard"
         },
         Room_Bretta: {
             name: "Mask Shard #9",
             spoiler: "Dirtmouth: Bretta's Room, rescue Bretta",
-            wiki: ""
+            wiki: "Mask_Shard"
         },
         Fungus2_01: {
             name: "Mask Shard #10",
             spoiler: "Queen's Station, requires Mantis Claw",
-            wiki: ""
+            wiki: "Mask_Shard"
         },
         Waterways_04b: {
             name: "Mask Shard #11",
             spoiler: "Royal Waterways",
-            wiki: ""
+            wiki: "Mask_Shard"
         },
         Fungus1_36: {
             name: "Mask Shard #12",
             spoiler: "Greenpath: Stone Sanctuary",
-            wiki: ""
+            wiki: "Mask_Shard"
         },
         Mines_32: {
             name: "Mask Shard #13",
             spoiler: "Crystal Peak: Enraged Guardian",
-            wiki: ""
+            wiki: "Mask_Shard"
         },
         Fungus2_25: {
             name: "Mask Shard #14",
             spoiler: "Deepnest: entrance from Fungal Wastes",
-            wiki: ""
+            wiki: "Mask_Shard"
         },
         Hive_04: {
             name: "Mask Shard #15",
             spoiler: "The Hive, use Hive Guardian",
-            wiki: ""
+            wiki: "Mask_Shard"
         },
         Room_Mansion: {
             name: "Mask Shard #16",
             spoiler: "Resting Grounds: Delicate Flower",
-            wiki: ""
+            wiki: "Mask_Shard"
         }
     },
     VESSELFRAGMENTS: {
         slyVesselFrag1: {
             name: "Vessel Fragment #1",
             spoiler: "Sly: 550 Geo",
-            wiki: ""
+            wiki: "Vessel_Fragment"
         },
         slyVesselFrag2: {
             name: "Vessel Fragment #2",
             spoiler: "Sly: 900 Geo + Shopkeeper's Key",
-            wiki: ""
+            wiki: "Vessel_Fragment"
         },
         dreamReward5: {
             name: "Vessel Fragment #3",
             spoiler: "Seer: 700 Essence",
-            wiki: ""
+            wiki: "Vessel_Fragment"
         },
         vesselFragStagNest: {
             name: "Vessel Fragment #4",
             spoiler: "Stag Nest",
-            wiki: ""
+            wiki: "Vessel_Fragment"
         }
     },
     // "Vessel Fragment" sceneData.persistentBoolItems.id
@@ -638,71 +638,73 @@ const HK = {
         Fungus1_13: {
             name: "Vessel Fragment #5",
             spoiler: "Greenpath: near Queen's Gardens exit",
-            wiki: ""
+            wiki: "Vessel_Fragment"
         },
         Crossroads_37: {
             name: "Vessel Fragment #6",
             spoiler: "Forgotten Crossroads: unlock City of Tears lift",
-            wiki: ""
+            wiki: "Vessel_Fragment"
         },
         Ruins2_09: {
             name: "Vessel Fragment #7",
             spoiler: "Above King's Station",
-            wiki: ""
+            wiki: "Vessel_Fragment"
         },
         Deepnest_38: {
             name: "Vessel Fragment #8",
             spoiler: "Deepnest: Goam platforming challenge",
-            wiki: ""
+            wiki: "Vessel_Fragment"
         },
         Abyss_04: {
             name: "Vessel Fragment #9",
             spoiler: "Ancient Basin Fountain: 3000 Geo",
-            wiki: ""
+            wiki: "Vessel_Fragment"
         }
     },
     NAILARTS: {
+        /* this is correct - somehow Team Cherry switched the names here */
         hasDashSlash: {
             name: "Great Slash",
             spoiler: "Nailmaster Sheo: Greenpath",
-            wiki: ""
-        }, // this is correct
+            wiki: "Great_Slash"
+        },
+        /* this is correct - somehow Team Cherry switched the names here */
         hasUpwardSlash: {
             name: "Dash Slash",
             spoiler: "Nailmaster Oro: Kingdom's Edge, 800 Geo",
-            wiki: ""
-        }, // this is correct
+            wiki: "Dash_Slash"
+        },
         hasCyclone: {
             name: "Cyclone Slash",
             spoiler: "Nailmaster Mato: Howling Cliffs",
-            wiki: ""
+            wiki: "Cyclone_Slash"
         },
     },
     NAILUPGRADES: {
         oldNail: {
             name: "#0 Old Nail",
             spoiler: "Starting Weapon",
-            wiki: ""
+            wiki: "Nail"
         },
         sharpenedNail: {
             name: "#1 Sharpened Nail",
             spoiler: "Nailsmith: 250 Geo",
-            wiki: ""
+            wiki: "Nail"
         },
         channeledNail: {
             name: "#2 Channeled Nail",
             spoiler: "Nailsmith: 800 Geo + 1 Pale Ore",
-            wiki: ""
+            wiki: "Nail"
         },
         coiledNail: {
             name: "#3 Coiled Nail",
             spoiler: "Nailsmith: 2000 Geo + 2 Pale Ore",
-            wiki: ""
+            wiki: "Nail"
         },
         pureNail: {
             name: "#4 Pure Nail",
             spoiler: "Nailsmith: 4000 Geo + 3 Pale Ore",
-            wiki: ""
+            wiki: "Nail"
         }
     },
     SPELLS: {
@@ -710,37 +712,37 @@ const HK = {
             fireballLevel: 1,
             name: "Vengeful Spirit",
             spoiler: "Forgotten Crossroads: Ancestral Mound",
-            wiki: ""
+            wiki: "Vengeful_Spirit"
         },
         shadeSoul: {
             fireballLevel: 2,
             name: "Shade Soul",
             spoiler: "City of Tears: Soul Sanctum + Elegant Key",
-            wiki: ""
+            wiki: "Shade_Soul"
         },
         desolateDive: {
             quakeLevel: 1,
             name: "Desolate Dive",
             spoiler: "City of Tears: Soul Sanctum",
-            wiki: ""
+            wiki: "Desolate_Dive"
         },
         descendingDark: {
             quakeLevel: 2,
             name: "Descending Dark",
             spoiler: "Crystal Peak: Crystallised Mound",
-            wiki: ""
+            wiki: "Descending_Dark"
         },
         howlingWraiths: {
             screamLevel: 1,
             name: "Howling Wraiths",
             spoiler: "Fog Canyon: Overgrown Mound",
-            wiki: ""
+            wiki: "Howling_Wraiths"
         },
         abyssShriek: {
             screamLevel: 2,
             name: "Abyss Shriek",
             spoiler: "The Abyss",
-            wiki: ""
+            wiki: "Abyss_Shriek"
         }
     },
     WARRIORDREAMS: {
