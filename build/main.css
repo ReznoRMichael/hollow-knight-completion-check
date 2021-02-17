@@ -341,6 +341,7 @@ input[type="file"] {
     border-radius: 2px;
     padding: 0.3rem 1rem;
     margin: 0.25rem 0.5rem 0.25rem 0.25rem;
+    transition: all 0.3s ease;
 }
 
 .button:first-child {
@@ -433,6 +434,7 @@ a:visited {
     color: #aac7d4;
     font-weight: 700;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 a:hover {
