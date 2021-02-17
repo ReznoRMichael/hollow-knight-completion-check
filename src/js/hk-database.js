@@ -965,6 +965,16 @@ const HK = {
             spoiler: "Deepnest, Failed Tramway",
             wiki: "Tram_Pass"
         },
+        gotQueenFragment: {
+            name: "White Fragment: Queen",
+            spoiler: "White Lady, Queen's Gardens",
+            wiki: "Kingsoul#How_to_Acquire"
+        },
+        gotKingFragment: {
+            name: "White Fragment: King",
+            spoiler: "Pale King, White Palace",
+            wiki: "Kingsoul#How_to_Acquire"
+        },
         nightmareLanternLit: {
             name: "Nightmare Lantern Lit",
             spoiler: "Howling Cliffs, corpse of a large bug",
