@@ -1007,127 +1007,127 @@ const HK = {
         killedPrayerSlug: {
             name: "Journal: Maggot",
             spoiler: "Forgotten Crossroads: False Knight secret room",
-            wiki: ""
+            wiki: "Maggot"
         },
         killedOrangeScuttler: {
             name: "Journal: Lightseed",
             spoiler: "Infected Crossroads",
-            wiki: ""
+            wiki: "Lightseed"
         },
         killedPigeon: {
             name: "Journal: Maskfly",
             spoiler: "Greenpath, Queen's Gardens",
-            wiki: ""
+            wiki: "Maskfly"
         },
         killedLazyFlyer: {
             name: "Journal: Aluba",
             spoiler: "Lake of Unn, Queen's Gardens (near White Lady)",
-            wiki: ""
+            wiki: "Aluba"
         },
         killedAcidFlyer: {
             name: "Journal: Duranda",
             spoiler: "Greenpath: Nailmaster Sheo's tent path",
-            wiki: ""
+            wiki: "Duranda"
         },
         killedAcidWalker: {
             name: "Journal: Durandoo",
             spoiler: "Greenpath, Queen's Gardens",
-            wiki: ""
+            wiki: "Durandoo"
         },
         killedPlantShooter: {
             name: "Journal: Gulka",
             spoiler: "Greenpath: west of Stone Sanctuary",
-            wiki: ""
+            wiki: "Gulka"
         },
         killedMushroomTurret: {
             name: "Journal: Sporg",
             spoiler: "Fungal Wastes",
-            wiki: ""
+            wiki: "Sporg"
         },
         killedZapBug: {
             name: "Journal: Charged Lumafly",
             spoiler: "Fog Canyon: Teacher's Archives (tank)",
-            wiki: ""
+            wiki: "Charged_Lumafly"
         },
         killedCrystalCrawler: {
             name: "Journal: Crystal Crawler",
             spoiler: "Crystal Peak",
-            wiki: ""
+            wiki: "Crystal_Crawler"
         },
         killedGorgeousHusk: {
             name: "Journal: Gorgeous Husk",
             spoiler: "City of Tears: secret room",
-            wiki: ""
+            wiki: "Gorgeous_Husk"
         },
         killedWorm: {
             name: "Journal: Goam",
             spoiler: "Infected Crossroads: near Fungal Wastes entrance",
-            wiki: ""
+            wiki: "Goam"
         },
         killedBigCentipede: {
             name: "Journal: Garpede",
             spoiler: "Deepnest: east of Hot Spring",
-            wiki: ""
+            wiki: "Garpede"
         },
         killedAbyssTendril: {
             name: "Journal: Void Tendrils",
             spoiler: "The Abyss: secret room",
-            wiki: ""
+            wiki: "Void_Tendrils"
         },
         killedPaleLurker: {
             name: "Journal: Pale Lurker",
             spoiler: "Colosseum of Fools: secret area",
-            wiki: ""
+            wiki: "Pale_Lurker"
         },
         falseKnightDreamDefeated: {
             name: "Failed Champion",
             spoiler: "Forgotten Crossroads",
-            wiki: ""
+            wiki: "Failed_Champion"
         },
         mageLordDreamDefeated: {
             name: "Soul Tyrant",
             spoiler: "City of Tears: Soul Sanctum",
-            wiki: ""
+            wiki: "Soul_Tyrant"
         },
         infectedKnightDreamDefeated: {
             name: "Lost Kin",
             spoiler: "Ancient Basin",
-            wiki: ""
+            wiki: "Lost_Kin"
         },
         whiteDefenderDefeated: {
             name: "White Defender",
             spoiler: "Royal Waterways",
-            wiki: ""
+            wiki: "White_Defender"
         },
         greyPrinceDefeated: {
             name: "Grey Prince Zote",
             spoiler: "Dirtmouth: Bretta's Room (per save choice)",
-            wiki: ""
+            wiki: "Grey_Prince_Zote"
         },
         killedHollowKnight: {
             name: "Hollow Knight",
             spoiler: "Forgotten Crossroads: Black Egg Temple",
-            wiki: ""
+            wiki: "Hollow_Knight"
         },
         salubraBlessing: {
             name: "Salubra's Blessing",
             spoiler: "Salubra: 800 Geo + all 40 Charms found",
-            wiki: ""
+            wiki: "Salubra's_Blessing"
         },
         gotShadeCharm: {
             name: "Void Heart",
             spoiler: "Kingsoul + Birthplace",
-            wiki: ""
+            wiki: "Void_Heart"
         },
         killedFinalBoss: {
             name: "Radiance",
             spoiler: "Forgotten Crossroads: Black Egg Temple",
-            wiki: ""
+            wiki: "Radiance"
         },
         bossDoorStateTier5: {
             name: "Embrace the Void",
             spoiler: "Godhome: Pantheon of Hallownest",
-            wiki: ""
+            wiki: "Pantheon_of_Hallownest"
         },
         zoteStatus: {
             name: "Zote Status",
@@ -1144,7 +1144,7 @@ const HK = {
             spoilerNotRescuedVengefly: "Check what happened with Zote",
             spoilerTrappedDeepnest: "Deepnest, free from cobwebs",
             spoilerColosseum: "Trial of the Warrior",
-            wiki: ""
+            wiki: "Zote"
         },
         nailsmithStatus: {
             name: "Nailsmith Status",
@@ -1157,7 +1157,7 @@ const HK = {
             spoilerPurity: "Slain with Pure Nail",
             spoilerSheoHutWaiting: "Waiting at Sheo's Hut",
             spoilerUpgradeNail: "Upgrade Nail to Pure Nail",
-            wiki: ""
+            wiki: "Nailsmith"
         },
         mrMushroomState: {
             name: "Mr Mushroom",
@@ -1168,7 +1168,7 @@ const HK = {
             spoiler5: "Ancient Basin, near Monarch Wings",
             spoiler6: "Fog Canyon, near Overgrown Mound",
             spoiler7: "King's Pass, game starting location",
-            wiki: ""
+            wiki: "Mister_Mushroom"
         }
         /* 
         Mr Mushroom data
