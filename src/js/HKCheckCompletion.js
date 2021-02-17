@@ -579,7 +579,7 @@ function CheckWarriorDreams(divId, dataObject, playerData) {
 
     for (let i in dataObject) {
         (playerData[i] >= 2) ? CurrentDataTrue(divId): CurrentDataFalse();
-        sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler);
+        sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
     }
 
     AppendHTML(divId, sFillText);
