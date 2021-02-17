@@ -741,7 +741,7 @@ const HK = {
         abyssShriek: {
             screamLevel: 2,
             name: "Abyss Shriek",
-            spoiler: "The Abyss",
+            spoiler: "The Abyss, use Howling Wraiths on podium",
             wiki: "Abyss_Shriek"
         }
     },
