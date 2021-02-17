@@ -1109,12 +1109,12 @@ function CheckMrMushroomState(divId, dataObject, mrMushroomState = 0) {
     if (mrMushroomState > 1) {
         for (let i = 1; i <= 7; i++) {
             (mrMushroomState > i) ? CurrentDataTrue(): CurrentDataFalse();
-            sFillText += PrepareHTMLString(divId, `${dataObject.name} #${i}`, dataObject["spoiler" + i]);
+            sFillText += PrepareHTMLString(divId, `${dataObject.name} #${i}`, dataObject["spoiler" + i], dataObject.wiki);
         }
     } else {
         CurrentDataFalse();
         for (let i = 1; i <= 7; i++) {
-            sFillText += PrepareHTMLString(divId, `${dataObject.name} #${i}`, dataObject["spoiler" + i]);
+            sFillText += PrepareHTMLString(divId, `${dataObject.name} #${i}`, dataObject["spoiler" + i], dataObject.wiki);
         }
     }
 
@@ -1272,7 +1272,7 @@ function InitialHTMLPopulate(divIdObj) {
     do {
         for (let entry in hkObjArray[0]) {
             if (entry === "mrMushroomState") continue;
-            sFillText += PrepareHTMLString(divObjArray[0], hkObjArray[0][entry].name, hkObjArray[0][entry].spoiler);
+            sFillText += PrepareHTMLString(divObjArray[0], hkObjArray[0][entry].name, hkObjArray[0][entry].spoiler, hkObjArray[0][entry].wiki);
         }
         if (divObjArray[0]) {
             AppendHTML(divObjArray[0], sFillText);
@@ -1284,21 +1284,21 @@ function InitialHTMLPopulate(divIdObj) {
     // Nail Upgrades Misc
     sFillText = "";
     for (let i in HK.NAILUPGRADES) {
-        sFillText += PrepareHTMLString(divIdObj.nailUpgrades, HK.NAILUPGRADES[i].name, HK.NAILUPGRADES[i].spoiler);
+        sFillText += PrepareHTMLString(divIdObj.nailUpgrades, HK.NAILUPGRADES[i].name, HK.NAILUPGRADES[i].spoiler, HK.NAILUPGRADES[i].wiki);
     }
     AppendHTML(divIdObj.nailUpgrades, sFillText);
 
     // Spells Misc
     sFillText = "";
     for (let i in HK.SPELLS) {
-        sFillText += PrepareHTMLString(divIdObj.spells, HK.SPELLS[i].name, HK.SPELLS[i].spoiler);
+        sFillText += PrepareHTMLString(divIdObj.spells, HK.SPELLS[i].name, HK.SPELLS[i].spoiler, HK.SPELLS[i].wiki);
     }
     AppendHTML(divIdObj.spells, sFillText);
 
     // Godmaster Doors Misc
     sFillText = "";
     for (let i in HK.GODMASTER_DOORS) {
-        sFillText += PrepareHTMLString(divIdObj.godmaster, HK.GODMASTER_DOORS[i].name, HK.GODMASTER_DOORS[i].spoiler);
+        sFillText += PrepareHTMLString(divIdObj.godmaster, HK.GODMASTER_DOORS[i].name, HK.GODMASTER_DOORS[i].spoiler, HK.GODMASTER_DOORS[i].wiki);
     }
     AppendHTML(divIdObj.godmaster, sFillText);
 
