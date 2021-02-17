@@ -1197,19 +1197,19 @@ const HK = {
             name: "Nail Damage",
             spoiler: "Nailsmith upgrades, City of Tears",
             max: 21,
-            wiki: ""
+            wiki: "Nail#Nail_Upgrades"
         },
         charmSlots: {
             name: "Charm Notches",
             spoiler: "out of 11 total",
             max: 11,
-            wiki: ""
+            wiki: "Category:Charms#Notches"
         },
         whisperingRoots: {
             name: "Whispering Roots completed",
             spoiler: "Dream Nail (out of 15)",
             max: 15,
-            wiki: ""
+            wiki: "Whispering_Root"
         },
         relicsWandererJournal: {
             name: "Relic #1 found total",
@@ -1217,7 +1217,7 @@ const HK = {
             nameSold: "soldTrinket1",
             spoiler: "Wanderer's Journal (out of 14)",
             max: 14,
-            wiki: ""
+            wiki: "Wanderer's_Journal"
         },
         relicsHallownestSeal: {
             name: "Relic #2 found total",
@@ -1225,7 +1225,7 @@ const HK = {
             nameSold: "soldTrinket2",
             spoiler: "Hallownest Seal (out of 17)",
             max: 17,
-            wiki: ""
+            wiki: "Hallownest_Seal"
         },
         relicsKingsIdol: {
             name: "Relic #3 found total",
@@ -1233,7 +1233,7 @@ const HK = {
             nameSold: "soldTrinket3",
             spoiler: "King's Idol (out of 8)",
             max: 8,
-            wiki: ""
+            wiki: "King's_Idol"
         },
         relicsArcaneEgg: {
             name: "Relic #4 found total",
@@ -1241,171 +1241,171 @@ const HK = {
             nameSold: "soldTrinket4",
             spoiler: "Arcane Egg (4 max, 1 missable)",
             max: 4,
-            wiki: ""
+            wiki: "Arcane_Egg"
         },
         geoRocks: {
             name: "Geo Rocks",
             spoiler: "Unbroken/Broken/Discovered Total",
-            wiki: ""
+            wiki: "Geo#How_to_Acquire"
         },
         // not ghostCoins
         geoPool: {
             name: "Shade Geo",
             spoiler: "Amount of Geo the Shade is currently holding",
             min: 0,
-            wiki: ""
+            wiki: "Shade"
         },
         rancidEggs: {
             name: "Rancid Eggs",
             spoiler: "Find: Hallownest, Buy: Sly, Tuk",
-            wiki: ""
+            wiki: "Rancid_Egg"
         },
         jinnEggsSold: {
             name: "Rancid Eggs sold to Jinn",
             spoiler: "Only in Steel Soul Mode",
-            wiki: ""
+            wiki: "Jinn"
         },
         xunFlowerBrokeTimes: {
             name: "Delicate Flowers broken",
             spoiler: "Resting Grounds: Grey Mourner",
-            wiki: ""
+            wiki: "Delicate_Flower"
         },
         notchShroomOgres: {
             name: "Charm Notch #1",
             spoiler: "Fungal Wastes: Shroom Ogres room",
-            wiki: ""
+            wiki: "Category:Charms#Notches"
         },
         salubraNotch1: {
             name: "Charm Notch #2",
             spoiler: "Salubra: 120 Geo + 5 Charms found",
-            wiki: ""
+            wiki: "Category:Charms#Notches"
         },
         salubraNotch2: {
             name: "Charm Notch #3",
             spoiler: "Salubra: 500 Geo + 10 Charms found",
-            wiki: ""
+            wiki: "Category:Charms#Notches"
         },
         salubraNotch3: {
             name: "Charm Notch #4",
             spoiler: "Salubra: 900 Geo + 18 Charms found",
-            wiki: ""
+            wiki: "Category:Charms#Notches"
         },
         salubraNotch4: {
             name: "Charm Notch #5",
             spoiler: "Salubra: 1400 Geo + 25 Charms found",
-            wiki: ""
+            wiki: "Category:Charms#Notches"
         },
         colosseumBronzeCompleted: {
             name: "Charm Notch #6",
             spoiler: "Colosseum of Fools: Trial of the Warrior",
-            wiki: ""
+            wiki: "Category:Charms#Notches"
         },
         notchFogCanyon: {
             name: "Charm Notch #7",
             spoiler: "Fog Canyon: explosive eggs room",
-            wiki: ""
+            wiki: "Category:Charms#Notches"
         },
         gotGrimmNotch: {
             name: "Charm Notch #8",
             spoiler: "Dirtmouth: Troupe Leader Grimm",
-            wiki: ""
+            wiki: "Category:Charms#Notches"
         },
         hasDreamGate: {
-            name: "Dream Gate",
+            name: "Dreamgate",
             spoiler: "Seer: 900 Essence",
-            wiki: ""
+            wiki: "Dreamgate"
         },
         fragileGreed_unbreakable: {
             name: "Unbreakable Greed",
             spoiler: "Divine: Fragile Greed + 9000 Geo",
-            wiki: ""
+            wiki: "Divine#Unbreakable_Charms"
         },
         fragileHealth_unbreakable: {
             name: "Unbreakable Heart",
             spoiler: "Divine: Fragile Heart + 12000 Geo",
-            wiki: ""
+            wiki: "Divine#Unbreakable_Charms"
         },
         fragileStrength_unbreakable: {
             name: "Unbreakable Strength",
             spoiler: "Divine: Fragile Strength + 15000 Geo",
-            wiki: ""
+            wiki: "Divine#Unbreakable_Charms"
         },
         killedMenderBug: {
             name: "Journal: Menderbug",
             spoiler: "Forgotten Crossroads + destroy sign",
-            wiki: ""
+            wiki: "Menderbug"
         },
         killedBindingSeal: {
             name: "Journal: Seal of Binding",
             spoiler: "White Palace: Path of Pain completion",
-            wiki: ""
+            wiki: "Seal_of_Binding"
         },
         killedGodseekerMask: {
             name: "Journal: Weathered Mask",
             spoiler: "Godhome: Land of Storms",
-            wiki: ""
+            wiki: "Weathered_Mask"
         },
         killedVoidIdol_1: {
             name: "Journal: Void Idol Attuned",
             spoiler: "Godhome: Hall of Gods, defeat all",
-            wiki: ""
+            wiki: "Void_Idol"
         },
         killedVoidIdol_2: {
             name: "Journal: Void Idol Ascended",
             spoiler: "Godhome: Hall of Gods, defeat all",
-            wiki: ""
+            wiki: "Void_Idol"
         },
         killedVoidIdol_3: {
             name: "Journal: Void Idol Radiant",
             spoiler: "Godhome: Hall of Gods, defeat all",
-            wiki: ""
+            wiki: "Void_Idol"
         },
         elderbugGaveFlower: {
             name: "Delicate Flower: Elderbug",
             spoiler: "Delivered from Traitor's Child Grave",
-            wiki: ""
+            wiki: "Delicate_Flower#List_of_Possible_Recipients"
         },
         givenGodseekerFlower: {
             name: "Delicate Flower: Godseeker",
             spoiler: "Delivered from Traitor's Child Grave",
-            wiki: ""
+            wiki: "Delicate_Flower#List_of_Possible_Recipients"
         },
         givenOroFlower: {
             name: "Delicate Flower: Nailmaster Oro",
             spoiler: "D. from Traitor's Child Grave",
-            wiki: ""
+            wiki: "Delicate_Flower#List_of_Possible_Recipients"
         },
         givenWhiteLadyFlower: {
             name: "Delicate Flower: White Lady",
             spoiler: "Delivered from Traitor's Child Grave",
-            wiki: ""
+            wiki: "Delicate_Flower#List_of_Possible_Recipients"
         },
         givenEmilitiaFlower: {
             name: "Delicate Flower: Emilitia",
             spoiler: "Delivered from Traitor's Child Grave",
-            wiki: ""
+            wiki: "Delicate_Flower#List_of_Possible_Recipients"
         },
         whitePalaceSecretRoomVisited: {
             name: "White Palace Secret Room visited",
             spoiler: "Help identify this room!",
-            wiki: ""
+            wiki: "White_Palace#Secret_rooms"
         },
         killsBindingSeal: {
             name: "Path of Pain",
             spoiler: "White Palace: main secret area",
-            wiki: ""
+            wiki: "White_Palace#Sub-area:_Path_of_Pain"
         },
         whiteDefenderDefeats: {
             name: "White Defender times defeated",
             spoiler: "Royal Waterways (5 max)",
             max: 5,
-            wiki: ""
+            wiki: "White_Defender"
         },
         greyPrinceDefeats: {
             name: "Grey Prince Zote times defeated",
             spoiler: "Dirtmouth (10 max)",
             max: 10,
-            wiki: ""
+            wiki: "Grey_Prince_Zote"
         },
     }
 };
