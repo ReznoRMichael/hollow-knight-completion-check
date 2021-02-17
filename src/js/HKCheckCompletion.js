@@ -265,14 +265,12 @@ function PrepareHTMLString(divId, textPrefix = "Unknown Completion Element: ", t
 
     let dash = "";
     if (textSuffix.length && textPrefix.length) dash = "— ";
+    if (textPrefix.includes("<del>")) dash = "<del>— </del>"
 
     // return divStart + icon + b[0] + textPrefix + b[1] + span[0] + pSpan + spoilerSpan[0] + dash + textSuffix + spoilerSpan[1] + span[1] + divEnd;
     return `
     ${divStart}
-        ${icon}${b[0]}${textPrefix}${b[1]}
-        ${span[0]}
-            ${pSpan}${spoilerSpan[0]}${dash}${textSuffix}${spoilerSpan[1]}
-        ${span[1]}
+        ${icon}${b[0]}${textPrefix}${b[1]}${span[0]}${pSpan}${spoilerSpan[0]}${dash}${textSuffix}${spoilerSpan[1]}${span[1]}
     ${divEnd}
     `;
 }
