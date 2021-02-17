@@ -250,11 +250,12 @@ function HKCheckCompletion(jsonObject) {
  * @param {string} textPrefix Main name of the entry
  * @param {string} textSuffix Optional suffix after the main name (spoilers: locations, costs etc.)
  */
-function PrepareHTMLString(divId, textPrefix = "Unknown Completion Element: ", textSuffix = "Unknown Description Element") {
+function PrepareHTMLString(divId, textPrefix = "Unknown Completion Element: ", textSuffix = "Unknown Description Element", wiki = "") {
 
     let icon = completionSymbol;
     let b = ["<b>", "</b>"];
     if (!textPrefix.length) b = ["", ""];
+    if (wiki.length) b = [`<a class="wiki" href="https://hollowknight.fandom.com/wiki/${wiki}" target="_blank">`, "</a>"];
 
     let span = ["<span class='spoiler-span'>", "</span>"];
     let spoilerSpan = ["<span class='spoiler-text'>", "</span>"];
@@ -486,11 +487,13 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
         textSuffix,
     } = "";
     let sFillText = "";
+    let wiki = "";
 
     for (let i in dataObject) {
 
         textPrefix = dataObject[i].name;
         textSuffix = dataObject[i].spoiler;
+        (dataObject[i].hasOwnProperty("wiki")) ? wiki = dataObject[i].wiki: wiki = "";
 
         switch (i) {
             case "gotCharm_36":
@@ -522,7 +525,7 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
                 (playerData[i] === true) ? CurrentDataTrue(divId): CurrentDataFalse();
         }
 
-        sFillText += PrepareHTMLString(divId, textPrefix, textSuffix);
+        sFillText += PrepareHTMLString(divId, textPrefix, textSuffix, wiki);
     }
 
     AppendHTML(divId, sFillText);

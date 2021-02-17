@@ -330,6 +330,10 @@ a.button:visited {
     font-weight: 500;
 }
 
+a.wiki {
+    font-weight: 500;
+}
+
 .link-social {
     margin: 0.25rem;
 }
