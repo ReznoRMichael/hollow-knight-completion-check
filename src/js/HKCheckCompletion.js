@@ -694,6 +694,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
     let {
         textPrefix,
         textSuffix,
+        wiki
     } = "";
     let sFillText = "";
 
@@ -701,6 +702,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
     for (let i in dataObject) {
         textPrefix = dataObject[i].name;
         (dataObject[i].hasOwnProperty("spoiler")) ? textSuffix = dataObject[i].spoiler: textSuffix = "";
+        (dataObject[i].hasOwnProperty("wiki")) ? wiki = dataObject[i].wiki: wiki = "";
 
         let {
             amount,
@@ -973,7 +975,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         } // end switch (i)
 
         if (i === "mrMushroomState") continue;
-        sFillText += PrepareHTMLString(divId, textPrefix, textSuffix);
+        sFillText += PrepareHTMLString(divId, textPrefix, textSuffix, wiki);
     } // end for (let i in dataObject)
 
     AppendHTML(divId, sFillText);
