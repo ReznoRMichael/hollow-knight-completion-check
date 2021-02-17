@@ -244,10 +244,13 @@ If you like the tool and wish it developed further with more functions and easie
 
 * v1.1.0 2021-xx-xx:
 
-  — **General Backwards Compatibility** with Hollow Knight version 1.0.0.6 save files (February 2017 release version) and all above.
+  — **Hollow Knight Wiki links** to every entry in the tool for quick and easy access/map locations etc. No need to search manually now.
+
+  — **General Backwards Compatibility** with Hollow Knight version 1.0.0.6 save files (February 2017 release version) and all versions above it.
 
   — **Game Completion Essentials** additions:  
   ✅ Acid Drained in Waterways  
+  ✅ Two White Fragments (Queen and King)  
 
   — **Game Statistics** additions:  
   ✅ Delicate Flowers given to NPCs (Elderbug, Godseeker, Oro, White Lady, Emilitia)  
