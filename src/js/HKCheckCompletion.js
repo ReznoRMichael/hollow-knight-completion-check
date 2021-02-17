@@ -629,7 +629,7 @@ function CheckNailUpgrades(divId, dataObject, playerData) {
 
     for (let i = 0; i < 5; i++) {
         (playerData.nailSmithUpgrades >= i) ? CurrentDataTrue(divId): CurrentDataFalse();
-        sFillText += PrepareHTMLString(divId, dataObject[nail[i]].name, dataObject[nail[i]].spoiler);
+        sFillText += PrepareHTMLString(divId, dataObject[nail[i]].name, dataObject[nail[i]].spoiler, dataObject[nail[i]].wiki);
     }
     if (divId.percent) divId.percent--; // subject one for the Old Nail
 
