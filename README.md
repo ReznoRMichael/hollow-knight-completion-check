@@ -27,7 +27,7 @@ Every single penny counts: [Donate any amount](https://www.paypal.me/ReznoRMicha
 
 Hollow Knight doesn't have a game completion list in-game. There is no easy way to check in-game what specific things you forgot to do or missed for full 112% Game Completion, Hunter's Journal and Achievements. Until now! I wrote a tool for that for you.
 
-*Inspirations and thanks: love for Hollow Knight, discussions on the forum, [KayDeeTee](https://github.com/KayDeeTee/Hollow-Knight-SaveManager) and [bloodorca](https://bloodorca.github.io/hollow)'s Save Editors, programming learning, Elderbug, ManicJamie for their [HKTranslator](https://github.com/ManicJamie/HKTranslator).*
+*Inspirations and thanks: love for Hollow Knight, discussions on the forum, [KayDeeTee](https://github.com/KayDeeTee/Hollow-Knight-SaveManager) and [bloodorca](https://bloodorca.github.io/hollow)'s Save Editors, programming learning, Elderbug, ManicJamie for [HKTranslator](https://github.com/ManicJamie/HKTranslator), [Klocus](https://klocus.pl/) for cookiealert.*
 
 ## Steam Guide
 
