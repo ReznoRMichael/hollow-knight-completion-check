@@ -411,6 +411,7 @@ a.button:visited {
     text-decoration: none;
     background-color: #1e4d6c;
     border: 0;
+    border-radius: 2px;
     outline: 0;
     position: fixed;
     right: 1px;
