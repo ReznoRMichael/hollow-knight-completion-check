@@ -39,6 +39,7 @@ const SYMBOL_TRUE = "<i class='icon-ok-squared'></i>"; // "✅ "
 // const SYMBOL_INFO = "<i class='icon-info-circled'></i>"; // "ℹ "
 const SYMBOL_EMPTY = "<span class='padding-left'></span>";
 const FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
+const WIKI_LINK = "https://hollowknight.fandom.com/wiki/";
 
 // ---------------- Variables ----------------- //
 
@@ -255,7 +256,7 @@ function PrepareHTMLString(divId, textPrefix = "Unknown Completion Element: ", t
     let icon = completionSymbol;
     let b = ["<b>", "</b>"];
     if (!textPrefix.length) b = ["", ""];
-    if (wiki.length) b = [`<a class="wiki" href="https://hollowknight.fandom.com/wiki/${wiki}" target="_blank">`, "</a>"];
+    if (wiki.length) b = [`<a class="wiki" href="${WIKI_LINK}${wiki}" target="_blank">`, "</a>"];
 
     let span = ["<span class='spoiler-span'>", "</span>"];
     let spoilerSpan = ["<span class='spoiler-text'>", "</span>"];
