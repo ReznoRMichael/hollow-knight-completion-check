@@ -650,14 +650,14 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
 
     // Order the items before displaying them (creates a copy of dataObject)
     for (let i in dataObject) {
-        orderedArray.push([i, dataObject[i].name, dataObject[i].spoiler, false]);
+        orderedArray.push([i, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki, false]);
     }
 
     // Search for completed items and mark them for display
     for (let i = 0, length = worldData.length; i < length; i++) {
         for (let j = 0; j < size; j++) {
             if (worldData[i].id === idText && worldData[i].sceneName === orderedArray[j][0] && worldData[i].activated === true) {
-                orderedArray[j][3] = true;
+                orderedArray[j][4] = true;
             }
         }
     }
@@ -665,8 +665,8 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
     // Display the items as they were initially ordered
     for (let i = 0; i < size; i++) {
         CurrentDataFalse();
-        if (orderedArray[i][3] === true) CurrentDataTrue(divId);
-        sFillText += PrepareHTMLString(divId, orderedArray[i][1], orderedArray[i][2]);
+        if (orderedArray[i][4] === true) CurrentDataTrue(divId);
+        sFillText += PrepareHTMLString(divId, orderedArray[i][1], orderedArray[i][2], orderedArray[i][3]);
     }
 
     AppendHTML(divId, sFillText);
