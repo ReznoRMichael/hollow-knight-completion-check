@@ -1137,7 +1137,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
                 continue;
             } else {
                 sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
-                return false;
+                break;
             }
         } else if (i === "Crossroads_04") {
             let GruzMotherDefeated = false;
@@ -1152,7 +1152,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
                 continue; // next dataObject (i)
             } else {
                 sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
-                return false;
+                break;
             }
         } else if (i === "dungDefenderOrHornet2") {
             if (playerData.defeatedDungDefender === true) {
@@ -1161,7 +1161,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
                 continue;
             } else { // if no Dung Defender or Hornet 2
                 sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
-                return false;
+                break;
             }
         } else if (i === "ismaTearOrShadeCloak") {
             if (playerData.hasAcidArmour === true) {
@@ -1171,15 +1171,15 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
                     continue;
                 } else { // if Kings Brand but no Shade Cloak
                     sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
-                    return false;
+                    break;
                 }
             } else { // if no Isma's Tear or Kings Brand
                 sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
-                return false;
+                break;
             }
         } else { // if anything from the hints list is not done
             sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
-            return false;
+            break;
         }
     } // end: for (let i in dataObject)
 
