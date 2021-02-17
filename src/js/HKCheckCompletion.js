@@ -547,17 +547,17 @@ function CheckSpellLevel(divId, dataObject, playerData) {
             case "vengefulSpirit":
             case "shadeSoul":
                 (playerData.fireballLevel >= dataObject[i].fireballLevel) ? CurrentDataTrue(divId): CurrentDataFalse();
-                sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler);
+                sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
                 break;
             case "desolateDive":
             case "descendingDark":
                 (playerData.quakeLevel >= dataObject[i].quakeLevel) ? CurrentDataTrue(divId): CurrentDataFalse();
-                sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler);
+                sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
                 break;
             case "howlingWraiths":
             case "abyssShriek":
                 (playerData.screamLevel >= dataObject[i].screamLevel) ? CurrentDataTrue(divId): CurrentDataFalse();
-                sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler);
+                sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
                 break;
             default:
                 break;
