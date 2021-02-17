@@ -87,7 +87,7 @@ function HKCheckCompletion(jsonObject) {
         } else return false;
     } else return false;
 
-    // Pre-Cleaning and filling initial data (h2, id) needed for FillHTML()
+    // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
     PrefillHTML(HK.DIV_ID);
 
     // Prevents adding current percent data after each function call (each click of Analyze button)
@@ -250,7 +250,7 @@ function HKCheckCompletion(jsonObject) {
  * @param {string} textPrefix Main name of the entry
  * @param {string} textSuffix Optional suffix after the main name (spoilers: locations, costs etc.)
  */
-function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix = "Unknown Description Element") {
+function PrepareHTMLString(divId, textPrefix = "Unknown Completion Element: ", textSuffix = "Unknown Description Element") {
 
     let icon = completionSymbol;
     let b = ["<b>", "</b>"];
@@ -258,7 +258,7 @@ function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix
 
     let span = ["<span class='spoiler-span'>", "</span>"];
     let spoilerSpan = ["<span class='spoiler-text'>", "</span>"];
-    if (divId === HK.DIV_ID.hints) {
+    if (divId === "hints") {
         span[0] = "<span>";
         icon = "";
     }
@@ -266,7 +266,7 @@ function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix
     let dash = "";
     if (textSuffix.length && textPrefix.length) dash = "— ";
 
-    document.getElementById(divId.id).innerHTML += divStart + icon + b[0] + textPrefix + b[1] + span[0] + pSpan + spoilerSpan[0] + dash + textSuffix + spoilerSpan[1] + span[1] + divEnd;
+    return divStart + icon + b[0] + textPrefix + b[1] + span[0] + pSpan + spoilerSpan[0] + dash + textSuffix + spoilerSpan[1] + span[1] + divEnd;
 }
 
 /**
@@ -477,8 +477,9 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
 
     let {
         textPrefix,
-        textSuffix
+        textSuffix,
     } = "";
+    let sFillText = "";
 
     for (let i in dataObject) {
 
@@ -515,8 +516,10 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
                 (playerData[i] === true) ? CurrentDataTrue(divId): CurrentDataFalse();
         }
 
-        FillHTML(divId, textPrefix, textSuffix);
+        sFillText += PrepareHTMLString(divId, textPrefix, textSuffix);
     }
+
+    AppendHTML(divId, sFillText);
 }
 
 /**
@@ -527,27 +530,31 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
  */
 function CheckSpellLevel(divId, dataObject, playerData) {
 
+    let sFillText = "";
+
     for (let i in dataObject) {
         switch (i) {
             case "vengefulSpirit":
             case "shadeSoul":
                 (playerData.fireballLevel >= dataObject[i].fireballLevel) ? CurrentDataTrue(divId): CurrentDataFalse();
-                FillHTML(divId, dataObject[i].name, dataObject[i].spoiler);
+                sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler);
                 break;
             case "desolateDive":
             case "descendingDark":
                 (playerData.quakeLevel >= dataObject[i].quakeLevel) ? CurrentDataTrue(divId): CurrentDataFalse();
-                FillHTML(divId, dataObject[i].name, dataObject[i].spoiler);
+                sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler);
                 break;
             case "howlingWraiths":
             case "abyssShriek":
                 (playerData.screamLevel >= dataObject[i].screamLevel) ? CurrentDataTrue(divId): CurrentDataFalse();
-                FillHTML(divId, dataObject[i].name, dataObject[i].spoiler);
+                sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler);
                 break;
             default:
                 break;
         }
     }
+
+    AppendHTML(divId, sFillText);
 }
 
 /**
@@ -558,10 +565,14 @@ function CheckSpellLevel(divId, dataObject, playerData) {
  */
 function CheckWarriorDreams(divId, dataObject, playerData) {
 
+    let sFillText = "";
+
     for (let i in dataObject) {
         (playerData[i] >= 2) ? CurrentDataTrue(divId): CurrentDataFalse();
-        FillHTML(divId, dataObject[i].name, dataObject[i].spoiler);
+        sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler);
     }
+
+    AppendHTML(divId, sFillText);
 }
 
 /**
@@ -576,16 +587,20 @@ function CheckGodmasterDoors(divId, dataObject, playerData) {
     // same as names in the database object
     let pantheon = ["Master", "Artist", "Sage", "Knight"].map((element) => "pantheon" + element);
 
+    let sFillText = "";
+
     for (let i = 0; i < 4; i++) {
         // compatibility with earlier game versions
         if (playerData.hasOwnProperty("bossDoorStateTier" + (i + 1)) === false) {
             CurrentDataBlank();
-            FillHTML(divId, `<del>${dataObject[pantheon[i]].name}</del>`, `<del>${dataObject[pantheon[i]].spoiler}</del>`);
+            sFillText += PrepareHTMLString(divId, `<del>${dataObject[pantheon[i]].name}</del>`, `<del>${dataObject[pantheon[i]].spoiler}</del>`);
         } else {
             (playerData["bossDoorStateTier" + (i + 1)].completed === true) ? CurrentDataTrue(divId): CurrentDataFalse();
-            FillHTML(divId, dataObject[pantheon[i]].name, dataObject[pantheon[i]].spoiler);
+            sFillText += PrepareHTMLString(divId, dataObject[pantheon[i]].name, dataObject[pantheon[i]].spoiler);
         }
     }
+
+    AppendHTML(divId, sFillText);
 }
 
 /**
@@ -600,11 +615,15 @@ function CheckNailUpgrades(divId, dataObject, playerData) {
     // same as names in the database object
     let nail = ["old", "sharpened", "channeled", "coiled", "pure"].map((element) => element + "Nail");
 
+    let sFillText = "";
+
     for (let i = 0; i < 5; i++) {
         (playerData.nailSmithUpgrades >= i) ? CurrentDataTrue(divId): CurrentDataFalse();
-        FillHTML(divId, dataObject[nail[i]].name, dataObject[nail[i]].spoiler);
+        sFillText += PrepareHTMLString(divId, dataObject[nail[i]].name, dataObject[nail[i]].spoiler);
     }
     if (divId.percent) divId.percent--; // subject one for the Old Nail
+
+    AppendHTML(divId, sFillText);
 }
 
 /**
@@ -617,6 +636,7 @@ function CheckNailUpgrades(divId, dataObject, playerData) {
 function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
     let orderedArray = [];
     let size = ObjectLength(dataObject);
+    let sFillText = "";
 
     // Order the items before displaying them (creates a copy of dataObject)
     for (let i in dataObject) {
@@ -636,8 +656,10 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
     for (let i = 0; i < size; i++) {
         CurrentDataFalse();
         if (orderedArray[i][3] === true) CurrentDataTrue(divId);
-        FillHTML(divId, orderedArray[i][1], orderedArray[i][2]);
+        sFillText += PrepareHTMLString(divId, orderedArray[i][1], orderedArray[i][2]);
     }
+
+    AppendHTML(divId, sFillText);
 }
 
 /**
@@ -649,8 +671,11 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
  */
 function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneData) {
 
-    let textPrefix = "";
-    let textSuffix = "";
+    let {
+        textPrefix,
+        textSuffix,
+    } = "";
+    let sFillText = "";
 
     // Start main loop
     for (let i in dataObject) {
@@ -928,8 +953,10 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         } // end switch (i)
 
         if (i === "mrMushroomState") continue;
-        FillHTML(divId, textPrefix, textSuffix);
+        sFillText += PrepareHTMLString(divId, textPrefix, textSuffix);
     } // end for (let i in dataObject)
+
+    AppendHTML(divId, sFillText);
 
     // ==========================================
     // -------------- Methods ---------------- //
@@ -1067,17 +1094,21 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
  */
 function CheckMrMushroomState(divId, dataObject, mrMushroomState = 0) {
 
+    let sFillText = "";
+
     if (mrMushroomState > 1) {
         for (let i = 1; i <= 7; i++) {
             (mrMushroomState > i) ? CurrentDataTrue(): CurrentDataFalse();
-            FillHTML(divId, `${dataObject.name} #${i}`, dataObject["spoiler" + i]);
+            sFillText += PrepareHTMLString(divId, `${dataObject.name} #${i}`, dataObject["spoiler" + i]);
         }
     } else {
         CurrentDataFalse();
         for (let i = 1; i <= 7; i++) {
-            FillHTML(divId, `${dataObject.name} #${i}`, dataObject["spoiler" + i]);
+            sFillText += PrepareHTMLString(divId, `${dataObject.name} #${i}`, dataObject["spoiler" + i]);
         }
     }
+
+    AppendHTML(divId, sFillText);
 }
 
 /**
@@ -1090,9 +1121,11 @@ function CheckMrMushroomState(divId, dataObject, mrMushroomState = 0) {
  */
 function CheckHintsTrue(divId, dataObject, playerData, worldData) {
 
+    let sFillText = "";
+
     if (playerData.killedHollowKnight === true) {
         // a text to show when player already finished their first playthrough (killed Hollow Knight first time)
-        FillHTML(divId, "", "...a successful Knight who doesn't need hints anymore. The Knight explores the world of Hallownest patiently in constant search of its remaining secrets...");
+        AppendHTML(divId, "...a successful Knight who doesn't need hints anymore. The Knight explores the world of Hallownest patiently in constant search of its remaining secrets...");
         return true;
     }
 
@@ -1103,7 +1136,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
             if (playerData[i] >= 1) {
                 continue;
             } else {
-                FillHTML(divId, "", dataObject[i].spoiler);
+                sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
                 return false;
             }
         } else if (i === "Crossroads_04") {
@@ -1118,7 +1151,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
             if (GruzMotherDefeated) {
                 continue; // next dataObject (i)
             } else {
-                FillHTML(divId, "", dataObject[i].spoiler);
+                sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
                 return false;
             }
         } else if (i === "dungDefenderOrHornet2") {
@@ -1127,7 +1160,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
             } else if (playerData.hornetOutskirtsDefeated === true) {
                 continue;
             } else { // if no Dung Defender or Hornet 2
-                FillHTML(divId, "", dataObject[i].spoiler);
+                sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
                 return false;
             }
         } else if (i === "ismaTearOrShadeCloak") {
@@ -1137,18 +1170,20 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
                 if (playerData.hasShadowDash === true) {
                     continue;
                 } else { // if Kings Brand but no Shade Cloak
-                    FillHTML(divId, "", dataObject[i].spoiler);
+                    sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
                     return false;
                 }
             } else { // if no Isma's Tear or Kings Brand
-                FillHTML(divId, "", dataObject[i].spoiler);
+                sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
                 return false;
             }
         } else { // if anything from the hints list is not done
-            FillHTML(divId, "", dataObject[i].spoiler);
+            sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
             return false;
         }
     } // end: for (let i in dataObject)
+
+    AppendHTML(divId, sFillText);
 } // function CheckHintsTrue()
 
 /**
@@ -1180,6 +1215,8 @@ function HKReadTextArea(textAreaId = "") {
  * @param {object} divIdObj JavaScript Object containing all HTML IDs to populate
  */
 function InitialHTMLPopulate(divIdObj) {
+
+    let sFillText = "";
 
     CurrentDataFalse();
 
@@ -1213,7 +1250,7 @@ function InitialHTMLPopulate(divIdObj) {
     CurrentDataFalse();
 
     // First Hint Only
-    FillHTML(divIdObj.hints, "", HK.HINTS.fireballLevel.spoiler);
+    AppendHTML(divIdObj.hints, HK.HINTS.fireballLevel.spoiler);
 
     // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
     let hkObjArray = [HK.BOSSES, HK.BOSSES_WORLD, HK.CHARMS, HK.EQUIPMENT, HK.NAILARTS, HK.MASKSHARDS, HK.MASKSHARDS_WORLD, HK.VESSELFRAGMENTS, HK.VESSELFRAGMENTS_WORLD, HK.DREAMERS, HK.COLOSSEUM, HK.DREAMNAIL, HK.WARRIORDREAMS, HK.GRIMMTROUPE, HK.LIFEBLOOD, HK.GODMASTER, HK.ESSENTIAL, HK.ACHIEVEMENTS, HK.STATISTICS];
@@ -1225,25 +1262,35 @@ function InitialHTMLPopulate(divIdObj) {
     do {
         for (let entry in hkObjArray[0]) {
             if (entry === "mrMushroomState") continue;
-            FillHTML(divObjArray[0], hkObjArray[0][entry].name, hkObjArray[0][entry].spoiler);
+            sFillText += PrepareHTMLString(divObjArray[0], hkObjArray[0][entry].name, hkObjArray[0][entry].spoiler);
         }
+        if (divObjArray[0]) {
+            AppendHTML(divObjArray[0], sFillText);
+        }
+        sFillText = "";
         divObjArray.shift();
     } while (hkObjArray.shift());
 
     // Nail Upgrades Misc
+    sFillText = "";
     for (let i in HK.NAILUPGRADES) {
-        FillHTML(divIdObj.nailUpgrades, HK.NAILUPGRADES[i].name, HK.NAILUPGRADES[i].spoiler);
+        sFillText += PrepareHTMLString(divIdObj.nailUpgrades, HK.NAILUPGRADES[i].name, HK.NAILUPGRADES[i].spoiler);
     }
+    AppendHTML(divIdObj.nailUpgrades, sFillText);
 
     // Spells Misc
+    sFillText = "";
     for (let i in HK.SPELLS) {
-        FillHTML(divIdObj.spells, HK.SPELLS[i].name, HK.SPELLS[i].spoiler);
+        sFillText += PrepareHTMLString(divIdObj.spells, HK.SPELLS[i].name, HK.SPELLS[i].spoiler);
     }
+    AppendHTML(divIdObj.spells, sFillText);
 
     // Godmaster Doors Misc
+    sFillText = "";
     for (let i in HK.GODMASTER_DOORS) {
-        FillHTML(divIdObj.godmaster, HK.GODMASTER_DOORS[i].name, HK.GODMASTER_DOORS[i].spoiler);
+        sFillText += PrepareHTMLString(divIdObj.godmaster, HK.GODMASTER_DOORS[i].name, HK.GODMASTER_DOORS[i].spoiler);
     }
+    AppendHTML(divIdObj.godmaster, sFillText);
 
     // Mr Mushroom 1 - 7
     CheckMrMushroomState(divIdObj.achievements, HK.ACHIEVEMENTS.mrMushroomState);
