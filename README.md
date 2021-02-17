@@ -99,7 +99,7 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **Hollow Knight Wiki links** to every entry in the tool for quick and easy access/map locations etc. No need to search manually now.
 
-  — **General Backwards Compatibility** with Hollow Knight version 1.0.0.6 save files (February 2017 release version) and all newer HK versions.
+  — **General Backwards Compatibility** with Hollow Knight version 1.0.0.6 save files (February 2017 release version) and all newer HK versions. Save Version info added to Game Status.
 
   — **Game Completion Essentials** additions:  
   ✅ Acid Drained in Waterways  
