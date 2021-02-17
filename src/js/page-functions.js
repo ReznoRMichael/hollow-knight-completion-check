@@ -135,6 +135,15 @@ function CompletionHTML(jsObj, hkGameCompletion) {
 }
 
 /**
+ * Adds HTML string to an element with a given ID.
+ * @param {object} divId object containing div ID of the HTML element to append to
+ * @param {string} content HTML contents to append
+ */
+function AppendHTML(divId, content) {
+    document.getElementById(divId.id).innerHTML += "\n" + content;
+}
+
+/**
  * Toggles display of "hk-hints". On click with no parameters or on demand when called with a parameter
  * @param {string} param "hide", "show" or none (optional)
  */
@@ -304,6 +313,7 @@ document.getElementById("checkbox-spoilers").addEventListener("click", CheckboxS
 export {
     PrefillHTML,
     CompletionHTML,
+    AppendHTML,
     CheckboxHintsToggle,
     CheckboxSpoilersToggle,
     StorageAvailable

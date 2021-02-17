@@ -9,6 +9,7 @@ import HK from "./hk-database.js";
 import {
     PrefillHTML,
     CompletionHTML,
+    AppendHTML,
     CheckboxHintsToggle,
     CheckboxSpoilersToggle,
     StorageAvailable
@@ -266,15 +267,6 @@ function FillHTML(divId, textPrefix = "Unknown Completion Element: ", textSuffix
     if (textSuffix.length && textPrefix.length) dash = "— ";
 
     document.getElementById(divId.id).innerHTML += divStart + icon + b[0] + textPrefix + b[1] + span[0] + pSpan + spoilerSpan[0] + dash + textSuffix + spoilerSpan[1] + span[1] + divEnd;
-}
-
-/**
- * Adds HTML string to an element with a given ID.
- * @param {object} divId object containing div ID of the HTML element to append to
- * @param {string} content HTML contents to append
- */
-function AppendHTML(divId, content) {
-    document.getElementById(divId.id).innerHTML += "\n" + content;
 }
 
 /**
