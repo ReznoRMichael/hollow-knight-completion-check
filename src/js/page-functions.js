@@ -39,6 +39,41 @@ function TogglePageScrollElement(root, element, ratio) {
 }
 
 /**
+ * Cleans "generated" and fills all HTML elements of ids from a given list. Creates only div with id, and h2 with title inside it.
+ * @param {object} jsObj Object with HTML data to fill
+ */
+function PrefillHTML(jsObj, element = "generated") {
+
+    let domElement = document.getElementById(element);
+    let sFillText = "";
+    // Clean "generated" div
+    domElement.innerHTML = "";
+
+    let id = "";
+    let h2 = "";
+    let h2id = "";
+    let mp = ""; // max Percent
+    let cl = ""; // class
+
+    for (let i in jsObj) {
+        id = jsObj[i].id;
+        h2 = jsObj[i].h2;
+        h2id = "h2-" + jsObj[i].id;
+
+        mp = `<div class='percent-box'>${(i === "intro") ? 0: jsObj[i].maxPercent}%</div>`;
+        if (!jsObj[i].hasOwnProperty("maxPercent")) mp = "";
+
+        sFillText += `
+            <div id="${id}" ${cl}>
+                <h2 id='${h2id}'>${h2}${mp}</h2>
+            </div>
+        `;
+    }
+
+    domElement.innerHTML = sFillText;
+}
+
+/**
  * Toggles display of "hk-hints". On click with no parameters or on demand when called with a parameter
  * @param {string} param "hide", "show" or none (optional)
  */
@@ -206,6 +241,7 @@ document.getElementById("checkbox-spoilers").addEventListener("click", CheckboxS
 /* ------------------------- Exports ------------------------------- */
 
 export {
+    PrefillHTML,
     CheckboxHintsToggle,
     CheckboxSpoilersToggle,
     StorageAvailable

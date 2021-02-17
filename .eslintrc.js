@@ -10,6 +10,6 @@ module.exports = {
         "sourceType": "module",
     },
     "rules": {
-        "no-prototype-builtins": false,
+        "no-prototype-builtins": 0,
     }
 };

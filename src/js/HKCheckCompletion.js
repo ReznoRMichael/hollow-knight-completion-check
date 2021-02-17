@@ -1,20 +1,21 @@
 /* eslint-disable no-prototype-builtins */
 
-// ---------------- Load main Hollow Knight database files ----------------- //
+/* ---------------- Load main Hollow Knight database files ----------------- */
 
 import HK from "./hk-database.js";
-import MAP from "./hk-dictionary.js";
 
 /* ----------------- Helper functions --------------------------------------- */
 
 import {
+    PrefillHTML,
     CheckboxHintsToggle,
     CheckboxSpoilersToggle,
     StorageAvailable
 } from "./page-functions.js";
 
 import {
-    ObjectLength
+    ObjectLength,
+    TranslateMapName
 } from "./hk-functions.js";
 
 // ---------------- Load image files (necessary for Webpack) ----------------- //
@@ -58,7 +59,7 @@ let pSpan = "<span class='p-left-small'></span>";
 
 let benchHKCCBegin, benchHKCCEnd;
 
-// ---------------- Functions ----------------- //
+/* -------------------------- Functions ----------------------------- */
 
 /**
  * Main Function. Checks Hollow Knight game completion by analyzing the save file
@@ -239,34 +240,6 @@ function HKCheckCompletion(jsonObject) {
     console.info("HKCheckCompletion() time (ms) =", benchHKCCEnd - benchHKCCBegin);
 
     return true;
-}
-
-/**
- * Cleans "generated" and fills all HTML elements of ids from a given list. Creates only div with id, and h2 with title inside it.
- * @param {object} jsObj Object with HTML data to fill
- */
-function PrefillHTML(jsObj) {
-    // Clean "generated" div
-    document.getElementById("generated").innerHTML = "";
-
-    let id = "";
-    let h2 = "";
-    let h2id = "";
-    let mp = ""; // max Percent
-    let cl = ""; // class
-
-    for (let i in jsObj) {
-        id = jsObj[i].id;
-        h2 = jsObj[i].h2;
-        h2id = "h2-" + jsObj[i].id;
-
-        mp = `<div class='percent-box'>${(i === "intro") ? 0: jsObj[i].maxPercent}%</div>`;
-        if (!jsObj[i].hasOwnProperty("maxPercent")) mp = "";
-
-        document.getElementById("generated").innerHTML += "<div id='" + id + "'" + cl + ">" + "</div>";
-        // document.getElementById(id).innerHTML += "<h2 id='" + h2id + "'>" + h2 + mp + "</h2>";
-        document.getElementById(id).innerHTML += `<h2 id='${h2id}'>${h2}${mp}</h2>`;
-    }
 }
 
 /**
@@ -1409,18 +1382,7 @@ function FillInnerHTML(elementId, textFill) {
     element.innerHTML = textFill;
 }
 
-/**
- * Returns a translated map location name string.
- * @param {string} mapCode Code of the Hollow Knight map location the game developers use
- * @param {object} dictionary Main data source for translation
- */
-function TranslateMapName(mapCode, dictionary = MAP) {
-
-    let translation = mapCode;
-    if (dictionary.hasOwnProperty(mapCode)) translation = dictionary[mapCode];
-
-    return translation;
-}
+/* ----------------------- Event Listeners -------------------------- */
 
 // Populate HTML at load (before img and css)
 document.addEventListener("DOMContentLoaded", () => {
