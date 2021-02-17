@@ -786,39 +786,39 @@ const HK = {
         gotCharm_37: {
             name: "Charm #37 Sprintmaster",
             spoiler: "Sly: 400 Geo + Shopkeeper's Key",
-            wiki: ""
+            wiki: "Sprintmaster"
         },
         gotCharm_38: {
             name: "Charm #38 Dreamshield",
             spoiler: "Resting Grounds",
-            wiki: ""
+            wiki: "Dreamshield"
         },
         gotCharm_39: {
             name: "Charm #39 Weaversong",
             spoiler: "Deepnest: Weaver's Den",
-            wiki: ""
+            wiki: "Weaversong"
         },
         gotCharm_40: {
             name: "Charm #40 Grimmchild / Carefree Melody",
             spoiler: "Dirtmouth",
-            wiki: ""
+            wiki: "Grimmchild"
         },
         killedGrimm: {
             name: "Troupe Leader Grimm",
             spoiler: "Dirtmouth, collect 6 flames",
-            wiki: ""
+            wiki: "Grimm"
         },
         grimmChildLevel: {
             name: "Nightmare King Grimm / Banishment",
             spoiler: "Dirtmouth or Howling Cliffs",
-            wiki: ""
+            wiki: "Category:The_Grimm_Troupe"
         }
     },
     LIFEBLOOD: {
         killedHiveKnight: {
             name: "Hive Knight",
             spoiler: "The Hive, guards Hiveblood charm",
-            wiki: ""
+            wiki: "Hive_Knight"
         }
     },
     GODMASTER_DOORS: {
