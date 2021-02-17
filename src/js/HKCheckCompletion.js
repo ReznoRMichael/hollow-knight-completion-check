@@ -607,7 +607,7 @@ function CheckGodmasterDoors(divId, dataObject, playerData) {
                 divId,
                 `<del>${dataObject[pantheon[i]].name}</del>`,
                 `<del>${dataObject[pantheon[i]].spoiler}</del>`,
-                `<del>${dataObject[pantheon[i]].wiki}</del>`
+                dataObject[pantheon[i]].wiki
                 );
         } else {
             (playerData["bossDoorStateTier" + (i + 1)].completed === true) ? CurrentDataTrue(divId): CurrentDataFalse();
