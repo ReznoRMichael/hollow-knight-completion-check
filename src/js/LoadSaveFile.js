@@ -9,7 +9,9 @@
 // AES JS for file decryption
 const aesjs = require("./aes-js.js");
 // For reading the text area after save decoding
-import { HKReadTextArea } from "./HKCheckCompletion.js";
+import {
+    HKReadTextArea
+} from "./HKCheckCompletion.js";
 
 const CSHARP_HEADER = [0, 1, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 0, 0]; // 22 bytes
 
@@ -31,17 +33,15 @@ let benchLSFBegin, benchLSFEnd, benchTotal;
  * @param {FileList} input FileList object containing a list of File objects. The FileList behaves like an array, so you can check its length property to get the number of selected files.
  */
 // eslint-disable-next-line no-unused-vars
-function LoadSaveFile() {
+function LoadSaveFile(input, time) {
 
-    let startTime = new Date();
-
-    const inputFileList = this.files;
+    const inputFileList = input.files;
     // console.info("Input length: " + input.files.length)
     // Cease further processing if user canceled the file input dialog
     if (inputFileList.length < 1) return false;
 
     // start benchmark
-    benchLSFBegin = startTime;
+    benchLSFBegin = time;
 
     // Prepares a File object from the first file of the input files for reading as an Array Buffer
     let inputFileObject = inputFileList[0];
@@ -188,11 +188,10 @@ function AESDecryption(buffer, cipherObject = ECB_STREAM_CIPHER) {
     return output.subarray(0, -output[output.length - 1]);
 }
 
-// Make functions global so they can be used on click and change events (for Webpack)
-// window.LoadSaveFile = LoadSaveFile;
-
 // Assign actions (functions) to launch when a specific element is used
-document.getElementById("save-area-file").addEventListener("change", LoadSaveFile);
+document.getElementById("save-area-file").addEventListener("change", (event) => {
+    LoadSaveFile(event.target, new Date());
+});
 document.getElementById("save-area-file").addEventListener("click", (mouseEvent) => {
     mouseEvent.target.value = "";
 });
