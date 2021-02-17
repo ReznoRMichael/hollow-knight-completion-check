@@ -430,11 +430,16 @@ a:visited {
 a:hover {
     color: #d9f3ff;
     text-decoration: none;
+    text-shadow: 0 0 0.25em #54ff95;
 }
 
 a.button:active,
 a.button:visited {
     font-weight: 500;
+}
+
+a.button:hover {
+    text-shadow: none;
 }
 
 a.wiki {
