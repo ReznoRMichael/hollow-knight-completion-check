@@ -603,10 +603,13 @@ function CheckGodmasterDoors(divId, dataObject, playerData) {
         // compatibility with earlier game versions
         if (playerData.hasOwnProperty("bossDoorStateTier" + (i + 1)) === false) {
             CurrentDataBlank();
-            sFillText += PrepareHTMLString(divId, `<del>${dataObject[pantheon[i]].name}</del>`, `<del>${dataObject[pantheon[i]].spoiler}</del>`);
+            sFillText += PrepareHTMLString(divId,
+                `<del>${dataObject[pantheon[i]].name}</del>`,
+                `<del>${dataObject[pantheon[i]].spoiler}</del>`,
+                `<del>${dataObject[pantheon[i]].wiki}</del>`);
         } else {
             (playerData["bossDoorStateTier" + (i + 1)].completed === true) ? CurrentDataTrue(divId): CurrentDataFalse();
-            sFillText += PrepareHTMLString(divId, dataObject[pantheon[i]].name, dataObject[pantheon[i]].spoiler);
+            sFillText += PrepareHTMLString(divId, dataObject[pantheon[i]].name, dataObject[pantheon[i]].spoiler, dataObject[pantheon[i]].wiki);
         }
     }
 
