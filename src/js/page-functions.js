@@ -38,6 +38,153 @@ function TogglePageScrollElement(root, element, ratio) {
     }
 }
 
+/**
+ * Toggles display of "hk-hints". On click with no parameters or on demand when called with a parameter
+ * @param {string} param "hide", "show" or none (optional)
+ */
+function CheckboxHintsToggle(param = "none") {
+    let checkboxId = document.getElementById("checkbox-hints");
+
+    switch (param) {
+        case "hide":
+            document.getElementById("hk-hints").classList.add("hidden");
+            checkboxId.value = "hints-off";
+            checkboxId.checked = false;
+
+            // remember this choice for subsequent page visits and browser restarts
+            if (StorageAvailable('localStorage')) {
+                localStorage.setItem("hkCheckboxHints", "unchecked");
+            }
+            break;
+        case "show":
+            document.getElementById("hk-hints").classList.remove("hidden");
+            checkboxId.value = "hints-on";
+            checkboxId.checked = true;
+
+            // remember this choice for subsequent page visits and browser restarts
+            if (StorageAvailable('localStorage')) {
+                localStorage.setItem("hkCheckboxHints", "checked");
+            }
+            break;
+        default:
+            // This runs when the checkbox is not checked
+            if (checkboxId.checked === false) {
+                document.getElementById("hk-hints").classList.add("hidden");
+                checkboxId.value = "hints-off";
+
+                // remember this choice for subsequent page visits and browser restarts
+                if (StorageAvailable('localStorage')) {
+                    localStorage.setItem("hkCheckboxHints", "unchecked");
+                }
+            }
+            // This runs when the checkbox is checked
+            else {
+                document.getElementById("hk-hints").classList.remove("hidden");
+                checkboxId.value = "hints-on";
+
+                // remember this choice for subsequent page visits and browser restarts
+                if (StorageAvailable('localStorage')) {
+                    localStorage.setItem("hkCheckboxHints", "checked");
+                }
+            }
+    }
+}
+
+/**
+ * Toggles display of ".spoiler-span" class. On click with no parameters or on demand when called with a parameter
+ * @param {string} param "hide", "show" or none (optional)
+ */
+function CheckboxSpoilersToggle(param = "none") {
+    let checkboxId = document.getElementById("checkbox-spoilers");
+    let allClassElements = document.querySelectorAll(".spoiler-span");
+    let length = allClassElements.length;
+
+    switch (param) {
+        case "hide":
+            for (let i = 0; i < length; i++) {
+                allClassElements[i].classList.add("hidden");
+            }
+            checkboxId.value = "spoilers-off";
+            checkboxId.checked = false;
+
+            // remember this choice for subsequent page visits and browser restarts
+            if (StorageAvailable('localStorage')) {
+                localStorage.setItem("hkCheckboxSpoilers", "unchecked");
+            }
+            break;
+        case "show":
+            for (let i = 0; i < length; i++) {
+                allClassElements[i].classList.remove("hidden");
+            }
+            checkboxId.value = "spoilers-on";
+            checkboxId.checked = true;
+
+            // remember this choice for subsequent page visits and browser restarts
+            if (StorageAvailable('localStorage')) {
+                localStorage.setItem("hkCheckboxSpoilers", "checked");
+            }
+            break;
+        default:
+            // This runs when the checkbox is not checked
+            if (checkboxId.checked === false) {
+                for (let i = 0; i < length; i++) {
+                    allClassElements[i].classList.add("hidden");
+                }
+                checkboxId.value = "spoilers-off";
+
+                // remember this choice for subsequent page visits and browser restarts
+                if (StorageAvailable('localStorage')) {
+                    localStorage.setItem("hkCheckboxSpoilers", "unchecked");
+                }
+                break;
+            }
+            // This runs when the checkbox is checked
+            else {
+                for (let i = 0; i < length; i++) {
+                    allClassElements[i].classList.remove("hidden");
+                }
+                checkboxId.value = "spoilers-on";
+
+                // remember this choice for subsequent page visits and browser restarts
+                if (StorageAvailable('localStorage')) {
+                    localStorage.setItem("hkCheckboxSpoilers", "checked");
+                }
+            }
+    }
+}
+
+/**
+ * Detects whether Storage is both supported and available.
+ * MDN WebDocs https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API#feature-detecting_localstorage
+ * @param {Storage} type type of storage. Ex. "localStorage" or "sessionStorage"
+ * @returns {Boolean}
+ */
+function StorageAvailable(type) {
+    var storage;
+    try {
+        storage = window[type];
+        var x = '__storage_test__';
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        return true;
+    } catch (e) {
+        return e instanceof DOMException && (
+                // everything except Firefox
+                e.code === 22 ||
+                // Firefox
+                e.code === 1014 ||
+                // test name field too, because code might not be present
+                // everything except Firefox
+                e.name === 'QuotaExceededError' ||
+                // Firefox
+                e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+            // acknowledge QuotaExceededError only if there's something already stored
+            (storage && storage.length !== 0);
+    }
+}
+
+/* ----------------------- Event Listeners -------------------------- */
+
 document.addEventListener("scroll", () => {
     TogglePageScrollElement(
         /* the document element root (<html>) */
@@ -51,3 +198,15 @@ document.addEventListener("scroll", () => {
 SCROLL_BUTTON.addEventListener("click", () => {
     ScrollToElement(ROOT);
 });
+
+// Checkboxes functions
+document.getElementById("checkbox-hints").addEventListener("click", CheckboxHintsToggle, false);
+document.getElementById("checkbox-spoilers").addEventListener("click", CheckboxSpoilersToggle, false);
+
+/* ------------------------- Exports ------------------------------- */
+
+export {
+    CheckboxHintsToggle,
+    CheckboxSpoilersToggle,
+    StorageAvailable
+};
