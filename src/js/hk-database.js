@@ -481,7 +481,7 @@ const HK = {
         dreamNailUpgraded: {
             name: "Awoken Dream Nail",
             spoiler: "Seer: 1800 Essence",
-            wiki: "Dream_Nail"
+            wiki: "Dream_Nail#Awoken_Dream_Nail"
         },
         mothDeparted: {
             name: "Hear the Seer's final words",
@@ -689,22 +689,22 @@ const HK = {
         sharpenedNail: {
             name: "#1 Sharpened Nail",
             spoiler: "Nailsmith: 250 Geo",
-            wiki: "Nail"
+            wiki: "Nail#Nail_Upgrades"
         },
         channeledNail: {
             name: "#2 Channeled Nail",
             spoiler: "Nailsmith: 800 Geo + 1 Pale Ore",
-            wiki: "Nail"
+            wiki: "Nail#Nail_Upgrades"
         },
         coiledNail: {
             name: "#3 Coiled Nail",
             spoiler: "Nailsmith: 2000 Geo + 2 Pale Ore",
-            wiki: "Nail"
+            wiki: "Nail#Nail_Upgrades"
         },
         pureNail: {
             name: "#4 Pure Nail",
             spoiler: "Nailsmith: 4000 Geo + 3 Pale Ore",
-            wiki: "Nail"
+            wiki: "Nail#Nail_Upgrades"
         }
     },
     SPELLS: {
@@ -811,7 +811,7 @@ const HK = {
         grimmChildLevel: {
             name: "Nightmare King Grimm / Banishment",
             spoiler: "Dirtmouth or Howling Cliffs",
-            wiki: "Category:The_Grimm_Troupe"
+            wiki: "Category:The_Grimm_Troupe#Banishment"
         }
     },
     LIFEBLOOD: {
@@ -825,29 +825,29 @@ const HK = {
         pantheonMaster: {
             name: "#1 Pantheon of the Master",
             spoiler: "Godhome",
-            wiki: ""
+            wiki: "Pantheon_of_the_Master"
         },
         pantheonArtist: {
             name: "#2 Pantheon of the Artist",
             spoiler: "Godhome",
-            wiki: ""
+            wiki: "Pantheon_of_the_Artist"
         },
         pantheonSage: {
             name: "#3 Pantheon of the Sage",
             spoiler: "Godhome",
-            wiki: ""
+            wiki: "Pantheon_of_the_Sage"
         },
         pantheonKnight: {
             name: "#4 Pantheon of the Knight",
             spoiler: "Godhome, complete #1, #2 and #3",
-            wiki: ""
+            wiki: "Pantheon_of_the_Knight"
         }
     },
     GODMASTER: {
         hasGodfinder: {
             name: "Godtuner",
             spoiler: "Junk Pit, requires Simple Key",
-            wiki: ""
+            wiki: "Godtuner"
         }
     },
     ESSENTIAL: {
@@ -855,120 +855,120 @@ const HK = {
             name: "Grubs Rescued",
             spoiler: "out of 46 total",
             max: 46,
-            wiki: ""
+            wiki: "Grub"
         },
         dreamOrbs: {
             name: "Essence Collected",
             spoiler: "Dream Nail (2400 for completion)",
             max: 2400,
-            wiki: ""
+            wiki: "Dream_Nail#Essence"
         },
         stationsOpened: {
             name: "Stag Stations opened",
             spoiler: "out of 10 total",
             max: 10,
-            wiki: ""
+            wiki: "Fast_Travel_(Hollow_Knight)#Locations_and_Prices"
         },
         fountainGeo: {
             name: "Geo in Fountain",
             spoiler: "Ancient Basin: 3000 Geo maximum",
             max: 3000,
-            wiki: ""
+            wiki: "Ancient_Basin#Description"
         },
         slyRescued: {
             name: "Sly Rescued",
             spoiler: "Forgotten Crossroads, near Gruz Mother",
-            wiki: ""
+            wiki: "Sly"
         },
         brettaRescued: {
             name: "Bretta Rescued",
             spoiler: "Fungal Wastes, near Dashmaster charm statue",
-            wiki: ""
+            wiki: "Bretta"
         },
         hasLantern: {
             name: "Lumafly Lantern",
             spoiler: "Sly: 1800 Geo",
-            wiki: ""
+            wiki: "Lumafly_Lantern"
         },
         shopkeeperKey: {
             name: "Shopkeeper's Key",
             spoiler: "Crystal Peak, below Quirrel location",
-            wiki: ""
+            wiki: "Shopkeeper's_Key"
         },
         elegantKey: {
             name: "Elegant Key",
             spoiler: "Sly: 800 Geo + Shopkeeper's Key",
-            wiki: ""
+            wiki: "Elegant_Key"
         },
         loveKey: {
             name: "Love Key",
             spoiler: "Queen's Gardens, near Fungal Wastes",
-            wiki: ""
+            wiki: "Love_Key"
         },
         slySimpleKey: {
             name: "Simple Key #1",
             spoiler: "Sly: 950 Geo",
-            wiki: ""
+            wiki: "Simple_Key"
         },
         simpleKeyCityOfTears: {
             name: "Simple Key #2",
             spoiler: "City of Tears, below west Stag Station",
-            wiki: ""
+            wiki: "Simple_Key#How_to_Acquire"
         },
         simpleKeyAncientBasin: {
             name: "Simple Key #3",
             spoiler: "Ancient Basin, below Broken Vessel",
-            wiki: ""
+            wiki: "Simple_Key#How_to_Acquire"
         },
         gotLurkerKey: {
             name: "Simple Key #4",
             spoiler: "Colosseum of Fools: Pale Lurker's Retreat",
-            wiki: ""
+            wiki: "Simple_Key#How_to_Acquire"
         },
         paleOreAncientBasin: {
             name: "Pale Ore #1",
             spoiler: "Ancient Basin, near Cloth location",
-            wiki: ""
+            wiki: "Pale_Ore"
         },
         paleOreSeer: {
             name: "Pale Ore #2",
             spoiler: "Seer: 300 Essence",
-            wiki: ""
+            wiki: "Pale_Ore#How_to_Acquire"
         },
         paleOreCrystalPeak: {
             name: "Pale Ore #3",
             spoiler: "Crystal Peak: Hallownest's Crown",
-            wiki: ""
+            wiki: "Pale_Ore#How_to_Acquire"
         },
         paleOreDeepnest: {
             name: "Pale Ore #4",
             spoiler: "Deepnest, Nosk reward",
-            wiki: ""
+            wiki: "Pale_Ore#How_to_Acquire"
         },
         paleOreGrubfather: {
             name: "Pale Ore #5",
             spoiler: "Grubfather: 31 Grubs rescued",
-            wiki: ""
+            wiki: "Pale_Ore#How_to_Acquire"
         },
         paleOreColosseum: {
             name: "Pale Ore #6",
             spoiler: "Colosseum of Fools: Trial of the Conqueror",
-            wiki: ""
+            wiki: "Pale_Ore#How_to_Acquire"
         },
         waterwaysAcidDrained: {
             name: "Acid Drained",
             spoiler: "Royal Waterways, lever after Dung Defender",
-            wiki: ""
+            wiki: "Royal_Waterways#Sub-area:_Isma.27s_Grove"
         },
         hasTramPass: {
             name: "Tram Pass",
             spoiler: "Deepnest, Failed Tramway",
-            wiki: ""
+            wiki: "Tram_Pass"
         },
         nightmareLanternLit: {
             name: "Nightmare Lantern Lit",
             spoiler: "Howling Cliffs, corpse of a large bug",
-            wiki: ""
+            wiki: "Howling_Cliffs#Nightmare_Lantern_Chamber"
         }
     },
     GRUBS_LIST: ["Crossroads_35", "Crossroads_03", "Crossroads_05", "Crossroads_48", "Crossroads_31", "Fungus1_06", "Fungus1_07", "Fungus1_21", "Fungus1_28", "Fungus2_18", "Ruins1_05", "Mines_04", "Mines_03", "Mines_31", "Mines_19", "Ruins1_32", "RestingGrounds_10", "Ruins_House_01", "Mines_35", "Mines_16", "Waterways_04", "Waterways_13", "Abyss_19", "Abyss_17", "Mines_24", "Fungus1_13", "Fungus3_47", "Fungus3_10", "Fungus3_48", "Fungus3_22", "Ruins2_07", "Ruins2_11", "Ruins2_11", "Ruins2_11", "Deepnest_East_11", "Deepnest_East_14", "Fungus2_20", "Ruins2_03", "Deepnest_36", "Deepnest_03", "Deepnest_31", "Deepnest_39", "Deepnest_Spider_Town", "Waterways_14", "Hive_03", "Hive_04"],
@@ -980,29 +980,29 @@ const HK = {
             list: [
                 "mapCrossroads", "mapGreenpath", "mapFogCanyon", "mapRoyalGardens", "mapFungalWastes", "mapCity", "mapWaterways", "mapMines", "mapDeepnest", "mapCliffs", "mapOutskirts", "mapRestingGrounds", "mapAbyss"
             ],
-            wiki: ""
+            wiki: "Map_and_Quill#Maps"
         },
         journalEntriesCompleted: {
             name: "Creatures Encountered",
             spoiler: "Hunter's Journal (164 max)",
             max: 164,
-            wiki: ""
+            wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
         },
         journalNotesCompleted: {
             name: "Hunter Notes Completed",
             spoiler: "Hunter's Journal (164 max)",
             max: 164,
-            wiki: ""
+            wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
         },
         hasJournal: {
             name: "Hunter's Journal",
             spoiler: "Greenpath: Hunter",
-            wiki: ""
+            wiki: "Hunter%27s_Journal"
         },
         hasHuntersMark: {
             name: "Hunter's Mark",
             spoiler: "Greenpath: Hunter",
-            wiki: ""
+            wiki: "Hunter's_Mark"
         },
         killedPrayerSlug: {
             name: "Journal: Maggot",
