@@ -242,7 +242,7 @@ If you like the tool and wish it developed further with more functions and easie
 
   — Added save's Play Time
 
-* v1.0.4 2021-xx-xx:
+* v1.1.0 2021-xx-xx:
 
   — **General Backwards Compatibility** with Hollow Knight version 1.0.0.6 save files (February 2017 release version) and all above.
 
@@ -258,6 +258,8 @@ If you like the tool and wish it developed further with more functions and easie
   — The tool can now be used even when you disabled all cookies in your browser. You won't have the ability to remember your selected checkboxes in this case, but all else will work.
 
   — Added a small scroll up arrow for fast returning to top.
+
+  — Performance optimizations. Should work ~2x faster. Difference may be noticeable rather more on mobile devices than on PCs.
 
 ## Using
 
