@@ -10,7 +10,7 @@
 const aesjs = require("./aes-js.js");
 // For reading the text area after save decoding
 import {
-    HKReadTextArea
+    HKCheckCompletion
 } from "./HKCheckCompletion.js";
 
 const CSHARP_HEADER = [0, 1, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 0, 0]; // 22 bytes
@@ -91,17 +91,16 @@ function ProcessFileObject() {
         // Convert ArrayBuffer to string/text TextDecoder().decode(ArrayBuffer)
         decodedString = new TextDecoder().decode(inputArrayBuffer);
 
-        // 4. Paste decoded string file to text area
-
-        document.getElementById("save-area").value = "";
-        document.getElementById("save-area").value = decodedString;
-
         // finish and show benchmark
         benchLSFEnd = new Date();
         console.info("LoadSaveFile() time (ms) =", benchLSFEnd - benchLSFBegin);
 
-        // after pasting the decoded string, launch the main analyzing function immediately
-        HKReadTextArea("save-area");
+        // 4. Analyze the decoded string immediately
+        HKCheckCompletion(JSON.parse(decodedString));
+
+        // 5. Paste decoded string file to text area
+        document.getElementById("save-area").value = "";
+        document.getElementById("save-area").value = decodedString;
 
         // finish total and show benchmark
         benchTotal = new Date();

@@ -1409,5 +1409,5 @@ document.getElementById("save-area-read").addEventListener("click", () => {
 
 export {
     // to use in LoadSaveFile.js for auto-analyzing file after decoding
-    HKReadTextArea
+    HKCheckCompletion
 };
