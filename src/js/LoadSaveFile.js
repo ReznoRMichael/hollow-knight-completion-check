@@ -96,7 +96,12 @@ function ProcessFileObject() {
         console.info("LoadSaveFile() time (ms) =", benchLSFEnd - benchLSFBegin);
 
         // 4. Analyze the decoded string immediately
-        HKCheckCompletion(JSON.parse(decodedString));
+        try {
+            HKCheckCompletion(JSON.parse(decodedString));
+        } catch (error) {
+            alert(`This seems like not a valid Hollow Knight save. ${error}`);
+            console.info(`This seems like not a valid Hollow Knight save. ${error}`);
+        }
 
         // 5. Paste decoded string file to text area
         document.getElementById("save-area").value = "";
