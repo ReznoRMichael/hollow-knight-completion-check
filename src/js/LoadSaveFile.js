@@ -107,6 +107,11 @@ function ProcessFileObject() {
         document.getElementById("save-area").value = "";
         document.getElementById("save-area").value = decodedString;
 
+        /* (async () => {
+            document.getElementById("save-area").value = "";
+            document.getElementById("save-area").value = await decodedString;
+        })(); */
+
         // finish total and show benchmark
         benchTotal = new Date();
         console.info("Total time (ms) =", benchTotal - benchLSFBegin);

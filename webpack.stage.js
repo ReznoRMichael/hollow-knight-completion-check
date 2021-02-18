@@ -1,20 +1,30 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+// const TerserPlugin = require('terser-webpack-plugin');
 const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
-        index: './src/js/index.js'
+        index: './src/js/index.js',
     },
-    mode: 'development',
-    devtool: "source-map",
+    mode: 'production',
+    optimization: {
+        minimize: true,
+        /* minimizer: [
+            new TerserPlugin({
+                extractComments: false,
+            }),
+            new CssMinimizerPlugin(),
+        ], */
+    },
     output: {
-        path: `${__dirname}/build`,
+        path: `${__dirname}/stage`,
         filename: 'app.js',
-        assetModuleFilename: 'img/[hash][ext][query]'
+        assetModuleFilename: 'img/[hash][ext][query]',
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -26,7 +36,27 @@ module.exports = {
             inject: true,
             chunks: ['index'],
             filename: 'index.html',
-            favicon: "./src/favicon.png"
+            favicon: "./src/favicon.png",
+            minify: {
+                // Begin HTML Webpack Plugin Default
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true,
+                // End HTML Webpack Plugin Default
+                minifyJS: true,
+                minifyCSS: true,
+            },
+        }),
+        new HtmlWebpackPartialsPlugin({
+            path: './src/partials/analytics-dev.html',
+            location: 'head',
+            priority: 'high',
+            options: {
+                ga_property_id: 'UA-136831794-2'
+            }
         }),
         new HtmlWebpackPartialsPlugin({
             path: './src/partials/cookiealert.html',
@@ -35,7 +65,8 @@ module.exports = {
             options: {
                 mainColor: "#59d1da"
             }
-        })
+        }),
+        new CssMinimizerPlugin(),
     ],
     module: {
         rules: [{
@@ -49,7 +80,7 @@ module.exports = {
                             {
                                 "useBuiltIns": "entry"
                             }
-                        ]
+                        ],
                     },
                 },
             },
@@ -58,7 +89,7 @@ module.exports = {
                 use: [{
                         loader: MiniCssExtractPlugin.loader,
                         options: {
-                            publicPath: ""
+                            publicPath: "",
                         },
                     },
                     // 'style-loader',
@@ -75,7 +106,7 @@ module.exports = {
             },
             {
                 test: /\.(svg|jpg|png|ttf|eot|woff|woff2)$/,
-                type: 'asset'
+                type: 'asset',
             },
         ],
     },
