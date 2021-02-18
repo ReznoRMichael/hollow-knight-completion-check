@@ -10,6 +10,9 @@ require("../css/style.css");
 // required for meta tags (social) to be visible by Webpack
 require("../img/thumbnail1200x628.jpg");
 
+import "core-js";
+import "regenerator-runtime/runtime.js";
+
 require("./page-functions.js");
 
 // Instantly load test save file from .json (fast Debugging script)

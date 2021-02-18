@@ -104,13 +104,13 @@ function ProcessFileObject() {
         }
 
         // 5. Paste decoded string file to text area
-        document.getElementById("save-area").value = "";
-        document.getElementById("save-area").value = decodedString;
+        /* document.getElementById("save-area").value = "";
+        document.getElementById("save-area").value = decodedString; */
 
-        /* (async () => {
+        (async () => {
             document.getElementById("save-area").value = "";
             document.getElementById("save-area").value = await decodedString;
-        })(); */
+        })();
 
         // finish total and show benchmark
         benchTotal = new Date();
