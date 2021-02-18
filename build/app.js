@@ -10,7 +10,7 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "HKCheckCompletion": () => /* binding */ HKCheckCompletion
+/* harmony export */   "HKCheckCompletion": () => (/* binding */ HKCheckCompletion)
 /* harmony export */ });
 /* harmony import */ var _hk_database_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hk-database.js */ "./src/js/hk-database.js");
 /* harmony import */ var _page_functions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-functions.js */ "./src/js/page-functions.js");
@@ -2364,7 +2364,7 @@ document.getElementById("save-area-file").addEventListener("click", function (mo
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 // ---------------- Hollow Knight Data Constant Objects ----------------- //
 
@@ -3839,7 +3839,7 @@ var HK = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var MAP = {
   "Tutorial_01": "King's_Pass",
@@ -4249,8 +4249,8 @@ var MAP = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ObjectLength": () => /* binding */ ObjectLength,
-/* harmony export */   "TranslateMapName": () => /* binding */ TranslateMapName
+/* harmony export */   "ObjectLength": () => (/* binding */ ObjectLength),
+/* harmony export */   "TranslateMapName": () => (/* binding */ TranslateMapName)
 /* harmony export */ });
 /* harmony import */ var _hk_dictionary_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hk-dictionary.js */ "./src/js/hk-dictionary.js");
 /* ---------------- Load main Hollow Knight database files ----------------- */
@@ -4303,12 +4303,12 @@ function TranslateMapName(mapCode) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "PrefillHTML": () => /* binding */ PrefillHTML,
-/* harmony export */   "CompletionHTML": () => /* binding */ CompletionHTML,
-/* harmony export */   "AppendHTML": () => /* binding */ AppendHTML,
-/* harmony export */   "CheckboxHintsToggle": () => /* binding */ CheckboxHintsToggle,
-/* harmony export */   "CheckboxSpoilersToggle": () => /* binding */ CheckboxSpoilersToggle,
-/* harmony export */   "StorageAvailable": () => /* binding */ StorageAvailable
+/* harmony export */   "PrefillHTML": () => (/* binding */ PrefillHTML),
+/* harmony export */   "CompletionHTML": () => (/* binding */ CompletionHTML),
+/* harmony export */   "AppendHTML": () => (/* binding */ AppendHTML),
+/* harmony export */   "CheckboxHintsToggle": () => (/* binding */ CheckboxHintsToggle),
+/* harmony export */   "CheckboxSpoilersToggle": () => (/* binding */ CheckboxSpoilersToggle),
+/* harmony export */   "StorageAvailable": () => (/* binding */ StorageAvailable)
 /* harmony export */ });
 var ROOT = document.documentElement;
 var SCROLL_BUTTON = document.querySelector(".scroll-up-button");
@@ -4806,7 +4806,7 @@ module.exports = __webpack_require__.p + "img/thumbnail1200x628.jpg";
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -4841,6 +4841,8 @@ module.exports = __webpack_require__.p + "img/thumbnail1200x628.jpg";
 /******/ 	})();
 /******/ 	
 /************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 /*!*************************!*\
   !*** ./src/js/index.js ***!
