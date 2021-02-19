@@ -188,14 +188,6 @@ const HK = {
             sceneName: "Crossroads_04",
             wiki: "Gruz_Mother"
         },
-        // killedMawlek
-        bossBroodingMawlek: {
-            name: "P#1 Brooding Mawlek",
-            spoiler: "Forgotten Crossroads, use Mantis Claw",
-            id: "Battle Scene",
-            sceneName: "Crossroads_09",
-            wiki: "Brooding_Mawlek"
-        },
         falseKnightDefeated: {
             name: "P#1 False Knight",
             spoiler: "Forgotten Crossroads, middle area",
@@ -211,25 +203,39 @@ const HK = {
             spoiler: "Royal Waterways, east",
             wiki: "Dung_Defender"
         },
+        // killedMawlek
+        bossBroodingMawlek: {
+            name: "P#1 Brooding Mawlek",
+            spoiler: "Forgotten Crossroads, use Mantis Claw",
+            id: "Battle Scene",
+            sceneName: "Crossroads_09",
+            wiki: "Brooding_Mawlek"
+        },
         mageLordDefeated: {
             name: "P#2 Soul Master",
             spoiler: "City of Tears: Soul Sanctum",
             wiki: "Soul_Master"
         },
-        killedBlackKnight: {
-            name: "Watcher Knights",
-            spoiler: "City of Tears: Watcher's Spire",
-            wiki: "Watcher_Knight"
+        defeatedMantisLords: {
+            name: "P#2 Mantis Lords",
+            spoiler: "Fungal Wastes: Mantis Village",
+            wiki: "Mantis_Lords"
+        },
+        // "Battle Scene" - "Deepnest_32" ?
+        killedMimicSpider: {
+            name: "P#2 Nosk",
+            spoiler: "Deepnest, use Crystal Heart, left of Hot Springs",
+            wiki: "Nosk"
+        },
+        killedInfectedKnight: {
+            name: "P#2 Broken Vessel",
+            spoiler: "Ancient Basin, use Crystal Heart",
+            wiki: "Broken_Vessel"
         },
         collectorDefeated: {
             name: "P#3 The Collector",
             spoiler: "City of Tears: Tower of Love",
             wiki: "Collector"
-        },
-        defeatedMantisLords: {
-            name: "P#2 Mantis Lords",
-            spoiler: "Fungal Wastes: Mantis Village",
-            wiki: "Mantis_Lords"
         },
         defeatedMegaJelly: {
             name: "P#3 Uumuu",
@@ -241,22 +247,16 @@ const HK = {
             spoiler: "Kingdom's Edge, needs Monarch Wings",
             wiki: "Hornet_Sentinel"
         },
-        killedInfectedKnight: {
-            name: "P#2 Broken Vessel",
-            spoiler: "Ancient Basin, use Crystal Heart",
-            wiki: "Broken_Vessel"
-        },
-        // "Battle Scene" - "Deepnest_32" ?
-        killedMimicSpider: {
-            name: "P#2 Nosk",
-            spoiler: "Deepnest, use Crystal Heart, left of Hot Springs",
-            wiki: "Nosk"
-        },
          // "Battle Scene" - "Fungus3_23" ?
-        killedTraitorLord: {
-            name: "Traitor Lord",
+         killedTraitorLord: {
+            name: "P#4 Traitor Lord",
             spoiler: "Queen's Gardens, requires Shade Cloak",
             wiki: "Traitor_Lord"
+        },
+        killedBlackKnight: {
+            name: "P#4 Watcher Knights",
+            spoiler: "City of Tears: Watcher's Spire",
+            wiki: "Watcher_Knight"
         }
     },
     // reference: https://radiance.host/apidocs/Charms.html
@@ -750,38 +750,38 @@ const HK = {
         }
     },
     WARRIORDREAMS: {
-        xeroDefeated: {
-            name: "P#2 Xero",
-            spoiler: "Resting Grounds",
-            wiki: "Xero"
-        },
-        noEyesDefeated: {
-            name: "No Eyes",
-            spoiler: "Greenpath: Stone Sanctuary",
-            wiki: "No_Eyes"
-        },
-        elderHuDefeated: {
-            name: "P#3 Elder Hu",
-            spoiler: "Fungal Wastes, above acid bridge",
-            wiki: "Elder_Hu"
-        },
         aladarSlugDefeated: {
             name: "P#1 Gorb",
             spoiler: "Howling Cliffs",
             wiki: "Gorb"
+        },
+        xeroDefeated: {
+            name: "P#2 Xero",
+            spoiler: "Resting Grounds",
+            wiki: "Xero"
         },
         mumCaterpillarDefeated: {
             name: "P#2 Marmu",
             spoiler: "Queen's Gardens",
             wiki: "Marmu"
         },
+        elderHuDefeated: {
+            name: "P#3 Elder Hu",
+            spoiler: "Fungal Wastes, above acid bridge",
+            wiki: "Elder_Hu"
+        },
         galienDefeated: {
             name: "P#3 Galien",
             spoiler: "Deepnest, below Failed Tramway",
             wiki: "Galien"
         },
+        noEyesDefeated: {
+            name: "P#4 No Eyes",
+            spoiler: "Greenpath: Stone Sanctuary",
+            wiki: "No_Eyes"
+        },
         markothDefeated: {
-            name: "Markoth",
+            name: "P#4 Markoth",
             spoiler: "Kingdom's Edge, requires Shade Cloak",
             wiki: "Markoth"
         },
@@ -1182,7 +1182,7 @@ const HK = {
             wiki: "Radiance"
         },
         bossDoorStateTier5: {
-            name: "Embrace the Void",
+            name: "P#5 Embrace the Void",
             spoiler: "Godhome: Pantheon of Hallownest",
             wiki: "Pantheon_of_Hallownest"
         },
