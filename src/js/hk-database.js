@@ -180,6 +180,22 @@ const HK = {
     },
     // hk-bosses
     BOSSES: {
+        // killedBigFly
+        bossGruzMother: {
+            name: "Gruz Mother",
+            spoiler: "Forgotten Crossroads",
+            id: "Battle Scene",
+            sceneName: "Crossroads_04",
+            wiki: "Gruz_Mother"
+        },
+        // killedMawlek
+        bossBroodingMawlek: {
+            name: "Brooding Mawlek",
+            spoiler: "Forgotten Crossroads",
+            id: "Battle Scene",
+            sceneName: "Crossroads_09",
+            wiki: "Brooding_Mawlek"
+        },
         falseKnightDefeated: {
             name: "False Knight",
             spoiler: "Forgotten Crossroads",
@@ -211,8 +227,8 @@ const HK = {
             wiki: "Collector"
         },
         defeatedMantisLords: {
-            name: "Mantis Lords",
-            spoiler: "Mantis Village",
+            name: "P#2 Mantis Lords",
+            spoiler: "Fungal Wastes: Mantis Village",
             wiki: "Mantis_Lords"
         },
         defeatedMegaJelly: {
@@ -244,16 +260,7 @@ const HK = {
     // hk-bosses
     // "Battle Scene" sceneData.persistentBoolItems.id
     BOSSES_WORLD: {
-        Crossroads_04: {
-            name: "Gruz Mother",
-            spoiler: "Forgotten Crossroads",
-            wiki: "Gruz_Mother"
-        }, // killedBigFly
-        Crossroads_09: {
-            name: "Brooding Mawlek",
-            spoiler: "Forgotten Crossroads",
-            wiki: "Brooding_Mawlek"
-        } // killedMawlek
+        
     },
     // reference: https://radiance.host/apidocs/Charms.html
     CHARMS: {

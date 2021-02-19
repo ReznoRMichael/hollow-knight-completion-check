@@ -130,11 +130,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Bosses (Base Game) --------------------- //
 
-    CheckIfDataTrue(HK.DIV_ID.bosses, HK.BOSSES, HKPlayerData);
-
-    // ---------------- Gruz Mother and Mawlek (World Map) --------------------- //
-
-    if (HKWorldItems) CheckWorldDataTrue(HK.DIV_ID.bosses, "Battle Scene", HK.BOSSES_WORLD, HKWorldItems);
+    CheckIfDataTrue(HK.DIV_ID.bosses, HK.BOSSES, HKPlayerData, HKWorldItems);
 
     // ---------------- Charms --------------------- //
 
@@ -479,9 +475,10 @@ function CheckNotches(divId, totalNotches = 3, filledNotches = 0) {
  * Verifies if the data in a specific object is true or false, and appends HTML accordingly.
  * @param {object} divId ID of the HTML element for data appending
  * @param {object} dataObject Object containing data to be verified (use copy - data inside this object will be deleted)
- * @param {object} playerData Reference/pointer to specific data where to search
+ * @param {object} playerData Reference/pointer to specific data where to search (playerData)
+ * @param {Array} worldData Reference/pointer to specific data where to search (sceneData.persistentBoolItems)
  */
-function CheckIfDataTrue(divId, dataObject, playerData) {
+function CheckIfDataTrue(divId, dataObject, playerData, worldData = []) {
 
     let {
         textPrefix,
@@ -521,6 +518,10 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
                     break;
                 }
                 (playerData[i] === true) ? CurrentDataTrue(divId): CurrentDataFalse();
+                break;
+            case "bossGruzMother":
+            case "bossBroodingMawlek":
+                (WorldDataActivated(dataObject[i].id, dataObject[i].sceneName, worldData)) ? CurrentDataTrue(divId): CurrentDataFalse();
                 break;
             default:
                 (playerData[i] === true) ? CurrentDataTrue(divId): CurrentDataFalse();
@@ -652,7 +653,7 @@ function CheckNailUpgrades(divId, dataObject, playerData) {
  * @param {string} sceneNameText Map codename of the Interactable (sceneName in sceneData)
  * @param {Array} worldData Array of Interactable data to search in (sceneData.persistentBoolItems)
  */
-/* function WorldDataActivated(idText, sceneNameText, worldData) {
+function WorldDataActivated(idText, sceneNameText, worldData) {
 
     // Search for the Interactable
     for (let i = 0, length = worldData.length; i < length; i++) {
@@ -663,7 +664,7 @@ function CheckNailUpgrades(divId, dataObject, playerData) {
             return false;
         }
     }
-} */
+}
 
 /**
  * Verifies if the data in a specific object are true or false, and appends HTML accordingly. Creates a copy of dataObject.
