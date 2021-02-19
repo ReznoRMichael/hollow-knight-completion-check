@@ -104,9 +104,6 @@ function ProcessFileObject() {
         }
 
         // 5. Paste decoded string file to text area
-        /* document.getElementById("save-area").value = "";
-        document.getElementById("save-area").value = decodedString; */
-
         (async () => {
             document.getElementById("save-area").value = "";
             document.getElementById("save-area").value = await decodedString;
