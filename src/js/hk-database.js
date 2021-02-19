@@ -1281,9 +1281,9 @@ const HK = {
             wiki: "Delicate_Flower"
         },
         itemsDiscovered: {
-            name: "Items",
-            spoiler: "Not activated/Activated/Discovered Total",
-            wiki: ""
+            name: "Interactables",
+            spoiler: "Not Activated/Activated/Discovered",
+            wiki: "Category:Exploration_(Hollow_Knight)"
         },
         notchShroomOgres: {
             name: "Charm Notch #1",
