@@ -913,11 +913,15 @@ const HK = {
         simpleKeyCityOfTears: {
             name: "Simple Key #2",
             spoiler: "City of Tears, below west Stag Station",
+            id: "Shiny Item",
+            sceneName: "Ruins1_17",
             wiki: "Simple_Key#How_to_Acquire"
         },
         simpleKeyAncientBasin: {
             name: "Simple Key #3",
             spoiler: "Ancient Basin, below Broken Vessel",
+            id: "Shiny Item Stand",
+            sceneName: "Abyss_20",
             wiki: "Simple_Key#How_to_Acquire"
         },
         gotLurkerKey: {
@@ -928,6 +932,8 @@ const HK = {
         paleOreAncientBasin: {
             name: "Pale Ore #1",
             spoiler: "Ancient Basin, near Cloth location",
+            id: "Battle Scene Ore",
+            sceneName: "Abyss_17",
             wiki: "Pale_Ore"
         },
         paleOreSeer: {
@@ -938,21 +944,29 @@ const HK = {
         paleOreCrystalPeak: {
             name: "Pale Ore #3",
             spoiler: "Crystal Peak: Hallownest's Crown",
+            id: "Shiny Item Stand",
+            sceneName: "Mines_34",
             wiki: "Pale_Ore#How_to_Acquire"
         },
         paleOreDeepnest: {
             name: "Pale Ore #4",
             spoiler: "Deepnest, Nosk reward",
+            id: "Shiny Item Stand",
+            sceneName: "Deepnest_32",
             wiki: "Pale_Ore#How_to_Acquire"
         },
         paleOreGrubfather: {
             name: "Pale Ore #5",
             spoiler: "Grubfather: 31 Grubs rescued",
+            id: "Shiny Item Ore",
+            sceneName: "Crossroads_38",
             wiki: "Pale_Ore#How_to_Acquire"
         },
         paleOreColosseum: {
             name: "Pale Ore #6",
             spoiler: "Colosseum of Fools: Trial of the Conqueror",
+            id: "Shiny Item",
+            sceneName: "Room_Colosseum_Silver",
             wiki: "Pale_Ore#How_to_Acquire"
         },
         waterwaysAcidDrained: {

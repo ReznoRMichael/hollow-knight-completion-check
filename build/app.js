@@ -561,6 +561,26 @@ function CheckNailUpgrades(divId, dataObject, playerData) {
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divId, sFillText);
 }
 /**
+ * Verifies if the specific Interactable (Item, Boss, Chest etc.) is activated. Returns true or false.
+ * @param {string} idText ID text of the Interactable (id in sceneData)
+ * @param {string} sceneNameText Map codename of the Interactable (sceneName in sceneData)
+ * @param {Array} worldData Array of Interactable data to search in (sceneData.persistentBoolItems)
+ */
+
+/* function WorldDataActivated(idText, sceneNameText, worldData) {
+
+    // Search for the Interactable
+    for (let i = 0, length = worldData.length; i < length; i++) {
+        // Verify if the Interactable is activated and return the result
+        if (worldData[i].id === idText && worldData[i].sceneName === sceneNameText && worldData[i].activated === true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+} */
+
+/**
  * Verifies if the data in a specific object are true or false, and appends HTML accordingly. Creates a copy of dataObject.
  * @param {object} divId ID of the HTML element for data appending
  * @param {string} idText Text string inside save data to search for
@@ -601,8 +621,8 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
  * @param {object} divId ID of the HTML element for data appending
  * @param {object} dataObject Object containing data to be verified
  * @param {object} playerData Reference/pointer to specific data where to search (playerData)
- * @param {object} worldData Reference/pointer to specific data where to search (sceneData)
- * @param {object} sceneData Reference/pointer to specific data where to search (sceneData.persistentBoolItems)
+ * @param {object} worldData Reference/pointer to specific data where to search (sceneData.persistentBoolItems)
+ * @param {object} sceneData Reference/pointer to specific data where to search (sceneData)
  */
 
 
@@ -732,16 +752,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         playerData.hasLoveKey === true || playerData.openedLoveDoor === true ? CurrentDataTrue() : CurrentDataFalse();
         break;
 
-      case "simpleKeyCityOfTears":
-        // #2
-        FindWorldItem("Ruins1_17", "Shiny Item") ? CurrentDataTrue() : CurrentDataFalse();
-        break;
-
-      case "simpleKeyAncientBasin":
-        // #3
-        FindWorldItem("Abyss_20", "Shiny Item Stand") ? CurrentDataTrue() : CurrentDataFalse();
-        break;
-
       case "gotLurkerKey":
       case "nightmareLanternLit":
       case "killedPaleLurker":
@@ -766,34 +776,29 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         playerData[i] === true ? CurrentDataTrue() : CurrentDataFalse();
         break;
 
-      case "paleOreAncientBasin":
-        // #1
-        FindWorldItem("Abyss_17", "Battle Scene Ore") ? CurrentDataTrue() : CurrentDataFalse();
-        break;
-
       case "paleOreSeer":
         // #2
         playerData.dreamReward2 === true ? CurrentDataTrue() : CurrentDataFalse();
         break;
 
-      case "paleOreCrystalPeak":
-        // #3
-        FindWorldItem("Mines_34", "Shiny Item Stand") ? CurrentDataTrue() : CurrentDataFalse();
-        break;
+      /* -------------------- Interactables ------------------------------- */
 
-      case "paleOreDeepnest":
-        // #4
-        FindWorldItem("Deepnest_32", "Shiny Item Stand") ? CurrentDataTrue() : CurrentDataFalse();
-        break;
+      case "simpleKeyCityOfTears": // #2
 
-      case "paleOreGrubfather":
-        // #5
-        FindWorldItem("Crossroads_38", "Shiny Item Ore") ? CurrentDataTrue() : CurrentDataFalse();
-        break;
+      case "simpleKeyAncientBasin": // #3
 
-      case "paleOreColosseum":
-        // #6
-        FindWorldItem("Room_Colosseum_Silver", "Shiny Item") ? CurrentDataTrue() : CurrentDataFalse();
+      case "paleOreAncientBasin": // #1
+
+      case "paleOreCrystalPeak": // #3
+
+      case "paleOreDeepnest": // #4
+
+      case "paleOreGrubfather": // #5
+
+      case "paleOreColosseum": // #6
+
+      case "pantheonSoulWarrior":
+        FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? CurrentDataTrue() : CurrentDataFalse();
         break;
 
       case "relicsWandererJournal":
@@ -950,21 +955,19 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
   // -------------- Methods ---------------- //
 
   /**
-   * Searches for a given item in the in-game area and returns true when found and collected.
-   * @param {string} itemArea Code of the in-game area on the map
-   * @param {string} itemId Name of the item
+   * Verifies if the specific Interactable (Item, Boss, Chest etc.) is activated (completed). Returns true or false.
+   * @param {string} idText ID text of the Interactable (id in sceneData)
+   * @param {string} sceneNameText Map codename of the Interactable (sceneName in sceneData)
    * @returns {boolean}
    */
 
   function FindWorldItem() {
-    var itemArea = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
-    var itemId = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "Shiny Item";
+    var idText = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+    var sceneNameText = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
 
     for (var _i5 = 0, length = worldData.length; _i5 < length; _i5++) {
-      if (worldData[_i5].id === itemId) {
-        if (worldData[_i5].sceneName === itemArea) {
-          if (worldData[_i5].activated === true) return true;
-        }
+      if (worldData[_i5].id === idText && worldData[_i5].sceneName === sceneNameText && worldData[_i5].activated === true) {
+        return true;
       }
     }
 
@@ -3388,11 +3391,15 @@ var HK = {
     simpleKeyCityOfTears: {
       name: "Simple Key #2",
       spoiler: "City of Tears, below west Stag Station",
+      id: "Shiny Item",
+      sceneName: "Ruins1_17",
       wiki: "Simple_Key#How_to_Acquire"
     },
     simpleKeyAncientBasin: {
       name: "Simple Key #3",
       spoiler: "Ancient Basin, below Broken Vessel",
+      id: "Shiny Item Stand",
+      sceneName: "Abyss_20",
       wiki: "Simple_Key#How_to_Acquire"
     },
     gotLurkerKey: {
@@ -3403,6 +3410,8 @@ var HK = {
     paleOreAncientBasin: {
       name: "Pale Ore #1",
       spoiler: "Ancient Basin, near Cloth location",
+      id: "Battle Scene Ore",
+      sceneName: "Abyss_17",
       wiki: "Pale_Ore"
     },
     paleOreSeer: {
@@ -3413,21 +3422,29 @@ var HK = {
     paleOreCrystalPeak: {
       name: "Pale Ore #3",
       spoiler: "Crystal Peak: Hallownest's Crown",
+      id: "Shiny Item Stand",
+      sceneName: "Mines_34",
       wiki: "Pale_Ore#How_to_Acquire"
     },
     paleOreDeepnest: {
       name: "Pale Ore #4",
       spoiler: "Deepnest, Nosk reward",
+      id: "Shiny Item Stand",
+      sceneName: "Deepnest_32",
       wiki: "Pale_Ore#How_to_Acquire"
     },
     paleOreGrubfather: {
       name: "Pale Ore #5",
       spoiler: "Grubfather: 31 Grubs rescued",
+      id: "Shiny Item Ore",
+      sceneName: "Crossroads_38",
       wiki: "Pale_Ore#How_to_Acquire"
     },
     paleOreColosseum: {
       name: "Pale Ore #6",
       spoiler: "Colosseum of Fools: Trial of the Conqueror",
+      id: "Shiny Item",
+      sceneName: "Room_Colosseum_Silver",
       wiki: "Pale_Ore#How_to_Acquire"
     },
     waterwaysAcidDrained: {
@@ -3450,15 +3467,22 @@ var HK = {
       spoiler: "Pale King, White Palace",
       wiki: "Kingsoul#How_to_Acquire"
     },
+    nightmareLanternLit: {
+      name: "Nightmare Lantern Lit",
+      spoiler: "Howling Cliffs, corpse of a large bug",
+      wiki: "Howling_Cliffs#Nightmare_Lantern_Chamber"
+    },
     killedMegaMossCharger: {
       name: "P#1 Massive Moss Charger",
       spoiler: "Greenpath, near Fog Canyon",
       wiki: "Massive_Moss_Charger"
     },
-    nightmareLanternLit: {
-      name: "Nightmare Lantern Lit",
-      spoiler: "Howling Cliffs, corpse of a large bug",
-      wiki: "Howling_Cliffs#Nightmare_Lantern_Chamber"
+    pantheonSoulWarrior: {
+      name: "P#1 Soul Warrior",
+      spoiler: "City of Tears, Soul Sanctum",
+      id: "Battle Scene v2",
+      sceneName: "Ruins1_23",
+      wiki: "Soul_Warrior"
     }
   },
   GRUBS_LIST: ["Crossroads_35", "Crossroads_03", "Crossroads_05", "Crossroads_48", "Crossroads_31", "Fungus1_06", "Fungus1_07", "Fungus1_21", "Fungus1_28", "Fungus2_18", "Ruins1_05", "Mines_04", "Mines_03", "Mines_31", "Mines_19", "Ruins1_32", "RestingGrounds_10", "Ruins_House_01", "Mines_35", "Mines_16", "Waterways_04", "Waterways_13", "Abyss_19", "Abyss_17", "Mines_24", "Fungus1_13", "Fungus3_47", "Fungus3_10", "Fungus3_48", "Fungus3_22", "Ruins2_07", "Ruins2_11", "Ruins2_11", "Ruins2_11", "Deepnest_East_11", "Deepnest_East_14", "Fungus2_20", "Ruins2_03", "Deepnest_36", "Deepnest_03", "Deepnest_31", "Deepnest_39", "Deepnest_Spider_Town", "Waterways_14", "Hive_03", "Hive_04"],

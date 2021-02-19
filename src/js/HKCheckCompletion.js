@@ -833,12 +833,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             case "loveKey":
                 (playerData.hasLoveKey === true || playerData.openedLoveDoor === true) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
-            case "simpleKeyCityOfTears": // #2
-                (FindWorldItem("Shiny Item", "Ruins1_17")) ? CurrentDataTrue(): CurrentDataFalse();
-                break;
-            case "simpleKeyAncientBasin": // #3
-                (FindWorldItem("Shiny Item Stand", "Abyss_20")) ? CurrentDataTrue(): CurrentDataFalse();
-                break;
             case "gotLurkerKey":
             case "nightmareLanternLit":
             case "killedPaleLurker":
@@ -861,23 +855,19 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 }
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
-            case "paleOreAncientBasin": // #1
-                (FindWorldItem("Battle Scene Ore", "Abyss_17")) ? CurrentDataTrue(): CurrentDataFalse();
-                break;
             case "paleOreSeer": // #2
                 (playerData.dreamReward2 === true) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
+                /* -------------------- Interactables ------------------------------- */
+            case "simpleKeyCityOfTears": // #2
+            case "simpleKeyAncientBasin": // #3
+            case "paleOreAncientBasin": // #1
             case "paleOreCrystalPeak": // #3
-                (FindWorldItem("Shiny Item Stand", "Mines_34")) ? CurrentDataTrue(): CurrentDataFalse();
-                break;
             case "paleOreDeepnest": // #4
-                (FindWorldItem("Shiny Item Stand", "Deepnest_32")) ? CurrentDataTrue(): CurrentDataFalse();
-                break;
             case "paleOreGrubfather": // #5
-                (FindWorldItem("Shiny Item Ore", "Crossroads_38")) ? CurrentDataTrue(): CurrentDataFalse();
-                break;
             case "paleOreColosseum": // #6
-                (FindWorldItem("Shiny Item", "Room_Colosseum_Silver")) ? CurrentDataTrue(): CurrentDataFalse();
+            case "pantheonSoulWarrior":
+                (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             case "relicsWandererJournal":
             case "relicsHallownestSeal":
@@ -999,9 +989,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             case "mrMushroomState":
                 sFillText += CheckMrMushroomState(divId, dataObject[i], playerData[i]);
                 break;
-            case "pantheonSoulWarrior":
-                (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) ? CurrentDataTrue(): CurrentDataFalse();
-                break;
             default:
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
         } // end switch (i)
@@ -1025,10 +1012,9 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         for (let i = 0, length = worldData.length; i < length; i++) {
             if (worldData[i].id === idText && worldData[i].sceneName === sceneNameText && worldData[i].activated === true) {
                 return true;
-            } else {
-                return false;
             }
         }
+        return false;
     }
 
     /**
