@@ -1138,22 +1138,22 @@ const HK = {
         },
         falseKnightDreamDefeated: {
             name: "Failed Champion",
-            spoiler: "Forgotten Crossroads",
+            spoiler: "Forgotten Crossroads, near False Knight",
             wiki: "Failed_Champion"
         },
         mageLordDreamDefeated: {
             name: "Soul Tyrant",
-            spoiler: "City of Tears: Soul Sanctum",
+            spoiler: "City of Tears: Soul Sanctum, near Soul Master",
             wiki: "Soul_Tyrant"
         },
         infectedKnightDreamDefeated: {
             name: "Lost Kin",
-            spoiler: "Ancient Basin",
+            spoiler: "Ancient Basin, Broken Vessel location",
             wiki: "Lost_Kin"
         },
         whiteDefenderDefeated: {
             name: "White Defender",
-            spoiler: "Royal Waterways",
+            spoiler: "Royal Waterways, Dung Defender, use Desolate Dive",
             wiki: "White_Defender"
         },
         greyPrinceDefeated: {
