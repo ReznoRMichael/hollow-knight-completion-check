@@ -11,6 +11,9 @@ module.exports = {
     },
     mode: 'development',
     devtool: "source-map",
+    performance: {
+        hints: false
+    },
     output: {
         path: `${__dirname}/build`,
         filename: 'app.js',

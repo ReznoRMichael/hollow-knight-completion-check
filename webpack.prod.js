@@ -21,6 +21,9 @@ module.exports = {
             new CssMinimizerPlugin(),
         ], */
     },
+    performance: {
+        hints: "error"
+    },
     output: {
         path: `${__dirname}/docs`,
         filename: 'app.js',
