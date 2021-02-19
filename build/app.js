@@ -620,8 +620,8 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         amount = _2.amount,
         countTotal = _2.countTotal,
         total = _2.total,
-        unbroken = _2.unbroken,
-        broken = _2.broken,
+        notActivated = _2.notActivated,
+        activated = _2.activated,
         discoveredTotal = _2.discoveredTotal;
 
     switch (i) {
@@ -705,9 +705,17 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
 
       case "geoRocks":
         discoveredTotal = sceneData.geoRocks.length;
-        unbroken = CountGeoRocks(discoveredTotal, "unbroken");
-        broken = CountGeoRocks(discoveredTotal, "broken");
-        textPrefix += ": ".concat(unbroken, " | ").concat(broken, " | ").concat(discoveredTotal);
+        notActivated = CountGeoRocks(discoveredTotal, "unbroken");
+        activated = CountGeoRocks(discoveredTotal, "broken");
+        textPrefix += ": ".concat(notActivated, " | ").concat(activated, " | ").concat(discoveredTotal);
+        CurrentDataTrue();
+        break;
+
+      case "itemsDiscovered":
+        discoveredTotal = sceneData.persistentBoolItems.length;
+        notActivated = CountItems(discoveredTotal, "notActivated");
+        activated = CountItems(discoveredTotal, "active");
+        textPrefix += ": ".concat(notActivated, " | ").concat(activated, " | ").concat(discoveredTotal);
         CurrentDataTrue();
         break;
 
@@ -1036,6 +1044,45 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
     return countTotal;
   }
   /**
+   * Counts the amount of in-game items Activated or Not Activated. Logs to console all the Not Activated IDs and Map locations.
+   * @param {number} arrayLength How many items the Items array is currently storing (for iteration)
+   * @param {string} mode Choose which Items to count (notActivated or activated)
+   */
+
+
+  function CountItems(arrayLength) {
+    var mode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "notActivated";
+    var countTotal = 0;
+    var itemsLog = [];
+
+    if (mode === "notActivated") {
+      for (var _i11 = 0; _i11 < arrayLength; _i11++) {
+        if (sceneData.persistentBoolItems[_i11].activated === false) {
+          countTotal++;
+          itemsLog.push("#".concat(countTotal, " ").concat(sceneData.persistentBoolItems[_i11].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(sceneData.persistentBoolItems[_i11].sceneName), " \u2328\uFE0F ").concat(sceneData.persistentBoolItems[_i11].sceneName));
+        }
+      }
+
+      if (!countTotal) {
+        console.log("%cAll Items Activated!", "color: #16c60c; font-weight: 700;");
+      } else {
+        console.groupCollapsed("%cNot Activated Items (".concat(countTotal, "):"), "color: #16c60c; font-weight: 700;");
+
+        for (var _i12 = 0, length = itemsLog.length; _i12 < length; _i12++) {
+          console.log(itemsLog[_i12]);
+        }
+
+        console.groupEnd();
+      }
+    } else {
+      for (var _i13 = 0; _i13 < arrayLength; _i13++) {
+        if (sceneData.persistentBoolItems[_i13].activated === true) countTotal++;
+      }
+    }
+
+    return countTotal;
+  }
+  /**
    * Compares and logs all unrescued Grubs in a list: IDs and map locations
    */
 
@@ -1043,9 +1090,9 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
   function LogMissingGrubs() {
     var rescuedGrubsSceneList = [];
 
-    for (var _i11 = 0, _length = worldData.length; _i11 < _length; _i11++) {
-      if (worldData[_i11].id.includes("Grub Bottle")) {
-        if (worldData[_i11].activated === true) {
+    for (var _i14 = 0, _length = worldData.length; _i14 < _length; _i14++) {
+      if (worldData[_i14].id.includes("Grub Bottle")) {
+        if (worldData[_i14].activated === true) {
           // There are 3 duplicates of the same map scene name from older game save files. Prevents adding duplicates
 
           /* if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (1)") {
@@ -1053,7 +1100,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
           } else if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (2)") {
               continue;
           } else { */
-          rescuedGrubsSceneList.push(worldData[_i11].sceneName); // }
+          rescuedGrubsSceneList.push(worldData[_i14].sceneName); // }
         }
       }
     } // Filtering the reference database Grub list to include only the missing values
@@ -1069,8 +1116,8 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
     } else {
       console.groupCollapsed("%cUnrescued Grubs (".concat(length, "):"), "color: #16c60c; font-weight: 700;");
 
-      for (var _i12 = 0; _i12 < length; _i12++) {
-        console.log("#".concat(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GRUBS_LIST.indexOf(missingGrubsList[_i12]) + 1, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(missingGrubsList[_i12]), " \u2328\uFE0F ").concat(missingGrubsList[_i12]));
+      for (var _i15 = 0; _i15 < length; _i15++) {
+        console.log("#".concat(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GRUBS_LIST.indexOf(missingGrubsList[_i15]) + 1, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(missingGrubsList[_i15]), " \u2328\uFE0F ").concat(missingGrubsList[_i15]));
       }
 
       console.groupEnd();
@@ -1099,8 +1146,8 @@ function CheckMrMushroomState(divId, dataObject) {
   } else {
     CurrentDataFalse();
 
-    for (var _i13 = 1; _i13 <= 7; _i13++) {
-      sFillText += PrepareHTMLString(divId, "".concat(dataObject.name, " #").concat(_i13), dataObject["spoiler" + _i13], dataObject.wiki);
+    for (var _i16 = 1; _i16 <= 7; _i16++) {
+      sFillText += PrepareHTMLString(divId, "".concat(dataObject.name, " #").concat(_i16), dataObject["spoiler" + _i16], dataObject.wiki);
     }
   }
 
@@ -1270,16 +1317,16 @@ function InitialHTMLPopulate(divIdObj) {
 
   sFillText = "";
 
-  for (var _i14 in _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SPELLS) {
-    sFillText += PrepareHTMLString(divIdObj.spells, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SPELLS[_i14].name, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SPELLS[_i14].spoiler, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SPELLS[_i14].wiki);
+  for (var _i17 in _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SPELLS) {
+    sFillText += PrepareHTMLString(divIdObj.spells, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SPELLS[_i17].name, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SPELLS[_i17].spoiler, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SPELLS[_i17].wiki);
   }
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.spells, sFillText); // Godmaster Doors Misc
 
   sFillText = "";
 
-  for (var _i15 in _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER_DOORS) {
-    sFillText += PrepareHTMLString(divIdObj.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER_DOORS[_i15].name, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER_DOORS[_i15].spoiler, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER_DOORS[_i15].wiki);
+  for (var _i18 in _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER_DOORS) {
+    sFillText += PrepareHTMLString(divIdObj.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER_DOORS[_i18].name, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER_DOORS[_i18].spoiler, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER_DOORS[_i18].wiki);
   }
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.godmaster, sFillText); // Mr Mushroom 1 - 7
@@ -3703,6 +3750,11 @@ var HK = {
       name: "Delicate Flowers broken",
       spoiler: "Resting Grounds: Grey Mourner",
       wiki: "Delicate_Flower"
+    },
+    itemsDiscovered: {
+      name: "Items",
+      spoiler: "Not activated/Activated/Discovered Total",
+      wiki: ""
     },
     notchShroomOgres: {
       name: "Charm Notch #1",

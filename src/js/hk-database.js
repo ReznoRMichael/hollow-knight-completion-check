@@ -1280,6 +1280,11 @@ const HK = {
             spoiler: "Resting Grounds: Grey Mourner",
             wiki: "Delicate_Flower"
         },
+        itemsDiscovered: {
+            name: "Items",
+            spoiler: "Not activated/Activated/Discovered Total",
+            wiki: ""
+        },
         notchShroomOgres: {
             name: "Charm Notch #1",
             spoiler: "Fungal Wastes: Shroom Ogres room",

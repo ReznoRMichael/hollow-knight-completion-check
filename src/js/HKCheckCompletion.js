@@ -708,8 +708,8 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             amount,
             countTotal,
             total,
-            unbroken,
-            broken,
+            notActivated,
+            activated,
             discoveredTotal
         } = 0;
 
@@ -789,10 +789,19 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             case "geoRocks":
                 discoveredTotal = sceneData.geoRocks.length;
 
-                unbroken = CountGeoRocks(discoveredTotal, "unbroken");
-                broken = CountGeoRocks(discoveredTotal, "broken");
+                notActivated = CountGeoRocks(discoveredTotal, "unbroken");
+                activated = CountGeoRocks(discoveredTotal, "broken");
 
-                textPrefix += `: ${unbroken} | ${broken} | ${discoveredTotal}`;
+                textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`;
+                CurrentDataTrue();
+                break;
+            case "itemsDiscovered":
+                discoveredTotal = sceneData.persistentBoolItems.length;
+
+                notActivated = CountItems(discoveredTotal, "notActivated");
+                activated = CountItems(discoveredTotal, "active");
+
+                textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`;
                 CurrentDataTrue();
                 break;
             case "shopkeeperKey":
@@ -1060,6 +1069,44 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         } else {
             for (let i = 0; i < arrayLength; i++) {
                 if (sceneData.geoRocks[i].hitsLeft === 0) countTotal++;
+            }
+        }
+
+        return countTotal;
+    }
+
+    /**
+     * Counts the amount of in-game items Activated or Not Activated. Logs to console all the Not Activated IDs and Map locations.
+     * @param {number} arrayLength How many items the Items array is currently storing (for iteration)
+     * @param {string} mode Choose which Items to count (notActivated or activated)
+     */
+    function CountItems(arrayLength, mode = "notActivated") {
+
+        let countTotal = 0;
+        let itemsLog = [];
+
+        if (mode === "notActivated") {
+            for (let i = 0; i < arrayLength; i++) {
+                if (sceneData.persistentBoolItems[i].activated === false) {
+                    countTotal++;
+                    itemsLog.push(`#${countTotal} ${sceneData.persistentBoolItems[i].id} 🗺️ ${TranslateMapName(sceneData.persistentBoolItems[i].sceneName)} ⌨️ ${sceneData.persistentBoolItems[i].sceneName}`);
+                }
+            }
+
+            if (!countTotal) {
+                console.log("%cAll Items Activated!", "color: #16c60c; font-weight: 700;");
+            } else {
+                console.groupCollapsed(`%cNot Activated Items (${countTotal}):`, "color: #16c60c; font-weight: 700;");
+
+                for (let i = 0, length = itemsLog.length; i < length; i++) {
+                    console.log(itemsLog[i]);
+                }
+
+                console.groupEnd();
+            }
+        } else {
+            for (let i = 0; i < arrayLength; i++) {
+                if (sceneData.persistentBoolItems[i].activated === true) countTotal++;
             }
         }
 
