@@ -600,8 +600,9 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
  * Verifies if the data in a specific object are true or false, or checks what values they have, and appends HTML accordingly.
  * @param {object} divId ID of the HTML element for data appending
  * @param {object} dataObject Object containing data to be verified
- * @param {object} playerData Reference/pointer to specific data where to search
- * @param {object} worldData Reference/pointer to specific data where to search
+ * @param {object} playerData Reference/pointer to specific data where to search (playerData)
+ * @param {object} worldData Reference/pointer to specific data where to search (sceneData)
+ * @param {object} sceneData Reference/pointer to specific data where to search (sceneData.persistentBoolItems)
  */
 
 
@@ -1044,9 +1045,9 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
     return countTotal;
   }
   /**
-   * Counts the amount of in-game items Activated or Not Activated. Logs to console all the Not Activated IDs and Map locations.
-   * @param {number} arrayLength How many items the Items array is currently storing (for iteration)
-   * @param {string} mode Choose which Items to count (notActivated or activated)
+   * Counts the amount of in-game Interactables Activated or Not Activated. Logs to console all the Not Activated IDs and Map locations.
+   * @param {number} arrayLength How many items the Interactables array is currently storing (for iteration)
+   * @param {string} mode Choose which Interactables to count (notActivated or activated)
    */
 
 
@@ -1057,16 +1058,16 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
 
     if (mode === "notActivated") {
       for (var _i11 = 0; _i11 < arrayLength; _i11++) {
-        if (sceneData.persistentBoolItems[_i11].activated === false && sceneData.persistentBoolItems[_i11].semiPersistent === false) {
+        if (worldData[_i11].activated === false && worldData[_i11].semiPersistent === false) {
           countTotal++;
-          itemsLog.push("#".concat(countTotal, " ").concat(sceneData.persistentBoolItems[_i11].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(sceneData.persistentBoolItems[_i11].sceneName), " \u2328\uFE0F ").concat(sceneData.persistentBoolItems[_i11].sceneName));
+          itemsLog.push("#".concat(countTotal, " ").concat(worldData[_i11].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(worldData[_i11].sceneName), " \u2328\uFE0F ").concat(worldData[_i11].sceneName));
         }
       }
 
       if (!countTotal) {
-        console.log("%cAll Items Activated!", "color: #16c60c; font-weight: 700;");
+        console.log("%cAll Interactables Activated!", "color: #16c60c; font-weight: 700;");
       } else {
-        console.groupCollapsed("%cNot Activated Items (".concat(countTotal, "):"), "color: #16c60c; font-weight: 700;");
+        console.groupCollapsed("%cNot Activated Interactables (".concat(countTotal, "):"), "color: #16c60c; font-weight: 700;");
 
         for (var _i12 = 0, length = itemsLog.length; _i12 < length; _i12++) {
           console.log(itemsLog[_i12]);
@@ -1076,7 +1077,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
       }
     } else {
       for (var _i13 = 0; _i13 < arrayLength; _i13++) {
-        if (sceneData.persistentBoolItems[_i13].activated === true) countTotal++;
+        if (worldData[_i13].activated === true) countTotal++;
       }
     }
 

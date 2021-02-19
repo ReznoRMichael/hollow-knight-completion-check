@@ -686,8 +686,9 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
  * Verifies if the data in a specific object are true or false, or checks what values they have, and appends HTML accordingly.
  * @param {object} divId ID of the HTML element for data appending
  * @param {object} dataObject Object containing data to be verified
- * @param {object} playerData Reference/pointer to specific data where to search
- * @param {object} worldData Reference/pointer to specific data where to search
+ * @param {object} playerData Reference/pointer to specific data where to search (playerData)
+ * @param {object} worldData Reference/pointer to specific data where to search (sceneData)
+ * @param {object} sceneData Reference/pointer to specific data where to search (sceneData.persistentBoolItems)
  */
 function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneData) {
 
@@ -1076,9 +1077,9 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
     }
 
     /**
-     * Counts the amount of in-game items Activated or Not Activated. Logs to console all the Not Activated IDs and Map locations.
-     * @param {number} arrayLength How many items the Items array is currently storing (for iteration)
-     * @param {string} mode Choose which Items to count (notActivated or activated)
+     * Counts the amount of in-game Interactables Activated or Not Activated. Logs to console all the Not Activated IDs and Map locations.
+     * @param {number} arrayLength How many items the Interactables array is currently storing (for iteration)
+     * @param {string} mode Choose which Interactables to count (notActivated or activated)
      */
     function CountItems(arrayLength, mode = "notActivated") {
 
@@ -1087,17 +1088,17 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
 
         if (mode === "notActivated") {
             for (let i = 0; i < arrayLength; i++) {
-                if (sceneData.persistentBoolItems[i].activated === false &&
-                    sceneData.persistentBoolItems[i].semiPersistent === false) {
+                if (worldData[i].activated === false &&
+                    worldData[i].semiPersistent === false) {
                     countTotal++;
-                    itemsLog.push(`#${countTotal} ${sceneData.persistentBoolItems[i].id} 🗺️ ${TranslateMapName(sceneData.persistentBoolItems[i].sceneName)} ⌨️ ${sceneData.persistentBoolItems[i].sceneName}`);
+                    itemsLog.push(`#${countTotal} ${worldData[i].id} 🗺️ ${TranslateMapName(worldData[i].sceneName)} ⌨️ ${worldData[i].sceneName}`);
                 }
             }
 
             if (!countTotal) {
-                console.log("%cAll Items Activated!", "color: #16c60c; font-weight: 700;");
+                console.log("%cAll Interactables Activated!", "color: #16c60c; font-weight: 700;");
             } else {
-                console.groupCollapsed(`%cNot Activated Items (${countTotal}):`, "color: #16c60c; font-weight: 700;");
+                console.groupCollapsed(`%cNot Activated Interactables (${countTotal}):`, "color: #16c60c; font-weight: 700;");
 
                 for (let i = 0, length = itemsLog.length; i < length; i++) {
                     console.log(itemsLog[i]);
@@ -1107,7 +1108,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             }
         } else {
             for (let i = 0; i < arrayLength; i++) {
-                if (sceneData.persistentBoolItems[i].activated === true) countTotal++;
+                if (worldData[i].activated === true) countTotal++;
             }
         }
 
