@@ -647,6 +647,25 @@ function CheckNailUpgrades(divId, dataObject, playerData) {
 }
 
 /**
+ * Verifies if the specific Interactable is activated. Returns true or false.
+ * @param {string} idText Text string inside save data to search for
+ * @param {object} worldData Reference/pointer to specific data where to search (sceneData.persistentBoolItems)
+ */
+function WorldDataActivated(idText, sceneNameText, worldData) {
+
+    // Search for the Interactable
+    for (let i = 0, length = worldData.length; i < length; i++) {
+        // Verify if the Interactable is activated and return the result
+        if (worldData[i].id === idText && worldData[i].sceneName === sceneNameText && worldData[i].activated === true) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
+
+/**
  * Verifies if the data in a specific object are true or false, and appends HTML accordingly. Creates a copy of dataObject.
  * @param {object} divId ID of the HTML element for data appending
  * @param {string} idText Text string inside save data to search for
