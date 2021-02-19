@@ -3450,6 +3450,11 @@ var HK = {
       spoiler: "Pale King, White Palace",
       wiki: "Kingsoul#How_to_Acquire"
     },
+    killedMegaMossCharger: {
+      name: "P#1 Massive Moss Charger",
+      spoiler: "Greenpath, near Fog Canyon",
+      wiki: "Massive_Moss_Charger"
+    },
     nightmareLanternLit: {
       name: "Nightmare Lantern Lit",
       spoiler: "Howling Cliffs, corpse of a large bug",

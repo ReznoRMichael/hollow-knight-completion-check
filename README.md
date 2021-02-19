@@ -95,6 +95,8 @@ If you like the tool and wish it developed further with more functions and easie
 
 * Upcoming:
 
+  — Massive Moss Charger
+
   — Interactables Not Activated, Activated and Discovered Total.
 
   — Polyfills for most browsers
