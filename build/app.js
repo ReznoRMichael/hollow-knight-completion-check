@@ -106,9 +106,7 @@ function HKCheckCompletion(jsonObject) {
 
   CheckGeo(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID.intro, HKPlayerData.geo, HKPlayerData.geoPool); // ---------------- Bosses (Base Game) --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID.bosses, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.BOSSES, HKPlayerData); // ---------------- Gruz Mother and Mawlek (World Map) --------------------- //
-
-  if (HKWorldItems) CheckWorldDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID.bosses, "Battle Scene", _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.BOSSES_WORLD, HKWorldItems); // ---------------- Charms --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID.bosses, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.BOSSES, HKPlayerData, HKWorldItems); // ---------------- Charms --------------------- //
 
   CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID.charms, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.CHARMS, HKPlayerData); // ---------------- Colosseum of Fools --------------------- //
 
@@ -395,11 +393,13 @@ function CheckNotches(divId) {
  * Verifies if the data in a specific object is true or false, and appends HTML accordingly.
  * @param {object} divId ID of the HTML element for data appending
  * @param {object} dataObject Object containing data to be verified (use copy - data inside this object will be deleted)
- * @param {object} playerData Reference/pointer to specific data where to search
+ * @param {object} playerData Reference/pointer to specific data where to search (playerData)
+ * @param {Array} worldData Reference/pointer to specific data where to search (sceneData.persistentBoolItems)
  */
 
 
 function CheckIfDataTrue(divId, dataObject, playerData) {
+  var worldData = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : [];
   var _ref = "",
       textPrefix = _ref.textPrefix,
       textSuffix = _ref.textSuffix;
@@ -439,6 +439,11 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
         }
 
         playerData[i] === true ? CurrentDataTrue(divId) : CurrentDataFalse();
+        break;
+
+      case "bossGruzMother":
+      case "bossBroodingMawlek":
+        WorldDataActivated(dataObject[i].id, dataObject[i].sceneName, worldData) ? CurrentDataTrue(divId) : CurrentDataFalse();
         break;
 
       default:
@@ -567,19 +572,18 @@ function CheckNailUpgrades(divId, dataObject, playerData) {
  * @param {Array} worldData Array of Interactable data to search in (sceneData.persistentBoolItems)
  */
 
-/* function WorldDataActivated(idText, sceneNameText, worldData) {
 
-    // Search for the Interactable
-    for (let i = 0, length = worldData.length; i < length; i++) {
-        // Verify if the Interactable is activated and return the result
-        if (worldData[i].id === idText && worldData[i].sceneName === sceneNameText && worldData[i].activated === true) {
-            return true;
-        } else {
-            return false;
-        }
+function WorldDataActivated(idText, sceneNameText, worldData) {
+  // Search for the Interactable
+  for (var i = 0, length = worldData.length; i < length; i++) {
+    // Verify if the Interactable is activated and return the result
+    if (worldData[i].id === idText && worldData[i].sceneName === sceneNameText && worldData[i].activated === true) {
+      return true;
+    } else {
+      return false;
     }
-} */
-
+  }
+}
 /**
  * Verifies if the data in a specific object are true or false, and appends HTML accordingly. Creates a copy of dataObject.
  * @param {object} divId ID of the HTML element for data appending
@@ -1293,9 +1297,9 @@ function InitialHTMLPopulate(divIdObj) {
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.HINTS.fireballLevel.spoiler); // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
 
-  var hkObjArray = [_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.BOSSES, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.BOSSES_WORLD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.CHARMS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.EQUIPMENT, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.NAILARTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.MASKSHARDS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.MASKSHARDS_WORLD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.VESSELFRAGMENTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.VESSELFRAGMENTS_WORLD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DREAMERS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.COLOSSEUM, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DREAMNAIL, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.WARRIORDREAMS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GRIMMTROUPE, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.LIFEBLOOD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.ESSENTIAL, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.ACHIEVEMENTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.STATISTICS]; // duplicates and order important - must be the same as in hkObjArray[]
+  var hkObjArray = [_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.BOSSES, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.CHARMS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.EQUIPMENT, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.NAILARTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.MASKSHARDS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.MASKSHARDS_WORLD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.VESSELFRAGMENTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.VESSELFRAGMENTS_WORLD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DREAMERS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.COLOSSEUM, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DREAMNAIL, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.WARRIORDREAMS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GRIMMTROUPE, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.LIFEBLOOD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.ESSENTIAL, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.ACHIEVEMENTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.STATISTICS]; // duplicates and order important - must be the same as in hkObjArray[]
 
-  var divObjArray = [divIdObj.bosses, divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.essential, divIdObj.achievements, divIdObj.statistics]; // Looped filling to reduce redundancy
+  var divObjArray = [divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.essential, divIdObj.achievements, divIdObj.statistics]; // Looped filling to reduce redundancy
 
   do {
     for (var entry in hkObjArray[0]) {
@@ -2617,6 +2621,22 @@ var HK = {
   },
   // hk-bosses
   BOSSES: {
+    // killedBigFly
+    bossGruzMother: {
+      name: "Gruz Mother",
+      spoiler: "Forgotten Crossroads",
+      id: "Battle Scene",
+      sceneName: "Crossroads_04",
+      wiki: "Gruz_Mother"
+    },
+    // killedMawlek
+    bossBroodingMawlek: {
+      name: "Brooding Mawlek",
+      spoiler: "Forgotten Crossroads",
+      id: "Battle Scene",
+      sceneName: "Crossroads_09",
+      wiki: "Brooding_Mawlek"
+    },
     falseKnightDefeated: {
       name: "False Knight",
       spoiler: "Forgotten Crossroads",
@@ -2649,8 +2669,8 @@ var HK = {
       wiki: "Collector"
     },
     defeatedMantisLords: {
-      name: "Mantis Lords",
-      spoiler: "Mantis Village",
+      name: "P#2 Mantis Lords",
+      spoiler: "Fungal Wastes: Mantis Village",
       wiki: "Mantis_Lords"
     },
     defeatedMegaJelly: {
@@ -2683,20 +2703,7 @@ var HK = {
   },
   // hk-bosses
   // "Battle Scene" sceneData.persistentBoolItems.id
-  BOSSES_WORLD: {
-    Crossroads_04: {
-      name: "Gruz Mother",
-      spoiler: "Forgotten Crossroads",
-      wiki: "Gruz_Mother"
-    },
-    // killedBigFly
-    Crossroads_09: {
-      name: "Brooding Mawlek",
-      spoiler: "Forgotten Crossroads",
-      wiki: "Brooding_Mawlek"
-    } // killedMawlek
-
-  },
+  BOSSES_WORLD: {},
   // reference: https://radiance.host/apidocs/Charms.html
   CHARMS: {
     gotCharm_1: {

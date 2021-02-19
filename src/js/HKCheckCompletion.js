@@ -660,10 +660,10 @@ function WorldDataActivated(idText, sceneNameText, worldData) {
         // Verify if the Interactable is activated and return the result
         if (worldData[i].id === idText && worldData[i].sceneName === sceneNameText && worldData[i].activated === true) {
             return true;
-        } else {
-            return false;
         }
     }
+    // If not, return false
+    return false;
 }
 
 /**
