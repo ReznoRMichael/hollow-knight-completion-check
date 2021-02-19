@@ -608,7 +608,7 @@ function CheckGodmasterDoors(divId, dataObject, playerData) {
                 `<del>${dataObject[pantheon[i]].name}</del>`,
                 `<del>${dataObject[pantheon[i]].spoiler}</del>`,
                 dataObject[pantheon[i]].wiki
-                );
+            );
         } else {
             (playerData["bossDoorStateTier" + (i + 1)].completed === true) ? CurrentDataTrue(divId): CurrentDataFalse();
             sFillText += PrepareHTMLString(
@@ -616,7 +616,7 @@ function CheckGodmasterDoors(divId, dataObject, playerData) {
                 dataObject[pantheon[i]].name,
                 dataObject[pantheon[i]].spoiler,
                 dataObject[pantheon[i]].wiki
-                );
+            );
         }
     }
 
@@ -647,23 +647,23 @@ function CheckNailUpgrades(divId, dataObject, playerData) {
 }
 
 /**
- * Verifies if the specific Interactable is activated. Returns true or false.
- * @param {string} idText Text string inside save data to search for
- * @param {object} worldData Reference/pointer to specific data where to search (sceneData.persistentBoolItems)
+ * Verifies if the specific Interactable (Item, Boss, Chest etc.) is activated. Returns true or false.
+ * @param {string} idText ID text of the Interactable (id in sceneData)
+ * @param {string} sceneNameText Map codename of the Interactable (sceneName in sceneData)
+ * @param {Array} worldData Array of Interactable data to search in (sceneData.persistentBoolItems)
  */
-function WorldDataActivated(idText, sceneNameText, worldData) {
+/* function WorldDataActivated(idText, sceneNameText, worldData) {
 
     // Search for the Interactable
     for (let i = 0, length = worldData.length; i < length; i++) {
         // Verify if the Interactable is activated and return the result
         if (worldData[i].id === idText && worldData[i].sceneName === sceneNameText && worldData[i].activated === true) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
-}
+} */
 
 /**
  * Verifies if the data in a specific object are true or false, and appends HTML accordingly. Creates a copy of dataObject.
@@ -706,8 +706,8 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
  * @param {object} divId ID of the HTML element for data appending
  * @param {object} dataObject Object containing data to be verified
  * @param {object} playerData Reference/pointer to specific data where to search (playerData)
- * @param {object} worldData Reference/pointer to specific data where to search (sceneData)
- * @param {object} sceneData Reference/pointer to specific data where to search (sceneData.persistentBoolItems)
+ * @param {object} worldData Reference/pointer to specific data where to search (sceneData.persistentBoolItems)
+ * @param {object} sceneData Reference/pointer to specific data where to search (sceneData)
  */
 function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneData) {
 
@@ -834,10 +834,10 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 (playerData.hasLoveKey === true || playerData.openedLoveDoor === true) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             case "simpleKeyCityOfTears": // #2
-                (FindWorldItem("Ruins1_17", "Shiny Item")) ? CurrentDataTrue(): CurrentDataFalse();
+                (FindWorldItem("Shiny Item", "Ruins1_17")) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             case "simpleKeyAncientBasin": // #3
-                (FindWorldItem("Abyss_20", "Shiny Item Stand")) ? CurrentDataTrue(): CurrentDataFalse();
+                (FindWorldItem("Shiny Item Stand", "Abyss_20")) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             case "gotLurkerKey":
             case "nightmareLanternLit":
@@ -862,22 +862,22 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             case "paleOreAncientBasin": // #1
-                (FindWorldItem("Abyss_17", "Battle Scene Ore")) ? CurrentDataTrue(): CurrentDataFalse();
+                (FindWorldItem("Battle Scene Ore", "Abyss_17")) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             case "paleOreSeer": // #2
                 (playerData.dreamReward2 === true) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             case "paleOreCrystalPeak": // #3
-                (FindWorldItem("Mines_34", "Shiny Item Stand")) ? CurrentDataTrue(): CurrentDataFalse();
+                (FindWorldItem("Shiny Item Stand", "Mines_34")) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             case "paleOreDeepnest": // #4
-                (FindWorldItem("Deepnest_32", "Shiny Item Stand")) ? CurrentDataTrue(): CurrentDataFalse();
+                (FindWorldItem("Shiny Item Stand", "Deepnest_32")) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             case "paleOreGrubfather": // #5
-                (FindWorldItem("Crossroads_38", "Shiny Item Ore")) ? CurrentDataTrue(): CurrentDataFalse();
+                (FindWorldItem("Shiny Item Ore", "Crossroads_38")) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             case "paleOreColosseum": // #6
-                (FindWorldItem("Room_Colosseum_Silver", "Shiny Item")) ? CurrentDataTrue(): CurrentDataFalse();
+                (FindWorldItem("Shiny Item", "Room_Colosseum_Silver")) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             case "relicsWandererJournal":
             case "relicsHallownestSeal":
@@ -999,6 +999,9 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             case "mrMushroomState":
                 sFillText += CheckMrMushroomState(divId, dataObject[i], playerData[i]);
                 break;
+            case "pantheonSoulWarrior":
+                (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) ? CurrentDataTrue(): CurrentDataFalse();
+                break;
             default:
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
         } // end switch (i)
@@ -1013,20 +1016,19 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
     // -------------- Methods ---------------- //
 
     /**
-     * Searches for a given item in the in-game area and returns true when found and collected.
-     * @param {string} itemArea Code of the in-game area on the map
-     * @param {string} itemId Name of the item
+     * Verifies if the specific Interactable (Item, Boss, Chest etc.) is activated (completed). Returns true or false.
+     * @param {string} idText ID text of the Interactable (id in sceneData)
+     * @param {string} sceneNameText Map codename of the Interactable (sceneName in sceneData)
      * @returns {boolean}
      */
-    function FindWorldItem(itemArea = "", itemId = "Shiny Item") {
+    function FindWorldItem(idText = "", sceneNameText = "") {
         for (let i = 0, length = worldData.length; i < length; i++) {
-            if (worldData[i].id === itemId) {
-                if (worldData[i].sceneName === itemArea) {
-                    if (worldData[i].activated === true) return true;
-                }
+            if (worldData[i].id === idText && worldData[i].sceneName === sceneNameText && worldData[i].activated === true) {
+                return true;
+            } else {
+                return false;
             }
         }
-        return false;
     }
 
     /**
