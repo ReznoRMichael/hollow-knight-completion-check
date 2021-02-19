@@ -182,7 +182,7 @@ const HK = {
     BOSSES: {
         // killedBigFly
         bossGruzMother: {
-            name: "Gruz Mother",
+            name: "P#1 Gruz Mother",
             spoiler: "Forgotten Crossroads",
             id: "Battle Scene",
             sceneName: "Crossroads_04",
@@ -190,25 +190,25 @@ const HK = {
         },
         // killedMawlek
         bossBroodingMawlek: {
-            name: "Brooding Mawlek",
-            spoiler: "Forgotten Crossroads",
+            name: "P#1 Brooding Mawlek",
+            spoiler: "Forgotten Crossroads, use Mantis Claw",
             id: "Battle Scene",
             sceneName: "Crossroads_09",
             wiki: "Brooding_Mawlek"
         },
         falseKnightDefeated: {
-            name: "False Knight",
-            spoiler: "Forgotten Crossroads",
+            name: "P#1 False Knight",
+            spoiler: "Forgotten Crossroads, middle area",
             wiki: "False_Knight"
         }, // "Battle Scene" - "Crossroads_10" ?
         hornet1Defeated: {
-            name: "Hornet Protector",
-            spoiler: "Greenpath",
+            name: "P#1 Hornet Protector",
+            spoiler: "Greenpath, above Stag Station",
             wiki: "Hornet_Protector"
         },
         defeatedDungDefender: {
-            name: "Dung Defender",
-            spoiler: "Royal Waterways",
+            name: "P#1 Dung Defender",
+            spoiler: "Royal Waterways, east",
             wiki: "Dung_Defender"
         },
         mageLordDefeated: {
@@ -222,7 +222,7 @@ const HK = {
             wiki: "Watcher_Knight"
         },
         collectorDefeated: {
-            name: "The Collector",
+            name: "P#3 The Collector",
             spoiler: "City of Tears: Tower of Love",
             wiki: "Collector"
         },
@@ -232,30 +232,30 @@ const HK = {
             wiki: "Mantis_Lords"
         },
         defeatedMegaJelly: {
-            name: "Uumuu",
+            name: "P#3 Uumuu",
             spoiler: "Fog Canyon: Teacher's Archives",
             wiki: "Uumuu"
         },
         hornetOutskirtsDefeated: {
-            name: "Hornet Sentinel",
-            spoiler: "Kingdom's Edge",
+            name: "P#3 Hornet Sentinel",
+            spoiler: "Kingdom's Edge, needs Monarch Wings",
             wiki: "Hornet_Sentinel"
         },
         killedInfectedKnight: {
-            name: "Broken Vessel",
-            spoiler: "Ancient Basin",
+            name: "P#2 Broken Vessel",
+            spoiler: "Ancient Basin, use Crystal Heart",
             wiki: "Broken_Vessel"
         },
         // "Battle Scene" - "Deepnest_32" ?
         killedMimicSpider: {
             name: "P#2 Nosk",
-            spoiler: "Deepnest",
+            spoiler: "Deepnest, use Crystal Heart, left of Hot Springs",
             wiki: "Nosk"
         },
          // "Battle Scene" - "Fungus3_23" ?
         killedTraitorLord: {
             name: "Traitor Lord",
-            spoiler: "Queen's Gardens",
+            spoiler: "Queen's Gardens, requires Shade Cloak",
             wiki: "Traitor_Lord"
         }
     },
@@ -761,12 +761,12 @@ const HK = {
             wiki: "No_Eyes"
         },
         elderHuDefeated: {
-            name: "Elder Hu",
-            spoiler: "Fungal Wastes",
+            name: "P#3 Elder Hu",
+            spoiler: "Fungal Wastes, above acid bridge",
             wiki: "Elder_Hu"
         },
         aladarSlugDefeated: {
-            name: "Gorb",
+            name: "P#1 Gorb",
             spoiler: "Howling Cliffs",
             wiki: "Gorb"
         },
@@ -776,8 +776,8 @@ const HK = {
             wiki: "Marmu"
         },
         galienDefeated: {
-            name: "Galien",
-            spoiler: "Deepnest",
+            name: "P#3 Galien",
+            spoiler: "Deepnest, below Failed Tramway",
             wiki: "Galien"
         },
         markothDefeated: {
@@ -808,7 +808,7 @@ const HK = {
             wiki: "Grimmchild"
         },
         killedGrimm: {
-            name: "Troupe Leader Grimm",
+            name: "P#3 Troupe Master Grimm",
             spoiler: "Dirtmouth, collect 6 flames",
             wiki: "Grimm"
         },
@@ -820,7 +820,7 @@ const HK = {
     },
     LIFEBLOOD: {
         killedHiveKnight: {
-            name: "Hive Knight",
+            name: "P#3 Hive Knight",
             spoiler: "The Hive, guards Hiveblood charm",
             wiki: "Hive_Knight"
         }
@@ -1157,7 +1157,7 @@ const HK = {
             wiki: "White_Defender"
         },
         greyPrinceDefeated: {
-            name: "Grey Prince Zote",
+            name: "P#3 Grey Prince Zote",
             spoiler: "Dirtmouth: Bretta's Room (per save choice)",
             wiki: "Grey_Prince_Zote"
         },
