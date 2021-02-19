@@ -1253,11 +1253,6 @@ const HK = {
             max: 4,
             wiki: "Arcane_Egg"
         },
-        geoRocks: {
-            name: "Geo Rocks",
-            spoiler: "Unbroken/Broken/Discovered Total",
-            wiki: "Geo#How_to_Acquire"
-        },
         // not ghostCoins
         geoPool: {
             name: "Shade Geo",
@@ -1280,9 +1275,14 @@ const HK = {
             spoiler: "Resting Grounds: Grey Mourner",
             wiki: "Delicate_Flower"
         },
+        geoRocks: {
+            name: "Geo Rocks",
+            spoiler: "Unbroken | Broken | Discovered",
+            wiki: "Geo#How_to_Acquire"
+        },
         itemsDiscovered: {
             name: "Interactables",
-            spoiler: "Not Activated/Activated/Discovered",
+            spoiler: "Not A. | Activated | Discovered",
             wiki: "Category:Exploration_(Hollow_Knight)"
         },
         notchShroomOgres: {
