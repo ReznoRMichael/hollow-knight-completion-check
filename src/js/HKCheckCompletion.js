@@ -1087,7 +1087,8 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
 
         if (mode === "notActivated") {
             for (let i = 0; i < arrayLength; i++) {
-                if (sceneData.persistentBoolItems[i].activated === false) {
+                if (sceneData.persistentBoolItems[i].activated === false &&
+                    sceneData.persistentBoolItems[i].semiPersistent === false) {
                     countTotal++;
                     itemsLog.push(`#${countTotal} ${sceneData.persistentBoolItems[i].id} 🗺️ ${TranslateMapName(sceneData.persistentBoolItems[i].sceneName)} ⌨️ ${sceneData.persistentBoolItems[i].sceneName}`);
                 }

@@ -1057,7 +1057,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
 
     if (mode === "notActivated") {
       for (var _i11 = 0; _i11 < arrayLength; _i11++) {
-        if (sceneData.persistentBoolItems[_i11].activated === false) {
+        if (sceneData.persistentBoolItems[_i11].activated === false && sceneData.persistentBoolItems[_i11].semiPersistent === false) {
           countTotal++;
           itemsLog.push("#".concat(countTotal, " ").concat(sceneData.persistentBoolItems[_i11].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(sceneData.persistentBoolItems[_i11].sceneName), " \u2328\uFE0F ").concat(sceneData.persistentBoolItems[_i11].sceneName));
         }
