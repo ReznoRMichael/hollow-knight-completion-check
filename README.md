@@ -93,6 +93,12 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
+* Upcoming:
+
+  — Interactables Not Activated, Activated and Discovered Total.
+
+  — Polyfills for most browsers
+
 * v1.1.0 2021-02-17:
 
   — **PayPal supporters are immortalized on the Tool's Web page** with a Lvl indicating the amount of support for the Tool. You can get your name/nick immortalized too! Donate at least $1 for the Tool development 🙂 You can include the name or nick in the PayPal donation message (optional) or "Anonymous" if you wish to be featured anonymously. If you don't want to be featured on the page, please write it in the message too.
@@ -271,9 +277,12 @@ If you like the tool and wish it developed further with more functions and easie
 ## Using
 
 * JavaScript (compiled to ES 6 / ES 2015)
+* [ESLint](https://eslint.org/)
 * [AES-JS](https://github.com/ricmoo/aes-js)
 * [Webpack](https://github.com/webpack/webpack)
 * [Babel](https://github.com/babel/babel)
+* [core-js](https://github.com/zloirock/core-js)
+* [regenerator-runtime](https://github.com/facebook/regenerator/tree/master/packages/regenerator-runtime)
 * HTML5/CSS
 * JSON
 * Fontello
