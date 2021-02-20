@@ -1010,11 +1010,6 @@ const HK = {
             sceneName: "Ruins1_23",
             wiki: "Soul_Warrior"
         },
-        killedNailBros: {
-            name: "Brothers Oro & Mato",
-            spoiler: "Godhome: Pantheon of the Master",
-            wiki: "Brothers_Oro_%26_Mato"
-        },
         pantheonCrystalGuardian: {
             name: "P2 Crystal Guardian",
             spoiler: "Crystal Peak, guards Central Bench",
@@ -1032,6 +1027,18 @@ const HK = {
             spoiler: "Royal Waterways, requires Desolate Dive",
             wiki: "Flukemarm"
         },
+        pantheonEnragedGuardian: {
+            name: "P4 Enraged Guardian",
+            spoiler: "Crystal Peak, requires Monarch Wings",
+            id: "Zombie Beam Miner Rematch",
+            sceneName: "Mines_32",
+            wiki: "Enraged_Guardian"
+        },
+        killedNailBros: {
+            name: "Brothers Oro & Mato",
+            spoiler: "Godhome: Pantheon of the Master",
+            wiki: "Brothers_Oro_%26_Mato"
+        },
         killedPaintmaster: {
             name: "Paintmaster Sheo",
             spoiler: "Godhome: Pantheon of the Artist",
@@ -1041,13 +1048,6 @@ const HK = {
             name: "Great Nailsage Sly",
             spoiler: "Godhome: Pantheon of the Sage",
             wiki: "Great_Nailsage_Sly"
-        },
-        pantheonEnragedGuardian: {
-            name: "P4 Enraged Guardian",
-            spoiler: "Crystal Peak, requires Monarch Wings",
-            id: "Zombie Beam Miner Rematch",
-            sceneName: "Mines_32",
-            wiki: "Enraged_Guardian"
         },
         killedHollowKnightPrime: {
             name: "Pure Vessel",
