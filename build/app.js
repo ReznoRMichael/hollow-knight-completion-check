@@ -3499,7 +3499,7 @@ var HK = {
     pantheonCrystalGuardian: {
       name: "P2 Crystal Guardian",
       spoiler: "Crystal Peak, guards Central Bench",
-      id: "Battle Scene",
+      id: "Mega Zombie Beam Miner (1)",
       sceneName: "Mines_18",
       wiki: "Crystal_Guardian"
     },
@@ -3526,8 +3526,8 @@ var HK = {
     pantheonEnragedGuardian: {
       name: "P4 Enraged Guardian",
       spoiler: "Crystal Peak, requires Monarch Wings",
-      id: "Mega Zombie Beam Miner (1)",
-      sceneName: "Mines_18",
+      id: "Zombie Beam Miner Rematch",
+      sceneName: "Mines_32",
       wiki: "Enraged_Guardian"
     }
   },
