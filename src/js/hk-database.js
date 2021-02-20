@@ -1038,7 +1038,7 @@ const HK = {
             wiki: "Paintmaster_Sheo"
         },
         killedNailsage: {
-            name: "P3 Great Nailsage Sly",
+            name: "Great Nailsage Sly",
             spoiler: "Godhome: Pantheon of the Sage",
             wiki: "Great_Nailsage_Sly"
         },
