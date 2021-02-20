@@ -869,6 +869,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             case "paleOreColosseum": // #6
             case "pantheonSoulWarrior":
             case "pantheonCrystalGuardian":
+            case "pantheonEnragedGuardian":
                 (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             case "relicsWandererJournal":

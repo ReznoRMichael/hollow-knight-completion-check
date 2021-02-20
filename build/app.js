@@ -804,6 +804,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
 
       case "pantheonSoulWarrior":
       case "pantheonCrystalGuardian":
+      case "pantheonEnragedGuardian":
         FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? CurrentDataTrue() : CurrentDataFalse();
         break;
 
@@ -3521,6 +3522,13 @@ var HK = {
       name: "P3 Great Nailsage Sly",
       spoiler: "Godhome: Pantheon of the Sage",
       wiki: "Great_Nailsage_Sly"
+    },
+    pantheonEnragedGuardian: {
+      name: "P4 Enraged Guardian",
+      spoiler: "Crystal Peak, requires Monarch Wings",
+      id: "Mega Zombie Beam Miner (1)",
+      sceneName: "Mines_18",
+      wiki: "Enraged_Guardian"
     }
   },
   GRUBS_LIST: ["Crossroads_35", "Crossroads_03", "Crossroads_05", "Crossroads_48", "Crossroads_31", "Fungus1_06", "Fungus1_07", "Fungus1_21", "Fungus1_28", "Fungus2_18", "Ruins1_05", "Mines_04", "Mines_03", "Mines_31", "Mines_19", "Ruins1_32", "RestingGrounds_10", "Ruins_House_01", "Mines_35", "Mines_16", "Waterways_04", "Waterways_13", "Abyss_19", "Abyss_17", "Mines_24", "Fungus1_13", "Fungus3_47", "Fungus3_10", "Fungus3_48", "Fungus3_22", "Ruins2_07", "Ruins2_11", "Ruins2_11", "Ruins2_11", "Deepnest_East_11", "Deepnest_East_14", "Fungus2_20", "Ruins2_03", "Deepnest_36", "Deepnest_03", "Deepnest_31", "Deepnest_39", "Deepnest_Spider_Town", "Waterways_14", "Hive_03", "Hive_04"],
