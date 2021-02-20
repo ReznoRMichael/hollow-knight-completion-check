@@ -95,9 +95,22 @@ If you like the tool and wish it developed further with more functions and easie
 
 * Upcoming:
 
-  — Massive Moss Charger
+  — Bosses and Warrior Dreams required for opening Pantheons 1-4 are now marked with P1, P2, P3 or P4. They are also sorted accordingly.
+  
+  — **Game Completion Essentials** additions:
+  ✅ P1 Massive Moss Charger  
+  ✅ P1 Soul Warrior  
+  ✅ Brothers Oro & Mato  
+  ✅ P2 Crystal Guardian  
+  ✅ P2 Oblobble  
+  ✅ P2 Flukemarm  
+  ✅ Paintmaster Sheo  
+  ✅ P3 Great Nailsage Sly  
+  ✅ P4 Enraged Guardian  
+  ✅ Pure Vessel  
 
-  — Interactables Not Activated, Activated and Discovered Total.
+  — **Game Statistics** additions:
+  ✅ Interactables: Not Activated, Activated and Discovered Total (experimental)  
 
   — Polyfills for most browsers
 

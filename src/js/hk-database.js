@@ -1011,7 +1011,7 @@ const HK = {
             wiki: "Soul_Warrior"
         },
         killedNailBros: {
-            name: "P1 Brothers Oro & Mato",
+            name: "Brothers Oro & Mato",
             spoiler: "Godhome: Pantheon of the Master",
             wiki: "Brothers_Oro_%26_Mato"
         },
@@ -1033,7 +1033,7 @@ const HK = {
             wiki: "Flukemarm"
         },
         killedPaintmaster: {
-            name: "P2 Paintmaster Sheo",
+            name: "Paintmaster Sheo",
             spoiler: "Godhome: Pantheon of the Artist",
             wiki: "Paintmaster_Sheo"
         },
@@ -1050,7 +1050,7 @@ const HK = {
             wiki: "Enraged_Guardian"
         },
         killedHollowKnightPrime: {
-            name: "P4 Pure Vessel",
+            name: "Pure Vessel",
             spoiler: "Godhome: Pantheon of the Knight",
             wiki: "Pure_Vessel"
         },
