@@ -989,6 +989,19 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                     textSuffix = dataObject[i].spoilerUpgradeNail;
                 }
                 break;
+            case "killedNailBros":
+            case "killedPaintmaster":
+            case "killedNailsage":
+                if (playerData.hasOwnProperty(i) === false) {
+                    CurrentDataBlank();
+                    textPrefix = `<del>${textPrefix}</del>`;
+                    textSuffix = `<del>${textSuffix}</del>`;
+                } else if (playerData[i] === true) {
+                    CurrentDataTrue();
+                } else {
+                    CurrentDataFalse();
+                }
+                break;
             case "mrMushroomState":
                 sFillText += CheckMrMushroomState(divId, dataObject[i], playerData[i]);
                 break;
