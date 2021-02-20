@@ -992,6 +992,8 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             case "killedNailBros":
             case "killedPaintmaster":
             case "killedNailsage":
+            case "killedHollowKnightPrime":
+                /* Godmaster backwards compatibility */
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank();
                     textPrefix = `<del>${textPrefix}</del>`;
