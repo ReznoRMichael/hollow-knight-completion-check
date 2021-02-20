@@ -438,7 +438,7 @@ const HK = {
         }, // 3
         gotCharm_36: {
             name: "#36 Kingsoul",
-            spoiler: "Queen's Gardens + Ancient Basin",
+            spoiler: "Queen's Gardens + White Palace",
             wiki: "Kingsoul"
         }, // 5
     },
@@ -561,7 +561,7 @@ const HK = {
     MASKSHARDS_WORLD: {
         Crossroads_13: {
             name: "Mask Shard #6",
-            spoiler: "Forgotten Crossroads: below Hot Springs",
+            spoiler: "Forgotten Crossroads, below Hot Springs",
             wiki: "Mask_Shard"
         },
         Crossroads_09: {
@@ -601,7 +601,7 @@ const HK = {
         },
         Fungus2_25: {
             name: "Mask Shard #14",
-            spoiler: "Deepnest: entrance from Fungal Wastes",
+            spoiler: "Deepnest, entrance from Fungal Wastes",
             wiki: "Mask_Shard"
         },
         Hive_04: {
@@ -843,7 +843,7 @@ const HK = {
         },
         pantheonKnight: {
             name: "P4 Pantheon of the Knight",
-            spoiler: "Godhome, complete P1, P2 and P3",
+            spoiler: "Godhome: complete P1, P2 and P3",
             wiki: "Pantheon_of_the_Knight"
         }
     },
@@ -980,17 +980,17 @@ const HK = {
         },
         hasTramPass: {
             name: "Tram Pass",
-            spoiler: "Deepnest, Failed Tramway",
+            spoiler: "Deepnest: Failed Tramway",
             wiki: "Tram_Pass"
         },
         gotQueenFragment: {
             name: "White Fragment: Queen",
-            spoiler: "White Lady, Queen's Gardens",
+            spoiler: "White Lady: Queen's Gardens",
             wiki: "Kingsoul#How_to_Acquire"
         },
         gotKingFragment: {
             name: "White Fragment: King",
-            spoiler: "Pale King, White Palace",
+            spoiler: "Pale King: White Palace",
             wiki: "Kingsoul#How_to_Acquire"
         },
         nightmareLanternLit: {
@@ -1005,14 +1005,14 @@ const HK = {
         },
         pantheonSoulWarrior: {
             name: "P1 Soul Warrior",
-            spoiler: "City of Tears, Soul Sanctum",
+            spoiler: "City of Tears: Soul Sanctum",
             id: "Battle Scene v2",
             sceneName: "Ruins1_23",
             wiki: "Soul_Warrior"
         },
         killedNailBros: {
             name: "P1 Brothers Oro & Mato",
-            spoiler: "Godhome, Pantheon of the Master",
+            spoiler: "Godhome: Pantheon of the Master",
             wiki: "Brothers_Oro_%26_Mato"
         },
         pantheonCrystalGuardian: {
@@ -1031,6 +1031,11 @@ const HK = {
             name: "P2 Flukemarm",
             spoiler: "Royal Waterways, requires Desolate Dive",
             wiki: "Flukemarm"
+        },
+        killedPaintmaster: {
+            name: "P2 Paintmaster Sheo",
+            spoiler: "Godhome: Pantheon of the Artist",
+            wiki: "Paintmaster_Sheo"
         },
     },
     GRUBS_LIST: ["Crossroads_35", "Crossroads_03", "Crossroads_05", "Crossroads_48", "Crossroads_31", "Fungus1_06", "Fungus1_07", "Fungus1_21", "Fungus1_28", "Fungus2_18", "Ruins1_05", "Mines_04", "Mines_03", "Mines_31", "Mines_19", "Ruins1_32", "RestingGrounds_10", "Ruins_House_01", "Mines_35", "Mines_16", "Waterways_04", "Waterways_13", "Abyss_19", "Abyss_17", "Mines_24", "Fungus1_13", "Fungus3_47", "Fungus3_10", "Fungus3_48", "Fungus3_22", "Ruins2_07", "Ruins2_11", "Ruins2_11", "Ruins2_11", "Deepnest_East_11", "Deepnest_East_14", "Fungus2_20", "Ruins2_03", "Deepnest_36", "Deepnest_03", "Deepnest_31", "Deepnest_39", "Deepnest_Spider_Town", "Waterways_14", "Hive_03", "Hive_04"],
@@ -1162,7 +1167,7 @@ const HK = {
             wiki: "White_Defender"
         },
         greyPrinceDefeated: {
-            name: "P3 Grey Prince Zote",
+            name: "Grey Prince Zote",
             spoiler: "Dirtmouth: Bretta's Room (per save choice)",
             wiki: "Grey_Prince_Zote"
         },
