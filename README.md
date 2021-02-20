@@ -100,19 +100,19 @@ If you like the tool and wish it developed further with more functions and easie
   — **Game Completion Essentials** additions:
   ✅ P1 Massive Moss Charger  
   ✅ P1 Soul Warrior  
-  ✅ Brothers Oro & Mato  
   ✅ P2 Crystal Guardian  
   ✅ P2 Oblobble  
   ✅ P2 Flukemarm  
-  ✅ Paintmaster Sheo  
-  ✅ P3 Great Nailsage Sly  
   ✅ P4 Enraged Guardian  
+  ✅ Brothers Oro & Mato  
+  ✅ Paintmaster Sheo  
+  ✅ Great Nailsage Sly  
   ✅ Pure Vessel  
 
   — **Game Statistics** additions:
-  ✅ Interactables: Not Activated, Activated and Discovered Total (experimental)  
+  ✅ Interactables: Not Activated, Activated and Discovered Total (experimental). See also Ctrl + Shift + I > Console for all Not Activated list.  
 
-  — Polyfills for most browsers
+  — Polyfills for most browsers.
 
 * v1.1.0 2021-02-17:
 
