@@ -1475,9 +1475,14 @@ const HK = {
             wiki: "Delicate_Flower#List_of_Possible_Recipients"
         },
         seenGGWastes: {
-            name: "Godhome: Tuner Memory",
+            name: "Tuner Memory",
             spoiler: "Requires completing 3 Pantheons, 2% chance",
             wiki: "Godhome#Tuner_Memory"
+        },
+        zoteStatueWallBroken: {
+            name: "Zote Statue Discovered",
+            spoiler: "Upper right corner of Hall of Gods",
+            wiki: "Hall_of_Gods#Zote"
         },
         whitePalaceSecretRoomVisited: {
             name: "White Palace Secret Room visited",
