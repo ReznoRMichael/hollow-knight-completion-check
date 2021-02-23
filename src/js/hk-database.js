@@ -1456,7 +1456,7 @@ const HK = {
         },
         givenGodseekerFlower: {
             name: "Delicate Flower: Godseeker",
-            spoiler: "Delivered from Traitor's Child Grave",
+            spoiler: "Possible after completing 2 Pantheons",
             wiki: "Delicate_Flower#List_of_Possible_Recipients"
         },
         givenOroFlower: {
@@ -1473,6 +1473,11 @@ const HK = {
             name: "Delicate Flower: Emilitia",
             spoiler: "Delivered from Traitor's Child Grave",
             wiki: "Delicate_Flower#List_of_Possible_Recipients"
+        },
+        seenGGWastes: {
+            name: "Godhome: Tuner Memory",
+            spoiler: "Requires completing 3 Pantheons, 2% chance",
+            wiki: "Godhome#Tuner_Memory"
         },
         whitePalaceSecretRoomVisited: {
             name: "White Palace Secret Room visited",

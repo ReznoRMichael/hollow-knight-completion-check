@@ -3951,7 +3951,7 @@ var HK = {
     },
     givenGodseekerFlower: {
       name: "Delicate Flower: Godseeker",
-      spoiler: "Delivered from Traitor's Child Grave",
+      spoiler: "Possible after completing 2 Pantheons",
       wiki: "Delicate_Flower#List_of_Possible_Recipients"
     },
     givenOroFlower: {

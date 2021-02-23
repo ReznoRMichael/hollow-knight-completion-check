@@ -93,6 +93,10 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
+* Upcoming:
+
+  — Added info that offering Godseeker the Delicate Flower is possible after completing at least 2 Pantheons
+
 * v1.2.0 2021-02-23:
 
   — Bosses and Warrior Dreams required for opening Pantheons 1-4 are now prefixed with P1, P2, P3 or P4. They are also sorted accordingly.
