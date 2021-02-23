@@ -828,17 +828,17 @@ const HK = {
     GODMASTER_DOORS: {
         pantheonMaster: {
             name: "P1 Pantheon of the Master",
-            spoiler: "Godhome",
+            spoiler: "Godhome, defeat P1 bosses",
             wiki: "Pantheon_of_the_Master"
         },
         pantheonArtist: {
             name: "P2 Pantheon of the Artist",
-            spoiler: "Godhome",
+            spoiler: "Godhome, defeat P2 bosses",
             wiki: "Pantheon_of_the_Artist"
         },
         pantheonSage: {
             name: "P3 Pantheon of the Sage",
-            spoiler: "Godhome",
+            spoiler: "Godhome, defeat P3 bosses",
             wiki: "Pantheon_of_the_Sage"
         },
         pantheonKnight: {
@@ -1198,21 +1198,6 @@ const HK = {
             spoiler: "Salubra: 800 Geo + all 40 Charms found",
             wiki: "Salubra's_Blessing"
         },
-        gotShadeCharm: {
-            name: "Void Heart",
-            spoiler: "Kingsoul + Birthplace",
-            wiki: "Void_Heart"
-        },
-        killedFinalBoss: {
-            name: "Radiance",
-            spoiler: "Forgotten Crossroads: Black Egg Temple",
-            wiki: "Radiance"
-        },
-        bossDoorStateTier5: {
-            name: "P5 Embrace the Void",
-            spoiler: "Godhome: Pantheon of Hallownest",
-            wiki: "Pantheon_of_Hallownest"
-        },
         zoteStatus: {
             name: "Zote Status",
             nameNeglect: "Zote Choice: Neglect",
@@ -1243,6 +1228,16 @@ const HK = {
             spoilerUpgradeNail: "Upgrade Nail to Pure Nail",
             wiki: "Nailsmith"
         },
+        gotShadeCharm: {
+            name: "Void Heart",
+            spoiler: "Kingsoul + Birthplace",
+            wiki: "Void_Heart"
+        },
+        killedFinalBoss: {
+            name: "Radiance",
+            spoiler: "Forgotten Crossroads: Black Egg Temple",
+            wiki: "Radiance"
+        },
         mrMushroomState: {
             name: "Mr Mushroom",
             spoiler1: "Fungal Wastes, near Cornifer",
@@ -1253,7 +1248,12 @@ const HK = {
             spoiler6: "Fog Canyon, near Overgrown Mound",
             spoiler7: "King's Pass, game starting location",
             wiki: "Mister_Mushroom"
-        }
+        },
+        bossDoorStateTier5: {
+            name: "P5 Embrace the Void",
+            spoiler: "Godhome: Pantheon of Hallownest",
+            wiki: "Pantheon_of_Hallownest"
+        },
         /* 
         Mr Mushroom data
         case SplitName.MrMushroom1: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 2; break;
