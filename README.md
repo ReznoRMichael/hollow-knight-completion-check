@@ -93,11 +93,11 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
-* Upcoming:
+* v1.2.0 2021-02-23:
 
-  — Bosses and Warrior Dreams required for opening Pantheons 1-4 are now marked with P1, P2, P3 or P4. They are also sorted accordingly.
+  — Bosses and Warrior Dreams required for opening Pantheons 1-4 are now prefixed with P1, P2, P3 or P4. They are also sorted accordingly.
   
-  — **Game Completion Essentials** additions:
+  — **Game Completion Essentials** additions:  
   ✅ P1 Massive Moss Charger  
   ✅ P1 Soul Warrior  
   ✅ P2 Crystal Guardian  
@@ -109,10 +109,10 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Great Nailsage Sly  
   ✅ Pure Vessel  
 
-  — **Game Statistics** additions:
+  — **Game Statistics** additions:  
   ✅ Interactables: Not Activated, Activated and Discovered Total (experimental). See also Ctrl + Shift + I > Console for all Not Activated list.  
 
-  — Polyfills for most browsers.
+  — Polyfills for most browsers (to ensure webpage compatibility).
 
 * v1.1.0 2021-02-17:
 
