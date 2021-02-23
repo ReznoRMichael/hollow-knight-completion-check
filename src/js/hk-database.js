@@ -1484,6 +1484,11 @@ const HK = {
             spoiler: "Upper right corner of Hall of Gods",
             wiki: "Hall_of_Gods#Zote"
         },
+        ordealAchieved: {
+            name: "The Eternal Ordeal",
+            spoiler: "Reach 57 Zotelings defeated",
+            wiki: "Eternal_Ordeal"
+        },
         whitePalaceSecretRoomVisited: {
             name: "White Palace Secret Room visited",
             spoiler: "Help identify this room!",
