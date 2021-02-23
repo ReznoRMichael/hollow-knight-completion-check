@@ -151,7 +151,11 @@ function HKCheckCompletion(jsonObject) {
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID.achievements, FLEUR_DIVIDE); // ------------------------- Game Statistics ----------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID.statistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.STATISTICS, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Hints ----------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID.statistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.STATISTICS, HKPlayerData, HKWorldItems, HKSceneData); // ---------------- Fleur Divide ----------------- //
+
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID.statistics, FLEUR_DIVIDE); // ------------------------- Godhome Statistics ----------------------------- //
+
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID.godhomeStatistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODHOME_STATISTICS, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Hints ----------------------------- //
 
   CheckHintsTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.HINTS, HKPlayerData, HKWorldItems); // ------------------------- Fill completion ----------------------------- //
 
@@ -1316,9 +1320,9 @@ function InitialHTMLPopulate(divIdObj) {
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.HINTS.fireballLevel.spoiler); // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
 
-  var hkObjArray = [_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.BOSSES, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.CHARMS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.EQUIPMENT, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.NAILARTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.MASKSHARDS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.MASKSHARDS_WORLD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.VESSELFRAGMENTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.VESSELFRAGMENTS_WORLD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DREAMERS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.COLOSSEUM, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DREAMNAIL, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.WARRIORDREAMS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GRIMMTROUPE, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.LIFEBLOOD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.ESSENTIAL, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.ACHIEVEMENTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.STATISTICS]; // duplicates and order important - must be the same as in hkObjArray[]
+  var hkObjArray = [_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.BOSSES, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.CHARMS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.EQUIPMENT, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.NAILARTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.MASKSHARDS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.MASKSHARDS_WORLD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.VESSELFRAGMENTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.VESSELFRAGMENTS_WORLD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DREAMERS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.COLOSSEUM, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DREAMNAIL, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.WARRIORDREAMS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GRIMMTROUPE, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.LIFEBLOOD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.ESSENTIAL, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.ACHIEVEMENTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.STATISTICS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODHOME_STATISTICS]; // duplicates and order important - must be the same as in hkObjArray[]
 
-  var divObjArray = [divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.essential, divIdObj.achievements, divIdObj.statistics]; // Looped filling to reduce redundancy
+  var divObjArray = [divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.essential, divIdObj.achievements, divIdObj.statistics, divIdObj.godhomeStatistics]; // Looped filling to reduce redundancy
 
   do {
     for (var entry in hkObjArray[0]) {
@@ -1364,7 +1368,8 @@ function InitialHTMLPopulate(divIdObj) {
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.godmaster, FLEUR_DIVIDE);
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.essential, FLEUR_DIVIDE);
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.achievements, FLEUR_DIVIDE); // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.achievements, FLEUR_DIVIDE);
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.statistics, FLEUR_DIVIDE); // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
 
   if ((0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.StorageAvailable)('localStorage')) {
     if (localStorage.getItem("hkCheckboxHints") === "checked") document.getElementById("checkbox-hints").checked = true;
@@ -2576,6 +2581,10 @@ var HK = {
     statistics: {
       h2: "Game Statistics",
       id: "hk-statistics"
+    },
+    godhomeStatistics: {
+      h2: "Godhome Statistics",
+      id: "hk-godhome-statistics"
     }
   },
   // hk-hints
@@ -3924,26 +3933,6 @@ var HK = {
       spoiler: "White Palace: Path of Pain completion",
       wiki: "Seal_of_Binding"
     },
-    killedGodseekerMask: {
-      name: "Journal: Weathered Mask",
-      spoiler: "Godhome: Land of Storms",
-      wiki: "Weathered_Mask"
-    },
-    killedVoidIdol_1: {
-      name: "Journal: Void Idol Attuned",
-      spoiler: "Godhome: Hall of Gods, defeat all",
-      wiki: "Void_Idol"
-    },
-    killedVoidIdol_2: {
-      name: "Journal: Void Idol Ascended",
-      spoiler: "Godhome: Hall of Gods, defeat all",
-      wiki: "Void_Idol"
-    },
-    killedVoidIdol_3: {
-      name: "Journal: Void Idol Radiant",
-      spoiler: "Godhome: Hall of Gods, defeat all",
-      wiki: "Void_Idol"
-    },
     elderbugGaveFlower: {
       name: "Delicate Flower: Elderbug",
       spoiler: "Delivered from Traitor's Child Grave",
@@ -3990,6 +3979,43 @@ var HK = {
       spoiler: "Dirtmouth (10 max)",
       max: 10,
       wiki: "Grey_Prince_Zote"
+    }
+  },
+  GODHOME_STATISTICS: {
+    seenGGWastes: {
+      name: "Tuner Memory",
+      spoiler: "Requires completing 3 Pantheons, 2% chance",
+      wiki: "Godhome#Tuner_Memory"
+    },
+    killedGodseekerMask: {
+      name: "Journal: Weathered Mask",
+      spoiler: "Godhome: Land of Storms",
+      wiki: "Weathered_Mask"
+    },
+    killedVoidIdol_1: {
+      name: "Journal: Void Idol Attuned",
+      spoiler: "Godhome: Hall of Gods, defeat all",
+      wiki: "Void_Idol"
+    },
+    killedVoidIdol_2: {
+      name: "Journal: Void Idol Ascended",
+      spoiler: "Godhome: Hall of Gods, defeat all",
+      wiki: "Void_Idol"
+    },
+    killedVoidIdol_3: {
+      name: "Journal: Void Idol Radiant",
+      spoiler: "Godhome: Hall of Gods, defeat all",
+      wiki: "Void_Idol"
+    },
+    zoteStatueWallBroken: {
+      name: "Zote Statue Discovered",
+      spoiler: "Upper right corner of Hall of Gods",
+      wiki: "Hall_of_Gods#Zote"
+    },
+    ordealAchieved: {
+      name: "The Eternal Ordeal",
+      spoiler: "Reach 57 Zotelings defeated",
+      wiki: "Eternal_Ordeal"
     }
   }
 };

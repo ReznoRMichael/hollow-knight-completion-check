@@ -116,6 +116,10 @@ const HK = {
         statistics: {
             h2: "Game Statistics",
             id: "hk-statistics"
+        },
+        godhomeStatistics: {
+            h2: "Godhome Statistics",
+            id: "hk-godhome-statistics"
         }
     },
     // hk-hints
@@ -247,8 +251,8 @@ const HK = {
             spoiler: "Kingdom's Edge, needs Monarch Wings",
             wiki: "Hornet_Sentinel"
         },
-         // "Battle Scene" - "Fungus3_23" ?
-         killedTraitorLord: {
+        // "Battle Scene" - "Fungus3_23" ?
+        killedTraitorLord: {
             name: "P4 Traitor Lord",
             spoiler: "Queen's Gardens, requires Shade Cloak",
             wiki: "Traitor_Lord"
@@ -1429,26 +1433,6 @@ const HK = {
             spoiler: "White Palace: Path of Pain completion",
             wiki: "Seal_of_Binding"
         },
-        killedGodseekerMask: {
-            name: "Journal: Weathered Mask",
-            spoiler: "Godhome: Land of Storms",
-            wiki: "Weathered_Mask"
-        },
-        killedVoidIdol_1: {
-            name: "Journal: Void Idol Attuned",
-            spoiler: "Godhome: Hall of Gods, defeat all",
-            wiki: "Void_Idol"
-        },
-        killedVoidIdol_2: {
-            name: "Journal: Void Idol Ascended",
-            spoiler: "Godhome: Hall of Gods, defeat all",
-            wiki: "Void_Idol"
-        },
-        killedVoidIdol_3: {
-            name: "Journal: Void Idol Radiant",
-            spoiler: "Godhome: Hall of Gods, defeat all",
-            wiki: "Void_Idol"
-        },
         elderbugGaveFlower: {
             name: "Delicate Flower: Elderbug",
             spoiler: "Delivered from Traitor's Child Grave",
@@ -1474,21 +1458,6 @@ const HK = {
             spoiler: "Delivered from Traitor's Child Grave",
             wiki: "Delicate_Flower#List_of_Possible_Recipients"
         },
-        seenGGWastes: {
-            name: "Tuner Memory",
-            spoiler: "Requires completing 3 Pantheons, 2% chance",
-            wiki: "Godhome#Tuner_Memory"
-        },
-        zoteStatueWallBroken: {
-            name: "Zote Statue Discovered",
-            spoiler: "Upper right corner of Hall of Gods",
-            wiki: "Hall_of_Gods#Zote"
-        },
-        ordealAchieved: {
-            name: "The Eternal Ordeal",
-            spoiler: "Reach 57 Zotelings defeated",
-            wiki: "Eternal_Ordeal"
-        },
         whitePalaceSecretRoomVisited: {
             name: "White Palace Secret Room visited",
             spoiler: "Help identify this room!",
@@ -1510,7 +1479,44 @@ const HK = {
             spoiler: "Dirtmouth (10 max)",
             max: 10,
             wiki: "Grey_Prince_Zote"
+        }
+    },
+    GODHOME_STATISTICS: {
+        seenGGWastes: {
+            name: "Tuner Memory",
+            spoiler: "Requires completing 3 Pantheons, 2% chance",
+            wiki: "Godhome#Tuner_Memory"
         },
+        killedGodseekerMask: {
+            name: "Journal: Weathered Mask",
+            spoiler: "Godhome: Land of Storms",
+            wiki: "Weathered_Mask"
+        },
+        killedVoidIdol_1: {
+            name: "Journal: Void Idol Attuned",
+            spoiler: "Godhome: Hall of Gods, defeat all",
+            wiki: "Void_Idol"
+        },
+        killedVoidIdol_2: {
+            name: "Journal: Void Idol Ascended",
+            spoiler: "Godhome: Hall of Gods, defeat all",
+            wiki: "Void_Idol"
+        },
+        killedVoidIdol_3: {
+            name: "Journal: Void Idol Radiant",
+            spoiler: "Godhome: Hall of Gods, defeat all",
+            wiki: "Void_Idol"
+        },
+        zoteStatueWallBroken: {
+            name: "Zote Statue Discovered",
+            spoiler: "Upper right corner of Hall of Gods",
+            wiki: "Hall_of_Gods#Zote"
+        },
+        ordealAchieved: {
+            name: "The Eternal Ordeal",
+            spoiler: "Reach 57 Zotelings defeated",
+            wiki: "Eternal_Ordeal"
+        }
     }
 };
 
