@@ -3936,11 +3936,6 @@ var HK = {
       spoiler: "Requires completing 3 Pantheons, 2% chance",
       wiki: "Godhome#Tuner_Memory"
     },
-    killedGodseekerMask: {
-      name: "Journal: Weathered Mask",
-      spoiler: "Land of Storms: All Pantheons & Bindings",
-      wiki: "Weathered_Mask"
-    },
     killedVoidIdol_1: {
       name: "Journal: Void Idol Attuned",
       spoiler: "Hall of Gods: Defeat All (Attuned)",
@@ -3955,6 +3950,11 @@ var HK = {
       name: "Journal: Void Idol Radiant",
       spoiler: "Hall of Gods: Defeat All (Radiant)",
       wiki: "Void_Idol"
+    },
+    killedGodseekerMask: {
+      name: "Journal: Weathered Mask",
+      spoiler: "Land of Storms: All Pantheons & Bindings",
+      wiki: "Weathered_Mask"
     },
     zoteStatueWallBroken: {
       name: "Intruder Discovered",
