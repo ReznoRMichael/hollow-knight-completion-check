@@ -1354,8 +1354,8 @@ const HK = {
             wiki: "Jinn"
         },
         xunFlowerBrokeTimes: {
-            name: "Delicate Flowers broken",
-            spoiler: "Resting Grounds: Grey Mourner",
+            name: "Delicate Flowers Destroyed",
+            spoiler: "Grey Mourner, Traitor's Child Grave",
             wiki: "Delicate_Flower"
         },
         geoRocks: {
