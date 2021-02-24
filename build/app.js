@@ -3991,27 +3991,27 @@ var HK = {
     },
     killedGodseekerMask: {
       name: "Journal: Weathered Mask",
-      spoiler: "Godhome: Land of Storms",
+      spoiler: "Land of Storms: All Pantheons & Bindings",
       wiki: "Weathered_Mask"
     },
     killedVoidIdol_1: {
       name: "Journal: Void Idol Attuned",
-      spoiler: "Godhome: Hall of Gods, defeat all",
+      spoiler: "Hall of Gods: Defeat All (Attuned)",
       wiki: "Void_Idol"
     },
     killedVoidIdol_2: {
       name: "Journal: Void Idol Ascended",
-      spoiler: "Godhome: Hall of Gods, defeat all",
+      spoiler: "Hall of Gods: Defeat All (Ascended)",
       wiki: "Void_Idol"
     },
     killedVoidIdol_3: {
       name: "Journal: Void Idol Radiant",
-      spoiler: "Godhome: Hall of Gods, defeat all",
+      spoiler: "Hall of Gods: Defeat All (Radiant)",
       wiki: "Void_Idol"
     },
     zoteStatueWallBroken: {
       name: "Intruder Discovered",
-      spoiler: "Hall of Gods: Zote Statue",
+      spoiler: "Hall of Gods: Zote Statue (North-East)",
       wiki: "Hall_of_Gods#Zote"
     },
     ordealAchieved: {
