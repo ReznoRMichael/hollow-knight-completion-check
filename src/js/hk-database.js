@@ -1438,6 +1438,16 @@ const HK = {
             spoiler: "White Palace: Path of Pain completion",
             wiki: "Seal_of_Binding"
         },
+        killsBindingSeal: {
+            name: "Path of Pain",
+            spoiler: "White Palace: main secret area",
+            wiki: "White_Palace#Sub-area:_Path_of_Pain"
+        },
+        whitePalaceSecretRoomVisited: {
+            name: "White Palace Secret Room visited",
+            spoiler: "Help identify this room!",
+            wiki: "White_Palace#Secret_rooms"
+        },
         elderbugGaveFlower: {
             name: "Delicate Flower: Elderbug",
             spoiler: "Delivered from Traitor's Child Grave",
@@ -1462,16 +1472,6 @@ const HK = {
             name: "Delicate Flower: Emilitia",
             spoiler: "Delivered from Traitor's Child Grave",
             wiki: "Delicate_Flower#List_of_Possible_Recipients"
-        },
-        whitePalaceSecretRoomVisited: {
-            name: "White Palace Secret Room visited",
-            spoiler: "Help identify this room!",
-            wiki: "White_Palace#Secret_rooms"
-        },
-        killsBindingSeal: {
-            name: "Path of Pain",
-            spoiler: "White Palace: main secret area",
-            wiki: "White_Palace#Sub-area:_Path_of_Pain"
         },
         whiteDefenderDefeats: {
             name: "White Defender times defeated",
