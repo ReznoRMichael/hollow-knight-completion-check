@@ -1514,7 +1514,7 @@ const HK = {
         },
         zoteStatueWallBroken: {
             name: "Zote Statue Discovered",
-            spoiler: "Upper right corner of Hall of Gods",
+            spoiler: "Hall of Gods: North-east corner",
             wiki: "Hall_of_Gods#Zote"
         },
         ordealAchieved: {
