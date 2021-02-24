@@ -188,13 +188,13 @@ function PrepareHTMLString(divId) {
   if (divId === "hints") {
     span[0] = "<span>";
     icon = "";
-  }
+  } // let dash = "";
 
-  var dash = "";
-  if (textSuffix.length && textPrefix.length) dash = "— ";
-  if (textPrefix.includes("<del>")) dash = "<del>— </del>"; // return divStart + icon + b[0] + textPrefix + b[1] + span[0] + pSpan + spoilerSpan[0] + dash + textSuffix + spoilerSpan[1] + span[1] + divEnd;
 
-  return "\n    ".concat(divStart, "\n        ").concat(icon).concat(b[0]).concat(textPrefix).concat(b[1]).concat(span[0]).concat(pSpan).concat(spoilerSpan[0]).concat(dash).concat(textSuffix).concat(spoilerSpan[1]).concat(span[1], "\n    ").concat(divEnd, "\n    ");
+  if (textSuffix.length && textPrefix.length) textSuffix = "— " + textSuffix;
+  if (textPrefix.includes("<del>")) textSuffix = "<del>".concat(textSuffix, "</del>"); // return divStart + icon + b[0] + textPrefix + b[1] + span[0] + pSpan + spoilerSpan[0] + dash + textSuffix + spoilerSpan[1] + span[1] + divEnd;
+
+  return "\n    ".concat(divStart, "\n        ").concat(icon).concat(b[0]).concat(textPrefix).concat(b[1]).concat(span[0]).concat(pSpan).concat(spoilerSpan[0]).concat(textSuffix).concat(spoilerSpan[1]).concat(span[1], "\n    ").concat(divEnd, "\n    ");
 }
 /**
  * Switches global variable to a "completed" symbol. Adds +1 or +2 to percent property.
@@ -431,7 +431,6 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
         if (playerData.hasOwnProperty(i) === false) {
           CurrentDataBlank();
           textPrefix = "<del>".concat(textPrefix, "</del>");
-          textSuffix = "<del>".concat(textSuffix, "</del>");
           break;
         }
 
@@ -533,7 +532,7 @@ function CheckGodmasterDoors(divId, dataObject, playerData) {
     // compatibility with earlier game versions
     if (playerData.hasOwnProperty("bossDoorStateTier" + (i + 1)) === false) {
       CurrentDataBlank();
-      sFillText += PrepareHTMLString(divId, "<del>".concat(dataObject[pantheon[i]].name, "</del>"), "<del>".concat(dataObject[pantheon[i]].spoiler, "</del>"), dataObject[pantheon[i]].wiki);
+      sFillText += PrepareHTMLString(divId, "<del>".concat(dataObject[pantheon[i]].name, "</del>"), dataObject[pantheon[i]].spoiler, dataObject[pantheon[i]].wiki);
     } else {
       playerData["bossDoorStateTier" + (i + 1)].completed === true ? CurrentDataTrue(divId) : CurrentDataFalse();
       sFillText += PrepareHTMLString(divId, dataObject[pantheon[i]].name, dataObject[pantheon[i]].spoiler, dataObject[pantheon[i]].wiki);
@@ -691,11 +690,9 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
           if (playerData.hasOwnProperty(i) === false) {
             CurrentDataBlank();
             textPrefix = "<del>".concat(dataObject[i].name, "</del>");
-            textSuffix = "<del>".concat(textSuffix, "</del>");
             break;
           } else if (playerData.zoteDead === true || playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
             textPrefix = "<del>".concat(textPrefix, "</del>");
-            textSuffix = "<del>".concat(textSuffix, "</del>");
           }
         }
 
@@ -704,7 +701,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
           if (playerData.hasOwnProperty(i) === false) {
             CurrentDataBlank();
             textPrefix = "<del>".concat(dataObject[i].name, "</del>");
-            textSuffix = "<del>".concat(textSuffix, "</del>");
             break;
           }
         }
@@ -724,7 +720,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
           if (playerData.permadeathMode < 1) {
             CurrentDataBlank();
             textPrefix = "<del>".concat(textPrefix, "</del>");
-            textSuffix = "<del>".concat(textSuffix, "</del>");
             break;
           }
         }
@@ -776,7 +771,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         if (playerData.hasOwnProperty(i) === false) {
           CurrentDataBlank();
           textPrefix = "<del>".concat(textPrefix, "</del>");
-          textSuffix = "<del>".concat(textSuffix, "</del>");
           break;
         }
 
@@ -823,7 +817,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         if (playerData.hasOwnProperty("bossDoorStateTier5") === false) {
           CurrentDataBlank();
           textPrefix = "<del>".concat(textPrefix, "</del>");
-          textSuffix = "<del>".concat(textSuffix, "</del>");
         } else {
           playerData[i].completed === true ? CurrentDataTrue() : CurrentDataFalse();
         }
@@ -834,7 +827,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         if (playerData.hasOwnProperty(i) === false) {
           CurrentDataBlank();
           textPrefix = "<del>".concat(textPrefix, "</del>");
-          textSuffix = "<del>".concat(textSuffix, "</del>");
           break;
         }
 
@@ -845,7 +837,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         if (playerData.hasOwnProperty(i) === false) {
           CurrentDataBlank();
           textPrefix = "<del>".concat(textPrefix, "</del>");
-          textSuffix = "<del>".concat(textSuffix, "</del>");
           break;
         }
 
@@ -857,7 +848,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         if (playerData.hasOwnProperty(i) === false) {
           CurrentDataBlank();
           textPrefix = "<del>".concat(textPrefix, "</del>");
-          textSuffix = "<del>".concat(textSuffix, "</del>");
           break;
         }
 
@@ -869,7 +859,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         if (playerData.hasOwnProperty(i) === false) {
           CurrentDataBlank();
           textPrefix = "<del>".concat(textPrefix, "</del>");
-          textSuffix = "<del>".concat(textSuffix, "</del>");
           break;
         }
 
@@ -881,11 +870,9 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         if (playerData.hasOwnProperty(i) === false) {
           CurrentDataBlank();
           textPrefix = "<del>".concat(textPrefix, "</del>");
-          textSuffix = "<del>".concat(textSuffix, "</del>");
           break;
         } else if (playerData.zoteDead === true || playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
           textPrefix = "<del>".concat(textPrefix, "</del>");
-          textSuffix = "<del>".concat(textSuffix, "</del>");
         }
 
         playerData[i] === true ? CurrentDataTrue() : CurrentDataBlank();
@@ -954,7 +941,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         if (playerData.hasOwnProperty(i) === false) {
           CurrentDataBlank();
           textPrefix = "<del>".concat(textPrefix, "</del>");
-          textSuffix = "<del>".concat(textSuffix, "</del>");
         } else if (playerData[i] === true) {
           CurrentDataTrue();
         } else {
