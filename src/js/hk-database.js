@@ -1299,7 +1299,7 @@ const HK = {
             wiki: "Category:Charms#Notches"
         },
         whisperingRoots: {
-            name: "Whispering Roots completed",
+            name: "Whispering Roots Completed",
             spoiler: "Dream Nail (out of 15)",
             max: 15,
             wiki: "Whispering_Root"
