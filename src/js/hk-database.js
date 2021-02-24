@@ -1450,7 +1450,7 @@ const HK = {
         },
         elderbugGaveFlower: {
             name: "Delicate Flower: Elderbug",
-            spoiler: "Delivered from Traitor's Child Grave",
+            spoiler: "Deliver from Traitor's Child Grave",
             wiki: "Delicate_Flower#List_of_Possible_Recipients"
         },
         givenGodseekerFlower: {
@@ -1465,12 +1465,12 @@ const HK = {
         },
         givenWhiteLadyFlower: {
             name: "Delicate Flower: White Lady",
-            spoiler: "Delivered from Traitor's Child Grave",
+            spoiler: "Deliver from Traitor's Child Grave",
             wiki: "Delicate_Flower#List_of_Possible_Recipients"
         },
         givenEmilitiaFlower: {
             name: "Delicate Flower: Emilitia",
-            spoiler: "Delivered from Traitor's Child Grave",
+            spoiler: "Deliver from Traitor's Child Grave",
             wiki: "Delicate_Flower#List_of_Possible_Recipients"
         },
         whiteDefenderDefeats: {
