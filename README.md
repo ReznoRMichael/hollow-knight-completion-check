@@ -93,7 +93,7 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
-* Upcoming:
+* v1.3.0 2021-02-24:
 
   — **Game Statistics** Section now divided into Game Statistics and Godhome Statistics
 
