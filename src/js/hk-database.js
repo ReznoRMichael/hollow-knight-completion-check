@@ -1513,8 +1513,8 @@ const HK = {
             wiki: "Void_Idol"
         },
         zoteStatueWallBroken: {
-            name: "Zote Statue Discovered",
-            spoiler: "Hall of Gods: North-east corner",
+            name: "Intruder Discovered",
+            spoiler: "Hall of Gods: Zote Statue",
             wiki: "Hall_of_Gods#Zote"
         },
         ordealAchieved: {

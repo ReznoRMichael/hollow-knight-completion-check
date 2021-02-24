@@ -95,10 +95,19 @@ If you like the tool and wish it developed further with more functions and easie
 
 * Upcoming:
 
-  — Added info that offering Godseeker the Delicate Flower is possible after completing at least 2 Pantheons
+  — **Game Statistics** Section now divided into Game Statistics and Godhome Statistics
+
+  — **Godhome Statistics** additions:  
+  ✅ Tuner Memory  
+  ✅ Intruder Discovered  
+  ✅ The Eternal Ordeal  
 
   — **Achievements Essentials** additions:  
   ✅ Journal: God Tamer  
+
+  — Added info that offering Godseeker the Delicate Flower is possible after completing at least 2 Pantheons
+
+  — Minor description changes/additions and order changes
 
 * v1.2.0 2021-02-23:
 
