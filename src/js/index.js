@@ -19,7 +19,6 @@ require("./page-functions.js");
 // require("./LoadJson.js");
 
 // Main script for analyzing the decoded save file and generating the page on the fly
-// require("./HKCheckCompletion.js");
 require("./HKCheckCompletion.js");
 
 // Load Save File for opening files, decoding, decryption

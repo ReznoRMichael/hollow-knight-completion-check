@@ -3660,6 +3660,11 @@ var HK = {
       spoiler: "The Abyss: secret room",
       wiki: "Void_Tendrils"
     },
+    killedLobsterLancer: {
+      name: "Journal: God Tamer",
+      spoiler: "Colosseum of Fools: Trial of the Fool boss",
+      wiki: "God_Tamer"
+    },
     killedPaleLurker: {
       name: "Journal: Pale Lurker",
       spoiler: "Colosseum of Fools: secret area",
@@ -25959,7 +25964,6 @@ __webpack_require__(/*! ../img/thumbnail1200x628.jpg */ "./src/img/thumbnail1200
 __webpack_require__(/*! ./page-functions.js */ "./src/js/page-functions.js"); // Instantly load test save file from .json (fast Debugging script)
 // require("./LoadJson.js");
 // Main script for analyzing the decoded save file and generating the page on the fly
-// require("./HKCheckCompletion.js");
 
 
 __webpack_require__(/*! ./HKCheckCompletion.js */ "./src/js/HKCheckCompletion.js"); // Load Save File for opening files, decoding, decryption
