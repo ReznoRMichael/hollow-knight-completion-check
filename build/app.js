@@ -151,9 +151,7 @@ function HKCheckCompletion(jsonObject) {
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID.achievements, FLEUR_DIVIDE); // ------------------------- Game Statistics ----------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID.statistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.STATISTICS, HKPlayerData, HKWorldItems, HKSceneData); // ---------------- Fleur Divide ----------------- //
-
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID.statistics, FLEUR_DIVIDE); // ------------------------- Godhome Statistics ----------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID.statistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.STATISTICS, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Godhome Statistics ----------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID.godhomeStatistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODHOME_STATISTICS, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Hints ----------------------------- //
 
@@ -1368,8 +1366,7 @@ function InitialHTMLPopulate(divIdObj) {
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.godmaster, FLEUR_DIVIDE);
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.essential, FLEUR_DIVIDE);
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.achievements, FLEUR_DIVIDE);
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.statistics, FLEUR_DIVIDE); // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.achievements, FLEUR_DIVIDE); // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
 
   if ((0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.StorageAvailable)('localStorage')) {
     if (localStorage.getItem("hkCheckboxHints") === "checked") document.getElementById("checkbox-hints").checked = true;
