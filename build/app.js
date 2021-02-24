@@ -754,29 +754,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         playerData.hasLoveKey === true || playerData.openedLoveDoor === true ? CurrentDataTrue() : CurrentDataFalse();
         break;
 
-      case "gotLurkerKey":
-      case "nightmareLanternLit":
-      case "killedPaleLurker":
-      case "whiteDefenderDefeated":
-      case "gotGrimmNotch":
-      case "fragileGreed_unbreakable":
-      case "fragileHealth_unbreakable":
-      case "fragileStrength_unbreakable":
-      case "killedBindingSeal":
-      case "killedGodseekerMask":
-      case "givenGodseekerFlower":
-      case "givenOroFlower":
-      case "givenWhiteLadyFlower":
-      case "givenEmilitiaFlower":
-        if (playerData.hasOwnProperty(i) === false) {
-          CurrentDataBlank();
-          textPrefix = "<del>".concat(textPrefix, "</del>");
-          break;
-        }
-
-        playerData[i] === true ? CurrentDataTrue() : CurrentDataFalse();
-        break;
-
       case "paleOreSeer":
         // #2
         playerData.dreamReward2 === true ? CurrentDataTrue() : CurrentDataFalse();
@@ -855,16 +832,6 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         if (playerData[i] === false && playerData.killedVoidIdol_3 === true) CurrentDataTrue();
         break;
 
-      case "killedVoidIdol_3":
-        if (playerData.hasOwnProperty(i) === false) {
-          CurrentDataBlank();
-          textPrefix = "<del>".concat(textPrefix, "</del>");
-          break;
-        }
-
-        playerData[i] === true ? CurrentDataTrue() : CurrentDataFalse();
-        break;
-
       case "greyPrinceDefeated":
         // compatibility with earlier game versions
         if (playerData.hasOwnProperty(i) === false) {
@@ -933,28 +900,22 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
 
         break;
 
-      case "killedNailBros":
-      case "killedPaintmaster":
-      case "killedNailsage":
-      case "killedHollowKnightPrime":
-        /* Godmaster backwards compatibility */
+      case "mrMushroomState":
+        sFillText += CheckMrMushroomState(divId, dataObject[i], playerData[i]);
+        break;
+
+      default:
+        // backwards compatibility with earlier game versions
         if (playerData.hasOwnProperty(i) === false) {
           CurrentDataBlank();
-          textPrefix = "<del>".concat(textPrefix, "</del>");
+          textPrefix = "<del>".concat(dataObject[i].name, "</del>");
+          break;
         } else if (playerData[i] === true) {
           CurrentDataTrue();
         } else {
           CurrentDataFalse();
         }
 
-        break;
-
-      case "mrMushroomState":
-        sFillText += CheckMrMushroomState(divId, dataObject[i], playerData[i]);
-        break;
-
-      default:
-        playerData[i] === true ? CurrentDataTrue() : CurrentDataFalse();
     } // end switch (i)
 
 
