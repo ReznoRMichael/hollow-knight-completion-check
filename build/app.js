@@ -3941,7 +3941,7 @@ var HK = {
       wiki: "White_Palace#Sub-area:_Path_of_Pain"
     },
     whitePalaceSecretRoomVisited: {
-      name: "White Palace Secret Room visited",
+      name: "White Palace Secret Room Discovered",
       spoiler: "Help identify this room!",
       wiki: "White_Palace#Secret_rooms"
     },
