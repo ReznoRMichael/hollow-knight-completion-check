@@ -1440,12 +1440,12 @@ const HK = {
         },
         killsBindingSeal: {
             name: "Path of Pain",
-            spoiler: "White Palace: main secret area",
+            spoiler: "White Palace: Main Secret Area",
             wiki: "White_Palace#Sub-area:_Path_of_Pain"
         },
         whitePalaceSecretRoomVisited: {
-            name: "White Palace Secret Room Discovered",
-            spoiler: "Help identify this room!",
+            name: "The Pale King's Workshop",
+            spoiler: "White Palace: Secret Room #1",
             wiki: "White_Palace#Secret_rooms"
         },
         elderbugGaveFlower: {
