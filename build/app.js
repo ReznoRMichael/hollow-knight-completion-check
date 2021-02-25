@@ -3688,8 +3688,8 @@ var HK = {
       wiki: "Void_Heart"
     },
     killedFinalBoss: {
-      name: "Radiance",
-      spoiler: "Forgotten Crossroads: Black Egg Temple",
+      name: "The Radiance",
+      spoiler: "Black Egg Temple: Dreamnail Hollow Knight",
       wiki: "Radiance"
     },
     mrMushroomState: {
