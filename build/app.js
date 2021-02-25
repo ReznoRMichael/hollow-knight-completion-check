@@ -3684,12 +3684,12 @@ var HK = {
     },
     gotShadeCharm: {
       name: "Void Heart",
-      spoiler: "Kingsoul + Birthplace",
+      spoiler: "Equip Kingsoul Charm and find Birthplace",
       wiki: "Void_Heart"
     },
     killedFinalBoss: {
       name: "The Radiance",
-      spoiler: "Black Egg Temple: Dreamnail Hollow Knight",
+      spoiler: "Requires Void Heart & Dream Nail Hollow Knight",
       wiki: "Radiance"
     },
     mrMushroomState: {
