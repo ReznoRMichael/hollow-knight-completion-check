@@ -3890,7 +3890,7 @@ var HK = {
     whitePalaceSecretRoomVisited: {
       name: "White Palace: Secret Room #1",
       spoiler: "The Pale King's Workshop",
-      wiki: "White_Palace#Secret_rooms"
+      wiki: "White_Palace#The_Pale_King.27s_workshop"
     },
     elderbugGaveFlower: {
       name: "Delicate Flower: Elderbug",
