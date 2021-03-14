@@ -419,6 +419,10 @@ const HK = {
             name: "#31 Dashmaster",
             spoiler: "Fungal Wastes",
             wiki: "Dashmaster"
+            /* 
+            "id": "Shiny Item Stand",
+            "sceneName": "Fungus2_23",
+            */
         }, // 2
         gotCharm_32: {
             name: "#32 Quick Slash",
