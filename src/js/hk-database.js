@@ -893,6 +893,12 @@ const HK = {
             spoiler: "Fungal Wastes, near Dashmaster charm statue",
             wiki: "Bretta"
         },
+        /* 
+        Mantis Village Floor Lever
+        Fungal Wastes, right of Mantis Claw
+            "id": "Mantis Lever (1)",
+            "sceneName": "Fungus2_14",
+        */
         hasLantern: {
             name: "Lumafly Lantern",
             spoiler: "Sly: 1800 Geo",
@@ -1438,6 +1444,9 @@ const HK = {
             spoiler: "White Palace: Path of Pain completion",
             wiki: "Seal_of_Binding"
         },
+        /* 
+        Path of Pain entrance discovered
+        */
         killsBindingSeal: {
             name: "White Palace: Path of Pain",
             spoiler: "Main Secret Area, After Middle Lift",
@@ -1448,6 +1457,11 @@ const HK = {
             spoiler: "The Pale King's Workshop",
             wiki: "White_Palace#The_Pale_King.27s_workshop"
         },
+        /* 
+        White Lady's Room
+        "id": "Quake Floor",
+        "sceneName": "White_Palace_09",
+        */
         elderbugGaveFlower: {
             name: "Delicate Flower: Elderbug",
             spoiler: "Deliver from Traitor's Child Grave",
