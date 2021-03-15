@@ -95,6 +95,9 @@ If you like the tool and wish it developed further with more functions and easie
 
 * v1.4.0 Upcoming:
 
+  — **Game Completion Essentials** additions:  
+  ✅ Mantis Village Floor Lever (required for Mantis Lords and Mark of Pride)  
+
   — **Game Statistics** changes/additions:  
   ✅ "White Palace Secret Room Discovered" is White Palace: Secret Room #1 (thanks to kanna for double-checking)  
   ✅  
