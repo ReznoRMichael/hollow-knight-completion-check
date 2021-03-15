@@ -93,7 +93,7 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
-* Upcoming:
+* v1.4.0 Upcoming:
 
   — "White Palace Secret Room Discovered" is White Palace: Secret Room #1 (the Pale King's Workshop) (thanks to kanna for double-checking)
 
