@@ -914,6 +914,13 @@ const HK = {
             "id": "Mantis Lever (1)",
             "sceneName": "Fungus2_14",
         */
+        mantisVillageFloorLever: {
+            name: "Mantis Village Floor Lever",
+            spoiler: "Fungal Wastes, right of Mantis Claw",
+            id: "Mantis Lever (1)",
+            sceneName: "Fungus2_14",
+            wiki: "Fungal_Wastes#Sub-area:_Mantis_Village"
+        },
         hasLantern: {
             name: "Lumafly Lantern",
             spoiler: "Sly: 1800 Geo",
