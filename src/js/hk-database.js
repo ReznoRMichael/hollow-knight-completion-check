@@ -143,7 +143,7 @@ const HK = {
             spoiler: "...a fellow town bug who seems to be lost somewhere in the crossroads"
         },
         hasLantern: {
-            spoiler: "...a precious item able to carry some light to even the darkest places"
+            spoiler: "...bright little crystal companion able to light a way through the thickest dark places"
         },
         hasSuperDash: {
             spoiler: "...some powerful crystal beating somewhere deep inside the mines"
@@ -151,11 +151,16 @@ const HK = {
         hasDreamNail: {
             spoiler: "...a weapon from a dream world only found where the souls can peacefully rest"
         },
+        /* 
+        Either:
+        - used the elevator in Resting Grounds to City of Tears
+        - opened the Fungal Wastes city gate
+        */
         killedInfectedKnight: {
-            spoiler: "...a shattered corpse forgotten in a windy cave in the ancient depths below the city"
+            spoiler: "...a shattered corpse forgotten in a windy cave in the ancient depths below the rainy city"
         },
         hasDoubleJump: {
-            spoiler: "...something incredibly light dropped by a monarchfly in the ancient depths below the city"
+            spoiler: "...something incredibly light dropped by a monarchfly in the ancient depths below the rainy city"
         },
         killedBlackKnight: {
             spoiler: "...discarded shells of black guards lying on the floor of a high spire"
