@@ -95,9 +95,13 @@ If you like the tool and wish it developed further with more functions and easie
 
 * v1.4.0 Upcoming:
 
-  — "White Palace Secret Room Discovered" is White Palace: Secret Room #1 (the Pale King's Workshop) (thanks to kanna for double-checking)
+  — **Game Statistics** changes/additions:  
+  ✅ "White Palace Secret Room Discovered" is White Palace: Secret Room #1 (thanks to kanna for double-checking)  
+  ✅  
 
   — Removed red cross mark appearing on hints
+
+  — Changed the Lumafly Lantern hint, and some smaller hint texts additions
 
 * v1.3.0 2021-02-24:
 
