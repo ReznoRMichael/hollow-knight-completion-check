@@ -869,6 +869,12 @@ const HK = {
             max: 46,
             wiki: "Grub"
         },
+        /* 
+        Grub Rewards Collected:
+        */
+        /* 
+        Charms Found:
+        */
         dreamOrbs: {
             name: "Essence Collected",
             spoiler: "Dream Nail (2400 for completion)",
@@ -1086,6 +1092,9 @@ const HK = {
             max: 164,
             wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
         },
+        /* 
+        Add 4 remaining to Hunter Notes max
+        */
         journalNotesCompleted: {
             name: "Hunter Notes Completed",
             spoiler: "Hunter's Journal (164 max)",
@@ -1094,12 +1103,12 @@ const HK = {
         },
         hasJournal: {
             name: "Hunter's Journal",
-            spoiler: "Greenpath: Hunter",
+            spoiler: "Greenpath: Hunter, above Stone Sanctuary",
             wiki: "Hunter%27s_Journal"
         },
         hasHuntersMark: {
             name: "Hunter's Mark",
-            spoiler: "Greenpath: Hunter",
+            spoiler: "Greenpath: Hunter, complete base 146 Hunter Notes",
             wiki: "Hunter's_Mark"
         },
         killedPrayerSlug: {
