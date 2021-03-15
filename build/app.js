@@ -185,7 +185,7 @@ function PrepareHTMLString(divId) {
   var span = ["<span class='spoiler-span'>", "</span>"];
   var spoilerSpan = ["<span class='spoiler-text'>", "</span>"];
 
-  if (divId === "hints") {
+  if (divId.id === "hk-hints") {
     span[0] = "<span>";
     icon = "";
   } // let dash = "";
@@ -2859,6 +2859,11 @@ var HK = {
       name: "#31 Dashmaster",
       spoiler: "Fungal Wastes",
       wiki: "Dashmaster"
+      /* 
+      "id": "Shiny Item Stand",
+      "sceneName": "Fungus2_23",
+      */
+
     },
     // 2
     gotCharm_32: {
@@ -3312,6 +3317,14 @@ var HK = {
       max: 46,
       wiki: "Grub"
     },
+
+    /* 
+    Grub Rewards Collected:
+    */
+
+    /* 
+    Charms Found:
+    */
     dreamOrbs: {
       name: "Essence Collected",
       spoiler: "Dream Nail (2400 for completion)",
@@ -3340,6 +3353,13 @@ var HK = {
       spoiler: "Fungal Wastes, near Dashmaster charm statue",
       wiki: "Bretta"
     },
+
+    /* 
+    Mantis Village Floor Lever
+    Fungal Wastes, right of Mantis Claw
+        "id": "Mantis Lever (1)",
+        "sceneName": "Fungus2_14",
+    */
     hasLantern: {
       name: "Lumafly Lantern",
       spoiler: "Sly: 1800 Geo",
@@ -3521,6 +3541,10 @@ var HK = {
       max: 164,
       wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
     },
+
+    /* 
+    Add 4 remaining to Hunter Notes max
+    */
     journalNotesCompleted: {
       name: "Hunter Notes Completed",
       spoiler: "Hunter's Journal (164 max)",
@@ -3529,12 +3553,12 @@ var HK = {
     },
     hasJournal: {
       name: "Hunter's Journal",
-      spoiler: "Greenpath: Hunter",
+      spoiler: "Greenpath: Hunter, above Stone Sanctuary",
       wiki: "Hunter%27s_Journal"
     },
     hasHuntersMark: {
       name: "Hunter's Mark",
-      spoiler: "Greenpath: Hunter",
+      spoiler: "Greenpath: Hunter, complete base 146 Hunter Notes",
       wiki: "Hunter's_Mark"
     },
     killedPrayerSlug: {
@@ -3882,6 +3906,10 @@ var HK = {
       spoiler: "White Palace: Path of Pain completion",
       wiki: "Seal_of_Binding"
     },
+
+    /* 
+    Path of Pain entrance discovered
+    */
     killsBindingSeal: {
       name: "White Palace: Path of Pain",
       spoiler: "Main Secret Area, After Middle Lift",
@@ -3892,6 +3920,12 @@ var HK = {
       spoiler: "The Pale King's Workshop",
       wiki: "White_Palace#The_Pale_King.27s_workshop"
     },
+
+    /* 
+    White Lady's Room
+    "id": "Quake Floor",
+    "sceneName": "White_Palace_09",
+    */
     elderbugGaveFlower: {
       name: "Delicate Flower: Elderbug",
       spoiler: "Deliver from Traitor's Child Grave",

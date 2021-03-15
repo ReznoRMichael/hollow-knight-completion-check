@@ -260,7 +260,7 @@ function PrepareHTMLString(divId, textPrefix = "Unknown Completion Element: ", t
 
     let span = ["<span class='spoiler-span'>", "</span>"];
     let spoilerSpan = ["<span class='spoiler-text'>", "</span>"];
-    if (divId === "hints") {
+    if (divId.id === "hk-hints") {
         span[0] = "<span>";
         icon = "";
     }
