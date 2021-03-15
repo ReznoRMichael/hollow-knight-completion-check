@@ -95,7 +95,9 @@ If you like the tool and wish it developed further with more functions and easie
 
 * Upcoming:
 
-  — Pale King's Workshop Secret Room #1
+  — "White Palace Secret Room Discovered" is White Palace: Secret Room #1 (the Pale King's Workshop) (thanks to kanna for double-checking)
+
+  — Removed red cross mark appearing on hints
 
 * v1.3.0 2021-02-24:
 
