@@ -604,7 +604,7 @@ const HK = {
         },
         Fungus1_36: {
             name: "Mask Shard #12",
-            spoiler: "Greenpath: Stone Sanctuary",
+            spoiler: "Greenpath: Stone Sanctuary, Lumafly Lantern",
             wiki: "Mask_Shard"
         },
         Mines_32: {
