@@ -765,7 +765,7 @@ const HK = {
     WARRIORDREAMS: {
         aladarSlugDefeated: {
             name: "P1 Gorb",
-            spoiler: "Howling Cliffs",
+            spoiler: "Howling Cliffs, top middle area",
             wiki: "Gorb"
         },
         xeroDefeated: {
