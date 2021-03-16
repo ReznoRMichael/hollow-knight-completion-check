@@ -881,10 +881,6 @@ const HK = {
             wiki: "Grub#Rewards_and_locations"
         },
         /* 
-        grubRewards
-        Grub Rewards Collected:
-        */
-        /* 
         Charms Found:
         */
         dreamOrbs: {
