@@ -96,6 +96,7 @@ If you like the tool and wish it developed further with more functions and easie
 * v1.4.0 Upcoming:
 
   — **Game Completion Essentials** additions:  
+  ✅ Grubfather Rewards Collected  
   ✅ Mantis Village Floor Lever (required for 1% Mantis Lords and 1% Mark of Pride)  
 
   — **Game Statistics** changes/additions:  
