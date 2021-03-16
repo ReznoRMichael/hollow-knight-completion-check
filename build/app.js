@@ -680,11 +680,18 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         countTotal = amount;
 
         if (i === "journalEntriesCompleted" || i === "journalNotesCompleted") {
-          countTotal = amount + " / " + playerData.journalEntriesTotal;
+          countTotal = "".concat(amount, " / ").concat(playerData.journalEntriesTotal);
         }
 
-        if (i === "grubsCollected") LogMissingGrubs();
-        textPrefix += ": " + countTotal;
+        if (i === "grubsCollected") {
+          LogMissingGrubs();
+        }
+
+        textPrefix += ": ".concat(countTotal);
+
+        if (i === "grubRewards") {
+          textPrefix += " / ".concat(playerData.grubsCollected);
+        }
 
         if (i === "greyPrinceDefeats") {
           // backwards compatibility with earlier game versions
@@ -3333,11 +3340,6 @@ var HK = {
       max: 46,
       wiki: "Grub#Rewards_and_locations"
     },
-
-    /* 
-    grubRewards
-    Grub Rewards Collected:
-    */
 
     /* 
     Charms Found:

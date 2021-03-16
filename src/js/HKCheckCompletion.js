@@ -758,16 +758,26 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 } else {
                     amount = playerData[i];
                 }
+
                 if (i === "stationsOpened") {
                     if (playerData.openedHiddenStation === true) amount++;
                 }
-                countTotal = amount;
-                if (i === "journalEntriesCompleted" || i === "journalNotesCompleted") {
-                    countTotal = amount + " / " + playerData.journalEntriesTotal;
-                }
-                if (i === "grubsCollected") LogMissingGrubs();
 
-                textPrefix += ": " + countTotal;
+                countTotal = amount;
+
+                if (i === "journalEntriesCompleted" || i === "journalNotesCompleted") {
+                    countTotal = `${amount} / ${playerData.journalEntriesTotal}`;
+                }
+
+                if (i === "grubsCollected") {
+                    LogMissingGrubs();
+                }
+
+                textPrefix += `: ${countTotal}`;
+
+                if (i === "grubRewards") {
+                    textPrefix += ` / ${playerData.grubsCollected}`;
+                }
 
                 if (i === "greyPrinceDefeats") {
                     // backwards compatibility with earlier game versions
