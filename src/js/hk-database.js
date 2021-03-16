@@ -619,7 +619,7 @@ const HK = {
         },
         Hive_04: {
             name: "Mask Shard #15",
-            spoiler: "The Hive, use Hive Guardian",
+            spoiler: "The Hive, use Hive Guardian to break wall",
             wiki: "Mask_Shard"
         },
         Room_Mansion: {
