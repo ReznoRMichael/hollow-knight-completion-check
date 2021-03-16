@@ -412,7 +412,7 @@ const HK = {
         }, // 2
         gotCharm_29: {
             name: "#29 Hiveblood",
-            spoiler: "The Hive",
+            spoiler: "The Hive, defeat Hive Knight",
             wiki: "Hiveblood"
         }, // 4
         gotCharm_30: {
