@@ -97,6 +97,7 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **Game Completion Essentials** additions:  
   ✅ Grubfather Rewards Collected (shows how many rewards the player has collected, and how many remain waiting to collect)  
+  ✅ Charms Owned (useful for Salubra Notches)  
   ✅ Mantis Village Floor Lever (required for 1% Mantis Lords and 1% Mark of Pride)  
 
   — **Game Statistics** changes/additions:  
