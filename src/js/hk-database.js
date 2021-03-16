@@ -441,7 +441,7 @@ const HK = {
         }, // 2
         gotCharm_34: {
             name: "#34 Deep Focus",
-            spoiler: "Crystal Peak",
+            spoiler: "Crystal Peak, requires Crystal Heart",
             wiki: "Deep_Focus"
         }, // 4
         gotCharm_35: {
