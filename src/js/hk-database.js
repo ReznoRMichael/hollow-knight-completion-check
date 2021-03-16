@@ -807,7 +807,7 @@ const HK = {
         },
         gotCharm_38: {
             name: "Charm #38 Dreamshield",
-            spoiler: "Resting Grounds",
+            spoiler: "Resting Grounds, one of left walls below Seer",
             wiki: "Dreamshield"
         },
         gotCharm_39: {
