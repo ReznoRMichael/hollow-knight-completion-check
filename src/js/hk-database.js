@@ -1235,7 +1235,7 @@ const HK = {
         },
         salubraBlessing: {
             name: "Salubra's Blessing",
-            spoiler: "Salubra: 800 Geo + all 40 Charms found",
+            spoiler: "Salubra: 800 Geo + all 40 Charms Owned",
             wiki: "Salubra's_Blessing"
         },
         zoteStatus: {
