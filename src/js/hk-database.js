@@ -624,7 +624,7 @@ const HK = {
         },
         Room_Mansion: {
             name: "Mask Shard #16",
-            spoiler: "Resting Grounds: Delicate Flower",
+            spoiler: "Resting Grounds: Delicate Flower (Grey Mourner)",
             wiki: "Mask_Shard"
         }
     },
