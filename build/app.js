@@ -2740,25 +2740,25 @@ var HK = {
     // 3
     gotCharm_10: {
       name: "#10 Defender's Crest",
-      spoiler: "Royal Waterways",
+      spoiler: "Royal Waterways, defeat Dung Defender",
       wiki: "Defender's_Crest"
     },
     // 1
     gotCharm_11: {
       name: "#11 Flukenest",
-      spoiler: "Royal Waterways",
+      spoiler: "Royal Waterways, defeat Flukemarm",
       wiki: "Flukenest"
     },
     // 3
     gotCharm_12: {
       name: "#12 Thorns of Agony",
-      spoiler: "Greenpath",
+      spoiler: "Greenpath, requires Mothwing Cloak",
       wiki: "Thorns_of_Agony"
     },
     // 1
     gotCharm_13: {
       name: "#13 Mark of Pride",
-      spoiler: "Mantis Village",
+      spoiler: "Mantis Village, defeat Mantis Lords",
       wiki: "Mark_of_Pride"
     },
     // 3
@@ -2776,13 +2776,13 @@ var HK = {
     // 2
     gotCharm_16: {
       name: "#16 Sharp Shadow",
-      spoiler: "Deepnest",
+      spoiler: "Deepnest, requires Shade Cloak",
       wiki: "Sharp_Shadow"
     },
     // 2
     gotCharm_17: {
       name: "#17 Spore Shroom",
-      spoiler: "Fungal Wastes",
+      spoiler: "Fungal Wastes, near Queen's Gardens",
       wiki: "Spore_Shroom"
     },
     // 1
@@ -2806,37 +2806,37 @@ var HK = {
     // 2
     gotCharm_21: {
       name: "#21 Soul Eater",
-      spoiler: "Resting Grounds",
+      spoiler: "Resting Grounds, requires Desolate Dive",
       wiki: "Soul_Eater"
     },
     // 4
     gotCharm_22: {
       name: "#22 Glowing Womb",
-      spoiler: "Forgotten Crossroads",
+      spoiler: "Forgotten Crossroads, requires Crystal Heart",
       wiki: "Glowing_Womb"
     },
     // 2
     gotCharm_23: {
       name: "#23 Fragile Heart",
-      spoiler: "Leg Eater: 350/280 Geo",
+      spoiler: "Leg Eater: 350 Geo (280 with Defender's Crest)",
       wiki: "Fragile_Heart"
     },
     // 2
     gotCharm_24: {
       name: "#24 Fragile Greed",
-      spoiler: "Leg Eater: 250/200 Geo",
+      spoiler: "Leg Eater: 250 Geo (200 with Defender's Crest)",
       wiki: "Fragile_Greed"
     },
     // 2
     gotCharm_25: {
       name: "#25 Fragile Strength",
-      spoiler: "Leg Eater: 600/480 Geo",
+      spoiler: "Leg Eater: 600 Geo (480 with Defender's Crest)",
       wiki: "Fragile_Strength"
     },
     // 3
     gotCharm_26: {
       name: "#26 Nailmaster’s Glory",
-      spoiler: "Sly: All Nail Arts",
+      spoiler: "Sly: Learn all Nail Arts",
       wiki: "Nailmaster's_Glory"
     },
     // 1
@@ -2848,13 +2848,13 @@ var HK = {
     // 4
     gotCharm_28: {
       name: "#28 Shape of Unn",
-      spoiler: "Greenpath: Lake of Unn",
+      spoiler: "Greenpath: Lake of Unn, requires Isma's Tear",
       wiki: "Shape_of_Unn"
     },
     // 2
     gotCharm_29: {
       name: "#29 Hiveblood",
-      spoiler: "The Hive",
+      spoiler: "The Hive, defeat Hive Knight",
       wiki: "Hiveblood"
     },
     // 4
@@ -2866,7 +2866,7 @@ var HK = {
     // 1
     gotCharm_31: {
       name: "#31 Dashmaster",
-      spoiler: "Fungal Wastes",
+      spoiler: "Fungal Wastes, below bench, near Bretta",
       wiki: "Dashmaster"
       /* 
       "id": "Shiny Item Stand",
@@ -2877,7 +2877,7 @@ var HK = {
     // 2
     gotCharm_32: {
       name: "#32 Quick Slash",
-      spoiler: "Kingdom's Edge",
+      spoiler: "Kingdom's Edge, requires Desolate Dive",
       wiki: "Quick_Slash"
     },
     // 3
@@ -2889,19 +2889,19 @@ var HK = {
     // 2
     gotCharm_34: {
       name: "#34 Deep Focus",
-      spoiler: "Crystal Peak",
+      spoiler: "Crystal Peak, requires Crystal Heart",
       wiki: "Deep_Focus"
     },
     // 4
     gotCharm_35: {
       name: "#35 Grubberfly’s Elegy",
-      spoiler: "Grubfather: 46 Grubs rescued",
+      spoiler: "Grubfather: All 46 Grubs rescued",
       wiki: "Grubberfly's_Elegy"
     },
     // 3
     gotCharm_36: {
       name: "#36 Kingsoul",
-      spoiler: "Queen's Gardens + White Palace",
+      spoiler: "Queen's Gardens (Shade Cloak) + White Palace (Awoken Dream Nail)",
       wiki: "Kingsoul"
     } // 5
 

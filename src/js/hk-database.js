@@ -534,7 +534,7 @@ const HK = {
         },
         hasKingsBrand: {
             name: "King's Brand",
-            spoiler: "Kingdom's Edge",
+            spoiler: "Kingdom's Edge, defeat Hornet Sentinel",
             wiki: "King's_Brand"
         },
         hasShadowDash: {
