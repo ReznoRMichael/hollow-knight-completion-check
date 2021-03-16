@@ -93,7 +93,7 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
-* v1.4.0 Upcoming:
+* v1.4.0 2021-03-16:
 
   — **Game Completion Essentials** additions:  
   ✅ Grubfather Rewards Collected (shows how many rewards the player has collected, and how many remain waiting to collect)  
