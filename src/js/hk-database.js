@@ -446,7 +446,7 @@ const HK = {
         }, // 4
         gotCharm_35: {
             name: "#35 Grubberfly’s Elegy",
-            spoiler: "Grubfather: 46 Grubs rescued",
+            spoiler: "Grubfather: All 46 Grubs rescued",
             wiki: "Grubberfly's_Elegy"
         }, // 3
         gotCharm_36: {
