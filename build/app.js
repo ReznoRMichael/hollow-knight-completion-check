@@ -3342,8 +3342,8 @@ var HK = {
       wiki: "Grub#Rewards_and_locations"
     },
     charmsOwned: {
-      name: "Charms Found",
-      spoiler: "out of 40 total",
+      name: "Charms Owned",
+      spoiler: "out of 40 total, useful for Salubra Notches",
       max: 40,
       wiki: "Category:Charms#List_of_Charms"
     },
