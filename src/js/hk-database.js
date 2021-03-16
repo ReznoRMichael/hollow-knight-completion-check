@@ -1331,7 +1331,7 @@ const HK = {
         },
         whisperingRoots: {
             name: "Whispering Roots Completed",
-            spoiler: "Dream Nail (out of 15)",
+            spoiler: "Dream Nail (15 Roots total)",
             max: 15,
             wiki: "Whispering_Root"
         },
