@@ -322,7 +322,7 @@ const HK = {
         }, // 1
         gotCharm_11: {
             name: "#11 Flukenest",
-            spoiler: "Royal Waterways",
+            spoiler: "Royal Waterways, defeat Flukemarm",
             wiki: "Flukenest"
         }, // 3
         gotCharm_12: {
