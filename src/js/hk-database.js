@@ -1485,7 +1485,7 @@ const HK = {
         },
         whiteLadyRoom: {
             name: "White Palace: Secret Room #2",
-            spoiler: "White Lady's Room",
+            spoiler: "White Lady's Room, break floor",
             id: "Quake Floor",
             sceneName: "White_Palace_09",
             wiki: "White_Palace#White_Lady.27s_room"

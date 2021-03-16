@@ -3935,12 +3935,13 @@ var HK = {
       spoiler: "The Pale King's Workshop",
       wiki: "White_Palace#The_Pale_King.27s_workshop"
     },
-
-    /* 
-    White Lady's Room
-    "id": "Quake Floor",
-    "sceneName": "White_Palace_09",
-    */
+    whiteLadyRoom: {
+      name: "White Palace: Secret Room #2",
+      spoiler: "White Lady's Room, break floor",
+      id: "Quake Floor",
+      sceneName: "White_Palace_09",
+      wiki: "White_Palace#White_Lady.27s_room"
+    },
     elderbugGaveFlower: {
       name: "Delicate Flower: Elderbug",
       spoiler: "Deliver from Traitor's Child Grave",
