@@ -96,15 +96,18 @@ If you like the tool and wish it developed further with more functions and easie
 * v1.4.0 Upcoming:
 
   — **Game Completion Essentials** additions:  
-  ✅ Mantis Village Floor Lever (required for Mantis Lords and Mark of Pride)  
+  ✅ Mantis Village Floor Lever (required for 1% Mantis Lords and 1% Mark of Pride)  
 
   — **Game Statistics** changes/additions:  
-  ✅ "White Palace Secret Room Discovered" is White Palace: Secret Room #1 (thanks to kanna for double-checking)  
-  ✅  
+  ✅ "White Palace Secret Room Discovered" becomes White Palace: Secret Room #1 (Pale King's Workshop) (thanks to kanna for double-checking)  
+  ✅ White Palace: Secret Room #2 (White Lady's Room) (thanks to kanna for the idea)  
+  ✅ White Palace: Path of Pain Entrance  
 
-  — Removed red cross mark appearing on hints
+  — Removed red cross mark appearing near hints text
 
-  — Changed the Lumafly Lantern hint, and some smaller hint texts additions
+  — Changed the Lumafly Lantern hint, and some smaller hint texts additions  
+
+  — Minor spoiler changes and additions for better precision  
 
 * v1.3.0 2021-02-24:
 
