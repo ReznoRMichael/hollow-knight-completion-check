@@ -614,7 +614,7 @@ const HK = {
         },
         Fungus2_25: {
             name: "Mask Shard #14",
-            spoiler: "Deepnest, access from Fungal Core, Monarch Wings",
+            spoiler: "Deepnest, from Fungal Core (Monarch Wings)",
             wiki: "Mask_Shard"
         },
         Hive_04: {

@@ -3074,7 +3074,7 @@ var HK = {
     },
     Fungus2_25: {
       name: "Mask Shard #14",
-      spoiler: "Deepnest, access from Fungal Core, Monarch Wings",
+      spoiler: "Deepnest, from Fungal Core (Monarch Wings)",
       wiki: "Mask_Shard"
     },
     Hive_04: {
@@ -3268,7 +3268,7 @@ var HK = {
     },
     gotCharm_38: {
       name: "Charm #38 Dreamshield",
-      spoiler: "Resting Grounds, one of left walls below Seer",
+      spoiler: "Resting Grounds, go left below Seer",
       wiki: "Dreamshield"
     },
     gotCharm_39: {
