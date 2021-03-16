@@ -392,7 +392,7 @@ const HK = {
         }, // 2
         gotCharm_25: {
             name: "#25 Fragile Strength",
-            spoiler: "Leg Eater: 600/480 Geo",
+            spoiler: "Leg Eater: 600 Geo (480 with Defender's Crest)",
             wiki: "Fragile_Strength"
         }, // 3
         gotCharm_26: {
