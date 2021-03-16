@@ -451,7 +451,7 @@ const HK = {
         }, // 3
         gotCharm_36: {
             name: "#36 Kingsoul",
-            spoiler: "Queen's Gardens + White Palace",
+            spoiler: "Queen's Gardens (Shade Cloak) + White Palace (Awoken Dream Nail)",
             wiki: "Kingsoul"
         }, // 5
     },
