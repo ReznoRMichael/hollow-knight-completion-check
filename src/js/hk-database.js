@@ -327,7 +327,7 @@ const HK = {
         }, // 3
         gotCharm_12: {
             name: "#12 Thorns of Agony",
-            spoiler: "Greenpath",
+            spoiler: "Greenpath, requires Mothwing Cloak",
             wiki: "Thorns_of_Agony"
         }, // 1
         gotCharm_13: {
