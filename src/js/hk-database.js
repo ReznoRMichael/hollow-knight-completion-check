@@ -422,7 +422,7 @@ const HK = {
         }, // 1
         gotCharm_31: {
             name: "#31 Dashmaster",
-            spoiler: "Fungal Wastes",
+            spoiler: "Fungal Wastes, below bench, near Bretta",
             wiki: "Dashmaster"
             /* 
             "id": "Shiny Item Stand",
