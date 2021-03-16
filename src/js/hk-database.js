@@ -192,14 +192,14 @@ const HK = {
         // killedBigFly
         bossGruzMother: {
             name: "P1 Gruz Mother",
-            spoiler: "Forgotten Crossroads",
+            spoiler: "Forgotten Crossroads, lower right area",
             id: "Battle Scene",
             sceneName: "Crossroads_04",
             wiki: "Gruz_Mother"
         },
         falseKnightDefeated: {
             name: "P1 False Knight",
-            spoiler: "Forgotten Crossroads, middle area",
+            spoiler: "Forgotten Crossroads, middle area map symbol",
             wiki: "False_Knight"
         }, // "Battle Scene" - "Crossroads_10" ?
         hornet1Defeated: {
@@ -209,7 +209,7 @@ const HK = {
         },
         defeatedDungDefender: {
             name: "P1 Dung Defender",
-            spoiler: "Royal Waterways, east",
+            spoiler: "Royal Waterways, right area",
             wiki: "Dung_Defender"
         },
         // killedMawlek
@@ -233,12 +233,12 @@ const HK = {
         // "Battle Scene" - "Deepnest_32" ?
         killedMimicSpider: {
             name: "P2 Nosk",
-            spoiler: "Deepnest, use Crystal Heart, left of Hot Springs",
+            spoiler: "Deepnest, use Crystal Heart, left of Hot Spring",
             wiki: "Nosk"
         },
         killedInfectedKnight: {
             name: "P2 Broken Vessel",
-            spoiler: "Ancient Basin, use Crystal Heart",
+            spoiler: "Ancient Basin, lower left, use Crystal Heart",
             wiki: "Broken_Vessel"
         },
         collectorDefeated: {
@@ -253,7 +253,7 @@ const HK = {
         },
         hornetOutskirtsDefeated: {
             name: "P3 Hornet Sentinel",
-            spoiler: "Kingdom's Edge, needs Monarch Wings",
+            spoiler: "Kingdom's Edge, requires Monarch Wings",
             wiki: "Hornet_Sentinel"
         },
         // "Battle Scene" - "Fungus3_23" ?
@@ -292,12 +292,12 @@ const HK = {
         }, // 2
         gotCharm_5: {
             name: "#5 Baldur Shell",
-            spoiler: "Howling Cliffs",
+            spoiler: "Howling Cliffs, bottom, near Greenpath",
             wiki: "Baldur_Shell"
         }, // 2
         gotCharm_6: {
             name: "#6 Fury of the Fallen",
-            spoiler: "King's Pass",
+            spoiler: "King's Pass, nail-bounce spikes",
             wiki: "Fury_of_the_Fallen"
         }, // 2
         gotCharm_7: {
