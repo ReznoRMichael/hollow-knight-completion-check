@@ -3344,6 +3344,12 @@ var HK = {
     /* 
     Charms Found:
     */
+    charmsOwned: {
+      name: "Charms Owned",
+      spoiler: "out of 40 total",
+      max: 40,
+      wiki: "Category:Charms#List_of_Charms"
+    },
     dreamOrbs: {
       name: "Essence Collected",
       spoiler: "Dream Nail (2400 for completion)",
