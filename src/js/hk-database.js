@@ -397,7 +397,7 @@ const HK = {
         }, // 3
         gotCharm_26: {
             name: "#26 Nailmaster’s Glory",
-            spoiler: "Sly: All Nail Arts",
+            spoiler: "Sly: Learn all Nail Arts",
             wiki: "Nailmaster's_Glory"
         }, // 1
         gotCharm_27: {
