@@ -377,7 +377,7 @@ const HK = {
         }, // 4
         gotCharm_22: {
             name: "#22 Glowing Womb",
-            spoiler: "Forgotten Crossroads",
+            spoiler: "Forgotten Crossroads, requires Crystal Heart",
             wiki: "Glowing_Womb"
         }, // 2
         gotCharm_23: {
