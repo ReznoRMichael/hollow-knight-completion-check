@@ -579,7 +579,7 @@ const HK = {
         },
         Crossroads_09: {
             name: "Mask Shard #7",
-            spoiler: "Forgotten Crossroads: Brooding Mawlek",
+            spoiler: "Forgotten Crossroads: defeat Brooding Mawlek",
             wiki: "Mask_Shard"
         },
         Crossroads_38: {
