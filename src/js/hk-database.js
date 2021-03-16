@@ -775,7 +775,7 @@ const HK = {
         },
         mumCaterpillarDefeated: {
             name: "P2 Marmu",
-            spoiler: "Queen's Gardens",
+            spoiler: "Queen's Gardens, left of Stag Station",
             wiki: "Marmu"
         },
         elderHuDefeated: {
