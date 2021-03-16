@@ -1380,7 +1380,7 @@ const HK = {
             wiki: "Rancid_Egg"
         },
         jinnEggsSold: {
-            name: "Rancid Eggs sold to Jinn",
+            name: "Rancid Eggs Sold to Jinn",
             spoiler: "Only in Steel Soul Mode",
             wiki: "Jinn"
         },
