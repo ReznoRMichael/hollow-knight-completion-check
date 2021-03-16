@@ -599,7 +599,7 @@ const HK = {
         },
         Waterways_04b: {
             name: "Mask Shard #11",
-            spoiler: "Royal Waterways",
+            spoiler: "Royal Waterways, top left area, swim left",
             wiki: "Mask_Shard"
         },
         Fungus1_36: {
