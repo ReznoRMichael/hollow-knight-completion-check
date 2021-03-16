@@ -655,12 +655,13 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
       case "areaMaps":
       case "grubsCollected":
       case "grubRewards":
+      case "charmsOwned":
+      case "charmSlots":
       case "dreamOrbs":
+      case "whisperingRoots":
       case "fountainGeo":
       case "nailDamage":
       case "stationsOpened":
-      case "charmSlots":
-      case "whisperingRoots":
       case "journalEntriesCompleted":
       case "journalNotesCompleted":
       case "whiteDefenderDefeats":
@@ -3340,12 +3341,8 @@ var HK = {
       max: 46,
       wiki: "Grub#Rewards_and_locations"
     },
-
-    /* 
-    Charms Found:
-    */
     charmsOwned: {
-      name: "Charms Owned",
+      name: "Charms Found",
       spoiler: "out of 40 total",
       max: 40,
       wiki: "Category:Charms#List_of_Charms"

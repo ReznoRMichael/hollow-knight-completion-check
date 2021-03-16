@@ -880,11 +880,8 @@ const HK = {
             max: 46,
             wiki: "Grub#Rewards_and_locations"
         },
-        /* 
-        Charms Found:
-        */
         charmsOwned: {
-            name: "Charms Owned",
+            name: "Charms Found",
             spoiler: "out of 40 total",
             max: 40,
             wiki: "Category:Charms#List_of_Charms"
