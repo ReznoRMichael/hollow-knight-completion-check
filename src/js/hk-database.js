@@ -431,7 +431,7 @@ const HK = {
         }, // 2
         gotCharm_32: {
             name: "#32 Quick Slash",
-            spoiler: "Kingdom's Edge",
+            spoiler: "Kingdom's Edge, requires Desolate Dive",
             wiki: "Quick_Slash"
         }, // 3
         gotCharm_33: {
