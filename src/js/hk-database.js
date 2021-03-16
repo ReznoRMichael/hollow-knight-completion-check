@@ -1458,29 +1458,38 @@ const HK = {
             spoiler: "Forgotten Crossroads + destroy sign",
             wiki: "Menderbug"
         },
-        killedBindingSeal: {
-            name: "Journal: Seal of Binding",
-            spoiler: "White Palace: Path of Pain completion",
-            wiki: "Seal_of_Binding"
-        },
         /* 
         Path of Pain entrance discovered
         */
+        pathOfPainEntrance: {
+            name: "White Palace: Path of Pain Entrance",
+            spoiler: "Break left wall above spikes",
+            id: "Breakable Wall Ruin Lift",
+            sceneName: "White_Palace_06",
+            wiki: "White_Palace#Sub-area:_Path_of_Pain"
+        },
         killsBindingSeal: {
             name: "White Palace: Path of Pain",
             spoiler: "Main Secret Area, After Middle Lift",
             wiki: "White_Palace#Sub-area:_Path_of_Pain"
+        },
+        killedBindingSeal: {
+            name: "Journal: Seal of Binding",
+            spoiler: "White Palace: Path of Pain completion",
+            wiki: "Seal_of_Binding"
         },
         whitePalaceSecretRoomVisited: {
             name: "White Palace: Secret Room #1",
             spoiler: "The Pale King's Workshop",
             wiki: "White_Palace#The_Pale_King.27s_workshop"
         },
-        /* 
-        White Lady's Room
-        "id": "Quake Floor",
-        "sceneName": "White_Palace_09",
-        */
+        whiteLadyRoom: {
+            name: "White Palace: Secret Room #2",
+            spoiler: "White Lady's Room",
+            id: "Quake Floor",
+            sceneName: "White_Palace_09",
+            wiki: "White_Palace#White_Lady.27s_room"
+        },
         elderbugGaveFlower: {
             name: "Delicate Flower: Elderbug",
             spoiler: "Deliver from Traitor's Child Grave",

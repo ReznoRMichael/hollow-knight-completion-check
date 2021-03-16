@@ -779,6 +779,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
       case "pantheonCrystalGuardian":
       case "pantheonEnragedGuardian":
       case "mantisVillageFloorLever":
+      case "pathOfPainEntrance":
         FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? CurrentDataTrue() : CurrentDataFalse();
         break;
 
@@ -3360,13 +3361,6 @@ var HK = {
       spoiler: "Fungal Wastes, near Dashmaster charm statue",
       wiki: "Bretta"
     },
-
-    /* 
-    Mantis Village Floor Lever
-    Fungal Wastes, right of Mantis Claw
-        "id": "Mantis Lever (1)",
-        "sceneName": "Fungus2_14",
-    */
     mantisVillageFloorLever: {
       name: "Mantis Village Floor Lever",
       spoiler: "Fungal Wastes, right of Mantis Claw",
@@ -3915,19 +3909,26 @@ var HK = {
       spoiler: "Forgotten Crossroads + destroy sign",
       wiki: "Menderbug"
     },
-    killedBindingSeal: {
-      name: "Journal: Seal of Binding",
-      spoiler: "White Palace: Path of Pain completion",
-      wiki: "Seal_of_Binding"
-    },
 
     /* 
     Path of Pain entrance discovered
     */
+    pathOfPainEntrance: {
+      name: "White Palace: Path of Pain Entrance",
+      spoiler: "Break left wall above spikes",
+      id: "Breakable Wall Ruin Lift",
+      sceneName: "White_Palace_06",
+      wiki: "White_Palace#Sub-area:_Path_of_Pain"
+    },
     killsBindingSeal: {
       name: "White Palace: Path of Pain",
       spoiler: "Main Secret Area, After Middle Lift",
       wiki: "White_Palace#Sub-area:_Path_of_Pain"
+    },
+    killedBindingSeal: {
+      name: "Journal: Seal of Binding",
+      spoiler: "White Palace: Path of Pain completion",
+      wiki: "Seal_of_Binding"
     },
     whitePalaceSecretRoomVisited: {
       name: "White Palace: Secret Room #1",
