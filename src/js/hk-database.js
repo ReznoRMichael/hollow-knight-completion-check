@@ -1325,7 +1325,7 @@ const HK = {
         },
         charmSlots: {
             name: "Charm Notches",
-            spoiler: "out of 11 total",
+            spoiler: "11 Charm Notches total",
             max: 11,
             wiki: "Category:Charms#Notches"
         },
@@ -1336,31 +1336,31 @@ const HK = {
             wiki: "Whispering_Root"
         },
         relicsWandererJournal: {
-            name: "Relic #1 found total",
+            name: "Relic #1 Found Total",
             nameHeld: "trinket1",
             nameSold: "soldTrinket1",
-            spoiler: "Wanderer's Journal (out of 14)",
+            spoiler: "Wanderer's Journal (14 total)",
             max: 14,
             wiki: "Wanderer's_Journal"
         },
         relicsHallownestSeal: {
-            name: "Relic #2 found total",
+            name: "Relic #2 Found Total",
             nameHeld: "trinket2",
             nameSold: "soldTrinket2",
-            spoiler: "Hallownest Seal (out of 17)",
+            spoiler: "Hallownest Seal (17 total)",
             max: 17,
             wiki: "Hallownest_Seal"
         },
         relicsKingsIdol: {
-            name: "Relic #3 found total",
+            name: "Relic #3 Found Total",
             nameHeld: "trinket3",
             nameSold: "soldTrinket3",
-            spoiler: "King's Idol (out of 8)",
+            spoiler: "King's Idol (8 total)",
             max: 8,
             wiki: "King's_Idol"
         },
         relicsArcaneEgg: {
-            name: "Relic #4 found total",
+            name: "Relic #4 Found Total",
             nameHeld: "trinket4",
             nameSold: "soldTrinket4",
             spoiler: "Arcane Egg (4 max, 1 missable)",
