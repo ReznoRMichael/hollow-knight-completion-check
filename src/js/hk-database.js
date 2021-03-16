@@ -770,7 +770,7 @@ const HK = {
         },
         xeroDefeated: {
             name: "P2 Xero",
-            spoiler: "Resting Grounds",
+            spoiler: "Resting Grounds, below Crystal Peak drop",
             wiki: "Xero"
         },
         mumCaterpillarDefeated: {
