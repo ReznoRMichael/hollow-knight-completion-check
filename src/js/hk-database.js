@@ -609,7 +609,7 @@ const HK = {
         },
         Mines_32: {
             name: "Mask Shard #13",
-            spoiler: "Crystal Peak: Enraged Guardian",
+            spoiler: "Crystal Peak: defeat Enraged Guardian",
             wiki: "Mask_Shard"
         },
         Fungus2_25: {
