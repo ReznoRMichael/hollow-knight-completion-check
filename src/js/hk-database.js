@@ -332,7 +332,7 @@ const HK = {
         }, // 1
         gotCharm_13: {
             name: "#13 Mark of Pride",
-            spoiler: "Mantis Village",
+            spoiler: "Mantis Village, defeat Mantis Lords",
             wiki: "Mark_of_Pride"
         }, // 3
         gotCharm_14: {
