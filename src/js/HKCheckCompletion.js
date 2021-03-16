@@ -740,6 +740,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         switch (i) {
             case "areaMaps":
             case "grubsCollected":
+            case "grubRewards":
             case "dreamOrbs":
             case "fountainGeo":
             case "nailDamage":

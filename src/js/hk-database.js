@@ -874,7 +874,14 @@ const HK = {
             max: 46,
             wiki: "Grub"
         },
+        grubRewards: {
+            name: "Grubfather Rewards Collected",
+            spoiler: "out of 46 total",
+            max: 46,
+            wiki: "Grub#Rewards_and_locations"
+        },
         /* 
+        grubRewards
         Grub Rewards Collected:
         */
         /* 

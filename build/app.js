@@ -654,6 +654,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
     switch (i) {
       case "areaMaps":
       case "grubsCollected":
+      case "grubRewards":
       case "dreamOrbs":
       case "fountainGeo":
       case "nailDamage":
@@ -2985,7 +2986,7 @@ var HK = {
     },
     hasKingsBrand: {
       name: "King's Brand",
-      spoiler: "Kingdom's Edge",
+      spoiler: "Kingdom's Edge, defeat Hornet Sentinel",
       wiki: "King's_Brand"
     },
     hasShadowDash: {
@@ -3030,7 +3031,7 @@ var HK = {
     },
     Crossroads_09: {
       name: "Mask Shard #7",
-      spoiler: "Forgotten Crossroads: Brooding Mawlek",
+      spoiler: "Forgotten Crossroads: defeat Brooding Mawlek",
       wiki: "Mask_Shard"
     },
     Crossroads_38: {
@@ -3050,32 +3051,32 @@ var HK = {
     },
     Waterways_04b: {
       name: "Mask Shard #11",
-      spoiler: "Royal Waterways",
+      spoiler: "Royal Waterways, top left area, swim left",
       wiki: "Mask_Shard"
     },
     Fungus1_36: {
       name: "Mask Shard #12",
-      spoiler: "Greenpath: Stone Sanctuary",
+      spoiler: "Greenpath: Stone Sanctuary, Lumafly Lantern",
       wiki: "Mask_Shard"
     },
     Mines_32: {
       name: "Mask Shard #13",
-      spoiler: "Crystal Peak: Enraged Guardian",
+      spoiler: "Crystal Peak: defeat Enraged Guardian",
       wiki: "Mask_Shard"
     },
     Fungus2_25: {
       name: "Mask Shard #14",
-      spoiler: "Deepnest, entrance from Fungal Wastes",
+      spoiler: "Deepnest, access from Fungal Core, Monarch Wings",
       wiki: "Mask_Shard"
     },
     Hive_04: {
       name: "Mask Shard #15",
-      spoiler: "The Hive, use Hive Guardian",
+      spoiler: "The Hive, use Hive Guardian to break wall",
       wiki: "Mask_Shard"
     },
     Room_Mansion: {
       name: "Mask Shard #16",
-      spoiler: "Resting Grounds: Delicate Flower",
+      spoiler: "Resting Grounds: Delicate Flower (Grey Mourner)",
       wiki: "Mask_Shard"
     }
   },
@@ -3115,7 +3116,7 @@ var HK = {
     },
     Ruins2_09: {
       name: "Vessel Fragment #7",
-      spoiler: "Above King's Station",
+      spoiler: "City of Tears, above King's Station",
       wiki: "Vessel_Fragment"
     },
     Deepnest_38: {
@@ -3217,17 +3218,17 @@ var HK = {
   WARRIORDREAMS: {
     aladarSlugDefeated: {
       name: "P1 Gorb",
-      spoiler: "Howling Cliffs",
+      spoiler: "Howling Cliffs, top middle area",
       wiki: "Gorb"
     },
     xeroDefeated: {
       name: "P2 Xero",
-      spoiler: "Resting Grounds",
+      spoiler: "Resting Grounds, below Crystal Peak drop",
       wiki: "Xero"
     },
     mumCaterpillarDefeated: {
       name: "P2 Marmu",
-      spoiler: "Queen's Gardens",
+      spoiler: "Queen's Gardens, left of Stag Station",
       wiki: "Marmu"
     },
     elderHuDefeated: {
@@ -3242,7 +3243,7 @@ var HK = {
     },
     noEyesDefeated: {
       name: "P4 No Eyes",
-      spoiler: "Greenpath: Stone Sanctuary",
+      spoiler: "Greenpath: Stone Sanctuary, requires Lumafly Lantern",
       wiki: "No_Eyes"
     },
     markothDefeated: {
@@ -3259,7 +3260,7 @@ var HK = {
     },
     gotCharm_38: {
       name: "Charm #38 Dreamshield",
-      spoiler: "Resting Grounds",
+      spoiler: "Resting Grounds, one of left walls below Seer",
       wiki: "Dreamshield"
     },
     gotCharm_39: {
@@ -3326,8 +3327,15 @@ var HK = {
       max: 46,
       wiki: "Grub"
     },
+    grubRewards: {
+      name: "Grubfather Rewards Collected",
+      spoiler: "out of 46 total",
+      max: 46,
+      wiki: "Grub#Rewards_and_locations"
+    },
 
     /* 
+    grubRewards
     Grub Rewards Collected:
     */
 
