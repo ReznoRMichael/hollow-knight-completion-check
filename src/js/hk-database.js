@@ -347,7 +347,7 @@ const HK = {
         }, // 2
         gotCharm_16: {
             name: "#16 Sharp Shadow",
-            spoiler: "Deepnest",
+            spoiler: "Deepnest, requires Shade Cloak",
             wiki: "Sharp_Shadow"
         }, // 2
         gotCharm_17: {
