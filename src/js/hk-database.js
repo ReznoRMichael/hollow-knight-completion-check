@@ -387,7 +387,7 @@ const HK = {
         }, // 2
         gotCharm_24: {
             name: "#24 Fragile Greed",
-            spoiler: "Leg Eater: 250/200 Geo",
+            spoiler: "Leg Eater: 250 Geo (200 with Defender's Crest)",
             wiki: "Fragile_Greed"
         }, // 2
         gotCharm_25: {
