@@ -352,7 +352,7 @@ const HK = {
         }, // 2
         gotCharm_17: {
             name: "#17 Spore Shroom",
-            spoiler: "Fungal Wastes",
+            spoiler: "Fungal Wastes, near Queen's Gardens",
             wiki: "Spore_Shroom"
         }, // 1
         gotCharm_18: {
