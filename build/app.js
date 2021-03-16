@@ -3331,19 +3331,19 @@ var HK = {
   ESSENTIAL: {
     grubsCollected: {
       name: "Grubs Rescued",
-      spoiler: "out of 46 total",
+      spoiler: "46 Grubs total",
       max: 46,
       wiki: "Grub"
     },
     grubRewards: {
       name: "Grubfather Rewards Collected",
-      spoiler: "46 rewards total",
+      spoiler: "46 Rewards total",
       max: 46,
       wiki: "Grub#Rewards_and_locations"
     },
     charmsOwned: {
       name: "Charms Owned",
-      spoiler: "out of 40 total, useful for Salubra Notches",
+      spoiler: "40 Charms total, useful for Salubra Notches",
       max: 40,
       wiki: "Category:Charms#List_of_Charms"
     },
@@ -3354,8 +3354,8 @@ var HK = {
       wiki: "Dream_Nail#Essence"
     },
     stationsOpened: {
-      name: "Stag Stations opened",
-      spoiler: "out of 10 total",
+      name: "Stag Stations Opened",
+      spoiler: "10 Stag Stations total",
       max: 10,
       wiki: "Fast_Travel_(Hollow_Knight)#Locations_and_Prices"
     },
@@ -3552,7 +3552,7 @@ var HK = {
   ACHIEVEMENTS: {
     areaMaps: {
       name: "Area Maps",
-      spoiler: "Cornifer and Iselda (out of 13)",
+      spoiler: "Cornifer and Iselda, 13 Area Maps total",
       max: 13,
       list: ["mapCrossroads", "mapGreenpath", "mapFogCanyon", "mapRoyalGardens", "mapFungalWastes", "mapCity", "mapWaterways", "mapMines", "mapDeepnest", "mapCliffs", "mapOutskirts", "mapRestingGrounds", "mapAbyss"],
       wiki: "Map_and_Quill#Maps"
@@ -3784,7 +3784,7 @@ var HK = {
     },
     charmSlots: {
       name: "Charm Notches",
-      spoiler: "out of 11 total",
+      spoiler: "11 Charm Notches total",
       max: 11,
       wiki: "Category:Charms#Notches"
     },
@@ -3795,31 +3795,31 @@ var HK = {
       wiki: "Whispering_Root"
     },
     relicsWandererJournal: {
-      name: "Relic #1 found total",
+      name: "Relic #1 Found Total",
       nameHeld: "trinket1",
       nameSold: "soldTrinket1",
-      spoiler: "Wanderer's Journal (out of 14)",
+      spoiler: "Wanderer's Journal (14 total)",
       max: 14,
       wiki: "Wanderer's_Journal"
     },
     relicsHallownestSeal: {
-      name: "Relic #2 found total",
+      name: "Relic #2 Found Total",
       nameHeld: "trinket2",
       nameSold: "soldTrinket2",
-      spoiler: "Hallownest Seal (out of 17)",
+      spoiler: "Hallownest Seal (17 total)",
       max: 17,
       wiki: "Hallownest_Seal"
     },
     relicsKingsIdol: {
-      name: "Relic #3 found total",
+      name: "Relic #3 Found Total",
       nameHeld: "trinket3",
       nameSold: "soldTrinket3",
-      spoiler: "King's Idol (out of 8)",
+      spoiler: "King's Idol (8 total)",
       max: 8,
       wiki: "King's_Idol"
     },
     relicsArcaneEgg: {
-      name: "Relic #4 found total",
+      name: "Relic #4 Found Total",
       nameHeld: "trinket4",
       nameSold: "soldTrinket4",
       spoiler: "Arcane Egg (4 max, 1 missable)",
@@ -3839,7 +3839,7 @@ var HK = {
       wiki: "Rancid_Egg"
     },
     jinnEggsSold: {
-      name: "Rancid Eggs sold to Jinn",
+      name: "Rancid Eggs Sold to Jinn",
       spoiler: "Only in Steel Soul Mode",
       wiki: "Jinn"
     },
@@ -3982,13 +3982,13 @@ var HK = {
       wiki: "Delicate_Flower#List_of_Possible_Recipients"
     },
     whiteDefenderDefeats: {
-      name: "White Defender times defeated",
+      name: "White Defender Times Defeated",
       spoiler: "Royal Waterways (5 max)",
       max: 5,
       wiki: "White_Defender"
     },
     greyPrinceDefeats: {
-      name: "Grey Prince Zote times defeated",
+      name: "Grey Prince Zote Times Defeated",
       spoiler: "Dirtmouth (10 max)",
       max: 10,
       wiki: "Grey_Prince_Zote"
