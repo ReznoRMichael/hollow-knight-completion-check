@@ -876,7 +876,7 @@ const HK = {
         },
         grubRewards: {
             name: "Grubfather Rewards Collected",
-            spoiler: "out of 46 total",
+            spoiler: "46 rewards total",
             max: 46,
             wiki: "Grub#Rewards_and_locations"
         },
