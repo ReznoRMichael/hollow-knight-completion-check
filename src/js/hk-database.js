@@ -407,7 +407,7 @@ const HK = {
         }, // 4
         gotCharm_28: {
             name: "#28 Shape of Unn",
-            spoiler: "Greenpath: Lake of Unn",
+            spoiler: "Greenpath: Lake of Unn, requires Isma's Tear",
             wiki: "Shape_of_Unn"
         }, // 2
         gotCharm_29: {
