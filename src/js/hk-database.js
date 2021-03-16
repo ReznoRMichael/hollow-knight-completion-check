@@ -664,7 +664,7 @@ const HK = {
         },
         Ruins2_09: {
             name: "Vessel Fragment #7",
-            spoiler: "Above King's Station",
+            spoiler: "City of Tears, above King's Station",
             wiki: "Vessel_Fragment"
         },
         Deepnest_38: {
