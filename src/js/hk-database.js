@@ -1522,13 +1522,13 @@ const HK = {
             wiki: "Delicate_Flower#List_of_Possible_Recipients"
         },
         whiteDefenderDefeats: {
-            name: "White Defender times defeated",
+            name: "White Defender Times Defeated",
             spoiler: "Royal Waterways (5 max)",
             max: 5,
             wiki: "White_Defender"
         },
         greyPrinceDefeats: {
-            name: "Grey Prince Zote times defeated",
+            name: "Grey Prince Zote Times Defeated",
             spoiler: "Dirtmouth (10 max)",
             max: 10,
             wiki: "Grey_Prince_Zote"
