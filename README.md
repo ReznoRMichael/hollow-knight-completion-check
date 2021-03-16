@@ -8,7 +8,7 @@
   <a href="https://www.youtube.com/c/MichaelReznoR" target="_blank">
   <img src="https://img.shields.io/static/v1?label=Youtube&message=reznor.technology&labelColor=lightgrey&color=FF0000&style=flat&logo=youtube"></a>
   <a href="https://www.instagram.com/reznor.technology/" target="_blank">
-  <img src="https://img.shields.io/static/v1?label=Instagram&message=reznormichael&labelColor=lightgrey&color=E4405F&style=flat&logo=Instagram"></a>
+  <img src="https://img.shields.io/static/v1?label=Instagram&message=reznor.technology&labelColor=lightgrey&color=E4405F&style=flat&logo=Instagram"></a>
 </p>
 
 # Hollow Knight: Analyze Save Completion Web Tool
