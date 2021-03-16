@@ -3409,7 +3409,7 @@ var HK = {
     },
     simpleKeyCityOfTears: {
       name: "Simple Key #2",
-      spoiler: "City of Tears, below west Stag Station",
+      spoiler: "City of Tears, below left Stag Station",
       id: "Shiny Item",
       sceneName: "Ruins1_17",
       wiki: "Simple_Key#How_to_Acquire"
@@ -3615,7 +3615,7 @@ var HK = {
     },
     killedPlantShooter: {
       name: "Journal: Gulka",
-      spoiler: "Greenpath: west of Stone Sanctuary",
+      spoiler: "Greenpath: left of Stone Sanctuary",
       wiki: "Gulka"
     },
     killedMushroomTurret: {
@@ -3645,7 +3645,7 @@ var HK = {
     },
     killedBigCentipede: {
       name: "Journal: Garpede",
-      spoiler: "Deepnest: east of Hot Spring",
+      spoiler: "Deepnest: right of Hot Spring",
       wiki: "Garpede"
     },
     killedAbyssTendril: {
@@ -3695,7 +3695,7 @@ var HK = {
     },
     salubraBlessing: {
       name: "Salubra's Blessing",
-      spoiler: "Salubra: 800 Geo + all 40 Charms found",
+      spoiler: "Salubra: 800 Geo + all 40 Charms Owned",
       wiki: "Salubra's_Blessing"
     },
     zoteStatus: {
@@ -4022,7 +4022,7 @@ var HK = {
     },
     zoteStatueWallBroken: {
       name: "Intruder Discovered",
-      spoiler: "Hall of Gods: Zote Statue (North-East)",
+      spoiler: "Hall of Gods: Zote Statue (upper right)",
       wiki: "Hall_of_Gods#Zote"
     },
     ordealAchieved: {

@@ -948,7 +948,7 @@ const HK = {
         },
         simpleKeyCityOfTears: {
             name: "Simple Key #2",
-            spoiler: "City of Tears, below west Stag Station",
+            spoiler: "City of Tears, below left Stag Station",
             id: "Shiny Item",
             sceneName: "Ruins1_17",
             wiki: "Simple_Key#How_to_Acquire"
@@ -1155,7 +1155,7 @@ const HK = {
         },
         killedPlantShooter: {
             name: "Journal: Gulka",
-            spoiler: "Greenpath: west of Stone Sanctuary",
+            spoiler: "Greenpath: left of Stone Sanctuary",
             wiki: "Gulka"
         },
         killedMushroomTurret: {
@@ -1185,7 +1185,7 @@ const HK = {
         },
         killedBigCentipede: {
             name: "Journal: Garpede",
-            spoiler: "Deepnest: east of Hot Spring",
+            spoiler: "Deepnest: right of Hot Spring",
             wiki: "Garpede"
         },
         killedAbyssTendril: {
@@ -1562,7 +1562,7 @@ const HK = {
         },
         zoteStatueWallBroken: {
             name: "Intruder Discovered",
-            spoiler: "Hall of Gods: Zote Statue (North-East)",
+            spoiler: "Hall of Gods: Zote Statue (upper right)",
             wiki: "Hall_of_Gods#Zote"
         },
         ordealAchieved: {
