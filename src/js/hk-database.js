@@ -317,7 +317,7 @@ const HK = {
         }, // 3
         gotCharm_10: {
             name: "#10 Defender's Crest",
-            spoiler: "Royal Waterways",
+            spoiler: "Royal Waterways, defeat Dung Defender",
             wiki: "Defender's_Crest"
         }, // 1
         gotCharm_11: {
