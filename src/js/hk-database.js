@@ -790,7 +790,7 @@ const HK = {
         },
         noEyesDefeated: {
             name: "P4 No Eyes",
-            spoiler: "Greenpath: Stone Sanctuary",
+            spoiler: "Greenpath: Stone Sanctuary, requires Lumafly Lantern",
             wiki: "No_Eyes"
         },
         markothDefeated: {
