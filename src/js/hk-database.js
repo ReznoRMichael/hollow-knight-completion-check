@@ -372,7 +372,7 @@ const HK = {
         }, // 2
         gotCharm_21: {
             name: "#21 Soul Eater",
-            spoiler: "Resting Grounds",
+            spoiler: "Resting Grounds, requires Desolate Dive",
             wiki: "Soul_Eater"
         }, // 4
         gotCharm_22: {
