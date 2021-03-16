@@ -870,19 +870,19 @@ const HK = {
     ESSENTIAL: {
         grubsCollected: {
             name: "Grubs Rescued",
-            spoiler: "out of 46 total",
+            spoiler: "46 Grubs total",
             max: 46,
             wiki: "Grub"
         },
         grubRewards: {
             name: "Grubfather Rewards Collected",
-            spoiler: "46 rewards total",
+            spoiler: "46 Rewards total",
             max: 46,
             wiki: "Grub#Rewards_and_locations"
         },
         charmsOwned: {
             name: "Charms Owned",
-            spoiler: "out of 40 total, useful for Salubra Notches",
+            spoiler: "40 Charms total, useful for Salubra Notches",
             max: 40,
             wiki: "Category:Charms#List_of_Charms"
         },
@@ -893,8 +893,8 @@ const HK = {
             wiki: "Dream_Nail#Essence"
         },
         stationsOpened: {
-            name: "Stag Stations opened",
-            spoiler: "out of 10 total",
+            name: "Stag Stations Opened",
+            spoiler: "10 Stag Stations total",
             max: 10,
             wiki: "Fast_Travel_(Hollow_Knight)#Locations_and_Prices"
         },
