@@ -491,7 +491,7 @@ const HK = {
     },
     DREAMNAIL: {
         hasDreamNail: {
-            name: "Dream Nail acquired",
+            name: "Dream Nail Acquired",
             spoiler: "Resting Grounds",
             wiki: "Dream_Nail"
         },
@@ -501,7 +501,7 @@ const HK = {
             wiki: "Dream_Nail#Awoken_Dream_Nail"
         },
         mothDeparted: {
-            name: "Hear the Seer's final words",
+            name: "Hear the Seer's Final Words",
             spoiler: "Seer: 2400 Essence",
             wiki: "Seer"
         }
