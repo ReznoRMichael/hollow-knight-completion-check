@@ -1339,7 +1339,7 @@ const HK = {
             name: "Relic #1 Found Total",
             nameHeld: "trinket1",
             nameSold: "soldTrinket1",
-            spoiler: "Wanderer's Journal (14 total)",
+            spoiler: "Wanderer's Journal (14 Journals total)",
             max: 14,
             wiki: "Wanderer's_Journal"
         },
@@ -1347,7 +1347,7 @@ const HK = {
             name: "Relic #2 Found Total",
             nameHeld: "trinket2",
             nameSold: "soldTrinket2",
-            spoiler: "Hallownest Seal (17 total)",
+            spoiler: "Hallownest Seal (17 Seals total)",
             max: 17,
             wiki: "Hallownest_Seal"
         },
@@ -1355,7 +1355,7 @@ const HK = {
             name: "Relic #3 Found Total",
             nameHeld: "trinket3",
             nameSold: "soldTrinket3",
-            spoiler: "King's Idol (8 total)",
+            spoiler: "King's Idol (8 Idols total)",
             max: 8,
             wiki: "King's_Idol"
         },
@@ -1363,7 +1363,7 @@ const HK = {
             name: "Relic #4 Found Total",
             nameHeld: "trinket4",
             nameSold: "soldTrinket4",
-            spoiler: "Arcane Egg (4 max, 1 missable)",
+            spoiler: "Arcane Egg (4 Eggs max, 1 missable)",
             max: 4,
             wiki: "Arcane_Egg"
         },
