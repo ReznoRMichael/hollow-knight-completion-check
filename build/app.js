@@ -3336,7 +3336,7 @@ var HK = {
       wiki: "Grub"
     },
     grubRewards: {
-      name: "Grubfather Rewards Collected",
+      name: "Grubfather Rewards Awarded",
       spoiler: "46 Rewards total",
       max: 46,
       wiki: "Grub#Rewards_and_locations"
@@ -3956,6 +3956,12 @@ var HK = {
       sceneName: "White_Palace_09",
       wiki: "White_Palace#White_Lady.27s_room"
     },
+
+    /* 
+    Secret Room #3 ?
+    "id": "Breakable Wall Waterways",
+    "sceneName": "White_Palace_09",
+    */
     elderbugGaveFlower: {
       name: "Delicate Flower: Elderbug",
       spoiler: "Deliver from Traitor's Child Grave",

@@ -93,7 +93,7 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
-* v1.4.0 2021-03-16:
+* v1.4.1 2021-03-16:
 
   — **Game Completion Essentials** additions:  
   ✅ Grubfather Rewards Collected (shows how many rewards the player has collected, and how many remain waiting to collect)  
@@ -110,6 +110,8 @@ If you like the tool and wish it developed further with more functions and easie
   — Changed the Lumafly Lantern hint, and some smaller hint texts additions  
 
   — Minor spoiler changes and additions for better precision  
+
+  — v1.4.1 2021-03-18: Changed Grubfather Rewards text to Awarded instead of Collected  
 
 * v1.3.0 2021-02-24:
 
