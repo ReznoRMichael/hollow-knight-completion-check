@@ -3929,7 +3929,7 @@ var HK = {
     */
     pathOfPainEntrance: {
       name: "White Palace: Path of Pain Entrance",
-      spoiler: "Break left wall above spikes",
+      spoiler: "Break left wall above lift area",
       id: "Breakable Wall Ruin Lift",
       sceneName: "White_Palace_06",
       wiki: "White_Palace#Sub-area:_Path_of_Pain"
