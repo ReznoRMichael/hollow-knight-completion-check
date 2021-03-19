@@ -93,6 +93,11 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
+* v1.5.0 Upcoming:  
+
+  — **Achievements Essentials** additions:  
+  ✅ Journal: Flukemunga  
+
 * v1.4.1 2021-03-16:
 
   — **Game Completion Essentials** additions:  
