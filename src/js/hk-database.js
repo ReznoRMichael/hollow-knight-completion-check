@@ -1198,6 +1198,11 @@ const HK = {
             spoiler: "Colosseum of Fools: Trial of the Fool boss",
             wiki: "God_Tamer"
         },
+        killedFatFluke: {
+            name: "Journal: Flukemunga",
+            spoiler: "Royal Waterways: secret area, left of bench",
+            wiki: "Flukemunga"
+        },
         killedPaleLurker: {
             name: "Journal: Pale Lurker",
             spoiler: "Colosseum of Fools: secret area",
