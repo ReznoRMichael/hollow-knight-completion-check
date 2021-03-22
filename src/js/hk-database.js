@@ -821,8 +821,8 @@ const HK = {
             wiki: "Grimmchild"
         },
         killedGrimm: {
-            name: "P3 Troupe Master",
-            spoiler: "Grimm, Dirtmouth, collect 6 flames",
+            name: "P3 Troupe Master Grimm",
+            spoiler: "Dirtmouth, collect 6 flames",
             wiki: "Grimm"
         },
         grimmChildLevel: {
