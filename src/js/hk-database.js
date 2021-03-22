@@ -816,7 +816,7 @@ const HK = {
             wiki: "Weaversong"
         },
         gotCharm_40: {
-            name: "Charm #40 Grimmchild / Carefree Melody",
+            name: "Charm #40 Grimmchild or Carefree Melody",
             spoiler: "Dirtmouth",
             wiki: "Grimmchild"
         },
@@ -826,8 +826,8 @@ const HK = {
             wiki: "Grimm"
         },
         grimmChildLevel: {
-            name: "Nightmare King Grimm / Banishment",
-            spoiler: "Dirtmouth or Howling Cliffs",
+            name: "Nightmare King or Banish Troupe",
+            spoiler: "Choice: Dirtmouth or Howling Cliffs",
             wiki: "Category:The_Grimm_Troupe#Banishment"
         }
     },
