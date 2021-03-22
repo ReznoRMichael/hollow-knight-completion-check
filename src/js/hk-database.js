@@ -821,13 +821,13 @@ const HK = {
             wiki: "Grimmchild"
         },
         killedGrimm: {
-            name: "P3 Troupe Master Grimm",
-            spoiler: "Dirtmouth, collect 6 flames",
+            name: "P3 Troupe Master",
+            spoiler: "Grimm, Dirtmouth, collect 6 flames",
             wiki: "Grimm"
         },
         grimmChildLevel: {
             name: "Nightmare King or Banish Troupe",
-            spoiler: "Choice: Dirtmouth or Howling Cliffs",
+            spoiler: "One choice per save file: Dirtmouth or Howling Cliffs",
             wiki: "Category:The_Grimm_Troupe#Banishment"
         }
     },
