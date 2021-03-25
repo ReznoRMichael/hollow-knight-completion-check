@@ -1010,6 +1010,9 @@ const HK = {
             spoiler: "Royal Waterways, lever after Dung Defender",
             wiki: "Royal_Waterways#Sub-area:_Isma.27s_Grove"
         },
+        /* 
+        "abyssGateOpened": false,
+        */
         hasTramPass: {
             name: "Tram Pass",
             spoiler: "Deepnest: Failed Tramway",
