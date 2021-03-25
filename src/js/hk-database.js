@@ -143,7 +143,7 @@ const HK = {
             spoiler: "...a fellow town bug who seems to be lost somewhere in the crossroads"
         },
         hasLantern: {
-            spoiler: "...bright little crystal companion able to light a way through the thickest dark places"
+            spoiler: "...a bright little crystal companion able to light a way through the thickest dark places"
         },
         hasSuperDash: {
             spoiler: "...some powerful crystal beating somewhere deep inside the mines"
@@ -162,12 +162,6 @@ const HK = {
         hasDoubleJump: {
             spoiler: "...something incredibly light dropped by a monarchfly in the ancient depths below the rainy city"
         },
-        killedBlackKnight: {
-            spoiler: "...discarded shells of black guards lying on the floor of a high spire"
-        },
-        lurienDefeated: {
-            spoiler: "...a dreamer sleeping somewhere at the top of a high spire"
-        },
         dungDefenderOrHornet2: {
             spoiler: "...a skilled combatant living at the heart of the sewers or watching over a shell amidst ash falling from the sky"
         },
@@ -182,6 +176,12 @@ const HK = {
         },
         hegemolDefeated: {
             spoiler: "...a dreamer sleeping near a spider nest area"
+        },
+        killedBlackKnight: {
+            spoiler: "...discarded shells of black guards lying on the floor of a high spire"
+        },
+        lurienDefeated: {
+            spoiler: "...a dreamer sleeping somewhere at the top of a high spire"
         },
         killedHollowKnight: {
             spoiler: "...a disturbance inside a black temple"
