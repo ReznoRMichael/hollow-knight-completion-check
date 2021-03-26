@@ -967,7 +967,7 @@ const HK = {
         },
         paleOreAncientBasin: {
             name: "Pale Ore #1",
-            spoiler: "Ancient Basin, near Cloth location",
+            spoiler: "Ancient Basin, left of Tram Station",
             id: "Battle Scene Ore",
             sceneName: "Abyss_17",
             wiki: "Pale_Ore"
