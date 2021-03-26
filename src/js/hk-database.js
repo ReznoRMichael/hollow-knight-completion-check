@@ -1208,7 +1208,7 @@ const HK = {
         },
         killedPaleLurker: {
             name: "Journal: Pale Lurker",
-            spoiler: "Colosseum of Fools: secret area",
+            spoiler: "Colosseum of Fools: top right breakable wall",
             wiki: "Pale_Lurker"
         },
         falseKnightDreamDefeated: {
