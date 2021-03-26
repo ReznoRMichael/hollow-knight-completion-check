@@ -979,7 +979,7 @@ const HK = {
         },
         paleOreCrystalPeak: {
             name: "Pale Ore #3",
-            spoiler: "Crystal Peak: Hallownest's Crown",
+            spoiler: "Top of Crystal Peak, use Monarch Wings",
             id: "Shiny Item Stand",
             sceneName: "Mines_34",
             wiki: "Pale_Ore#How_to_Acquire"
