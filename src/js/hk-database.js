@@ -870,7 +870,7 @@ const HK = {
     ESSENTIAL: {
         /* 
         God Tamer (Trial of the Fool)
-        
+        Soul Warrior 2 (Shade Soul)
         */
         grubsCollected: {
             name: "Grubs Rescued",
