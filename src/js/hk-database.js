@@ -868,6 +868,10 @@ const HK = {
         }
     },
     ESSENTIAL: {
+        /* 
+        God Tamer (Trial of the Fool)
+        
+        */
         grubsCollected: {
             name: "Grubs Rescued",
             spoiler: "46 Grubs total",
