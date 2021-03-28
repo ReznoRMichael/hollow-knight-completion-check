@@ -98,6 +98,8 @@ If you like the tool and wish it developed further with more functions and easie
   — **Achievements Essentials** additions:  
   ✅ Journal: Flukemunga  
 
+  — add God Tamer to Game Completion Essentials (needed for Trial of the Fool %)
+
 * v1.4.1 2021-03-16:
 
   — **Game Completion Essentials** additions:  
