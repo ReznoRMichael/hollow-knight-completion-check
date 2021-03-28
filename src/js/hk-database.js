@@ -870,7 +870,6 @@ const HK = {
     ESSENTIAL: {
         /* 
         Soul Warrior 2 (Shade Soul)
-        Vengefly King (Journal entry and Zote achievement)
         Zote (in Colosseum of Fools)
         Absolute Radiance (for P5, achievements)
         Sisters of Battle (for P5, achievements)
@@ -1253,6 +1252,11 @@ const HK = {
             name: "White Defender",
             spoiler: "Royal Waterways, Dung Defender, use Desolate Dive",
             wiki: "White_Defender"
+        },
+        killedZote: {
+            name: "Zote",
+            spoiler: "Colosseum: Trial of the Warrior (per save choice)",
+            wiki: "Zote"
         },
         greyPrinceDefeated: {
             name: "Grey Prince Zote",
