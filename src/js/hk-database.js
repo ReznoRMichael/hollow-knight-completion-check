@@ -1144,6 +1144,11 @@ const HK = {
             spoiler: "Greenpath: Hunter, complete base 146 Hunter Notes",
             wiki: "Hunter's_Mark"
         },
+        killsBigBuzzer: {
+            name: "Journal: Vengefly King",
+            spoiler: "Greenpath, Colosseum: Trial of the Warrior",
+            wiki: "Vengefly_King"
+        },
         killedPrayerSlug: {
             name: "Journal: Maggot",
             spoiler: "Forgotten Crossroads: False Knight secret room",
