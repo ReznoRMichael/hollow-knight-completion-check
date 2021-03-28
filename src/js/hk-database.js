@@ -871,6 +871,11 @@ const HK = {
         /* 
         God Tamer (Trial of the Fool)
         Soul Warrior 2 (Shade Soul)
+        Vengefly King (Journal entry and Zote achievement)
+        Zote (in Colosseum of Fools)
+        Absolute Radiance (for P5, achievements)
+        Sisters of Battle (for P5, achievements)
+        Winged Nosk (for P5, achievements)
         */
         grubsCollected: {
             name: "Grubs Rescued",
