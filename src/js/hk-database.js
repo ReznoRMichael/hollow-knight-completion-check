@@ -1066,6 +1066,11 @@ const HK = {
             spoiler: "Colosseum of Fools: Trial of the Conqueror",
             wiki: "Oblobbles"
         },
+        killedLobsterLancer: {
+            name: "God Tamer",
+            spoiler: "Colosseum of Fools: Trial of the Fool",
+            wiki: "God_Tamer"
+        },
         killedFlukeMother: {
             name: "P2 Flukemarm",
             spoiler: "Royal Waterways, requires Desolate Dive",
