@@ -869,7 +869,6 @@ const HK = {
     },
     ESSENTIAL: {
         /* 
-        God Tamer (Trial of the Fool)
         Soul Warrior 2 (Shade Soul)
         Vengefly King (Journal entry and Zote achievement)
         Zote (in Colosseum of Fools)
@@ -1060,6 +1059,11 @@ const HK = {
             id: "Mega Zombie Beam Miner (1)",
             sceneName: "Mines_18",
             wiki: "Crystal_Guardian"
+        },
+        killedBigBuzzer: {
+            name: "Vengefly King",
+            spoiler: "Colosseum of Fools: Trial of the Warrior, Greenpath",
+            wiki: "Vengefly_King"
         },
         killedOblobble: {
             name: "P2 Oblobble",
