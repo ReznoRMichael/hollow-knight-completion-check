@@ -870,7 +870,6 @@ const HK = {
     ESSENTIAL: {
         /* 
         Soul Warrior 2 (Shade Soul)
-        Zote (in Colosseum of Fools)
         Absolute Radiance (for P5, achievements)
         Sisters of Battle (for P5, achievements)
         Winged Nosk (for P5, achievements)

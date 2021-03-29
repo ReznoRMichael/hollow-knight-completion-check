@@ -95,6 +95,8 @@ If you like the tool and wish it developed further with more functions and easie
 
 * v1.5.0 Upcoming:  
 
+  — Rearranged hint system with more emphasis on gradually increasing difficulty  
+
   — **Achievements Essentials** additions:  
   ✅ Journal: Flukemunga  
 
