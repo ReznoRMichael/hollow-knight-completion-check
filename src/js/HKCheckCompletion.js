@@ -846,7 +846,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 (playerData.hasLoveKey === true || playerData.openedLoveDoor === true) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
             case "paleOreSeer": // #2
-                (playerData.dreamReward2 === true) ? CurrentDataTrue(): CurrentDataFalse();
+                (playerData.dreamReward3 === true) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
                 /* -------------------- Interactables ------------------------------- */
             case "simpleKeyCityOfTears": // #2
