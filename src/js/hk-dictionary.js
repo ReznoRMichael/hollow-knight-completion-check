@@ -1,3 +1,5 @@
+/* Huge thanks to ManicJamie for his HKTranslator: https://github.com/ManicJamie/HKTranslator */
+
 const MAP = {
     "Tutorial_01": "King's_Pass",
     "Town": "Dirtmouth",
