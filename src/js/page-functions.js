@@ -137,6 +137,19 @@ function CompletionHTML(jsObj, hkGameCompletion) {
 function GenerateInnerHTML(hkdb) {
     
     console.log(hkdb);
+
+    for (let section in hkdb.DIV_ID) {
+
+        switch (section) {
+
+            case "intro":
+
+                
+
+                break;
+            default:
+        }
+    }
 }
 
 /**
