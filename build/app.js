@@ -243,14 +243,16 @@ function CurrentDataBlank() {
 
 function CheckPlayTime(divId, playTime) {
   var icon = "<i class='icon-clock'></i>";
+  divId.playTimeIcon = icon;
   var seconds = Math.floor(playTime);
   var minutes = Math.floor(seconds / 60 % 60);
   var hours = Math.floor(seconds / 3600);
   var sec = Math.floor(seconds % 60);
   if (sec < 10) sec = "0" + sec;
   if (minutes < 10) minutes = "0" + minutes;
-  var textFill = "Time Played:" + pSpan + "<b>" + hours + " h " + minutes + " min " + sec + " sec</b>";
-  document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
+  var textFill = "Time Played:" + pSpan + "<b>" + hours + " h " + minutes + " min " + sec + " sec</b>"; // document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
+
+  document.getElementById(divId.id).innerHTML += divStart + divId.playTimeIcon + textFill + divEnd;
 }
 /**
  * Searches for completionPercentage in playerData and fills HTML with the value of the save file

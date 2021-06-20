@@ -317,6 +317,8 @@ function CurrentDataBlank() {
 function CheckPlayTime(divId, playTime) {
 
     let icon = "<i class='icon-clock'></i>";
+    divId.playTimeIcon = icon;
+    
     let seconds = Math.floor(playTime);
     let minutes = Math.floor((seconds / 60) % 60);
     let hours = Math.floor(seconds / 3600);
@@ -327,7 +329,8 @@ function CheckPlayTime(divId, playTime) {
 
     let textFill = "Time Played:" + pSpan + "<b>" + hours + " h " + minutes + " min " + sec + " sec</b>";
 
-    document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
+    // document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
+    document.getElementById(divId.id).innerHTML += divStart + divId.playTimeIcon + textFill + divEnd;
 }
 
 /**
