@@ -9,6 +9,7 @@ import HK from "./hk-database.js";
 import {
     PrefillHTML,
     CompletionHTML,
+    GenerateInnerHTML,
     AppendHTML,
     CheckboxHintsToggle,
     CheckboxSpoilersToggle,
@@ -234,6 +235,8 @@ function HKCheckCompletion(jsonObject) {
 
     CompletionHTML(HK.DIV_ID, HKPlayerData.completionPercentage);
 
+    GenerateInnerHTML(HK);
+
     // Prevents wrong checkbox behaviour (must run after everything is finished)
     CheckboxHintsToggle();
     CheckboxSpoilersToggle();
@@ -329,8 +332,10 @@ function CheckPlayTime(divId, playTime) {
 
     let textFill = "Time Played:" + pSpan + "<b>" + hours + " h " + minutes + " min " + sec + " sec</b>";
 
+    divId.playTime = hours + " h " + minutes + " min " + sec + " sec";
+
     // document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
-    document.getElementById(divId.id).innerHTML += divStart + divId.playTimeIcon + textFill + divEnd;
+    document.getElementById(divId.id).innerHTML += divStart + divId.iconPlayTime + textFill + divEnd;
 }
 
 /**

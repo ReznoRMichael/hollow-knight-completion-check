@@ -134,6 +134,11 @@ function CompletionHTML(jsObj, hkGameCompletion) {
     }
 }
 
+function GenerateInnerHTML(hkdb) {
+    
+    console.log(hkdb);
+}
+
 /**
  * Adds HTML string to an element with a given ID.
  * @param {object} divId object containing div ID of the HTML element to append to
@@ -313,6 +318,7 @@ document.getElementById("checkbox-spoilers").addEventListener("click", CheckboxS
 export {
     PrefillHTML,
     CompletionHTML,
+    GenerateInnerHTML,
     AppendHTML,
     CheckboxHintsToggle,
     CheckboxSpoilersToggle,

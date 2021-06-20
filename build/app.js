@@ -157,7 +157,8 @@ function HKCheckCompletion(jsonObject) {
 
   CheckHintsTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.HINTS, HKPlayerData, HKWorldItems); // ------------------------- Fill completion ----------------------------- //
 
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CompletionHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID, HKPlayerData.completionPercentage); // Prevents wrong checkbox behaviour (must run after everything is finished)
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CompletionHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DIV_ID, HKPlayerData.completionPercentage);
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.GenerateInnerHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default); // Prevents wrong checkbox behaviour (must run after everything is finished)
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CheckboxHintsToggle)();
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CheckboxSpoilersToggle)(); // finish and show benchmark
@@ -250,9 +251,10 @@ function CheckPlayTime(divId, playTime) {
   var sec = Math.floor(seconds % 60);
   if (sec < 10) sec = "0" + sec;
   if (minutes < 10) minutes = "0" + minutes;
-  var textFill = "Time Played:" + pSpan + "<b>" + hours + " h " + minutes + " min " + sec + " sec</b>"; // document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
+  var textFill = "Time Played:" + pSpan + "<b>" + hours + " h " + minutes + " min " + sec + " sec</b>";
+  divId.playTime = hours + " h " + minutes + " min " + sec + " sec"; // document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
 
-  document.getElementById(divId.id).innerHTML += divStart + divId.playTimeIcon + textFill + divEnd;
+  document.getElementById(divId.id).innerHTML += divStart + divId.iconPlayTime + textFill + divEnd;
 }
 /**
  * Searches for completionPercentage in playerData and fills HTML with the value of the save file
@@ -2431,7 +2433,7 @@ var HK = {
     intro: {
       h2: "Game Status",
       id: "hk-intro",
-      playTimeIcon: "<i class='icon-clock'></i>",
+      iconPlayTime: "<i class='icon-clock'></i>",
       maxPercent: 112,
       saveVersion: "0.0.0.0"
     },
@@ -4556,6 +4558,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "PrefillHTML": () => (/* binding */ PrefillHTML),
 /* harmony export */   "CompletionHTML": () => (/* binding */ CompletionHTML),
+/* harmony export */   "GenerateInnerHTML": () => (/* binding */ GenerateInnerHTML),
 /* harmony export */   "AppendHTML": () => (/* binding */ AppendHTML),
 /* harmony export */   "CheckboxHintsToggle": () => (/* binding */ CheckboxHintsToggle),
 /* harmony export */   "CheckboxSpoilersToggle": () => (/* binding */ CheckboxSpoilersToggle),
@@ -4681,6 +4684,10 @@ function CompletionHTML(jsObj, hkGameCompletion) {
 
     document.getElementById(h2id).innerHTML = h2 + fillText;
   }
+}
+
+function GenerateInnerHTML(hkdb) {
+  console.log(hkdb);
 }
 /**
  * Adds HTML string to an element with a given ID.

@@ -8,7 +8,7 @@ const HK = {
         intro: {
             h2: "Game Status",
             id: "hk-intro",
-            playTimeIcon: "<i class='icon-clock'></i>",
+            iconPlayTime: "<i class='icon-clock'></i>",
             maxPercent: 112,
             saveVersion: "0.0.0.0"
         },
