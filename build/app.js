@@ -242,8 +242,8 @@ function CurrentDataBlank() {
 
 
 function CheckPlayTime(divId, playTime) {
-  var icon = "<i class='icon-clock'></i>";
-  divId.playTimeIcon = icon;
+  /* let icon = "<i class='icon-clock'></i>";
+  divId.playTimeIcon = icon; */
   var seconds = Math.floor(playTime);
   var minutes = Math.floor(seconds / 60 % 60);
   var hours = Math.floor(seconds / 3600);
@@ -2431,6 +2431,7 @@ var HK = {
     intro: {
       h2: "Game Status",
       id: "hk-intro",
+      playTimeIcon: "<i class='icon-clock'></i>",
       maxPercent: 112,
       saveVersion: "0.0.0.0"
     },

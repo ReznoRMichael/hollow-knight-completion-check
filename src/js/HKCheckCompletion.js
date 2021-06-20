@@ -316,8 +316,8 @@ function CurrentDataBlank() {
  */
 function CheckPlayTime(divId, playTime) {
 
-    let icon = "<i class='icon-clock'></i>";
-    divId.playTimeIcon = icon;
+    /* let icon = "<i class='icon-clock'></i>";
+    divId.playTimeIcon = icon; */
     
     let seconds = Math.floor(playTime);
     let minutes = Math.floor((seconds / 60) % 60);
