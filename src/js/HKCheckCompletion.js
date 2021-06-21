@@ -347,6 +347,8 @@ function CheckCompletionPercent(divId, completionPercentage) {
 
     (completionPercentage >= 112) ? CurrentDataTrue(): CurrentDataFalse();
 
+    divId.percent = completionPercentage;
+
     let textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + divId.maxPercent + " %)";
     document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }

@@ -139,9 +139,10 @@ function CompletionHTML(jsObj, hkGameCompletion) {
  * @param {object} jsObj Object with HTML data to fill
  * @param {number} hkGameCompletion Total completion percentage in a save file
  */
- function CompletionFill(section, hkGameCompletion) {
+ function CompletionFill(section) {
 
-    let h2 = "";
+    let h2 = section.h2;
+    let h2id = `<h2 id="${section.id}">`;
     let cl = "";
     let clGreen = "box-green";
     let clRed = "box-red";
@@ -149,11 +150,7 @@ function CompletionHTML(jsObj, hkGameCompletion) {
     let mp = 0; // max Percent
     let fillText = "";
 
-    
-    h2 = section.h2;
-
     (section.hasOwnProperty("percent")) ? cp = section.percent: cp = 0;
-    if (section.id === "hk-intro") cp = hkGameCompletion;
 
     // Don't use percent-box for Essentials, Achievements, Statistics
     if (!section.hasOwnProperty("maxPercent")) {
@@ -189,7 +186,7 @@ function CompletionHTML(jsObj, hkGameCompletion) {
         fillText = `<div class='percent-box${cl}'>${(section.id === "hk-intro") ? cp: cp + section.maxPercent}%</div>`;
     }
 
-    return h2 + fillText;
+    return `${h2id}${h2}${fillText}</h2>`;
     
 }
 
@@ -199,8 +196,11 @@ function GenerateInnerHTML(hkdb) {
 
     let finalHTMLFill = "";
     let textFill = "";
+    let sections = hkdb.DIV_ID;
 
-    for (let section in hkdb.DIV_ID) {
+    for (let section in sections) {
+
+        textFill = CompletionFill(sections[section]);
 
         switch (section) {
 

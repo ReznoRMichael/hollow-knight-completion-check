@@ -265,6 +265,7 @@ function CheckPlayTime(divId, playTime) {
 
 function CheckCompletionPercent(divId, completionPercentage) {
   completionPercentage >= 112 ? CurrentDataTrue() : CurrentDataFalse();
+  divId.percent = completionPercentage;
   var textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + divId.maxPercent + " %)";
   document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }
@@ -4685,9 +4686,77 @@ function CompletionHTML(jsObj, hkGameCompletion) {
     document.getElementById(h2id).innerHTML = h2 + fillText;
   }
 }
+/**
+ * Replaces the h2 titles with a current percent/max percent values as read from the save file
+ * @param {object} jsObj Object with HTML data to fill
+ * @param {number} hkGameCompletion Total completion percentage in a save file
+ */
+
+
+function CompletionFill(section) {
+  var h2 = section.h2;
+  var h2id = "<h2 id=\"".concat(section.id, "\">");
+  var cl = "";
+  var clGreen = "box-green";
+  var clRed = "box-red";
+  var cp = 0; // current Percent
+
+  var mp = 0; // max Percent
+
+  var fillText = "";
+  section.hasOwnProperty("percent") ? cp = section.percent : cp = 0; // Don't use percent-box for Essentials, Achievements, Statistics
+
+  if (!section.hasOwnProperty("maxPercent")) {
+    fillText = "";
+  } // otherwise use percent-box with values cp/mp%
+  else {
+      mp = section.maxPercent;
+
+      if (section.id === "hk-maskshards") {
+        var perc = section.percent;
+        perc % 4 ? cp = Math.floor(perc / 4) : cp = perc / 4;
+      } else if (section.id === "hk-vesselfragments") {
+        var _perc2 = section.percent;
+        _perc2 % 3 ? cp = Math.floor(_perc2 / 3) : cp = _perc2 / 3;
+      } // switches the box to red when a section (h2) is 0
+
+
+      if (cp === 0) {
+        cl = " ".concat(clRed);
+      } // switches the box to green when a section (h2) is completed
+      else if (cp === mp) {
+          cl = " ".concat(clGreen);
+        } // default is blue (partially completed and starting value)
+        else cl = ""; // needed for Game Status to show percentage properly (adds a slash for all boxes except the Game Status one)
+
+
+      if (section.id != "hk-intro") cp += "/";
+      fillText = "<div class='percent-box".concat(cl, "'>").concat(section.id === "hk-intro" ? cp : cp + section.maxPercent, "%</div>");
+    }
+
+  return "".concat(h2id).concat(h2).concat(fillText, "</h2>");
+}
 
 function GenerateInnerHTML(hkdb) {
   console.log(hkdb);
+  var finalHTMLFill = "";
+  var textFill = "";
+  var sections = hkdb.DIV_ID;
+
+  for (var section in sections) {
+    textFill = CompletionFill(sections[section]);
+
+    switch (section) {
+      case "intro":
+        break;
+
+      default:
+    }
+
+    finalHTMLFill += textFill;
+  }
+
+  console.log(finalHTMLFill);
 }
 /**
  * Adds HTML string to an element with a given ID.
