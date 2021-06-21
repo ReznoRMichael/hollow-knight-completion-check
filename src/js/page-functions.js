@@ -125,7 +125,7 @@ function CompletionHTML(jsObj, hkGameCompletion) {
             else cl = "";
 
             // needed for Game Status to show percentage properly (adds a slash for all boxes except the Game Status one)
-            if (jsObj[i].hasOwnProperty("percent")) cp += "/";
+            if (jsObj[i].id != "hk-intro") cp += "/";
 
             fillText = `<div class='percent-box${cl}'>${(i === "intro") ? cp: cp + jsObj[i].maxPercent}%</div>`;
         }
@@ -186,7 +186,7 @@ function CompletionHTML(jsObj, hkGameCompletion) {
         fillText = `<div class='percent-box${cl}'>${(section.id === "hk-intro") ? cp: cp + section.maxPercent}%</div>`;
     }
 
-    return `${h2id}${h2}${fillText}</h2>`;
+    return `${h2id}${h2}${fillText}</h2>\n`;
     
 }
 

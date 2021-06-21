@@ -4679,7 +4679,7 @@ function CompletionHTML(jsObj, hkGameCompletion) {
           else cl = ""; // needed for Game Status to show percentage properly (adds a slash for all boxes except the Game Status one)
 
 
-        if (jsObj[i].hasOwnProperty("percent")) cp += "/";
+        if (jsObj[i].id != "hk-intro") cp += "/";
         fillText = "<div class='percent-box".concat(cl, "'>").concat(i === "intro" ? cp : cp + jsObj[i].maxPercent, "%</div>");
       }
 
@@ -4734,7 +4734,7 @@ function CompletionFill(section) {
       fillText = "<div class='percent-box".concat(cl, "'>").concat(section.id === "hk-intro" ? cp : cp + section.maxPercent, "%</div>");
     }
 
-  return "".concat(h2id).concat(h2).concat(fillText, "</h2>");
+  return "".concat(h2id).concat(h2).concat(fillText, "</h2>\n");
 }
 
 function GenerateInnerHTML(hkdb) {
