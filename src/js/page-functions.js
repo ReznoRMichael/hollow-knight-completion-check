@@ -148,9 +148,10 @@ function GenerateInnerHTML(hkdb) {
 
     for (let section in sections) {
 
-        /* creates a h2 tag for the current section and fills with current%/max% */
+        /* creates a <h2> tag for the current section and fills with current%/max% */
         textFill = CompletionFill(sections[section]);
 
+        /* create all main entries */
         switch (section) {
 
             case "intro":
@@ -161,10 +162,12 @@ function GenerateInnerHTML(hkdb) {
             default:
         }
 
+        /* Cumulate all texts into one variable for final HTML filling */
         finalHTMLFill += textFill;
 
     }
 
+    /* Final HTML Fill here */
     console.log(finalHTMLFill);
 
 }
