@@ -138,6 +138,9 @@ function GenerateInnerHTML(hkdb) {
     
     console.log(hkdb);
 
+    let finalHTMLFill = "";
+    let textFill = "";
+
     for (let section in hkdb.DIV_ID) {
 
         switch (section) {
@@ -149,7 +152,13 @@ function GenerateInnerHTML(hkdb) {
                 break;
             default:
         }
+
+        finalHTMLFill += textFill;
+
     }
+
+    console.log(finalHTMLFill);
+    
 }
 
 /**
