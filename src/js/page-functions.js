@@ -134,6 +134,41 @@ function CompletionHTML(jsObj, hkGameCompletion) {
     }
 }
 
+
+/* ################################### Optimized Functions ###################################### */
+
+
+function GenerateInnerHTML(hkdb) {
+    
+    console.log(hkdb);
+
+    let finalHTMLFill = "";
+    let textFill = "";
+    let sections = hkdb.DIV_ID;
+
+    for (let section in sections) {
+
+        /* creates a h2 tag for the current section and fills with current%/max% */
+        textFill = CompletionFill(sections[section]);
+
+        switch (section) {
+
+            case "intro":
+
+                
+
+                break;
+            default:
+        }
+
+        finalHTMLFill += textFill;
+
+    }
+
+    console.log(finalHTMLFill);
+
+}
+
 /**
  * Replaces the h2 titles with a current percent/max percent values as read from the save file
  * @param {object} jsObj Object with HTML data to fill
@@ -188,36 +223,6 @@ function CompletionHTML(jsObj, hkGameCompletion) {
 
     return `${h2id}${h2}${fillText}</h2>\n`;
     
-}
-
-function GenerateInnerHTML(hkdb) {
-    
-    console.log(hkdb);
-
-    let finalHTMLFill = "";
-    let textFill = "";
-    let sections = hkdb.DIV_ID;
-
-    for (let section in sections) {
-
-        textFill = CompletionFill(sections[section]);
-
-        switch (section) {
-
-            case "intro":
-
-                
-
-                break;
-            default:
-        }
-
-        finalHTMLFill += textFill;
-
-    }
-
-    console.log(finalHTMLFill);
-
 }
 
 /**
