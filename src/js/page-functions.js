@@ -134,6 +134,65 @@ function CompletionHTML(jsObj, hkGameCompletion) {
     }
 }
 
+/**
+ * Replaces the h2 titles with a current percent/max percent values as read from the save file
+ * @param {object} jsObj Object with HTML data to fill
+ * @param {number} hkGameCompletion Total completion percentage in a save file
+ */
+ function CompletionFill(section, hkGameCompletion) {
+
+    let h2 = "";
+    let cl = "";
+    let clGreen = "box-green";
+    let clRed = "box-red";
+    let cp = 0; // current Percent
+    let mp = 0; // max Percent
+    let fillText = "";
+
+    
+    h2 = section.h2;
+
+    (section.hasOwnProperty("percent")) ? cp = section.percent: cp = 0;
+    if (section.id === "hk-intro") cp = hkGameCompletion;
+
+    // Don't use percent-box for Essentials, Achievements, Statistics
+    if (!section.hasOwnProperty("maxPercent")) {
+        fillText = "";
+    }
+    // otherwise use percent-box with values cp/mp%
+    else {
+
+        mp = section.maxPercent;
+
+        if (section.id === "hk-maskshards") {
+            let perc = section.percent;
+            (perc % 4) ? cp = Math.floor(perc / 4): cp = perc / 4;
+        } else if (section.id === "hk-vesselfragments") {
+            let perc = section.percent;
+            (perc % 3) ? cp = Math.floor(perc / 3): cp = perc / 3;
+        }
+
+        // switches the box to red when a section (h2) is 0
+        if (cp === 0) {
+            cl = ` ${clRed}`;
+        }
+        // switches the box to green when a section (h2) is completed
+        else if (cp === mp) {
+            cl = ` ${clGreen}`;
+        }
+        // default is blue (partially completed and starting value)
+        else cl = "";
+
+        // needed for Game Status to show percentage properly (adds a slash for all boxes except the Game Status one)
+        if (section.id != "hk-intro") cp += "/";
+
+        fillText = `<div class='percent-box${cl}'>${(section.id === "hk-intro") ? cp: cp + section.maxPercent}%</div>`;
+    }
+
+    return h2 + fillText;
+    
+}
+
 function GenerateInnerHTML(hkdb) {
     
     console.log(hkdb);
@@ -158,7 +217,7 @@ function GenerateInnerHTML(hkdb) {
     }
 
     console.log(finalHTMLFill);
-    
+
 }
 
 /**
