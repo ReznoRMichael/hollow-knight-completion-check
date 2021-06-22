@@ -184,8 +184,11 @@ function GenerateInnerHTML(hkdb) {
 
     for (let section in sections) {
 
+        /* starts a new <div> with the current section id */
+        textFill = SectionStart(sections[section]);
+
         /* creates a <h2> tag for the current section and fills with current%/max% */
-        textFill = CompletionFill(sections[section]);
+        textFill += CompletionFill(sections[section]);
 
         /* create all main entries */
         switch (section) {
@@ -208,15 +211,18 @@ function GenerateInnerHTML(hkdb) {
 
 }
 
+function SectionStart(section) {
+
+    return `<div id="${section.id}">\n`;
+}
+
 /**
- * Replaces the h2 titles with a current percent/max percent values as read from the save file
- * @param {object} jsObj Object with HTML data to fill
- * @param {number} hkGameCompletion Total completion percentage in a save file
+ * Replaces the h2 titles with a current percent/max percent values as read from the database
  */
  function CompletionFill(section) {
 
     let h2 = section.h2;
-    let h2id = `<h2 id="${section.id}">`;
+    let h2id = `<h2 id="h2-${section.id}">`;
     let cl = "";
     let clGreen = "box-green";
     let clRed = "box-red";

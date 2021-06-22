@@ -4565,8 +4565,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "CheckboxSpoilersToggle": () => (/* binding */ CheckboxSpoilersToggle),
 /* harmony export */   "StorageAvailable": () => (/* binding */ StorageAvailable)
 /* harmony export */ });
+/* harmony import */ var _img_health_mask_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../img/health-mask.png */ "./src/img/health-mask.png");
+/* harmony import */ var _img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/health-mask-steel.png */ "./src/img/health-mask-steel.png");
+/* harmony import */ var _img_soul_orb_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/soul-orb.png */ "./src/img/soul-orb.png");
+/* harmony import */ var _img_notch_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/notch.png */ "./src/img/notch.png");
+/* harmony import */ var _img_notch_filled_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/notch-filled.png */ "./src/img/notch-filled.png");
+/* harmony import */ var _img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/notch-overcharmed.png */ "./src/img/notch-overcharmed.png");
+/* harmony import */ var _img_geo_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/geo.png */ "./src/img/geo.png");
+/* harmony import */ var _img_geo_shade_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/geo-shade.png */ "./src/img/geo-shade.png");
+// ---------------- Load image files (necessary for Webpack) ----------------- //
+
+
+
+
+
+
+
+ // ---------------- Constants ----------------- //
+// const DATA_UNKNOWN = "Data unknown";
+
+var SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ "
+
+var SYMBOL_TRUE = "<i class='icon-ok-squared'></i>"; // "✅ "
+// const SYMBOL_INFO = "<i class='icon-info-circled'></i>"; // "ℹ "
+
+var SYMBOL_CLOCK = "<i class='icon-clock'></i>"; // "🕑 "
+
+var SYMBOL_EMPTY = "<span class='padding-left'></span>";
+var FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
+var WIKI_LINK = "https://hollowknight.fandom.com/wiki/";
 var ROOT = document.documentElement;
 var SCROLL_BUTTON = document.querySelector(".scroll-up-button");
+/* ######################################################################################### */
 
 function ScrollToElement(element) {
   /* Scroll to the element top */
@@ -4686,16 +4716,58 @@ function CompletionHTML(jsObj, hkGameCompletion) {
     document.getElementById(h2id).innerHTML = h2 + fillText;
   }
 }
+/* ################################### Optimized Functions ###################################### */
+
+
+function GenerateInnerHTML(hkdb) {
+  console.log(hkdb);
+  var finalHTMLFill = "";
+  var textFill = "";
+  var icon = "";
+  var iconGreen = SYMBOL_TRUE;
+  var iconRed = SYMBOL_FALSE;
+  var iconClock = SYMBOL_CLOCK;
+  var iconNull = SYMBOL_EMPTY;
+  var textPrefix = "";
+  var textSuffix = "";
+  var sections = hkdb.DIV_ID;
+
+  for (var section in sections) {
+    /* starts a new <div> with the current section id */
+    textFill = SectionStart(sections[section]);
+    /* creates a <h2> tag for the current section and fills with current%/max% */
+
+    textFill += CompletionFill(sections[section]);
+    /* create all main entries */
+
+    switch (section) {
+      case "intro":
+        break;
+
+      default:
+    }
+    /* Cumulate all texts into one variable for final HTML filling */
+
+
+    finalHTMLFill += textFill;
+  }
+  /* Final HTML Fill here */
+
+
+  console.log(finalHTMLFill);
+}
+
+function SectionStart(section) {
+  return "<div id=\"".concat(section.id, "\">\n");
+}
 /**
- * Replaces the h2 titles with a current percent/max percent values as read from the save file
- * @param {object} jsObj Object with HTML data to fill
- * @param {number} hkGameCompletion Total completion percentage in a save file
+ * Replaces the h2 titles with a current percent/max percent values as read from the database
  */
 
 
 function CompletionFill(section) {
   var h2 = section.h2;
-  var h2id = "<h2 id=\"".concat(section.id, "\">");
+  var h2id = "<h2 id=\"h2-".concat(section.id, "\">");
   var cl = "";
   var clGreen = "box-green";
   var clRed = "box-red";
@@ -4735,28 +4807,6 @@ function CompletionFill(section) {
     }
 
   return "".concat(h2id).concat(h2).concat(fillText, "</h2>\n");
-}
-
-function GenerateInnerHTML(hkdb) {
-  console.log(hkdb);
-  var finalHTMLFill = "";
-  var textFill = "";
-  var sections = hkdb.DIV_ID;
-
-  for (var section in sections) {
-    textFill = CompletionFill(sections[section]);
-
-    switch (section) {
-      case "intro":
-        break;
-
-      default:
-    }
-
-    finalHTMLFill += textFill;
-  }
-
-  console.log(finalHTMLFill);
 }
 /**
  * Adds HTML string to an element with a given ID.
