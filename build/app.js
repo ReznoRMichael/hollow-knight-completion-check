@@ -4746,10 +4746,10 @@ function GenerateInnerHTML(hkdb) {
 
       default:
     }
-    /* Cumulate all texts into one variable for final HTML filling */
+    /* Cumulate all section texts into one variable for final HTML filling. End div tag */
 
 
-    finalHTMLFill += textFill;
+    finalHTMLFill += "".concat(textFill, "</div>\n");
   }
   /* Final HTML Fill here */
 
@@ -4806,7 +4806,7 @@ function CompletionFill(section) {
       fillText = "<div class='percent-box".concat(cl, "'>").concat(section.id === "hk-intro" ? cp : cp + section.maxPercent, "%</div>");
     }
 
-  return "".concat(h2id).concat(h2).concat(fillText, "</h2>\n");
+  return "\t".concat(h2id).concat(h2).concat(fillText, "</h2>\n");
 }
 /**
  * Adds HTML string to an element with a given ID.

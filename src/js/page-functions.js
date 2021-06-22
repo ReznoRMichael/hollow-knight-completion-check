@@ -201,8 +201,8 @@ function GenerateInnerHTML(hkdb) {
             default:
         }
 
-        /* Cumulate all texts into one variable for final HTML filling */
-        finalHTMLFill += textFill;
+        /* Cumulate all section texts into one variable for final HTML filling. End div tag */
+        finalHTMLFill += `${textFill}</div>\n`;
 
     }
 
@@ -266,7 +266,7 @@ function SectionStart(section) {
         fillText = `<div class='percent-box${cl}'>${(section.id === "hk-intro") ? cp: cp + section.maxPercent}%</div>`;
     }
 
-    return `${h2id}${h2}${fillText}</h2>\n`;
+    return `\t${h2id}${h2}${fillText}</h2>\n`;
     
 }
 
