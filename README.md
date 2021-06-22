@@ -93,7 +93,7 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
-* v1.5.0 Upcoming:  
+* v1.5.0 In progress:  
 
   — Rearranged hint system with more emphasis on gradually increasing difficulty  
 
