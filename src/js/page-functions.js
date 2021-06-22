@@ -1,5 +1,31 @@
+// ---------------- Load image files (necessary for Webpack) ----------------- //
+
+import HEALTH_MASK_IMAGE from "../img/health-mask.png";
+import HEALTH_MASK_STEEL_IMAGE from "../img/health-mask-steel.png";
+import SOUL_ORB_IMAGE from "../img/soul-orb.png";
+import NOTCH_IMAGE from "../img/notch.png";
+import NOTCH_FILLED_IMAGE from "../img/notch-filled.png";
+import NOTCH_OVERCHARMED_IMAGE from "../img/notch-overcharmed.png";
+import GEO_IMAGE from "../img/geo.png";
+import GEO_SHADE_IMAGE from "../img/geo-shade.png";
+
+// ---------------- Constants ----------------- //
+
+// const DATA_UNKNOWN = "Data unknown";
+const SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ "
+const SYMBOL_TRUE = "<i class='icon-ok-squared'></i>"; // "✅ "
+// const SYMBOL_INFO = "<i class='icon-info-circled'></i>"; // "ℹ "
+const SYMBOL_CLOCK = "<i class='icon-clock'></i>"; // "🕑 "
+const SYMBOL_EMPTY = "<span class='padding-left'></span>";
+const FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
+const WIKI_LINK = "https://hollowknight.fandom.com/wiki/";
+
 const ROOT = document.documentElement;
 const SCROLL_BUTTON = document.querySelector(".scroll-up-button");
+
+
+/* ######################################################################################### */
+
 
 function ScrollToElement(element) {
 
@@ -144,6 +170,16 @@ function GenerateInnerHTML(hkdb) {
 
     let finalHTMLFill = "";
     let textFill = "";
+
+    let icon = "";
+    let iconGreen = SYMBOL_TRUE;
+    let iconRed = SYMBOL_FALSE;
+    let iconClock = SYMBOL_CLOCK;
+    let iconNull = SYMBOL_EMPTY;
+
+    let textPrefix = "";
+    let textSuffix = "";
+
     let sections = hkdb.DIV_ID;
 
     for (let section in sections) {
