@@ -12,15 +12,45 @@ const HK = {
         intro: {
             h2: "Game Status",
             id: "hk-intro",
+            percent: 0,
             maxPercent: 112,
             entries: {
-                timePlayed: "0 h 00 min 00 sec",
-                gameCompletion: 0,
-                saveVersion: "0.0.0.0",
-                health: 5,
-                soul: 99,
-                notches: 3,
-                geo: 0
+                timePlayed: {
+                    name: "Time Played:",
+                    spoiler: `${HK.SECTION.intro.entries.timePlayed.timeH} h ${HK.SECTION.intro.entries.timePlayed.timeM} min ${HK.SECTION.intro.entries.timePlayed.timeS} sec"`,
+                    timeH: 0,
+                    timeM: 0,
+                    timeS: 0,
+                },
+                gameCompletion: {
+                    name: "Game Completion:",
+                    spoiler: `${HK.SECTION.intro.percent} %`,
+                    text: `(out of ${HK.SECTION.intro.maxPercent} %)`
+                },
+                saveVersion: {
+                    name: "Save Version:",
+                    spoiler: "0.0.0.0"
+                },
+                health: {
+                    name: "Health:",
+                    spoiler: "",
+                    masks: 5
+                },
+                soul: {
+                    name: "Soul:",
+                    spoiler: "",
+                    amount: 99
+                },
+                notches: {
+                    name: "Notches:",
+                    spoiler: "",
+                    amount: 3
+                },
+                geo: {
+                    name: "Geo:",
+                    spoiler: "",
+                    amount: 0
+                }
             },
         },
 
