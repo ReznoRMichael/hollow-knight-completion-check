@@ -4771,7 +4771,7 @@ function GenerateInnerHTML(hkdb) {
   var iconNull = SYMBOL_EMPTY;
   var textPrefix = "";
   var textSuffix = "";
-  var sections = hkdb.DIV_ID;
+  var sections = hkdb.SECTION;
 
   for (var section in sections) {
     /* starts a new <div> with the current section id */

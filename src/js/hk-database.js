@@ -12,9 +12,16 @@ const HK = {
         intro: {
             h2: "Game Status",
             id: "hk-intro",
-            iconPlayTime: "<i class='icon-clock'></i>",
             maxPercent: 112,
-            saveVersion: "0.0.0.0"
+            entries: {
+                timePlayed: "0 h 00 min 00 sec",
+                gameCompletion: 0,
+                saveVersion: "0.0.0.0",
+                health: 5,
+                soul: 99,
+                notches: 3,
+                geo: 0
+            },
         },
 
         /* ################ Hints ################### */

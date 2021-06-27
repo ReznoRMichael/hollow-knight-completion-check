@@ -180,7 +180,7 @@ function GenerateInnerHTML(hkdb) {
     let textPrefix = "";
     let textSuffix = "";
 
-    let sections = hkdb.DIV_ID;
+    let sections = hkdb.SECTION;
 
     for (let section in sections) {
 
