@@ -195,7 +195,7 @@ function GenerateInnerHTML(hkdb) {
 
             case "intro":
 
-                
+                textFill += "This is intro";
 
                 break;
             default:

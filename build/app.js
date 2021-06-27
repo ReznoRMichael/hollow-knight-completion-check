@@ -4742,6 +4742,7 @@ function GenerateInnerHTML(hkdb) {
 
     switch (section) {
       case "intro":
+        textFill += "This is intro";
         break;
 
       default:
