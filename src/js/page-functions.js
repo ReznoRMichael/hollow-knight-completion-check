@@ -171,18 +171,12 @@ function GenerateInnerHTML(hkdb) {
     let finalHTMLFill = "";
     let textFill = "";
 
-    let icon = "";
-    let iconGreen = SYMBOL_TRUE;
-    let iconRed = SYMBOL_FALSE;
-    let iconClock = SYMBOL_CLOCK;
-    let iconNull = SYMBOL_EMPTY;
-
-    let textPrefix = "";
-    let textSuffix = "";
-
     let sections = hkdb.SECTION;
+    let entries = {};
 
     for (let section in sections) {
+
+        entries = sections[section].entries;
 
         /* starts a new <div> with the current section id */
         textFill = SectionStart(sections[section]);
@@ -191,6 +185,10 @@ function GenerateInnerHTML(hkdb) {
         textFill += CompletionFill(sections[section]);
 
         /* create all main entries */
+        for (let entry in entries) {
+            textFill += SingleEntryFill(entries[entry]);
+        }
+
         switch (section) {
 
             case "intro":
@@ -268,6 +266,41 @@ function SectionStart(section) {
 
     return `\t${h2id}${h2}${fillText}</h2>\n`;
     
+}
+
+function SingleEntryFill(entry) {
+
+    let icon = "";
+    let iconGreen = SYMBOL_TRUE;
+    let iconRed = SYMBOL_FALSE;
+    let iconClock = SYMBOL_CLOCK;
+    let iconNull = SYMBOL_EMPTY;
+
+    let textPrefix = "";
+    let textSuffix = "";
+    let wiki = "";
+
+    let b = ["<b>", "</b>"];
+    if (!textPrefix.length) b = ["", ""];
+    if (wiki.length) b = [`<a class="wiki" href="${WIKI_LINK}${wiki}" target="_blank">`, "</a>"];
+
+    let span = ["<span class='spoiler-span'>", "</span>"];
+    let spoilerSpan = ["<span class='spoiler-text'>", "</span>"];
+    if (divId.id === "hk-hints") {
+        span[0] = "<span>";
+        icon = "";
+    }
+
+    // let dash = "";
+    if (textSuffix.length && textPrefix.length) textSuffix = "— " + textSuffix;
+    if (textPrefix.includes("<del>")) textSuffix = `<del>${textSuffix}</del>`;
+
+    return `
+    <div class='single-entry'>
+
+    </div>
+    `;
+
 }
 
 /**
