@@ -1280,7 +1280,7 @@ function InitialHTMLPopulate(divIdObj) {
 
   CurrentDataFalse(); // First Hint Only
 
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.HINTS.fireballLevel.spoiler); // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.hints, divIdObj.hints.entries.fireballLevel.spoiler); // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
 
   var hkObjArray = [_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.BOSSES, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.CHARMS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.EQUIPMENT, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.NAILARTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.MASKSHARDS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.MASKSHARDS_WORLD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.VESSELFRAGMENTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.VESSELFRAGMENTS_WORLD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DREAMERS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.COLOSSEUM, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DREAMNAIL, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.WARRIORDREAMS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GRIMMTROUPE, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.LIFEBLOOD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.ESSENTIAL, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.ACHIEVEMENTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.STATISTICS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODHOME_STATISTICS]; // duplicates and order important - must be the same as in hkObjArray[]
 
@@ -1325,7 +1325,7 @@ function InitialHTMLPopulate(divIdObj) {
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.godmaster, sFillText); // Mr Mushroom 1 - 7
 
-  sFillText = CheckMrMushroomState(divIdObj.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.ACHIEVEMENTS.mrMushroomState);
+  sFillText = CheckMrMushroomState(divIdObj.achievements, divIdObj.achievements.entries.mrMushroomState);
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.achievements, sFillText); // Fleur Dividers
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.godmaster, FLEUR_DIVIDE);

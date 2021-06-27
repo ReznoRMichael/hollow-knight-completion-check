@@ -1329,7 +1329,7 @@ function InitialHTMLPopulate(divIdObj) {
     CurrentDataFalse();
 
     // First Hint Only
-    AppendHTML(divIdObj.hints, HK.HINTS.fireballLevel.spoiler);
+    AppendHTML(divIdObj.hints, divIdObj.hints.entries.fireballLevel.spoiler);
 
     // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
     let hkObjArray = [HK.BOSSES, HK.CHARMS, HK.EQUIPMENT, HK.NAILARTS, HK.MASKSHARDS, HK.MASKSHARDS_WORLD, HK.VESSELFRAGMENTS, HK.VESSELFRAGMENTS_WORLD, HK.DREAMERS, HK.COLOSSEUM, HK.DREAMNAIL, HK.WARRIORDREAMS, HK.GRIMMTROUPE, HK.LIFEBLOOD, HK.GODMASTER, HK.ESSENTIAL, HK.ACHIEVEMENTS, HK.STATISTICS, HK.GODHOME_STATISTICS];
@@ -1372,7 +1372,7 @@ function InitialHTMLPopulate(divIdObj) {
     AppendHTML(divIdObj.godmaster, sFillText);
 
     // Mr Mushroom 1 - 7
-    sFillText = CheckMrMushroomState(divIdObj.achievements, HK.ACHIEVEMENTS.mrMushroomState);
+    sFillText = CheckMrMushroomState(divIdObj.achievements, divIdObj.achievements.entries.mrMushroomState);
     AppendHTML(divIdObj.achievements, sFillText);
 
     // Fleur Dividers
