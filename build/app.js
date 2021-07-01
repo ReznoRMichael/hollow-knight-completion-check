@@ -1102,7 +1102,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
     } // Filtering the reference database Grub list to include only the missing values
 
 
-    var missingGrubsList = _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GRUBS_LIST.filter(function (x) {
+    var missingGrubsList = divId.grubsList.filter(function (x) {
       return !rescuedGrubsSceneList.includes(x);
     });
     var length = missingGrubsList.length;
@@ -1113,7 +1113,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
       console.groupCollapsed("%cUnrescued Grubs (".concat(length, "):"), "color: #16c60c; font-weight: 700;");
 
       for (var _i15 = 0; _i15 < length; _i15++) {
-        console.log("#".concat(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GRUBS_LIST.indexOf(missingGrubsList[_i15]) + 1, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(missingGrubsList[_i15]), " \u2328\uFE0F ").concat(missingGrubsList[_i15]));
+        console.log("#".concat(divId.grubsList.indexOf(missingGrubsList[_i15]) + 1, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(missingGrubsList[_i15]), " \u2328\uFE0F ").concat(missingGrubsList[_i15]));
       }
 
       console.groupEnd();

@@ -1147,7 +1147,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         }
 
         // Filtering the reference database Grub list to include only the missing values
-        let missingGrubsList = HK.GRUBS_LIST.filter(x => !rescuedGrubsSceneList.includes(x));
+        let missingGrubsList = divId.grubsList.filter(x => !rescuedGrubsSceneList.includes(x));
         let length = missingGrubsList.length;
 
         if (!length) {
@@ -1156,7 +1156,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             console.groupCollapsed(`%cUnrescued Grubs (${length}):`, "color: #16c60c; font-weight: 700;");
 
             for (let i = 0; i < length; i++) {
-                console.log(`#${HK.GRUBS_LIST.indexOf(missingGrubsList[i]) + 1} 🗺️ ${TranslateMapName(missingGrubsList[i])} ⌨️ ${missingGrubsList[i]}`);
+                console.log(`#${divId.grubsList.indexOf(missingGrubsList[i]) + 1} 🗺️ ${TranslateMapName(missingGrubsList[i])} ⌨️ ${missingGrubsList[i]}`);
             }
 
             console.groupEnd();
