@@ -132,27 +132,27 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Bosses (Base Game) --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.bosses, HK.BOSSES, HKPlayerData, HKWorldItems);
+    CheckIfDataTrue(HK.SECTION.bosses, HK.SECTION.bosses.entries, HKPlayerData, HKWorldItems);
 
     // ---------------- Charms --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.charms, HK.CHARMS, HKPlayerData);
+    CheckIfDataTrue(HK.SECTION.charms, HK.SECTION.charms.entries, HKPlayerData);
 
     // ---------------- Colosseum of Fools --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.colosseum, HK.COLOSSEUM, HKPlayerData);
+    CheckIfDataTrue(HK.SECTION.colosseum, HK.SECTION.colosseum.entries, HKPlayerData);
 
     // ---------------- Dreamers --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.dreamers, HK.DREAMERS, HKPlayerData);
+    CheckIfDataTrue(HK.SECTION.dreamers, HK.SECTION.dreamers.entries, HKPlayerData);
 
     // ---------------- Dream Nail and Essence --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.dreamNail, HK.DREAMNAIL, HKPlayerData);
+    CheckIfDataTrue(HK.SECTION.dreamNail, HK.SECTION.dreamNail.entries, HKPlayerData);
 
     // ---------------- Equipment --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.equipment, HK.EQUIPMENT, HKPlayerData);
+    CheckIfDataTrue(HK.SECTION.equipment, HK.SECTION.equipment.entries, HKPlayerData);
 
     // ---------------- Nail Upgrades --------------------- //
 
@@ -160,45 +160,45 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Mask Shards --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.maskShards, HK.MASKSHARDS, HKPlayerData);
+    CheckIfDataTrue(HK.SECTION.maskShards, HK.SECTION.maskShards.entries, HKPlayerData);
 
     // ---------------- Mask Shards (World Map) --------------------- //
 
-    CheckWorldDataTrue(HK.SECTION.maskShards, "Heart Piece", HK.MASKSHARDS_WORLD, HKWorldItems);
+    CheckWorldDataTrue(HK.SECTION.maskShards, "Heart Piece", HK.SECTION.maskShards.entries, HKWorldItems);
 
     // ---------------- Nail Arts --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.nailArts, HK.NAILARTS, HKPlayerData);
+    CheckIfDataTrue(HK.SECTION.nailArts, HK.SECTION.nailArts.entries, HKPlayerData);
 
     // ---------------- Spells --------------------- //
 
-    CheckSpellLevel(HK.SECTION.spells, HK.SPELLS, HKPlayerData);
+    CheckSpellLevel(HK.SECTION.spells, HK.SECTION.spells.entries, HKPlayerData);
 
     // ---------------- Vessel Fragments --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.vesselFragments, HK.VESSELFRAGMENTS, HKPlayerData);
+    CheckIfDataTrue(HK.SECTION.vesselFragments, HK.SECTION.vesselFragments.entries, HKPlayerData);
 
     // ---------------- Vessel Fragments (World Map) --------------------- //
 
-    CheckWorldDataTrue(HK.SECTION.vesselFragments, "Vessel Fragment", HK.VESSELFRAGMENTS_WORLD, HKWorldItems);
+    CheckWorldDataTrue(HK.SECTION.vesselFragments, "Vessel Fragment", HK.SECTION.vesselFragments.entries, HKWorldItems);
 
     // ---------------- Warrior Dreams --------------------- //
 
-    CheckWarriorDreams(HK.SECTION.warriorDreams, HK.WARRIORDREAMS, HKPlayerData);
+    CheckWarriorDreams(HK.SECTION.warriorDreams, HK.SECTION.warriorDreams.entries, HKPlayerData);
 
     // ---------------- Grimm Troupe Content Pack --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.grimmTroupe, HK.GRIMMTROUPE, HKPlayerData);
+    CheckIfDataTrue(HK.SECTION.grimmTroupe, HK.SECTION.grimmTroupe.entries, HKPlayerData);
 
     // ---------------- Lifeblood Content Pack --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.lifeblood, HK.LIFEBLOOD, HKPlayerData);
+    CheckIfDataTrue(HK.SECTION.lifeblood, HK.SECTION.lifeblood.entries, HKPlayerData);
 
     // ---------------- Godmaster Content Pack --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.godmaster, HK.GODMASTER, HKPlayerData);
+    CheckIfDataTrue(HK.SECTION.godmaster, HK.SECTION.godmaster.entries, HKPlayerData);
 
-    CheckGodmasterDoors(HK.SECTION.godmaster, HK.GODMASTER_DOORS, HKPlayerData);
+    CheckGodmasterDoors(HK.SECTION.godmaster, HK.SECTION.godmaster.entries, HKPlayerData);
 
     // ---------------- Fleur Divide ----------------- //
 

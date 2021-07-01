@@ -108,40 +108,40 @@ function HKCheckCompletion(jsonObject) {
 
   CheckGeo(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.intro, HKPlayerData.geo, HKPlayerData.geoPool); // ---------------- Bosses (Base Game) --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.bosses, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.BOSSES, HKPlayerData, HKWorldItems); // ---------------- Charms --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.bosses, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.bosses.entries, HKPlayerData, HKWorldItems); // ---------------- Charms --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.charms, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.CHARMS, HKPlayerData); // ---------------- Colosseum of Fools --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.charms, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.charms.entries, HKPlayerData); // ---------------- Colosseum of Fools --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.colosseum, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.COLOSSEUM, HKPlayerData); // ---------------- Dreamers --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.colosseum, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.colosseum.entries, HKPlayerData); // ---------------- Dreamers --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.dreamers, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DREAMERS, HKPlayerData); // ---------------- Dream Nail and Essence --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.dreamers, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.dreamers.entries, HKPlayerData); // ---------------- Dream Nail and Essence --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.dreamNail, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DREAMNAIL, HKPlayerData); // ---------------- Equipment --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.dreamNail, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.dreamNail.entries, HKPlayerData); // ---------------- Equipment --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.equipment, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.EQUIPMENT, HKPlayerData); // ---------------- Nail Upgrades --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.equipment, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.equipment.entries, HKPlayerData); // ---------------- Nail Upgrades --------------------- //
 
   CheckNailUpgrades(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailUpgrades, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailUpgrades.entries, HKPlayerData); // ---------------- Mask Shards --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.MASKSHARDS, HKPlayerData); // ---------------- Mask Shards (World Map) --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards.entries, HKPlayerData); // ---------------- Mask Shards (World Map) --------------------- //
 
-  CheckWorldDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards, "Heart Piece", _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.MASKSHARDS_WORLD, HKWorldItems); // ---------------- Nail Arts --------------------- //
+  CheckWorldDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards, "Heart Piece", _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards.entries, HKWorldItems); // ---------------- Nail Arts --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailArts, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.NAILARTS, HKPlayerData); // ---------------- Spells --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailArts, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailArts.entries, HKPlayerData); // ---------------- Spells --------------------- //
 
-  CheckSpellLevel(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.spells, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SPELLS, HKPlayerData); // ---------------- Vessel Fragments --------------------- //
+  CheckSpellLevel(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.spells, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.spells.entries, HKPlayerData); // ---------------- Vessel Fragments --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.VESSELFRAGMENTS, HKPlayerData); // ---------------- Vessel Fragments (World Map) --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments.entries, HKPlayerData); // ---------------- Vessel Fragments (World Map) --------------------- //
 
-  CheckWorldDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments, "Vessel Fragment", _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.VESSELFRAGMENTS_WORLD, HKWorldItems); // ---------------- Warrior Dreams --------------------- //
+  CheckWorldDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments, "Vessel Fragment", _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments.entries, HKWorldItems); // ---------------- Warrior Dreams --------------------- //
 
-  CheckWarriorDreams(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.warriorDreams, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.WARRIORDREAMS, HKPlayerData); // ---------------- Grimm Troupe Content Pack --------------------- //
+  CheckWarriorDreams(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.warriorDreams, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.warriorDreams.entries, HKPlayerData); // ---------------- Grimm Troupe Content Pack --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.grimmTroupe, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GRIMMTROUPE, HKPlayerData); // ---------------- Lifeblood Content Pack --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.grimmTroupe, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.grimmTroupe.entries, HKPlayerData); // ---------------- Lifeblood Content Pack --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.lifeblood, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.LIFEBLOOD, HKPlayerData); // ---------------- Godmaster Content Pack --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.lifeblood, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.lifeblood.entries, HKPlayerData); // ---------------- Godmaster Content Pack --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER, HKPlayerData);
-  CheckGodmasterDoors(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER_DOORS, HKPlayerData); // ---------------- Fleur Divide ----------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster.entries, HKPlayerData);
+  CheckGodmasterDoors(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster.entries, HKPlayerData); // ---------------- Fleur Divide ----------------- //
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster, FLEUR_DIVIDE); // ------------------------- Essential Things ----------------------------- //
 
