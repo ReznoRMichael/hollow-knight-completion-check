@@ -47,6 +47,8 @@ var SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ "
 var SYMBOL_TRUE = "<i class='icon-ok-squared'></i>"; // "✅ "
 // const SYMBOL_INFO = "<i class='icon-info-circled'></i>"; // "ℹ "
 
+var SYMBOL_CLOCK = "<i class='icon-clock'></i>"; // "🕑 "
+
 var SYMBOL_EMPTY = "<span class='padding-left'></span>";
 var FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
 var WIKI_LINK = "https://hollowknight.fandom.com/wiki/"; // ---------------- Variables ----------------- //
@@ -254,7 +256,7 @@ function CheckPlayTime(divId, playTime) {
   var textFill = "Time Played:" + pSpan + "<b>" + hours + " h " + minutes + " min " + sec + " sec</b>";
   divId.playTime = hours + " h " + minutes + " min " + sec + " sec"; // document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
 
-  document.getElementById(divId.id).innerHTML += divStart + divId.iconPlayTime + textFill + divEnd;
+  document.getElementById(divId.id).innerHTML += divStart + SYMBOL_CLOCK + textFill + divEnd;
 }
 /**
  * Searches for completionPercentage in playerData and fills HTML with the value of the save file

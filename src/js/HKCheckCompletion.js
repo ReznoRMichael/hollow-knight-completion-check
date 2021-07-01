@@ -38,6 +38,7 @@ import GEO_SHADE_IMAGE from "../img/geo-shade.png";
 const SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ "
 const SYMBOL_TRUE = "<i class='icon-ok-squared'></i>"; // "✅ "
 // const SYMBOL_INFO = "<i class='icon-info-circled'></i>"; // "ℹ "
+const SYMBOL_CLOCK = "<i class='icon-clock'></i>"; // "🕑 "
 const SYMBOL_EMPTY = "<span class='padding-left'></span>";
 const FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
 const WIKI_LINK = "https://hollowknight.fandom.com/wiki/";
@@ -335,7 +336,7 @@ function CheckPlayTime(divId, playTime) {
     divId.playTime = hours + " h " + minutes + " min " + sec + " sec";
 
     // document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
-    document.getElementById(divId.id).innerHTML += divStart + divId.iconPlayTime + textFill + divEnd;
+    document.getElementById(divId.id).innerHTML += divStart + SYMBOL_CLOCK + textFill + divEnd;
 }
 
 /**
