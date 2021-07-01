@@ -145,19 +145,19 @@ function HKCheckCompletion(jsonObject) {
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster, FLEUR_DIVIDE); // ------------------------- Essential Things ----------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.essential, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.ESSENTIAL, HKPlayerData, HKWorldItems); // ---------------- Fleur Divide ----------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.essential, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.essential.entries, HKPlayerData, HKWorldItems); // ---------------- Fleur Divide ----------------- //
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.essential, FLEUR_DIVIDE); // ------------------------- Achievements ----------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.ACHIEVEMENTS, HKPlayerData, HKWorldItems); // ---------------- Fleur Divide ----------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.achievements.entries, HKPlayerData, HKWorldItems); // ---------------- Fleur Divide ----------------- //
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.achievements, FLEUR_DIVIDE); // ------------------------- Game Statistics ----------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.statistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.STATISTICS, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Godhome Statistics ----------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.statistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.statistics.entries, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Godhome Statistics ----------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godhomeStatistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODHOME_STATISTICS, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Hints ----------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godhomeStatistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godhomeStatistics.entries, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Hints ----------------------------- //
 
-  CheckHintsTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.HINTS, HKPlayerData, HKWorldItems); // ------------------------- Fill completion ----------------------------- //
+  CheckHintsTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.hints.entries, HKPlayerData, HKWorldItems); // ------------------------- Fill completion ----------------------------- //
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CompletionHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION, HKPlayerData.completionPercentage);
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.GenerateInnerHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default); // Prevents wrong checkbox behaviour (must run after everything is finished)
@@ -4850,7 +4850,9 @@ function GenerateInnerHTML(hkdb) {
   /* Final HTML Fill here */
 
 
+  console.groupCollapsed("finalHTMLFill");
   console.log(finalHTMLFill);
+  console.groupEnd();
 }
 
 function SectionStart(section) {
@@ -4923,7 +4925,7 @@ function SingleEntryFill(entry) {
 
   if (textSuffix.length && textPrefix.length) textSuffix = "— " + textSuffix;
   if (textPrefix.includes("<del>")) textSuffix = "<del>".concat(textSuffix, "</del>");
-  return "\n    <div class=\"single-entry\">\n        ".concat(icon, "\n        ").concat(b[0], "\n    </div>\n    ");
+  return "\n        <div class=\"single-entry\">\n            ".concat(icon, "\n            ").concat(b[0], "\n        </div>\n    ");
 }
 /**
  * Adds HTML string to an element with a given ID.

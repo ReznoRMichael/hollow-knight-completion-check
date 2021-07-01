@@ -206,7 +206,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ------------------------- Essential Things ----------------------------- //
 
-    CheckAdditionalThings(HK.SECTION.essential, HK.ESSENTIAL, HKPlayerData, HKWorldItems);
+    CheckAdditionalThings(HK.SECTION.essential, HK.SECTION.essential.entries, HKPlayerData, HKWorldItems);
 
     // ---------------- Fleur Divide ----------------- //
 
@@ -214,7 +214,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ------------------------- Achievements ----------------------------- //
 
-    CheckAdditionalThings(HK.SECTION.achievements, HK.ACHIEVEMENTS, HKPlayerData, HKWorldItems);
+    CheckAdditionalThings(HK.SECTION.achievements, HK.SECTION.achievements.entries, HKPlayerData, HKWorldItems);
 
     // ---------------- Fleur Divide ----------------- //
 
@@ -222,15 +222,15 @@ function HKCheckCompletion(jsonObject) {
 
     // ------------------------- Game Statistics ----------------------------- //
 
-    CheckAdditionalThings(HK.SECTION.statistics, HK.STATISTICS, HKPlayerData, HKWorldItems, HKSceneData);
+    CheckAdditionalThings(HK.SECTION.statistics, HK.SECTION.statistics.entries, HKPlayerData, HKWorldItems, HKSceneData);
 
     // ------------------------- Godhome Statistics ----------------------------- //
 
-    CheckAdditionalThings(HK.SECTION.godhomeStatistics, HK.GODHOME_STATISTICS, HKPlayerData, HKWorldItems, HKSceneData);
+    CheckAdditionalThings(HK.SECTION.godhomeStatistics, HK.SECTION.godhomeStatistics.entries, HKPlayerData, HKWorldItems, HKSceneData);
 
     // ------------------------- Hints ----------------------------- //
 
-    CheckHintsTrue(HK.SECTION.hints, HK.HINTS, HKPlayerData, HKWorldItems);
+    CheckHintsTrue(HK.SECTION.hints, HK.SECTION.hints.entries, HKPlayerData, HKWorldItems);
 
     // ------------------------- Fill completion ----------------------------- //
 

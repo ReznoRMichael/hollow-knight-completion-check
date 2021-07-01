@@ -205,7 +205,9 @@ function GenerateInnerHTML(hkdb) {
     }
 
     /* Final HTML Fill here */
+    console.groupCollapsed("finalHTMLFill");
     console.log(finalHTMLFill);
+    console.groupEnd();
 
 }
 
@@ -293,10 +295,10 @@ function SingleEntryFill(entry) {
     if (textPrefix.includes("<del>")) textSuffix = `<del>${textSuffix}</del>`;
 
     return `
-    <div class="single-entry">
-        ${icon}
-        ${b[0]}
-    </div>
+        <div class="single-entry">
+            ${icon}
+            ${b[0]}
+        </div>
     `;
 
 }
