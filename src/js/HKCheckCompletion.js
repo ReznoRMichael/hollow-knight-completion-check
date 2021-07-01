@@ -359,7 +359,7 @@ function CheckCompletionPercent(divId, completionPercentage) {
  * @param {object} divId ID of the HTML element for data appending
  * @param {string} saveVersion Save File version in format 0.0.0.0
  */
-function CheckSaveFileVersion(divId, saveVersion = HK.SECTION.intro.saveVersion) {
+function CheckSaveFileVersion(divId, saveVersion = HK.SECTION.intro.entries.saveVersion.spoiler) {
 
     CurrentDataBlank();
     let textFill = `Save Version:${pSpan}<b>${saveVersion}</b>${pSpan}`;
