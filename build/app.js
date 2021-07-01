@@ -118,7 +118,7 @@ function HKCheckCompletion(jsonObject) {
 
   CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.equipment, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.EQUIPMENT, HKPlayerData); // ---------------- Nail Upgrades --------------------- //
 
-  CheckNailUpgrades(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailUpgrades, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.NAILUPGRADES, HKPlayerData); // ---------------- Mask Shards --------------------- //
+  CheckNailUpgrades(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailUpgrades, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailUpgrades.entries, HKPlayerData); // ---------------- Mask Shards --------------------- //
 
   CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.MASKSHARDS, HKPlayerData); // ---------------- Mask Shards (World Map) --------------------- //
 
@@ -1280,57 +1280,50 @@ function InitialHTMLPopulate(divIdObj) {
 
   CurrentDataFalse(); // First Hint Only
 
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.hints, divIdObj.hints.entries.fireballLevel.spoiler); // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.hints, divIdObj.hints.entries.fireballLevel.spoiler);
+  /* // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
+  let hkObjArray = [HK.BOSSES, HK.CHARMS, HK.EQUIPMENT, HK.NAILARTS, HK.MASKSHARDS, HK.MASKSHARDS_WORLD, HK.VESSELFRAGMENTS, HK.VESSELFRAGMENTS_WORLD, HK.DREAMERS, HK.COLOSSEUM, HK.DREAMNAIL, HK.WARRIORDREAMS, HK.GRIMMTROUPE, HK.LIFEBLOOD, HK.GODMASTER, HK.ESSENTIAL, HK.ACHIEVEMENTS, HK.STATISTICS, HK.GODHOME_STATISTICS];
+    // duplicates and order important - must be the same as in hkObjArray[]
+  let divObjArray = [divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.essential, divIdObj.achievements, divIdObj.statistics, divIdObj.godhomeStatistics]; */
 
-  var hkObjArray = [_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.BOSSES, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.CHARMS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.EQUIPMENT, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.NAILARTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.MASKSHARDS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.MASKSHARDS_WORLD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.VESSELFRAGMENTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.VESSELFRAGMENTS_WORLD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DREAMERS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.COLOSSEUM, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.DREAMNAIL, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.WARRIORDREAMS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GRIMMTROUPE, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.LIFEBLOOD, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.ESSENTIAL, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.ACHIEVEMENTS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.STATISTICS, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODHOME_STATISTICS]; // duplicates and order important - must be the same as in hkObjArray[]
-
-  var divObjArray = [divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.essential, divIdObj.achievements, divIdObj.statistics, divIdObj.godhomeStatistics]; // Looped filling to reduce redundancy
-
+  /* // Looped filling to reduce redundancy
   do {
-    for (var entry in hkObjArray[0]) {
-      if (entry === "mrMushroomState") continue;
-      sFillText += PrepareHTMLString(divObjArray[0], hkObjArray[0][entry].name, hkObjArray[0][entry].spoiler, hkObjArray[0][entry].wiki);
-    }
-
-    if (divObjArray[0]) {
-      (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divObjArray[0], sFillText);
-    }
-
-    sFillText = "";
-    divObjArray.shift();
-  } while (hkObjArray.shift()); // Nail Upgrades Misc
-
-
+      for (let entry in hkObjArray[0]) {
+          if (entry === "mrMushroomState") continue;
+          sFillText += PrepareHTMLString(divObjArray[0], hkObjArray[0][entry].name, hkObjArray[0][entry].spoiler, hkObjArray[0][entry].wiki);
+      }
+      if (divObjArray[0]) {
+          AppendHTML(divObjArray[0], sFillText);
+      }
+      sFillText = "";
+      divObjArray.shift();
+  } while (hkObjArray.shift());
+    // Nail Upgrades Misc
   sFillText = "";
-
-  for (var i in _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.NAILUPGRADES) {
-    sFillText += PrepareHTMLString(divIdObj.nailUpgrades, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.NAILUPGRADES[i].name, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.NAILUPGRADES[i].spoiler, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.NAILUPGRADES[i].wiki);
+  for (let i in HK.NAILUPGRADES) {
+      sFillText += PrepareHTMLString(divIdObj.nailUpgrades, HK.NAILUPGRADES[i].name, HK.NAILUPGRADES[i].spoiler, HK.NAILUPGRADES[i].wiki);
   }
-
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.nailUpgrades, sFillText); // Spells Misc
-
+  AppendHTML(divIdObj.nailUpgrades, sFillText);
+    // Spells Misc
   sFillText = "";
-
-  for (var _i17 in _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SPELLS) {
-    sFillText += PrepareHTMLString(divIdObj.spells, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SPELLS[_i17].name, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SPELLS[_i17].spoiler, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SPELLS[_i17].wiki);
+  for (let i in HK.SPELLS) {
+      sFillText += PrepareHTMLString(divIdObj.spells, HK.SPELLS[i].name, HK.SPELLS[i].spoiler, HK.SPELLS[i].wiki);
   }
-
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.spells, sFillText); // Godmaster Doors Misc
-
+  AppendHTML(divIdObj.spells, sFillText);
+    // Godmaster Doors Misc
   sFillText = "";
-
-  for (var _i18 in _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER_DOORS) {
-    sFillText += PrepareHTMLString(divIdObj.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER_DOORS[_i18].name, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER_DOORS[_i18].spoiler, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.GODMASTER_DOORS[_i18].wiki);
+  for (let i in HK.GODMASTER_DOORS) {
+      sFillText += PrepareHTMLString(divIdObj.godmaster, HK.GODMASTER_DOORS[i].name, HK.GODMASTER_DOORS[i].spoiler, HK.GODMASTER_DOORS[i].wiki);
   }
-
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.godmaster, sFillText); // Mr Mushroom 1 - 7
-
+  AppendHTML(divIdObj.godmaster, sFillText);
+    // Mr Mushroom 1 - 7
   sFillText = CheckMrMushroomState(divIdObj.achievements, divIdObj.achievements.entries.mrMushroomState);
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.achievements, sFillText); // Fleur Dividers
-
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.godmaster, FLEUR_DIVIDE);
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.essential, FLEUR_DIVIDE);
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.achievements, FLEUR_DIVIDE); // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
+  AppendHTML(divIdObj.achievements, sFillText);
+    // Fleur Dividers
+  AppendHTML(divIdObj.godmaster, FLEUR_DIVIDE);
+  AppendHTML(divIdObj.essential, FLEUR_DIVIDE);
+  AppendHTML(divIdObj.achievements, FLEUR_DIVIDE); */
+  // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
 
   if ((0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.StorageAvailable)('localStorage')) {
     if (localStorage.getItem("hkCheckboxHints") === "checked") document.getElementById("checkbox-hints").checked = true;
@@ -2435,9 +2428,46 @@ var HK = {
     intro: {
       h2: "Game Status",
       id: "hk-intro",
-      iconPlayTime: "<i class='icon-clock'></i>",
+      percent: 0,
       maxPercent: 112,
-      saveVersion: "0.0.0.0"
+      entries: {
+        timePlayed: {
+          name: "Time Played:",
+          spoiler: "0 h 0 min 0 sec\"",
+          timeH: 0,
+          timeM: 0,
+          timeS: 0
+        },
+        gameCompletion: {
+          name: "Game Completion:",
+          spoiler: "0 %",
+          text: "(out of 112 %)"
+        },
+        saveVersion: {
+          name: "Save Version:",
+          spoiler: "0.0.0.0"
+        },
+        health: {
+          name: "Health:",
+          spoiler: "",
+          masks: 5
+        },
+        soul: {
+          name: "Soul:",
+          spoiler: "",
+          amount: 99
+        },
+        notches: {
+          name: "Notches:",
+          spoiler: "",
+          amount: 3
+        },
+        geo: {
+          name: "Geo:",
+          spoiler: "",
+          amount: 0
+        }
+      }
     },
 
     /* ################ Hints ################### */
@@ -4764,22 +4794,22 @@ function GenerateInnerHTML(hkdb) {
   console.log(hkdb);
   var finalHTMLFill = "";
   var textFill = "";
-  var icon = "";
-  var iconGreen = SYMBOL_TRUE;
-  var iconRed = SYMBOL_FALSE;
-  var iconClock = SYMBOL_CLOCK;
-  var iconNull = SYMBOL_EMPTY;
-  var textPrefix = "";
-  var textSuffix = "";
   var sections = hkdb.SECTION;
+  var entries = {};
 
   for (var section in sections) {
+    entries = sections[section].entries;
     /* starts a new <div> with the current section id */
+
     textFill = SectionStart(sections[section]);
     /* creates a <h2> tag for the current section and fills with current%/max% */
 
     textFill += CompletionFill(sections[section]);
     /* create all main entries */
+
+    for (var entry in entries) {
+      textFill += SingleEntryFill(entries[entry]);
+    }
 
     switch (section) {
       case "intro":
@@ -4849,6 +4879,27 @@ function CompletionFill(section) {
     }
 
   return "\t".concat(h2id).concat(h2).concat(fillText, "</h2>\n");
+}
+
+function SingleEntryFill(entry) {
+  var icon = "";
+  var iconGreen = SYMBOL_TRUE;
+  var iconRed = SYMBOL_FALSE;
+  var iconClock = SYMBOL_CLOCK;
+  var iconNull = SYMBOL_EMPTY;
+  var textPrefix = "";
+  var textSuffix = "";
+  var wiki = "";
+  var b = ["<b>", "</b>"];
+  if (!textPrefix.length) b = ["", ""];
+  if (wiki.length) b = ["<a class=\"wiki\" href=\"".concat(WIKI_LINK).concat(wiki, "\" target=\"_blank\">"), "</a>"];
+  var p = ["<span class='p-left-small'>", "</span>"];
+  var span = ["<span class='spoiler-span'>", "</span>"];
+  var spoiler = ["<span class='spoiler-text'>", "</span>"]; // let dash = "";
+
+  if (textSuffix.length && textPrefix.length) textSuffix = "— " + textSuffix;
+  if (textPrefix.includes("<del>")) textSuffix = "<del>".concat(textSuffix, "</del>");
+  return "\n    <div class=\"single-entry\">\n        ".concat(icon, "\n        ").concat(b[0], "\n    </div>\n    ");
 }
 /**
  * Adds HTML string to an element with a given ID.

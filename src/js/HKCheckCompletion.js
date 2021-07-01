@@ -155,7 +155,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Nail Upgrades --------------------- //
 
-    CheckNailUpgrades(HK.SECTION.nailUpgrades, HK.NAILUPGRADES, HKPlayerData);
+    CheckNailUpgrades(HK.SECTION.nailUpgrades, HK.SECTION.nailUpgrades.entries, HKPlayerData);
 
     // ---------------- Mask Shards --------------------- //
 

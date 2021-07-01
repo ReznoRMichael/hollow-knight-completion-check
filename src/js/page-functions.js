@@ -284,16 +284,18 @@ function SingleEntryFill(entry) {
     if (!textPrefix.length) b = ["", ""];
     if (wiki.length) b = [`<a class="wiki" href="${WIKI_LINK}${wiki}" target="_blank">`, "</a>"];
 
+    let p = ["<span class='p-left-small'>", "</span>"];
     let span = ["<span class='spoiler-span'>", "</span>"];
-    let spoilerSpan = ["<span class='spoiler-text'>", "</span>"];
+    let spoiler = ["<span class='spoiler-text'>", "</span>"];
 
     // let dash = "";
     if (textSuffix.length && textPrefix.length) textSuffix = "— " + textSuffix;
     if (textPrefix.includes("<del>")) textSuffix = `<del>${textSuffix}</del>`;
 
     return `
-    <div class='single-entry'>
-
+    <div class="single-entry">
+        ${icon}
+        ${b[0]}
     </div>
     `;
 
