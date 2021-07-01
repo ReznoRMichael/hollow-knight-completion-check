@@ -1255,40 +1255,60 @@ function HKReadTextArea() {
 }
 /**
  * Populate all HTML with given ID and their initial data set as false (used at DOM load)
- * @param {object} divIdObj JavaScript Object containing all HTML IDs to populate
+ * @param {object} sections JavaScript Object containing all HTML IDs to populate
  */
 
 
-function InitialHTMLPopulate(divIdObj) {
+function InitialHTMLPopulate(sections) {
   var sFillText = "";
   CurrentDataFalse();
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.PrefillHTML)(divIdObj); // Play Time
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.PrefillHTML)(sections); // Play Time
 
-  CheckPlayTime(divIdObj.intro, 0); // Game Completion
+  CheckPlayTime(sections.intro, 0); // Game Completion
 
-  CheckCompletionPercent(divIdObj.intro, 0); // Save File Version
+  CheckCompletionPercent(sections.intro, 0); // Save File Version
 
-  CheckSaveFileVersion(divIdObj.intro); // Fleur Divide
+  CheckSaveFileVersion(sections.intro); // Fleur Divide
 
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.intro, FLEUR_DIVIDE); // Health Masks
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(sections.intro, FLEUR_DIVIDE); // Health Masks
 
-  CheckHealthMasks(divIdObj.intro); // Soul Orbs
+  CheckHealthMasks(sections.intro); // Soul Orbs
 
-  CheckSoulOrbs(divIdObj.intro, 99); // Charm Notches
+  CheckSoulOrbs(sections.intro, 99); // Charm Notches
 
-  CheckNotches(divIdObj.intro); // Geo
+  CheckNotches(sections.intro); // Geo
 
-  CheckGeo(divIdObj.intro); // Keep symbol False
+  CheckGeo(sections.intro); // Keep symbol False
 
   CurrentDataFalse(); // First Hint Only
 
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divIdObj.hints, divIdObj.hints.entries.fireballLevel.spoiler);
-  /* // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(sections.hints, sections.hints.entries.fireballLevel.spoiler);
+  var entries = {};
+
+  for (var section in sections) {
+    entries = sections[section].entries;
+
+    switch (section) {
+      case "intro":
+      case "hints":
+        break;
+
+      default:
+        for (var entry in entries) {
+          sFillText += PrepareHTMLString(sections[section], entries[entry].name, entries[entry].spoiler, entries[entry].wiki);
+        }
+
+        (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(sections[section], sFillText);
+    }
+
+    sFillText = "";
+  }
+  /*
+    // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
   let hkObjArray = [HK.BOSSES, HK.CHARMS, HK.EQUIPMENT, HK.NAILARTS, HK.MASKSHARDS, HK.MASKSHARDS_WORLD, HK.VESSELFRAGMENTS, HK.VESSELFRAGMENTS_WORLD, HK.DREAMERS, HK.COLOSSEUM, HK.DREAMNAIL, HK.WARRIORDREAMS, HK.GRIMMTROUPE, HK.LIFEBLOOD, HK.GODMASTER, HK.ESSENTIAL, HK.ACHIEVEMENTS, HK.STATISTICS, HK.GODHOME_STATISTICS];
     // duplicates and order important - must be the same as in hkObjArray[]
-  let divObjArray = [divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.essential, divIdObj.achievements, divIdObj.statistics, divIdObj.godhomeStatistics]; */
-
-  /* // Looped filling to reduce redundancy
+  let divObjArray = [divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.essential, divIdObj.achievements, divIdObj.statistics, divIdObj.godhomeStatistics];
+    // Looped filling to reduce redundancy
   do {
       for (let entry in hkObjArray[0]) {
           if (entry === "mrMushroomState") continue;
@@ -1321,11 +1341,13 @@ function InitialHTMLPopulate(divIdObj) {
     // Mr Mushroom 1 - 7
   sFillText = CheckMrMushroomState(divIdObj.achievements, divIdObj.achievements.entries.mrMushroomState);
   AppendHTML(divIdObj.achievements, sFillText);
-    // Fleur Dividers
-  AppendHTML(divIdObj.godmaster, FLEUR_DIVIDE);
-  AppendHTML(divIdObj.essential, FLEUR_DIVIDE);
-  AppendHTML(divIdObj.achievements, FLEUR_DIVIDE); */
-  // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
+    */
+  // Fleur Dividers
+
+
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(sections.godmaster, FLEUR_DIVIDE);
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(sections.essential, FLEUR_DIVIDE);
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(sections.achievements, FLEUR_DIVIDE); // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
 
   if ((0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.StorageAvailable)('localStorage')) {
     if (localStorage.getItem("hkCheckboxHints") === "checked") document.getElementById("checkbox-hints").checked = true;

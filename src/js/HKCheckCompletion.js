@@ -1292,53 +1292,80 @@ function HKReadTextArea(textAreaId = "") {
 
 /**
  * Populate all HTML with given ID and their initial data set as false (used at DOM load)
- * @param {object} divIdObj JavaScript Object containing all HTML IDs to populate
+ * @param {object} sections JavaScript Object containing all HTML IDs to populate
  */
-function InitialHTMLPopulate(divIdObj) {
+function InitialHTMLPopulate(sections) {
 
     let sFillText = "";
 
     CurrentDataFalse();
 
-    PrefillHTML(divIdObj);
+    PrefillHTML(sections);
 
     // Play Time
-    CheckPlayTime(divIdObj.intro, 0)
+    CheckPlayTime(sections.intro, 0)
 
     // Game Completion
-    CheckCompletionPercent(divIdObj.intro, 0);
+    CheckCompletionPercent(sections.intro, 0);
 
     // Save File Version
-    CheckSaveFileVersion(divIdObj.intro);
+    CheckSaveFileVersion(sections.intro);
 
     // Fleur Divide
-    AppendHTML(divIdObj.intro, FLEUR_DIVIDE);
+    AppendHTML(sections.intro, FLEUR_DIVIDE);
 
     // Health Masks
-    CheckHealthMasks(divIdObj.intro);
+    CheckHealthMasks(sections.intro);
 
     // Soul Orbs
-    CheckSoulOrbs(divIdObj.intro, 99);
+    CheckSoulOrbs(sections.intro, 99);
 
     // Charm Notches
-    CheckNotches(divIdObj.intro);
+    CheckNotches(sections.intro);
 
     // Geo
-    CheckGeo(divIdObj.intro);
+    CheckGeo(sections.intro);
 
     // Keep symbol False
     CurrentDataFalse();
 
     // First Hint Only
-    AppendHTML(divIdObj.hints, divIdObj.hints.entries.fireballLevel.spoiler);
+    AppendHTML(sections.hints, sections.hints.entries.fireballLevel.spoiler);
 
-    /* // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
+    let entries = {};
+
+    for (let section in sections) {
+
+        entries = sections[section].entries;
+
+        switch(section) {
+
+            case "intro":
+            case "hints":
+                break;
+                
+            default:
+
+                for (let entry in entries) {
+
+                    sFillText += PrepareHTMLString(sections[section], entries[entry].name, entries[entry].spoiler, entries[entry].wiki);
+                }
+        
+                AppendHTML(sections[section], sFillText);
+        }
+
+        sFillText = "";
+    }
+
+    /*
+
+    // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
     let hkObjArray = [HK.BOSSES, HK.CHARMS, HK.EQUIPMENT, HK.NAILARTS, HK.MASKSHARDS, HK.MASKSHARDS_WORLD, HK.VESSELFRAGMENTS, HK.VESSELFRAGMENTS_WORLD, HK.DREAMERS, HK.COLOSSEUM, HK.DREAMNAIL, HK.WARRIORDREAMS, HK.GRIMMTROUPE, HK.LIFEBLOOD, HK.GODMASTER, HK.ESSENTIAL, HK.ACHIEVEMENTS, HK.STATISTICS, HK.GODHOME_STATISTICS];
 
     // duplicates and order important - must be the same as in hkObjArray[]
-    let divObjArray = [divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.essential, divIdObj.achievements, divIdObj.statistics, divIdObj.godhomeStatistics]; */
+    let divObjArray = [divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.essential, divIdObj.achievements, divIdObj.statistics, divIdObj.godhomeStatistics];
 
-    /* // Looped filling to reduce redundancy
+    // Looped filling to reduce redundancy
     do {
         for (let entry in hkObjArray[0]) {
             if (entry === "mrMushroomState") continue;
@@ -1376,10 +1403,12 @@ function InitialHTMLPopulate(divIdObj) {
     sFillText = CheckMrMushroomState(divIdObj.achievements, divIdObj.achievements.entries.mrMushroomState);
     AppendHTML(divIdObj.achievements, sFillText);
 
+    */
+
     // Fleur Dividers
-    AppendHTML(divIdObj.godmaster, FLEUR_DIVIDE);
-    AppendHTML(divIdObj.essential, FLEUR_DIVIDE);
-    AppendHTML(divIdObj.achievements, FLEUR_DIVIDE); */
+    AppendHTML(sections.godmaster, FLEUR_DIVIDE);
+    AppendHTML(sections.essential, FLEUR_DIVIDE);
+    AppendHTML(sections.achievements, FLEUR_DIVIDE);
 
     // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
     if (StorageAvailable('localStorage')) {
