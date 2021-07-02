@@ -240,17 +240,17 @@ function CurrentDataBlank() {
 
 
 function CheckPlayTime(divId, playTime) {
-  /* let icon = "<i class='icon-clock'></i>";
-  divId.playTimeIcon = icon; */
   var seconds = Math.floor(playTime);
   var minutes = Math.floor(seconds / 60 % 60);
   var hours = Math.floor(seconds / 3600);
   var sec = Math.floor(seconds % 60);
+  divId.entries.timePlayed.timeH = hours;
+  divId.entries.timePlayed.timeM = minutes;
+  divId.entries.timePlayed.timeS = sec;
   if (sec < 10) sec = "0" + sec;
   if (minutes < 10) minutes = "0" + minutes;
   var textFill = "Time Played:" + pSpan + "<b>" + hours + " h " + minutes + " min " + sec + " sec</b>";
-  divId.playTime = hours + " h " + minutes + " min " + sec + " sec"; // document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
-
+  divId.entries.timePlayed.spoiler = hours + " h " + minutes + " min " + sec + " sec";
   document.getElementById(divId.id).innerHTML += divStart + SYMBOL_CLOCK + textFill + divEnd;
 }
 /**
@@ -2474,8 +2474,9 @@ var HK = {
       maxPercent: 112,
       entries: {
         timePlayed: {
+          icon: "clock",
           name: "Time Played:",
-          spoiler: "0 h 0 min 0 sec\"",
+          spoiler: "0 h 0 min 0 sec",
           timeH: 0,
           timeM: 0,
           timeS: 0
@@ -2486,25 +2487,30 @@ var HK = {
           text: "(out of 112 %)"
         },
         saveVersion: {
+          icon: "none",
           name: "Save Version:",
           spoiler: "0.0.0.0"
         },
         health: {
+          icon: "none",
           name: "Health:",
           spoiler: "",
           masks: 5
         },
         soul: {
+          icon: "none",
           name: "Soul:",
           spoiler: "",
           amount: 99
         },
         notches: {
+          icon: "none",
           name: "Notches:",
           spoiler: "",
           amount: 3
         },
         geo: {
+          icon: "none",
           name: "Geo:",
           spoiler: "",
           amount: 0
@@ -4967,19 +4973,54 @@ function SingleEntryFill(entry) {
   var iconRed = SYMBOL_FALSE;
   var iconClock = SYMBOL_CLOCK;
   var iconNull = SYMBOL_EMPTY;
+
+  if (entry.hasOwnProperty("icon")) {
+    switch (entry.icon) {
+      case "clock":
+        icon = iconClock;
+        break;
+
+      case "green":
+        icon = iconGreen;
+        break;
+
+      case "red":
+        icon = iconRed;
+        break;
+
+      default:
+        icon = iconNull;
+    }
+  } else {
+    icon = iconNull;
+  }
+
   var textPrefix = "";
   var textSuffix = "";
   var wiki = "";
+
+  if (entry.hasOwnProperty("name")) {
+    textPrefix = entry.name;
+  }
+
+  if (entry.hasOwnProperty("spoiler")) {
+    textSuffix = entry.spoiler;
+  }
+
+  if (entry.hasOwnProperty("wiki")) {
+    wiki = entry.wiki;
+  }
+
   var b = ["<b>", "</b>"];
   if (!textPrefix.length) b = ["", ""];
   if (wiki.length) b = ["<a class=\"wiki\" href=\"".concat(WIKI_LINK).concat(wiki, "\" target=\"_blank\">"), "</a>"];
-  var p = ["<span class='p-left-small'>", "</span>"];
+  var p = "<span class='p-left-small'></span>";
   var span = ["<span class='spoiler-span'>", "</span>"];
   var spoiler = ["<span class='spoiler-text'>", "</span>"]; // let dash = "";
 
   if (textSuffix.length && textPrefix.length) textSuffix = "— " + textSuffix;
   if (textPrefix.includes("<del>")) textSuffix = "<del>".concat(textSuffix, "</del>");
-  return "\n        <div class=\"single-entry\">\n            ".concat(icon, "\n            ").concat(b[0], "\n        </div>\n    ");
+  return "\n        <div class=\"single-entry\">\n            ".concat(icon, "\n            ").concat(b[0]).concat(textPrefix).concat(b[1], "\n            ").concat(span[0], "\n                ").concat(p, "\n                ").concat(spoiler[0], "\n                    ").concat(textSuffix, "\n                ").concat(spoiler[1], "\n            ").concat(span[1], "\n        </div>\n    ");
 }
 /**
  * Adds HTML string to an element with a given ID.

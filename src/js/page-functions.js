@@ -278,15 +278,47 @@ function SingleEntryFill(entry) {
     let iconClock = SYMBOL_CLOCK;
     let iconNull = SYMBOL_EMPTY;
 
+    if (entry.hasOwnProperty("icon")) {
+        
+        switch (entry.icon) {
+
+            case "clock":
+                icon = iconClock;
+                break;
+            case "green":
+                icon = iconGreen;
+                break;
+            case "red":
+                icon = iconRed;
+                break;
+            default:
+                icon = iconNull;
+        }
+    } else {
+        icon = iconNull;
+    }
+
     let textPrefix = "";
     let textSuffix = "";
     let wiki = "";
+
+    if (entry.hasOwnProperty("name")) {
+        textPrefix = entry.name;
+    }
+
+    if (entry.hasOwnProperty("spoiler")) {
+        textSuffix = entry.spoiler;
+    }
+
+    if (entry.hasOwnProperty("wiki")) {
+        wiki = entry.wiki;
+    }
 
     let b = ["<b>", "</b>"];
     if (!textPrefix.length) b = ["", ""];
     if (wiki.length) b = [`<a class="wiki" href="${WIKI_LINK}${wiki}" target="_blank">`, "</a>"];
 
-    let p = ["<span class='p-left-small'>", "</span>"];
+    let p = "<span class='p-left-small'></span>";
     let span = ["<span class='spoiler-span'>", "</span>"];
     let spoiler = ["<span class='spoiler-text'>", "</span>"];
 
@@ -297,7 +329,13 @@ function SingleEntryFill(entry) {
     return `
         <div class="single-entry">
             ${icon}
-            ${b[0]}
+            ${b[0]}${textPrefix}${b[1]}
+            ${span[0]}
+                ${p}
+                ${spoiler[0]}
+                    ${textSuffix}
+                ${spoiler[1]}
+            ${span[1]}
         </div>
     `;
 

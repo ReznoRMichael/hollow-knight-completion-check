@@ -16,6 +16,7 @@ const HK = {
             maxPercent: 112,
             entries: {
                 timePlayed: {
+                    icon: "clock",
                     name: "Time Played:",
                     spoiler: "0 h 0 min 0 sec",
                     timeH: 0,
@@ -28,25 +29,30 @@ const HK = {
                     text: "(out of 112 %)"
                 },
                 saveVersion: {
+                    icon: "none",
                     name: "Save Version:",
                     spoiler: "0.0.0.0"
                 },
                 health: {
+                    icon: "none",
                     name: "Health:",
                     spoiler: "",
                     masks: 5
                 },
                 soul: {
+                    icon: "none",
                     name: "Soul:",
                     spoiler: "",
                     amount: 99
                 },
                 notches: {
+                    icon: "none",
                     name: "Notches:",
                     spoiler: "",
                     amount: 3
                 },
                 geo: {
+                    icon: "none",
                     name: "Geo:",
                     spoiler: "",
                     amount: 0
