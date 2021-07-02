@@ -712,30 +712,40 @@ const HK = {
                 },
                 /* ########## Vessel Fragments World ############ */
                 /* "Vessel Fragment" sceneData.persistentBoolItems.id */
-                Fungus1_13: {
+                vesselFragmentGreenpath: {
                     name: "Vessel Fragment #5",
                     spoiler: "Greenpath: near Queen's Gardens exit",
-                    wiki: "Vessel_Fragment"
+                    wiki: "Vessel_Fragment",
+                    id: "Vessel Fragment",
+                    sceneName: "Fungus1_13"
                 },
-                Crossroads_37: {
+                vesselFragmentCrossroads: {
                     name: "Vessel Fragment #6",
                     spoiler: "Forgotten Crossroads: unlock City of Tears lift",
-                    wiki: "Vessel_Fragment"
+                    wiki: "Vessel_Fragment",
+                    id: "Vessel Fragment",
+                    sceneName: "Crossroads_37"
                 },
-                Ruins2_09: {
+                vesselFragmentCityOfTears: {
                     name: "Vessel Fragment #7",
-                    spoiler: "City of Tears, above King's Station",
-                    wiki: "Vessel_Fragment"
+                    spoiler: "City of Tears: above King's Station",
+                    wiki: "Vessel_Fragment",
+                    id: "Vessel Fragment",
+                    sceneName: "Ruins2_09"
                 },
-                Deepnest_38: {
+                vesselFragmentDeepnest: {
                     name: "Vessel Fragment #8",
                     spoiler: "Deepnest: Goam platforming challenge",
-                    wiki: "Vessel_Fragment"
+                    wiki: "Vessel_Fragment",
+                    id: "Vessel Fragment",
+                    sceneName: "Deepnest_38"
                 },
-                Abyss_04: {
+                vesselFragmentFountain: {
                     name: "Vessel Fragment #9",
                     spoiler: "Ancient Basin Fountain: 3000 Geo",
-                    wiki: "Vessel_Fragment"
+                    wiki: "Vessel_Fragment",
+                    id: "Vessel Fragment",
+                    sceneName: "Abyss_04"
                 }
             },
         },

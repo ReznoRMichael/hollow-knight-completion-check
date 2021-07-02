@@ -176,7 +176,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Vessel Fragments --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.vesselFragments, HK.SECTION.vesselFragments.entries, HKPlayerData);
+    CheckIfDataTrue(HK.SECTION.vesselFragments, HK.SECTION.vesselFragments.entries, HKPlayerData, HKWorldItems);
 
     // ---------------- Vessel Fragments (World Map) --------------------- //
 
@@ -546,6 +546,11 @@ function CheckIfDataTrue(divId, dataObject, playerData, worldData = []) {
             case "maskShardDeepnest":
             case "maskShardHive":
             case "maskShardDelicateFlower":
+            case "vesselFragmentGreenpath":
+            case "vesselFragmentCrossroads":
+            case "vesselFragmentCityOfTears":
+            case "vesselFragmentDeepnest":
+            case "vesselFragmentFountain":
                 (WorldDataActivated(dataObject[i].id, dataObject[i].sceneName, worldData)) ? CurrentDataTrue(divId): CurrentDataFalse();
                 break;
             default:

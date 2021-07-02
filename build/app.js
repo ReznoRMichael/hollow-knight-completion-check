@@ -131,7 +131,7 @@ function HKCheckCompletion(jsonObject) {
 
   CheckSpellLevel(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.spells, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.spells.entries, HKPlayerData); // ---------------- Vessel Fragments --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments.entries, HKPlayerData); // ---------------- Vessel Fragments (World Map) --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments.entries, HKPlayerData, HKWorldItems); // ---------------- Vessel Fragments (World Map) --------------------- //
 
   /* CheckWorldDataTrue(HK.SECTION.vesselFragments, "Vessel Fragment", HK.SECTION.vesselFragments.entries, HKWorldItems); */
   // ---------------- Warrior Dreams --------------------- //
@@ -464,6 +464,11 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
       case "maskShardDeepnest":
       case "maskShardHive":
       case "maskShardDelicateFlower":
+      case "vesselFragmentGreenpath":
+      case "vesselFragmentCrossroads":
+      case "vesselFragmentCityOfTears":
+      case "vesselFragmentDeepnest":
+      case "vesselFragmentFountain":
         WorldDataActivated(dataObject[i].id, dataObject[i].sceneName, worldData) ? CurrentDataTrue(divId) : CurrentDataFalse();
         break;
 
@@ -3200,30 +3205,40 @@ var HK = {
         /* ########## Vessel Fragments World ############ */
 
         /* "Vessel Fragment" sceneData.persistentBoolItems.id */
-        Fungus1_13: {
+        vesselFragmentGreenpath: {
           name: "Vessel Fragment #5",
           spoiler: "Greenpath: near Queen's Gardens exit",
-          wiki: "Vessel_Fragment"
+          wiki: "Vessel_Fragment",
+          id: "Vessel Fragment",
+          sceneName: "Fungus1_13"
         },
-        Crossroads_37: {
+        vesselFragmentCrossroads: {
           name: "Vessel Fragment #6",
           spoiler: "Forgotten Crossroads: unlock City of Tears lift",
-          wiki: "Vessel_Fragment"
+          wiki: "Vessel_Fragment",
+          id: "Vessel Fragment",
+          sceneName: "Crossroads_37"
         },
-        Ruins2_09: {
+        vesselFragmentCityOfTears: {
           name: "Vessel Fragment #7",
-          spoiler: "City of Tears, above King's Station",
-          wiki: "Vessel_Fragment"
+          spoiler: "City of Tears: above King's Station",
+          wiki: "Vessel_Fragment",
+          id: "Vessel Fragment",
+          sceneName: "Ruins2_09"
         },
-        Deepnest_38: {
+        vesselFragmentDeepnest: {
           name: "Vessel Fragment #8",
           spoiler: "Deepnest: Goam platforming challenge",
-          wiki: "Vessel_Fragment"
+          wiki: "Vessel_Fragment",
+          id: "Vessel Fragment",
+          sceneName: "Deepnest_38"
         },
-        Abyss_04: {
+        vesselFragmentFountain: {
           name: "Vessel Fragment #9",
           spoiler: "Ancient Basin Fountain: 3000 Geo",
-          wiki: "Vessel_Fragment"
+          wiki: "Vessel_Fragment",
+          id: "Vessel Fragment",
+          sceneName: "Abyss_04"
         }
       }
     },
