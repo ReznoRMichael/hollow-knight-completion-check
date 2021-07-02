@@ -604,7 +604,7 @@ const HK = {
                 /* "Heart Piece" sceneData.persistentBoolItems.id */
                 maskShardCrossroadsSprings: {
                     name: "Mask Shard #6",
-                    spoiler: "Forgotten Crossroads, below Hot Springs",
+                    spoiler: "Forgotten Crossroads: below Hot Springs",
                     wiki: "Mask_Shard",
                     id: "Heart Piece",
                     sceneName: "Crossroads_13"
@@ -632,14 +632,14 @@ const HK = {
                 },
                 maskShardQueensStation: {
                     name: "Mask Shard #10",
-                    spoiler: "Queen's Station, requires Mantis Claw",
+                    spoiler: "Queen's Station: requires Mantis Claw",
                     wiki: "Mask_Shard",
                     id: "Heart Piece",
                     sceneName: "Fungus2_01"
                 },
                 maskShardWaterways: {
                     name: "Mask Shard #11",
-                    spoiler: "Royal Waterways, top left area, swim left",
+                    spoiler: "Royal Waterways: top left area, swim left",
                     wiki: "Mask_Shard",
                     id: "Heart Piece",
                     sceneName: "Waterways_04b"
@@ -660,14 +660,14 @@ const HK = {
                 },
                 maskShardDeepnest: {
                     name: "Mask Shard #14",
-                    spoiler: "Deepnest, from Fungal Core (Monarch Wings)",
+                    spoiler: "Deepnest: from Fungal Core (Monarch Wings)",
                     wiki: "Mask_Shard",
                     id: "Heart Piece",
                     sceneName: "Fungus2_25"
                 },
                 maskShardHive: {
                     name: "Mask Shard #15",
-                    spoiler: "The Hive, use Hive Guardian to break wall",
+                    spoiler: "The Hive: use Hive Guardian to break wall",
                     wiki: "Mask_Shard",
                     id: "Heart Piece",
                     sceneName: "Hive_04"

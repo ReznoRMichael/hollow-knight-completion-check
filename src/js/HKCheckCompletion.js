@@ -160,7 +160,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Mask Shards --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.maskShards, HK.SECTION.maskShards.entries, HKPlayerData);
+    CheckIfDataTrue(HK.SECTION.maskShards, HK.SECTION.maskShards.entries, HKPlayerData, HKWorldItems);
 
     // ---------------- Mask Shards (World Map) --------------------- //
 
@@ -535,6 +535,17 @@ function CheckIfDataTrue(divId, dataObject, playerData, worldData = []) {
                 break;
             case "bossGruzMother":
             case "bossBroodingMawlek":
+            case "maskShardCrossroadsSprings":
+            case "maskShardCrossroadsMawlek":
+            case "maskShardGrubfather":
+            case "maskShardBretta":
+            case "maskShardQueensStation":
+            case "maskShardWaterways":
+            case "maskShardStoneSanctuary":
+            case "maskShardCrystalPeak":
+            case "maskShardDeepnest":
+            case "maskShardHive":
+            case "maskShardDelicateFlower":
                 (WorldDataActivated(dataObject[i].id, dataObject[i].sceneName, worldData)) ? CurrentDataTrue(divId): CurrentDataFalse();
                 break;
             default:

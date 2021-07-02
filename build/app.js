@@ -122,7 +122,7 @@ function HKCheckCompletion(jsonObject) {
 
   CheckNailUpgrades(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailUpgrades, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailUpgrades.entries, HKPlayerData); // ---------------- Mask Shards --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards.entries, HKPlayerData); // ---------------- Mask Shards (World Map) --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards.entries, HKPlayerData, HKWorldItems); // ---------------- Mask Shards (World Map) --------------------- //
 
   /* CheckWorldDataTrue(HK.SECTION.maskShards, "Heart Piece", HK.SECTION.maskShards.entries, HKWorldItems); */
   // ---------------- Nail Arts --------------------- //
@@ -453,6 +453,17 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
 
       case "bossGruzMother":
       case "bossBroodingMawlek":
+      case "maskShardCrossroadsSprings":
+      case "maskShardCrossroadsMawlek":
+      case "maskShardGrubfather":
+      case "maskShardBretta":
+      case "maskShardQueensStation":
+      case "maskShardWaterways":
+      case "maskShardStoneSanctuary":
+      case "maskShardCrystalPeak":
+      case "maskShardDeepnest":
+      case "maskShardHive":
+      case "maskShardDelicateFlower":
         WorldDataActivated(dataObject[i].id, dataObject[i].sceneName, worldData) ? CurrentDataTrue(divId) : CurrentDataFalse();
         break;
 
@@ -3078,60 +3089,82 @@ var HK = {
         /* ########## Mask Shards World ########## */
 
         /* "Heart Piece" sceneData.persistentBoolItems.id */
-        Crossroads_13: {
+        maskShardCrossroadsSprings: {
           name: "Mask Shard #6",
-          spoiler: "Forgotten Crossroads, below Hot Springs",
-          wiki: "Mask_Shard"
+          spoiler: "Forgotten Crossroads: below Hot Springs",
+          wiki: "Mask_Shard",
+          id: "Heart Piece",
+          sceneName: "Crossroads_13"
         },
-        Crossroads_09: {
+        maskShardCrossroadsMawlek: {
           name: "Mask Shard #7",
           spoiler: "Forgotten Crossroads: defeat Brooding Mawlek",
-          wiki: "Mask_Shard"
+          wiki: "Mask_Shard",
+          id: "Heart Piece",
+          sceneName: "Crossroads_09"
         },
-        Crossroads_38: {
+        maskShardGrubfather: {
           name: "Mask Shard #8",
           spoiler: "Grubfather: 5 Grubs rescued",
-          wiki: "Mask_Shard"
+          wiki: "Mask_Shard",
+          id: "Heart Piece",
+          sceneName: "Crossroads_38"
         },
-        Room_Bretta: {
+        maskShardBretta: {
           name: "Mask Shard #9",
           spoiler: "Dirtmouth: Bretta's Room, rescue Bretta",
-          wiki: "Mask_Shard"
+          wiki: "Mask_Shard",
+          id: "Heart Piece",
+          sceneName: "Room_Bretta"
         },
-        Fungus2_01: {
+        maskShardQueensStation: {
           name: "Mask Shard #10",
-          spoiler: "Queen's Station, requires Mantis Claw",
-          wiki: "Mask_Shard"
+          spoiler: "Queen's Station: requires Mantis Claw",
+          wiki: "Mask_Shard",
+          id: "Heart Piece",
+          sceneName: "Fungus2_01"
         },
-        Waterways_04b: {
+        maskShardWaterways: {
           name: "Mask Shard #11",
-          spoiler: "Royal Waterways, top left area, swim left",
-          wiki: "Mask_Shard"
+          spoiler: "Royal Waterways: top left area, swim left",
+          wiki: "Mask_Shard",
+          id: "Heart Piece",
+          sceneName: "Waterways_04b"
         },
-        Fungus1_36: {
+        maskShardStoneSanctuary: {
           name: "Mask Shard #12",
           spoiler: "Greenpath: Stone Sanctuary, Lumafly Lantern",
-          wiki: "Mask_Shard"
+          wiki: "Mask_Shard",
+          id: "Heart Piece",
+          sceneName: "Fungus1_36"
         },
-        Mines_32: {
+        maskShardCrystalPeak: {
           name: "Mask Shard #13",
           spoiler: "Crystal Peak: defeat Enraged Guardian",
-          wiki: "Mask_Shard"
+          wiki: "Mask_Shard",
+          id: "Heart Piece",
+          sceneName: "Mines_32"
         },
-        Fungus2_25: {
+        maskShardDeepnest: {
           name: "Mask Shard #14",
-          spoiler: "Deepnest, from Fungal Core (Monarch Wings)",
-          wiki: "Mask_Shard"
+          spoiler: "Deepnest: from Fungal Core (Monarch Wings)",
+          wiki: "Mask_Shard",
+          id: "Heart Piece",
+          sceneName: "Fungus2_25"
         },
-        Hive_04: {
+        maskShardHive: {
           name: "Mask Shard #15",
-          spoiler: "The Hive, use Hive Guardian to break wall",
-          wiki: "Mask_Shard"
+          spoiler: "The Hive: use Hive Guardian to break wall",
+          wiki: "Mask_Shard",
+          id: "Heart Piece",
+          sceneName: "Hive_04"
         },
-        Room_Mansion: {
+        maskShardDelicateFlower: {
           name: "Mask Shard #16",
           spoiler: "Resting Grounds: Delicate Flower (Grey Mourner)",
-          wiki: "Mask_Shard"
+          wiki: "Mask_Shard",
+          id: "Heart Piece",
+          sceneName: "Room_Mansion"
         }
       }
     },
