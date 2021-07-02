@@ -162,10 +162,6 @@ function HKCheckCompletion(jsonObject) {
 
     CheckIfDataTrue(HK.SECTION.maskShards, HK.SECTION.maskShards.entries, HKPlayerData, HKWorldItems);
 
-    // ---------------- Mask Shards (World Map) --------------------- //
-
-    /* CheckWorldDataTrue(HK.SECTION.maskShards, "Heart Piece", HK.SECTION.maskShards.entries, HKWorldItems); */
-
     // ---------------- Nail Arts --------------------- //
 
     CheckIfDataTrue(HK.SECTION.nailArts, HK.SECTION.nailArts.entries, HKPlayerData);
@@ -177,10 +173,6 @@ function HKCheckCompletion(jsonObject) {
     // ---------------- Vessel Fragments --------------------- //
 
     CheckIfDataTrue(HK.SECTION.vesselFragments, HK.SECTION.vesselFragments.entries, HKPlayerData, HKWorldItems);
-
-    // ---------------- Vessel Fragments (World Map) --------------------- //
-
-    /* CheckWorldDataTrue(HK.SECTION.vesselFragments, "Vessel Fragment", HK.SECTION.vesselFragments.entries, HKWorldItems); */
 
     // ---------------- Warrior Dreams --------------------- //
 
@@ -197,8 +189,6 @@ function HKCheckCompletion(jsonObject) {
     // ---------------- Godmaster Content Pack --------------------- //
 
     CheckIfDataTrue(HK.SECTION.godmaster, HK.SECTION.godmaster.entries, HKPlayerData);
-
-    /* CheckGodmasterDoors(HK.SECTION.godmaster, HK.SECTION.godmaster.entries, HKPlayerData); */
 
     // ---------------- Fleur Divide ----------------- //
 
