@@ -817,6 +817,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 }
                 (amount >= dataObject[i].max) ? CurrentDataTrue(): CurrentDataBlank();
                 break;
+
             case "geoPool":
             case "rancidEggs":
             case "jinnEggsSold":
@@ -834,6 +835,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 }
 
                 break;
+
             case "geoRocks":
                 discoveredTotal = sceneData.geoRocks.length;
 
@@ -843,6 +845,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`;
                 CurrentDataTrue();
                 break;
+
             case "itemsDiscovered":
                 discoveredTotal = sceneData.persistentBoolItems.length;
 
@@ -852,18 +855,23 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`;
                 CurrentDataTrue();
                 break;
+
             case "shopkeeperKey":
                 (playerData.hasSlykey === true || playerData.gaveSlykey === true) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
+
             case "elegantKey":
                 (playerData.hasWhiteKey === true || playerData.usedWhiteKey === true) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
+
             case "loveKey":
                 (playerData.hasLoveKey === true || playerData.openedLoveDoor === true) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
+
             case "paleOreSeer": // #2
                 (playerData.dreamReward3 === true) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
+
                 /* -------------------- Interactables ------------------------------- */
             case "simpleKeyCityOfTears": // #2
             case "simpleKeyAncientBasin": // #3
@@ -880,6 +888,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
             case "whiteLadyRoom":
                 (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
+
             case "relicsWandererJournal":
             case "relicsHallownestSeal":
             case "relicsKingsIdol":
@@ -888,6 +897,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 (total >= dataObject[i].max) ? CurrentDataTrue(): CurrentDataBlank();
                 textPrefix += ": " + total;
                 break;
+
             case "bossDoorStateTier5":
                 if (playerData.hasOwnProperty("bossDoorStateTier5") === false) {
                     CurrentDataBlank();
@@ -896,6 +906,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                     (playerData[i].completed === true) ? CurrentDataTrue(): CurrentDataFalse();
                 }
                 break;
+
             case "killsBindingSeal":
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank();
@@ -904,6 +915,11 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 }
                 (playerData[i] == 0) ? CurrentDataTrue(): CurrentDataFalse();
                 break;
+
+            case "killsBigBuzzer":
+                (playerData[i] == 0) ? CurrentDataTrue(): CurrentDataFalse();
+                break;
+
             case "killedVoidIdol_1":
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank();
@@ -913,6 +929,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
                 if (playerData[i] === false && (playerData.killedVoidIdol_2 === true || playerData.killedVoidIdol_3 === true)) CurrentDataTrue();
                 break;
+
             case "killedVoidIdol_2":
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank();
@@ -922,6 +939,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataFalse();
                 if (playerData[i] === false && playerData.killedVoidIdol_3 === true) CurrentDataTrue();
                 break;
+
             case "greyPrinceDefeated":
                 // compatibility with earlier game versions
                 if (playerData.hasOwnProperty(i) === false) {
@@ -934,6 +952,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                 (playerData[i] === true) ? CurrentDataTrue(): CurrentDataBlank();
                 if (playerData.zoteRescuedBuzzer === true && playerData[i] === false) CurrentDataFalse();
                 break;
+
             case "zoteStatus":
                 CurrentDataFalse();
                 if (playerData.zoteDead === true) {
@@ -964,6 +983,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                     }
                 }
                 break;
+
             case "nailsmithStatus":
                 CurrentDataFalse();
                 if (playerData.nailsmithKilled === true) {
@@ -982,9 +1002,11 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
                     textSuffix = dataObject[i].spoilerUpgradeNail;
                 }
                 break;
+
             case "mrMushroomState":
                 sFillText += CheckMrMushroomState(divId, dataObject[i], playerData[i]);
                 break;
+                
             default:
                 // backwards compatibility with earlier game versions
                 if (playerData.hasOwnProperty(i) === false) {

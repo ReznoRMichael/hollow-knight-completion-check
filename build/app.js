@@ -847,6 +847,10 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         playerData[i] == 0 ? CurrentDataTrue() : CurrentDataFalse();
         break;
 
+      case "killsBigBuzzer":
+        playerData[i] == 0 ? CurrentDataTrue() : CurrentDataFalse();
+        break;
+
       case "killedVoidIdol_1":
         if (playerData.hasOwnProperty(i) === false) {
           CurrentDataBlank();
