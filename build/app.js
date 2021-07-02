@@ -122,19 +122,13 @@ function HKCheckCompletion(jsonObject) {
 
   CheckNailUpgrades(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailUpgrades, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailUpgrades.entries, HKPlayerData); // ---------------- Mask Shards --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards.entries, HKPlayerData, HKWorldItems); // ---------------- Mask Shards (World Map) --------------------- //
-
-  /* CheckWorldDataTrue(HK.SECTION.maskShards, "Heart Piece", HK.SECTION.maskShards.entries, HKWorldItems); */
-  // ---------------- Nail Arts --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards.entries, HKPlayerData, HKWorldItems); // ---------------- Nail Arts --------------------- //
 
   CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailArts, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailArts.entries, HKPlayerData); // ---------------- Spells --------------------- //
 
   CheckSpellLevel(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.spells, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.spells.entries, HKPlayerData); // ---------------- Vessel Fragments --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments.entries, HKPlayerData, HKWorldItems); // ---------------- Vessel Fragments (World Map) --------------------- //
-
-  /* CheckWorldDataTrue(HK.SECTION.vesselFragments, "Vessel Fragment", HK.SECTION.vesselFragments.entries, HKWorldItems); */
-  // ---------------- Warrior Dreams --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments.entries, HKPlayerData, HKWorldItems); // ---------------- Warrior Dreams --------------------- //
 
   CheckWarriorDreams(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.warriorDreams, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.warriorDreams.entries, HKPlayerData); // ---------------- Grimm Troupe Content Pack --------------------- //
 
@@ -142,9 +136,7 @@ function HKCheckCompletion(jsonObject) {
 
   CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.lifeblood, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.lifeblood.entries, HKPlayerData); // ---------------- Godmaster Content Pack --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster.entries, HKPlayerData);
-  /* CheckGodmasterDoors(HK.SECTION.godmaster, HK.SECTION.godmaster.entries, HKPlayerData); */
-  // ---------------- Fleur Divide ----------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster.entries, HKPlayerData); // ---------------- Fleur Divide ----------------- //
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster, FLEUR_DIVIDE); // ------------------------- Essential Things ----------------------------- //
 
@@ -3435,26 +3427,26 @@ var HK = {
       entries: {
         hasGodfinder: {
           name: "Godtuner",
-          spoiler: "Junk Pit, requires Simple Key",
+          spoiler: "Junk Pit: requires Simple Key",
           wiki: "Godtuner"
         },
 
         /* ########## Godmaster doors ########## */
         pantheonMaster: {
           name: "P1 Pantheon of the Master",
-          spoiler: "Godhome, defeat P1 bosses",
+          spoiler: "Godhome: defeat P1 bosses",
           wiki: "Pantheon_of_the_Master",
           property: "bossDoorStateTier1"
         },
         pantheonArtist: {
           name: "P2 Pantheon of the Artist",
-          spoiler: "Godhome, defeat P2 bosses",
+          spoiler: "Godhome: defeat P2 bosses",
           wiki: "Pantheon_of_the_Artist",
           property: "bossDoorStateTier2"
         },
         pantheonSage: {
           name: "P3 Pantheon of the Sage",
-          spoiler: "Godhome, defeat P3 bosses",
+          spoiler: "Godhome: defeat P3 bosses",
           wiki: "Pantheon_of_the_Sage",
           property: "bossDoorStateTier3"
         },
@@ -4907,7 +4899,7 @@ function GenerateInnerHTML(hkdb) {
     /* Cumulate all section texts into one variable for final HTML filling. End div tag */
 
 
-    finalHTMLFill += "".concat(textFill, "</div>\n");
+    finalHTMLFill += "".concat(textFill, "\n</div>\n\n");
   }
   /* Final HTML Fill here */
 

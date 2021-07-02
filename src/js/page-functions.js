@@ -200,7 +200,7 @@ function GenerateInnerHTML(hkdb) {
         }
 
         /* Cumulate all section texts into one variable for final HTML filling. End div tag */
-        finalHTMLFill += `${textFill}</div>\n`;
+        finalHTMLFill += `${textFill}\n</div>\n\n`;
 
     }
 
