@@ -124,7 +124,8 @@ function HKCheckCompletion(jsonObject) {
 
   CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards.entries, HKPlayerData); // ---------------- Mask Shards (World Map) --------------------- //
 
-  CheckWorldDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards, "Heart Piece", _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards.entries, HKWorldItems); // ---------------- Nail Arts --------------------- //
+  /* CheckWorldDataTrue(HK.SECTION.maskShards, "Heart Piece", HK.SECTION.maskShards.entries, HKWorldItems); */
+  // ---------------- Nail Arts --------------------- //
 
   CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailArts, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailArts.entries, HKPlayerData); // ---------------- Spells --------------------- //
 
@@ -132,7 +133,8 @@ function HKCheckCompletion(jsonObject) {
 
   CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments.entries, HKPlayerData); // ---------------- Vessel Fragments (World Map) --------------------- //
 
-  CheckWorldDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments, "Vessel Fragment", _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments.entries, HKWorldItems); // ---------------- Warrior Dreams --------------------- //
+  /* CheckWorldDataTrue(HK.SECTION.vesselFragments, "Vessel Fragment", HK.SECTION.vesselFragments.entries, HKWorldItems); */
+  // ---------------- Warrior Dreams --------------------- //
 
   CheckWarriorDreams(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.warriorDreams, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.warriorDreams.entries, HKPlayerData); // ---------------- Grimm Troupe Content Pack --------------------- //
 

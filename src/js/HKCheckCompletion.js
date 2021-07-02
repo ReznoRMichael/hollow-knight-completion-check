@@ -164,7 +164,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Mask Shards (World Map) --------------------- //
 
-    CheckWorldDataTrue(HK.SECTION.maskShards, "Heart Piece", HK.SECTION.maskShards.entries, HKWorldItems);
+    /* CheckWorldDataTrue(HK.SECTION.maskShards, "Heart Piece", HK.SECTION.maskShards.entries, HKWorldItems); */
 
     // ---------------- Nail Arts --------------------- //
 
@@ -180,7 +180,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Vessel Fragments (World Map) --------------------- //
 
-    CheckWorldDataTrue(HK.SECTION.vesselFragments, "Vessel Fragment", HK.SECTION.vesselFragments.entries, HKWorldItems);
+    /* CheckWorldDataTrue(HK.SECTION.vesselFragments, "Vessel Fragment", HK.SECTION.vesselFragments.entries, HKWorldItems); */
 
     // ---------------- Warrior Dreams --------------------- //
 
