@@ -309,23 +309,23 @@ function CurrentDataBlank() {
  * @param {number} playTime Number of total gameplay time in seconds
  */
 function CheckPlayTime(divId, playTime) {
-
-    /* let icon = "<i class='icon-clock'></i>";
-    divId.playTimeIcon = icon; */
     
     let seconds = Math.floor(playTime);
     let minutes = Math.floor((seconds / 60) % 60);
     let hours = Math.floor(seconds / 3600);
     let sec = Math.floor(seconds % 60);
 
+    divId.entries.timePlayed.timeH = hours;
+    divId.entries.timePlayed.timeM = minutes;
+    divId.entries.timePlayed.timeS = sec;
+
     if (sec < 10) sec = "0" + sec;
     if (minutes < 10) minutes = "0" + minutes;
 
     let textFill = "Time Played:" + pSpan + "<b>" + hours + " h " + minutes + " min " + sec + " sec</b>";
 
-    divId.playTime = hours + " h " + minutes + " min " + sec + " sec";
+    divId.entries.timePlayed.spoiler = hours + " h " + minutes + " min " + sec + " sec";
 
-    // document.getElementById(divId.id).innerHTML += divStart + icon + textFill + divEnd;
     document.getElementById(divId.id).innerHTML += divStart + SYMBOL_CLOCK + textFill + divEnd;
 }
 

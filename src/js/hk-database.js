@@ -17,15 +17,15 @@ const HK = {
             entries: {
                 timePlayed: {
                     name: "Time Played:",
-                    spoiler: `0 h 0 min 0 sec"`,
+                    spoiler: "0 h 0 min 0 sec",
                     timeH: 0,
                     timeM: 0,
                     timeS: 0,
                 },
                 gameCompletion: {
                     name: "Game Completion:",
-                    spoiler: `0 %`,
-                    text: `(out of 112 %)`
+                    spoiler: "0 %",
+                    text: "(out of 112 %)"
                 },
                 saveVersion: {
                     name: "Save Version:",
