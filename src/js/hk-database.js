@@ -941,25 +941,25 @@ const HK = {
             entries: {
                 hasGodfinder: {
                     name: "Godtuner",
-                    spoiler: "Junk Pit, requires Simple Key",
+                    spoiler: "Junk Pit: requires Simple Key",
                     wiki: "Godtuner"
                 },
                 /* ########## Godmaster doors ########## */
                 pantheonMaster: {
                     name: "P1 Pantheon of the Master",
-                    spoiler: "Godhome, defeat P1 bosses",
+                    spoiler: "Godhome: defeat P1 bosses",
                     wiki: "Pantheon_of_the_Master",
                     property: "bossDoorStateTier1"
                 },
                 pantheonArtist: {
                     name: "P2 Pantheon of the Artist",
-                    spoiler: "Godhome, defeat P2 bosses",
+                    spoiler: "Godhome: defeat P2 bosses",
                     wiki: "Pantheon_of_the_Artist",
                     property: "bossDoorStateTier2"
                 },
                 pantheonSage: {
                     name: "P3 Pantheon of the Sage",
-                    spoiler: "Godhome, defeat P3 bosses",
+                    spoiler: "Godhome: defeat P3 bosses",
                     wiki: "Pantheon_of_the_Sage",
                     property: "bossDoorStateTier3"
                 },
