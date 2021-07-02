@@ -198,7 +198,7 @@ function HKCheckCompletion(jsonObject) {
 
     CheckIfDataTrue(HK.SECTION.godmaster, HK.SECTION.godmaster.entries, HKPlayerData);
 
-    CheckGodmasterDoors(HK.SECTION.godmaster, HK.SECTION.godmaster.entries, HKPlayerData);
+    /* CheckGodmasterDoors(HK.SECTION.godmaster, HK.SECTION.godmaster.entries, HKPlayerData); */
 
     // ---------------- Fleur Divide ----------------- //
 
@@ -501,6 +501,7 @@ function CheckIfDataTrue(divId, dataObject, playerData, worldData = []) {
     } = "";
     let sFillText = "";
     let wiki = "";
+    let checkText = "";
 
     for (let i in dataObject) {
 
@@ -513,6 +514,7 @@ function CheckIfDataTrue(divId, dataObject, playerData, worldData = []) {
                 // prevents green checkbox and adding 1% when only got one white fragment
                 (playerData.gotQueenFragment === true && playerData.gotKingFragment === true) ? CurrentDataTrue(divId): CurrentDataFalse();
                 break;
+            
             case "gotCharm_37":
             case "gotCharm_38":
             case "gotCharm_39":
@@ -533,6 +535,7 @@ function CheckIfDataTrue(divId, dataObject, playerData, worldData = []) {
                 }
                 (playerData[i] === true) ? CurrentDataTrue(divId): CurrentDataFalse();
                 break;
+            
             case "bossGruzMother":
             case "bossBroodingMawlek":
             case "maskShardCrossroadsSprings":
@@ -553,6 +556,24 @@ function CheckIfDataTrue(divId, dataObject, playerData, worldData = []) {
             case "vesselFragmentFountain":
                 (WorldDataActivated(dataObject[i].id, dataObject[i].sceneName, worldData)) ? CurrentDataTrue(divId): CurrentDataFalse();
                 break;
+            
+            case "pantheonMaster":
+            case "pantheonArtist":
+            case "pantheonSage":
+            case "pantheonKnight":
+                checkText = CheckGodmasterDoors(dataObject[i], playerData);
+                if (checkText === "PropertyNotFound") {
+                    CurrentDataBlank();
+                    textPrefix = `<del>${textPrefix}</del>`;
+                    break;
+                } else if (checkText === "PantheonCompleted") {
+                    CurrentDataTrue(divId);
+                    break;
+                } else {
+                    CurrentDataFalse();
+                }
+                break;
+            
             default:
                 (playerData[i] === true) ? CurrentDataTrue(divId): CurrentDataFalse();
         }
@@ -618,40 +639,18 @@ function CheckWarriorDreams(divId, dataObject, playerData) {
 
 /**
  * Verifies if the Godmaster Pantheons 1-4 are completed by the player, and appends HTML accordingly.
- * @param {object} divId ID of the HTML element for data appending
- * @param {object} dataObject Object containing pantheon data to be verified
+ * @param {object} dataObject Object containing pantheon data to be verified (with property)
  * @param {object} playerData Reference/pointer to specific data where to search in the save file
  */
-function CheckGodmasterDoors(divId, dataObject, playerData) {
+function CheckGodmasterDoors(dataObject, playerData) {
 
-    // appends "pantheon" to every array element
-    // same as names in the database object
-    let pantheon = ["Master", "Artist", "Sage", "Knight"].map((element) => "pantheon" + element);
-
-    let sFillText = "";
-
-    for (let i = 0; i < 4; i++) {
-        // compatibility with earlier game versions
-        if (playerData.hasOwnProperty("bossDoorStateTier" + (i + 1)) === false) {
-            CurrentDataBlank();
-            sFillText += PrepareHTMLString(
-                divId,
-                `<del>${dataObject[pantheon[i]].name}</del>`,
-                dataObject[pantheon[i]].spoiler,
-                dataObject[pantheon[i]].wiki
-            );
-        } else {
-            (playerData["bossDoorStateTier" + (i + 1)].completed === true) ? CurrentDataTrue(divId): CurrentDataFalse();
-            sFillText += PrepareHTMLString(
-                divId,
-                dataObject[pantheon[i]].name,
-                dataObject[pantheon[i]].spoiler,
-                dataObject[pantheon[i]].wiki
-            );
-        }
+    if (playerData.hasOwnProperty(dataObject.property) === false) {
+        return "PropertyNotFound";
+    } else if (playerData[dataObject.property].completed === true) {
+        return "PantheonCompleted";
+    } else {
+        return "PantheonNotCompleted";
     }
-
-    AppendHTML(divId, sFillText);
 }
 
 /**

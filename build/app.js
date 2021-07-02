@@ -143,7 +143,8 @@ function HKCheckCompletion(jsonObject) {
   CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.lifeblood, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.lifeblood.entries, HKPlayerData); // ---------------- Godmaster Content Pack --------------------- //
 
   CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster.entries, HKPlayerData);
-  CheckGodmasterDoors(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster.entries, HKPlayerData); // ---------------- Fleur Divide ----------------- //
+  /* CheckGodmasterDoors(HK.SECTION.godmaster, HK.SECTION.godmaster.entries, HKPlayerData); */
+  // ---------------- Fleur Divide ----------------- //
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster, FLEUR_DIVIDE); // ------------------------- Essential Things ----------------------------- //
 
@@ -416,6 +417,7 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
       textSuffix = _ref.textSuffix;
   var sFillText = "";
   var wiki = "";
+  var checkText = "";
 
   for (var i in dataObject) {
     textPrefix = dataObject[i].name;
@@ -470,6 +472,25 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
       case "vesselFragmentDeepnest":
       case "vesselFragmentFountain":
         WorldDataActivated(dataObject[i].id, dataObject[i].sceneName, worldData) ? CurrentDataTrue(divId) : CurrentDataFalse();
+        break;
+
+      case "pantheonMaster":
+      case "pantheonArtist":
+      case "pantheonSage":
+      case "pantheonKnight":
+        checkText = CheckGodmasterDoors(dataObject[i], playerData);
+
+        if (checkText === "PropertyNotFound") {
+          CurrentDataBlank();
+          textPrefix = "<del>".concat(textPrefix, "</del>");
+          break;
+        } else if (checkText === "PantheonCompleted") {
+          CurrentDataTrue(divId);
+          break;
+        } else {
+          CurrentDataFalse();
+        }
+
         break;
 
       default:
@@ -539,32 +560,19 @@ function CheckWarriorDreams(divId, dataObject, playerData) {
 }
 /**
  * Verifies if the Godmaster Pantheons 1-4 are completed by the player, and appends HTML accordingly.
- * @param {object} divId ID of the HTML element for data appending
- * @param {object} dataObject Object containing pantheon data to be verified
+ * @param {object} dataObject Object containing pantheon data to be verified (with property)
  * @param {object} playerData Reference/pointer to specific data where to search in the save file
  */
 
 
-function CheckGodmasterDoors(divId, dataObject, playerData) {
-  // appends "pantheon" to every array element
-  // same as names in the database object
-  var pantheon = ["Master", "Artist", "Sage", "Knight"].map(function (element) {
-    return "pantheon" + element;
-  });
-  var sFillText = "";
-
-  for (var i = 0; i < 4; i++) {
-    // compatibility with earlier game versions
-    if (playerData.hasOwnProperty("bossDoorStateTier" + (i + 1)) === false) {
-      CurrentDataBlank();
-      sFillText += PrepareHTMLString(divId, "<del>".concat(dataObject[pantheon[i]].name, "</del>"), dataObject[pantheon[i]].spoiler, dataObject[pantheon[i]].wiki);
-    } else {
-      playerData["bossDoorStateTier" + (i + 1)].completed === true ? CurrentDataTrue(divId) : CurrentDataFalse();
-      sFillText += PrepareHTMLString(divId, dataObject[pantheon[i]].name, dataObject[pantheon[i]].spoiler, dataObject[pantheon[i]].wiki);
-    }
+function CheckGodmasterDoors(dataObject, playerData) {
+  if (playerData.hasOwnProperty(dataObject.property) === false) {
+    return "PropertyNotFound";
+  } else if (playerData[dataObject.property].completed === true) {
+    return "PantheonCompleted";
+  } else {
+    return "PantheonNotCompleted";
   }
-
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divId, sFillText);
 }
 /**
  * Verifies the level of player's nail upgrades, and appends HTML accordingly.
@@ -3435,22 +3443,26 @@ var HK = {
         pantheonMaster: {
           name: "P1 Pantheon of the Master",
           spoiler: "Godhome, defeat P1 bosses",
-          wiki: "Pantheon_of_the_Master"
+          wiki: "Pantheon_of_the_Master",
+          property: "bossDoorStateTier1"
         },
         pantheonArtist: {
           name: "P2 Pantheon of the Artist",
           spoiler: "Godhome, defeat P2 bosses",
-          wiki: "Pantheon_of_the_Artist"
+          wiki: "Pantheon_of_the_Artist",
+          property: "bossDoorStateTier2"
         },
         pantheonSage: {
           name: "P3 Pantheon of the Sage",
           spoiler: "Godhome, defeat P3 bosses",
-          wiki: "Pantheon_of_the_Sage"
+          wiki: "Pantheon_of_the_Sage",
+          property: "bossDoorStateTier3"
         },
         pantheonKnight: {
           name: "P4 Pantheon of the Knight",
           spoiler: "Godhome: complete P1, P2 and P3",
-          wiki: "Pantheon_of_the_Knight"
+          wiki: "Pantheon_of_the_Knight",
+          property: "bossDoorStateTier4"
         }
       }
     },

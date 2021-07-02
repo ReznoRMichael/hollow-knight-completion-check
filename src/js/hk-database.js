@@ -948,22 +948,26 @@ const HK = {
                 pantheonMaster: {
                     name: "P1 Pantheon of the Master",
                     spoiler: "Godhome, defeat P1 bosses",
-                    wiki: "Pantheon_of_the_Master"
+                    wiki: "Pantheon_of_the_Master",
+                    property: "bossDoorStateTier1"
                 },
                 pantheonArtist: {
                     name: "P2 Pantheon of the Artist",
                     spoiler: "Godhome, defeat P2 bosses",
-                    wiki: "Pantheon_of_the_Artist"
+                    wiki: "Pantheon_of_the_Artist",
+                    property: "bossDoorStateTier2"
                 },
                 pantheonSage: {
                     name: "P3 Pantheon of the Sage",
                     spoiler: "Godhome, defeat P3 bosses",
-                    wiki: "Pantheon_of_the_Sage"
+                    wiki: "Pantheon_of_the_Sage",
+                    property: "bossDoorStateTier3"
                 },
                 pantheonKnight: {
                     name: "P4 Pantheon of the Knight",
                     spoiler: "Godhome: complete P1, P2 and P3",
-                    wiki: "Pantheon_of_the_Knight"
+                    wiki: "Pantheon_of_the_Knight",
+                    property: "bossDoorStateTier4"
                 }
             },
         },
