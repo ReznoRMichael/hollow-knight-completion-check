@@ -186,6 +186,7 @@ function GenerateInnerHTML(sections) {
         /* create all main entries */
         switch (section) {
             case "hints":
+                /* display only one (current) hint */
                 textFill += SingleEntryFill(section, entries[sections[section].current]);
                 break;
 
