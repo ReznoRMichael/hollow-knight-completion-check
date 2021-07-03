@@ -1376,9 +1376,9 @@ function InitialHTMLPopulate(sections) {
   // if (localStorage.getItem("hkCheckboxSpoilers") === "checked") document.getElementById("checkbox-spoilers").checked = true;
   // Prevents wrong checkbox behaviour (must run after everything is finished)
 
-  /* CheckboxHintsToggle();
-  CheckboxSpoilersToggle(); */
 
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CheckboxHintsToggle)();
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CheckboxSpoilersToggle)();
 }
 /**
  * Zero-fill all "percent" properties in the JSON Object (reset to default)
@@ -5023,7 +5023,7 @@ function SingleEntryFill(section, entry) {
       if (textPrefix.includes("<del>")) textSuffix = "<del>".concat(textSuffix, "</del>");
   }
 
-  return "\n        <div class=\"single-entry\">\n            ".concat(icon, "\n            ").concat(b[0]).concat(textPrefix).concat(b[1], "\n            ").concat(span[0], "\n                ").concat(p, "\n                ").concat(spoiler[0], "\n                    ").concat(textSuffix, "\n                ").concat(spoiler[1], "\n            ").concat(span[1], "\n        </div>\n    ");
+  return ["<div class='single-entry'>", icon, "".concat(b[0]).concat(textPrefix).concat(b[1]), span[0], p, spoiler[0], textSuffix, spoiler[1], span[1], "</div>"].join("");
 }
 /**
  * Adds HTML string to an element with a given ID.

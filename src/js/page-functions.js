@@ -330,18 +330,18 @@ function SingleEntryFill(section, entry) {
     }
 
 
-    return `
-        <div class="single-entry">
-            ${icon}
-            ${b[0]}${textPrefix}${b[1]}
-            ${span[0]}
-                ${p}
-                ${spoiler[0]}
-                    ${textSuffix}
-                ${spoiler[1]}
-            ${span[1]}
-        </div>
-    `;
+    return [
+        "<div class='single-entry'>",
+            icon,
+            `${b[0]}${textPrefix}${b[1]}`,
+            span[0],
+                p,
+                spoiler[0],
+                    textSuffix,
+                spoiler[1],
+            span[1],
+        "</div>"
+    ].join("");
 
 }
 

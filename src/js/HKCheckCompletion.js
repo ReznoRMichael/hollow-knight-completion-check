@@ -1449,8 +1449,8 @@ function InitialHTMLPopulate(sections) {
     // if (localStorage.getItem("hkCheckboxSpoilers") === "checked") document.getElementById("checkbox-spoilers").checked = true;
 
     // Prevents wrong checkbox behaviour (must run after everything is finished)
-    /* CheckboxHintsToggle();
-    CheckboxSpoilersToggle(); */
+    CheckboxHintsToggle();
+    CheckboxSpoilersToggle();
 }
 
 /**
