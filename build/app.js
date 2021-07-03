@@ -4969,7 +4969,7 @@ function SingleEntryFill(section, entry) {
   var textSuffix = "";
   var wiki = "";
   var b = ["<b>", "</b>"];
-  var p = "";
+  var p = "<span class='p-left-small'></span>";
   var span = ["", ""];
   var spoiler = ["", ""];
 
@@ -4991,7 +4991,7 @@ function SingleEntryFill(section, entry) {
         icon = iconNull;
     }
   } else {
-    icon = iconNull;
+    icon = iconRed;
   }
 
   if (entry.hasOwnProperty("name")) {
@@ -5011,12 +5011,17 @@ function SingleEntryFill(section, entry) {
 
   switch (section) {
     case "intro":
+      b = ["", ""];
+      span = ["<b>", "</b>"];
+      break;
+
     case "hints":
       b = ["", ""];
+      span = ["<b>", "</b>"];
+      icon = iconNull;
       break;
 
     default:
-      p = "<span class='p-left-small'></span>";
       span = ["<span class='spoiler-span'>", "</span>"];
       spoiler = ["<span class='spoiler-text'>", "</span>"];
       if (textSuffix.length && textPrefix.length) textSuffix = "— " + textSuffix;

@@ -273,7 +273,7 @@ function SingleEntryFill(section, entry) {
     let textSuffix = "";
     let wiki = "";
     let b = ["<b>", "</b>"];
-    let p = "";
+    let p = "<span class='p-left-small'></span>";
     let span = ["", ""]; 
     let spoiler = ["", ""];
     
@@ -294,7 +294,7 @@ function SingleEntryFill(section, entry) {
                 icon = iconNull;
         }
     } else {
-        icon = iconNull;
+        icon = iconRed;
     }
 
     if (entry.hasOwnProperty("name")) {
@@ -315,13 +315,18 @@ function SingleEntryFill(section, entry) {
     switch (section) {
 
         case "intro":
+            b = ["", ""];
+            span = ["<b>", "</b>"];
+            break;
+
         case "hints":
             b = ["", ""];
+            span = ["<b>", "</b>"];
+            icon = iconNull;
             break;
         
         default:
 
-            p = "<span class='p-left-small'></span>";
             span = ["<span class='spoiler-span'>", "</span>"];
             spoiler = ["<span class='spoiler-text'>", "</span>"];
         
