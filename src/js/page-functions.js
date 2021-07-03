@@ -73,7 +73,7 @@ function PrefillHTML(jsObj, element = "generated") {
     let domElement = document.getElementById(element);
     let sFillText = "";
     // Clean "generated" div
-    domElement.innerHTML = "";
+    // domElement.innerHTML = "";
 
     let id = "";
     let h2 = "";
@@ -96,7 +96,7 @@ function PrefillHTML(jsObj, element = "generated") {
         `;
     }
 
-    domElement.innerHTML = sFillText;
+    // domElement.innerHTML = sFillText;
 }
 
 /**
@@ -156,7 +156,7 @@ function CompletionHTML(jsObj, hkGameCompletion) {
             fillText = `<div class='percent-box${cl}'>${(i === "intro") ? cp: cp + jsObj[i].maxPercent}%</div>`;
         }
 
-        document.getElementById(h2id).innerHTML = h2 + fillText;
+        // document.getElementById(h2id).innerHTML = h2 + fillText;
     }
 }
 
@@ -164,14 +164,13 @@ function CompletionHTML(jsObj, hkGameCompletion) {
 /* ################################### Optimized Functions ###################################### */
 
 
-function GenerateInnerHTML(hkdb) {
+function GenerateInnerHTML(sections) {
     
-    console.log(hkdb);
+    console.log(sections);
 
     let finalHTMLFill = "";
     let textFill = "";
 
-    let sections = hkdb.SECTION;
     let entries = {};
 
     for (let section in sections) {
@@ -186,20 +185,10 @@ function GenerateInnerHTML(hkdb) {
 
         /* create all main entries */
         for (let entry in entries) {
-            textFill += SingleEntryFill(entries[entry]);
+            textFill += SingleEntryFill(section, entries[entry]);
         }
 
-        switch (section) {
-
-            case "intro":
-
-                textFill += "This is intro";
-
-                break;
-            default:
-        }
-
-        /* Cumulate all section texts into one variable for final HTML filling. End div tag */
+        /* Cumulate all section texts into one variable for final HTML filling. End section div tag */
         finalHTMLFill += `${textFill}\n</div>\n\n`;
 
     }
@@ -208,6 +197,8 @@ function GenerateInnerHTML(hkdb) {
     console.groupCollapsed("finalHTMLFill");
     console.log(finalHTMLFill);
     console.groupEnd();
+
+    document.getElementById("generated").innerHTML = finalHTMLFill;
 
 }
 
@@ -270,7 +261,7 @@ function SectionStart(section) {
     
 }
 
-function SingleEntryFill(entry) {
+function SingleEntryFill(section, entry) {
 
     let icon = "";
     let iconGreen = SYMBOL_TRUE;
@@ -278,6 +269,14 @@ function SingleEntryFill(entry) {
     let iconClock = SYMBOL_CLOCK;
     let iconNull = SYMBOL_EMPTY;
 
+    let textPrefix = "";
+    let textSuffix = "";
+    let wiki = "";
+    let b = ["<b>", "</b>"];
+    let p = "";
+    let span = ["", ""]; 
+    let spoiler = ["", ""];
+    
     if (entry.hasOwnProperty("icon")) {
         
         switch (entry.icon) {
@@ -298,10 +297,6 @@ function SingleEntryFill(entry) {
         icon = iconNull;
     }
 
-    let textPrefix = "";
-    let textSuffix = "";
-    let wiki = "";
-
     if (entry.hasOwnProperty("name")) {
         textPrefix = entry.name;
     }
@@ -314,17 +309,26 @@ function SingleEntryFill(entry) {
         wiki = entry.wiki;
     }
 
-    let b = ["<b>", "</b>"];
     if (!textPrefix.length) b = ["", ""];
     if (wiki.length) b = [`<a class="wiki" href="${WIKI_LINK}${wiki}" target="_blank">`, "</a>"];
 
-    let p = "<span class='p-left-small'></span>";
-    let span = ["<span class='spoiler-span'>", "</span>"];
-    let spoiler = ["<span class='spoiler-text'>", "</span>"];
+    switch (section) {
 
-    // let dash = "";
-    if (textSuffix.length && textPrefix.length) textSuffix = "— " + textSuffix;
-    if (textPrefix.includes("<del>")) textSuffix = `<del>${textSuffix}</del>`;
+        case "intro":
+        case "hints":
+            b = ["", ""];
+            break;
+        
+        default:
+
+            p = "<span class='p-left-small'></span>";
+            span = ["<span class='spoiler-span'>", "</span>"];
+            spoiler = ["<span class='spoiler-text'>", "</span>"];
+        
+            if (textSuffix.length && textPrefix.length) textSuffix = "— " + textSuffix;
+            if (textPrefix.includes("<del>")) textSuffix = `<del>${textSuffix}</del>`;
+    }
+
 
     return `
         <div class="single-entry">

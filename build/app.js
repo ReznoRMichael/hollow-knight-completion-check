@@ -85,9 +85,9 @@ function HKCheckCompletion(jsonObject) {
       HKWorldItems = jsonObject.sceneData.persistentBoolItems;
     } else return false;
   } else return false; // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
+  // PrefillHTML(HK.SECTION);
+  // Prevents adding current percent data after each function call (each click of Analyze button)
 
-
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.PrefillHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION); // Prevents adding current percent data after each function call (each click of Analyze button)
 
   ResetCompletion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION); // ================================================================================== //
   // ---------------- Time Played ----------------- //
@@ -97,8 +97,8 @@ function HKCheckCompletion(jsonObject) {
   CheckCompletionPercent(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.intro, HKPlayerData.completionPercentage); // ---------------- Game Completion Status ----------------- //
 
   CheckSaveFileVersion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.intro, HKPlayerData.version); // ---------------- Fleur Divide ----------------- //
-
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.intro, FLEUR_DIVIDE); // ---------------- Health Masks ----------------- //
+  // AppendHTML(HK.SECTION.intro, FLEUR_DIVIDE);
+  // ---------------- Health Masks ----------------- //
 
   CheckHealthMasks(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.intro, HKPlayerData.maxHealthBase, HKPlayerData.permadeathMode); // ---------------- Soul Orbs ----------------- //
 
@@ -137,16 +137,16 @@ function HKCheckCompletion(jsonObject) {
   CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.lifeblood, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.lifeblood.entries, HKPlayerData); // ---------------- Godmaster Content Pack --------------------- //
 
   CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster.entries, HKPlayerData); // ---------------- Fleur Divide ----------------- //
-
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster, FLEUR_DIVIDE); // ------------------------- Essential Things ----------------------------- //
+  // AppendHTML(HK.SECTION.godmaster, FLEUR_DIVIDE);
+  // ------------------------- Essential Things ----------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.essential, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.essential.entries, HKPlayerData, HKWorldItems); // ---------------- Fleur Divide ----------------- //
-
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.essential, FLEUR_DIVIDE); // ------------------------- Achievements ----------------------------- //
+  // AppendHTML(HK.SECTION.essential, FLEUR_DIVIDE);
+  // ------------------------- Achievements ----------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.achievements.entries, HKPlayerData, HKWorldItems); // ---------------- Fleur Divide ----------------- //
-
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.achievements, FLEUR_DIVIDE); // ------------------------- Game Statistics ----------------------------- //
+  // AppendHTML(HK.SECTION.achievements, FLEUR_DIVIDE);
+  // ------------------------- Game Statistics ----------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.statistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.statistics.entries, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Godhome Statistics ----------------------------- //
 
@@ -155,7 +155,7 @@ function HKCheckCompletion(jsonObject) {
   CheckHintsTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.hints.entries, HKPlayerData, HKWorldItems); // ------------------------- Fill completion ----------------------------- //
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CompletionHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION, HKPlayerData.completionPercentage);
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.GenerateInnerHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default); // Prevents wrong checkbox behaviour (must run after everything is finished)
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.GenerateInnerHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION); // Prevents wrong checkbox behaviour (must run after everything is finished)
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CheckboxHintsToggle)();
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CheckboxSpoilersToggle)(); // finish and show benchmark
@@ -250,8 +250,7 @@ function CheckPlayTime(divId, playTime) {
   if (sec < 10) sec = "0" + sec;
   if (minutes < 10) minutes = "0" + minutes;
   var textFill = "Time Played:" + pSpan + "<b>" + hours + " h " + minutes + " min " + sec + " sec</b>";
-  divId.entries.timePlayed.spoiler = hours + " h " + minutes + " min " + sec + " sec";
-  document.getElementById(divId.id).innerHTML += divStart + SYMBOL_CLOCK + textFill + divEnd;
+  divId.entries.timePlayed.spoiler = hours + " h " + minutes + " min " + sec + " sec"; // document.getElementById(divId.id).innerHTML += divStart + SYMBOL_CLOCK + textFill + divEnd;
 }
 /**
  * Searches for completionPercentage in playerData and fills HTML with the value of the save file
@@ -263,8 +262,7 @@ function CheckPlayTime(divId, playTime) {
 function CheckCompletionPercent(divId, completionPercentage) {
   completionPercentage >= 112 ? CurrentDataTrue() : CurrentDataFalse();
   divId.percent = completionPercentage;
-  var textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + divId.maxPercent + " %)";
-  document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
+  var textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + divId.maxPercent + " %)"; // document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }
 /**
  * Reads the "version" string from the save file and appends it to the selected div ID element
@@ -276,8 +274,7 @@ function CheckCompletionPercent(divId, completionPercentage) {
 function CheckSaveFileVersion(divId) {
   var saveVersion = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.intro.entries.saveVersion.spoiler;
   CurrentDataBlank();
-  var textFill = "Save Version:".concat(pSpan, "<b>").concat(saveVersion, "</b>").concat(pSpan);
-  document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
+  var textFill = "Save Version:".concat(pSpan, "<b>").concat(saveVersion, "</b>").concat(pSpan); // document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }
 /**
  * Fills HTML with appropriate number of health mask images
@@ -300,9 +297,8 @@ function CheckHealthMasks(divId) {
 
   for (var i = 0; i < masks; i++) {
     maskImages += maskImg;
-  }
+  } // document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + maskImages + divEnd;
 
-  document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + maskImages + divEnd;
 }
 /**
  * Fills HTML with appropriate number of soul orbs images
@@ -320,9 +316,8 @@ function CheckSoulOrbs(divId, totalSoul) {
 
   for (var i = 0, total = totalSoul / 33; i < total; i++) {
     soulImages += soulImg;
-  }
+  } // document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + soulImages + divEnd;
 
-  document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + soulImages + divEnd;
 }
 /**
  * Fills HTML with the Geo value of the save file
@@ -339,8 +334,7 @@ function CheckGeo(divId) {
 
   if (geoPoolValue > 0) textFill += "\n    ".concat(pSpan, "+<img src='").concat(_img_geo_shade_png__WEBPACK_IMPORTED_MODULE_10__, "' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'><b>").concat(geoPoolValue, "</b>"); // Show also total Geo (Geo + Shade Geo) if player has at least 1 geo alongside the shade geo
 
-  if (geoValue > 0 && geoPoolValue > 0) textFill += "".concat(pSpan, "=").concat(pSpan, "<b>").concat(geoValue + geoPoolValue, "</b>");
-  document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + divEnd;
+  if (geoValue > 0 && geoPoolValue > 0) textFill += "".concat(pSpan, "=").concat(pSpan, "<b>").concat(geoValue + geoPoolValue, "</b>"); // document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + divEnd;
 }
 /**
  * Fills HTML with appropriate number of notch images
@@ -389,9 +383,8 @@ function CheckNotches(divId) {
     for (var _i2 = 0; _i2 < unusedNotches; _i2++) {
       notchImages += notchNormalImage;
     }
-  }
+  } // document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + notchImages + divEnd;
 
-  document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + notchImages + divEnd;
 }
 /**
  * Verifies if the data in a specific object is true or false, and appends HTML accordingly.
@@ -490,9 +483,8 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
     }
 
     sFillText += PrepareHTMLString(divId, textPrefix, textSuffix, wiki);
-  }
+  } // AppendHTML(divId, sFillText);
 
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divId, sFillText);
 }
 /**
  * Verifies if the data in a specific object is 0 or > 0, and appends HTML accordingly.
@@ -528,9 +520,8 @@ function CheckSpellLevel(divId, dataObject, playerData) {
       default:
         break;
     }
-  }
+  } // AppendHTML(divId, sFillText);
 
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divId, sFillText);
 }
 /**
  * Verifies if the data in a specific object is 0 or > 0, and appends HTML accordingly.
@@ -546,9 +537,8 @@ function CheckWarriorDreams(divId, dataObject, playerData) {
   for (var i in dataObject) {
     playerData[i] >= 2 ? CurrentDataTrue(divId) : CurrentDataFalse();
     sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
-  }
+  } // AppendHTML(divId, sFillText);
 
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divId, sFillText);
 }
 /**
  * Verifies if the Godmaster Pantheons 1-4 are completed by the player, and appends HTML accordingly.
@@ -588,8 +578,7 @@ function CheckNailUpgrades(divId, dataObject, playerData) {
   }
 
   if (divId.percent) divId.percent--; // subject one for the Old Nail
-
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divId, sFillText);
+  // AppendHTML(divId, sFillText);
 }
 /**
  * Verifies if the specific Interactable (Item, Boss, Chest etc.) is activated. Returns true or false.
@@ -643,9 +632,8 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
     CurrentDataFalse();
     if (orderedArray[_i4][4] === true) CurrentDataTrue(divId);
     sFillText += PrepareHTMLString(divId, orderedArray[_i4][1], orderedArray[_i4][2], orderedArray[_i4][3]);
-  }
+  } // AppendHTML(divId, sFillText);
 
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divId, sFillText);
 }
 /**
  * Verifies if the data in a specific object are true or false, or checks what values they have, and appends HTML accordingly.
@@ -963,9 +951,8 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
     if (i === "mrMushroomState") continue;
     sFillText += PrepareHTMLString(divId, textPrefix, textSuffix, wiki);
   } // end for (let i in dataObject)
-
-
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divId, sFillText); // ==========================================
+  // AppendHTML(divId, sFillText);
+  // ==========================================
   // -------------- Methods ---------------- //
 
   /**
@@ -974,6 +961,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
    * @param {string} sceneNameText Map codename of the Interactable (sceneName in sceneData)
    * @returns {boolean}
    */
+
 
   function FindWorldItem() {
     var idText = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
@@ -1186,7 +1174,8 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
 
   if (playerData.killedHollowKnight === true) {
     // a text to show when player already finished their first playthrough (killed Hollow Knight first time)
-    (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divId, "...a successful Knight who doesn't need hints anymore. The Knight explores the world of Hallownest patiently in constant search of its remaining secrets...");
+
+    /* AppendHTML(divId, "...a successful Knight who doesn't need hints anymore. The Knight explores the world of Hallownest patiently in constant search of its remaining secrets..."); */
     return true;
   }
 
@@ -1248,9 +1237,8 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
       break;
     }
   } // end: for (let i in dataObject)
+  // AppendHTML(divId, sFillText);
 
-
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(divId, sFillText);
 } // function CheckHintsTrue()
 
 /**
@@ -1284,47 +1272,57 @@ function HKReadTextArea() {
 function InitialHTMLPopulate(sections) {
   var sFillText = "";
   CurrentDataFalse();
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.PrefillHTML)(sections); // Play Time
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.GenerateInnerHTML)(sections); // PrefillHTML(sections);
 
-  CheckPlayTime(sections.intro, 0); // Game Completion
+  /* 
+      // Play Time
+      CheckPlayTime(sections.intro, 0)
+  
+      // Game Completion
+      CheckCompletionPercent(sections.intro, 0);
+  
+      // Save File Version
+      CheckSaveFileVersion(sections.intro);
+  
+      // Fleur Divide
+      // AppendHTML(sections.intro, FLEUR_DIVIDE);
+  
+      // Health Masks
+      CheckHealthMasks(sections.intro);
+  
+      // Soul Orbs
+      CheckSoulOrbs(sections.intro, 99);
+  
+      // Charm Notches
+      CheckNotches(sections.intro);
+  
+      // Geo
+      CheckGeo(sections.intro);
+  
+      // Keep symbol False
+      CurrentDataFalse();
+   */
+  // First Hint Only
+  // AppendHTML(sections.hints, sections.hints.entries.fireballLevel.spoiler);
 
-  CheckCompletionPercent(sections.intro, 0); // Save File Version
+  /* let entries = {};
+    for (let section in sections) {
+        entries = sections[section].entries;
+        switch(section) {
+            case "intro":
+          case "hints":
+              break;
+              
+          default:
+                for (let entry in entries) {
+                    sFillText += PrepareHTMLString(sections[section], entries[entry].name, entries[entry].spoiler, entries[entry].wiki);
+              }
+      
+              // AppendHTML(sections[section], sFillText);
+      }
+        sFillText = "";
+  } */
 
-  CheckSaveFileVersion(sections.intro); // Fleur Divide
-
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(sections.intro, FLEUR_DIVIDE); // Health Masks
-
-  CheckHealthMasks(sections.intro); // Soul Orbs
-
-  CheckSoulOrbs(sections.intro, 99); // Charm Notches
-
-  CheckNotches(sections.intro); // Geo
-
-  CheckGeo(sections.intro); // Keep symbol False
-
-  CurrentDataFalse(); // First Hint Only
-
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(sections.hints, sections.hints.entries.fireballLevel.spoiler);
-  var entries = {};
-
-  for (var section in sections) {
-    entries = sections[section].entries;
-
-    switch (section) {
-      case "intro":
-      case "hints":
-        break;
-
-      default:
-        for (var entry in entries) {
-          sFillText += PrepareHTMLString(sections[section], entries[entry].name, entries[entry].spoiler, entries[entry].wiki);
-        }
-
-        (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(sections[section], sFillText);
-    }
-
-    sFillText = "";
-  }
   /*
     // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
   let hkObjArray = [HK.BOSSES, HK.CHARMS, HK.EQUIPMENT, HK.NAILARTS, HK.MASKSHARDS, HK.MASKSHARDS_WORLD, HK.VESSELFRAGMENTS, HK.VESSELFRAGMENTS_WORLD, HK.DREAMERS, HK.COLOSSEUM, HK.DREAMNAIL, HK.WARRIORDREAMS, HK.GRIMMTROUPE, HK.LIFEBLOOD, HK.GODMASTER, HK.ESSENTIAL, HK.ACHIEVEMENTS, HK.STATISTICS, HK.GODHOME_STATISTICS];
@@ -1366,10 +1364,10 @@ function InitialHTMLPopulate(sections) {
     */
   // Fleur Dividers
 
-
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(sections.godmaster, FLEUR_DIVIDE);
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(sections.essential, FLEUR_DIVIDE);
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.AppendHTML)(sections.achievements, FLEUR_DIVIDE); // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
+  /* AppendHTML(sections.godmaster, FLEUR_DIVIDE);
+  AppendHTML(sections.essential, FLEUR_DIVIDE);
+  AppendHTML(sections.achievements, FLEUR_DIVIDE); */
+  // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
 
   if ((0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.StorageAvailable)('localStorage')) {
     if (localStorage.getItem("hkCheckboxHints") === "checked") document.getElementById("checkbox-hints").checked = true;
@@ -1378,9 +1376,9 @@ function InitialHTMLPopulate(sections) {
   // if (localStorage.getItem("hkCheckboxSpoilers") === "checked") document.getElementById("checkbox-spoilers").checked = true;
   // Prevents wrong checkbox behaviour (must run after everything is finished)
 
+  /* CheckboxHintsToggle();
+  CheckboxSpoilersToggle(); */
 
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CheckboxHintsToggle)();
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CheckboxSpoilersToggle)();
 }
 /**
  * Zero-fill all "percent" properties in the JSON Object (reset to default)
@@ -4799,8 +4797,8 @@ function PrefillHTML(jsObj) {
   var element = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "generated";
   var domElement = document.getElementById(element);
   var sFillText = ""; // Clean "generated" div
+  // domElement.innerHTML = "";
 
-  domElement.innerHTML = "";
   var id = "";
   var h2 = "";
   var h2id = "";
@@ -4815,9 +4813,8 @@ function PrefillHTML(jsObj) {
     mp = "<div class='percent-box'>".concat(i === "intro" ? 0 : jsObj[i].maxPercent, "%</div>");
     if (!jsObj[i].hasOwnProperty("maxPercent")) mp = "";
     sFillText += "\n            <div id=\"".concat(id, "\" ").concat(cl, ">\n                <h2 id='").concat(h2id, "'>").concat(h2).concat(mp, "</h2>\n            </div>\n        ");
-  }
+  } // domElement.innerHTML = sFillText;
 
-  domElement.innerHTML = sFillText;
 }
 /**
  * Replaces the h2 titles with a current percent/max percent values as read from the save file
@@ -4870,19 +4867,17 @@ function CompletionHTML(jsObj, hkGameCompletion) {
 
         if (jsObj[i].id != "hk-intro") cp += "/";
         fillText = "<div class='percent-box".concat(cl, "'>").concat(i === "intro" ? cp : cp + jsObj[i].maxPercent, "%</div>");
-      }
+      } // document.getElementById(h2id).innerHTML = h2 + fillText;
 
-    document.getElementById(h2id).innerHTML = h2 + fillText;
   }
 }
 /* ################################### Optimized Functions ###################################### */
 
 
-function GenerateInnerHTML(hkdb) {
-  console.log(hkdb);
+function GenerateInnerHTML(sections) {
+  console.log(sections);
   var finalHTMLFill = "";
   var textFill = "";
-  var sections = hkdb.SECTION;
   var entries = {};
 
   for (var section in sections) {
@@ -4896,17 +4891,9 @@ function GenerateInnerHTML(hkdb) {
     /* create all main entries */
 
     for (var entry in entries) {
-      textFill += SingleEntryFill(entries[entry]);
+      textFill += SingleEntryFill(section, entries[entry]);
     }
-
-    switch (section) {
-      case "intro":
-        textFill += "This is intro";
-        break;
-
-      default:
-    }
-    /* Cumulate all section texts into one variable for final HTML filling. End div tag */
+    /* Cumulate all section texts into one variable for final HTML filling. End section div tag */
 
 
     finalHTMLFill += "".concat(textFill, "\n</div>\n\n");
@@ -4917,6 +4904,7 @@ function GenerateInnerHTML(hkdb) {
   console.groupCollapsed("finalHTMLFill");
   console.log(finalHTMLFill);
   console.groupEnd();
+  document.getElementById("generated").innerHTML = finalHTMLFill;
 }
 
 function SectionStart(section) {
@@ -4971,12 +4959,19 @@ function CompletionFill(section) {
   return "\t".concat(h2id).concat(h2).concat(fillText, "</h2>\n");
 }
 
-function SingleEntryFill(entry) {
+function SingleEntryFill(section, entry) {
   var icon = "";
   var iconGreen = SYMBOL_TRUE;
   var iconRed = SYMBOL_FALSE;
   var iconClock = SYMBOL_CLOCK;
   var iconNull = SYMBOL_EMPTY;
+  var textPrefix = "";
+  var textSuffix = "";
+  var wiki = "";
+  var b = ["<b>", "</b>"];
+  var p = "";
+  var span = ["", ""];
+  var spoiler = ["", ""];
 
   if (entry.hasOwnProperty("icon")) {
     switch (entry.icon) {
@@ -4999,10 +4994,6 @@ function SingleEntryFill(entry) {
     icon = iconNull;
   }
 
-  var textPrefix = "";
-  var textSuffix = "";
-  var wiki = "";
-
   if (entry.hasOwnProperty("name")) {
     textPrefix = entry.name;
   }
@@ -5015,15 +5006,23 @@ function SingleEntryFill(entry) {
     wiki = entry.wiki;
   }
 
-  var b = ["<b>", "</b>"];
   if (!textPrefix.length) b = ["", ""];
   if (wiki.length) b = ["<a class=\"wiki\" href=\"".concat(WIKI_LINK).concat(wiki, "\" target=\"_blank\">"), "</a>"];
-  var p = "<span class='p-left-small'></span>";
-  var span = ["<span class='spoiler-span'>", "</span>"];
-  var spoiler = ["<span class='spoiler-text'>", "</span>"]; // let dash = "";
 
-  if (textSuffix.length && textPrefix.length) textSuffix = "— " + textSuffix;
-  if (textPrefix.includes("<del>")) textSuffix = "<del>".concat(textSuffix, "</del>");
+  switch (section) {
+    case "intro":
+    case "hints":
+      b = ["", ""];
+      break;
+
+    default:
+      p = "<span class='p-left-small'></span>";
+      span = ["<span class='spoiler-span'>", "</span>"];
+      spoiler = ["<span class='spoiler-text'>", "</span>"];
+      if (textSuffix.length && textPrefix.length) textSuffix = "— " + textSuffix;
+      if (textPrefix.includes("<del>")) textSuffix = "<del>".concat(textSuffix, "</del>");
+  }
+
   return "\n        <div class=\"single-entry\">\n            ".concat(icon, "\n            ").concat(b[0]).concat(textPrefix).concat(b[1], "\n            ").concat(span[0], "\n                ").concat(p, "\n                ").concat(spoiler[0], "\n                    ").concat(textSuffix, "\n                ").concat(spoiler[1], "\n            ").concat(span[1], "\n        </div>\n    ");
 }
 /**

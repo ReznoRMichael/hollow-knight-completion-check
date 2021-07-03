@@ -91,7 +91,7 @@ function HKCheckCompletion(jsonObject) {
     } else return false;
 
     // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
-    PrefillHTML(HK.SECTION);
+    // PrefillHTML(HK.SECTION);
 
     // Prevents adding current percent data after each function call (each click of Analyze button)
     ResetCompletion(HK.SECTION);
@@ -112,7 +112,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Fleur Divide ----------------- //
 
-    AppendHTML(HK.SECTION.intro, FLEUR_DIVIDE);
+    // AppendHTML(HK.SECTION.intro, FLEUR_DIVIDE);
 
     // ---------------- Health Masks ----------------- //
 
@@ -192,7 +192,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Fleur Divide ----------------- //
 
-    AppendHTML(HK.SECTION.godmaster, FLEUR_DIVIDE);
+    // AppendHTML(HK.SECTION.godmaster, FLEUR_DIVIDE);
 
     // ------------------------- Essential Things ----------------------------- //
 
@@ -200,7 +200,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Fleur Divide ----------------- //
 
-    AppendHTML(HK.SECTION.essential, FLEUR_DIVIDE);
+    // AppendHTML(HK.SECTION.essential, FLEUR_DIVIDE);
 
     // ------------------------- Achievements ----------------------------- //
 
@@ -208,7 +208,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Fleur Divide ----------------- //
 
-    AppendHTML(HK.SECTION.achievements, FLEUR_DIVIDE);
+    // AppendHTML(HK.SECTION.achievements, FLEUR_DIVIDE);
 
     // ------------------------- Game Statistics ----------------------------- //
 
@@ -226,7 +226,7 @@ function HKCheckCompletion(jsonObject) {
 
     CompletionHTML(HK.SECTION, HKPlayerData.completionPercentage);
 
-    GenerateInnerHTML(HK);
+    GenerateInnerHTML(HK.SECTION);
 
     // Prevents wrong checkbox behaviour (must run after everything is finished)
     CheckboxHintsToggle();
@@ -326,7 +326,7 @@ function CheckPlayTime(divId, playTime) {
 
     divId.entries.timePlayed.spoiler = hours + " h " + minutes + " min " + sec + " sec";
 
-    document.getElementById(divId.id).innerHTML += divStart + SYMBOL_CLOCK + textFill + divEnd;
+    // document.getElementById(divId.id).innerHTML += divStart + SYMBOL_CLOCK + textFill + divEnd;
 }
 
 /**
@@ -341,7 +341,7 @@ function CheckCompletionPercent(divId, completionPercentage) {
     divId.percent = completionPercentage;
 
     let textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + divId.maxPercent + " %)";
-    document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
+    // document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }
 
 /**
@@ -353,7 +353,7 @@ function CheckSaveFileVersion(divId, saveVersion = HK.SECTION.intro.entries.save
 
     CurrentDataBlank();
     let textFill = `Save Version:${pSpan}<b>${saveVersion}</b>${pSpan}`;
-    document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
+    // document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }
 
 /**
@@ -377,7 +377,7 @@ function CheckHealthMasks(divId, masks = 5, permadeathMode = 0) {
         maskImages += maskImg;
     }
 
-    document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + maskImages + divEnd;
+    // document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + maskImages + divEnd;
 }
 
 /**
@@ -397,7 +397,7 @@ function CheckSoulOrbs(divId, totalSoul) {
         soulImages += soulImg;
     }
 
-    document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + soulImages + divEnd;
+    // document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + soulImages + divEnd;
 }
 
 /**
@@ -417,7 +417,7 @@ function CheckGeo(divId, geoValue = 0, geoPoolValue = 0) {
     // Show also total Geo (Geo + Shade Geo) if player has at least 1 geo alongside the shade geo
     if (geoValue > 0 && geoPoolValue > 0) textFill += `${pSpan}=${pSpan}<b>${geoValue+geoPoolValue}</b>`;
 
-    document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + divEnd;
+    // document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + divEnd;
 }
 
 /**
@@ -473,7 +473,7 @@ function CheckNotches(divId, totalNotches = 3, filledNotches = 0) {
         }
     }
 
-    document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + notchImages + divEnd;
+    // document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + notchImages + divEnd;
 }
 
 /**
@@ -571,7 +571,7 @@ function CheckIfDataTrue(divId, dataObject, playerData, worldData = []) {
         sFillText += PrepareHTMLString(divId, textPrefix, textSuffix, wiki);
     }
 
-    AppendHTML(divId, sFillText);
+    // AppendHTML(divId, sFillText);
 }
 
 /**
@@ -606,7 +606,7 @@ function CheckSpellLevel(divId, dataObject, playerData) {
         }
     }
 
-    AppendHTML(divId, sFillText);
+    // AppendHTML(divId, sFillText);
 }
 
 /**
@@ -624,7 +624,7 @@ function CheckWarriorDreams(divId, dataObject, playerData) {
         sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
     }
 
-    AppendHTML(divId, sFillText);
+    // AppendHTML(divId, sFillText);
 }
 
 /**
@@ -663,7 +663,7 @@ function CheckNailUpgrades(divId, dataObject, playerData) {
     }
     if (divId.percent) divId.percent--; // subject one for the Old Nail
 
-    AppendHTML(divId, sFillText);
+    // AppendHTML(divId, sFillText);
 }
 
 /**
@@ -718,7 +718,7 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
         sFillText += PrepareHTMLString(divId, orderedArray[i][1], orderedArray[i][2], orderedArray[i][3]);
     }
 
-    AppendHTML(divId, sFillText);
+    // AppendHTML(divId, sFillText);
 }
 
 /**
@@ -1026,7 +1026,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         sFillText += PrepareHTMLString(divId, textPrefix, textSuffix, wiki);
     } // end for (let i in dataObject)
 
-    AppendHTML(divId, sFillText);
+    // AppendHTML(divId, sFillText);
 
     // ==========================================
     // -------------- Methods ---------------- //
@@ -1232,7 +1232,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
 
     if (playerData.killedHollowKnight === true) {
         // a text to show when player already finished their first playthrough (killed Hollow Knight first time)
-        AppendHTML(divId, "...a successful Knight who doesn't need hints anymore. The Knight explores the world of Hallownest patiently in constant search of its remaining secrets...");
+        /* AppendHTML(divId, "...a successful Knight who doesn't need hints anymore. The Knight explores the world of Hallownest patiently in constant search of its remaining secrets..."); */
         return true;
     }
 
@@ -1290,7 +1290,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
         }
     } // end: for (let i in dataObject)
 
-    AppendHTML(divId, sFillText);
+    // AppendHTML(divId, sFillText);
 } // function CheckHintsTrue()
 
 /**
@@ -1327,8 +1327,10 @@ function InitialHTMLPopulate(sections) {
 
     CurrentDataFalse();
 
-    PrefillHTML(sections);
+    GenerateInnerHTML(sections);
 
+    // PrefillHTML(sections);
+/* 
     // Play Time
     CheckPlayTime(sections.intro, 0)
 
@@ -1339,7 +1341,7 @@ function InitialHTMLPopulate(sections) {
     CheckSaveFileVersion(sections.intro);
 
     // Fleur Divide
-    AppendHTML(sections.intro, FLEUR_DIVIDE);
+    // AppendHTML(sections.intro, FLEUR_DIVIDE);
 
     // Health Masks
     CheckHealthMasks(sections.intro);
@@ -1355,11 +1357,11 @@ function InitialHTMLPopulate(sections) {
 
     // Keep symbol False
     CurrentDataFalse();
-
+ */
     // First Hint Only
-    AppendHTML(sections.hints, sections.hints.entries.fireballLevel.spoiler);
+    // AppendHTML(sections.hints, sections.hints.entries.fireballLevel.spoiler);
 
-    let entries = {};
+    /* let entries = {};
 
     for (let section in sections) {
 
@@ -1378,11 +1380,11 @@ function InitialHTMLPopulate(sections) {
                     sFillText += PrepareHTMLString(sections[section], entries[entry].name, entries[entry].spoiler, entries[entry].wiki);
                 }
         
-                AppendHTML(sections[section], sFillText);
+                // AppendHTML(sections[section], sFillText);
         }
 
         sFillText = "";
-    }
+    } */
 
     /*
 
@@ -1433,9 +1435,9 @@ function InitialHTMLPopulate(sections) {
     */
 
     // Fleur Dividers
-    AppendHTML(sections.godmaster, FLEUR_DIVIDE);
+    /* AppendHTML(sections.godmaster, FLEUR_DIVIDE);
     AppendHTML(sections.essential, FLEUR_DIVIDE);
-    AppendHTML(sections.achievements, FLEUR_DIVIDE);
+    AppendHTML(sections.achievements, FLEUR_DIVIDE); */
 
     // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
     if (StorageAvailable('localStorage')) {
@@ -1447,8 +1449,8 @@ function InitialHTMLPopulate(sections) {
     // if (localStorage.getItem("hkCheckboxSpoilers") === "checked") document.getElementById("checkbox-spoilers").checked = true;
 
     // Prevents wrong checkbox behaviour (must run after everything is finished)
-    CheckboxHintsToggle();
-    CheckboxSpoilersToggle();
+    /* CheckboxHintsToggle();
+    CheckboxSpoilersToggle(); */
 }
 
 /**
