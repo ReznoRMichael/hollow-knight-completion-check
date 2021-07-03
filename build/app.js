@@ -2524,6 +2524,7 @@ var HK = {
     hints: {
       h2: "My friend Elderbug once told me about...",
       id: "hk-hints",
+      current: "fireballLevel",
       entries: {
         fireballLevel: {
           spoiler: "...a mysterious shaman living in a dwelling below the town of Dirtmouth"
@@ -4890,8 +4891,16 @@ function GenerateInnerHTML(sections) {
     textFill += CompletionFill(sections[section]);
     /* create all main entries */
 
-    for (var entry in entries) {
-      textFill += SingleEntryFill(section, entries[entry]);
+    switch (section) {
+      case "hints":
+        textFill += SingleEntryFill(section, entries[sections[section].current]);
+        break;
+
+      default:
+        for (var entry in entries) {
+          textFill += SingleEntryFill(section, entries[entry]);
+        }
+
     }
     /* Cumulate all section texts into one variable for final HTML filling. End section div tag */
 

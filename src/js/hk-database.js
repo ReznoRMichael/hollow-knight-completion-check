@@ -65,6 +65,7 @@ const HK = {
         hints: {
             h2: "My friend Elderbug once told me about...",
             id: "hk-hints",
+            current: "fireballLevel",
             entries: {
                 fireballLevel: {
                     spoiler: "...a mysterious shaman living in a dwelling below the town of Dirtmouth"
