@@ -162,7 +162,12 @@ function HKCheckCompletion(jsonObject) {
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.GenerateInnerHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default); // Prevents wrong checkbox behaviour (must run after everything is finished)
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CheckboxHintsToggle)();
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CheckboxSpoilersToggle)(); // finish and show benchmark
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CheckboxSpoilersToggle)();
+  /* focus the text area after analyzing the save, without scrolling the document */
+
+  document.getElementById("save-area").focus({
+    preventScroll: true
+  }); // finish and show benchmark
 
   benchHKCCEnd = new Date();
   console.info("HKCheckCompletion() time (ms) =", benchHKCCEnd - benchHKCCBegin);
@@ -4879,7 +4884,8 @@ function GenerateInnerHTML(db) {
     /* starts a new <div> with the current section id */
 
     textFill = SectionStart(sections[section]);
-    /* creates a <h2> tag for the current section and fills with current%/max% */
+    /* creates a <h2> tag for the current section and fills with current%/max%
+    If the save file was not analyzed, then fill only max% on blue background*/
 
     if (db.saveAnalyzed === true) {
       textFill += CompletionFill(sections[section]);
