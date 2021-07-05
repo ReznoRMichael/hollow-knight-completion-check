@@ -91,142 +91,142 @@ function HKCheckCompletion(jsonObject) {
     } else return false;
 
     // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
-    // PrefillHTML(HK.SECTION);
+    // PrefillHTML(HK.sections);
 
     // Prevents adding current percent data after each function call (each click of Analyze button)
-    ResetCompletion(HK.SECTION);
+    ResetCompletion(HK.sections);
 
     // ================================================================================== //
 
     // ---------------- Time Played ----------------- //
 
-    CheckPlayTime(HK.SECTION.intro, HKPlayerData.playTime);
+    CheckPlayTime(HK.sections.intro, HKPlayerData.playTime);
 
     // ---------------- Game Completion Status ----------------- //
 
-    CheckCompletionPercent(HK.SECTION.intro, HKPlayerData.completionPercentage);
+    CheckCompletionPercent(HK.sections.intro, HKPlayerData.completionPercentage);
 
     // ---------------- Game Completion Status ----------------- //
 
-    CheckSaveFileVersion(HK.SECTION.intro, HKPlayerData.version);
+    CheckSaveFileVersion(HK.sections.intro, HKPlayerData.version);
 
     // ---------------- Fleur Divide ----------------- //
 
-    // AppendHTML(HK.SECTION.intro, FLEUR_DIVIDE);
+    // AppendHTML(HK.sections.intro, FLEUR_DIVIDE);
 
     // ---------------- Health Masks ----------------- //
 
-    CheckHealthMasks(HK.SECTION.intro, HKPlayerData.maxHealthBase, HKPlayerData.permadeathMode);
+    CheckHealthMasks(HK.sections.intro, HKPlayerData.maxHealthBase, HKPlayerData.permadeathMode);
 
     // ---------------- Soul Orbs ----------------- //
 
-    CheckSoulOrbs(HK.SECTION.intro, HKPlayerData.maxMP + HKPlayerData.MPReserveMax);
+    CheckSoulOrbs(HK.sections.intro, HKPlayerData.maxMP + HKPlayerData.MPReserveMax);
 
     // ---------------- Charm Notches (Slots) ----------------- //
 
-    CheckNotches(HK.SECTION.intro, HKPlayerData.charmSlots, HKPlayerData.charmSlotsFilled);
+    CheckNotches(HK.sections.intro, HKPlayerData.charmSlots, HKPlayerData.charmSlotsFilled);
 
     // ---------------- Geo Amount ----------------- //
 
-    CheckGeo(HK.SECTION.intro, HKPlayerData.geo, HKPlayerData.geoPool);
+    CheckGeo(HK.sections.intro, HKPlayerData.geo, HKPlayerData.geoPool);
 
     // ---------------- Bosses (Base Game) --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.bosses, HK.SECTION.bosses.entries, HKPlayerData, HKWorldItems);
+    CheckIfDataTrue(HK.sections.bosses, HK.sections.bosses.entries, HKPlayerData, HKWorldItems);
 
     // ---------------- Charms --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.charms, HK.SECTION.charms.entries, HKPlayerData);
+    CheckIfDataTrue(HK.sections.charms, HK.sections.charms.entries, HKPlayerData);
 
     // ---------------- Colosseum of Fools --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.colosseum, HK.SECTION.colosseum.entries, HKPlayerData);
+    CheckIfDataTrue(HK.sections.colosseum, HK.sections.colosseum.entries, HKPlayerData);
 
     // ---------------- Dreamers --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.dreamers, HK.SECTION.dreamers.entries, HKPlayerData);
+    CheckIfDataTrue(HK.sections.dreamers, HK.sections.dreamers.entries, HKPlayerData);
 
     // ---------------- Dream Nail and Essence --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.dreamNail, HK.SECTION.dreamNail.entries, HKPlayerData);
+    CheckIfDataTrue(HK.sections.dreamNail, HK.sections.dreamNail.entries, HKPlayerData);
 
     // ---------------- Equipment --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.equipment, HK.SECTION.equipment.entries, HKPlayerData);
+    CheckIfDataTrue(HK.sections.equipment, HK.sections.equipment.entries, HKPlayerData);
 
     // ---------------- Nail Upgrades --------------------- //
 
-    CheckNailUpgrades(HK.SECTION.nailUpgrades, HK.SECTION.nailUpgrades.entries, HKPlayerData);
+    CheckNailUpgrades(HK.sections.nailUpgrades, HK.sections.nailUpgrades.entries, HKPlayerData);
 
     // ---------------- Mask Shards --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.maskShards, HK.SECTION.maskShards.entries, HKPlayerData, HKWorldItems);
+    CheckIfDataTrue(HK.sections.maskShards, HK.sections.maskShards.entries, HKPlayerData, HKWorldItems);
 
     // ---------------- Nail Arts --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.nailArts, HK.SECTION.nailArts.entries, HKPlayerData);
+    CheckIfDataTrue(HK.sections.nailArts, HK.sections.nailArts.entries, HKPlayerData);
 
     // ---------------- Spells --------------------- //
 
-    CheckSpellLevel(HK.SECTION.spells, HK.SECTION.spells.entries, HKPlayerData);
+    CheckSpellLevel(HK.sections.spells, HK.sections.spells.entries, HKPlayerData);
 
     // ---------------- Vessel Fragments --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.vesselFragments, HK.SECTION.vesselFragments.entries, HKPlayerData, HKWorldItems);
+    CheckIfDataTrue(HK.sections.vesselFragments, HK.sections.vesselFragments.entries, HKPlayerData, HKWorldItems);
 
     // ---------------- Warrior Dreams --------------------- //
 
-    CheckWarriorDreams(HK.SECTION.warriorDreams, HK.SECTION.warriorDreams.entries, HKPlayerData);
+    CheckWarriorDreams(HK.sections.warriorDreams, HK.sections.warriorDreams.entries, HKPlayerData);
 
     // ---------------- Grimm Troupe Content Pack --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.grimmTroupe, HK.SECTION.grimmTroupe.entries, HKPlayerData);
+    CheckIfDataTrue(HK.sections.grimmTroupe, HK.sections.grimmTroupe.entries, HKPlayerData);
 
     // ---------------- Lifeblood Content Pack --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.lifeblood, HK.SECTION.lifeblood.entries, HKPlayerData);
+    CheckIfDataTrue(HK.sections.lifeblood, HK.sections.lifeblood.entries, HKPlayerData);
 
     // ---------------- Godmaster Content Pack --------------------- //
 
-    CheckIfDataTrue(HK.SECTION.godmaster, HK.SECTION.godmaster.entries, HKPlayerData);
+    CheckIfDataTrue(HK.sections.godmaster, HK.sections.godmaster.entries, HKPlayerData);
 
     // ---------------- Fleur Divide ----------------- //
 
-    // AppendHTML(HK.SECTION.godmaster, FLEUR_DIVIDE);
+    // AppendHTML(HK.sections.godmaster, FLEUR_DIVIDE);
 
     // ------------------------- Essential Things ----------------------------- //
 
-    CheckAdditionalThings(HK.SECTION.essential, HK.SECTION.essential.entries, HKPlayerData, HKWorldItems);
+    CheckAdditionalThings(HK.sections.essential, HK.sections.essential.entries, HKPlayerData, HKWorldItems);
 
     // ---------------- Fleur Divide ----------------- //
 
-    // AppendHTML(HK.SECTION.essential, FLEUR_DIVIDE);
+    // AppendHTML(HK.sections.essential, FLEUR_DIVIDE);
 
     // ------------------------- Achievements ----------------------------- //
 
-    CheckAdditionalThings(HK.SECTION.achievements, HK.SECTION.achievements.entries, HKPlayerData, HKWorldItems);
+    CheckAdditionalThings(HK.sections.achievements, HK.sections.achievements.entries, HKPlayerData, HKWorldItems);
 
     // ---------------- Fleur Divide ----------------- //
 
-    // AppendHTML(HK.SECTION.achievements, FLEUR_DIVIDE);
+    // AppendHTML(HK.sections.achievements, FLEUR_DIVIDE);
 
     // ------------------------- Game Statistics ----------------------------- //
 
-    CheckAdditionalThings(HK.SECTION.statistics, HK.SECTION.statistics.entries, HKPlayerData, HKWorldItems, HKSceneData);
+    CheckAdditionalThings(HK.sections.statistics, HK.sections.statistics.entries, HKPlayerData, HKWorldItems, HKSceneData);
 
     // ------------------------- Godhome Statistics ----------------------------- //
 
-    CheckAdditionalThings(HK.SECTION.godhomeStatistics, HK.SECTION.godhomeStatistics.entries, HKPlayerData, HKWorldItems, HKSceneData);
+    CheckAdditionalThings(HK.sections.godhomeStatistics, HK.sections.godhomeStatistics.entries, HKPlayerData, HKWorldItems, HKSceneData);
 
     // ------------------------- Hints ----------------------------- //
 
-    CheckHintsTrue(HK.SECTION.hints, HK.SECTION.hints.entries, HKPlayerData, HKWorldItems);
+    CheckHintsTrue(HK.sections.hints, HK.sections.hints.entries, HKPlayerData, HKWorldItems);
 
     // ------------------------- Fill completion ----------------------------- //
 
-    CompletionHTML(HK.SECTION, HKPlayerData.completionPercentage);
+    CompletionHTML(HK.sections, HKPlayerData.completionPercentage);
 
-    GenerateInnerHTML(HK.SECTION);
+    GenerateInnerHTML(HK.sections);
 
     // Prevents wrong checkbox behaviour (must run after everything is finished)
     CheckboxHintsToggle();
@@ -350,7 +350,7 @@ function CheckCompletionPercent(divId, completionPercentage) {
  * @param {object} divId ID of the HTML element for data appending
  * @param {string} saveVersion Save File version in format 0.0.0.0
  */
-function CheckSaveFileVersion(divId, saveVersion = HK.SECTION.intro.entries.saveVersion.spoiler) {
+function CheckSaveFileVersion(divId, saveVersion = HK.sections.intro.entries.saveVersion.spoiler) {
 
     CurrentDataBlank();
 
@@ -1311,7 +1311,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
 function HKReadTextArea(textAreaId = "") {
 
     // refresh and prepare document for filling with data from the save
-    InitialHTMLPopulate(HK.SECTION);
+    InitialHTMLPopulate(HK.sections);
 
     let contents = document.getElementById(textAreaId).value;
 
@@ -1517,7 +1517,7 @@ function FillInnerHTML(elementId, textFill) {
 
 // Populate HTML at load (before img and css)
 document.addEventListener("DOMContentLoaded", () => {
-    InitialHTMLPopulate(HK.SECTION);
+    InitialHTMLPopulate(HK.sections);
 });
 
 // Does an action when the save file location input text is clicked once (auto select & copy to clipboard)

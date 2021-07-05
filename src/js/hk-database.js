@@ -5,7 +5,9 @@
 
 const HK = {
 
-    SECTION: {
+    saveLoaded: false,
+
+    sections: {
 
         /* ################ Intro ################### */
 
