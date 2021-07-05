@@ -146,7 +146,7 @@ function GenerateInnerHTML(db) {
         textFill = SectionStart(sections[section]);
 
         /* creates a <h2> tag for the current section and fills with current%/max%
-        If the save file was not analyzed, then fill only max% on blue background*/
+        If the save file was not analyzed, then fill only max% on blue background */
         if (db.saveAnalyzed === true) {
             textFill += CompletionFill(sections[section]);
         } else {

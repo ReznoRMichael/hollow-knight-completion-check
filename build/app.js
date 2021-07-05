@@ -163,7 +163,7 @@ function HKCheckCompletion(jsonObject) {
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CheckboxHintsToggle)();
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CheckboxSpoilersToggle)();
-  /* focus the text area after analyzing the save, without scrolling the document */
+  /* focus the text area after analyzing the save, without scrolling the document (too slow) */
 
   /* document.getElementById("save-area").focus({preventScroll: true}); */
   // finish and show benchmark
@@ -174,13 +174,13 @@ function HKCheckCompletion(jsonObject) {
 }
 /**
  * Generates and appends a new entry inside the HTML of a given ID
- * @param {object} divId object containing div ID and h2 title of the HTML element
+ * @param {object} section object containing div ID and h2 title of the HTML element
  * @param {string} textPrefix Main name of the entry
  * @param {string} textSuffix Optional suffix after the main name (spoilers: locations, costs etc.)
  */
 
 
-function PrepareHTMLString(divId) {
+function PrepareHTMLString(section) {
   var textPrefix = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "Unknown Completion Element: ";
   var textSuffix = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "Unknown Description Element";
   var wiki = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "";
@@ -191,7 +191,7 @@ function PrepareHTMLString(divId) {
   var span = ["<span class='spoiler-span'>", "</span>"];
   var spoilerSpan = ["<span class='spoiler-text'>", "</span>"];
 
-  if (divId.id === "hk-hints") {
+  if (section.id === "hk-hints") {
     span[0] = "<span>";
     icon = "";
   } // let dash = "";
@@ -208,13 +208,12 @@ function PrepareHTMLString(divId) {
 
 
 function CurrentDataTrue() {
-  var divId = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
-  completionSymbol = SYMBOL_TRUE;
+  var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var entry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+  section.percent++;
+  if (section.id === "hk-equipment") section.percent++; // double % for equipment
 
-  if (divId) {
-    divId.percent++;
-    if (divId.id === "hk-equipment") divId.percent++; // double % for equipment
-  }
+  section.entries[entry].icon = "green";
 }
 /**
  * Switches global variable to a "not completed" symbol
@@ -242,67 +241,67 @@ function CurrentDataBlank() {
 }
 /**
  * Fills HTML with the playTime value of the save file
- * @param {object} divId ID of the HTML element for data appending
+ * @param {object} section ID of the HTML element for data appending
  * @param {number} playTime Number of total gameplay time in seconds
  */
 
 
-function CheckPlayTime(divId, playTime) {
+function CheckPlayTime(section, playTime) {
   var seconds = Math.floor(playTime);
   var minutes = Math.floor(seconds / 60 % 60);
   var hours = Math.floor(seconds / 3600);
   var sec = Math.floor(seconds % 60);
-  divId.entries.timePlayed.timeH = hours;
-  divId.entries.timePlayed.timeM = minutes;
-  divId.entries.timePlayed.timeS = sec;
+  section.entries.timePlayed.timeH = hours;
+  section.entries.timePlayed.timeM = minutes;
+  section.entries.timePlayed.timeS = sec;
   if (sec < 10) sec = "0" + sec;
   if (minutes < 10) minutes = "0" + minutes;
   var textFill = "Time Played:" + pSpan + "<b>" + hours + " h " + minutes + " min " + sec + " sec</b>";
-  divId.entries.timePlayed.spoiler = hours + " h " + minutes + " min " + sec + " sec"; // document.getElementById(divId.id).innerHTML += divStart + SYMBOL_CLOCK + textFill + divEnd;
+  section.entries.timePlayed.spoiler = hours + " h " + minutes + " min " + sec + " sec"; // document.getElementById(section.id).innerHTML += divStart + SYMBOL_CLOCK + textFill + divEnd;
 }
 /**
  * Searches for completionPercentage in playerData and fills HTML with the value of the save file
- * @param {object} divId ID of the HTML element for data appending
+ * @param {object} section ID of the HTML element for data appending
  * @param {number} completionPercentage Number of completion percentage
  */
 
 
-function CheckCompletionPercent(divId, completionPercentage) {
-  completionPercentage >= 112 ? CurrentDataTrue() : CurrentDataFalse();
-  divId.percent = completionPercentage;
-  divId.entries.gameCompletion.spoiler = completionPercentage;
-  var textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + divId.maxPercent + " %)"; // document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
+function CheckCompletionPercent(section, completionPercentage) {
+  /* (completionPercentage >= 112) ? CurrentDataTrue(): CurrentDataFalse(); */
+  section.percent = completionPercentage;
+  section.entries.gameCompletion.spoiler = completionPercentage;
+  var textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + section.maxPercent + " %)"; // document.getElementById(section.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }
 /**
  * Reads the "version" string from the save file and appends it to the selected div ID element
- * @param {object} divId ID of the HTML element for data appending
+ * @param {object} section ID of the HTML element for data appending
  * @param {string} saveVersion Save File version in format 0.0.0.0
  */
 
 
-function CheckSaveFileVersion(divId) {
+function CheckSaveFileVersion(section) {
   var saveVersion = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro.entries.saveVersion.spoiler;
   CurrentDataBlank();
-  divId.entries.saveVersion.spoiler = "".concat(saveVersion);
-  var textFill = "Save Version:".concat(pSpan, "<b>").concat(saveVersion, "</b>").concat(pSpan); // document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
+  section.entries.saveVersion.spoiler = "".concat(saveVersion);
+  var textFill = "Save Version:".concat(pSpan, "<b>").concat(saveVersion, "</b>").concat(pSpan); // document.getElementById(section.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }
 /**
  * Fills HTML with appropriate number of health mask images
- * @param {object} divId ID of the HTML element for data appending
+ * @param {object} section ID of the HTML element for data appending
  * @param {number} masks Number of max health masks from the save (baseline without charms and lifeblood)
  * @param {number} permadeathMode Value of permadeathMode property. 0 = Normal, 1 = Steel Soul, 2 = Steel Soul broken save
  */
 
 
-function CheckHealthMasks(divId) {
+function CheckHealthMasks(section) {
   var masks = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5;
   var permadeathMode = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-  divId.entries.health.masks = masks;
+  section.entries.health.masks = masks;
 
   if (permadeathMode > 0) {
-    divId.entries.health.permadeathMode = true;
+    section.entries.health.permadeathMode = true;
   } else {
-    divId.entries.health.permadeathMode = false;
+    section.entries.health.permadeathMode = false;
   }
   /* let icon = SYMBOL_EMPTY;
   let textFill = "<span>Health:</span>";
@@ -314,17 +313,17 @@ function CheckHealthMasks(divId) {
     for (let i = 0; i < masks; i++) {
       maskImages += maskImg;
   } */
-  // document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + maskImages + divEnd;
+  // document.getElementById(section.id).innerHTML += divStartCenter + icon + textFill + maskImages + divEnd;
 
 }
 /**
  * Fills HTML with appropriate number of soul orbs images
- * @param {object} divId ID of the HTML element for data appending
+ * @param {object} section ID of the HTML element for data appending
  * @param {number} totalSoul Number of max Soul reserve from the save. 99 = full Soul Orb
  */
 
 
-function CheckSoulOrbs(divId, totalSoul) {
+function CheckSoulOrbs(section, totalSoul) {
   var icon = SYMBOL_EMPTY;
   var textFill = "<span>Soul:</span>";
   var soulImages = "";
@@ -333,17 +332,17 @@ function CheckSoulOrbs(divId, totalSoul) {
 
   for (var i = 0, total = totalSoul / 33; i < total; i++) {
     soulImages += soulImg;
-  } // document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + soulImages + divEnd;
+  } // document.getElementById(section.id).innerHTML += divStartCenter + icon + textFill + soulImages + divEnd;
 
 }
 /**
  * Fills HTML with the Geo value of the save file
- * @param {object} divId ID of the HTML element for data appending
+ * @param {object} section ID of the HTML element for data appending
  * @param {number} geoValue Number of total Geo value
  */
 
 
-function CheckGeo(divId) {
+function CheckGeo(section) {
   var geoValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
   var geoPoolValue = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
   var icon = SYMBOL_EMPTY;
@@ -351,17 +350,17 @@ function CheckGeo(divId) {
 
   if (geoPoolValue > 0) textFill += "\n    ".concat(pSpan, "+<img src='").concat(_img_geo_shade_png__WEBPACK_IMPORTED_MODULE_10__, "' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'><b>").concat(geoPoolValue, "</b>"); // Show also total Geo (Geo + Shade Geo) if player has at least 1 geo alongside the shade geo
 
-  if (geoValue > 0 && geoPoolValue > 0) textFill += "".concat(pSpan, "=").concat(pSpan, "<b>").concat(geoValue + geoPoolValue, "</b>"); // document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + divEnd;
+  if (geoValue > 0 && geoPoolValue > 0) textFill += "".concat(pSpan, "=").concat(pSpan, "<b>").concat(geoValue + geoPoolValue, "</b>"); // document.getElementById(section.id).innerHTML += divStartCenter + icon + textFill + divEnd;
 }
 /**
  * Fills HTML with appropriate number of notch images
- * @param {object} divId ID of the HTML element for data appending
+ * @param {object} section ID of the HTML element for data appending
  * @param {number} totalNotches Number of total Charm Notches the player has. 11 = max
  * @param {number} filledNotches Number of total used Charm Notches (including overcharmed notches). 15 = max
  */
 
 
-function CheckNotches(divId) {
+function CheckNotches(section) {
   var totalNotches = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 3;
   var filledNotches = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
   var _ = 0,
@@ -400,19 +399,19 @@ function CheckNotches(divId) {
     for (var _i2 = 0; _i2 < unusedNotches; _i2++) {
       notchImages += notchNormalImage;
     }
-  } // document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + notchImages + divEnd;
+  } // document.getElementById(section.id).innerHTML += divStartCenter + icon + textFill + notchImages + divEnd;
 
 }
 /**
  * Verifies if the data in a specific object is true or false, and appends HTML accordingly.
- * @param {object} divId ID of the HTML element for data appending
+ * @param {object} section ID of the HTML element for data appending
  * @param {object} dataObject Object containing data to be verified (use copy - data inside this object will be deleted)
  * @param {object} playerData Reference/pointer to specific data where to search (playerData)
  * @param {Array} worldData Reference/pointer to specific data where to search (sceneData.persistentBoolItems)
  */
 
 
-function CheckIfDataTrue(divId, dataObject, playerData) {
+function CheckIfDataTrue(section, dataObject, playerData) {
   var worldData = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : [];
   var _ref = "",
       textPrefix = _ref.textPrefix,
@@ -429,7 +428,7 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
     switch (i) {
       case "gotCharm_36":
         // prevents green checkbox and adding 1% when only got one white fragment
-        playerData.gotQueenFragment === true && playerData.gotKingFragment === true ? CurrentDataTrue(divId) : CurrentDataFalse();
+        playerData.gotQueenFragment === true && playerData.gotKingFragment === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
         break;
 
       case "gotCharm_37":
@@ -448,11 +447,11 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
         }
 
         if (i === "grimmChildLevel") {
-          playerData.grimmChildLevel >= 4 ? CurrentDataTrue(divId) : CurrentDataFalse();
+          playerData.grimmChildLevel >= 4 ? CurrentDataTrue(section, i) : CurrentDataFalse();
           break;
         }
 
-        playerData[i] === true ? CurrentDataTrue(divId) : CurrentDataFalse();
+        playerData[i] === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
         break;
 
       case "bossGruzMother":
@@ -473,7 +472,7 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
       case "vesselFragmentCityOfTears":
       case "vesselFragmentDeepnest":
       case "vesselFragmentFountain":
-        WorldDataActivated(dataObject[i].id, dataObject[i].sceneName, worldData) ? CurrentDataTrue(divId) : CurrentDataFalse();
+        WorldDataActivated(dataObject[i].id, dataObject[i].sceneName, worldData) ? CurrentDataTrue(section, i) : CurrentDataFalse();
         break;
 
       case "pantheonMaster":
@@ -487,7 +486,7 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
           textPrefix = "<del>".concat(textPrefix, "</del>");
           break;
         } else if (checkText === "PantheonCompleted") {
-          CurrentDataTrue(divId);
+          CurrentDataTrue(section, i);
           break;
         } else {
           CurrentDataFalse();
@@ -496,65 +495,65 @@ function CheckIfDataTrue(divId, dataObject, playerData) {
         break;
 
       default:
-        playerData[i] === true ? CurrentDataTrue(divId) : CurrentDataFalse();
+        playerData[i] === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
     }
 
-    sFillText += PrepareHTMLString(divId, textPrefix, textSuffix, wiki);
-  } // AppendHTML(divId, sFillText);
+    sFillText += PrepareHTMLString(section, textPrefix, textSuffix, wiki);
+  } // AppendHTML(section, sFillText);
 
 }
 /**
  * Verifies if the data in a specific object is 0 or > 0, and appends HTML accordingly.
- * @param {object} divId ID of the HTML element for data appending
+ * @param {object} section ID of the HTML element for data appending
  * @param {object} dataObject Object containing data to be verified (use copy - data inside this object will be deleted)
  * @param {object} playerData Reference/pointer to specific data where to search
  */
 
 
-function CheckSpellLevel(divId, dataObject, playerData) {
+function CheckSpellLevel(section, dataObject, playerData) {
   var sFillText = "";
 
   for (var i in dataObject) {
     switch (i) {
       case "vengefulSpirit":
       case "shadeSoul":
-        playerData.fireballLevel >= dataObject[i].fireballLevel ? CurrentDataTrue(divId) : CurrentDataFalse();
-        sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
+        playerData.fireballLevel >= dataObject[i].fireballLevel ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
         break;
 
       case "desolateDive":
       case "descendingDark":
-        playerData.quakeLevel >= dataObject[i].quakeLevel ? CurrentDataTrue(divId) : CurrentDataFalse();
-        sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
+        playerData.quakeLevel >= dataObject[i].quakeLevel ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
         break;
 
       case "howlingWraiths":
       case "abyssShriek":
-        playerData.screamLevel >= dataObject[i].screamLevel ? CurrentDataTrue(divId) : CurrentDataFalse();
-        sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
+        playerData.screamLevel >= dataObject[i].screamLevel ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
         break;
 
       default:
         break;
     }
-  } // AppendHTML(divId, sFillText);
+  } // AppendHTML(section, sFillText);
 
 }
 /**
  * Verifies if the data in a specific object is 0 or > 0, and appends HTML accordingly.
- * @param {object} divId ID of the HTML element for data appending
+ * @param {object} section ID of the HTML element for data appending
  * @param {object} dataObject Object containing data to be verified
  * @param {object} playerData Reference/pointer to specific data where to search
  */
 
 
-function CheckWarriorDreams(divId, dataObject, playerData) {
+function CheckWarriorDreams(section, dataObject, playerData) {
   var sFillText = "";
 
   for (var i in dataObject) {
-    playerData[i] >= 2 ? CurrentDataTrue(divId) : CurrentDataFalse();
-    sFillText += PrepareHTMLString(divId, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
-  } // AppendHTML(divId, sFillText);
+    playerData[i] >= 2 ? CurrentDataTrue(section, i) : CurrentDataFalse();
+    sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
+  } // AppendHTML(section, sFillText);
 
 }
 /**
@@ -575,13 +574,13 @@ function CheckGodmasterDoors(dataObject, playerData) {
 }
 /**
  * Verifies the level of player's nail upgrades, and appends HTML accordingly.
- * @param {object} divId ID of the HTML element for data appending
+ * @param {object} section ID of the HTML element for data appending
  * @param {object} dataObject Object containing nail upgrades data to be verified
  * @param {object} playerData Reference/pointer to specific data where to search in the save file
  */
 
 
-function CheckNailUpgrades(divId, dataObject, playerData) {
+function CheckNailUpgrades(section, dataObject, playerData) {
   // appends "Nail" to every array element
   // same as names in the database object
   var nail = ["old", "sharpened", "channeled", "coiled", "pure"].map(function (element) {
@@ -590,12 +589,12 @@ function CheckNailUpgrades(divId, dataObject, playerData) {
   var sFillText = "";
 
   for (var i = 0; i < 5; i++) {
-    playerData.nailSmithUpgrades >= i ? CurrentDataTrue(divId) : CurrentDataFalse();
-    sFillText += PrepareHTMLString(divId, dataObject[nail[i]].name, dataObject[nail[i]].spoiler, dataObject[nail[i]].wiki);
+    playerData.nailSmithUpgrades >= i ? CurrentDataTrue(section, nail[i]) : CurrentDataFalse();
+    sFillText += PrepareHTMLString(section, dataObject[nail[i]].name, dataObject[nail[i]].spoiler, dataObject[nail[i]].wiki);
   }
 
-  if (divId.percent) divId.percent--; // subject one for the Old Nail
-  // AppendHTML(divId, sFillText);
+  if (section.percent) section.percent--; // subject one for the Old Nail
+  // AppendHTML(section, sFillText);
 }
 /**
  * Verifies if the specific Interactable (Item, Boss, Chest etc.) is activated. Returns true or false.
@@ -619,14 +618,14 @@ function WorldDataActivated(idText, sceneNameText, worldData) {
 }
 /**
  * Verifies if the data in a specific object are true or false, and appends HTML accordingly. Creates a copy of dataObject.
- * @param {object} divId ID of the HTML element for data appending
+ * @param {object} section ID of the HTML element for data appending
  * @param {string} idText Text string inside save data to search for
  * @param {object} dataObject Object containing data to be verified
  * @param {object} worldData Reference/pointer to specific data where to search
  */
 
 
-function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
+function CheckWorldDataTrue(section, idText, dataObject, worldData) {
   var orderedArray = [];
   var size = (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.ObjectLength)(dataObject);
   var sFillText = ""; // Order the items before displaying them (creates a copy of dataObject)
@@ -647,14 +646,14 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
 
   for (var _i4 = 0; _i4 < size; _i4++) {
     CurrentDataFalse();
-    if (orderedArray[_i4][4] === true) CurrentDataTrue(divId);
-    sFillText += PrepareHTMLString(divId, orderedArray[_i4][1], orderedArray[_i4][2], orderedArray[_i4][3]);
-  } // AppendHTML(divId, sFillText);
+    if (orderedArray[_i4][4] === true) CurrentDataTrue(section);
+    sFillText += PrepareHTMLString(section, orderedArray[_i4][1], orderedArray[_i4][2], orderedArray[_i4][3]);
+  } // AppendHTML(section, sFillText);
 
 }
 /**
  * Verifies if the data in a specific object are true or false, or checks what values they have, and appends HTML accordingly.
- * @param {object} divId ID of the HTML element for data appending
+ * @param {object} section ID of the HTML element for data appending
  * @param {object} dataObject Object containing data to be verified
  * @param {object} playerData Reference/pointer to specific data where to search (playerData)
  * @param {object} worldData Reference/pointer to specific data where to search (sceneData.persistentBoolItems)
@@ -662,7 +661,7 @@ function CheckWorldDataTrue(divId, idText, dataObject, worldData) {
  */
 
 
-function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneData) {
+function CheckAdditionalThings(section, dataObject, playerData, worldData, sceneData) {
   var _ref2 = "",
       textPrefix = _ref2.textPrefix,
       textSuffix = _ref2.textSuffix,
@@ -744,7 +743,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
           }
         }
 
-        amount >= dataObject[i].max ? CurrentDataTrue() : CurrentDataBlank();
+        amount >= dataObject[i].max ? CurrentDataTrue(section, i) : CurrentDataBlank();
         break;
 
       case "geoPool":
@@ -752,7 +751,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
       case "jinnEggsSold":
       case "xunFlowerBrokeTimes":
         textPrefix += ": " + Math.abs(playerData[i]);
-        i === "geoPool" && playerData[i] > 0 ? CurrentDataBlank() : CurrentDataTrue();
+        i === "geoPool" && playerData[i] > 0 ? CurrentDataBlank() : CurrentDataTrue(section, i);
 
         if (i === "jinnEggsSold") {
           // fade out if not on Steel Soul
@@ -770,7 +769,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         notActivated = CountGeoRocks(discoveredTotal, "unbroken");
         activated = CountGeoRocks(discoveredTotal, "broken");
         textPrefix += ": ".concat(notActivated, " | ").concat(activated, " | ").concat(discoveredTotal);
-        CurrentDataTrue();
+        CurrentDataTrue(section, i);
         break;
 
       case "itemsDiscovered":
@@ -778,24 +777,24 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         notActivated = CountItems(discoveredTotal, "notActivated");
         activated = CountItems(discoveredTotal, "active");
         textPrefix += ": ".concat(notActivated, " | ").concat(activated, " | ").concat(discoveredTotal);
-        CurrentDataTrue();
+        CurrentDataTrue(section, i);
         break;
 
       case "shopkeeperKey":
-        playerData.hasSlykey === true || playerData.gaveSlykey === true ? CurrentDataTrue() : CurrentDataFalse();
+        playerData.hasSlykey === true || playerData.gaveSlykey === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
         break;
 
       case "elegantKey":
-        playerData.hasWhiteKey === true || playerData.usedWhiteKey === true ? CurrentDataTrue() : CurrentDataFalse();
+        playerData.hasWhiteKey === true || playerData.usedWhiteKey === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
         break;
 
       case "loveKey":
-        playerData.hasLoveKey === true || playerData.openedLoveDoor === true ? CurrentDataTrue() : CurrentDataFalse();
+        playerData.hasLoveKey === true || playerData.openedLoveDoor === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
         break;
 
       case "paleOreSeer":
         // #2
-        playerData.dreamReward3 === true ? CurrentDataTrue() : CurrentDataFalse();
+        playerData.dreamReward3 === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
         break;
 
       /* -------------------- Interactables ------------------------------- */
@@ -820,7 +819,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
       case "mantisVillageFloorLever":
       case "pathOfPainEntrance":
       case "whiteLadyRoom":
-        FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? CurrentDataTrue() : CurrentDataFalse();
+        FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? CurrentDataTrue(section, i) : CurrentDataFalse();
         break;
 
       case "relicsWandererJournal":
@@ -828,7 +827,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
       case "relicsKingsIdol":
       case "relicsArcaneEgg":
         total = playerData[dataObject[i].nameHeld] + playerData[dataObject[i].nameSold];
-        total >= dataObject[i].max ? CurrentDataTrue() : CurrentDataBlank();
+        total >= dataObject[i].max ? CurrentDataTrue(section, i) : CurrentDataBlank();
         textPrefix += ": " + total;
         break;
 
@@ -837,7 +836,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
           CurrentDataBlank();
           textPrefix = "<del>".concat(textPrefix, "</del>");
         } else {
-          playerData[i].completed === true ? CurrentDataTrue() : CurrentDataFalse();
+          playerData[i].completed === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
         }
 
         break;
@@ -849,11 +848,11 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
           break;
         }
 
-        playerData[i] == 0 ? CurrentDataTrue() : CurrentDataFalse();
+        playerData[i] == 0 ? CurrentDataTrue(section, i) : CurrentDataFalse();
         break;
 
       case "killsBigBuzzer":
-        playerData[i] == 0 ? CurrentDataTrue() : CurrentDataFalse();
+        playerData[i] == 0 ? CurrentDataTrue(section, i) : CurrentDataFalse();
         break;
 
       case "killedVoidIdol_1":
@@ -863,8 +862,8 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
           break;
         }
 
-        playerData[i] === true ? CurrentDataTrue() : CurrentDataFalse();
-        if (playerData[i] === false && (playerData.killedVoidIdol_2 === true || playerData.killedVoidIdol_3 === true)) CurrentDataTrue();
+        playerData[i] === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        if (playerData[i] === false && (playerData.killedVoidIdol_2 === true || playerData.killedVoidIdol_3 === true)) CurrentDataTrue(section, i);
         break;
 
       case "killedVoidIdol_2":
@@ -874,8 +873,8 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
           break;
         }
 
-        playerData[i] === true ? CurrentDataTrue() : CurrentDataFalse();
-        if (playerData[i] === false && playerData.killedVoidIdol_3 === true) CurrentDataTrue();
+        playerData[i] === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        if (playerData[i] === false && playerData.killedVoidIdol_3 === true) CurrentDataTrue(section, i);
         break;
 
       case "greyPrinceDefeated":
@@ -888,7 +887,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
           textPrefix = "<del>".concat(textPrefix, "</del>");
         }
 
-        playerData[i] === true ? CurrentDataTrue() : CurrentDataBlank();
+        playerData[i] === true ? CurrentDataTrue(section, i) : CurrentDataBlank();
         if (playerData.zoteRescuedBuzzer === true && playerData[i] === false) CurrentDataFalse();
         break;
 
@@ -898,11 +897,11 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         if (playerData.zoteDead === true) {
           textPrefix = dataObject[i].nameNeglect;
           textSuffix = dataObject[i].spoilerNeglect;
-          CurrentDataTrue();
+          CurrentDataTrue(section, i);
         } else if (playerData.killedZote === true) {
           textPrefix = dataObject[i].nameRivalry;
           textSuffix = dataObject[i].spoilerRivalry;
-          CurrentDataTrue();
+          CurrentDataTrue(section, i);
         } else if (playerData.zoteRescuedBuzzer === false) {
           if (playerData.hasWalljump === false) {
             textPrefix = dataObject[i].nameTrappedVengefly;
@@ -931,11 +930,11 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         if (playerData.nailsmithKilled === true) {
           textPrefix = dataObject[i].namePurity;
           textSuffix = dataObject[i].spoilerPurity;
-          CurrentDataTrue();
+          CurrentDataTrue(section, i);
         } else if (playerData.nailsmithConvoArt === true) {
           textPrefix = dataObject[i].nameHappyCouple;
           textSuffix = dataObject[i].spoilerHappyCouple;
-          CurrentDataTrue();
+          CurrentDataTrue(section, i);
         } else if (playerData.nailsmithSpared === true) {
           textPrefix = dataObject[i].nameSheoHutWaiting;
           textSuffix = dataObject[i].spoilerSheoHutWaiting;
@@ -947,7 +946,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
         break;
 
       case "mrMushroomState":
-        sFillText += CheckMrMushroomState(divId, dataObject[i], playerData[i]);
+        sFillText += CheckMrMushroomState(section, dataObject[i], playerData[i]);
         break;
 
       default:
@@ -957,7 +956,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
           textPrefix = "<del>".concat(dataObject[i].name, "</del>");
           break;
         } else if (playerData[i] === true) {
-          CurrentDataTrue();
+          CurrentDataTrue(section, i);
         } else {
           CurrentDataFalse();
         }
@@ -966,9 +965,9 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
 
 
     if (i === "mrMushroomState") continue;
-    sFillText += PrepareHTMLString(divId, textPrefix, textSuffix, wiki);
+    sFillText += PrepareHTMLString(section, textPrefix, textSuffix, wiki);
   } // end for (let i in dataObject)
-  // AppendHTML(divId, sFillText);
+  // AppendHTML(section, sFillText);
   // ==========================================
   // -------------- Methods ---------------- //
 
@@ -1129,7 +1128,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
     } // Filtering the reference database Grub list to include only the missing values
 
 
-    var missingGrubsList = divId.grubsList.filter(function (x) {
+    var missingGrubsList = section.grubsList.filter(function (x) {
       return !rescuedGrubsSceneList.includes(x);
     });
     var length = missingGrubsList.length;
@@ -1140,7 +1139,7 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
       console.groupCollapsed("%cUnrescued Grubs (".concat(length, "):"), "color: #16c60c; font-weight: 700;");
 
       for (var _i15 = 0; _i15 < length; _i15++) {
-        console.log("#".concat(divId.grubsList.indexOf(missingGrubsList[_i15]) + 1, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(missingGrubsList[_i15]), " \u2328\uFE0F ").concat(missingGrubsList[_i15]));
+        console.log("#".concat(section.grubsList.indexOf(missingGrubsList[_i15]) + 1, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(missingGrubsList[_i15]), " \u2328\uFE0F ").concat(missingGrubsList[_i15]));
       }
 
       console.groupEnd();
@@ -1151,26 +1150,26 @@ function CheckAdditionalThings(divId, dataObject, playerData, worldData, sceneDa
 }
 /**
  * Checks and fills all the 7 locations of Mr Mushroom.
- * @param {object} divId ID of the HTML element for data appending
+ * @param {object} section ID of the HTML element for data appending
  * @param {object} dataObject object containing the Mr Mushroom name and spoilers/locations
  * @param {number} mrMushroomState playerData.mrMushroomState read from the save file. (0-8)
  */
 
 
-function CheckMrMushroomState(divId, dataObject) {
+function CheckMrMushroomState(section, dataObject) {
   var mrMushroomState = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
   var sFillText = "";
 
   if (mrMushroomState > 1) {
     for (var i = 1; i <= 7; i++) {
-      mrMushroomState > i ? CurrentDataTrue() : CurrentDataFalse();
-      sFillText += PrepareHTMLString(divId, "".concat(dataObject.name, " #").concat(i), dataObject["spoiler" + i], dataObject.wiki);
+      mrMushroomState > i ? CurrentDataTrue(section, "mrMushroomState") : CurrentDataFalse();
+      sFillText += PrepareHTMLString(section, "".concat(dataObject.name, " #").concat(i), dataObject["spoiler" + i], dataObject.wiki);
     }
   } else {
     CurrentDataFalse();
 
     for (var _i16 = 1; _i16 <= 7; _i16++) {
-      sFillText += PrepareHTMLString(divId, "".concat(dataObject.name, " #").concat(_i16), dataObject["spoiler" + _i16], dataObject.wiki);
+      sFillText += PrepareHTMLString(section, "".concat(dataObject.name, " #").concat(_i16), dataObject["spoiler" + _i16], dataObject.wiki);
     }
   }
 
@@ -1178,7 +1177,7 @@ function CheckMrMushroomState(divId, dataObject) {
 }
 /**
  * Checks, validates and shows hints to the player depending on their save progression, in chronological order. Shows only hint for the last uncompleted event. If Hollow Knight is defeated, shows a dummy text.
- * @param {object} divId object containing div hints ID and h2 title
+ * @param {object} section object containing div hints ID and h2 title
  * @param {object} dataObject object containing all hints data
  * @param {object} playerData object containing HK Player Data to look in
  * @param {object} worldData object containing HK World Data to look in
@@ -1186,13 +1185,13 @@ function CheckMrMushroomState(divId, dataObject) {
  */
 
 
-function CheckHintsTrue(divId, dataObject, playerData, worldData) {
+function CheckHintsTrue(section, dataObject, playerData, worldData) {
   var sFillText = "";
 
   if (playerData.killedHollowKnight === true) {
     // a text to show when player already finished their first playthrough (killed Hollow Knight first time)
 
-    /* AppendHTML(divId, "...a successful Knight who doesn't need hints anymore. The Knight explores the world of Hallownest patiently in constant search of its remaining secrets..."); */
+    /* AppendHTML(section, "...a successful Knight who doesn't need hints anymore. The Knight explores the world of Hallownest patiently in constant search of its remaining secrets..."); */
     return true;
   }
 
@@ -1203,7 +1202,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
       if (playerData[i] >= 1) {
         continue;
       } else {
-        sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
+        sFillText += PrepareHTMLString(section, "", dataObject[i].spoiler);
         break;
       }
     } else if (i === "Crossroads_04") {
@@ -1219,7 +1218,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
       if (GruzMotherDefeated) {
         continue; // next dataObject (i)
       } else {
-        sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
+        sFillText += PrepareHTMLString(section, "", dataObject[i].spoiler);
         break;
       }
     } else if (i === "dungDefenderOrHornet2") {
@@ -1229,7 +1228,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
         continue;
       } else {
         // if no Dung Defender or Hornet 2
-        sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
+        sFillText += PrepareHTMLString(section, "", dataObject[i].spoiler);
         break;
       }
     } else if (i === "ismaTearOrShadeCloak") {
@@ -1240,21 +1239,21 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
           continue;
         } else {
           // if Kings Brand but no Shade Cloak
-          sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
+          sFillText += PrepareHTMLString(section, "", dataObject[i].spoiler);
           break;
         }
       } else {
         // if no Isma's Tear or Kings Brand
-        sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
+        sFillText += PrepareHTMLString(section, "", dataObject[i].spoiler);
         break;
       }
     } else {
       // if anything from the hints list is not done
-      sFillText += PrepareHTMLString(divId, "", dataObject[i].spoiler);
+      sFillText += PrepareHTMLString(section, "", dataObject[i].spoiler);
       break;
     }
   } // end: for (let i in dataObject)
-  // AppendHTML(divId, sFillText);
+  // AppendHTML(section, sFillText);
 
 } // function CheckHintsTrue()
 
@@ -4884,7 +4883,7 @@ function GenerateInnerHTML(db) {
 
     textFill = SectionStart(sections[section]);
     /* creates a <h2> tag for the current section and fills with current%/max%
-    If the save file was not analyzed, then fill only max% on blue background*/
+    If the save file was not analyzed, then fill only max% on blue background */
 
     if (db.saveAnalyzed === true) {
       textFill += CompletionFill(sections[section]);
