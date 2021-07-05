@@ -5001,6 +5001,8 @@ function SingleEntryFill(section, entry) {
   var maskNormal = "<img src='".concat(_img_health_mask_png__WEBPACK_IMPORTED_MODULE_0__, "' class='health-mask' alt='health mask image' title='Health Mask'>");
   var maskSteel = "<img src='".concat(_img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_1__, "' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>");
   var wiki = "";
+  var div = "<div class='single-entry'>";
+  var divFlex = "<div class='flex-container align-center'>";
   var b = ["<b>", "</b>"];
   var p = "<span class='p-left-small'></span>";
   var span = ["", ""];
@@ -5056,6 +5058,7 @@ function SingleEntryFill(section, entry) {
           break;
 
         case "health":
+          div = divFlex;
           span = ["", ""];
           entry.permadeathMode ? maskImg = maskSteel : maskImg = maskNormal;
 
@@ -5091,7 +5094,7 @@ function SingleEntryFill(section, entry) {
       if (textPrefix.includes("<del>")) textSuffix = "<del>".concat(textSuffix, "</del>");
   }
 
-  return ["<div class='single-entry'>", icon, "".concat(b[0]).concat(textPrefix).concat(b[1]), span[0], p, spoiler[0], "".concat(textSuffix).concat(spoilerAfter), spoiler[1], span[1], "</div>"].join("");
+  return [div, icon, "".concat(b[0]).concat(textPrefix).concat(b[1]), span[0], p, spoiler[0], "".concat(textSuffix).concat(spoilerAfter), spoiler[1], span[1], "</div>"].join("");
 }
 /**
  * Adds HTML string to an element with a given ID.

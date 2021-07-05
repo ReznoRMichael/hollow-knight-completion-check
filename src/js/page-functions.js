@@ -285,6 +285,9 @@ function SingleEntryFill(section, entry) {
     let maskNormal = `<img src='${HEALTH_MASK_IMAGE}' class='health-mask' alt='health mask image' title='Health Mask'>`;
     let maskSteel = `<img src='${HEALTH_MASK_STEEL_IMAGE}' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>`;
     let wiki = "";
+
+    let div = `<div class='single-entry'>`;
+    let divFlex = `<div class='flex-container align-center'>`;
     let b = ["<b>", "</b>"];
     let p = "<span class='p-left-small'></span>";
     let span = ["", ""]; 
@@ -343,6 +346,7 @@ function SingleEntryFill(section, entry) {
                     break;
 
                 case "health":
+                    div = divFlex;
                     span = ["", ""];
 
                     (entry.permadeathMode) ? maskImg = maskSteel: maskImg = maskNormal;
@@ -382,7 +386,7 @@ function SingleEntryFill(section, entry) {
 
 
     return [
-        "<div class='single-entry'>",
+        div,
             icon,
             `${b[0]}${textPrefix}${b[1]}`,
             span[0],
