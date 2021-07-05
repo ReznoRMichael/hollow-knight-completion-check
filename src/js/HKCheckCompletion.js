@@ -7,7 +7,6 @@ import HK from "./hk-database.js";
 /* ----------------- Helper functions --------------------------------------- */
 
 import {
-    PrefillHTML,
     CompletionHTML,
     GenerateInnerHTML,
     AppendHTML,
@@ -224,9 +223,15 @@ function HKCheckCompletion(jsonObject) {
 
     // ------------------------- Fill completion ----------------------------- //
 
-    CompletionHTML(HK.sections, HKPlayerData.completionPercentage);
+    /* CompletionHTML(HK.sections, HKPlayerData.completionPercentage); */
 
-    GenerateInnerHTML(HK.sections);
+    // ------------------------- Indicate that the save file was loaded and analyzed ----------------------------- //
+
+    HK.saveAnalyzed = true;
+
+    // ------------------------- Generate everything on the page with updated values ----------------------------- //
+
+    GenerateInnerHTML(HK);
 
     // Prevents wrong checkbox behaviour (must run after everything is finished)
     CheckboxHintsToggle();
@@ -1311,7 +1316,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
 function HKReadTextArea(textAreaId = "") {
 
     // refresh and prepare document for filling with data from the save
-    InitialHTMLPopulate(HK.sections);
+    InitialHTMLPopulate(HK);
 
     let contents = document.getElementById(textAreaId).value;
 
@@ -1331,15 +1336,15 @@ function HKReadTextArea(textAreaId = "") {
 
 /**
  * Populate all HTML with given ID and their initial data set as false (used at DOM load)
- * @param {object} sections JavaScript Object containing all HTML IDs to populate
+ * @param {object} db JavaScript Object containing all HTML IDs to populate
  */
-function InitialHTMLPopulate(sections) {
+function InitialHTMLPopulate(db) {
 
     let sFillText = "";
 
     CurrentDataFalse();
 
-    GenerateInnerHTML(sections);
+    GenerateInnerHTML(db);
 
     // PrefillHTML(sections);
 /* 
@@ -1517,7 +1522,7 @@ function FillInnerHTML(elementId, textFill) {
 
 // Populate HTML at load (before img and css)
 document.addEventListener("DOMContentLoaded", () => {
-    InitialHTMLPopulate(HK.sections);
+    InitialHTMLPopulate(HK);
 });
 
 // Does an action when the save file location input text is clicked once (auto select & copy to clipboard)

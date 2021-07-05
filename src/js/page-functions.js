@@ -65,41 +65,6 @@ function TogglePageScrollElement(root, element, ratio) {
 }
 
 /**
- * Cleans "generated" and fills all HTML elements of ids from a given list. Creates only div with id, and h2 with title inside it.
- * @param {object} jsObj Object with HTML data to fill
- */
-function PrefillHTML(jsObj, element = "generated") {
-
-    let domElement = document.getElementById(element);
-    let sFillText = "";
-    // Clean "generated" div
-    // domElement.innerHTML = "";
-
-    let id = "";
-    let h2 = "";
-    let h2id = "";
-    let mp = ""; // max Percent
-    let cl = ""; // class
-
-    for (let i in jsObj) {
-        id = jsObj[i].id;
-        h2 = jsObj[i].h2;
-        h2id = "h2-" + jsObj[i].id;
-
-        mp = `<div class='percent-box'>${(i === "intro") ? 0: jsObj[i].maxPercent}%</div>`;
-        if (!jsObj[i].hasOwnProperty("maxPercent")) mp = "";
-
-        sFillText += `
-            <div id="${id}" ${cl}>
-                <h2 id='${h2id}'>${h2}${mp}</h2>
-            </div>
-        `;
-    }
-
-    // domElement.innerHTML = sFillText;
-}
-
-/**
  * Replaces the h2 titles with a current percent/max percent values as read from the save file
  * @param {object} jsObj Object with HTML data to fill
  * @param {number} hkGameCompletion Total completion percentage in a save file
@@ -155,8 +120,6 @@ function CompletionHTML(jsObj, hkGameCompletion) {
 
             fillText = `<div class='percent-box${cl}'>${(i === "intro") ? cp: cp + jsObj[i].maxPercent}%</div>`;
         }
-
-        // document.getElementById(h2id).innerHTML = h2 + fillText;
     }
 }
 
@@ -164,8 +127,10 @@ function CompletionHTML(jsObj, hkGameCompletion) {
 /* ################################### Optimized Functions ###################################### */
 
 
-function GenerateInnerHTML(sections) {
+function GenerateInnerHTML(db) {
     
+    let sections = db.sections;
+
     console.log(sections);
 
     let finalHTMLFill = "";
@@ -180,8 +145,13 @@ function GenerateInnerHTML(sections) {
         /* starts a new <div> with the current section id */
         textFill = SectionStart(sections[section]);
 
-        /* creates a <h2> tag for the current section and fills with current%/max% */
-        textFill += CompletionFill(sections[section]);
+        /* creates a <h2> tag for the current section and fills with current%/max%
+        If the save file was not analyzed, then fill only max% on blue background*/
+        if (db.saveAnalyzed === true) {
+            textFill += CompletionFill(sections[section]);
+        } else {
+            textFill += CompletionFillNoSave(sections[section]);
+        }
 
         /* create all main entries */
         switch (section) {
@@ -215,6 +185,31 @@ function GenerateInnerHTML(sections) {
 function SectionStart(section) {
 
     return `<div id="${section.id}">\n`;
+}
+
+/**
+ * Replaces the h2 titles with max percent values as read from the database
+ */
+ function CompletionFillNoSave(section) {
+
+    let id = "";
+    let h2 = "";
+    let h2id = "";
+    let mp = ""; // max Percent
+    let cl = ""; // class
+
+    id = section.id;
+    h2 = section.h2;
+    h2id = "h2-" + section.id;
+
+    mp = `<div class='percent-box'>${(id === "hk-intro") ? 0: section.maxPercent}%</div>`;
+    if (!section.hasOwnProperty("maxPercent")) mp = "";
+
+    return [
+        `<div id="${id}" ${cl}>`,
+            `<h2 id='${h2id}'>${h2}${mp}</h2>`,
+        "</div>\n"
+    ].join("");
 }
 
 /**
@@ -579,7 +574,6 @@ document.getElementById("checkbox-spoilers").addEventListener("click", CheckboxS
 /* ------------------------- Exports ------------------------------- */
 
 export {
-    PrefillHTML,
     CompletionHTML,
     GenerateInnerHTML,
     AppendHTML,

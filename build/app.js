@@ -85,77 +85,81 @@ function HKCheckCompletion(jsonObject) {
       HKWorldItems = jsonObject.sceneData.persistentBoolItems;
     } else return false;
   } else return false; // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
-  // PrefillHTML(HK.SECTION);
+  // PrefillHTML(HK.sections);
   // Prevents adding current percent data after each function call (each click of Analyze button)
 
 
-  ResetCompletion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION); // ================================================================================== //
+  ResetCompletion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections); // ================================================================================== //
   // ---------------- Time Played ----------------- //
 
-  CheckPlayTime(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.intro, HKPlayerData.playTime); // ---------------- Game Completion Status ----------------- //
+  CheckPlayTime(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.playTime); // ---------------- Game Completion Status ----------------- //
 
-  CheckCompletionPercent(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.intro, HKPlayerData.completionPercentage); // ---------------- Game Completion Status ----------------- //
+  CheckCompletionPercent(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.completionPercentage); // ---------------- Game Completion Status ----------------- //
 
-  CheckSaveFileVersion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.intro, HKPlayerData.version); // ---------------- Fleur Divide ----------------- //
-  // AppendHTML(HK.SECTION.intro, FLEUR_DIVIDE);
+  CheckSaveFileVersion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.version); // ---------------- Fleur Divide ----------------- //
+  // AppendHTML(HK.sections.intro, FLEUR_DIVIDE);
   // ---------------- Health Masks ----------------- //
 
-  CheckHealthMasks(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.intro, HKPlayerData.maxHealthBase, HKPlayerData.permadeathMode); // ---------------- Soul Orbs ----------------- //
+  CheckHealthMasks(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.maxHealthBase, HKPlayerData.permadeathMode); // ---------------- Soul Orbs ----------------- //
 
-  CheckSoulOrbs(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.intro, HKPlayerData.maxMP + HKPlayerData.MPReserveMax); // ---------------- Charm Notches (Slots) ----------------- //
+  CheckSoulOrbs(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.maxMP + HKPlayerData.MPReserveMax); // ---------------- Charm Notches (Slots) ----------------- //
 
-  CheckNotches(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.intro, HKPlayerData.charmSlots, HKPlayerData.charmSlotsFilled); // ---------------- Geo Amount ----------------- //
+  CheckNotches(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.charmSlots, HKPlayerData.charmSlotsFilled); // ---------------- Geo Amount ----------------- //
 
-  CheckGeo(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.intro, HKPlayerData.geo, HKPlayerData.geoPool); // ---------------- Bosses (Base Game) --------------------- //
+  CheckGeo(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.geo, HKPlayerData.geoPool); // ---------------- Bosses (Base Game) --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.bosses, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.bosses.entries, HKPlayerData, HKWorldItems); // ---------------- Charms --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.bosses, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.bosses.entries, HKPlayerData, HKWorldItems); // ---------------- Charms --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.charms, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.charms.entries, HKPlayerData); // ---------------- Colosseum of Fools --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.charms, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.charms.entries, HKPlayerData); // ---------------- Colosseum of Fools --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.colosseum, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.colosseum.entries, HKPlayerData); // ---------------- Dreamers --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.colosseum, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.colosseum.entries, HKPlayerData); // ---------------- Dreamers --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.dreamers, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.dreamers.entries, HKPlayerData); // ---------------- Dream Nail and Essence --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.dreamers, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.dreamers.entries, HKPlayerData); // ---------------- Dream Nail and Essence --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.dreamNail, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.dreamNail.entries, HKPlayerData); // ---------------- Equipment --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.dreamNail, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.dreamNail.entries, HKPlayerData); // ---------------- Equipment --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.equipment, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.equipment.entries, HKPlayerData); // ---------------- Nail Upgrades --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.equipment, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.equipment.entries, HKPlayerData); // ---------------- Nail Upgrades --------------------- //
 
-  CheckNailUpgrades(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailUpgrades, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailUpgrades.entries, HKPlayerData); // ---------------- Mask Shards --------------------- //
+  CheckNailUpgrades(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.nailUpgrades, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.nailUpgrades.entries, HKPlayerData); // ---------------- Mask Shards --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.maskShards.entries, HKPlayerData, HKWorldItems); // ---------------- Nail Arts --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.maskShards, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.maskShards.entries, HKPlayerData, HKWorldItems); // ---------------- Nail Arts --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailArts, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.nailArts.entries, HKPlayerData); // ---------------- Spells --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.nailArts, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.nailArts.entries, HKPlayerData); // ---------------- Spells --------------------- //
 
-  CheckSpellLevel(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.spells, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.spells.entries, HKPlayerData); // ---------------- Vessel Fragments --------------------- //
+  CheckSpellLevel(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.spells, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.spells.entries, HKPlayerData); // ---------------- Vessel Fragments --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.vesselFragments.entries, HKPlayerData, HKWorldItems); // ---------------- Warrior Dreams --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.vesselFragments, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.vesselFragments.entries, HKPlayerData, HKWorldItems); // ---------------- Warrior Dreams --------------------- //
 
-  CheckWarriorDreams(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.warriorDreams, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.warriorDreams.entries, HKPlayerData); // ---------------- Grimm Troupe Content Pack --------------------- //
+  CheckWarriorDreams(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.warriorDreams, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.warriorDreams.entries, HKPlayerData); // ---------------- Grimm Troupe Content Pack --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.grimmTroupe, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.grimmTroupe.entries, HKPlayerData); // ---------------- Lifeblood Content Pack --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.grimmTroupe, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.grimmTroupe.entries, HKPlayerData); // ---------------- Lifeblood Content Pack --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.lifeblood, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.lifeblood.entries, HKPlayerData); // ---------------- Godmaster Content Pack --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.lifeblood, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.lifeblood.entries, HKPlayerData); // ---------------- Godmaster Content Pack --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godmaster.entries, HKPlayerData); // ---------------- Fleur Divide ----------------- //
-  // AppendHTML(HK.SECTION.godmaster, FLEUR_DIVIDE);
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godmaster.entries, HKPlayerData); // ---------------- Fleur Divide ----------------- //
+  // AppendHTML(HK.sections.godmaster, FLEUR_DIVIDE);
   // ------------------------- Essential Things ----------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.essential, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.essential.entries, HKPlayerData, HKWorldItems); // ---------------- Fleur Divide ----------------- //
-  // AppendHTML(HK.SECTION.essential, FLEUR_DIVIDE);
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.essential, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.essential.entries, HKPlayerData, HKWorldItems); // ---------------- Fleur Divide ----------------- //
+  // AppendHTML(HK.sections.essential, FLEUR_DIVIDE);
   // ------------------------- Achievements ----------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.achievements.entries, HKPlayerData, HKWorldItems); // ---------------- Fleur Divide ----------------- //
-  // AppendHTML(HK.SECTION.achievements, FLEUR_DIVIDE);
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements.entries, HKPlayerData, HKWorldItems); // ---------------- Fleur Divide ----------------- //
+  // AppendHTML(HK.sections.achievements, FLEUR_DIVIDE);
   // ------------------------- Game Statistics ----------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.statistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.statistics.entries, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Godhome Statistics ----------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.statistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.statistics.entries, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Godhome Statistics ----------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godhomeStatistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.godhomeStatistics.entries, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Hints ----------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godhomeStatistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godhomeStatistics.entries, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Hints ----------------------------- //
 
-  CheckHintsTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.hints.entries, HKPlayerData, HKWorldItems); // ------------------------- Fill completion ----------------------------- //
+  CheckHintsTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints.entries, HKPlayerData, HKWorldItems); // ------------------------- Fill completion ----------------------------- //
 
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CompletionHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION, HKPlayerData.completionPercentage);
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.GenerateInnerHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION); // Prevents wrong checkbox behaviour (must run after everything is finished)
+  /* CompletionHTML(HK.sections, HKPlayerData.completionPercentage); */
+  // ------------------------- Indicate that the save file was loaded and analyzed ----------------------------- //
+
+  _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.saveAnalyzed = true; // ------------------------- Generate everything on the page with updated values ----------------------------- //
+
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.GenerateInnerHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default); // Prevents wrong checkbox behaviour (must run after everything is finished)
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CheckboxHintsToggle)();
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CheckboxSpoilersToggle)(); // finish and show benchmark
@@ -273,7 +277,7 @@ function CheckCompletionPercent(divId, completionPercentage) {
 
 
 function CheckSaveFileVersion(divId) {
-  var saveVersion = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.intro.entries.saveVersion.spoiler;
+  var saveVersion = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro.entries.saveVersion.spoiler;
   CurrentDataBlank();
   divId.entries.saveVersion.spoiler = "".concat(saveVersion);
   var textFill = "Save Version:".concat(pSpan, "<b>").concat(saveVersion, "</b>").concat(pSpan); // document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
@@ -1258,7 +1262,7 @@ function CheckHintsTrue(divId, dataObject, playerData, worldData) {
 function HKReadTextArea() {
   var textAreaId = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
   // refresh and prepare document for filling with data from the save
-  InitialHTMLPopulate(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION);
+  InitialHTMLPopulate(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default);
   var contents = document.getElementById(textAreaId).value;
 
   if (contents.length) {
@@ -1274,14 +1278,14 @@ function HKReadTextArea() {
 }
 /**
  * Populate all HTML with given ID and their initial data set as false (used at DOM load)
- * @param {object} sections JavaScript Object containing all HTML IDs to populate
+ * @param {object} db JavaScript Object containing all HTML IDs to populate
  */
 
 
-function InitialHTMLPopulate(sections) {
+function InitialHTMLPopulate(db) {
   var sFillText = "";
   CurrentDataFalse();
-  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.GenerateInnerHTML)(sections); // PrefillHTML(sections);
+  (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.GenerateInnerHTML)(db); // PrefillHTML(sections);
 
   /* 
       // Play Time
@@ -1443,7 +1447,7 @@ function FillInnerHTML(elementId, textFill) {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  InitialHTMLPopulate(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION);
+  InitialHTMLPopulate(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default);
 }); // Does an action when the save file location input text is clicked once (auto select & copy to clipboard)
 
 document.getElementById("save-location-input").addEventListener("click", function (e) {
@@ -2476,7 +2480,8 @@ __webpack_require__.r(__webpack_exports__);
     This is the whole database for the tool, based on the .json save file data
 */
 var HK = {
-  SECTION: {
+  saveAnalyzed: false,
+  sections: {
     /* ################ Intro ################### */
     intro: {
       h2: "Game Status",
@@ -4733,7 +4738,6 @@ function TranslateMapName(mapCode) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "PrefillHTML": () => (/* binding */ PrefillHTML),
 /* harmony export */   "CompletionHTML": () => (/* binding */ CompletionHTML),
 /* harmony export */   "GenerateInnerHTML": () => (/* binding */ GenerateInnerHTML),
 /* harmony export */   "AppendHTML": () => (/* binding */ AppendHTML),
@@ -4807,35 +4811,6 @@ function TogglePageScrollElement(root, element, ratio) {
   }
 }
 /**
- * Cleans "generated" and fills all HTML elements of ids from a given list. Creates only div with id, and h2 with title inside it.
- * @param {object} jsObj Object with HTML data to fill
- */
-
-
-function PrefillHTML(jsObj) {
-  var element = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "generated";
-  var domElement = document.getElementById(element);
-  var sFillText = ""; // Clean "generated" div
-  // domElement.innerHTML = "";
-
-  var id = "";
-  var h2 = "";
-  var h2id = "";
-  var mp = ""; // max Percent
-
-  var cl = ""; // class
-
-  for (var i in jsObj) {
-    id = jsObj[i].id;
-    h2 = jsObj[i].h2;
-    h2id = "h2-" + jsObj[i].id;
-    mp = "<div class='percent-box'>".concat(i === "intro" ? 0 : jsObj[i].maxPercent, "%</div>");
-    if (!jsObj[i].hasOwnProperty("maxPercent")) mp = "";
-    sFillText += "\n            <div id=\"".concat(id, "\" ").concat(cl, ">\n                <h2 id='").concat(h2id, "'>").concat(h2).concat(mp, "</h2>\n            </div>\n        ");
-  } // domElement.innerHTML = sFillText;
-
-}
-/**
  * Replaces the h2 titles with a current percent/max percent values as read from the save file
  * @param {object} jsObj Object with HTML data to fill
  * @param {number} hkGameCompletion Total completion percentage in a save file
@@ -4886,14 +4861,14 @@ function CompletionHTML(jsObj, hkGameCompletion) {
 
         if (jsObj[i].id != "hk-intro") cp += "/";
         fillText = "<div class='percent-box".concat(cl, "'>").concat(i === "intro" ? cp : cp + jsObj[i].maxPercent, "%</div>");
-      } // document.getElementById(h2id).innerHTML = h2 + fillText;
-
+      }
   }
 }
 /* ################################### Optimized Functions ###################################### */
 
 
-function GenerateInnerHTML(sections) {
+function GenerateInnerHTML(db) {
+  var sections = db.sections;
   console.log(sections);
   var finalHTMLFill = "";
   var textFill = "";
@@ -4906,8 +4881,13 @@ function GenerateInnerHTML(sections) {
     textFill = SectionStart(sections[section]);
     /* creates a <h2> tag for the current section and fills with current%/max% */
 
-    textFill += CompletionFill(sections[section]);
+    if (db.saveAnalyzed === true) {
+      textFill += CompletionFill(sections[section]);
+    } else {
+      textFill += CompletionFillNoSave(sections[section]);
+    }
     /* create all main entries */
+
 
     switch (section) {
       case "hints":
@@ -4938,6 +4918,26 @@ function GenerateInnerHTML(sections) {
 
 function SectionStart(section) {
   return "<div id=\"".concat(section.id, "\">\n");
+}
+/**
+ * Replaces the h2 titles with max percent values as read from the database
+ */
+
+
+function CompletionFillNoSave(section) {
+  var id = "";
+  var h2 = "";
+  var h2id = "";
+  var mp = ""; // max Percent
+
+  var cl = ""; // class
+
+  id = section.id;
+  h2 = section.h2;
+  h2id = "h2-" + section.id;
+  mp = "<div class='percent-box'>".concat(id === "hk-intro" ? 0 : section.maxPercent, "%</div>");
+  if (!section.hasOwnProperty("maxPercent")) mp = "";
+  return ["<div id=\"".concat(id, "\" ").concat(cl, ">"), "<h2 id='".concat(h2id, "'>").concat(h2).concat(mp, "</h2>"), "</div>\n"].join("");
 }
 /**
  * Replaces the h2 titles with a current percent/max percent values as read from the database

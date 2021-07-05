@@ -5,7 +5,7 @@
 
 const HK = {
 
-    saveLoaded: false,
+    saveAnalyzed: false,
 
     sections: {
 
