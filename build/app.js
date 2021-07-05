@@ -2484,9 +2484,10 @@ var HK = {
           timeS: 0
         },
         gameCompletion: {
+          icon: "red",
           name: "Game Completion:",
           spoiler: "0 %",
-          text: "(out of 112 %)"
+          spoilerAfter: "(out of 112 %)"
         },
         saveVersion: {
           icon: "none",
@@ -4893,6 +4894,7 @@ function GenerateInnerHTML(sections) {
 
     switch (section) {
       case "hints":
+        /* display only one (current) hint */
         textFill += SingleEntryFill(section, entries[sections[section].current]);
         break;
 
@@ -4981,6 +4983,7 @@ function SingleEntryFill(section, entry) {
   var p = "<span class='p-left-small'></span>";
   var span = ["", ""];
   var spoiler = ["", ""];
+  var spoilerAfter = "";
 
   if (entry.hasOwnProperty("icon")) {
     switch (entry.icon) {
@@ -5022,6 +5025,12 @@ function SingleEntryFill(section, entry) {
     case "intro":
       b = ["", ""];
       span = ["<b>", "</b>"];
+
+      if (entry.hasOwnProperty("spoilerAfter")) {
+        spoilerAfter = "</b> ".concat(entry.spoilerAfter);
+        span[1] = "";
+      }
+
       break;
 
     case "hints":
@@ -5033,11 +5042,11 @@ function SingleEntryFill(section, entry) {
     default:
       span = ["<span class='spoiler-span'>", "</span>"];
       spoiler = ["<span class='spoiler-text'>", "</span>"];
-      if (textSuffix.length && textPrefix.length) textSuffix = "— " + textSuffix;
+      if (textSuffix.length && textPrefix.length) textSuffix = "\u2014 ".concat(textSuffix);
       if (textPrefix.includes("<del>")) textSuffix = "<del>".concat(textSuffix, "</del>");
   }
 
-  return ["<div class='single-entry'>", icon, "".concat(b[0]).concat(textPrefix).concat(b[1]), span[0], p, spoiler[0], textSuffix, spoiler[1], span[1], "</div>"].join("");
+  return ["<div class='single-entry'>", icon, "".concat(b[0]).concat(textPrefix).concat(b[1]), span[0], p, spoiler[0], "".concat(textSuffix).concat(spoilerAfter), spoiler[1], span[1], "</div>"].join("");
 }
 /**
  * Adds HTML string to an element with a given ID.

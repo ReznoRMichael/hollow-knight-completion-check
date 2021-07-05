@@ -284,6 +284,7 @@ function SingleEntryFill(section, entry) {
     let p = "<span class='p-left-small'></span>";
     let span = ["", ""]; 
     let spoiler = ["", ""];
+    let spoilerAfter = "";
     
     if (entry.hasOwnProperty("icon")) {
         
@@ -325,6 +326,11 @@ function SingleEntryFill(section, entry) {
         case "intro":
             b = ["", ""];
             span = ["<b>", "</b>"];
+
+            if (entry.hasOwnProperty("spoilerAfter")) {
+                spoilerAfter = `</b> ${entry.spoilerAfter}`;
+                span[1] = "";
+            }
             break;
 
         case "hints":
@@ -338,7 +344,7 @@ function SingleEntryFill(section, entry) {
             span = ["<span class='spoiler-span'>", "</span>"];
             spoiler = ["<span class='spoiler-text'>", "</span>"];
         
-            if (textSuffix.length && textPrefix.length) textSuffix = "— " + textSuffix;
+            if (textSuffix.length && textPrefix.length) textSuffix = `— ${textSuffix}`;
             if (textPrefix.includes("<del>")) textSuffix = `<del>${textSuffix}</del>`;
     }
 
@@ -350,7 +356,7 @@ function SingleEntryFill(section, entry) {
             span[0],
                 p,
                 spoiler[0],
-                    textSuffix,
+                    `${textSuffix}${spoilerAfter}`,
                 spoiler[1],
             span[1],
         "</div>"
