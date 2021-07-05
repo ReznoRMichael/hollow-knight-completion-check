@@ -262,6 +262,7 @@ function CheckPlayTime(divId, playTime) {
 function CheckCompletionPercent(divId, completionPercentage) {
   completionPercentage >= 112 ? CurrentDataTrue() : CurrentDataFalse();
   divId.percent = completionPercentage;
+  divId.entries.gameCompletion.spoiler = completionPercentage;
   var textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + divId.maxPercent + " %)"; // document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }
 /**
@@ -2486,7 +2487,7 @@ var HK = {
         gameCompletion: {
           icon: "red",
           name: "Game Completion:",
-          spoiler: "0 %",
+          spoiler: 0,
           spoilerAfter: "(out of 112 %)"
         },
         saveVersion: {
@@ -5025,6 +5026,7 @@ function SingleEntryFill(section, entry) {
     case "intro":
       b = ["", ""];
       span = ["<b>", "</b>"];
+      if (entry.name === "Game Completion:") textSuffix = "".concat(entry.spoiler, " %");
 
       if (entry.hasOwnProperty("spoilerAfter")) {
         spoilerAfter = "</b> ".concat(entry.spoilerAfter);

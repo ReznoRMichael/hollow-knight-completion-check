@@ -327,6 +327,8 @@ function SingleEntryFill(section, entry) {
             b = ["", ""];
             span = ["<b>", "</b>"];
 
+            if (entry.name === "Game Completion:") textSuffix = `${entry.spoiler} %`;
+
             if (entry.hasOwnProperty("spoilerAfter")) {
                 spoilerAfter = `</b> ${entry.spoilerAfter}`;
                 span[1] = "";

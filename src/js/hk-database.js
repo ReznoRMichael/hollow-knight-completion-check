@@ -26,7 +26,7 @@ const HK = {
                 gameCompletion: {
                     icon: "red",
                     name: "Game Completion:",
-                    spoiler: "0 %",
+                    spoiler: 0,
                     spoilerAfter: "(out of 112 %)",
                 },
                 saveVersion: {
