@@ -2478,6 +2478,7 @@ var HK = {
       maxPercent: 112,
       entries: {
         timePlayed: {
+          id: "timePlayed",
           icon: "clock",
           name: "Time Played:",
           spoiler: "0 h 0 min 0 sec",
@@ -2486,35 +2487,41 @@ var HK = {
           timeS: 0
         },
         gameCompletion: {
+          id: "gameCompletion",
           icon: "red",
           name: "Game Completion:",
           spoiler: 0,
           spoilerAfter: "(out of 112 %)"
         },
         saveVersion: {
+          id: "saveVersion",
           icon: "none",
           name: "Save Version:",
           spoiler: "0.0.0.0"
         },
         health: {
+          id: "health",
           icon: "none",
           name: "Health:",
           spoiler: "",
           masks: 5
         },
         soul: {
+          id: "soul",
           icon: "none",
           name: "Soul:",
           spoiler: "",
           amount: 99
         },
         notches: {
+          id: "notches",
           icon: "none",
           name: "Notches:",
           spoiler: "",
           amount: 3
         },
         geo: {
+          id: "geo",
           icon: "none",
           name: "Geo:",
           spoiler: "",
@@ -5027,7 +5034,17 @@ function SingleEntryFill(section, entry) {
     case "intro":
       b = ["", ""];
       span = ["<b>", "</b>"];
-      if (entry.name === "Game Completion:") textSuffix = "".concat(entry.spoiler, " %");
+      /* Different text and images for each entry in the "Game Status" section */
+
+      switch (entry.id) {
+        case "gameCompletion":
+          textSuffix = "".concat(entry.spoiler, " %");
+          break;
+
+        default:
+      }
+      /* Optimized only for the "intro" section! */
+
 
       if (entry.hasOwnProperty("spoilerAfter")) {
         spoilerAfter = "</b> ".concat(entry.spoilerAfter);

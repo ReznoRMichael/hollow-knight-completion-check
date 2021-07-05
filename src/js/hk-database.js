@@ -16,6 +16,7 @@ const HK = {
             maxPercent: 112,
             entries: {
                 timePlayed: {
+                    id: "timePlayed",
                     icon: "clock",
                     name: "Time Played:",
                     spoiler: "0 h 0 min 0 sec",
@@ -24,35 +25,41 @@ const HK = {
                     timeS: 0,
                 },
                 gameCompletion: {
+                    id: "gameCompletion",
                     icon: "red",
                     name: "Game Completion:",
                     spoiler: 0,
                     spoilerAfter: "(out of 112 %)",
                 },
                 saveVersion: {
+                    id: "saveVersion",
                     icon: "none",
                     name: "Save Version:",
                     spoiler: "0.0.0.0"
                 },
                 health: {
+                    id: "health",
                     icon: "none",
                     name: "Health:",
                     spoiler: "",
                     masks: 5
                 },
                 soul: {
+                    id: "soul",
                     icon: "none",
                     name: "Soul:",
                     spoiler: "",
                     amount: 99
                 },
                 notches: {
+                    id: "notches",
                     icon: "none",
                     name: "Notches:",
                     spoiler: "",
                     amount: 3
                 },
                 geo: {
+                    id: "geo",
                     icon: "none",
                     name: "Geo:",
                     spoiler: "",

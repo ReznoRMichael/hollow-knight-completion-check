@@ -327,7 +327,14 @@ function SingleEntryFill(section, entry) {
             b = ["", ""];
             span = ["<b>", "</b>"];
 
-            if (entry.name === "Game Completion:") textSuffix = `${entry.spoiler} %`;
+            /* Different text and images for each entry in the "Game Status" section */
+            switch (entry.id) {
+                case "gameCompletion":
+                    textSuffix = `${entry.spoiler} %`;
+                    break;
+                    
+                default:
+            }
 
             /* Optimized only for the "intro" section! */
             if (entry.hasOwnProperty("spoilerAfter")) {
