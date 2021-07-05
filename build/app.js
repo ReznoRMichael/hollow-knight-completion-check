@@ -165,9 +165,8 @@ function HKCheckCompletion(jsonObject) {
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CheckboxSpoilersToggle)();
   /* focus the text area after analyzing the save, without scrolling the document */
 
-  document.getElementById("save-area").focus({
-    preventScroll: true
-  }); // finish and show benchmark
+  /* document.getElementById("save-area").focus({preventScroll: true}); */
+  // finish and show benchmark
 
   benchHKCCEnd = new Date();
   console.info("HKCheckCompletion() time (ms) =", benchHKCCEnd - benchHKCCBegin);

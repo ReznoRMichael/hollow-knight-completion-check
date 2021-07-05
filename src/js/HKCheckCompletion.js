@@ -238,7 +238,7 @@ function HKCheckCompletion(jsonObject) {
     CheckboxSpoilersToggle();
 
     /* focus the text area after analyzing the save, without scrolling the document */
-    document.getElementById("save-area").focus({preventScroll: true});
+    /* document.getElementById("save-area").focus({preventScroll: true}); */
 
     // finish and show benchmark
     benchHKCCEnd = new Date();
