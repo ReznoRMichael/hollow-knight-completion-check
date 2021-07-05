@@ -237,7 +237,7 @@ function HKCheckCompletion(jsonObject) {
     CheckboxHintsToggle();
     CheckboxSpoilersToggle();
 
-    /* focus the text area after analyzing the save, without scrolling the document */
+    /* focus the text area after analyzing the save, without scrolling the document (too slow) */
     /* document.getElementById("save-area").focus({preventScroll: true}); */
 
     // finish and show benchmark
