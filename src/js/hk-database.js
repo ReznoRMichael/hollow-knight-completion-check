@@ -42,7 +42,8 @@ const HK = {
                     icon: "none",
                     name: "Health:",
                     spoiler: "",
-                    masks: 5
+                    masks: 5,
+                    permadeathMode: false,
                 },
                 soul: {
                     id: "soul",

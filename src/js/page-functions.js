@@ -279,6 +279,11 @@ function SingleEntryFill(section, entry) {
 
     let textPrefix = "";
     let textSuffix = "";
+    let textFill = "";
+    let maskImages = "";
+    let maskImg = "";
+    let maskNormal = `<img src='${HEALTH_MASK_IMAGE}' class='health-mask' alt='health mask image' title='Health Mask'>`;
+    let maskSteel = `<img src='${HEALTH_MASK_STEEL_IMAGE}' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>`;
     let wiki = "";
     let b = ["<b>", "</b>"];
     let p = "<span class='p-left-small'></span>";
@@ -330,9 +335,20 @@ function SingleEntryFill(section, entry) {
             span = ["<b>", "</b>"];
 
             /* Different text and images for each entry in the "Game Status" section */
+            
             switch (entry.id) {
                 case "gameCompletion":
                     textSuffix = `${entry.spoiler} %`;
+
+                    break;
+
+                case "health":
+                    (entry.permadeathMode) ? maskImg = maskSteel: maskImg = maskNormal;
+
+                    for (let i = 0; i < entry.masks; i++) {
+                        textSuffix += maskImg;
+                    }
+
                     break;
 
                 default:

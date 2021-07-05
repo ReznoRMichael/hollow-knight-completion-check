@@ -2504,7 +2504,8 @@ var HK = {
           icon: "none",
           name: "Health:",
           spoiler: "",
-          masks: 5
+          masks: 5,
+          permadeathMode: false
         },
         soul: {
           id: "soul",
@@ -4987,6 +4988,11 @@ function SingleEntryFill(section, entry) {
   var iconNull = SYMBOL_EMPTY;
   var textPrefix = "";
   var textSuffix = "";
+  var textFill = "";
+  var maskImages = "";
+  var maskImg = "";
+  var maskNormal = "<img src='".concat(_img_health_mask_png__WEBPACK_IMPORTED_MODULE_0__, "' class='health-mask' alt='health mask image' title='Health Mask'>");
+  var maskSteel = "<img src='".concat(_img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_1__, "' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>");
   var wiki = "";
   var b = ["<b>", "</b>"];
   var p = "<span class='p-left-small'></span>";
@@ -5029,6 +5035,7 @@ function SingleEntryFill(section, entry) {
 
   if (!textPrefix.length) b = ["", ""];
   if (wiki.length) b = ["<a class=\"wiki\" href=\"".concat(WIKI_LINK).concat(wiki, "\" target=\"_blank\">"), "</a>"];
+  /* #################### Different behaviour depending on the section ####################### */
 
   switch (section) {
     case "intro":
@@ -5039,6 +5046,15 @@ function SingleEntryFill(section, entry) {
       switch (entry.id) {
         case "gameCompletion":
           textSuffix = "".concat(entry.spoiler, " %");
+          break;
+
+        case "health":
+          entry.permadeathMode ? maskImg = maskSteel : maskImg = maskNormal;
+
+          for (var i = 0; i < entry.masks; i++) {
+            textSuffix += maskImg;
+          }
+
           break;
 
         default:
