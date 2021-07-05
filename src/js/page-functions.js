@@ -321,6 +321,8 @@ function SingleEntryFill(section, entry) {
     if (!textPrefix.length) b = ["", ""];
     if (wiki.length) b = [`<a class="wiki" href="${WIKI_LINK}${wiki}" target="_blank">`, "</a>"];
 
+    /* #################### Different behaviour depending on the section ####################### */
+
     switch (section) {
 
         case "intro":
@@ -332,7 +334,7 @@ function SingleEntryFill(section, entry) {
                 case "gameCompletion":
                     textSuffix = `${entry.spoiler} %`;
                     break;
-                    
+
                 default:
             }
 
