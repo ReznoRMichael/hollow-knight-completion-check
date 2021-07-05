@@ -368,7 +368,15 @@ function CheckSaveFileVersion(divId, saveVersion = HK.SECTION.intro.entries.save
  */
 function CheckHealthMasks(divId, masks = 5, permadeathMode = 0) {
 
-    let icon = SYMBOL_EMPTY;
+    divId.entries.health.masks = masks;
+
+    if (permadeathMode > 0) {
+        divId.entries.health.permadeathMode = true;
+    } else {
+        divId.entries.health.permadeathMode = false;
+    }
+    
+    /* let icon = SYMBOL_EMPTY;
     let textFill = "<span>Health:</span>";
     let maskImages = "";
     let maskNormal = `<img src='${HEALTH_MASK_IMAGE}' class='health-mask' alt='health mask image' title='Health Mask'>`;
@@ -379,7 +387,7 @@ function CheckHealthMasks(divId, masks = 5, permadeathMode = 0) {
 
     for (let i = 0; i < masks; i++) {
         maskImages += maskImg;
-    }
+    } */
 
     // document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + maskImages + divEnd;
 }

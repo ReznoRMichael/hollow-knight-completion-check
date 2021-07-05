@@ -335,7 +335,7 @@ function SingleEntryFill(section, entry) {
             span = ["<b>", "</b>"];
 
             /* Different text and images for each entry in the "Game Status" section */
-            
+
             switch (entry.id) {
                 case "gameCompletion":
                     textSuffix = `${entry.spoiler} %`;
@@ -343,11 +343,15 @@ function SingleEntryFill(section, entry) {
                     break;
 
                 case "health":
+                    span = ["", ""];
+
                     (entry.permadeathMode) ? maskImg = maskSteel: maskImg = maskNormal;
 
                     for (let i = 0; i < entry.masks; i++) {
                         textSuffix += maskImg;
                     }
+
+                    textSuffix += `${p}<sup>(${entry.masks})</sup>`;
 
                     break;
 

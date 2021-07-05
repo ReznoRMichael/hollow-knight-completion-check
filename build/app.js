@@ -289,17 +289,24 @@ function CheckSaveFileVersion(divId) {
 function CheckHealthMasks(divId) {
   var masks = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5;
   var permadeathMode = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-  var icon = SYMBOL_EMPTY;
-  var textFill = "<span>Health:</span>";
-  var maskImages = "";
-  var maskNormal = "<img src='".concat(_img_health_mask_png__WEBPACK_IMPORTED_MODULE_3__, "' class='health-mask' alt='health mask image' title='Health Mask'>");
-  var maskSteel = "<img src='".concat(_img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_4__, "' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>");
-  var maskImg = "";
-  permadeathMode > 0 ? maskImg = maskSteel : maskImg = maskNormal;
+  divId.entries.health.masks = masks;
 
-  for (var i = 0; i < masks; i++) {
-    maskImages += maskImg;
-  } // document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + maskImages + divEnd;
+  if (permadeathMode > 0) {
+    divId.entries.health.permadeathMode = true;
+  } else {
+    divId.entries.health.permadeathMode = false;
+  }
+  /* let icon = SYMBOL_EMPTY;
+  let textFill = "<span>Health:</span>";
+  let maskImages = "";
+  let maskNormal = `<img src='${HEALTH_MASK_IMAGE}' class='health-mask' alt='health mask image' title='Health Mask'>`;
+  let maskSteel = `<img src='${HEALTH_MASK_STEEL_IMAGE}' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>`;
+  let maskImg = "";
+    (permadeathMode > 0) ? maskImg = maskSteel: maskImg = maskNormal;
+    for (let i = 0; i < masks; i++) {
+      maskImages += maskImg;
+  } */
+  // document.getElementById(divId.id).innerHTML += divStartCenter + icon + textFill + maskImages + divEnd;
 
 }
 /**
@@ -5049,12 +5056,14 @@ function SingleEntryFill(section, entry) {
           break;
 
         case "health":
+          span = ["", ""];
           entry.permadeathMode ? maskImg = maskSteel : maskImg = maskNormal;
 
           for (var i = 0; i < entry.masks; i++) {
             textSuffix += maskImg;
           }
 
+          textSuffix += "".concat(p, "<sup>(").concat(entry.masks, ")</sup>");
           break;
 
         default:
