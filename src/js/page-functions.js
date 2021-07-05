@@ -329,6 +329,7 @@ function SingleEntryFill(section, entry) {
 
             if (entry.name === "Game Completion:") textSuffix = `${entry.spoiler} %`;
 
+            /* Optimized only for the "intro" section! */
             if (entry.hasOwnProperty("spoilerAfter")) {
                 spoilerAfter = `</b> ${entry.spoilerAfter}`;
                 span[1] = "";

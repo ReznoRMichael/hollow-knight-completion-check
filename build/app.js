@@ -275,6 +275,7 @@ function CheckCompletionPercent(divId, completionPercentage) {
 function CheckSaveFileVersion(divId) {
   var saveVersion = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.SECTION.intro.entries.saveVersion.spoiler;
   CurrentDataBlank();
+  divId.entries.saveVersion.spoiler = "".concat(saveVersion);
   var textFill = "Save Version:".concat(pSpan, "<b>").concat(saveVersion, "</b>").concat(pSpan); // document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }
 /**

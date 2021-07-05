@@ -353,6 +353,9 @@ function CheckCompletionPercent(divId, completionPercentage) {
 function CheckSaveFileVersion(divId, saveVersion = HK.SECTION.intro.entries.saveVersion.spoiler) {
 
     CurrentDataBlank();
+
+    divId.entries.saveVersion.spoiler = `${saveVersion}`;
+
     let textFill = `Save Version:${pSpan}<b>${saveVersion}</b>${pSpan}`;
     // document.getElementById(divId.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }
