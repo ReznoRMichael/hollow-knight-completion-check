@@ -4918,6 +4918,7 @@ function GenerateInnerHTML(sections) {
       default:
         for (var entry in entries) {
           textFill += SingleEntryFill(section, entries[entry]);
+          if (entry === "saveVersion") textFill += FLEUR_DIVIDE;
         }
 
     }
@@ -5094,7 +5095,7 @@ function SingleEntryFill(section, entry) {
       if (textPrefix.includes("<del>")) textSuffix = "<del>".concat(textSuffix, "</del>");
   }
 
-  return [div, icon, "".concat(b[0]).concat(textPrefix).concat(b[1]), span[0], p, spoiler[0], "".concat(textSuffix).concat(spoilerAfter), spoiler[1], span[1], "</div>"].join("");
+  return [div, icon, "".concat(b[0]).concat(textPrefix).concat(b[1]), span[0], p, spoiler[0], "".concat(textSuffix).concat(spoilerAfter), spoiler[1], span[1], "</div>\n"].join("");
 }
 /**
  * Adds HTML string to an element with a given ID.

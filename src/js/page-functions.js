@@ -193,6 +193,8 @@ function GenerateInnerHTML(sections) {
             default:
                 for (let entry in entries) {
                     textFill += SingleEntryFill(section, entries[entry]);
+
+                    if (entry === "saveVersion") textFill += FLEUR_DIVIDE;
                 }
         }
 
@@ -395,7 +397,7 @@ function SingleEntryFill(section, entry) {
                     `${textSuffix}${spoilerAfter}`,
                 spoiler[1],
             span[1],
-        "</div>"
+        "</div>\n"
     ].join("");
 
 }
