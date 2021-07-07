@@ -95,7 +95,11 @@ If you like the tool and wish it developed further with more functions and easie
 
 * v1.5.0 In progress:  
 
-  — Rearranged hint system with more emphasis on gradually increasing difficulty  
+  — Code optimizations. Should work a bit faster now, especially on mobile devices.  
+
+  — Rearranged custom hint system. More emphasis on gradually increasing difficulty (Watcher Knights).  
+
+  — Fixed incorrect display of Soul orbs amount for early HK save file versions (like 1.0.0.6).  
 
   — **Achievements Essentials** additions:  
   ✅ Journal: Flukemunga  
