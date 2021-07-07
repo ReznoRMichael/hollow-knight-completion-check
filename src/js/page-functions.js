@@ -368,7 +368,7 @@ function SingleEntryFill(section, entry) {
 
         case "hints":
             b = ["", ""];
-            span = ["<b>", "</b>"];
+            span = ["<span>", "</span>"];
             icon = iconNull;
             break;
         
