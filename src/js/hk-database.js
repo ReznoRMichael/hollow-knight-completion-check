@@ -44,7 +44,7 @@ const HK = {
                     icon: "none",
                     name: "Health:",
                     spoiler: "",
-                    masks: 5,
+                    amountTotal: 5,
                     permadeathMode: false,
                 },
                 soul: {
@@ -52,21 +52,23 @@ const HK = {
                     icon: "none",
                     name: "Soul:",
                     spoiler: "",
-                    amount: 99
+                    amountTotal: 99
                 },
                 notches: {
                     id: "notches",
                     icon: "none",
                     name: "Notches:",
                     spoiler: "",
-                    amount: 3
+                    amountTotal: 3
                 },
                 geo: {
                     id: "geo",
                     icon: "none",
                     name: "Geo:",
                     spoiler: "",
-                    amount: 0
+                    amount: 0,
+                    amountShade: 0,
+                    amountTotal: 0
                 }
             },
         },

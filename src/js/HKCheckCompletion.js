@@ -378,7 +378,7 @@ function CheckSaveFileVersion(section, saveVersion = HK.sections.intro.entries.s
  */
 function CheckHealthMasks(section, masks = 5, permadeathMode = 0) {
 
-    section.entries.health.masks = masks;
+    section.entries.health.amountTotal = masks;
 
     if (permadeathMode > 0) {
         section.entries.health.permadeathMode = true;
@@ -409,7 +409,7 @@ function CheckHealthMasks(section, masks = 5, permadeathMode = 0) {
  */
 function CheckSoulOrbs(section, totalSoul) {
 
-    let icon = SYMBOL_EMPTY;
+    /* let icon = SYMBOL_EMPTY;
     let textFill = "<span>Soul:</span>";
     let soulImages = "";
     let soulNormal = `<img src='${SOUL_ORB_IMAGE}' class='soul-orb' alt='soul orb image' title='Single Soul Orb (one spell cast)'>`;
@@ -417,7 +417,9 @@ function CheckSoulOrbs(section, totalSoul) {
 
     for (let i = 0, total = totalSoul / 33; i < total; i++) {
         soulImages += soulImg;
-    }
+    } */
+
+    section.entries.soul.amountTotal = totalSoul;
 
     // document.getElementById(section.id).innerHTML += divStartCenter + icon + textFill + soulImages + divEnd;
 }

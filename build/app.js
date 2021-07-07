@@ -301,7 +301,7 @@ function CheckSaveFileVersion(section) {
 function CheckHealthMasks(section) {
   var masks = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5;
   var permadeathMode = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-  section.entries.health.masks = masks;
+  section.entries.health.amountTotal = masks;
 
   if (permadeathMode > 0) {
     section.entries.health.permadeathMode = true;
@@ -329,16 +329,15 @@ function CheckHealthMasks(section) {
 
 
 function CheckSoulOrbs(section, totalSoul) {
-  var icon = SYMBOL_EMPTY;
-  var textFill = "<span>Soul:</span>";
-  var soulImages = "";
-  var soulNormal = "<img src='".concat(_img_soul_orb_png__WEBPACK_IMPORTED_MODULE_5__, "' class='soul-orb' alt='soul orb image' title='Single Soul Orb (one spell cast)'>");
-  var soulImg = soulNormal;
-
-  for (var i = 0, total = totalSoul / 33; i < total; i++) {
-    soulImages += soulImg;
-  } // document.getElementById(section.id).innerHTML += divStartCenter + icon + textFill + soulImages + divEnd;
-
+  /* let icon = SYMBOL_EMPTY;
+  let textFill = "<span>Soul:</span>";
+  let soulImages = "";
+  let soulNormal = `<img src='${SOUL_ORB_IMAGE}' class='soul-orb' alt='soul orb image' title='Single Soul Orb (one spell cast)'>`;
+  let soulImg = soulNormal;
+    for (let i = 0, total = totalSoul / 33; i < total; i++) {
+      soulImages += soulImg;
+  } */
+  section.entries.soul.amountTotal = totalSoul; // document.getElementById(section.id).innerHTML += divStartCenter + icon + textFill + soulImages + divEnd;
 }
 /**
  * Fills HTML with the Geo value of the save file
@@ -2521,7 +2520,7 @@ var HK = {
           icon: "none",
           name: "Health:",
           spoiler: "",
-          masks: 5,
+          amountTotal: 5,
           permadeathMode: false
         },
         soul: {
@@ -2529,21 +2528,23 @@ var HK = {
           icon: "none",
           name: "Soul:",
           spoiler: "",
-          amount: 99
+          amountTotal: 99
         },
         notches: {
           id: "notches",
           icon: "none",
           name: "Notches:",
           spoiler: "",
-          amount: 3
+          amountTotal: 3
         },
         geo: {
           id: "geo",
           icon: "none",
           name: "Geo:",
           spoiler: "",
-          amount: 0
+          amount: 0,
+          amountShade: 0,
+          amountTotal: 0
         }
       }
     },
@@ -5034,10 +5035,10 @@ function SingleEntryFill(section, entry) {
   var textPrefix = "";
   var textSuffix = "";
   var textFill = "";
-  var maskImages = "";
-  var maskImg = "";
+  var Img = "";
   var maskNormal = "<img src='".concat(_img_health_mask_png__WEBPACK_IMPORTED_MODULE_0__, "' class='health-mask' alt='health mask image' title='Health Mask'>");
   var maskSteel = "<img src='".concat(_img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_1__, "' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>");
+  var soulNormal = "<img src='".concat(_img_soul_orb_png__WEBPACK_IMPORTED_MODULE_2__, "' class='soul-orb' alt='soul orb image' title='Single Soul Orb (one spell cast)'>");
   var wiki = "";
   var div = "<div class='single-entry'>";
   var divFlex = "<div class='flex-container align-center'>";
@@ -5098,13 +5099,25 @@ function SingleEntryFill(section, entry) {
         case "health":
           div = divFlex;
           span = ["", ""];
-          entry.permadeathMode ? maskImg = maskSteel : maskImg = maskNormal;
+          entry.permadeathMode ? Img = maskSteel : Img = maskNormal;
 
-          for (var i = 0; i < entry.masks; i++) {
-            textSuffix += maskImg;
+          for (var i = 0; i < entry.amountTotal; i++) {
+            textSuffix += Img;
           }
 
-          textSuffix += "".concat(p, "<sup>(").concat(entry.masks, ")</sup>");
+          textSuffix += "".concat(p, "<sup>(").concat(entry.amountTotal, ")</sup>");
+          break;
+
+        case "soul":
+          div = divFlex;
+          span = ["", ""];
+          Img = soulNormal;
+
+          for (var _i = 0, total = entry.amountTotal / 33; _i < total; _i++) {
+            textSuffix += Img;
+          }
+
+          textSuffix += "".concat(p, "<sup>(").concat(entry.amountTotal / 33, ")</sup>");
           break;
 
         default:
@@ -5226,8 +5239,8 @@ function CheckboxSpoilersToggle() {
       break;
 
     case "show":
-      for (var _i = 0; _i < length; _i++) {
-        allClassElements[_i].classList.remove("hidden");
+      for (var _i2 = 0; _i2 < length; _i2++) {
+        allClassElements[_i2].classList.remove("hidden");
       }
 
       checkboxId.value = "spoilers-on";
@@ -5242,8 +5255,8 @@ function CheckboxSpoilersToggle() {
     default:
       // This runs when the checkbox is not checked
       if (checkboxId.checked === false) {
-        for (var _i2 = 0; _i2 < length; _i2++) {
-          allClassElements[_i2].classList.add("hidden");
+        for (var _i3 = 0; _i3 < length; _i3++) {
+          allClassElements[_i3].classList.add("hidden");
         }
 
         checkboxId.value = "spoilers-off"; // remember this choice for subsequent page visits and browser restarts
@@ -5255,8 +5268,8 @@ function CheckboxSpoilersToggle() {
         break;
       } // This runs when the checkbox is checked
       else {
-          for (var _i3 = 0; _i3 < length; _i3++) {
-            allClassElements[_i3].classList.remove("hidden");
+          for (var _i4 = 0; _i4 < length; _i4++) {
+            allClassElements[_i4].classList.remove("hidden");
           }
 
           checkboxId.value = "spoilers-on"; // remember this choice for subsequent page visits and browser restarts

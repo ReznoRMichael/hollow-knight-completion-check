@@ -277,10 +277,10 @@ function SingleEntryFill(section, entry) {
     let textPrefix = "";
     let textSuffix = "";
     let textFill = "";
-    let maskImages = "";
-    let maskImg = "";
+    let Img = "";
     let maskNormal = `<img src='${HEALTH_MASK_IMAGE}' class='health-mask' alt='health mask image' title='Health Mask'>`;
     let maskSteel = `<img src='${HEALTH_MASK_STEEL_IMAGE}' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>`;
+    let soulNormal = `<img src='${SOUL_ORB_IMAGE}' class='soul-orb' alt='soul orb image' title='Single Soul Orb (one spell cast)'>`;
     let wiki = "";
 
     let div = `<div class='single-entry'>`;
@@ -346,13 +346,26 @@ function SingleEntryFill(section, entry) {
                     div = divFlex;
                     span = ["", ""];
 
-                    (entry.permadeathMode) ? maskImg = maskSteel: maskImg = maskNormal;
+                    (entry.permadeathMode) ? Img = maskSteel: Img = maskNormal;
 
-                    for (let i = 0; i < entry.masks; i++) {
-                        textSuffix += maskImg;
+                    for (let i = 0; i < entry.amountTotal; i++) {
+                        textSuffix += Img;
                     }
 
-                    textSuffix += `${p}<sup>(${entry.masks})</sup>`;
+                    textSuffix += `${p}<sup>(${entry.amountTotal})</sup>`;
+
+                    break;
+
+                case "soul":
+                    div = divFlex;
+                    span = ["", ""];
+                    Img = soulNormal;
+
+                    for (let i = 0, total = entry.amountTotal / 33; i < total; i++) {
+                        textSuffix += Img;
+                    }
+
+                    textSuffix += `${p}<sup>(${entry.amountTotal / 33})</sup>`;
 
                     break;
 
