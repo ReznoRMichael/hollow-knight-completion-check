@@ -284,6 +284,8 @@ function SingleEntryFill(section, entry) {
     let notchNormalImage = `<img src='${NOTCH_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Free)'>`;
     let notchFilledImage = `<img src='${NOTCH_FILLED_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Used)'>`;
     let notchOvercharmedImage = `<img src='${NOTCH_OVERCHARMED_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>`;
+    let geoNormalImage = `<img src='${GEO_IMAGE}' class='geo-symbol' alt='geo symbol image' title='Geo'>`;
+    let geoShadeImage = `<img src='${GEO_SHADE_IMAGE}' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'>`;
     let wiki = "";
 
     let div = `<div class='single-entry'>`;
@@ -399,6 +401,20 @@ function SingleEntryFill(section, entry) {
 
                     textSuffix += `${p}<sup>(${entry.amountTotal})</sup>`;
 
+                    break;
+
+                case "geo":
+                    div = divFlex;
+                    span = ["", ""];
+
+                    textSuffix += `${geoNormalImage}<b>${entry.amount}</b>`;
+                    // Show Shade Geo value and image only if Shade has at least 1 Geo on it
+                    if (entry.amountShade > 0) textSuffix += `${p}+${geoShadeImage}<b>${entry.amountShade}</b>`;
+
+                    // Show also total Geo (Geo + Shade Geo) if player has at least 1 geo alongside the shade geo
+                    if (entry.amount > 0 && entry.amountShade > 0) textSuffix += `${p}=${p}<b>${entry.amountTotal}</b>`;
+                    
+                    p = "";
                     break;
 
                 default:

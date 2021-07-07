@@ -349,12 +349,17 @@ function CheckSoulOrbs(section, totalSoul) {
 function CheckGeo(section) {
   var geoValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
   var geoPoolValue = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-  var icon = SYMBOL_EMPTY;
-  var textFill = "<span>Geo:</span><img src='".concat(_img_geo_png__WEBPACK_IMPORTED_MODULE_9__, "' class='geo-symbol' alt='geo symbol image' title='Geo'><b>").concat(geoValue, "</b>"); // Show Shade Geo value and image only if Shade has at least 1 Geo on it
-
-  if (geoPoolValue > 0) textFill += "\n    ".concat(pSpan, "+<img src='").concat(_img_geo_shade_png__WEBPACK_IMPORTED_MODULE_10__, "' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'><b>").concat(geoPoolValue, "</b>"); // Show also total Geo (Geo + Shade Geo) if player has at least 1 geo alongside the shade geo
-
-  if (geoValue > 0 && geoPoolValue > 0) textFill += "".concat(pSpan, "=").concat(pSpan, "<b>").concat(geoValue + geoPoolValue, "</b>"); // document.getElementById(section.id).innerHTML += divStartCenter + icon + textFill + divEnd;
+  section.entries.geo.amount = geoValue;
+  section.entries.geo.amountShade = geoPoolValue;
+  section.entries.geo.amountTotal = geoValue + geoPoolValue;
+  /* let icon = SYMBOL_EMPTY;
+  let textFill = `<span>Geo:</span><img src='${GEO_IMAGE}' class='geo-symbol' alt='geo symbol image' title='Geo'><b>${geoValue}</b>`;
+    // Show Shade Geo value and image only if Shade has at least 1 Geo on it
+  if (geoPoolValue > 0) textFill += `
+  ${pSpan}+<img src='${GEO_SHADE_IMAGE}' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'><b>${geoPoolValue}</b>`;
+    // Show also total Geo (Geo + Shade Geo) if player has at least 1 geo alongside the shade geo
+  if (geoValue > 0 && geoPoolValue > 0) textFill += `${pSpan}=${pSpan}<b>${geoValue+geoPoolValue}</b>`; */
+  // document.getElementById(section.id).innerHTML += divStartCenter + icon + textFill + divEnd;
 }
 /**
  * Fills HTML with appropriate number of notch images
@@ -5047,6 +5052,8 @@ function SingleEntryFill(section, entry) {
   var notchNormalImage = "<img src='".concat(_img_notch_png__WEBPACK_IMPORTED_MODULE_3__, "' class='notch' alt='notch image' title='Charm Notch (Free)'>");
   var notchFilledImage = "<img src='".concat(_img_notch_filled_png__WEBPACK_IMPORTED_MODULE_4__, "' class='notch' alt='notch image' title='Charm Notch (Used)'>");
   var notchOvercharmedImage = "<img src='".concat(_img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_5__, "' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>");
+  var geoNormalImage = "<img src='".concat(_img_geo_png__WEBPACK_IMPORTED_MODULE_6__, "' class='geo-symbol' alt='geo symbol image' title='Geo'>");
+  var geoShadeImage = "<img src='".concat(_img_geo_shade_png__WEBPACK_IMPORTED_MODULE_7__, "' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'>");
   var wiki = "";
   var div = "<div class='single-entry'>";
   var divFlex = "<div class='flex-container align-center'>";
@@ -5156,6 +5163,17 @@ function SingleEntryFill(section, entry) {
           }
 
           textSuffix += "".concat(p, "<sup>(").concat(entry.amountTotal, ")</sup>");
+          break;
+
+        case "geo":
+          div = divFlex;
+          span = ["", ""];
+          textSuffix += "".concat(geoNormalImage, "<b>").concat(entry.amount, "</b>"); // Show Shade Geo value and image only if Shade has at least 1 Geo on it
+
+          if (entry.amountShade > 0) textSuffix += "".concat(p, "+").concat(geoShadeImage, "<b>").concat(entry.amountShade, "</b>"); // Show also total Geo (Geo + Shade Geo) if player has at least 1 geo alongside the shade geo
+
+          if (entry.amount > 0 && entry.amountShade > 0) textSuffix += "".concat(p, "=").concat(p, "<b>").concat(entry.amountTotal, "</b>");
+          p = "";
           break;
 
         default:

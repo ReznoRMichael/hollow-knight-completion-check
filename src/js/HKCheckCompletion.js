@@ -431,7 +431,11 @@ function CheckSoulOrbs(section, totalSoul) {
  */
 function CheckGeo(section, geoValue = 0, geoPoolValue = 0) {
 
-    let icon = SYMBOL_EMPTY;
+    section.entries.geo.amount = geoValue;
+    section.entries.geo.amountShade = geoPoolValue;
+    section.entries.geo.amountTotal = geoValue + geoPoolValue;
+
+    /* let icon = SYMBOL_EMPTY;
     let textFill = `<span>Geo:</span><img src='${GEO_IMAGE}' class='geo-symbol' alt='geo symbol image' title='Geo'><b>${geoValue}</b>`;
 
     // Show Shade Geo value and image only if Shade has at least 1 Geo on it
@@ -439,7 +443,7 @@ function CheckGeo(section, geoValue = 0, geoPoolValue = 0) {
     ${pSpan}+<img src='${GEO_SHADE_IMAGE}' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'><b>${geoPoolValue}</b>`;
 
     // Show also total Geo (Geo + Shade Geo) if player has at least 1 geo alongside the shade geo
-    if (geoValue > 0 && geoPoolValue > 0) textFill += `${pSpan}=${pSpan}<b>${geoValue+geoPoolValue}</b>`;
+    if (geoValue > 0 && geoPoolValue > 0) textFill += `${pSpan}=${pSpan}<b>${geoValue+geoPoolValue}</b>`; */
 
     // document.getElementById(section.id).innerHTML += divStartCenter + icon + textFill + divEnd;
 }
