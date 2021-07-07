@@ -945,8 +945,14 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         break;
 
-      case "mrMushroomState":
-        sFillText += CheckMrMushroomState(section, dataObject[i], playerData[i]);
+      case "mrMushroomState1":
+      case "mrMushroomState2":
+      case "mrMushroomState3":
+      case "mrMushroomState4":
+      case "mrMushroomState5":
+      case "mrMushroomState6":
+      case "mrMushroomState7":
+        CheckMrMushroomState(section, dataObject[i], playerData["mrMushroomState"]);
         break;
 
       default:
@@ -964,7 +970,6 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     } // end switch (i)
 
 
-    if (i === "mrMushroomState") continue;
     sFillText += PrepareHTMLString(section, textPrefix, textSuffix, wiki);
   } // end for (let i in dataObject)
   // AppendHTML(section, sFillText);
@@ -1151,29 +1156,19 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 /**
  * Checks and fills all the 7 locations of Mr Mushroom.
  * @param {object} section ID of the HTML element for data appending
- * @param {object} dataObject object containing the Mr Mushroom name and spoilers/locations
+ * @param {object} entry object containing the Mr Mushroom name and spoilers/locations
  * @param {number} mrMushroomState playerData.mrMushroomState read from the save file. (0-8)
  */
 
 
-function CheckMrMushroomState(section, dataObject) {
+function CheckMrMushroomState(section, entry) {
   var mrMushroomState = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-  var sFillText = "";
 
-  if (mrMushroomState > 1) {
-    for (var i = 1; i <= 7; i++) {
-      mrMushroomState > i ? CurrentDataTrue(section, "mrMushroomState") : CurrentDataFalse();
-      sFillText += PrepareHTMLString(section, "".concat(dataObject.name, " #").concat(i), dataObject["spoiler" + i], dataObject.wiki);
-    }
+  if (mrMushroomState >= entry.state) {
+    CurrentDataTrue(section, "mrMushroomState".concat(entry.state));
   } else {
     CurrentDataFalse();
-
-    for (var _i16 = 1; _i16 <= 7; _i16++) {
-      sFillText += PrepareHTMLString(section, "".concat(dataObject.name, " #").concat(_i16), dataObject["spoiler" + _i16], dataObject.wiki);
-    }
   }
-
-  return sFillText;
 }
 /**
  * Checks, validates and shows hints to the player depending on their save progression, in chronological order. Shows only hint for the last uncompleted event. If Hollow Knight is defeated, shows a dummy text.
@@ -3949,16 +3944,47 @@ var HK = {
           spoiler: "Requires Void Heart & Dream Nail Hollow Knight",
           wiki: "Radiance"
         },
-        mrMushroomState: {
-          name: "Mr Mushroom",
-          spoiler1: "Fungal Wastes, near Cornifer",
-          spoiler2: "Kingdom's Edge, near Isma's Grove",
-          spoiler3: "Deepnest, near Galien",
-          spoiler4: "Howling Cliffs, near Nailmaster Mato",
-          spoiler5: "Ancient Basin, near Monarch Wings",
-          spoiler6: "Fog Canyon, near Overgrown Mound",
-          spoiler7: "King's Pass, game starting location",
-          wiki: "Mister_Mushroom"
+        mrMushroomState1: {
+          name: "Mr Mushroom #1",
+          spoiler: "Fungal Wastes, near Cornifer",
+          wiki: "Mister_Mushroom",
+          state: 1
+        },
+        mrMushroomState2: {
+          name: "Mr Mushroom #2",
+          spoiler: "Kingdom's Edge, near Isma's Grove",
+          wiki: "Mister_Mushroom",
+          state: 2
+        },
+        mrMushroomState3: {
+          name: "Mr Mushroom #3",
+          spoiler: "Deepnest, near Galien",
+          wiki: "Mister_Mushroom",
+          state: 3
+        },
+        mrMushroomState4: {
+          name: "Mr Mushroom #4",
+          spoiler: "Howling Cliffs, near Nailmaster Mato",
+          wiki: "Mister_Mushroom",
+          state: 4
+        },
+        mrMushroomState5: {
+          name: "Mr Mushroom #5",
+          spoiler: "Ancient Basin, near Monarch Wings",
+          wiki: "Mister_Mushroom",
+          state: 5
+        },
+        mrMushroomState6: {
+          name: "Mr Mushroom #6",
+          spoiler: "Fog Canyon, near Overgrown Mound",
+          wiki: "Mister_Mushroom",
+          state: 6
+        },
+        mrMushroomState7: {
+          name: "Mr Mushroom #7",
+          spoiler: "King's Pass, game starting location",
+          wiki: "Mister_Mushroom",
+          state: 7
         },
         bossDoorStateTier5: {
           name: "P5 Embrace the Void",

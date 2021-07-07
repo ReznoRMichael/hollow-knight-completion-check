@@ -1023,8 +1023,14 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                 }
                 break;
 
-            case "mrMushroomState":
-                sFillText += CheckMrMushroomState(section, dataObject[i], playerData[i]);
+            case "mrMushroomState1":
+            case "mrMushroomState2":
+            case "mrMushroomState3":
+            case "mrMushroomState4":
+            case "mrMushroomState5":
+            case "mrMushroomState6":
+            case "mrMushroomState7":
+                CheckMrMushroomState(section, dataObject[i], playerData["mrMushroomState"]);
                 break;
                 
             default:
@@ -1042,7 +1048,6 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                 }
         } // end switch (i)
 
-        if (i === "mrMushroomState") continue;
         sFillText += PrepareHTMLString(section, textPrefix, textSuffix, wiki);
     } // end for (let i in dataObject)
 
@@ -1216,26 +1221,16 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 /**
  * Checks and fills all the 7 locations of Mr Mushroom.
  * @param {object} section ID of the HTML element for data appending
- * @param {object} dataObject object containing the Mr Mushroom name and spoilers/locations
+ * @param {object} entry object containing the Mr Mushroom name and spoilers/locations
  * @param {number} mrMushroomState playerData.mrMushroomState read from the save file. (0-8)
  */
-function CheckMrMushroomState(section, dataObject, mrMushroomState = 0) {
+function CheckMrMushroomState(section, entry, mrMushroomState = 0) {
 
-    let sFillText = "";
-
-    if (mrMushroomState > 1) {
-        for (let i = 1; i <= 7; i++) {
-            (mrMushroomState > i) ? CurrentDataTrue(section, "mrMushroomState"): CurrentDataFalse();
-            sFillText += PrepareHTMLString(section, `${dataObject.name} #${i}`, dataObject["spoiler" + i], dataObject.wiki);
-        }
+    if (mrMushroomState >= entry.state) {
+        CurrentDataTrue(section, `mrMushroomState${entry.state}`);
     } else {
         CurrentDataFalse();
-        for (let i = 1; i <= 7; i++) {
-            sFillText += PrepareHTMLString(section, `${dataObject.name} #${i}`, dataObject["spoiler" + i], dataObject.wiki);
-        }
     }
-
-    return sFillText;
 }
 
 /**
