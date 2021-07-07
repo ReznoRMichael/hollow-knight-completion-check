@@ -221,7 +221,9 @@ function CurrentDataTrue() {
 
 
 function CurrentDataFalse() {
-  completionSymbol = SYMBOL_FALSE;
+  var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var entry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+  section.entries[entry].icon = "red";
 }
 /**
  * Switches global variable to an "information" symbol
@@ -237,7 +239,9 @@ function CurrentDataFalse() {
 
 
 function CurrentDataBlank() {
-  completionSymbol = SYMBOL_EMPTY;
+  var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var entry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+  section.entries[entry].icon = "none";
 }
 /**
  * Fills HTML with the playTime value of the save file
@@ -281,9 +285,10 @@ function CheckCompletionPercent(section, completionPercentage) {
 
 function CheckSaveFileVersion(section) {
   var saveVersion = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro.entries.saveVersion.spoiler;
-  CurrentDataBlank();
+  CurrentDataBlank(section, section.entries.saveVersion.id);
   section.entries.saveVersion.spoiler = "".concat(saveVersion);
-  var textFill = "Save Version:".concat(pSpan, "<b>").concat(saveVersion, "</b>").concat(pSpan); // document.getElementById(section.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
+  /* let textFill = `Save Version:${pSpan}<b>${saveVersion}</b>${pSpan}`; */
+  // document.getElementById(section.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }
 /**
  * Fills HTML with appropriate number of health mask images
@@ -428,7 +433,7 @@ function CheckIfDataTrue(section, dataObject, playerData) {
     switch (i) {
       case "gotCharm_36":
         // prevents green checkbox and adding 1% when only got one white fragment
-        playerData.gotQueenFragment === true && playerData.gotKingFragment === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        playerData.gotQueenFragment === true && playerData.gotKingFragment === true ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         break;
 
       case "gotCharm_37":
@@ -441,17 +446,17 @@ function CheckIfDataTrue(section, dataObject, playerData) {
       case "hasGodfinder":
         // fades out the entries if save file is from older game versions
         if (playerData.hasOwnProperty(i) === false) {
-          CurrentDataBlank();
+          CurrentDataBlank(section, i);
           textPrefix = "<del>".concat(textPrefix, "</del>");
           break;
         }
 
         if (i === "grimmChildLevel") {
-          playerData.grimmChildLevel >= 4 ? CurrentDataTrue(section, i) : CurrentDataFalse();
+          playerData.grimmChildLevel >= 4 ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
           break;
         }
 
-        playerData[i] === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        playerData[i] === true ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         break;
 
       case "bossGruzMother":
@@ -472,7 +477,7 @@ function CheckIfDataTrue(section, dataObject, playerData) {
       case "vesselFragmentCityOfTears":
       case "vesselFragmentDeepnest":
       case "vesselFragmentFountain":
-        WorldDataActivated(dataObject[i].id, dataObject[i].sceneName, worldData) ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        WorldDataActivated(dataObject[i].id, dataObject[i].sceneName, worldData) ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         break;
 
       case "pantheonMaster":
@@ -482,20 +487,20 @@ function CheckIfDataTrue(section, dataObject, playerData) {
         checkText = CheckGodmasterDoors(dataObject[i], playerData);
 
         if (checkText === "PropertyNotFound") {
-          CurrentDataBlank();
+          CurrentDataBlank(section, i);
           textPrefix = "<del>".concat(textPrefix, "</del>");
           break;
         } else if (checkText === "PantheonCompleted") {
           CurrentDataTrue(section, i);
           break;
         } else {
-          CurrentDataFalse();
+          CurrentDataFalse(section, i);
         }
 
         break;
 
       default:
-        playerData[i] === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        playerData[i] === true ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
     }
 
     sFillText += PrepareHTMLString(section, textPrefix, textSuffix, wiki);
@@ -517,19 +522,19 @@ function CheckSpellLevel(section, dataObject, playerData) {
     switch (i) {
       case "vengefulSpirit":
       case "shadeSoul":
-        playerData.fireballLevel >= dataObject[i].fireballLevel ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        playerData.fireballLevel >= dataObject[i].fireballLevel ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
         break;
 
       case "desolateDive":
       case "descendingDark":
-        playerData.quakeLevel >= dataObject[i].quakeLevel ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        playerData.quakeLevel >= dataObject[i].quakeLevel ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
         break;
 
       case "howlingWraiths":
       case "abyssShriek":
-        playerData.screamLevel >= dataObject[i].screamLevel ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        playerData.screamLevel >= dataObject[i].screamLevel ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
         break;
 
@@ -551,7 +556,7 @@ function CheckWarriorDreams(section, dataObject, playerData) {
   var sFillText = "";
 
   for (var i in dataObject) {
-    playerData[i] >= 2 ? CurrentDataTrue(section, i) : CurrentDataFalse();
+    playerData[i] >= 2 ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
     sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
   } // AppendHTML(section, sFillText);
 
@@ -589,7 +594,7 @@ function CheckNailUpgrades(section, dataObject, playerData) {
   var sFillText = "";
 
   for (var i = 0; i < 5; i++) {
-    playerData.nailSmithUpgrades >= i ? CurrentDataTrue(section, nail[i]) : CurrentDataFalse();
+    playerData.nailSmithUpgrades >= i ? CurrentDataTrue(section, nail[i]) : CurrentDataFalse(section, nail[i]);
     sFillText += PrepareHTMLString(section, dataObject[nail[i]].name, dataObject[nail[i]].spoiler, dataObject[nail[i]].wiki);
   }
 
@@ -624,33 +629,35 @@ function WorldDataActivated(idText, sceneNameText, worldData) {
  * @param {object} worldData Reference/pointer to specific data where to search
  */
 
+/* function CheckWorldDataTrue(section, idText, dataObject, worldData) {
+    let orderedArray = [];
+    let size = ObjectLength(dataObject);
+    let sFillText = "";
 
-function CheckWorldDataTrue(section, idText, dataObject, worldData) {
-  var orderedArray = [];
-  var size = (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.ObjectLength)(dataObject);
-  var sFillText = ""; // Order the items before displaying them (creates a copy of dataObject)
-
-  for (var i in dataObject) {
-    orderedArray.push([i, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki, false]);
-  } // Search for completed items and mark them for display
-
-
-  for (var _i3 = 0, length = worldData.length; _i3 < length; _i3++) {
-    for (var j = 0; j < size; j++) {
-      if (worldData[_i3].id === idText && worldData[_i3].sceneName === orderedArray[j][0] && worldData[_i3].activated === true) {
-        orderedArray[j][4] = true;
-      }
+    // Order the items before displaying them (creates a copy of dataObject)
+    for (let i in dataObject) {
+        orderedArray.push([i, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki, false]);
     }
-  } // Display the items as they were initially ordered
 
+    // Search for completed items and mark them for display
+    for (let i = 0, length = worldData.length; i < length; i++) {
+        for (let j = 0; j < size; j++) {
+            if (worldData[i].id === idText && worldData[i].sceneName === orderedArray[j][0] && worldData[i].activated === true) {
+                orderedArray[j][4] = true;
+            }
+        }
+    }
 
-  for (var _i4 = 0; _i4 < size; _i4++) {
-    CurrentDataFalse();
-    if (orderedArray[_i4][4] === true) CurrentDataTrue(section);
-    sFillText += PrepareHTMLString(section, orderedArray[_i4][1], orderedArray[_i4][2], orderedArray[_i4][3]);
-  } // AppendHTML(section, sFillText);
+    // Display the items as they were initially ordered
+    for (let i = 0; i < size; i++) {
+        CurrentDataFalse();
+        if (orderedArray[i][4] === true) CurrentDataTrue(section);
+        sFillText += PrepareHTMLString(section, orderedArray[i][1], orderedArray[i][2], orderedArray[i][3]);
+    }
 
-}
+    // AppendHTML(section, sFillText);
+} */
+
 /**
  * Verifies if the data in a specific object are true or false, or checks what values they have, and appends HTML accordingly.
  * @param {object} section ID of the HTML element for data appending
@@ -726,7 +733,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         if (i === "greyPrinceDefeats") {
           // backwards compatibility with earlier game versions
           if (playerData.hasOwnProperty(i) === false) {
-            CurrentDataBlank();
+            CurrentDataBlank(section, i);
             textPrefix = "<del>".concat(dataObject[i].name, "</del>");
             break;
           } else if (playerData.zoteDead === true || playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
@@ -737,13 +744,13 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         if (i === "whiteDefenderDefeats") {
           // backwards compatibility with earlier game versions
           if (playerData.hasOwnProperty(i) === false) {
-            CurrentDataBlank();
+            CurrentDataBlank(section, i);
             textPrefix = "<del>".concat(dataObject[i].name, "</del>");
             break;
           }
         }
 
-        amount >= dataObject[i].max ? CurrentDataTrue(section, i) : CurrentDataBlank();
+        amount >= dataObject[i].max ? CurrentDataTrue(section, i) : CurrentDataBlank(section, i);
         break;
 
       case "geoPool":
@@ -751,12 +758,12 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "jinnEggsSold":
       case "xunFlowerBrokeTimes":
         textPrefix += ": " + Math.abs(playerData[i]);
-        i === "geoPool" && playerData[i] > 0 ? CurrentDataBlank() : CurrentDataTrue(section, i);
+        i === "geoPool" && playerData[i] > 0 ? CurrentDataBlank(section, i) : CurrentDataTrue(section, i);
 
         if (i === "jinnEggsSold") {
           // fade out if not on Steel Soul
           if (playerData.permadeathMode < 1) {
-            CurrentDataBlank();
+            CurrentDataBlank(section, i);
             textPrefix = "<del>".concat(textPrefix, "</del>");
             break;
           }
@@ -781,20 +788,20 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         break;
 
       case "shopkeeperKey":
-        playerData.hasSlykey === true || playerData.gaveSlykey === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        playerData.hasSlykey === true || playerData.gaveSlykey === true ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         break;
 
       case "elegantKey":
-        playerData.hasWhiteKey === true || playerData.usedWhiteKey === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        playerData.hasWhiteKey === true || playerData.usedWhiteKey === true ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         break;
 
       case "loveKey":
-        playerData.hasLoveKey === true || playerData.openedLoveDoor === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        playerData.hasLoveKey === true || playerData.openedLoveDoor === true ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         break;
 
       case "paleOreSeer":
         // #2
-        playerData.dreamReward3 === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        playerData.dreamReward3 === true ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         break;
 
       /* -------------------- Interactables ------------------------------- */
@@ -819,7 +826,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "mantisVillageFloorLever":
       case "pathOfPainEntrance":
       case "whiteLadyRoom":
-        FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         break;
 
       case "relicsWandererJournal":
@@ -827,72 +834,72 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "relicsKingsIdol":
       case "relicsArcaneEgg":
         total = playerData[dataObject[i].nameHeld] + playerData[dataObject[i].nameSold];
-        total >= dataObject[i].max ? CurrentDataTrue(section, i) : CurrentDataBlank();
+        total >= dataObject[i].max ? CurrentDataTrue(section, i) : CurrentDataBlank(section, i);
         textPrefix += ": " + total;
         break;
 
       case "bossDoorStateTier5":
         if (playerData.hasOwnProperty("bossDoorStateTier5") === false) {
-          CurrentDataBlank();
+          CurrentDataBlank(section, i);
           textPrefix = "<del>".concat(textPrefix, "</del>");
         } else {
-          playerData[i].completed === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
+          playerData[i].completed === true ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         }
 
         break;
 
       case "killsBindingSeal":
         if (playerData.hasOwnProperty(i) === false) {
-          CurrentDataBlank();
+          CurrentDataBlank(section, i);
           textPrefix = "<del>".concat(textPrefix, "</del>");
           break;
         }
 
-        playerData[i] == 0 ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        playerData[i] == 0 ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         break;
 
       case "killsBigBuzzer":
-        playerData[i] == 0 ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        playerData[i] == 0 ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         break;
 
       case "killedVoidIdol_1":
         if (playerData.hasOwnProperty(i) === false) {
-          CurrentDataBlank();
+          CurrentDataBlank(section, i);
           textPrefix = "<del>".concat(textPrefix, "</del>");
           break;
         }
 
-        playerData[i] === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        playerData[i] === true ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         if (playerData[i] === false && (playerData.killedVoidIdol_2 === true || playerData.killedVoidIdol_3 === true)) CurrentDataTrue(section, i);
         break;
 
       case "killedVoidIdol_2":
         if (playerData.hasOwnProperty(i) === false) {
-          CurrentDataBlank();
+          CurrentDataBlank(section, i);
           textPrefix = "<del>".concat(textPrefix, "</del>");
           break;
         }
 
-        playerData[i] === true ? CurrentDataTrue(section, i) : CurrentDataFalse();
+        playerData[i] === true ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         if (playerData[i] === false && playerData.killedVoidIdol_3 === true) CurrentDataTrue(section, i);
         break;
 
       case "greyPrinceDefeated":
         // compatibility with earlier game versions
         if (playerData.hasOwnProperty(i) === false) {
-          CurrentDataBlank();
+          CurrentDataBlank(section, i);
           textPrefix = "<del>".concat(textPrefix, "</del>");
           break;
         } else if (playerData.zoteDead === true || playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
           textPrefix = "<del>".concat(textPrefix, "</del>");
         }
 
-        playerData[i] === true ? CurrentDataTrue(section, i) : CurrentDataBlank();
-        if (playerData.zoteRescuedBuzzer === true && playerData[i] === false) CurrentDataFalse();
+        playerData[i] === true ? CurrentDataTrue(section, i) : CurrentDataBlank(section, i);
+        if (playerData.zoteRescuedBuzzer === true && playerData[i] === false) CurrentDataFalse(section, i);
         break;
 
       case "zoteStatus":
-        CurrentDataFalse();
+        CurrentDataFalse(section, i);
 
         if (playerData.zoteDead === true) {
           textPrefix = dataObject[i].nameNeglect;
@@ -925,7 +932,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         break;
 
       case "nailsmithStatus":
-        CurrentDataFalse();
+        CurrentDataFalse(section, i);
 
         if (playerData.nailsmithKilled === true) {
           textPrefix = dataObject[i].namePurity;
@@ -958,13 +965,13 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       default:
         // backwards compatibility with earlier game versions
         if (playerData.hasOwnProperty(i) === false) {
-          CurrentDataBlank();
+          CurrentDataBlank(section, i);
           textPrefix = "<del>".concat(dataObject[i].name, "</del>");
           break;
         } else if (playerData[i] === true) {
           CurrentDataTrue(section, i);
         } else {
-          CurrentDataFalse();
+          CurrentDataFalse(section, i);
         }
 
     } // end switch (i)
@@ -988,8 +995,8 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     var idText = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
     var sceneNameText = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
 
-    for (var _i5 = 0, length = worldData.length; _i5 < length; _i5++) {
-      if (worldData[_i5].id === idText && worldData[_i5].sceneName === sceneNameText && worldData[_i5].activated === true) {
+    for (var _i3 = 0, length = worldData.length; _i3 < length; _i3++) {
+      if (worldData[_i3].id === idText && worldData[_i3].sceneName === sceneNameText && worldData[_i3].activated === true) {
         return true;
       }
     }
@@ -1007,9 +1014,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     var itemId = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
     var total = 0;
 
-    for (var _i6 = 0, length = worldData.length; _i6 < length; _i6++) {
-      if (worldData[_i6].id === itemId) {
-        if (worldData[_i6].activated === true) total++;
+    for (var _i4 = 0, length = worldData.length; _i4 < length; _i4++) {
+      if (worldData[_i4].id === itemId) {
+        if (worldData[_i4].activated === true) total++;
       }
     }
 
@@ -1025,8 +1032,8 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
   function CountMaps(mapArray) {
     var totalMaps = 0;
 
-    for (var _i7 = 0, len = mapArray.length; _i7 < len; _i7++) {
-      if (playerData[mapArray[_i7]] === true) totalMaps++;
+    for (var _i5 = 0, len = mapArray.length; _i5 < len; _i5++) {
+      if (playerData[mapArray[_i5]] === true) totalMaps++;
     }
 
     return totalMaps;
@@ -1044,10 +1051,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     var geoRocksLog = [];
 
     if (mode === "unbroken") {
-      for (var _i8 = 0; _i8 < arrayLength; _i8++) {
-        if (sceneData.geoRocks[_i8].hitsLeft > 0) {
+      for (var _i6 = 0; _i6 < arrayLength; _i6++) {
+        if (sceneData.geoRocks[_i6].hitsLeft > 0) {
           countTotal++;
-          geoRocksLog.push("#".concat(countTotal, " \uD83C\uDFD4\uFE0F ").concat(sceneData.geoRocks[_i8].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(sceneData.geoRocks[_i8].sceneName), " \u2328\uFE0F ").concat(sceneData.geoRocks[_i8].sceneName));
+          geoRocksLog.push("#".concat(countTotal, " \uD83C\uDFD4\uFE0F ").concat(sceneData.geoRocks[_i6].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(sceneData.geoRocks[_i6].sceneName), " \u2328\uFE0F ").concat(sceneData.geoRocks[_i6].sceneName));
         }
       }
 
@@ -1056,15 +1063,15 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       } else {
         console.groupCollapsed("%cUnbroken Geo Rocks (".concat(countTotal, "):"), "color: #16c60c; font-weight: 700;");
 
-        for (var _i9 = 0, length = geoRocksLog.length; _i9 < length; _i9++) {
-          console.log(geoRocksLog[_i9]);
+        for (var _i7 = 0, length = geoRocksLog.length; _i7 < length; _i7++) {
+          console.log(geoRocksLog[_i7]);
         }
 
         console.groupEnd();
       }
     } else {
-      for (var _i10 = 0; _i10 < arrayLength; _i10++) {
-        if (sceneData.geoRocks[_i10].hitsLeft === 0) countTotal++;
+      for (var _i8 = 0; _i8 < arrayLength; _i8++) {
+        if (sceneData.geoRocks[_i8].hitsLeft === 0) countTotal++;
       }
     }
 
@@ -1083,10 +1090,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     var itemsLog = [];
 
     if (mode === "notActivated") {
-      for (var _i11 = 0; _i11 < arrayLength; _i11++) {
-        if (worldData[_i11].activated === false && worldData[_i11].semiPersistent === false) {
+      for (var _i9 = 0; _i9 < arrayLength; _i9++) {
+        if (worldData[_i9].activated === false && worldData[_i9].semiPersistent === false) {
           countTotal++;
-          itemsLog.push("#".concat(countTotal, " ").concat(worldData[_i11].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(worldData[_i11].sceneName), " \u2328\uFE0F ").concat(worldData[_i11].sceneName));
+          itemsLog.push("#".concat(countTotal, " ").concat(worldData[_i9].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(worldData[_i9].sceneName), " \u2328\uFE0F ").concat(worldData[_i9].sceneName));
         }
       }
 
@@ -1095,15 +1102,15 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       } else {
         console.groupCollapsed("%cNot Activated Interactables (".concat(countTotal, "):"), "color: #16c60c; font-weight: 700;");
 
-        for (var _i12 = 0, length = itemsLog.length; _i12 < length; _i12++) {
-          console.log(itemsLog[_i12]);
+        for (var _i10 = 0, length = itemsLog.length; _i10 < length; _i10++) {
+          console.log(itemsLog[_i10]);
         }
 
         console.groupEnd();
       }
     } else {
-      for (var _i13 = 0; _i13 < arrayLength; _i13++) {
-        if (worldData[_i13].activated === true) countTotal++;
+      for (var _i11 = 0; _i11 < arrayLength; _i11++) {
+        if (worldData[_i11].activated === true) countTotal++;
       }
     }
 
@@ -1117,9 +1124,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
   function LogMissingGrubs() {
     var rescuedGrubsSceneList = [];
 
-    for (var _i14 = 0, _length = worldData.length; _i14 < _length; _i14++) {
-      if (worldData[_i14].id.includes("Grub Bottle")) {
-        if (worldData[_i14].activated === true) {
+    for (var _i12 = 0, _length = worldData.length; _i12 < _length; _i12++) {
+      if (worldData[_i12].id.includes("Grub Bottle")) {
+        if (worldData[_i12].activated === true) {
           // There are 3 duplicates of the same map scene name from older game save files. Prevents adding duplicates
 
           /* if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (1)") {
@@ -1127,7 +1134,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           } else if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (2)") {
               continue;
           } else { */
-          rescuedGrubsSceneList.push(worldData[_i14].sceneName); // }
+          rescuedGrubsSceneList.push(worldData[_i12].sceneName); // }
         }
       }
     } // Filtering the reference database Grub list to include only the missing values
@@ -1143,8 +1150,8 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     } else {
       console.groupCollapsed("%cUnrescued Grubs (".concat(length, "):"), "color: #16c60c; font-weight: 700;");
 
-      for (var _i15 = 0; _i15 < length; _i15++) {
-        console.log("#".concat(section.grubsList.indexOf(missingGrubsList[_i15]) + 1, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(missingGrubsList[_i15]), " \u2328\uFE0F ").concat(missingGrubsList[_i15]));
+      for (var _i13 = 0; _i13 < length; _i13++) {
+        console.log("#".concat(section.grubsList.indexOf(missingGrubsList[_i13]) + 1, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(missingGrubsList[_i13]), " \u2328\uFE0F ").concat(missingGrubsList[_i13]));
       }
 
       console.groupEnd();
@@ -1167,7 +1174,7 @@ function CheckMrMushroomState(section, entry) {
   if (mrMushroomState >= entry.state) {
     CurrentDataTrue(section, "mrMushroomState".concat(entry.state));
   } else {
-    CurrentDataFalse();
+    CurrentDataFalse(section, "mrMushroomState".concat(entry.state));
   }
 }
 /**
@@ -1281,8 +1288,8 @@ function HKReadTextArea() {
 
 
 function InitialHTMLPopulate(db) {
-  var sFillText = "";
-  CurrentDataFalse();
+  /* let sFillText = "";
+    CurrentDataFalse(); */
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.GenerateInnerHTML)(db); // PrefillHTML(sections);
 
   /* 
