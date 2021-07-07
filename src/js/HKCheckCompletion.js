@@ -1264,17 +1264,20 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
     if (playerData.killedHollowKnight === true) {
         // a text to show when player already finished their first playthrough (killed Hollow Knight first time)
         /* AppendHTML(section, "...a successful Knight who doesn't need hints anymore. The Knight explores the world of Hallownest patiently in constant search of its remaining secrets..."); */
+        section.current = "endOfHints";
         return true;
     }
 
     for (let i in dataObject) {
-        if (playerData[i] === true) {
+        if (i === "endOfHints") {
+            break;
+        } else if (playerData[i] === true) {
             continue;
         } else if (i === "fireballLevel") {
             if (playerData[i] >= 1) {
                 continue;
             } else {
-                sFillText += PrepareHTMLString(section, "", dataObject[i].spoiler);
+                section.current = i;
                 break;
             }
         } else if (i === "Crossroads_04") {
@@ -1289,7 +1292,7 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
             if (GruzMotherDefeated) {
                 continue; // next dataObject (i)
             } else {
-                sFillText += PrepareHTMLString(section, "", dataObject[i].spoiler);
+                section.current = i;
                 break;
             }
         } else if (i === "dungDefenderOrHornet2") {
@@ -1298,7 +1301,7 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
             } else if (playerData.hornetOutskirtsDefeated === true) {
                 continue;
             } else { // if no Dung Defender or Hornet 2
-                sFillText += PrepareHTMLString(section, "", dataObject[i].spoiler);
+                section.current = i;
                 break;
             }
         } else if (i === "ismaTearOrShadeCloak") {
@@ -1308,15 +1311,15 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
                 if (playerData.hasShadowDash === true) {
                     continue;
                 } else { // if Kings Brand but no Shade Cloak
-                    sFillText += PrepareHTMLString(section, "", dataObject[i].spoiler);
+                    section.current = i;
                     break;
                 }
             } else { // if no Isma's Tear or Kings Brand
-                sFillText += PrepareHTMLString(section, "", dataObject[i].spoiler);
+                section.current = i;
                 break;
             }
         } else { // if anything from the hints list is not done
-            sFillText += PrepareHTMLString(section, "", dataObject[i].spoiler);
+            section.current = i;
             break;
         }
     } // end: for (let i in dataObject)

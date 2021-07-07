@@ -145,6 +145,9 @@ const HK = {
                 killedHollowKnight: {
                     spoiler: "...a disturbance inside a black temple"
                 },
+                endOfHints: {
+                    spoiler: "...a successful Knight who doesn't need hints anymore. The Knight explores the world of Hallownest patiently in constant search of its remaining secrets..."
+                },
             },
         },
 
