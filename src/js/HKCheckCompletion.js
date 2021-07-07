@@ -1259,7 +1259,7 @@ function CheckMrMushroomState(section, entry, mrMushroomState = 0) {
  */
 function CheckHintsTrue(section, dataObject, playerData, worldData) {
 
-    let sFillText = "";
+    /* let sFillText = ""; */
 
     if (playerData.killedHollowKnight === true) {
         // a text to show when player already finished their first playthrough (killed Hollow Knight first time)
@@ -1269,6 +1269,7 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
     }
 
     for (let i in dataObject) {
+
         if (i === "endOfHints") {
             break;
         } else if (playerData[i] === true) {
