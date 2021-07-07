@@ -5134,11 +5134,11 @@ function SingleEntryFill(section, entry) {
           span = ["", ""];
           Img = soulNormal;
 
-          for (var _i = 0, _total = entry.amountTotal / 33; _i < _total; _i++) {
+          for (var _i = 0, _total = Math.round(entry.amountTotal / 33); _i < _total; _i++) {
             textSuffix += Img;
           }
 
-          textSuffix += "".concat(p, "<sup>(").concat(entry.amountTotal / 33, ")</sup>");
+          textSuffix += "".concat(p, "<sup>(").concat(Math.round(entry.amountTotal / 33), ")</sup>");
           break;
 
         case "notches":

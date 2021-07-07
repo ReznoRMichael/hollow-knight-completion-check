@@ -366,11 +366,11 @@ function SingleEntryFill(section, entry) {
                     span = ["", ""];
                     Img = soulNormal;
 
-                    for (let i = 0, total = entry.amountTotal / 33; i < total; i++) {
+                    for (let i = 0, total = Math.round(entry.amountTotal / 33); i < total; i++) {
                         textSuffix += Img;
                     }
 
-                    textSuffix += `${p}<sup>(${entry.amountTotal / 33})</sup>`;
+                    textSuffix += `${p}<sup>(${Math.round(entry.amountTotal / 33)})</sup>`;
 
                     break;
 
