@@ -59,7 +59,10 @@ const HK = {
                     icon: "none",
                     name: "Notches:",
                     spoiler: "",
-                    amountTotal: 3
+                    amountTotal: 3,
+                    amountFilled: 0,
+                    amountUnused: 3,
+                    amountOvercharmed: 0
                 },
                 geo: {
                     id: "geo",

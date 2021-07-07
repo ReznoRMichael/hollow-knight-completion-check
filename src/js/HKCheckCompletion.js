@@ -450,25 +450,33 @@ function CheckGeo(section, geoValue = 0, geoPoolValue = 0) {
  * @param {number} totalNotches Number of total Charm Notches the player has. 11 = max
  * @param {number} filledNotches Number of total used Charm Notches (including overcharmed notches). 15 = max
  */
-function CheckNotches(section, totalNotches = 3, filledNotches = 0) {
+function CheckNotches(section, notchesTotal = 3, notchesFilled = 0) {
 
     let {
-        overcharmedNotches,
-        unusedNotches
+        notchesOvercharmed,
+        notchesUnused
     } = 0;
 
+    section.entries.notches.amountTotal = notchesTotal;
+
     // How many overcharmed notches images to show
-    overcharmedNotches = filledNotches - totalNotches;
-    if (overcharmedNotches < 1) overcharmedNotches = 0;
+    notchesOvercharmed = notchesFilled - notchesTotal;
+    if (notchesOvercharmed < 1) notchesOvercharmed = 0;
+
+    section.entries.notches.amountOvercharmed = notchesOvercharmed;
 
     // How many unused notches images to show
-    unusedNotches = totalNotches - filledNotches;
-    if (unusedNotches < 1) unusedNotches = 0;
+    notchesUnused = notchesTotal - notchesFilled;
+    if (notchesUnused < 1) notchesUnused = 0;
+
+    section.entries.notches.amountUnused = notchesUnused;
 
     // Correct number of filled/used notches images to show when player is overcharmed
-    if (filledNotches > totalNotches) filledNotches = totalNotches;
+    if (notchesFilled > notchesTotal) notchesFilled = notchesTotal;
 
-    let icon = SYMBOL_EMPTY;
+    section.entries.notches.amountFilled = notchesFilled;
+
+    /* let icon = SYMBOL_EMPTY;
     let textFill = `<span>Notches:</span>${pSpan}`;
 
     let notchImages = "";
@@ -477,25 +485,25 @@ function CheckNotches(section, totalNotches = 3, filledNotches = 0) {
     let notchOvercharmedImage = `<img src='${NOTCH_OVERCHARMED_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>`;
 
     // First check filled (used) notches and fill them (skips if no filled notches)
-    if (filledNotches > 0) {
-        for (let i = 0; i < filledNotches; i++) {
+    if (notchesFilled > 0) {
+        for (let i = 0; i < notchesFilled; i++) {
             notchImages += notchFilledImage;
         }
     }
 
     // Second check overcharmed notches and fill them (skips if player is not overcharmed)
-    if (overcharmedNotches > 0) {
-        for (let i = 0; i < overcharmedNotches; i++) {
+    if (notchesOvercharmed > 0) {
+        for (let i = 0; i < notchesOvercharmed; i++) {
             notchImages += notchOvercharmedImage;
         }
     }
 
     // Lastly, fill all unused notches
-    if (unusedNotches > 0) {
-        for (let i = 0; i < unusedNotches; i++) {
+    if (notchesUnused > 0) {
+        for (let i = 0; i < notchesUnused; i++) {
             notchImages += notchNormalImage;
         }
-    }
+    } */
 
     // document.getElementById(section.id).innerHTML += divStartCenter + icon + textFill + notchImages + divEnd;
 }

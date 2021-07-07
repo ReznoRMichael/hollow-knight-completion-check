@@ -365,46 +365,48 @@ function CheckGeo(section) {
 
 
 function CheckNotches(section) {
-  var totalNotches = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 3;
-  var filledNotches = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+  var notchesTotal = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 3;
+  var notchesFilled = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
   var _ = 0,
-      overcharmedNotches = _.overcharmedNotches,
-      unusedNotches = _.unusedNotches; // How many overcharmed notches images to show
+      notchesOvercharmed = _.notchesOvercharmed,
+      notchesUnused = _.notchesUnused;
+  section.entries.notches.amountTotal = notchesTotal; // How many overcharmed notches images to show
 
-  overcharmedNotches = filledNotches - totalNotches;
-  if (overcharmedNotches < 1) overcharmedNotches = 0; // How many unused notches images to show
+  notchesOvercharmed = notchesFilled - notchesTotal;
+  if (notchesOvercharmed < 1) notchesOvercharmed = 0;
+  section.entries.notches.amountOvercharmed = notchesOvercharmed; // How many unused notches images to show
 
-  unusedNotches = totalNotches - filledNotches;
-  if (unusedNotches < 1) unusedNotches = 0; // Correct number of filled/used notches images to show when player is overcharmed
+  notchesUnused = notchesTotal - notchesFilled;
+  if (notchesUnused < 1) notchesUnused = 0;
+  section.entries.notches.amountUnused = notchesUnused; // Correct number of filled/used notches images to show when player is overcharmed
 
-  if (filledNotches > totalNotches) filledNotches = totalNotches;
-  var icon = SYMBOL_EMPTY;
-  var textFill = "<span>Notches:</span>".concat(pSpan);
-  var notchImages = "";
-  var notchNormalImage = "<img src='".concat(_img_notch_png__WEBPACK_IMPORTED_MODULE_6__, "' class='notch' alt='notch image' title='Charm Notch (Free)'>");
-  var notchFilledImage = "<img src='".concat(_img_notch_filled_png__WEBPACK_IMPORTED_MODULE_7__, "' class='notch' alt='notch image' title='Charm Notch (Used)'>");
-  var notchOvercharmedImage = "<img src='".concat(_img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_8__, "' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>"); // First check filled (used) notches and fill them (skips if no filled notches)
-
-  if (filledNotches > 0) {
-    for (var i = 0; i < filledNotches; i++) {
-      notchImages += notchFilledImage;
-    }
-  } // Second check overcharmed notches and fill them (skips if player is not overcharmed)
-
-
-  if (overcharmedNotches > 0) {
-    for (var _i = 0; _i < overcharmedNotches; _i++) {
-      notchImages += notchOvercharmedImage;
-    }
-  } // Lastly, fill all unused notches
-
-
-  if (unusedNotches > 0) {
-    for (var _i2 = 0; _i2 < unusedNotches; _i2++) {
-      notchImages += notchNormalImage;
-    }
-  } // document.getElementById(section.id).innerHTML += divStartCenter + icon + textFill + notchImages + divEnd;
-
+  if (notchesFilled > notchesTotal) notchesFilled = notchesTotal;
+  section.entries.notches.amountFilled = notchesFilled;
+  /* let icon = SYMBOL_EMPTY;
+  let textFill = `<span>Notches:</span>${pSpan}`;
+    let notchImages = "";
+  let notchNormalImage = `<img src='${NOTCH_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Free)'>`;
+  let notchFilledImage = `<img src='${NOTCH_FILLED_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Used)'>`;
+  let notchOvercharmedImage = `<img src='${NOTCH_OVERCHARMED_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>`;
+    // First check filled (used) notches and fill them (skips if no filled notches)
+  if (notchesFilled > 0) {
+      for (let i = 0; i < notchesFilled; i++) {
+          notchImages += notchFilledImage;
+      }
+  }
+    // Second check overcharmed notches and fill them (skips if player is not overcharmed)
+  if (notchesOvercharmed > 0) {
+      for (let i = 0; i < notchesOvercharmed; i++) {
+          notchImages += notchOvercharmedImage;
+      }
+  }
+    // Lastly, fill all unused notches
+  if (notchesUnused > 0) {
+      for (let i = 0; i < notchesUnused; i++) {
+          notchImages += notchNormalImage;
+      }
+  } */
+  // document.getElementById(section.id).innerHTML += divStartCenter + icon + textFill + notchImages + divEnd;
 }
 /**
  * Verifies if the data in a specific object is true or false, and appends HTML accordingly.
@@ -994,8 +996,8 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     var idText = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
     var sceneNameText = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
 
-    for (var _i3 = 0, length = worldData.length; _i3 < length; _i3++) {
-      if (worldData[_i3].id === idText && worldData[_i3].sceneName === sceneNameText && worldData[_i3].activated === true) {
+    for (var _i = 0, length = worldData.length; _i < length; _i++) {
+      if (worldData[_i].id === idText && worldData[_i].sceneName === sceneNameText && worldData[_i].activated === true) {
         return true;
       }
     }
@@ -1013,9 +1015,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     var itemId = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
     var total = 0;
 
-    for (var _i4 = 0, length = worldData.length; _i4 < length; _i4++) {
-      if (worldData[_i4].id === itemId) {
-        if (worldData[_i4].activated === true) total++;
+    for (var _i2 = 0, length = worldData.length; _i2 < length; _i2++) {
+      if (worldData[_i2].id === itemId) {
+        if (worldData[_i2].activated === true) total++;
       }
     }
 
@@ -1031,8 +1033,8 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
   function CountMaps(mapArray) {
     var totalMaps = 0;
 
-    for (var _i5 = 0, len = mapArray.length; _i5 < len; _i5++) {
-      if (playerData[mapArray[_i5]] === true) totalMaps++;
+    for (var _i3 = 0, len = mapArray.length; _i3 < len; _i3++) {
+      if (playerData[mapArray[_i3]] === true) totalMaps++;
     }
 
     return totalMaps;
@@ -1050,10 +1052,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     var geoRocksLog = [];
 
     if (mode === "unbroken") {
-      for (var _i6 = 0; _i6 < arrayLength; _i6++) {
-        if (sceneData.geoRocks[_i6].hitsLeft > 0) {
+      for (var _i4 = 0; _i4 < arrayLength; _i4++) {
+        if (sceneData.geoRocks[_i4].hitsLeft > 0) {
           countTotal++;
-          geoRocksLog.push("#".concat(countTotal, " \uD83C\uDFD4\uFE0F ").concat(sceneData.geoRocks[_i6].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(sceneData.geoRocks[_i6].sceneName), " \u2328\uFE0F ").concat(sceneData.geoRocks[_i6].sceneName));
+          geoRocksLog.push("#".concat(countTotal, " \uD83C\uDFD4\uFE0F ").concat(sceneData.geoRocks[_i4].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(sceneData.geoRocks[_i4].sceneName), " \u2328\uFE0F ").concat(sceneData.geoRocks[_i4].sceneName));
         }
       }
 
@@ -1062,15 +1064,15 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       } else {
         console.groupCollapsed("%cUnbroken Geo Rocks (".concat(countTotal, "):"), "color: #16c60c; font-weight: 700;");
 
-        for (var _i7 = 0, length = geoRocksLog.length; _i7 < length; _i7++) {
-          console.log(geoRocksLog[_i7]);
+        for (var _i5 = 0, length = geoRocksLog.length; _i5 < length; _i5++) {
+          console.log(geoRocksLog[_i5]);
         }
 
         console.groupEnd();
       }
     } else {
-      for (var _i8 = 0; _i8 < arrayLength; _i8++) {
-        if (sceneData.geoRocks[_i8].hitsLeft === 0) countTotal++;
+      for (var _i6 = 0; _i6 < arrayLength; _i6++) {
+        if (sceneData.geoRocks[_i6].hitsLeft === 0) countTotal++;
       }
     }
 
@@ -1089,10 +1091,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     var itemsLog = [];
 
     if (mode === "notActivated") {
-      for (var _i9 = 0; _i9 < arrayLength; _i9++) {
-        if (worldData[_i9].activated === false && worldData[_i9].semiPersistent === false) {
+      for (var _i7 = 0; _i7 < arrayLength; _i7++) {
+        if (worldData[_i7].activated === false && worldData[_i7].semiPersistent === false) {
           countTotal++;
-          itemsLog.push("#".concat(countTotal, " ").concat(worldData[_i9].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(worldData[_i9].sceneName), " \u2328\uFE0F ").concat(worldData[_i9].sceneName));
+          itemsLog.push("#".concat(countTotal, " ").concat(worldData[_i7].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(worldData[_i7].sceneName), " \u2328\uFE0F ").concat(worldData[_i7].sceneName));
         }
       }
 
@@ -1101,15 +1103,15 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       } else {
         console.groupCollapsed("%cNot Activated Interactables (".concat(countTotal, "):"), "color: #16c60c; font-weight: 700;");
 
-        for (var _i10 = 0, length = itemsLog.length; _i10 < length; _i10++) {
-          console.log(itemsLog[_i10]);
+        for (var _i8 = 0, length = itemsLog.length; _i8 < length; _i8++) {
+          console.log(itemsLog[_i8]);
         }
 
         console.groupEnd();
       }
     } else {
-      for (var _i11 = 0; _i11 < arrayLength; _i11++) {
-        if (worldData[_i11].activated === true) countTotal++;
+      for (var _i9 = 0; _i9 < arrayLength; _i9++) {
+        if (worldData[_i9].activated === true) countTotal++;
       }
     }
 
@@ -1123,9 +1125,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
   function LogMissingGrubs() {
     var rescuedGrubsSceneList = [];
 
-    for (var _i12 = 0, _length = worldData.length; _i12 < _length; _i12++) {
-      if (worldData[_i12].id.includes("Grub Bottle")) {
-        if (worldData[_i12].activated === true) {
+    for (var _i10 = 0, _length = worldData.length; _i10 < _length; _i10++) {
+      if (worldData[_i10].id.includes("Grub Bottle")) {
+        if (worldData[_i10].activated === true) {
           // There are 3 duplicates of the same map scene name from older game save files. Prevents adding duplicates
 
           /* if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (1)") {
@@ -1133,7 +1135,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           } else if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (2)") {
               continue;
           } else { */
-          rescuedGrubsSceneList.push(worldData[_i12].sceneName); // }
+          rescuedGrubsSceneList.push(worldData[_i10].sceneName); // }
         }
       }
     } // Filtering the reference database Grub list to include only the missing values
@@ -1149,8 +1151,8 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     } else {
       console.groupCollapsed("%cUnrescued Grubs (".concat(length, "):"), "color: #16c60c; font-weight: 700;");
 
-      for (var _i13 = 0; _i13 < length; _i13++) {
-        console.log("#".concat(section.grubsList.indexOf(missingGrubsList[_i13]) + 1, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(missingGrubsList[_i13]), " \u2328\uFE0F ").concat(missingGrubsList[_i13]));
+      for (var _i11 = 0; _i11 < length; _i11++) {
+        console.log("#".concat(section.grubsList.indexOf(missingGrubsList[_i11]) + 1, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(missingGrubsList[_i11]), " \u2328\uFE0F ").concat(missingGrubsList[_i11]));
       }
 
       console.groupEnd();
@@ -2535,7 +2537,10 @@ var HK = {
           icon: "none",
           name: "Notches:",
           spoiler: "",
-          amountTotal: 3
+          amountTotal: 3,
+          amountFilled: 0,
+          amountUnused: 3,
+          amountOvercharmed: 0
         },
         geo: {
           id: "geo",
@@ -5039,6 +5044,9 @@ function SingleEntryFill(section, entry) {
   var maskNormal = "<img src='".concat(_img_health_mask_png__WEBPACK_IMPORTED_MODULE_0__, "' class='health-mask' alt='health mask image' title='Health Mask'>");
   var maskSteel = "<img src='".concat(_img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_1__, "' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>");
   var soulNormal = "<img src='".concat(_img_soul_orb_png__WEBPACK_IMPORTED_MODULE_2__, "' class='soul-orb' alt='soul orb image' title='Single Soul Orb (one spell cast)'>");
+  var notchNormalImage = "<img src='".concat(_img_notch_png__WEBPACK_IMPORTED_MODULE_3__, "' class='notch' alt='notch image' title='Charm Notch (Free)'>");
+  var notchFilledImage = "<img src='".concat(_img_notch_filled_png__WEBPACK_IMPORTED_MODULE_4__, "' class='notch' alt='notch image' title='Charm Notch (Used)'>");
+  var notchOvercharmedImage = "<img src='".concat(_img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_5__, "' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>");
   var wiki = "";
   var div = "<div class='single-entry'>";
   var divFlex = "<div class='flex-container align-center'>";
@@ -5101,7 +5109,7 @@ function SingleEntryFill(section, entry) {
           span = ["", ""];
           entry.permadeathMode ? Img = maskSteel : Img = maskNormal;
 
-          for (var i = 0; i < entry.amountTotal; i++) {
+          for (var i = 0, total = entry.amountTotal; i < total; i++) {
             textSuffix += Img;
           }
 
@@ -5113,11 +5121,41 @@ function SingleEntryFill(section, entry) {
           span = ["", ""];
           Img = soulNormal;
 
-          for (var _i = 0, total = entry.amountTotal / 33; _i < total; _i++) {
+          for (var _i = 0, _total = entry.amountTotal / 33; _i < _total; _i++) {
             textSuffix += Img;
           }
 
           textSuffix += "".concat(p, "<sup>(").concat(entry.amountTotal / 33, ")</sup>");
+          break;
+
+        case "notches":
+          div = divFlex;
+          span = ["", ""];
+          /* First, check filled (used) notches and fill them (skips if no filled notches) */
+
+          if (entry.amountFilled > 0) {
+            for (var _i2 = 0, _total2 = entry.amountFilled; _i2 < _total2; _i2++) {
+              textSuffix += notchFilledImage;
+            }
+          }
+          /* Second, check overcharmed notches and fill them (skips if player is not overcharmed) */
+
+
+          if (entry.amountOvercharmed > 0) {
+            for (var _i3 = 0, _total3 = entry.amountOvercharmed; _i3 < _total3; _i3++) {
+              textSuffix += notchOvercharmedImage;
+            }
+          }
+          /* Last, fill all unused notches */
+
+
+          if (entry.amountUnused > 0) {
+            for (var _i4 = 0, _total4 = entry.amountUnused; _i4 < _total4; _i4++) {
+              textSuffix += notchNormalImage;
+            }
+          }
+
+          textSuffix += "".concat(p, "<sup>(").concat(entry.amountTotal, ")</sup>");
           break;
 
         default:
@@ -5239,8 +5277,8 @@ function CheckboxSpoilersToggle() {
       break;
 
     case "show":
-      for (var _i2 = 0; _i2 < length; _i2++) {
-        allClassElements[_i2].classList.remove("hidden");
+      for (var _i5 = 0; _i5 < length; _i5++) {
+        allClassElements[_i5].classList.remove("hidden");
       }
 
       checkboxId.value = "spoilers-on";
@@ -5255,8 +5293,8 @@ function CheckboxSpoilersToggle() {
     default:
       // This runs when the checkbox is not checked
       if (checkboxId.checked === false) {
-        for (var _i3 = 0; _i3 < length; _i3++) {
-          allClassElements[_i3].classList.add("hidden");
+        for (var _i6 = 0; _i6 < length; _i6++) {
+          allClassElements[_i6].classList.add("hidden");
         }
 
         checkboxId.value = "spoilers-off"; // remember this choice for subsequent page visits and browser restarts
@@ -5268,8 +5306,8 @@ function CheckboxSpoilersToggle() {
         break;
       } // This runs when the checkbox is checked
       else {
-          for (var _i4 = 0; _i4 < length; _i4++) {
-            allClassElements[_i4].classList.remove("hidden");
+          for (var _i7 = 0; _i7 < length; _i7++) {
+            allClassElements[_i7].classList.remove("hidden");
           }
 
           checkboxId.value = "spoilers-on"; // remember this choice for subsequent page visits and browser restarts

@@ -281,6 +281,9 @@ function SingleEntryFill(section, entry) {
     let maskNormal = `<img src='${HEALTH_MASK_IMAGE}' class='health-mask' alt='health mask image' title='Health Mask'>`;
     let maskSteel = `<img src='${HEALTH_MASK_STEEL_IMAGE}' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>`;
     let soulNormal = `<img src='${SOUL_ORB_IMAGE}' class='soul-orb' alt='soul orb image' title='Single Soul Orb (one spell cast)'>`;
+    let notchNormalImage = `<img src='${NOTCH_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Free)'>`;
+    let notchFilledImage = `<img src='${NOTCH_FILLED_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Used)'>`;
+    let notchOvercharmedImage = `<img src='${NOTCH_OVERCHARMED_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>`;
     let wiki = "";
 
     let div = `<div class='single-entry'>`;
@@ -348,7 +351,7 @@ function SingleEntryFill(section, entry) {
 
                     (entry.permadeathMode) ? Img = maskSteel: Img = maskNormal;
 
-                    for (let i = 0; i < entry.amountTotal; i++) {
+                    for (let i = 0, total = entry.amountTotal; i < total; i++) {
                         textSuffix += Img;
                     }
 
@@ -366,6 +369,35 @@ function SingleEntryFill(section, entry) {
                     }
 
                     textSuffix += `${p}<sup>(${entry.amountTotal / 33})</sup>`;
+
+                    break;
+
+                case "notches":
+                    div = divFlex;
+                    span = ["", ""];
+
+                    /* First, check filled (used) notches and fill them (skips if no filled notches) */
+                    if (entry.amountFilled > 0) {
+                        for (let i = 0, total = entry.amountFilled; i < total; i++) {
+                            textSuffix += notchFilledImage;
+                        }
+                    }
+
+                    /* Second, check overcharmed notches and fill them (skips if player is not overcharmed) */
+                    if (entry.amountOvercharmed > 0) {
+                        for (let i = 0, total = entry.amountOvercharmed; i < total; i++) {
+                            textSuffix += notchOvercharmedImage;
+                        }
+                    }
+
+                    /* Last, fill all unused notches */
+                    if (entry.amountUnused > 0) {
+                        for (let i = 0, total = entry.amountUnused; i < total; i++) {
+                            textSuffix += notchNormalImage;
+                        }
+                    }
+
+                    textSuffix += `${p}<sup>(${entry.amountTotal})</sup>`;
 
                     break;
 
