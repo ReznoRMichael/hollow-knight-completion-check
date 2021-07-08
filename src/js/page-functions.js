@@ -437,6 +437,14 @@ function SingleEntryFill(section, entry) {
 
             span = ["<span class='spoiler-span'>", "</span>"];
             spoiler = ["<span class='spoiler-text'>", "</span>"];
+
+            if (entry.hasOwnProperty("amount")) {
+                textPrefix += `: ${entry.amount}`;
+            }
+
+            if (entry.hasOwnProperty("amountTotal")) {
+                textPrefix += ` / ${entry.amountTotal}`;
+            }
         
             if (textSuffix.length && textPrefix.length) textSuffix = `— ${textSuffix}`;
             if (textPrefix.includes("<del>")) textSuffix = `<del>${textSuffix}</del>`;

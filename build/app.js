@@ -721,9 +721,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         }
 
         countTotal = amount;
+        dataObject[i].amount = amount;
 
         if (i === "journalEntriesCompleted" || i === "journalNotesCompleted") {
           countTotal = "".concat(amount, " / ").concat(playerData.journalEntriesTotal);
+          dataObject[i].amountTotal = playerData.journalEntriesTotal;
         }
 
         if (i === "grubsCollected") {
@@ -1194,8 +1196,7 @@ function CheckMrMushroomState(section, entry) {
 
 
 function CheckHintsTrue(section, dataObject, playerData, worldData) {
-  var sFillText = "";
-
+  /* let sFillText = ""; */
   if (playerData.killedHollowKnight === true) {
     // a text to show when player already finished their first playthrough (killed Hollow Knight first time)
 
@@ -5203,6 +5204,15 @@ function SingleEntryFill(section, entry) {
     default:
       span = ["<span class='spoiler-span'>", "</span>"];
       spoiler = ["<span class='spoiler-text'>", "</span>"];
+
+      if (entry.hasOwnProperty("amount")) {
+        textPrefix += ": ".concat(entry.amount);
+      }
+
+      if (entry.hasOwnProperty("amountTotal")) {
+        textPrefix += " / ".concat(entry.amountTotal);
+      }
+
       if (textSuffix.length && textPrefix.length) textSuffix = "\u2014 ".concat(textSuffix);
       if (textPrefix.includes("<del>")) textSuffix = "<del>".concat(textSuffix, "</del>");
   }

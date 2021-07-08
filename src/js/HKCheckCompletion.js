@@ -817,9 +817,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                 }
 
                 countTotal = amount;
+                dataObject[i].amount = amount;
 
                 if (i === "journalEntriesCompleted" || i === "journalNotesCompleted") {
                     countTotal = `${amount} / ${playerData.journalEntriesTotal}`;
+                    dataObject[i].amountTotal = playerData.journalEntriesTotal;
                 }
 
                 if (i === "grubsCollected") {
