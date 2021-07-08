@@ -943,7 +943,12 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
             case "relicsKingsIdol":
             case "relicsArcaneEgg":
                 total = playerData[dataObject[i].nameHeld] + playerData[dataObject[i].nameSold];
+
+                /* if (i === "relicsArcaneEgg") */
                 (total >= dataObject[i].max) ? CurrentDataTrue(section, i): CurrentDataBlank(section, i);
+
+                dataObject[i].amount = total;
+
                 textPrefix += ": " + total;
                 break;
 
