@@ -1579,7 +1579,7 @@ const HK = {
                     nameHeld: "trinket4",
                     nameSold: "soldTrinket4",
                     spoiler: "Arcane Egg (4 Eggs max, 1 missable)",
-                    max: 4,
+                    max: 3,
                     wiki: "Arcane_Egg"
                 },
                 // not ghostCoins
