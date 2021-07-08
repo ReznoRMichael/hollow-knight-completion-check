@@ -1416,6 +1416,7 @@ const HK = {
                     wiki: "Salubra's_Blessing"
                 },
                 zoteStatus: {
+                    id: "zoteStatus",
                     name: "Zote Status",
                     nameNeglect: "Zote Choice: Neglect",
                     nameRivalry: "Zote Choice: Rivalry",
@@ -1433,6 +1434,7 @@ const HK = {
                     wiki: "Zote"
                 },
                 nailsmithStatus: {
+                    id: "nailsmithStatus",
                     name: "Nailsmith Status",
                     nameHappyCouple: "Nailsmith Choice: Happy Couple",
                     namePurity: "Nailsmith Choice: Purity",

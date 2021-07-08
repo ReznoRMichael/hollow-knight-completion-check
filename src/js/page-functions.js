@@ -462,6 +462,15 @@ function SingleEntryFill(section, entry) {
 
                         break;
 
+                    case "zoteStatus":
+                    case "nailsmithStatus":
+                        if (entry.hasOwnProperty("currentName") && entry.hasOwnProperty("currentSpoiler")) {
+                            textPrefix = entry[entry.currentName];
+                            textSuffix = entry[entry.currentSpoiler];
+                        }
+
+                        break;
+
                     default:
                 }
             }

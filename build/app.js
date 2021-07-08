@@ -737,6 +737,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         textPrefix += ": ".concat(countTotal);
 
         if (i === "grubRewards") {
+          dataObject[i].amountTotal = playerData.grubsCollected;
           textPrefix += " / ".concat(playerData.grubsCollected);
         }
 
@@ -932,27 +933,39 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         if (playerData.zoteDead === true) {
           textPrefix = dataObject[i].nameNeglect;
           textSuffix = dataObject[i].spoilerNeglect;
+          dataObject[i].currentName = "nameNeglect";
+          dataObject[i].currentSpoiler = "spoilerNeglect";
           CurrentDataTrue(section, i);
         } else if (playerData.killedZote === true) {
           textPrefix = dataObject[i].nameRivalry;
           textSuffix = dataObject[i].spoilerRivalry;
+          dataObject[i].currentName = "nameRivalry";
+          dataObject[i].currentSpoiler = "spoilerRivalry";
           CurrentDataTrue(section, i);
         } else if (playerData.zoteRescuedBuzzer === false) {
           if (playerData.hasWalljump === false) {
             textPrefix = dataObject[i].nameTrappedVengefly;
             textSuffix = dataObject[i].spoilerTrappedVengefly;
+            dataObject[i].currentName = "nameTrappedVengefly";
+            dataObject[i].currentSpoiler = "spoilerTrappedVengefly";
           } else if (playerData.hasWalljump === true) {
             textPrefix = dataObject[i].nameNotRescuedVengefly;
             textSuffix = dataObject[i].spoilerNotRescuedVengefly;
+            dataObject[i].currentName = "nameNotRescuedVengefly";
+            dataObject[i].currentSpoiler = "spoilerNotRescuedVengefly";
           }
         } else if (playerData.zoteRescuedBuzzer === true) {
           if (playerData.zoteRescuedDeepnest === false) {
             textPrefix = dataObject[i].nameTrappedDeepnest;
             textSuffix = dataObject[i].spoilerTrappedDeepnest;
+            dataObject[i].currentName = "nameTrappedDeepnest";
+            dataObject[i].currentSpoiler = "spoilerTrappedDeepnest";
           } else if (playerData.zoteRescuedDeepnest === true) {
             if (playerData.killedZote === false) {
               textPrefix = dataObject[i].nameColosseum;
               textSuffix = dataObject[i].spoilerColosseum;
+              dataObject[i].currentName = "nameColosseum";
+              dataObject[i].currentSpoiler = "spoilerColosseum";
             }
           }
         }
@@ -965,17 +978,25 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         if (playerData.nailsmithKilled === true) {
           textPrefix = dataObject[i].namePurity;
           textSuffix = dataObject[i].spoilerPurity;
+          dataObject[i].currentName = "namePurity";
+          dataObject[i].currentSpoiler = "spoilerPurity";
           CurrentDataTrue(section, i);
         } else if (playerData.nailsmithConvoArt === true) {
           textPrefix = dataObject[i].nameHappyCouple;
           textSuffix = dataObject[i].spoilerHappyCouple;
+          dataObject[i].currentName = "nameHappyCouple";
+          dataObject[i].currentSpoiler = "spoilerHappyCouple";
           CurrentDataTrue(section, i);
         } else if (playerData.nailsmithSpared === true) {
           textPrefix = dataObject[i].nameSheoHutWaiting;
           textSuffix = dataObject[i].spoilerSheoHutWaiting;
+          dataObject[i].currentName = "nameSheoHutWaiting";
+          dataObject[i].currentSpoiler = "spoilerSheoHutWaiting";
         } else {
           textPrefix = dataObject[i].nameUpgradeNail;
           textSuffix = dataObject[i].spoilerUpgradeNail;
+          dataObject[i].currentName = "nameUpgradeNail";
+          dataObject[i].currentSpoiler = "spoilerUpgradeNail";
         }
 
         break;
@@ -3951,6 +3972,7 @@ var HK = {
           wiki: "Salubra's_Blessing"
         },
         zoteStatus: {
+          id: "zoteStatus",
           name: "Zote Status",
           nameNeglect: "Zote Choice: Neglect",
           nameRivalry: "Zote Choice: Rivalry",
@@ -3968,6 +3990,7 @@ var HK = {
           wiki: "Zote"
         },
         nailsmithStatus: {
+          id: "nailsmithStatus",
           name: "Nailsmith Status",
           nameHappyCouple: "Nailsmith Choice: Happy Couple",
           namePurity: "Nailsmith Choice: Purity",
@@ -5253,6 +5276,15 @@ function SingleEntryFill(section, entry) {
           case "geoRocks":
           case "itemsDiscovered":
             textPrefix += ": ".concat(entry.notActivated, " | ").concat(entry.activated, " | ").concat(entry.discoveredTotal);
+            break;
+
+          case "zoteStatus":
+          case "nailsmithStatus":
+            if (entry.hasOwnProperty("currentName") && entry.hasOwnProperty("currentSpoiler")) {
+              textPrefix = entry[entry.currentName];
+              textSuffix = entry[entry.currentSpoiler];
+            }
+
             break;
 
           default:
