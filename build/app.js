@@ -5231,6 +5231,7 @@ function SingleEntryFill(section, entry) {
           }
 
           textSuffix += "".concat(p, "<sup>(").concat(entry.amountTotal, ")</sup>");
+          p = "";
           break;
 
         case "soul":
@@ -5243,6 +5244,7 @@ function SingleEntryFill(section, entry) {
           }
 
           textSuffix += "".concat(p, "<sup>(").concat(Math.round(entry.amountTotal / 33), ")</sup>");
+          p = "";
           break;
 
         case "notches":

@@ -369,6 +369,7 @@ function SingleEntryFill(section, entry) {
 
                     textSuffix += `${p}<sup>(${entry.amountTotal})</sup>`;
 
+                    p = "";
                     break;
 
                 case "soul":
@@ -382,6 +383,7 @@ function SingleEntryFill(section, entry) {
 
                     textSuffix += `${p}<sup>(${Math.round(entry.amountTotal / 33)})</sup>`;
 
+                    p = "";
                     break;
 
                 case "notches":
