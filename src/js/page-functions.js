@@ -164,7 +164,17 @@ function GenerateInnerHTML(db) {
                 for (let entry in entries) {
                     textFill += SingleEntryFill(section, entries[entry]);
 
-                    if (entry === "saveVersion") textFill += FLEUR_DIVIDE;
+                    switch (entry) {
+                        case "saveVersion":
+                        case "pantheonKnight":
+                        case "killedHollowKnightPrime":
+                        case "bossDoorStateTier5":
+                            textFill += FLEUR_DIVIDE;
+
+                            break;
+
+                        default:
+                    }
                 }
         }
 
