@@ -439,7 +439,13 @@ function SingleEntryFill(section, entry) {
             spoiler = ["<span class='spoiler-text'>", "</span>"];
 
             if (entry.hasOwnProperty("amount")) {
-                textPrefix += `: ${entry.amount}`;
+                if (entry.hasOwnProperty("disabled")) {
+                    if (entry.disabled !== true) {
+                        textPrefix += `: ${entry.amount}`;
+                    }
+                } else {
+                    textPrefix += `: ${entry.amount}`;
+                }
             }
 
             if (entry.hasOwnProperty("amountTotal")) {
@@ -457,6 +463,12 @@ function SingleEntryFill(section, entry) {
                         break;
 
                     default:
+                }
+            }
+
+            if (entry.hasOwnProperty("disabled")) {
+                if (entry.disabled === true) {
+                    textPrefix = `<del>${textPrefix}</del>`;
                 }
             }
         

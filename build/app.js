@@ -453,6 +453,7 @@ function CheckIfDataTrue(section, dataObject, playerData) {
         // fades out the entries if save file is from older game versions
         if (playerData.hasOwnProperty(i) === false) {
           CurrentDataBlank(section, i);
+          dataObject[i].disabled = true;
           textPrefix = "<del>".concat(textPrefix, "</del>");
           break;
         }
@@ -494,6 +495,7 @@ function CheckIfDataTrue(section, dataObject, playerData) {
 
         if (checkText === "PropertyNotFound") {
           CurrentDataBlank(section, i);
+          dataObject[i].disabled = true;
           textPrefix = "<del>".concat(textPrefix, "</del>");
           break;
         } else if (checkText === "PantheonCompleted") {
@@ -742,9 +744,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           // backwards compatibility with earlier game versions
           if (playerData.hasOwnProperty(i) === false) {
             CurrentDataBlank(section, i);
+            dataObject[i].disabled = true;
             textPrefix = "<del>".concat(dataObject[i].name, "</del>");
             break;
           } else if (playerData.zoteDead === true || playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
+            dataObject[i].disabled = true;
             textPrefix = "<del>".concat(textPrefix, "</del>");
           }
         }
@@ -753,6 +757,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           // backwards compatibility with earlier game versions
           if (playerData.hasOwnProperty(i) === false) {
             CurrentDataBlank(section, i);
+            dataObject[i].disabled = true;
             textPrefix = "<del>".concat(dataObject[i].name, "</del>");
             break;
           }
@@ -773,6 +778,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           // fade out if not on Steel Soul
           if (playerData.permadeathMode < 1) {
             CurrentDataBlank(section, i);
+            dataObject[i].disabled = true;
             textPrefix = "<del>".concat(textPrefix, "</del>");
             break;
           }
@@ -857,6 +863,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "bossDoorStateTier5":
         if (playerData.hasOwnProperty("bossDoorStateTier5") === false) {
           CurrentDataBlank(section, i);
+          dataObject[i].disabled = true;
           textPrefix = "<del>".concat(textPrefix, "</del>");
         } else {
           playerData[i].completed === true ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
@@ -867,6 +874,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "killsBindingSeal":
         if (playerData.hasOwnProperty(i) === false) {
           CurrentDataBlank(section, i);
+          dataObject[i].disabled = true;
           textPrefix = "<del>".concat(textPrefix, "</del>");
           break;
         }
@@ -881,6 +889,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "killedVoidIdol_1":
         if (playerData.hasOwnProperty(i) === false) {
           CurrentDataBlank(section, i);
+          dataObject[i].disabled = true;
           textPrefix = "<del>".concat(textPrefix, "</del>");
           break;
         }
@@ -892,6 +901,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "killedVoidIdol_2":
         if (playerData.hasOwnProperty(i) === false) {
           CurrentDataBlank(section, i);
+          dataObject[i].disabled = true;
           textPrefix = "<del>".concat(textPrefix, "</del>");
           break;
         }
@@ -904,9 +914,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         // compatibility with earlier game versions
         if (playerData.hasOwnProperty(i) === false) {
           CurrentDataBlank(section, i);
+          dataObject[i].disabled = true;
           textPrefix = "<del>".concat(textPrefix, "</del>");
           break;
         } else if (playerData.zoteDead === true || playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
+          dataObject[i].disabled = true;
           textPrefix = "<del>".concat(textPrefix, "</del>");
         }
 
@@ -982,6 +994,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         // backwards compatibility with earlier game versions
         if (playerData.hasOwnProperty(i) === false) {
           CurrentDataBlank(section, i);
+          dataObject[i].disabled = true;
           textPrefix = "<del>".concat(dataObject[i].name, "</del>");
           break;
         } else if (playerData[i] === true) {
@@ -5222,7 +5235,13 @@ function SingleEntryFill(section, entry) {
       spoiler = ["<span class='spoiler-text'>", "</span>"];
 
       if (entry.hasOwnProperty("amount")) {
-        textPrefix += ": ".concat(entry.amount);
+        if (entry.hasOwnProperty("disabled")) {
+          if (entry.disabled !== true) {
+            textPrefix += ": ".concat(entry.amount);
+          }
+        } else {
+          textPrefix += ": ".concat(entry.amount);
+        }
       }
 
       if (entry.hasOwnProperty("amountTotal")) {
@@ -5237,6 +5256,12 @@ function SingleEntryFill(section, entry) {
             break;
 
           default:
+        }
+      }
+
+      if (entry.hasOwnProperty("disabled")) {
+        if (entry.disabled === true) {
+          textPrefix = "<del>".concat(textPrefix, "</del>");
         }
       }
 

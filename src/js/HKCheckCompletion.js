@@ -552,6 +552,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
                 // fades out the entries if save file is from older game versions
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank(section, i);
+                    dataObject[i].disabled = true;
                     textPrefix = `<del>${textPrefix}</del>`;
                     break;
                 }
@@ -590,6 +591,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
                 checkText = CheckGodmasterDoors(dataObject[i], playerData);
                 if (checkText === "PropertyNotFound") {
                     CurrentDataBlank(section, i);
+                    dataObject[i].disabled = true;
                     textPrefix = `<del>${textPrefix}</del>`;
                     break;
                 } else if (checkText === "PantheonCompleted") {
@@ -838,9 +840,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                     // backwards compatibility with earlier game versions
                     if (playerData.hasOwnProperty(i) === false) {
                         CurrentDataBlank(section, i);
+                        dataObject[i].disabled = true;
                         textPrefix = `<del>${dataObject[i].name}</del>`;
                         break;
                     } else if (playerData.zoteDead === true || (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
+                        dataObject[i].disabled = true;
                         textPrefix = `<del>${textPrefix}</del>`;
                     }
                 }
@@ -849,6 +853,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                     // backwards compatibility with earlier game versions
                     if (playerData.hasOwnProperty(i) === false) {
                         CurrentDataBlank(section, i);
+                        dataObject[i].disabled = true;
                         textPrefix = `<del>${dataObject[i].name}</del>`;
                         break;
                     }
@@ -870,6 +875,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                     // fade out if not on Steel Soul
                     if (playerData.permadeathMode < 1) {
                         CurrentDataBlank(section, i);
+                        dataObject[i].disabled = true;
                         textPrefix = `<del>${textPrefix}</del>`;
                         break;
                     }
@@ -954,6 +960,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
             case "bossDoorStateTier5":
                 if (playerData.hasOwnProperty("bossDoorStateTier5") === false) {
                     CurrentDataBlank(section, i);
+                    dataObject[i].disabled = true;
                     textPrefix = `<del>${textPrefix}</del>`;
                 } else {
                     (playerData[i].completed === true) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
@@ -963,6 +970,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
             case "killsBindingSeal":
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank(section, i);
+                    dataObject[i].disabled = true;
                     textPrefix = `<del>${textPrefix}</del>`;
                     break;
                 }
@@ -976,6 +984,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
             case "killedVoidIdol_1":
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank(section, i);
+                    dataObject[i].disabled = true;
                     textPrefix = `<del>${textPrefix}</del>`;
                     break;
                 }
@@ -986,6 +995,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
             case "killedVoidIdol_2":
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank(section, i);
+                    dataObject[i].disabled = true;
                     textPrefix = `<del>${textPrefix}</del>`;
                     break;
                 }
@@ -997,9 +1007,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                 // compatibility with earlier game versions
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank(section, i);
+                    dataObject[i].disabled = true;
                     textPrefix = `<del>${textPrefix}</del>`;
                     break;
                 } else if (playerData.zoteDead === true || (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
+                    dataObject[i].disabled = true;
                     textPrefix = `<del>${textPrefix}</del>`;
                 }
                 (playerData[i] === true) ? CurrentDataTrue(section, i): CurrentDataBlank(section, i);
@@ -1070,6 +1082,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                 // backwards compatibility with earlier game versions
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank(section, i);
+                    dataObject[i].disabled = true;
                     textPrefix = `<del>${dataObject[i].name}</del>`;
                     break;
                 }
