@@ -131,7 +131,7 @@ function GenerateInnerHTML(db) {
     
     let sections = db.sections;
 
-    console.log(sections);
+    /* console.log(sections); */
 
     let finalHTMLFill = "";
     let textFill = "";
@@ -184,9 +184,9 @@ function GenerateInnerHTML(db) {
     }
 
     /* Final HTML Fill here */
-    console.groupCollapsed("finalHTMLFill");
+    /* console.groupCollapsed("finalHTMLFill");
     console.log(finalHTMLFill);
-    console.groupEnd();
+    console.groupEnd(); */
 
     document.getElementById("generated").innerHTML = finalHTMLFill;
 

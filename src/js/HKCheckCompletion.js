@@ -92,8 +92,8 @@ function HKCheckCompletion(jsonObject) {
     // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
     // PrefillHTML(HK.sections);
 
-    // Prevents adding current percent data after each function call (each click of Analyze button)
-    ResetCompletion(HK.sections);
+    // Prevents adding current percent data after each function call and resets what the analyzing has done to the original object. Prevents wrong data display after subsequent save analyzing.
+    ResetCompletion(HK);
 
     // ================================================================================== //
 
@@ -1540,13 +1540,54 @@ function InitialHTMLPopulate(db) {
 }
 
 /**
- * Zero-fill all "percent" properties in the JSON Object (reset to default)
- * @param {object} jsObj object containing the "percent" properties to be reset to 0
+ * Reset the object state in memory to default values, like before first save analyzing. Undo all changes.
+ * @param {object} db database object reference
  */
-function ResetCompletion(jsObj) {
+function ResetCompletion(db) {
 
-    for (let i in jsObj) {
-        if (jsObj[i].hasOwnProperty("percent")) jsObj[i].percent = 0;
+    let sections = db.sections;
+    let entries = {};
+
+    db.saveAnalyzed = false;
+
+    for (let section in sections) {
+        entries = sections[section].entries;
+
+        if (sections[section].hasOwnProperty("percent")) sections[section].percent = 0;
+
+        switch (section) {
+            case "intro":
+            case "hints":
+                break;
+
+            default:
+
+                for (let entry in entries) {
+                    if (entries[entry].hasOwnProperty("icon")) {
+                        entries[entry].icon = "red";
+                    }
+
+                    if (entries[entry].hasOwnProperty("disabled")) {
+                        entries[entry].disabled = false;
+                    }
+
+                    if (entries[entry].hasOwnProperty("amount")) {
+                        entries[entry].amount = 0;
+                    }
+
+                    if (entries[entry].hasOwnProperty("amountTotal")) {
+                        entries[entry].amountTotal = 0;
+                    }
+
+                    if (entry.hasOwnProperty("currentName")) {
+                        delete entries[entry].currentName;
+                    }
+
+                    if (entry.hasOwnProperty("currentSpoiler")) {
+                        delete entries[entry].currentSpoiler;
+                    }
+                }
+        }
     }
 }
 

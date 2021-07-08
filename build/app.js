@@ -86,10 +86,10 @@ function HKCheckCompletion(jsonObject) {
     } else return false;
   } else return false; // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
   // PrefillHTML(HK.sections);
-  // Prevents adding current percent data after each function call (each click of Analyze button)
+  // Prevents adding current percent data after each function call and resets what the analyzing has done to the original object. Prevents wrong data display after subsequent save analyzing.
 
 
-  ResetCompletion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections); // ================================================================================== //
+  ResetCompletion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default); // ================================================================================== //
   // ---------------- Time Played ----------------- //
 
   CheckPlayTime(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.playTime); // ---------------- Game Completion Status ----------------- //
@@ -1451,14 +1451,53 @@ function InitialHTMLPopulate(db) {
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.CheckboxSpoilersToggle)();
 }
 /**
- * Zero-fill all "percent" properties in the JSON Object (reset to default)
- * @param {object} jsObj object containing the "percent" properties to be reset to 0
+ * Reset the object state in memory to default values, like before first save analyzing. Undo all changes.
+ * @param {object} db database object reference
  */
 
 
-function ResetCompletion(jsObj) {
-  for (var i in jsObj) {
-    if (jsObj[i].hasOwnProperty("percent")) jsObj[i].percent = 0;
+function ResetCompletion(db) {
+  var sections = db.sections;
+  var entries = {};
+  db.saveAnalyzed = false;
+
+  for (var section in sections) {
+    entries = sections[section].entries;
+    if (sections[section].hasOwnProperty("percent")) sections[section].percent = 0;
+
+    switch (section) {
+      case "intro":
+      case "hints":
+        break;
+
+      default:
+        for (var entry in entries) {
+          if (entries[entry].hasOwnProperty("icon")) {
+            entries[entry].icon = "red";
+          }
+
+          if (entries[entry].hasOwnProperty("disabled")) {
+            entries[entry].disabled = false;
+          }
+
+          if (entries[entry].hasOwnProperty("amount")) {
+            entries[entry].amount = 0;
+          }
+
+          if (entries[entry].hasOwnProperty("amountTotal")) {
+            entries[entry].amountTotal = 0;
+          }
+
+          if (entry.hasOwnProperty("currentName")) {
+            delete entries[entry].currentName;
+          }
+
+          if (entry.hasOwnProperty("currentSpoiler")) {
+            delete entries[entry].currentSpoiler;
+          }
+        }
+
+    }
   }
 }
 /**
@@ -4975,7 +5014,8 @@ function CompletionHTML(jsObj, hkGameCompletion) {
 
 function GenerateInnerHTML(db) {
   var sections = db.sections;
-  console.log(sections);
+  /* console.log(sections); */
+
   var finalHTMLFill = "";
   var textFill = "";
   var entries = {};
@@ -5026,10 +5066,11 @@ function GenerateInnerHTML(db) {
   }
   /* Final HTML Fill here */
 
-
-  console.groupCollapsed("finalHTMLFill");
+  /* console.groupCollapsed("finalHTMLFill");
   console.log(finalHTMLFill);
-  console.groupEnd();
+  console.groupEnd(); */
+
+
   document.getElementById("generated").innerHTML = finalHTMLFill;
 }
 
