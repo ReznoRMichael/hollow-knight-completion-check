@@ -1605,14 +1605,22 @@ const HK = {
                     wiki: "Delicate_Flower"
                 },
                 geoRocks: {
+                    id: "geoRocks",
                     name: "Geo Rocks",
                     spoiler: "Unbroken | Broken | Discovered",
-                    wiki: "Geo#How_to_Acquire"
+                    wiki: "Geo#How_to_Acquire",
+                    notActivated: 0,
+                    activated: 0,
+                    discoveredTotal: 0
                 },
                 itemsDiscovered: {
+                    id: "itemsDiscovered",
                     name: "Interactables",
                     spoiler: "Not A. | Activated | Discovered",
-                    wiki: "Category:Exploration_(Hollow_Knight)"
+                    wiki: "Category:Exploration_(Hollow_Knight)",
+                    notActivated: 0,
+                    activated: 0,
+                    discoveredTotal: 0
                 },
                 notchShroomOgres: {
                     name: "Charm Notch #1",

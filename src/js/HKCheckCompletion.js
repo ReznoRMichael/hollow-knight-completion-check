@@ -861,6 +861,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
             case "jinnEggsSold":
             case "xunFlowerBrokeTimes":
                 textPrefix += ": " + Math.abs(playerData[i]);
+
+                dataObject[i].amount = Math.abs(playerData[i]);
+
                 (i === "geoPool" && playerData[i] > 0) ? CurrentDataBlank(section, i): CurrentDataTrue(section, i);
 
                 if (i === "jinnEggsSold") {
@@ -880,6 +883,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                 notActivated = CountGeoRocks(discoveredTotal, "unbroken");
                 activated = CountGeoRocks(discoveredTotal, "broken");
 
+                dataObject[i].discoveredTotal = discoveredTotal;
+                dataObject[i].notActivated = notActivated;
+                dataObject[i].activated = activated;
+
                 textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`;
                 CurrentDataTrue(section, i);
                 break;
@@ -889,6 +896,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
                 notActivated = CountItems(discoveredTotal, "notActivated");
                 activated = CountItems(discoveredTotal, "active");
+
+                dataObject[i].discoveredTotal = discoveredTotal;
+                dataObject[i].notActivated = notActivated;
+                dataObject[i].activated = activated;
 
                 textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`;
                 CurrentDataTrue(section, i);

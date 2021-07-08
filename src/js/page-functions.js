@@ -445,6 +445,20 @@ function SingleEntryFill(section, entry) {
             if (entry.hasOwnProperty("amountTotal")) {
                 textPrefix += ` / ${entry.amountTotal}`;
             }
+
+            if (entry.hasOwnProperty("id")) {
+
+                switch (entry.id) {
+
+                    case "geoRocks":
+                    case "itemsDiscovered":
+                        textPrefix += `: ${entry.notActivated} | ${entry.activated} | ${entry.discoveredTotal}`;
+
+                        break;
+
+                    default:
+                }
+            }
         
             if (textSuffix.length && textPrefix.length) textSuffix = `— ${textSuffix}`;
             if (textPrefix.includes("<del>")) textSuffix = `<del>${textSuffix}</del>`;

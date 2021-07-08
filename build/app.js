@@ -766,6 +766,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "jinnEggsSold":
       case "xunFlowerBrokeTimes":
         textPrefix += ": " + Math.abs(playerData[i]);
+        dataObject[i].amount = Math.abs(playerData[i]);
         i === "geoPool" && playerData[i] > 0 ? CurrentDataBlank(section, i) : CurrentDataTrue(section, i);
 
         if (i === "jinnEggsSold") {
@@ -783,6 +784,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         discoveredTotal = sceneData.geoRocks.length;
         notActivated = CountGeoRocks(discoveredTotal, "unbroken");
         activated = CountGeoRocks(discoveredTotal, "broken");
+        dataObject[i].discoveredTotal = discoveredTotal;
+        dataObject[i].notActivated = notActivated;
+        dataObject[i].activated = activated;
         textPrefix += ": ".concat(notActivated, " | ").concat(activated, " | ").concat(discoveredTotal);
         CurrentDataTrue(section, i);
         break;
@@ -791,6 +795,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         discoveredTotal = sceneData.persistentBoolItems.length;
         notActivated = CountItems(discoveredTotal, "notActivated");
         activated = CountItems(discoveredTotal, "active");
+        dataObject[i].discoveredTotal = discoveredTotal;
+        dataObject[i].notActivated = notActivated;
+        dataObject[i].activated = activated;
         textPrefix += ": ".concat(notActivated, " | ").concat(activated, " | ").concat(discoveredTotal);
         CurrentDataTrue(section, i);
         break;
@@ -4117,14 +4124,22 @@ var HK = {
           wiki: "Delicate_Flower"
         },
         geoRocks: {
+          id: "geoRocks",
           name: "Geo Rocks",
           spoiler: "Unbroken | Broken | Discovered",
-          wiki: "Geo#How_to_Acquire"
+          wiki: "Geo#How_to_Acquire",
+          notActivated: 0,
+          activated: 0,
+          discoveredTotal: 0
         },
         itemsDiscovered: {
+          id: "itemsDiscovered",
           name: "Interactables",
           spoiler: "Not A. | Activated | Discovered",
-          wiki: "Category:Exploration_(Hollow_Knight)"
+          wiki: "Category:Exploration_(Hollow_Knight)",
+          notActivated: 0,
+          activated: 0,
+          discoveredTotal: 0
         },
         notchShroomOgres: {
           name: "Charm Notch #1",
@@ -5211,6 +5226,17 @@ function SingleEntryFill(section, entry) {
 
       if (entry.hasOwnProperty("amountTotal")) {
         textPrefix += " / ".concat(entry.amountTotal);
+      }
+
+      if (entry.hasOwnProperty("id")) {
+        switch (entry.id) {
+          case "geoRocks":
+          case "itemsDiscovered":
+            textPrefix += ": ".concat(entry.notActivated, " | ").concat(entry.activated, " | ").concat(entry.discoveredTotal);
+            break;
+
+          default:
+        }
       }
 
       if (textSuffix.length && textPrefix.length) textSuffix = "\u2014 ".concat(textSuffix);
