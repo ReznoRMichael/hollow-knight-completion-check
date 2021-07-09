@@ -21,7 +21,7 @@ const HK = {
                     id: "timePlayed",
                     icon: "clock",
                     name: "Time Played:",
-                    spoiler: "0 h 0 min 0 sec",
+                    spoiler: "0 h 00 min 00 sec",
                     timeH: 0,
                     timeM: 0,
                     timeS: 0,
