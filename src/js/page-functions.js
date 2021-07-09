@@ -164,6 +164,7 @@ function GenerateInnerHTML(db) {
     let notchOvercharmedImage = `<img src='${NOTCH_OVERCHARMED_IMAGE}' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>`;
     let geoNormalImage = `<img src='${GEO_IMAGE}' class='geo-symbol' alt='geo symbol image' title='Geo'>`;
     let geoShadeImage = `<img src='${GEO_SHADE_IMAGE}' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'>`;
+    let div = `<div class='single-entry'>`;
     let divFlex = `<div class='flex-container align-center'>`;
 
 
@@ -200,7 +201,9 @@ function GenerateInnerHTML(db) {
                 for (let entry in entries) {
 
                     obj.b = ["", ""];
+                    obj.p = "<span class='p-left-small'></span>";
                     obj.span = ["<b>", "</b>"];
+                    obj.div = div;
 
                     if (entries[entry].hasOwnProperty("icon")) {
         
@@ -329,6 +332,7 @@ function GenerateInnerHTML(db) {
                 obj.span = ["<span>", "</span>"];
                 obj.icon = iconNull;
                 obj.textPrefix = "";
+                obj.div = div;
 
                 /* display only one (current) hint */
                 obj.textSuffix = entries[sections[section].current].spoiler;
@@ -365,9 +369,11 @@ function GenerateInnerHTML(db) {
                     obj.textSuffix = `— ${entries[entry].spoiler}`;
                     obj.wiki = entries[entry].wiki;
 
+                    obj.p = "<span class='p-left-small'></span>";
                     obj.b = [`<a class="wiki" href="${WIKI_LINK}${obj.wiki}" target="_blank">`, "</a>"]; 
                     obj.span = ["<span class='spoiler-span'>", "</span>"];
                     obj.spoiler = ["<span class='spoiler-text'>", "</span>"];
+                    obj.div = div;
 
                     if (entries[entry].hasOwnProperty("amount")) {
                         if (entries[entry].hasOwnProperty("disabled")) {
