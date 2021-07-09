@@ -194,21 +194,25 @@ function GenerateInnerHTML(db) {
             /* ############### Game Status (intro) ################ */
 
             case "intro":
-                obj.b = ["", ""];
-                obj.span = ["<b>", "</b>"];
 
-                /* ############## Loop ############### */
+                /* ############## Looping entries (intro) ############### */
 
                 for (let entry in entries) {
 
+                    obj.b = ["", ""];
+                    obj.span = ["<b>", "</b>"];
+
                     obj.textPrefix = entries[entry].name;
-                    obj.textSuffix = entries[entry].spoiler; 
+                    obj.textSuffix = entries[entry].spoiler;
+                    obj.spoilerAfter = ""; 
 
                     /* Different text and images for each entry in the "Game Status" section */
 
-                    switch (entries[entry].id) {
+                    switch (entry) {
                         case "gameCompletion":
                             obj.textSuffix = `${obj.textSuffix} %`;
+                            obj.spoilerAfter = `</b> ${entries[entry].spoilerAfter}`;
+                            obj.span[1] = "";
 
                             break;
 
@@ -289,12 +293,6 @@ function GenerateInnerHTML(db) {
                         default:
                     }
 
-                    /* Optimized only for the "intro" section! */
-                    if (entries[entry].hasOwnProperty("spoilerAfter")) {
-                        obj.spoilerAfter = `</b> ${entries[entry].spoilerAfter}`;
-                        obj.span[1] = "";
-                    }
-
                     textFill += SingleEntryFill(obj);
                 }
 
@@ -307,9 +305,10 @@ function GenerateInnerHTML(db) {
                 obj.span = ["<span>", "</span>"];
                 obj.icon = iconNull;
                 obj.textPrefix = "";
-                obj.textSuffix = entries[sections[section].current].spoiler;
 
                 /* display only one (current) hint */
+                obj.textSuffix = entries[sections[section].current].spoiler;
+
                 textFill += SingleEntryFill(obj);
 
                 break;
