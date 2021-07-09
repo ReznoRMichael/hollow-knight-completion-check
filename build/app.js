@@ -5083,6 +5083,7 @@ function GenerateInnerHTML(db) {
               break;
 
             case "health":
+              textFill += FLEUR_DIVIDE;
               obj.div = divFlex;
               obj.span = ["", ""];
               entries[entry].permadeathMode ? Img = maskSteel : Img = maskNormal;
@@ -5252,7 +5253,6 @@ function GenerateInnerHTML(db) {
           /* ##################### Horizontal lines ####################### */
 
           switch (_entry) {
-            case "saveVersion":
             case "pantheonKnight":
             case "killedHollowKnightPrime":
             case "bossDoorStateTier5":

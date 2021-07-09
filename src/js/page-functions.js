@@ -217,6 +217,10 @@ function GenerateInnerHTML(db) {
                             break;
 
                         case "health":
+                            
+                            /* ----------------- Horizontal Line after save version ---------------- */
+                            textFill += FLEUR_DIVIDE;
+
                             obj.div = divFlex;
                             obj.span = ["", ""];
 
@@ -398,7 +402,6 @@ function GenerateInnerHTML(db) {
                     /* ##################### Horizontal lines ####################### */
 
                     switch (entry) {
-                        case "saveVersion":
                         case "pantheonKnight":
                         case "killedHollowKnightPrime":
                         case "bossDoorStateTier5":
