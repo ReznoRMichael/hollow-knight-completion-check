@@ -5070,6 +5070,28 @@ function GenerateInnerHTML(db) {
         for (var entry in entries) {
           obj.b = ["", ""];
           obj.span = ["<b>", "</b>"];
+
+          if (entries[entry].hasOwnProperty("icon")) {
+            switch (entries[entry].icon) {
+              case "clock":
+                obj.icon = iconClock;
+                break;
+
+              case "green":
+                obj.icon = iconGreen;
+                break;
+
+              case "red":
+                obj.icon = iconRed;
+                break;
+
+              default:
+                obj.icon = iconNull;
+            }
+          } else {
+            obj.icon = iconRed;
+          }
+
           obj.textPrefix = entries[entry].name;
           obj.textSuffix = entries[entry].spoiler;
           obj.spoilerAfter = "";
@@ -5083,6 +5105,7 @@ function GenerateInnerHTML(db) {
               break;
 
             case "health":
+              /* ----------------- Horizontal Line after save version ---------------- */
               textFill += FLEUR_DIVIDE;
               obj.div = divFlex;
               obj.span = ["", ""];
