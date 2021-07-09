@@ -330,7 +330,7 @@ function GenerateInnerHTML(db) {
             case "hints":
                 obj.b = ["", ""];
                 obj.span = ["<span>", "</span>"];
-                obj.icon = iconNull;
+                obj.icon = "";
                 obj.textPrefix = "";
                 obj.div = div;
 
