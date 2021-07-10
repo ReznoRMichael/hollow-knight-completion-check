@@ -5272,7 +5272,7 @@ function GenerateInnerHTML(db) {
               case "nailsmithStatus":
                 if (entries[_entry].hasOwnProperty("currentName") && entries[_entry].hasOwnProperty("currentSpoiler")) {
                   obj.textPrefix = entries[_entry][entries[_entry].currentName];
-                  obj.textSuffix = entries[_entry][entries[_entry].currentSpoiler];
+                  obj.textSuffix = "\u2014 ".concat(entries[_entry][entries[_entry].currentSpoiler]);
                 }
 
                 break;
