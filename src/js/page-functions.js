@@ -168,8 +168,8 @@ function GenerateInnerHTML(db) {
     let divFlex = `<div class='flex-container align-center'>`;
 
 
-    /* #################### Different behaviour depending on the section ####################### */
-
+    /* ############################## create all main entries ############################## */
+    
 
     for (let section in sections) {
 
@@ -187,8 +187,8 @@ function GenerateInnerHTML(db) {
         }
 
 
-        /* ############################## create all main entries ############################## */
-
+        /* #################### Different behaviour depending on the section ####################### */
+        
 
         switch (section) {
 
@@ -196,7 +196,7 @@ function GenerateInnerHTML(db) {
 
             case "intro":
 
-                /* ############## Looping entries (intro) ############### */
+                /* ############## Create each single entry (intro) ############### */
 
                 for (let entry in entries) {
 
@@ -205,6 +205,7 @@ function GenerateInnerHTML(db) {
                     obj.span = ["<b>", "</b>"];
                     obj.div = div;
 
+                    /* -------- Icons (next to each entry) --------- */
                     if (entries[entry].hasOwnProperty("icon")) {
         
                         switch (entries[entry].icon) {
@@ -229,7 +230,7 @@ function GenerateInnerHTML(db) {
                     obj.textSuffix = entries[entry].spoiler;
                     obj.spoilerAfter = ""; 
 
-                    /* Different text and images for each entry in the "Game Status" section */
+                    /* Different text and images for each entry in the "Game Status" (intro) section */
 
                     switch (entry) {
                         case "gameCompletion":
@@ -341,10 +342,15 @@ function GenerateInnerHTML(db) {
 
                 break;
 
-            /* ###################### All other sections ##################### */
+            /* ###################### Create all other sections ##################### */
 
             default:
+
+                /* ###################### Create each single entry (from all other sections) ##################### */
+
                 for (let entry in entries) {
+
+                    /* -------- Icons (next to each entry) --------- */
                     if (entries[entry].hasOwnProperty("icon")) {
         
                         switch (entries[entry].icon) {
@@ -445,13 +451,12 @@ function GenerateInnerHTML(db) {
 
     }
 
-    /* Final HTML Fill here */
     /* console.groupCollapsed("finalHTMLFill");
     console.log(finalHTMLFill);
     console.groupEnd(); */
 
+    /* Final single HTML access and fill here */
     document.getElementById("generated").innerHTML = finalHTMLFill;
-
 }
 
 function SectionStart(section) {
