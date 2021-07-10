@@ -76,15 +76,24 @@ function HKCheckCompletion(jsonObject) {
 
   if (jsonObject.hasOwnProperty("playerData")) {
     HKPlayerData = jsonObject.playerData;
-  } else return false;
+  } else {
+    _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.saveAnalyzed = false;
+    return false;
+  }
 
   if (jsonObject.hasOwnProperty("sceneData")) {
     HKSceneData = jsonObject.sceneData;
 
     if (jsonObject.sceneData.hasOwnProperty("persistentBoolItems")) {
       HKWorldItems = jsonObject.sceneData.persistentBoolItems;
-    } else return false;
-  } else return false; // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
+    } else {
+      _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.saveAnalyzed = false;
+      return false;
+    }
+  } else {
+    _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.saveAnalyzed = false;
+    return false;
+  } // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
   // PrefillHTML(HK.sections);
   // Prevents adding current percent data after each function call and resets what the analyzing has done to the original object. Prevents wrong data display after subsequent save analyzing.
 
@@ -154,8 +163,8 @@ function HKCheckCompletion(jsonObject) {
 
   CheckHintsTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints.entries, HKPlayerData, HKWorldItems); // ------------------------- Fill completion ----------------------------- //
 
-  /* CompletionHTML(HK.sections, HKPlayerData.completionPercentage); */
-  // ------------------------- Indicate that the save file was loaded and analyzed ----------------------------- //
+  /* Percent completion is filled inside GenerateInnerHTML() using CompletionFill() */
+  // ------------------------- Indicate that the save file was loaded and analyzed correctly ----------------------------- //
 
   _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.saveAnalyzed = true; // ------------------------- Generate everything on the page with updated values ----------------------------- //
 
@@ -1318,8 +1327,8 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
 
 function HKReadTextArea() {
   var textAreaId = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
-  // refresh and prepare document for filling with data from the save
-  InitialHTMLPopulate(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default);
+  // starts the main HTML generating function GenerateInnerHTML() and ensures proper checkbox behaviour
+  InitializeHTMLPopulation(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default);
   var contents = document.getElementById(textAreaId).value;
 
   if (contents.length) {
@@ -1328,8 +1337,9 @@ function HKReadTextArea() {
 
       if (jsonObject.hasOwnProperty("playerData")) HKCheckCompletion(jsonObject); // console.log(jsonObject);
     } catch (error) {
-      alert("This seems like not a valid Hollow Knight save. ".concat(error));
-      console.info("This seems like not a valid Hollow Knight save. ".concat(error));
+      _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.saveAnalyzed = false;
+      alert("This seems like not a valid Hollow Knight save.\n".concat(error));
+      console.info("This seems like not a valid Hollow Knight save.\n".concat(error));
     }
   }
 }
@@ -1339,7 +1349,7 @@ function HKReadTextArea() {
  */
 
 
-function InitialHTMLPopulate(db) {
+function InitializeHTMLPopulation(db) {
   /* let sFillText = "";
     CurrentDataFalse(); */
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.GenerateInnerHTML)(db); // PrefillHTML(sections);
@@ -1543,7 +1553,7 @@ function FillInnerHTML(elementId, textFill) {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  InitialHTMLPopulate(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default);
+  InitializeHTMLPopulation(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default);
 }); // Does an action when the save file location input text is clicked once (auto select & copy to clipboard)
 
 document.getElementById("save-location-input").addEventListener("click", function (e) {
@@ -4883,7 +4893,6 @@ function TranslateMapName(mapCode) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "CompletionHTML": () => (/* binding */ CompletionHTML),
 /* harmony export */   "GenerateInnerHTML": () => (/* binding */ GenerateInnerHTML),
 /* harmony export */   "AppendHTML": () => (/* binding */ AppendHTML),
 /* harmony export */   "CheckboxHintsToggle": () => (/* binding */ CheckboxHintsToggle),
@@ -5046,7 +5055,7 @@ function GenerateInnerHTML(db) {
   var geoShadeImage = "<img src='".concat(_img_geo_shade_png__WEBPACK_IMPORTED_MODULE_7__, "' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'>");
   var div = "<div class='single-entry'>";
   var divFlex = "<div class='flex-container align-center'>";
-  /* #################### Different behaviour depending on the section ####################### */
+  /* ############################## create all main entries ############################## */
 
   for (var section in sections) {
     entries = sections[section].entries;
@@ -5061,18 +5070,19 @@ function GenerateInnerHTML(db) {
     } else {
       textFill += CompletionFillNoSave(sections[section]);
     }
-    /* ############################## create all main entries ############################## */
+    /* #################### Different behaviour depending on the section ####################### */
 
 
     switch (section) {
       /* ############### Game Status (intro) ################ */
       case "intro":
-        /* ############## Looping entries (intro) ############### */
+        /* ############## Create each single entry (intro) ############### */
         for (var entry in entries) {
           obj.b = ["", ""];
           obj.p = "<span class='p-left-small'></span>";
           obj.span = ["<b>", "</b>"];
           obj.div = div;
+          /* -------- Icons (next to each entry) --------- */
 
           if (entries[entry].hasOwnProperty("icon")) {
             switch (entries[entry].icon) {
@@ -5098,7 +5108,7 @@ function GenerateInnerHTML(db) {
           obj.textPrefix = entries[entry].name;
           obj.textSuffix = entries[entry].spoiler;
           obj.spoilerAfter = "";
-          /* Different text and images for each entry in the "Game Status" section */
+          /* Different text and images for each entry in the "Game Status" (intro) section */
 
           switch (entry) {
             case "gameCompletion":
@@ -5201,10 +5211,12 @@ function GenerateInnerHTML(db) {
         textFill += SingleEntryFill(obj);
         break;
 
-      /* ###################### All other sections ##################### */
+      /* ###################### Create all other sections ##################### */
 
       default:
+        /* ###################### Create each single entry (from all other sections) ##################### */
         for (var _entry in entries) {
+          /* -------- Icons (next to each entry) --------- */
           if (entries[_entry].hasOwnProperty("icon")) {
             switch (entries[_entry].icon) {
               case "clock":
@@ -5298,11 +5310,11 @@ function GenerateInnerHTML(db) {
 
     finalHTMLFill += "".concat(textFill, "\n</div>\n\n");
   }
-  /* Final HTML Fill here */
-
   /* console.groupCollapsed("finalHTMLFill");
   console.log(finalHTMLFill);
   console.groupEnd(); */
+
+  /* Final single HTML access and fill here */
 
 
   document.getElementById("generated").innerHTML = finalHTMLFill;
@@ -5616,7 +5628,8 @@ function SingleEntryFill(obj) {
               spoiler[1],
           span[1],
       "</div>\n"
-  ].join(""); */
+  ].join("");
+  */
   return [obj.div, obj.icon, "".concat(obj.b[0]).concat(obj.textPrefix).concat(obj.b[1]), obj.span[0], obj.p, obj.spoiler[0], "".concat(obj.textSuffix).concat(obj.spoilerAfter), obj.spoiler[1], obj.span[1], "</div>\n"].join("");
 }
 /**

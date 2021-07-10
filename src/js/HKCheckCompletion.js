@@ -7,7 +7,6 @@ import HK from "./hk-database.js";
 /* ----------------- Helper functions --------------------------------------- */
 
 import {
-    CompletionHTML,
     GenerateInnerHTML,
     AppendHTML,
     CheckboxHintsToggle,
@@ -80,14 +79,23 @@ function HKCheckCompletion(jsonObject) {
 
     if (jsonObject.hasOwnProperty("playerData")) {
         HKPlayerData = jsonObject.playerData;
-    } else return false;
+    } else {
+        HK.saveAnalyzed = false;
+        return false;
+    }
 
     if (jsonObject.hasOwnProperty("sceneData")) {
         HKSceneData = jsonObject.sceneData;
         if (jsonObject.sceneData.hasOwnProperty("persistentBoolItems")) {
             HKWorldItems = jsonObject.sceneData.persistentBoolItems;
-        } else return false;
-    } else return false;
+        } else {
+            HK.saveAnalyzed = false;
+            return false;
+        }
+    } else {
+        HK.saveAnalyzed = false;
+        return false;
+    }
 
     // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
     // PrefillHTML(HK.sections);
@@ -223,9 +231,9 @@ function HKCheckCompletion(jsonObject) {
 
     // ------------------------- Fill completion ----------------------------- //
 
-    /* CompletionHTML(HK.sections, HKPlayerData.completionPercentage); */
+    /* Percent completion is filled inside GenerateInnerHTML() using CompletionFill() */
 
-    // ------------------------- Indicate that the save file was loaded and analyzed ----------------------------- //
+    // ------------------------- Indicate that the save file was loaded and analyzed correctly ----------------------------- //
 
     HK.saveAnalyzed = true;
 
@@ -1384,8 +1392,8 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
  */
 function HKReadTextArea(textAreaId = "") {
 
-    // refresh and prepare document for filling with data from the save
-    InitialHTMLPopulate(HK);
+    // starts the main HTML generating function GenerateInnerHTML() and ensures proper checkbox behaviour
+    InitializeHTMLPopulation(HK);
 
     let contents = document.getElementById(textAreaId).value;
 
@@ -1397,8 +1405,9 @@ function HKReadTextArea(textAreaId = "") {
             if (jsonObject.hasOwnProperty("playerData")) HKCheckCompletion(jsonObject);
             // console.log(jsonObject);
         } catch (error) {
-            alert(`This seems like not a valid Hollow Knight save. ${error}`);
-            console.info(`This seems like not a valid Hollow Knight save. ${error}`);
+            HK.saveAnalyzed = false;
+            alert(`This seems like not a valid Hollow Knight save.\n${error}`);
+            console.info(`This seems like not a valid Hollow Knight save.\n${error}`);
         }
     }
 }
@@ -1407,7 +1416,7 @@ function HKReadTextArea(textAreaId = "") {
  * Populate all HTML with given ID and their initial data set as false (used at DOM load)
  * @param {object} db JavaScript Object containing all HTML IDs to populate
  */
-function InitialHTMLPopulate(db) {
+function InitializeHTMLPopulation(db) {
 
     /* let sFillText = "";
 
@@ -1632,7 +1641,7 @@ function FillInnerHTML(elementId, textFill) {
 
 // Populate HTML at load (before img and css)
 document.addEventListener("DOMContentLoaded", () => {
-    InitialHTMLPopulate(HK);
+    InitializeHTMLPopulation(HK);
 });
 
 // Does an action when the save file location input text is clicked once (auto select & copy to clipboard)

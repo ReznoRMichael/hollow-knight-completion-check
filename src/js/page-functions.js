@@ -777,7 +777,8 @@ function SingleEntryFill(obj) {
                 spoiler[1],
             span[1],
         "</div>\n"
-    ].join(""); */
+    ].join("");
+*/
 
     return [
         obj.div,
@@ -971,7 +972,6 @@ document.getElementById("checkbox-spoilers").addEventListener("click", CheckboxS
 /* ------------------------- Exports ------------------------------- */
 
 export {
-    CompletionHTML,
     GenerateInnerHTML,
     AppendHTML,
     CheckboxHintsToggle,
