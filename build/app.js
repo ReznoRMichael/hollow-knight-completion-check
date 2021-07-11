@@ -60,16 +60,42 @@ var divStartCenter = ["<div class='flex-container align-center'>"].join("\n");
 var divEnd = ["</div>"].join("\n");
 var pSpan = "<span class='p-left-small'></span>";
 var benchHKCCBegin, benchHKCCEnd;
+var benchmark = {
+  loadSaveFile: {
+    name: "LoadSaveFile()",
+    timeStart: 0,
+    timeEnd: 0
+  },
+  checkCompletion: {
+    name: "HKCheckCompletion()",
+    timeStart: 0,
+    timeEnd: 0
+  },
+  total: {
+    name: "Total",
+    timeStart: 0,
+    timeEnd: 0
+  }
+};
 /* -------------------------- Functions ----------------------------- */
 
+function Benchmark(bench) {
+  for (var time in bench) {
+    console.info("".concat(bench[time].name, " time (ms) ="), bench[time].timeEnd - bench[time].timeStart);
+    bench[time].timeStart = 0;
+    bench[time].timeEnd = 0;
+  }
+}
 /**
  * Main Function. Checks Hollow Knight game completion by analyzing the save file
  * @param {object} jsonObject Decoded save data in JavaScript Object Notation form (JSON)
  */
 
+
 function HKCheckCompletion(jsonObject) {
   // start benchmark
   benchHKCCBegin = new Date();
+  benchmark.checkCompletion.timeStart = new Date();
   var HKPlayerData;
   var HKWorldItems;
   var HKSceneData;
@@ -178,7 +204,9 @@ function HKCheckCompletion(jsonObject) {
   // finish and show benchmark
 
   benchHKCCEnd = new Date();
+  benchmark.checkCompletion.timeEnd = new Date();
   console.info("HKCheckCompletion() time (ms) =", benchHKCCEnd - benchHKCCBegin);
+  Benchmark(benchmark);
   return true;
 }
 /**
@@ -433,18 +461,19 @@ function CheckNotches(section) {
 
 function CheckIfDataTrue(section, dataObject, playerData) {
   var worldData = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : [];
-  var _ref = "",
-      textPrefix = _ref.textPrefix,
-      textSuffix = _ref.textSuffix;
-  var sFillText = "";
-  var wiki = "";
+
+  /* let {
+      textPrefix,
+      textSuffix,
+  } = "";
+  let sFillText = "";
+  let wiki = ""; */
   var checkText = "";
 
   for (var i in dataObject) {
-    textPrefix = dataObject[i].name;
+    /* textPrefix = dataObject[i].name;
     textSuffix = dataObject[i].spoiler;
-    dataObject[i].hasOwnProperty("wiki") ? wiki = dataObject[i].wiki : wiki = "";
-
+    (dataObject[i].hasOwnProperty("wiki")) ? wiki = dataObject[i].wiki: wiki = ""; */
     switch (i) {
       case "gotCharm_36":
         // prevents green checkbox and adding 1% when only got one white fragment
@@ -463,12 +492,54 @@ function CheckIfDataTrue(section, dataObject, playerData) {
         if (playerData.hasOwnProperty(i) === false) {
           CurrentDataBlank(section, i);
           dataObject[i].disabled = true;
-          textPrefix = "<del>".concat(textPrefix, "</del>");
+          /* textPrefix = `<del>${textPrefix}</del>`; */
+
           break;
-        }
+        } // Checks for Nightmare King (4) or Banishment (5)
+
 
         if (i === "grimmChildLevel") {
           playerData.grimmChildLevel >= 4 ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
+          break;
+        }
+
+        if (i === "gotCharm_40") {
+          CurrentDataFalse(section, i);
+          dataObject[i].name = dataObject[i].nameDefault;
+
+          switch (playerData.grimmChildLevel) {
+            case 1:
+              if (playerData[i] === true) {
+                dataObject[i].name = dataObject[i].nameGrimmchildP1;
+                CurrentDataTrue(section, i);
+              }
+
+              break;
+
+            case 2:
+              dataObject[i].name = dataObject[i].nameGrimmchildP2;
+              CurrentDataTrue(section, i);
+              break;
+
+            case 3:
+              dataObject[i].name = dataObject[i].nameGrimmchildP3;
+              CurrentDataTrue(section, i);
+              break;
+
+            case 4:
+              dataObject[i].name = dataObject[i].nameGrimmchildP4;
+              CurrentDataTrue(section, i);
+              break;
+
+            case 5:
+              dataObject[i].name = dataObject[i].nameCarefreeMelody;
+              CurrentDataTrue(section, i);
+              break;
+
+            default:
+              dataObject[i].name = dataObject[i].nameDefault;
+          }
+
           break;
         }
 
@@ -505,7 +576,8 @@ function CheckIfDataTrue(section, dataObject, playerData) {
         if (checkText === "PropertyNotFound") {
           CurrentDataBlank(section, i);
           dataObject[i].disabled = true;
-          textPrefix = "<del>".concat(textPrefix, "</del>");
+          /* textPrefix = `<del>${textPrefix}</del>`; */
+
           break;
         } else if (checkText === "PantheonCompleted") {
           CurrentDataTrue(section, i);
@@ -519,8 +591,8 @@ function CheckIfDataTrue(section, dataObject, playerData) {
       default:
         playerData[i] === true ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
     }
+    /* sFillText += PrepareHTMLString(section, textPrefix, textSuffix, wiki); */
 
-    sFillText += PrepareHTMLString(section, textPrefix, textSuffix, wiki);
   } // AppendHTML(section, sFillText);
 
 }
@@ -686,10 +758,10 @@ function WorldDataActivated(idText, sceneNameText, worldData) {
 
 
 function CheckAdditionalThings(section, dataObject, playerData, worldData, sceneData) {
-  var _ref2 = "",
-      textPrefix = _ref2.textPrefix,
-      textSuffix = _ref2.textSuffix,
-      wiki = _ref2.wiki;
+  var _ref = "",
+      textPrefix = _ref.textPrefix,
+      textSuffix = _ref.textSuffix,
+      wiki = _ref.wiki;
   var sFillText = ""; // Start main loop
 
   for (var i in dataObject) {
@@ -3533,8 +3605,16 @@ var HK = {
         },
         gotCharm_40: {
           name: "Charm #40 Grimmchild or Carefree Melody",
+          nameDefault: "Charm #40 Grimmchild or Carefree Melody",
+          nameGrimmchildP1: "Charm #40: Grimmchild (Phase 1)",
+          nameGrimmchildP2: "Charm #40: Grimmchild (Phase 2)",
+          nameGrimmchildP3: "Charm #40: Grimmchild (Phase 3)",
+          nameGrimmchildP4: "Charm #40: Grimmchild (Phase 4)",
+          nameCarefreeMelody: "Charm #40: Carefree Melody",
           spoiler: "Dirtmouth",
-          wiki: "Grimmchild"
+          wiki: "Grimmchild",
+          wikiGrimmchild: "Grimmchild",
+          wikiCarefreeMelody: "Carefree_Melody"
         },
         killedGrimm: {
           name: "P3 Troupe Master Grimm",

@@ -925,8 +925,16 @@ const HK = {
                 },
                 gotCharm_40: {
                     name: "Charm #40 Grimmchild or Carefree Melody",
+                    nameDefault: "Charm #40 Grimmchild or Carefree Melody",
+                    nameGrimmchildP1: "Charm #40: Grimmchild (Phase 1)",
+                    nameGrimmchildP2: "Charm #40: Grimmchild (Phase 2)",
+                    nameGrimmchildP3: "Charm #40: Grimmchild (Phase 3)",
+                    nameGrimmchildP4: "Charm #40: Grimmchild (Phase 4)",
+                    nameCarefreeMelody: "Charm #40: Carefree Melody",
                     spoiler: "Dirtmouth",
-                    wiki: "Grimmchild"
+                    wiki: "Grimmchild",
+                    wikiGrimmchild: "Grimmchild",
+                    wikiCarefreeMelody: "Carefree_Melody"
                 },
                 killedGrimm: {
                     name: "P3 Troupe Master Grimm",
