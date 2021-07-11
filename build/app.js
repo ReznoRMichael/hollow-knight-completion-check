@@ -10,7 +10,9 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "HKCheckCompletion": () => (/* binding */ HKCheckCompletion)
+/* harmony export */   "HKCheckCompletion": () => (/* binding */ HKCheckCompletion),
+/* harmony export */   "benchmarkTimes": () => (/* binding */ benchmarkTimes),
+/* harmony export */   "Benchmark": () => (/* binding */ Benchmark)
 /* harmony export */ });
 /* harmony import */ var _hk_database_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hk-database.js */ "./src/js/hk-database.js");
 /* harmony import */ var _page_functions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-functions.js */ "./src/js/page-functions.js");
@@ -59,19 +61,25 @@ var divStart = ["<div class='single-entry'>"].join("\n");
 var divStartCenter = ["<div class='flex-container align-center'>"].join("\n");
 var divEnd = ["</div>"].join("\n");
 var pSpan = "<span class='p-left-small'></span>";
-var benchHKCCBegin, benchHKCCEnd;
-var benchmark = {
-  loadSaveFile: {
+/* let benchHKCCBegin, benchHKCCEnd; */
+
+var benchmarkTimes = {
+  LoadSaveFile: {
     name: "LoadSaveFile()",
     timeStart: 0,
     timeEnd: 0
   },
-  checkCompletion: {
+  CheckCompletion: {
     name: "HKCheckCompletion()",
     timeStart: 0,
     timeEnd: 0
   },
-  total: {
+  GenerateInnerHTML: {
+    name: "GenerateInnerHTML()",
+    timeStart: 0,
+    timeEnd: 0
+  },
+  Total: {
     name: "Total",
     timeStart: 0,
     timeEnd: 0
@@ -94,8 +102,8 @@ function Benchmark(bench) {
 
 function HKCheckCompletion(jsonObject) {
   // start benchmark
-  benchHKCCBegin = new Date();
-  benchmark.checkCompletion.timeStart = new Date();
+  // benchHKCCBegin = new Date();
+  benchmarkTimes.CheckCompletion.timeStart = new Date();
   var HKPlayerData;
   var HKWorldItems;
   var HKSceneData;
@@ -202,11 +210,11 @@ function HKCheckCompletion(jsonObject) {
 
   /* document.getElementById("save-area").focus({preventScroll: true}); */
   // finish and show benchmark
+  // benchHKCCEnd = new Date();
 
-  benchHKCCEnd = new Date();
-  benchmark.checkCompletion.timeEnd = new Date();
-  console.info("HKCheckCompletion() time (ms) =", benchHKCCEnd - benchHKCCBegin);
-  Benchmark(benchmark);
+  benchmarkTimes.CheckCompletion.timeEnd = new Date(); // console.info("HKCheckCompletion() time (ms) =", benchHKCCEnd - benchHKCCBegin);
+  // Benchmark(benchmarkTimes);
+
   return true;
 }
 /**
@@ -1680,7 +1688,8 @@ var AES_KEY = new TextEncoder().encode('UKu52ePUBwetZ9wNX88o54dnfKRu0T1l'); // e
 var ECB_STREAM_CIPHER = new aesjs.ModeOfOperation.ecb(AES_KEY); // create a new AES stream cipher object using the encoded key
 // ---------------- Variables ----------------- //
 
-var benchLSFBegin, benchLSFEnd, benchTotal; // ---------------- Functions ----------------- //
+/* let benchLSFBegin, benchLSFEnd, benchTotal; */
+// ---------------- Functions ----------------- //
 
 /**
  * Main input tag file function. Selects the first file, reads it as an Array Buffer, starts the processing of the file when loaded.
@@ -1695,7 +1704,8 @@ function LoadSaveFile(input, time) {
 
   if (inputFileList.length < 1) return false; // start benchmark
 
-  benchLSFBegin = time; // Prepares a File object from the first file of the input files for reading as an Array Buffer
+  _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.LoadSaveFile.timeStart = time;
+  _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.Total.timeStart = time; // Prepares a File object from the first file of the input files for reading as an Array Buffer
 
   var inputFileObject = inputFileList[0]; // Cleans the file list to avoid problems after subsequent use
   // document.getElementById("save-area-file").value = "";
@@ -1735,8 +1745,11 @@ function ProcessFileObject() {
 
     decodedString = new TextDecoder().decode(inputArrayBuffer); // finish and show benchmark
 
-    benchLSFEnd = new Date();
-    console.info("LoadSaveFile() time (ms) =", benchLSFEnd - benchLSFBegin); // 4. Analyze the decoded string immediately
+    /* benchLSFEnd = new Date(); */
+
+    _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.LoadSaveFile.timeEnd = new Date();
+    /* console.info("LoadSaveFile() time (ms) =", benchLSFEnd - benchLSFBegin); */
+    // 4. Analyze the decoded string immediately
 
     try {
       (0,_HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.HKCheckCompletion)(JSON.parse(decodedString));
@@ -1767,8 +1780,10 @@ function ProcessFileObject() {
     }))(); // finish total and show benchmark
 
 
-    benchTotal = new Date();
-    console.info("Total time (ms) =", benchTotal - benchLSFBegin); // alert(`Decoded String: ${decodedString}`);
+    _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.Total.timeEnd = new Date();
+    (0,_HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.Benchmark)(_HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes);
+    /* console.info("Total time (ms) =", benchTotal - benchLSFBegin); */
+    // alert(`Decoded String: ${decodedString}`);
     // alert(`Array Buffer: ${inputArrayBuffer}`);
   } catch (error) {
     alert("The file cannot be decoded. ".concat(error));

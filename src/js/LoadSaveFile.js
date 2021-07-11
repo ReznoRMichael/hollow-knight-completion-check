@@ -10,7 +10,9 @@
 const aesjs = require("./aes-js.js");
 // For reading the text area after save decoding
 import {
-    HKCheckCompletion
+    HKCheckCompletion,
+    benchmarkTimes,
+    Benchmark
 } from "./HKCheckCompletion.js";
 
 const CSHARP_HEADER = [0, 1, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 0, 0]; // 22 bytes
@@ -23,7 +25,7 @@ const ECB_STREAM_CIPHER = new aesjs.ModeOfOperation.ecb(AES_KEY); // create a ne
 
 // ---------------- Variables ----------------- //
 
-let benchLSFBegin, benchLSFEnd, benchTotal;
+/* let benchLSFBegin, benchLSFEnd, benchTotal; */
 
 // ---------------- Functions ----------------- //
 
@@ -41,7 +43,8 @@ function LoadSaveFile(input, time) {
     if (inputFileList.length < 1) return false;
 
     // start benchmark
-    benchLSFBegin = time;
+    benchmarkTimes.LoadSaveFile.timeStart = time;
+    benchmarkTimes.Total.timeStart = time;
 
     // Prepares a File object from the first file of the input files for reading as an Array Buffer
     let inputFileObject = inputFileList[0];
@@ -92,8 +95,9 @@ function ProcessFileObject() {
         decodedString = new TextDecoder().decode(inputArrayBuffer);
 
         // finish and show benchmark
-        benchLSFEnd = new Date();
-        console.info("LoadSaveFile() time (ms) =", benchLSFEnd - benchLSFBegin);
+        /* benchLSFEnd = new Date(); */
+        benchmarkTimes.LoadSaveFile.timeEnd = new Date();
+        /* console.info("LoadSaveFile() time (ms) =", benchLSFEnd - benchLSFBegin); */
 
         // 4. Analyze the decoded string immediately
         try {
@@ -110,8 +114,9 @@ function ProcessFileObject() {
         })();
 
         // finish total and show benchmark
-        benchTotal = new Date();
-        console.info("Total time (ms) =", benchTotal - benchLSFBegin);
+        benchmarkTimes.Total.timeEnd = new Date();
+        Benchmark(benchmarkTimes);
+        /* console.info("Total time (ms) =", benchTotal - benchLSFBegin); */
 
         // alert(`Decoded String: ${decodedString}`);
         // alert(`Array Buffer: ${inputArrayBuffer}`);

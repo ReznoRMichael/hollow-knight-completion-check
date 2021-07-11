@@ -60,20 +60,25 @@ let divEnd = [
 
 let pSpan = "<span class='p-left-small'></span>";
 
-let benchHKCCBegin, benchHKCCEnd;
+/* let benchHKCCBegin, benchHKCCEnd; */
 
-let benchmark = {
-    loadSaveFile: {
+let benchmarkTimes = {
+    LoadSaveFile: {
         name: "LoadSaveFile()",
         timeStart: 0,
         timeEnd: 0
     },
-    checkCompletion: {
+    CheckCompletion: {
         name: "HKCheckCompletion()",
         timeStart: 0,
         timeEnd: 0
     },
-    total: {
+    GenerateInnerHTML: {
+        name: "GenerateInnerHTML()",
+        timeStart: 0,
+        timeEnd: 0
+    },
+    Total: {
         name: "Total",
         timeStart: 0,
         timeEnd: 0
@@ -98,8 +103,8 @@ function Benchmark(bench) {
 function HKCheckCompletion(jsonObject) {
 
     // start benchmark
-    benchHKCCBegin = new Date();
-    benchmark.checkCompletion.timeStart = new Date();
+    // benchHKCCBegin = new Date();
+    benchmarkTimes.CheckCompletion.timeStart = new Date();
 
     let HKPlayerData;
     let HKWorldItems;
@@ -277,11 +282,11 @@ function HKCheckCompletion(jsonObject) {
     /* document.getElementById("save-area").focus({preventScroll: true}); */
 
     // finish and show benchmark
-    benchHKCCEnd = new Date();
-    benchmark.checkCompletion.timeEnd = new Date();
-    console.info("HKCheckCompletion() time (ms) =", benchHKCCEnd - benchHKCCBegin);
+    // benchHKCCEnd = new Date();
+    benchmarkTimes.CheckCompletion.timeEnd = new Date();
+    // console.info("HKCheckCompletion() time (ms) =", benchHKCCEnd - benchHKCCBegin);
 
-    Benchmark(benchmark);
+    // Benchmark(benchmarkTimes);
 
     return true;
 }
@@ -1739,5 +1744,7 @@ document.getElementById("save-area-read").addEventListener("click", () => {
 
 export {
     // to use in LoadSaveFile.js for auto-analyzing file after decoding
-    HKCheckCompletion
+    HKCheckCompletion,
+    benchmarkTimes,
+    Benchmark
 };
