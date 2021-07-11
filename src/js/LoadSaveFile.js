@@ -115,6 +115,7 @@ function ProcessFileObject() {
 
         // finish total and show benchmark
         benchmarkTimes.Total.timeEnd = new Date();
+        
         Benchmark(benchmarkTimes);
         /* console.info("Total time (ms) =", benchTotal - benchLSFBegin); */
 

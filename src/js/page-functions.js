@@ -1,3 +1,7 @@
+import {
+    benchmarkTimes
+} from "./HKCheckCompletion.js";
+
 // ---------------- Load image files (necessary for Webpack) ----------------- //
 
 import HEALTH_MASK_IMAGE from "../img/health-mask.png";
@@ -128,6 +132,9 @@ function CompletionHTML(jsObj, hkGameCompletion) {
 
 
 function GenerateInnerHTML(db) {
+
+    // start benchmarking
+    benchmarkTimes.GenerateInnerHTML.timeStart = new Date();
     
     let sections = db.sections;
 
@@ -457,6 +464,9 @@ function GenerateInnerHTML(db) {
 
     /* Final single HTML access and fill here */
     document.getElementById("generated").innerHTML = finalHTMLFill;
+
+    // finish benchmarking
+    benchmarkTimes.GenerateInnerHTML.timeEnd = new Date();
 }
 
 function SectionStart(section) {

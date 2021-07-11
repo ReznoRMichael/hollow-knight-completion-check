@@ -4994,15 +4994,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "CheckboxSpoilersToggle": () => (/* binding */ CheckboxSpoilersToggle),
 /* harmony export */   "StorageAvailable": () => (/* binding */ StorageAvailable)
 /* harmony export */ });
-/* harmony import */ var _img_health_mask_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../img/health-mask.png */ "./src/img/health-mask.png");
-/* harmony import */ var _img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/health-mask-steel.png */ "./src/img/health-mask-steel.png");
-/* harmony import */ var _img_soul_orb_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/soul-orb.png */ "./src/img/soul-orb.png");
-/* harmony import */ var _img_notch_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/notch.png */ "./src/img/notch.png");
-/* harmony import */ var _img_notch_filled_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/notch-filled.png */ "./src/img/notch-filled.png");
-/* harmony import */ var _img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/notch-overcharmed.png */ "./src/img/notch-overcharmed.png");
-/* harmony import */ var _img_geo_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/geo.png */ "./src/img/geo.png");
-/* harmony import */ var _img_geo_shade_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/geo-shade.png */ "./src/img/geo-shade.png");
-// ---------------- Load image files (necessary for Webpack) ----------------- //
+/* harmony import */ var _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HKCheckCompletion.js */ "./src/js/HKCheckCompletion.js");
+/* harmony import */ var _img_health_mask_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/health-mask.png */ "./src/img/health-mask.png");
+/* harmony import */ var _img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/health-mask-steel.png */ "./src/img/health-mask-steel.png");
+/* harmony import */ var _img_soul_orb_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/soul-orb.png */ "./src/img/soul-orb.png");
+/* harmony import */ var _img_notch_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/notch.png */ "./src/img/notch.png");
+/* harmony import */ var _img_notch_filled_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/notch-filled.png */ "./src/img/notch-filled.png");
+/* harmony import */ var _img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/notch-overcharmed.png */ "./src/img/notch-overcharmed.png");
+/* harmony import */ var _img_geo_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/geo.png */ "./src/img/geo.png");
+/* harmony import */ var _img_geo_shade_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/geo-shade.png */ "./src/img/geo-shade.png");
+ // ---------------- Load image files (necessary for Webpack) ----------------- //
+
 
 
 
@@ -5117,6 +5119,8 @@ function CompletionHTML(jsObj, hkGameCompletion) {
 
 
 function GenerateInnerHTML(db) {
+  // start benchmarking
+  _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.GenerateInnerHTML.timeStart = new Date();
   var sections = db.sections;
   /* console.log(sections); */
 
@@ -5140,14 +5144,14 @@ function GenerateInnerHTML(db) {
   var finalHTMLFill = "";
   var textFill = "";
   var Img = "";
-  var maskNormal = "<img src='".concat(_img_health_mask_png__WEBPACK_IMPORTED_MODULE_0__, "' class='health-mask' alt='health mask image' title='Health Mask'>");
-  var maskSteel = "<img src='".concat(_img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_1__, "' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>");
-  var soulNormal = "<img src='".concat(_img_soul_orb_png__WEBPACK_IMPORTED_MODULE_2__, "' class='soul-orb' alt='soul orb image' title='Single Soul Orb (one spell cast)'>");
-  var notchNormalImage = "<img src='".concat(_img_notch_png__WEBPACK_IMPORTED_MODULE_3__, "' class='notch' alt='notch image' title='Charm Notch (Free)'>");
-  var notchFilledImage = "<img src='".concat(_img_notch_filled_png__WEBPACK_IMPORTED_MODULE_4__, "' class='notch' alt='notch image' title='Charm Notch (Used)'>");
-  var notchOvercharmedImage = "<img src='".concat(_img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_5__, "' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>");
-  var geoNormalImage = "<img src='".concat(_img_geo_png__WEBPACK_IMPORTED_MODULE_6__, "' class='geo-symbol' alt='geo symbol image' title='Geo'>");
-  var geoShadeImage = "<img src='".concat(_img_geo_shade_png__WEBPACK_IMPORTED_MODULE_7__, "' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'>");
+  var maskNormal = "<img src='".concat(_img_health_mask_png__WEBPACK_IMPORTED_MODULE_1__, "' class='health-mask' alt='health mask image' title='Health Mask'>");
+  var maskSteel = "<img src='".concat(_img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_2__, "' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>");
+  var soulNormal = "<img src='".concat(_img_soul_orb_png__WEBPACK_IMPORTED_MODULE_3__, "' class='soul-orb' alt='soul orb image' title='Single Soul Orb (one spell cast)'>");
+  var notchNormalImage = "<img src='".concat(_img_notch_png__WEBPACK_IMPORTED_MODULE_4__, "' class='notch' alt='notch image' title='Charm Notch (Free)'>");
+  var notchFilledImage = "<img src='".concat(_img_notch_filled_png__WEBPACK_IMPORTED_MODULE_5__, "' class='notch' alt='notch image' title='Charm Notch (Used)'>");
+  var notchOvercharmedImage = "<img src='".concat(_img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_6__, "' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>");
+  var geoNormalImage = "<img src='".concat(_img_geo_png__WEBPACK_IMPORTED_MODULE_7__, "' class='geo-symbol' alt='geo symbol image' title='Geo'>");
+  var geoShadeImage = "<img src='".concat(_img_geo_shade_png__WEBPACK_IMPORTED_MODULE_8__, "' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'>");
   var div = "<div class='single-entry'>";
   var divFlex = "<div class='flex-container align-center'>";
   /* ############################## create all main entries ############################## */
@@ -5412,7 +5416,9 @@ function GenerateInnerHTML(db) {
   /* Final single HTML access and fill here */
 
 
-  document.getElementById("generated").innerHTML = finalHTMLFill;
+  document.getElementById("generated").innerHTML = finalHTMLFill; // finish benchmarking
+
+  _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.GenerateInnerHTML.timeEnd = new Date();
 }
 
 function SectionStart(section) {
