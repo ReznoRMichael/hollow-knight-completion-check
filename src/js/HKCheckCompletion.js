@@ -78,6 +78,11 @@ let benchmarkTimes = {
         timeStart: 0,
         timeEnd: 0
     },
+    HKReadTextArea: {
+        name: "HKReadTextArea()",
+        timeStart: 0,
+        timeEnd: 0
+    },
     Total: {
         name: "Total",
         timeStart: 0,
@@ -90,7 +95,10 @@ let benchmarkTimes = {
 function Benchmark(bench) {
 
     for (let time in bench) {
-        console.info(`${bench[time].name} time (ms) =`, bench[time].timeEnd - bench[time].timeStart);
+
+        if (bench[time].timeStart !== 0) {
+            console.info(`${bench[time].name} time (ms) =`, bench[time].timeEnd - bench[time].timeStart);
+        }
         bench[time].timeStart = 0;
         bench[time].timeEnd = 0;
     }
@@ -1475,6 +1483,9 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
  */
 function HKReadTextArea(textAreaId = "") {
 
+    // start benchmark
+    benchmarkTimes.HKReadTextArea.timeStart = new Date();
+
     // starts the main HTML generating function GenerateInnerHTML() and ensures proper checkbox behaviour
     InitializeHTMLPopulation(HK);
 
@@ -1487,6 +1498,12 @@ function HKReadTextArea(textAreaId = "") {
             // console.log(jsonObject);
             if (jsonObject.hasOwnProperty("playerData")) HKCheckCompletion(jsonObject);
             // console.log(jsonObject);
+
+            // end benchmark and show results
+            benchmarkTimes.HKReadTextArea.timeEnd = new Date();
+
+            console.info(`HKReadTextArea() time (ms) =`, benchmarkTimes.HKReadTextArea.timeEnd - benchmarkTimes.HKReadTextArea.timeStart);
+
         } catch (error) {
             HK.saveAnalyzed = false;
             alert(`This seems like not a valid Hollow Knight save.\n${error}`);
