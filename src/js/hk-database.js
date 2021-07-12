@@ -790,6 +790,7 @@ const HK = {
         dreamNail: {
             h2: "Dream Nail and Essence",
             id: "hk-dreamnail",
+            description: "A special dream Ability. Can collect Essence and enter dreams. Each milestone here will provide +1% to Game Completion Percentage.",
             percent: 0,
             maxPercent: 3,
             entries: {
