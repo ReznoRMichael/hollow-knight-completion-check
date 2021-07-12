@@ -688,14 +688,17 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
             case "pantheonSage":
             case "pantheonKnight":
                 checkText = CheckGodmasterDoors(dataObject[i], playerData);
+
                 if (checkText === "PropertyNotFound") {
                     CurrentDataBlank(section, i);
                     dataObject[i].disabled = true;
                     /* textPrefix = `<del>${textPrefix}</del>`; */
                     break;
+
                 } else if (checkText === "PantheonCompleted") {
                     CurrentDataTrue(section, i);
                     break;
+
                 } else {
                     CurrentDataFalse(section, i);
                 }
