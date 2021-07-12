@@ -1764,59 +1764,12 @@ function ResetCompletion(db) {
     }
 }
 
-/**
- * Focuses, selects and copies to clipboard contents inside a clicked element. Includes optional tooltip update after the copying is done.
- * @param {MouseEvent} mouseEvent from the clicked element (AddEventListener)
- * @param {string} tooltipId Element ID of the tooltip to update
- * @param {string} tooltipFill Updated contents of the tooltip
- */
-function SelectCopyInputText(mouseEvent, tooltipId = "", tooltipFill = "") {
-
-    const element = document.getElementById(mouseEvent.target.id);
-
-    // this prevents the un-selected effect after clicking the second time (clears all selection first)
-    if (window.getSelection) {
-        window.getSelection().removeAllRanges();
-    }
-
-    element.focus(); // best to focus the element first before selecting
-    element.select();
-    element.setSelectionRange(0, 99999); // for mobile devices
-
-    // Copy the text inside the text field to clipboard
-    document.execCommand("copy");
-
-    // optional tooltip showing
-    if (tooltipFill.length && tooltipId.length) FillInnerHTML(tooltipId, tooltipFill);
-}
-
-/**
- * Fills the innerHTML of a given HTML Element with provided contents
- * @param {string} elementId Element ID to update
- * @param {string} textFill Updated contents (innerHTML)
- */
-function FillInnerHTML(elementId, textFill) {
-
-    const element = document.getElementById(elementId);
-    element.innerHTML = textFill;
-}
-
 /* ----------------------- Event Listeners -------------------------- */
 
 // Populate HTML at load (before img and css)
 document.addEventListener("DOMContentLoaded", () => {
     InitializeHTMLPopulation(HK);
 });
-
-// Does an action when the save file location input text is clicked once (auto select & copy to clipboard)
-document.getElementById("save-location-input").addEventListener("click", (e) => {
-    SelectCopyInputText(e, "save-location-input-tooltip", "Copied save file location to clipboard");
-}, false);
-
-// Choose File input field
-document.getElementById("save-location-input").addEventListener("mouseout", () => {
-    FillInnerHTML("save-location-input-tooltip", "Click once to copy to clipboard");
-}, false);
 
 // Analyze Text button
 document.getElementById("save-area-read").addEventListener("click", () => {
