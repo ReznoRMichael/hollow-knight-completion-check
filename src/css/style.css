@@ -121,8 +121,9 @@ h6 {
 }
 
 #hk-hints {
-    border: 1px solid #fff;
+    border: 0.2rem solid rgba(231, 251, 255, 0.33);
     border-radius: 1rem;
+    border-style: double;
     padding: 1.3rem;
     margin: 1.3rem;
 }

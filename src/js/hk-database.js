@@ -79,36 +79,36 @@ const HK = {
         /* ################ Hints ################### */
 
         hints: {
-            h2: "My friend Elderbug once told me about...",
+            h2: "Elderbug told me...",
             id: "hk-hints",
             current: "fireballLevel",
             entries: {
                 fireballLevel: {
-                    spoiler: "...a mysterious shaman living in a dwelling below the town of Dirtmouth"
+                    spoiler: "A mysterious shaman is living in a dwelling, somewhere below the town of Dirtmouth."
                 },
                 hornet1Defeated: {
-                    spoiler: "...a skilled protector guarding ruins in a lush green forest"
+                    spoiler: "A skilled protector is guarding some ruins in a lush green forest."
                 },
                 hasDash: {
-                    spoiler: "...an old cloak lying on a green path near a broken shell"
+                    spoiler: "An old cloak is lying on a green path near a broken shell."
                 },
                 hasWalljump: {
-                    spoiler: "...a sharp claw lying forgotten somewhere amidst the insect village"
+                    spoiler: "A sharp claw is lying forgotten, somewhere amidst the insect village."
                 },
                 Crossroads_04: {
-                    spoiler: "...a mother sleeping peacefully below the town of Dirtmouth"
+                    spoiler: "A mother is sleeping peacefully, somewhere below the town of Dirtmouth."
                 },
                 slyRescued: {
-                    spoiler: "...a fellow town bug who seems to be lost somewhere in the crossroads"
+                    spoiler: "Our fellow town bug seems to be lost, somewhere in the crossroads."
                 },
                 hasLantern: {
-                    spoiler: "...a bright little crystal companion able to light a way through the thickest dark places"
+                    spoiler: "Did you know? A bright little crystal companion is able to light a way through the thickest dark places."
                 },
                 hasSuperDash: {
-                    spoiler: "...some powerful crystal beating somewhere deep inside the mines"
+                    spoiler: "There is some powerful crystal beating somewhere deep inside the mines."
                 },
                 hasDreamNail: {
-                    spoiler: "...a weapon from a dream world only found where the souls can peacefully rest"
+                    spoiler: "A weapon from a dream world can only found, where the souls can peacefully rest."
                 },
                 /* 
                 Either:
@@ -116,37 +116,38 @@ const HK = {
                 - opened the Fungal Wastes city gate
                 */
                 killedInfectedKnight: {
-                    spoiler: "...a shattered corpse forgotten in a windy cave in the ancient depths below the rainy city"
+                    spoiler: "A shattered corpse forgotten in a windy cave is lying somewhere in the ancient depths below the rainy city."
                 },
                 hasDoubleJump: {
-                    spoiler: "...something incredibly light dropped by a monarchfly in the ancient depths below the rainy city"
+                    spoiler: "Something incredibly light was dropped by a monarchfly in the ancient depths below the rainy city."
                 },
                 dungDefenderOrHornet2: {
-                    spoiler: "...a skilled combatant living at the heart of the sewers or watching over a shell amidst ash falling from the sky"
+                    spoiler: "There are two skilled combatants. One is living at the heart of the sewers. One is watching over a shell amidst ash falling from the sky."
                 },
                 ismaTearOrShadeCloak: {
-                    spoiler: "...something precious in a grove accessed from the waterways or a massive royal door guarding a cloak behind the darkness"
+                    spoiler: "There are two precious items. One in a grove accessed from the waterways. One guarded by a massive royal door behind the darkness."
                 },
                 defeatedMegaJelly: {
-                    spoiler: "...an intelligent being floating inside hidden archives behind the fog"
+                    spoiler: "An intelligent being is floating inside hidden archives, behind the fog."
                 },
                 monomonDefeated: {
-                    spoiler: "...a dreamer sleeping somewhere hidden in a foggy area"
+                    spoiler: "A dreamer is sleeping somewhere, hidden in a foggy area."
                 },
                 hegemolDefeated: {
-                    spoiler: "...a dreamer sleeping near a spider nest area"
+                    spoiler: "A dreamer is sleeping near a spider nest area."
                 },
                 killedBlackKnight: {
-                    spoiler: "...discarded shells of black guards lying on the floor of a high spire"
+                    spoiler: "Discarded shells of black guards can be seen lying on the floor of a high spire."
                 },
                 lurienDefeated: {
-                    spoiler: "...a dreamer sleeping somewhere at the top of a high spire"
+                    spoiler: "A dreamer is sleeping somewhere, at the top of a high spire."
                 },
                 killedHollowKnight: {
-                    spoiler: "...a disturbance inside a black temple"
+                    spoiler: "He heard a disturbance from inside a black temple."
                 },
                 endOfHints: {
-                    spoiler: "...a successful Knight who doesn't need hints anymore. The Knight explores the world of Hallownest patiently in constant search of its remaining secrets..."
+                    spoiler: `The Knight still explores the world of Hallownest patiently, in constant search of its remaining secrets.
+                    [this is the end of the hint system (for the moment). The rest is up to you]`
                 },
             },
         },
