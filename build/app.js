@@ -324,7 +324,7 @@ function CheckPlayTime(section, playTime) {
 
 
 function CheckCompletionPercent(section, completionPercentage) {
-  /* (completionPercentage >= 112) ? CurrentDataTrue(): CurrentDataFalse(); */
+  completionPercentage >= 112 ? CurrentDataTrue(section, "gameCompletion") : CurrentDataFalse(section, "gameCompletion");
   section.percent = completionPercentage;
   section.entries.gameCompletion.spoiler = completionPercentage;
   var textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + section.maxPercent + " %)"; // document.getElementById(section.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
