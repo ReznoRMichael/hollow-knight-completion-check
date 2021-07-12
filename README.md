@@ -93,24 +93,26 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
-* v1.5.0 In progress:  
+* v1.5.0 (in development):  
 
-  — Rewrote and optimized a large part of the code. Should work a bit faster now, especially on mobile devices.  
-  — Rearranged custom hint system. More emphasis on gradually increasing difficulty (magic words: Watcher Knights).  
-  — Fixed incorrect display of Soul orbs amount for early HK save file versions (like 1.0.0.6).  
+  — Changes/Fixes:  
+  ✅ Rewrote and optimized large parts of the code. Should work a bit faster now, especially on mobile devices.  
+  ✅ Fixed incorrect display of Soul orbs amount for early HK save file versions (like 1.0.0.6).  
+
+  — **Hints** changes:  
+  ✅ change: Rearranged the sequence of the clues. More emphasis on gradually increasing difficulty (magic words: Watcher Knights).  
 
   — **Grimm Troupe Content Pack** changes:  
-  ✅ Charm #40 Grimmchild Phase detection (No charm, 1-4) and Carefree Melody detection  
-
-  — **Achievements Essentials** changes:  
-  ✅ Moved Creatures Encountered and Hunter Notes Completed to Game Statistics (because not all 164 entries are required for the achievements)  
-
-  — **Achievements Essentials** additions:  
-  ✅ Journal: Flukemunga  
+  ✅ change: Charm #40 Grimmchild Phase detection (No charm, 1-4), Carefree Melody detection and wiki links  
+  ✅ change: Nightmare King/Banishment player save choice detection and wiki links  
 
   — **Game Completion Essentials** additions:  
-  ✅ God Tamer (needed for Trial of the Fool %)  
-  ✅ Vengefly King (needed for Trial of the Warrior %)  
+  ✅ addition: God Tamer (needed for Trial of the Fool %)  
+  ✅ addition: Vengefly King (needed for Trial of the Warrior %)  
+
+  — **Achievements Essentials** changes/additions:  
+  ✅ change: Moved Creatures Encountered and Hunter Notes Completed to Game Statistics (not all 164 entries are required for the achievements)  
+  ✅ addition: Journal: Flukemunga (needed for Keen Hunter/True Hunter achievements)  
 
 * v1.4.1 2021-03-16:
 
