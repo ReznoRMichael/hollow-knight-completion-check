@@ -116,6 +116,9 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ change: Moved Creatures Encountered and Hunter Notes Completed to Game Statistics (not all 164 entries are required for the achievements)  
   ✅ addition: Journal: Flukemunga (needed for Keen Hunter/True Hunter achievements)  
 
+  — **Game Statistics** changes/additions:  
+  ✅ addition: Lifeblood Core Room Arcane Egg (the only missable relic in the game)  
+
 * v1.4.1 2021-03-16:
 
   — **Game Completion Essentials** additions:  
