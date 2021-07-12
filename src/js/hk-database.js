@@ -950,8 +950,17 @@ const HK = {
                 },
                 grimmChildLevel: {
                     name: "Nightmare King or Banish Troupe",
+                    nameDefault: "Nightmare King or Banish Troupe",
+                    nameNightmareKing: "Grimm Troupe Choice: Nightmare King",
+                    nameBanishment: "Grimm Troupe Choice: Banishment",
                     spoiler: "One choice per save file: Dirtmouth or Howling Cliffs",
-                    wiki: "Category:The_Grimm_Troupe#Banishment"
+                    spoilerDefault: "One choice per save file: Dirtmouth or Howling Cliffs",
+                    spoilerNightmareKing: "Completed the Ritual",
+                    spoilerBanishment: "Banished Grimm Troupe",
+                    wiki: "Grimm_Troupe_(Quest)",
+                    wikiDefault: "Grimm_Troupe_(Quest)",
+                    wikiNightmareKing: "Nightmare_King_Grimm",
+                    wikiBanishment: "Nymm",
                 }
             },
         },

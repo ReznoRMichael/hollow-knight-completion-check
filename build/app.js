@@ -515,7 +515,31 @@ function CheckIfDataTrue(section, dataObject, playerData) {
 
 
         if (i === "grimmChildLevel") {
-          playerData.grimmChildLevel >= 4 ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
+          // (playerData.grimmChildLevel >= 4) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+
+          /* Check if Nightmare King or Banishment by looking at grimmChildLevel */
+          switch (playerData[i]) {
+            case 4:
+              dataObject[i].name = dataObject[i].nameNightmareKing;
+              dataObject[i].spoiler = dataObject[i].spoilerNightmareKing;
+              dataObject[i].wiki = dataObject[i].wikiNightmareKing;
+              CurrentDataTrue(section, i);
+              break;
+
+            case 5:
+              dataObject[i].name = dataObject[i].nameBanishment;
+              dataObject[i].spoiler = dataObject[i].spoilerBanishment;
+              dataObject[i].wiki = dataObject[i].wikiBanishment;
+              CurrentDataTrue(section, i);
+              break;
+
+            default:
+              CurrentDataFalse(section, i);
+              dataObject[i].name = dataObject[i].nameDefault;
+              dataObject[i].spoiler = dataObject[i].spoilerDefault;
+              dataObject[i].wiki = dataObject[i].wikiDefault;
+          }
+
           break;
         }
 
@@ -3676,8 +3700,17 @@ var HK = {
         },
         grimmChildLevel: {
           name: "Nightmare King or Banish Troupe",
+          nameDefault: "Nightmare King or Banish Troupe",
+          nameNightmareKing: "Grimm Troupe Choice: Nightmare King",
+          nameBanishment: "Grimm Troupe Choice: Banishment",
           spoiler: "One choice per save file: Dirtmouth or Howling Cliffs",
-          wiki: "Category:The_Grimm_Troupe#Banishment"
+          spoilerDefault: "One choice per save file: Dirtmouth or Howling Cliffs",
+          spoilerNightmareKing: "Completed the Ritual",
+          spoilerBanishment: "Banished Grimm Troupe",
+          wiki: "Grimm_Troupe_(Quest)",
+          wikiDefault: "Grimm_Troupe_(Quest)",
+          wikiNightmareKing: "Nightmare_King_Grimm",
+          wikiBanishment: "Nymm"
         }
       }
     },
