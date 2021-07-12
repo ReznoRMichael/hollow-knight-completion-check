@@ -371,7 +371,7 @@ function CurrentDataBlank(section = {}, entry = "") {
  * @param {number} playTime Number of total gameplay time in seconds
  */
 function CheckPlayTime(section, playTime) {
-    
+
     let seconds = Math.floor(playTime);
     let minutes = Math.floor((seconds / 60) % 60);
     let hours = Math.floor(seconds / 3600);
@@ -437,7 +437,7 @@ function CheckHealthMasks(section, masks = 5, permadeathMode = 0) {
     } else {
         section.entries.health.permadeathMode = false;
     }
-    
+
     /* let icon = SYMBOL_EMPTY;
     let textFill = "<span>Health:</span>";
     let maskImages = "";
@@ -592,7 +592,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
                 // prevents green checkbox and adding 1% when only got one white fragment
                 (playerData.gotQueenFragment === true && playerData.gotKingFragment === true) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
                 break;
-            
+
             case "gotCharm_37":
             case "gotCharm_38":
             case "gotCharm_39":
@@ -661,7 +661,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
                 (playerData[i] === true) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
 
                 break;
-            
+
             case "bossGruzMother":
             case "bossBroodingMawlek":
             case "maskShardCrossroadsSprings":
@@ -682,7 +682,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
             case "vesselFragmentFountain":
                 (WorldDataActivated(dataObject[i].id, dataObject[i].sceneName, worldData)) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
                 break;
-            
+
             case "pantheonMaster":
             case "pantheonArtist":
             case "pantheonSage":
@@ -700,7 +700,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
                     CurrentDataFalse(section, i);
                 }
                 break;
-            
+
             default:
                 (playerData[i] === true) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
         }
@@ -1197,7 +1197,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
             case "mrMushroomState7":
                 CheckMrMushroomState(section, dataObject[i], playerData["mrMushroomState"]);
                 break;
-                
+
             default:
                 // backwards compatibility with earlier game versions
                 if (playerData.hasOwnProperty(i) === false) {
@@ -1205,11 +1205,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                     dataObject[i].disabled = true;
                     textPrefix = `<del>${dataObject[i].name}</del>`;
                     break;
-                }
-                else if (playerData[i] === true) {
+                } else if (playerData[i] === true) {
                     CurrentDataTrue(section, i);
-                }
-                else {
+                } else {
                     CurrentDataFalse(section, i);
                 }
         } // end switch (i)
@@ -1525,34 +1523,34 @@ function InitializeHTMLPopulation(db) {
     GenerateInnerHTML(db);
 
     // PrefillHTML(sections);
-/* 
-    // Play Time
-    CheckPlayTime(sections.intro, 0)
+    /* 
+        // Play Time
+        CheckPlayTime(sections.intro, 0)
 
-    // Game Completion
-    CheckCompletionPercent(sections.intro, 0);
+        // Game Completion
+        CheckCompletionPercent(sections.intro, 0);
 
-    // Save File Version
-    CheckSaveFileVersion(sections.intro);
+        // Save File Version
+        CheckSaveFileVersion(sections.intro);
 
-    // Fleur Divide
-    // AppendHTML(sections.intro, FLEUR_DIVIDE);
+        // Fleur Divide
+        // AppendHTML(sections.intro, FLEUR_DIVIDE);
 
-    // Health Masks
-    CheckHealthMasks(sections.intro);
+        // Health Masks
+        CheckHealthMasks(sections.intro);
 
-    // Soul Orbs
-    CheckSoulOrbs(sections.intro, 99);
+        // Soul Orbs
+        CheckSoulOrbs(sections.intro, 99);
 
-    // Charm Notches
-    CheckNotches(sections.intro);
+        // Charm Notches
+        CheckNotches(sections.intro);
 
-    // Geo
-    CheckGeo(sections.intro);
+        // Geo
+        CheckGeo(sections.intro);
 
-    // Keep symbol False
-    CurrentDataFalse();
- */
+        // Keep symbol False
+        CurrentDataFalse();
+     */
     // First Hint Only
     // AppendHTML(sections.hints, sections.hints.entries.fireballLevel.spoiler);
 
