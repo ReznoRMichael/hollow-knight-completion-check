@@ -120,6 +120,13 @@ h6 {
     color: rgba(0, 255, 220, 0.6);
 }
 
+#hk-hints {
+    border: 1px solid #fff;
+    border-radius: 1rem;
+    padding: 1.3rem;
+    margin: 1.3rem;
+}
+
 #save-location-input {
     display: block;
     font-family: 'Consolas', monospace;

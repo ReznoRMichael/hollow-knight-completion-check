@@ -474,7 +474,7 @@ function SectionStart(section) {
     let h2 = "";
     let h2id = "";
     let mp = ""; // max Percent
-    let cl = ""; // class
+    // let cl = ""; // class
 
     id = section.id;
     h2 = section.h2;
@@ -483,11 +483,12 @@ function SectionStart(section) {
     mp = `<div class='percent-box'>${(id === "hk-intro") ? 0: section.maxPercent}%</div>`;
     if (!section.hasOwnProperty("maxPercent")) mp = "";
 
-    return [
+    /* return [
         `<div id="${id}" ${cl}>`,
             `<h2 id='${h2id}'>${h2}${mp}</h2>`,
         "</div>\n"
-    ].join("");
+    ].join(""); */
+    return `<h2 id='${h2id}'>${h2}${mp}</h2>`;
 }
 
 /**

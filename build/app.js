@@ -5505,15 +5505,20 @@ function CompletionFillNoSave(section) {
   var h2 = "";
   var h2id = "";
   var mp = ""; // max Percent
-
-  var cl = ""; // class
+  // let cl = ""; // class
 
   id = section.id;
   h2 = section.h2;
   h2id = "h2-" + section.id;
   mp = "<div class='percent-box'>".concat(id === "hk-intro" ? 0 : section.maxPercent, "%</div>");
   if (!section.hasOwnProperty("maxPercent")) mp = "";
-  return ["<div id=\"".concat(id, "\" ").concat(cl, ">"), "<h2 id='".concat(h2id, "'>").concat(h2).concat(mp, "</h2>"), "</div>\n"].join("");
+  /* return [
+      `<div id="${id}" ${cl}>`,
+          `<h2 id='${h2id}'>${h2}${mp}</h2>`,
+      "</div>\n"
+  ].join(""); */
+
+  return "<h2 id='".concat(h2id, "'>").concat(h2).concat(mp, "</h2>");
 }
 /**
  * Replaces the h2 titles with a current percent/max percent values as read from the database
