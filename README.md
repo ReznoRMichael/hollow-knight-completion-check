@@ -117,6 +117,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ addition: Journal: Flukemunga (needed for Keen Hunter/True Hunter achievements)  
 
   — **Game Statistics** changes/additions:  
+  ✅ addition: World Sense Ability (completion rate viewable in inventory/save slot)  
   ✅ addition: Lifeblood Core Room Arcane Egg (the only missable relic in the game)  
 
 * v1.4.1 2021-03-16:
