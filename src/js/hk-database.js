@@ -721,6 +721,7 @@ const HK = {
         vesselFragments: {
             h2: "Vessel Fragments",
             id: "hk-vesselfragments",
+            description: "Fragments for increasing max soul. Each 3 Vessel Fragments collected (a full Soul Vessel) provide +1% to Game Completion Percentage.",
             percent: 0,
             maxPercent: 3,
             entries: {
