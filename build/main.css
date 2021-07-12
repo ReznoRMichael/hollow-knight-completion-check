@@ -251,7 +251,7 @@ h6 {
 .section-description {
     text-align: center;
     font-size: 0.8rem;
-    margin: 1.3rem;
+    margin: 0 1.3rem 1.3rem 1.3rem;
     color: rgba(129, 221, 224, 0.85);
 }
 

@@ -2830,7 +2830,7 @@ var HK = {
     bosses: {
       h2: "Bosses",
       id: "hk-bosses",
-      description: "Bosses in this section are part of the Game Completion Percentage set by the game developers. Each boss from this list equals 1% Completion (to a total of 14%). Note: There are many other bosses in the game (see below).",
+      description: "Bosses in this section are part of the Game Completion Percentage set by the game developers. Each boss from this list equals +1% Completion. Note: There are many other bosses in the game, some don't count towards % (see below).",
       percent: 0,
       maxPercent: 14,
       entries: {
@@ -3153,6 +3153,7 @@ var HK = {
     equipment: {
       h2: "Equipment",
       id: "hk-equipment",
+      description: "Also known as Abilities. Each piece of equipment collected provides +2% to Game Completion Percentage.",
       percent: 0,
       maxPercent: 14,
       entries: {
