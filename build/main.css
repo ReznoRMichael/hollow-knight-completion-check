@@ -336,6 +336,11 @@ input[type="file"] {
     -webkit-filter: blur(5px);
 }
 
+.blurred:hover {
+    filter: none;
+    -webkit-filter: none;
+}
+
 .hint::first-letter {
     position: absolute;
     float: left;
