@@ -1538,6 +1538,11 @@ const HK = {
             h2: "Game Statistics",
             id: "hk-statistics",
             entries: {
+                unlockedCompletionRate: {
+                    name: "World Sense Ability",
+                    spoiler: "Temple of the Black Egg: Lore Tablet",
+                    wiki: "World_Sense"
+                },
                 journalEntriesCompleted: {
                     name: "Creatures Encountered",
                     spoiler: "Hunter's Journal (164 max)",
