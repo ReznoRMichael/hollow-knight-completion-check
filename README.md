@@ -96,10 +96,11 @@ If you like the tool and wish it developed further with more functions and easie
 * v1.5.0 In progress:  
 
   — Rewrote and optimized a large part of the code. Should work a bit faster now, especially on mobile devices.  
-
   — Rearranged custom hint system. More emphasis on gradually increasing difficulty (magic words: Watcher Knights).  
-
   — Fixed incorrect display of Soul orbs amount for early HK save file versions (like 1.0.0.6).  
+
+  — **Grimm Troupe Content Pack** changes:  
+  ✅ Charm #40 Grimmchild Phase detection (No charm, 1-4) and Carefree Melody detection  
 
   — **Achievements Essentials** additions:  
   ✅ Journal: Flukemunga  
