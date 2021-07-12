@@ -110,6 +110,7 @@ h2 {
     text-align: center;
     margin: 0.6rem 0;
     color: rgba(231, 251, 255, 0.6);
+    font-weight: 700;
 }
 
 h6 {
@@ -126,6 +127,13 @@ h6 {
     border-style: double;
     padding: 1.3rem;
     margin: 1.3rem;
+}
+
+#h2-hk-hints {
+    margin-top: 0;
+    color: rgba(255, 255, 255, 1.0);
+    font-weight: 400;
+    text-align: left;
 }
 
 #save-location-input {
@@ -209,6 +217,22 @@ input[type="file"] {
     width: 100%;
     max-width: 542px;
     height: 5.65rem;
+}
+
+.hint {
+    display: block;
+    font-style: italic;
+}
+
+.hint::first-letter {
+    position: absolute;
+    float: left;
+    margin-right: 0.6rem;
+    margin-top: 0.2rem;
+    left: 0;
+    top: 0;
+    font-size: 2.7rem;
+    line-height: 1;
 }
 
 .buttons {

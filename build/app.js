@@ -5380,7 +5380,7 @@ function GenerateInnerHTML(db) {
 
       case "hints":
         obj.b = ["", ""];
-        obj.span = ["<span>", "</span>"];
+        obj.span = ["<span class='hint'>", "</span>"];
         obj.icon = "";
         obj.textPrefix = "";
         obj.div = div;

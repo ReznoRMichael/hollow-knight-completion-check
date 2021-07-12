@@ -100,6 +100,8 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Fixed incorrect display of Soul orbs amount for early HK save file versions (like 1.0.0.6).  
 
   — **Hints** changes:  
+  ✅ change: Made the Hints section stand out more from the rest of the tool.  
+  ✅ change: Re-phrased all clues.  
   ✅ change: Rearranged the sequence of the clues. More emphasis on gradually increasing difficulty (magic words: Watcher Knights).  
 
   — **Grimm Troupe Content Pack** changes:  
