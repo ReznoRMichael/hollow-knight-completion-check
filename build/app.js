@@ -3311,6 +3311,7 @@ var HK = {
     maskShards: {
       h2: "Mask Shards",
       id: "hk-maskshards",
+      description: "Fragments for increasing max health. Each 4 Mask Fragments collected (a full Mask) provide +1% to Game Completion Percentage.",
       percent: 0,
       maxPercent: 4,
       entries: {
