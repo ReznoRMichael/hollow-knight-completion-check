@@ -143,6 +143,7 @@ function GenerateInnerHTML(db) {
     let entries = {};
     let obj = {
         icon: "",
+        iconClass: "",
         textPrefix: "",
         textSuffix: "",
         wiki: "",
@@ -382,8 +383,24 @@ function GenerateInnerHTML(db) {
                     obj.textSuffix = `— ${entries[entry].spoiler}`;
                     obj.wiki = entries[entry].wiki;
 
+                    /* assign the appropriate spoiler class name depending on the completion check (for blurring names) */
+                    if (entries[entry].hasOwnProperty("icon")) {
+                        switch (entries[entry].icon) {
+
+                            case "red":
+                            case "none":
+                                obj.iconClass = " spoiler-red blurred";
+                                break;
+    
+                            default:
+                                obj.iconClass = "";
+                        }
+                    } else {
+                        obj.iconClass = "";
+                    }
+
                     obj.p = "<span class='p-left-small'></span>";
-                    obj.b = [`<a class="wiki" href="${WIKI_LINK}${obj.wiki}" target="_blank">`, "</a>"]; 
+                    obj.b = [`<a class="wiki${obj.iconClass}" href="${WIKI_LINK}${obj.wiki}" target="_blank">`, "</a>"]; 
                     obj.span = ["<span class='spoiler-span'>", "</span>"];
                     obj.spoiler = ["<span class='spoiler-text'>", "</span>"];
                     obj.div = div;

@@ -331,6 +331,11 @@ input[type="file"] {
     font-style: italic;
 }
 
+.blurred {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+}
+
 .hint::first-letter {
     position: absolute;
     float: left;
