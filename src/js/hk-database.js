@@ -528,6 +528,7 @@ const HK = {
         nailArts: {
             h2: "Nail Arts",
             id: "hk-nailarts",
+            description: "Advanced weapon combat techniques. Each new technique learned provides +1% to Game Completion Percentage.",
             percent: 0,
             maxPercent: 3,
             entries: {
