@@ -3199,6 +3199,7 @@ var HK = {
     nailUpgrades: {
       h2: "Nail Upgrades",
       id: "hk-nailupgrades",
+      description: "Upgrades to the Knight's main weapon damage. Each upgrade provides +1% to Game Completion Percentage.",
       percent: 0,
       maxPercent: 4,
       entries: {
