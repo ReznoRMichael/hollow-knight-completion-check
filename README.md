@@ -97,6 +97,7 @@ If you like the tool and wish it developed further with more functions and easie
 
   — Changes/Fixes:  
   ✅ Rewrote and optimized large parts of the code. Should work a bit faster now, especially on mobile devices.  
+  ✅ Things that are not yet done are now blurred when Spoiler checkbox is unchecked. Hover over the name to uncover it. (thanks to kanna for the idea and inspiration!)  
   ✅ Fixed incorrect display of Soul orbs amount for early HK save file versions (like 1.0.0.6).  
 
   — **Hints** changes:  
