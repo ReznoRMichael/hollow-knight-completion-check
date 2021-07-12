@@ -880,15 +880,23 @@ function CheckboxHintsToggle(param = "none") {
  * @param {string} param "hide", "show" or none (optional)
  */
 function CheckboxSpoilersToggle(param = "none") {
+
     let checkboxId = document.getElementById("checkbox-spoilers");
     let allClassElements = document.querySelectorAll(".spoiler-span");
+    let allClassElementsRed = document.querySelectorAll(".spoiler-red");
     let length = allClassElements.length;
+    let lengthRed = allClassElementsRed.length;
 
     switch (param) {
         case "hide":
             for (let i = 0; i < length; i++) {
                 allClassElements[i].classList.add("hidden");
             }
+
+            for (let i = 0; i < lengthRed; i++) {
+                allClassElementsRed[i].classList.add("blurred");
+            }
+
             checkboxId.value = "spoilers-off";
             checkboxId.checked = false;
 
@@ -897,10 +905,16 @@ function CheckboxSpoilersToggle(param = "none") {
                 localStorage.setItem("hkCheckboxSpoilers", "unchecked");
             }
             break;
+
         case "show":
             for (let i = 0; i < length; i++) {
                 allClassElements[i].classList.remove("hidden");
             }
+
+            for (let i = 0; i < lengthRed; i++) {
+                allClassElementsRed[i].classList.remove("blurred");
+            }
+
             checkboxId.value = "spoilers-on";
             checkboxId.checked = true;
 
@@ -909,12 +923,19 @@ function CheckboxSpoilersToggle(param = "none") {
                 localStorage.setItem("hkCheckboxSpoilers", "checked");
             }
             break;
+
         default:
             // This runs when the checkbox is not checked
             if (checkboxId.checked === false) {
+
                 for (let i = 0; i < length; i++) {
                     allClassElements[i].classList.add("hidden");
                 }
+
+                for (let i = 0; i < lengthRed; i++) {
+                    allClassElementsRed[i].classList.add("blurred");
+                }
+
                 checkboxId.value = "spoilers-off";
 
                 // remember this choice for subsequent page visits and browser restarts
@@ -928,6 +949,11 @@ function CheckboxSpoilersToggle(param = "none") {
                 for (let i = 0; i < length; i++) {
                     allClassElements[i].classList.remove("hidden");
                 }
+
+                for (let i = 0; i < lengthRed; i++) {
+                    allClassElementsRed[i].classList.remove("blurred");
+                }
+
                 checkboxId.value = "spoilers-on";
 
                 // remember this choice for subsequent page visits and browser restarts

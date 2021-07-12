@@ -5911,12 +5911,18 @@ function CheckboxSpoilersToggle() {
   var param = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "none";
   var checkboxId = document.getElementById("checkbox-spoilers");
   var allClassElements = document.querySelectorAll(".spoiler-span");
+  var allClassElementsRed = document.querySelectorAll(".spoiler-red");
   var length = allClassElements.length;
+  var lengthRed = allClassElementsRed.length;
 
   switch (param) {
     case "hide":
       for (var i = 0; i < length; i++) {
         allClassElements[i].classList.add("hidden");
+      }
+
+      for (var _i5 = 0; _i5 < lengthRed; _i5++) {
+        allClassElementsRed[_i5].classList.add("blurred");
       }
 
       checkboxId.value = "spoilers-off";
@@ -5929,8 +5935,12 @@ function CheckboxSpoilersToggle() {
       break;
 
     case "show":
-      for (var _i5 = 0; _i5 < length; _i5++) {
-        allClassElements[_i5].classList.remove("hidden");
+      for (var _i6 = 0; _i6 < length; _i6++) {
+        allClassElements[_i6].classList.remove("hidden");
+      }
+
+      for (var _i7 = 0; _i7 < lengthRed; _i7++) {
+        allClassElementsRed[_i7].classList.remove("blurred");
       }
 
       checkboxId.value = "spoilers-on";
@@ -5945,8 +5955,12 @@ function CheckboxSpoilersToggle() {
     default:
       // This runs when the checkbox is not checked
       if (checkboxId.checked === false) {
-        for (var _i6 = 0; _i6 < length; _i6++) {
-          allClassElements[_i6].classList.add("hidden");
+        for (var _i8 = 0; _i8 < length; _i8++) {
+          allClassElements[_i8].classList.add("hidden");
+        }
+
+        for (var _i9 = 0; _i9 < lengthRed; _i9++) {
+          allClassElementsRed[_i9].classList.add("blurred");
         }
 
         checkboxId.value = "spoilers-off"; // remember this choice for subsequent page visits and browser restarts
@@ -5958,8 +5972,12 @@ function CheckboxSpoilersToggle() {
         break;
       } // This runs when the checkbox is checked
       else {
-          for (var _i7 = 0; _i7 < length; _i7++) {
-            allClassElements[_i7].classList.remove("hidden");
+          for (var _i10 = 0; _i10 < length; _i10++) {
+            allClassElements[_i10].classList.remove("hidden");
+          }
+
+          for (var _i11 = 0; _i11 < lengthRed; _i11++) {
+            allClassElementsRed[_i11].classList.remove("blurred");
           }
 
           checkboxId.value = "spoilers-on"; // remember this choice for subsequent page visits and browser restarts
