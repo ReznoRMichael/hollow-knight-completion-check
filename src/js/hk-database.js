@@ -1275,21 +1275,6 @@ const HK = {
                     ],
                     wiki: "Map_and_Quill#Maps"
                 },
-                journalEntriesCompleted: {
-                    name: "Creatures Encountered",
-                    spoiler: "Hunter's Journal (164 max)",
-                    max: 164,
-                    wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
-                },
-                /* 
-                Add 4 remaining to Hunter Notes max
-                */
-                journalNotesCompleted: {
-                    name: "Hunter Notes Completed",
-                    spoiler: "Hunter's Journal (164 max)",
-                    max: 164,
-                    wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
-                },
                 hasJournal: {
                     name: "Hunter's Journal",
                     spoiler: "Greenpath: Hunter, above Stone Sanctuary",
@@ -1553,6 +1538,21 @@ const HK = {
             h2: "Game Statistics",
             id: "hk-statistics",
             entries: {
+                journalEntriesCompleted: {
+                    name: "Creatures Encountered",
+                    spoiler: "Hunter's Journal (164 max)",
+                    max: 164,
+                    wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
+                },
+                /* 
+                Add 4 remaining to Hunter Notes max
+                */
+                journalNotesCompleted: {
+                    name: "Hunter Notes Completed",
+                    spoiler: "Hunter's Journal (164 max)",
+                    max: 164,
+                    wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
+                },
                 nailDamage: {
                     name: "Nail Damage",
                     spoiler: "Nailsmith upgrades, City of Tears",
