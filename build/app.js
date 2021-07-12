@@ -3264,6 +3264,7 @@ var HK = {
     spells: {
       h2: "Spells",
       id: "hk-spells",
+      description: "Skills that consume Soul. Each new spell learned or upgraded provides +1% to Game Completion Percentage.",
       percent: 0,
       maxPercent: 6,
       entries: {
