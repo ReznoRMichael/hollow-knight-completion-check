@@ -3570,6 +3570,7 @@ var HK = {
     dreamers: {
       h2: "Dreamers",
       id: "hk-dreamers",
+      description: "Each Dreamer will provide +1% to Game Completion Percentage.",
       percent: 0,
       maxPercent: 3,
       entries: {
