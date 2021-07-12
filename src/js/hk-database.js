@@ -108,7 +108,7 @@ const HK = {
                     spoiler: "There is some powerful crystal beating somewhere deep inside the mines."
                 },
                 hasDreamNail: {
-                    spoiler: "A weapon from a dream world can only found, where the souls can peacefully rest."
+                    spoiler: "A weapon from a dream world can only be found, where the souls can peacefully rest."
                 },
                 /* 
                 Either:

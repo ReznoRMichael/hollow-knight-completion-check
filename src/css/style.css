@@ -228,11 +228,10 @@ input[type="file"] {
     position: absolute;
     float: left;
     margin-right: 0.6rem;
-    margin-top: 0.2rem;
-    left: 0;
-    top: 0;
-    font-size: 2.7rem;
-    line-height: 1;
+    margin-top: 0.5rem;
+    font-size: 2.8rem;
+    line-height: 0.8;
+    font-weight: 500;
 }
 
 .buttons {
