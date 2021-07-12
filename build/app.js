@@ -3596,6 +3596,7 @@ var HK = {
     colosseum: {
       h2: "Colosseum of Fools",
       id: "hk-colosseum",
+      description: "Completing each Trial in the Colosseum provides +1% to Game Completion Percentage. This section sums up the original 100% Game Completion Percentage from Hollow Knight in 2017 (without Content Packs).",
       percent: 0,
       maxPercent: 3,
       entries: {
