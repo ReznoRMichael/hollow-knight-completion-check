@@ -87,6 +87,11 @@ b {
     color: #aac7d4;
 }
 
+p {
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+
 del {
     text-decoration: none;
     opacity: 0.5;
@@ -134,6 +139,12 @@ h6 {
     color: rgba(255, 255, 255, 1.0);
     font-weight: 400;
     text-align: left;
+}
+
+.section-description {
+    font-size: 0.8rem;
+    margin: 1.3rem;
+    color: rgba(231, 251, 255, 1.0);
 }
 
 #save-location-input {
@@ -328,11 +339,6 @@ input[type="file"] {
     .checkboxes {
         margin-top: 0.8rem;
     }
-}
-
-p {
-    margin-top: 0.6rem;
-    margin-bottom: 0.6rem;
 }
 
 .horizontal-line {

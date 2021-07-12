@@ -354,6 +354,12 @@ function GenerateInnerHTML(db) {
 
             default:
 
+                /* ###################### Create section descriptions under each H2 title ##################### */
+
+                if (sections[section].hasOwnProperty("description")) {
+                    textFill += SectionDescription(sections[section]);
+                }
+
                 /* ###################### Create each single entry (from all other sections) ##################### */
 
                 for (let entry in entries) {
@@ -475,6 +481,11 @@ function GenerateInnerHTML(db) {
 
     // finish benchmarking
     benchmarkTimes.GenerateInnerHTML.timeEnd = new Date();
+}
+
+function SectionDescription(section) {
+
+    return `<p class="section-description">${section.description}</p>`;
 }
 
 function SectionStart(section) {

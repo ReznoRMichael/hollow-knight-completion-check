@@ -12,5 +12,6 @@ module.exports = {
     "rules": {
         "no-prototype-builtins": 0,
         "no-unused-vars": 0,
+        "semi": ["error", "always"]
     }
 };

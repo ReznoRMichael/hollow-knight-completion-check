@@ -157,6 +157,7 @@ const HK = {
         bosses: {
             h2: "Bosses",
             id: "hk-bosses",
+            description: "Bosses in this section are part of the Game Completion Percentage set by the game developers. Each boss from this list equals 1% Completion (to a total of 14%).",
             percent: 0,
             maxPercent: 14,
             entries: {

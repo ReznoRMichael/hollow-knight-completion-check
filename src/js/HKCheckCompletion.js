@@ -88,7 +88,7 @@ let benchmarkTimes = {
         timeStart: 0,
         timeEnd: 0
     }
-}
+};
 
 /* -------------------------- Functions ----------------------------- */
 
@@ -1324,7 +1324,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     function CountMaps(mapArray) {
         let totalMaps = 0;
         for (let i = 0, len = mapArray.length; i < len; i++) {
-            if (playerData[mapArray[i]] === true) totalMaps++
+            if (playerData[mapArray[i]] === true) totalMaps++;
         }
         return totalMaps;
     }

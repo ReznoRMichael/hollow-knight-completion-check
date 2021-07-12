@@ -1646,59 +1646,13 @@ function ResetCompletion(db) {
     }
   }
 }
-/**
- * Focuses, selects and copies to clipboard contents inside a clicked element. Includes optional tooltip update after the copying is done.
- * @param {MouseEvent} mouseEvent from the clicked element (AddEventListener)
- * @param {string} tooltipId Element ID of the tooltip to update
- * @param {string} tooltipFill Updated contents of the tooltip
- */
-
-
-function SelectCopyInputText(mouseEvent) {
-  var tooltipId = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
-  var tooltipFill = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
-  var element = document.getElementById(mouseEvent.target.id); // this prevents the un-selected effect after clicking the second time (clears all selection first)
-
-  if (window.getSelection) {
-    window.getSelection().removeAllRanges();
-  }
-
-  element.focus(); // best to focus the element first before selecting
-
-  element.select();
-  element.setSelectionRange(0, 99999); // for mobile devices
-  // Copy the text inside the text field to clipboard
-
-  document.execCommand("copy"); // optional tooltip showing
-
-  if (tooltipFill.length && tooltipId.length) FillInnerHTML(tooltipId, tooltipFill);
-}
-/**
- * Fills the innerHTML of a given HTML Element with provided contents
- * @param {string} elementId Element ID to update
- * @param {string} textFill Updated contents (innerHTML)
- */
-
-
-function FillInnerHTML(elementId, textFill) {
-  var element = document.getElementById(elementId);
-  element.innerHTML = textFill;
-}
 /* ----------------------- Event Listeners -------------------------- */
 // Populate HTML at load (before img and css)
 
 
 document.addEventListener("DOMContentLoaded", function () {
   InitializeHTMLPopulation(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default);
-}); // Does an action when the save file location input text is clicked once (auto select & copy to clipboard)
-
-document.getElementById("save-location-input").addEventListener("click", function (e) {
-  SelectCopyInputText(e, "save-location-input-tooltip", "Copied save file location to clipboard");
-}, false); // Choose File input field
-
-document.getElementById("save-location-input").addEventListener("mouseout", function () {
-  FillInnerHTML("save-location-input-tooltip", "Click once to copy to clipboard");
-}, false); // Analyze Text button
+}); // Analyze Text button
 
 document.getElementById("save-area-read").addEventListener("click", function () {
   HKReadTextArea("save-area");
@@ -2876,6 +2830,7 @@ var HK = {
     bosses: {
       h2: "Bosses",
       id: "hk-bosses",
+      description: "Bosses in this section are part of the Completion Percentage set by the game developers. Each boss from this list equals 1% Completion (to a total of 14%).",
       percent: 0,
       maxPercent: 14,
       entries: {
@@ -5405,7 +5360,13 @@ function GenerateInnerHTML(db) {
       /* ###################### Create all other sections ##################### */
 
       default:
+        /* ###################### Create section descriptions under each H2 title ##################### */
+        if (sections[section].hasOwnProperty("description")) {
+          textFill += SectionDescription(sections[section]);
+        }
         /* ###################### Create each single entry (from all other sections) ##################### */
+
+
         for (var _entry in entries) {
           /* -------- Icons (next to each entry) --------- */
           if (entries[_entry].hasOwnProperty("icon")) {
@@ -5518,6 +5479,10 @@ function GenerateInnerHTML(db) {
   document.getElementById("generated").innerHTML = finalHTMLFill; // finish benchmarking
 
   _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.GenerateInnerHTML.timeEnd = new Date();
+}
+
+function SectionDescription(section) {
+  return "<p class=\"section-description\">".concat(section.description, "</p>");
 }
 
 function SectionStart(section) {
@@ -6016,6 +5981,44 @@ function StorageAvailable(type) {
     storage && storage.length !== 0;
   }
 }
+/**
+ * Fills the innerHTML of a given HTML Element with provided contents
+ * @param {string} elementId Element ID to update
+ * @param {string} textFill Updated contents (innerHTML)
+ */
+
+
+function FillInnerHTML(elementId, textFill) {
+  var element = document.getElementById(elementId);
+  element.innerHTML = textFill;
+}
+/**
+ * Focuses, selects and copies to clipboard contents inside a clicked element. Includes optional tooltip update after the copying is done.
+ * @param {MouseEvent} mouseEvent from the clicked element (AddEventListener)
+ * @param {string} tooltipId Element ID of the tooltip to update
+ * @param {string} tooltipFill Updated contents of the tooltip
+ */
+
+
+function SelectCopyInputText(mouseEvent) {
+  var tooltipId = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+  var tooltipFill = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
+  var element = document.getElementById(mouseEvent.target.id); // this prevents the un-selected effect after clicking the second time (clears all selection first)
+
+  if (window.getSelection) {
+    window.getSelection().removeAllRanges();
+  }
+
+  element.focus(); // best to focus the element first before selecting
+
+  element.select();
+  element.setSelectionRange(0, 99999); // for mobile devices
+  // Copy the text inside the text field to clipboard
+
+  document.execCommand("copy"); // optional tooltip showing
+
+  if (tooltipFill.length && tooltipId.length) FillInnerHTML(tooltipId, tooltipFill);
+}
 /* ----------------------- Event Listeners -------------------------- */
 
 
@@ -6030,7 +6033,15 @@ document.addEventListener("scroll", function () {
 });
 SCROLL_BUTTON.addEventListener("click", function () {
   ScrollToElement(ROOT);
-}); // Checkboxes functions
+}); // Auto select & copy to clipboard when the save file location input text is clicked once
+
+document.getElementById("save-location-input").addEventListener("click", function (e) {
+  SelectCopyInputText(e, "save-location-input-tooltip", "Copied save file location to clipboard");
+}, false); // Switch text back to the default on mouse out
+
+document.getElementById("save-location-input").addEventListener("mouseout", function () {
+  FillInnerHTML("save-location-input-tooltip", "Click once to copy to clipboard");
+}, false); // Checkboxes functions
 
 document.getElementById("checkbox-hints").addEventListener("click", CheckboxHintsToggle, false);
 document.getElementById("checkbox-spoilers").addEventListener("click", CheckboxSpoilersToggle, false);
