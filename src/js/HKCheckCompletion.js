@@ -890,18 +890,18 @@ function WorldDataActivated(idText, sceneNameText, worldData) {
  */
 function CheckAdditionalThings(section, dataObject, playerData, worldData, sceneData) {
 
-    let {
+    /* let {
         textPrefix,
         textSuffix,
         wiki
     } = "";
-    let sFillText = "";
+    let sFillText = ""; */
 
     // Start main loop
     for (let i in dataObject) {
-        textPrefix = dataObject[i].name;
+        /* textPrefix = dataObject[i].name;
         (dataObject[i].hasOwnProperty("spoiler")) ? textSuffix = dataObject[i].spoiler: textSuffix = "";
-        (dataObject[i].hasOwnProperty("wiki")) ? wiki = dataObject[i].wiki: wiki = "";
+        (dataObject[i].hasOwnProperty("wiki")) ? wiki = dataObject[i].wiki: wiki = ""; */
 
         let {
             amount,
@@ -951,11 +951,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                     LogMissingGrubs();
                 }
 
-                textPrefix += `: ${countTotal}`;
+                /* textPrefix += `: ${countTotal}`; */
 
                 if (i === "grubRewards") {
                     dataObject[i].amountTotal = playerData.grubsCollected;
-                    textPrefix += ` / ${playerData.grubsCollected}`;
+                    /* textPrefix += ` / ${playerData.grubsCollected}`; */
                 }
 
                 if (i === "greyPrinceDefeats") {
@@ -963,11 +963,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                     if (playerData.hasOwnProperty(i) === false) {
                         CurrentDataBlank(section, i);
                         dataObject[i].disabled = true;
-                        textPrefix = `<del>${dataObject[i].name}</del>`;
+                        // textPrefix = `<del>${dataObject[i].name}</del>`;
                         break;
                     } else if (playerData.zoteDead === true || (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
                         dataObject[i].disabled = true;
-                        textPrefix = `<del>${textPrefix}</del>`;
+                        // textPrefix = `<del>${textPrefix}</del>`;
                     }
                 }
 
@@ -976,7 +976,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                     if (playerData.hasOwnProperty(i) === false) {
                         CurrentDataBlank(section, i);
                         dataObject[i].disabled = true;
-                        textPrefix = `<del>${dataObject[i].name}</del>`;
+                        // textPrefix = `<del>${dataObject[i].name}</del>`;
                         break;
                     }
                 }
@@ -987,7 +987,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
             case "rancidEggs":
             case "jinnEggsSold":
             case "xunFlowerBrokeTimes":
-                textPrefix += ": " + Math.abs(playerData[i]);
+                // textPrefix += ": " + Math.abs(playerData[i]);
 
                 dataObject[i].amount = Math.abs(playerData[i]);
 
@@ -998,7 +998,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                     if (playerData.permadeathMode < 1) {
                         CurrentDataBlank(section, i);
                         dataObject[i].disabled = true;
-                        textPrefix = `<del>${textPrefix}</del>`;
+                        // textPrefix = `<del>${textPrefix}</del>`;
                         break;
                     }
                 }
@@ -1015,7 +1015,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                 dataObject[i].notActivated = notActivated;
                 dataObject[i].activated = activated;
 
-                textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`;
+                /* textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`; */
                 CurrentDataTrue(section, i);
                 break;
 
@@ -1029,7 +1029,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                 dataObject[i].notActivated = notActivated;
                 dataObject[i].activated = activated;
 
-                textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`;
+                /* textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`; */
                 CurrentDataTrue(section, i);
                 break;
 
@@ -1076,14 +1076,14 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
                 dataObject[i].amount = total;
 
-                textPrefix += ": " + total;
+                /* textPrefix += ": " + total; */
                 break;
 
             case "bossDoorStateTier5":
                 if (playerData.hasOwnProperty("bossDoorStateTier5") === false) {
                     CurrentDataBlank(section, i);
                     dataObject[i].disabled = true;
-                    textPrefix = `<del>${textPrefix}</del>`;
+                    /* textPrefix = `<del>${textPrefix}</del>`; */
                 } else {
                     (playerData[i].completed === true) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
                 }
@@ -1093,7 +1093,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank(section, i);
                     dataObject[i].disabled = true;
-                    textPrefix = `<del>${textPrefix}</del>`;
+                    /* textPrefix = `<del>${textPrefix}</del>`; */
                     break;
                 }
                 (playerData[i] == 0) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
@@ -1107,7 +1107,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank(section, i);
                     dataObject[i].disabled = true;
-                    textPrefix = `<del>${textPrefix}</del>`;
+                    /* textPrefix = `<del>${textPrefix}</del>`; */
                     break;
                 }
                 (playerData[i] === true) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
@@ -1118,7 +1118,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank(section, i);
                     dataObject[i].disabled = true;
-                    textPrefix = `<del>${textPrefix}</del>`;
+                    /* textPrefix = `<del>${textPrefix}</del>`; */
                     break;
                 }
                 (playerData[i] === true) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
@@ -1130,11 +1130,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank(section, i);
                     dataObject[i].disabled = true;
-                    textPrefix = `<del>${textPrefix}</del>`;
+                    /* textPrefix = `<del>${textPrefix}</del>`; */
                     break;
                 } else if (playerData.zoteDead === true || (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
                     dataObject[i].disabled = true;
-                    textPrefix = `<del>${textPrefix}</del>`;
+                    /* textPrefix = `<del>${textPrefix}</del>`; */
                 }
                 (playerData[i] === true) ? CurrentDataTrue(section, i): CurrentDataBlank(section, i);
                 if (playerData.zoteRescuedBuzzer === true && playerData[i] === false) CurrentDataFalse(section, i);
@@ -1142,42 +1142,51 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
             case "zoteStatus":
                 CurrentDataFalse(section, i);
+                dataObject[i].name = dataObject[i].nameDefault;
+                dataObject[i].spoiler = dataObject[i].spoilerDefault;
+
                 if (playerData.zoteDead === true) {
-                    textPrefix = dataObject[i].nameNeglect;
-                    textSuffix = dataObject[i].spoilerNeglect;
-                    dataObject[i].currentName = "nameNeglect";
-                    dataObject[i].currentSpoiler = "spoilerNeglect";
+                    /* textPrefix = dataObject[i].nameNeglect;
+                    textSuffix = dataObject[i].spoilerNeglect; */
+                    dataObject[i].name = dataObject[i].nameNeglect;
+                    dataObject[i].spoiler = dataObject[i].spoilerNeglect;
+
                     CurrentDataTrue(section, i);
+
                 } else if (playerData.killedZote === true) {
-                    textPrefix = dataObject[i].nameRivalry;
-                    textSuffix = dataObject[i].spoilerRivalry;
-                    dataObject[i].currentName = "nameRivalry";
-                    dataObject[i].currentSpoiler = "spoilerRivalry";
+                    /* textPrefix = dataObject[i].nameRivalry;
+                    textSuffix = dataObject[i].spoilerRivalry; */
+                    dataObject[i].name = dataObject[i].nameRivalry;
+                    dataObject[i].spoiler = dataObject[i].spoilerRivalry;
+
                     CurrentDataTrue(section, i);
+
                 } else if (playerData.zoteRescuedBuzzer === false) {
                     if (playerData.hasWalljump === false) {
-                        textPrefix = dataObject[i].nameTrappedVengefly;
-                        textSuffix = dataObject[i].spoilerTrappedVengefly;
-                        dataObject[i].currentName = "nameTrappedVengefly";
-                        dataObject[i].currentSpoiler = "spoilerTrappedVengefly";
+                        /* textPrefix = dataObject[i].nameTrappedVengefly;
+                        textSuffix = dataObject[i].spoilerTrappedVengefly; */
+                        dataObject[i].name = dataObject[i].nameTrappedVengefly;
+                        dataObject[i].spoiler = dataObject[i].spoilerTrappedVengefly;
+
                     } else if (playerData.hasWalljump === true) {
-                        textPrefix = dataObject[i].nameNotRescuedVengefly;
-                        textSuffix = dataObject[i].spoilerNotRescuedVengefly;
-                        dataObject[i].currentName = "nameNotRescuedVengefly";
-                        dataObject[i].currentSpoiler = "spoilerNotRescuedVengefly";
+                        /* textPrefix = dataObject[i].nameNotRescuedVengefly;
+                        textSuffix = dataObject[i].spoilerNotRescuedVengefly; */
+                        dataObject[i].name = dataObject[i].nameNotRescuedVengefly;
+                        dataObject[i].spoiler = dataObject[i].spoilerNotRescuedVengefly;
                     }
                 } else if (playerData.zoteRescuedBuzzer === true) {
                     if (playerData.zoteRescuedDeepnest === false) {
-                        textPrefix = dataObject[i].nameTrappedDeepnest;
-                        textSuffix = dataObject[i].spoilerTrappedDeepnest;
-                        dataObject[i].currentName = "nameTrappedDeepnest";
-                        dataObject[i].currentSpoiler = "spoilerTrappedDeepnest";
+                        /* textPrefix = dataObject[i].nameTrappedDeepnest;
+                        textSuffix = dataObject[i].spoilerTrappedDeepnest; */
+                        dataObject[i].name = dataObject[i].nameTrappedDeepnest;
+                        dataObject[i].spoiler = dataObject[i].spoilerTrappedDeepnest;
+
                     } else if (playerData.zoteRescuedDeepnest === true) {
                         if (playerData.killedZote === false) {
-                            textPrefix = dataObject[i].nameColosseum;
-                            textSuffix = dataObject[i].spoilerColosseum;
-                            dataObject[i].currentName = "nameColosseum";
-                            dataObject[i].currentSpoiler = "spoilerColosseum";
+                            /* textPrefix = dataObject[i].nameColosseum;
+                            textSuffix = dataObject[i].spoilerColosseum; */
+                            dataObject[i].name = dataObject[i].nameColosseum;
+                            dataObject[i].spoiler = dataObject[i].spoilerColosseum;
                         }
                     }
                 }
@@ -1185,28 +1194,36 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
             case "nailsmithStatus":
                 CurrentDataFalse(section, i);
+                dataObject[i].name = dataObject[i].nameDefault;
+                dataObject[i].spoiler = dataObject[i].spoilerDefault;
+
                 if (playerData.nailsmithKilled === true) {
-                    textPrefix = dataObject[i].namePurity;
-                    textSuffix = dataObject[i].spoilerPurity;
-                    dataObject[i].currentName = "namePurity";
-                    dataObject[i].currentSpoiler = "spoilerPurity";
+                    /* textPrefix = dataObject[i].namePurity;
+                    textSuffix = dataObject[i].spoilerPurity; */
+                    dataObject[i].name = dataObject[i].namePurity;
+                    dataObject[i].spoiler = dataObject[i].spoilerPurity;
+
                     CurrentDataTrue(section, i);
+
                 } else if (playerData.nailsmithConvoArt === true) {
-                    textPrefix = dataObject[i].nameHappyCouple;
-                    textSuffix = dataObject[i].spoilerHappyCouple;
-                    dataObject[i].currentName = "nameHappyCouple";
-                    dataObject[i].currentSpoiler = "spoilerHappyCouple";
+                    /* textPrefix = dataObject[i].nameHappyCouple;
+                    textSuffix = dataObject[i].spoilerHappyCouple; */
+                    dataObject[i].name = dataObject[i].nameHappyCouple;
+                    dataObject[i].spoiler = dataObject[i].spoilerHappyCouple;
+
                     CurrentDataTrue(section, i);
+
                 } else if (playerData.nailsmithSpared === true) {
-                    textPrefix = dataObject[i].nameSheoHutWaiting;
-                    textSuffix = dataObject[i].spoilerSheoHutWaiting;
-                    dataObject[i].currentName = "nameSheoHutWaiting";
-                    dataObject[i].currentSpoiler = "spoilerSheoHutWaiting";
+                    /* textPrefix = dataObject[i].nameSheoHutWaiting;
+                    textSuffix = dataObject[i].spoilerSheoHutWaiting; */
+                    dataObject[i].name = dataObject[i].nameSheoHutWaiting;
+                    dataObject[i].spoiler = dataObject[i].spoilerSheoHutWaiting;
+
                 } else {
-                    textPrefix = dataObject[i].nameUpgradeNail;
-                    textSuffix = dataObject[i].spoilerUpgradeNail;
-                    dataObject[i].currentName = "nameUpgradeNail";
-                    dataObject[i].currentSpoiler = "spoilerUpgradeNail";
+                    /* textPrefix = dataObject[i].nameUpgradeNail;
+                    textSuffix = dataObject[i].spoilerUpgradeNail; */
+                    dataObject[i].name = dataObject[i].nameUpgradeNail;
+                    dataObject[i].spoiler = dataObject[i].spoilerUpgradeNail;
                 }
                 break;
 
@@ -1225,7 +1242,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                 if (playerData.hasOwnProperty(i) === false) {
                     CurrentDataBlank(section, i);
                     dataObject[i].disabled = true;
-                    textPrefix = `<del>${dataObject[i].name}</del>`;
+                    // textPrefix = `<del>${dataObject[i].name}</del>`;
                     break;
                 } else if (playerData[i] === true) {
                     CurrentDataTrue(section, i);
@@ -1234,7 +1251,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                 }
         } // end switch (i)
 
-        sFillText += PrepareHTMLString(section, textPrefix, textSuffix, wiki);
+        /* sFillText += PrepareHTMLString(section, textPrefix, textSuffix, wiki); */
     } // end for (let i in dataObject)
 
     // AppendHTML(section, sFillText);

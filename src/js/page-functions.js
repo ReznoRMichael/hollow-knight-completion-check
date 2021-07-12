@@ -412,15 +412,6 @@ function GenerateInnerHTML(db) {
 
                                 break;
 
-                            case "zoteStatus":
-                            case "nailsmithStatus":
-                                if (entries[entry].hasOwnProperty("currentName") && entries[entry].hasOwnProperty("currentSpoiler")) {
-                                    obj.textPrefix = entries[entry][entries[entry].currentName];
-                                    obj.textSuffix = `— ${entries[entry][entries[entry].currentSpoiler]}`;
-                                }
-
-                                break;
-
                             default:
                         }
                     }
