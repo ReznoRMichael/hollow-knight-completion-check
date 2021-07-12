@@ -249,9 +249,10 @@ h6 {
 }
 
 .section-description {
+    text-align: center;
     font-size: 0.8rem;
     margin: 1.3rem;
-    color: rgba(231, 251, 255, 1.0);
+    color: rgba(129, 221, 224, 0.85);
 }
 
 #save-location-input {

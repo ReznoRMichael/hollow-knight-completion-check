@@ -2826,11 +2826,11 @@ var HK = {
       }
     },
 
-    /* ################ Bosses ################### */
+    /* ################### Bosses ################### */
     bosses: {
       h2: "Bosses",
       id: "hk-bosses",
-      description: "Bosses in this section are part of the Completion Percentage set by the game developers. Each boss from this list equals 1% Completion (to a total of 14%).",
+      description: "Bosses in this section are part of the Game Completion Percentage set by the game developers. Each boss from this list equals 1% Completion (to a total of 14%). Note: There are many other bosses in the game (see below).",
       percent: 0,
       maxPercent: 14,
       entries: {
@@ -2916,10 +2916,11 @@ var HK = {
       }
     },
 
-    /* ################ Charms ################### */
+    /* #################### Charms ################### */
     charms: {
       h2: "Charms",
       id: "hk-charms",
+      description: "Each Charm found in the game equals +1% to Game Completion Percentage. Note: 4 new Charms were added to the game in version 1.2.1.0. They are part of the Grimm Troupe Content Pack section below.",
       percent: 0,
       maxPercent: 36,
       // reference: https://radiance.host/apidocs/Charms.html
