@@ -102,6 +102,9 @@ If you like the tool and wish it developed further with more functions and easie
   — **Grimm Troupe Content Pack** changes:  
   ✅ Charm #40 Grimmchild Phase detection (No charm, 1-4) and Carefree Melody detection  
 
+  — **Achievements Essentials** changes:  
+  ✅ Moved Creatures Encountered and Hunter Notes Completed to Game Statistics (because not all 164 entries are required for the achievements)  
+
   — **Achievements Essentials** additions:  
   ✅ Journal: Flukemunga  
 
