@@ -621,38 +621,57 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
                 if (i === "gotCharm_40") {
                     CurrentDataFalse(section, i);
                     dataObject[i].name = dataObject[i].nameDefault;
+                    dataObject[i].spoiler = dataObject[i].spoilerDefault;
+                    dataObject[i].wiki = dataObject[i].wikiDefault;
 
                     switch (playerData.grimmChildLevel) {
 
                         case 1:
                             if (playerData[i] === true) {
                                 dataObject[i].name = dataObject[i].nameGrimmchildP1;
+                                dataObject[i].spoiler = dataObject[i].spoilerGrimmchildP1;
+                                dataObject[i].wiki = dataObject[i].wikiGrimmchild;
+
                                 CurrentDataTrue(section, i);
                             }
 
                             break;
                         case 2:
                             dataObject[i].name = dataObject[i].nameGrimmchildP2;
+                            dataObject[i].spoiler = dataObject[i].spoilerGrimmchildP2;
+                            dataObject[i].wiki = dataObject[i].wikiGrimmchild;
+                                
                             CurrentDataTrue(section, i);
 
                             break;
                         case 3:
                             dataObject[i].name = dataObject[i].nameGrimmchildP3;
+                            dataObject[i].spoiler = dataObject[i].spoilerGrimmchildP3;
+                            dataObject[i].wiki = dataObject[i].wikiGrimmchild;
+                            
                             CurrentDataTrue(section, i);
 
                             break;
                         case 4:
                             dataObject[i].name = dataObject[i].nameGrimmchildP4;
+                            dataObject[i].spoiler = dataObject[i].spoilerGrimmchildP4;
+                            dataObject[i].wiki = dataObject[i].wikiGrimmchild;
+                            
                             CurrentDataTrue(section, i);
 
                             break;
                         case 5:
                             dataObject[i].name = dataObject[i].nameCarefreeMelody;
+                            dataObject[i].spoiler = dataObject[i].spoilerCarefreeMelody;
+                            dataObject[i].wiki = dataObject[i].wikiCarefreeMelody;
+                            
                             CurrentDataTrue(section, i);
 
                             break;
                         default:
                             dataObject[i].name = dataObject[i].nameDefault;
+                            dataObject[i].spoiler = dataObject[i].spoilerDefault;
+                            dataObject[i].wiki = dataObject[i].wikiDefault;
                     }
 
                     break;
