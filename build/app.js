@@ -2798,7 +2798,7 @@ var HK = {
 
     /* ################ Hints ################### */
     hints: {
-      h2: "Elderbug told me...",
+      h2: "Elderbug once told me...",
       id: "hk-hints",
       current: "fireballLevel",
       entries: {
