@@ -1618,6 +1618,15 @@ const HK = {
                     max: 3,
                     wiki: "Arcane_Egg"
                 },
+                /* "id": "Shiny Item (1)",
+                "sceneName": "Abyss_08", */
+                arcaneEggLifebloodCoreRoom: {
+                    name: "Lifeblood Core Room Arcane Egg",
+                    spoiler: "The only missable Relic",
+                    id: "Shiny Item (1)",
+                    sceneName: "Abyss_08",
+                    wiki: "Abyss#Lifeblood_Chamber"
+                },
                 // not ghostCoins
                 geoPool: {
                     name: "Shade Geo",

@@ -985,6 +985,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "mantisVillageFloorLever":
       case "pathOfPainEntrance":
       case "whiteLadyRoom":
+      case "arcaneEggLifebloodCoreRoom":
         FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         break;
 
@@ -4361,6 +4362,16 @@ var HK = {
           spoiler: "Arcane Egg (4 Eggs max, 1 missable)",
           max: 3,
           wiki: "Arcane_Egg"
+        },
+
+        /* "id": "Shiny Item (1)",
+        "sceneName": "Abyss_08", */
+        arcaneEggLifebloodCoreRoom: {
+          name: "Lifeblood Core Room Arcane Egg",
+          spoiler: "The only missable Relic",
+          id: "Shiny Item (1)",
+          sceneName: "Abyss_08",
+          wiki: "Abyss#Lifeblood_Chamber"
         },
         // not ghostCoins
         geoPool: {
