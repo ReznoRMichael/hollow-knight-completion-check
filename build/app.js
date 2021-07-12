@@ -3524,6 +3524,7 @@ var HK = {
     warriorDreams: {
       h2: "Warrior Dreams",
       id: "hk-warriordreams",
+      description: "Special kind of bosses in Hollow Knight, which provide Essence after defeat. The Essence must be collected before each boss will provide +1% to Game Completion Percentage.",
       percent: 0,
       maxPercent: 7,
       entries: {
