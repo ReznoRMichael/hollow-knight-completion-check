@@ -3622,6 +3622,7 @@ var HK = {
     grimmTroupe: {
       h2: "Grimm Troupe Content Pack",
       id: "hk-grimmtroupe",
+      description: "The first Content Pack. Released October 26th, 2017 (1.2.1.0 game update). It added additional +6% to max Game Completion Percentage. Note: It requires making a choice, but no matter what you will choose, you will still get the same +1%.",
       percent: 0,
       maxPercent: 6,
       entries: {
@@ -3666,8 +3667,8 @@ var HK = {
           wiki: "Grimm"
         },
         grimmChildLevel: {
-          name: "Nightmare King or Banish Troupe",
-          nameDefault: "Nightmare King or Banish Troupe",
+          name: "Complete Ritual or Banish Troupe",
+          nameDefault: "Complete Ritual or Banish Troupe",
           nameNightmareKing: "Grimm Troupe Choice: Nightmare King",
           nameBanishment: "Grimm Troupe Choice: Banishment",
           spoiler: "One choice per save file: Dirtmouth or Howling Cliffs",
