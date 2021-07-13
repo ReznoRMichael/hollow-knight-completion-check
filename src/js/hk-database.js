@@ -1782,6 +1782,13 @@ const HK = {
                     sceneName: "White_Palace_09",
                     wiki: "White_Palace#White_Lady.27s_room"
                 },
+                throneRoomLoreTablet: {
+                    name: "White Palace: Secret Room #3",
+                    spoiler: "Throne Room, break right wall",
+                    id: "Breakable Wall Waterways",
+                    sceneName: "White_Palace_09",
+                    wiki: "White_Palace#Throne_room_Lore_Tablet"
+                },
                 /* 
                 Secret Room #3 ?
                 "id": "Breakable Wall Waterways",

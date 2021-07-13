@@ -986,6 +986,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "pathOfPainEntrance":
       case "whiteLadyRoom":
       case "arcaneEggLifebloodCoreRoom":
+      case "throneRoomLoreTablet":
         FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? CurrentDataTrue(section, i) : CurrentDataFalse(section, i);
         break;
 
@@ -4482,6 +4483,13 @@ var HK = {
           id: "Quake Floor",
           sceneName: "White_Palace_09",
           wiki: "White_Palace#White_Lady.27s_room"
+        },
+        throneRoomLoreTablet: {
+          name: "White Palace: Secret Room #3",
+          spoiler: "Throne Room, break right wall",
+          id: "Breakable Wall Waterways",
+          sceneName: "White_Palace_09",
+          wiki: "White_Palace#Throne_room_Lore_Tablet"
         },
 
         /* 

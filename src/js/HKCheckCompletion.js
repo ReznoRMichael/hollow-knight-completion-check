@@ -1090,6 +1090,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
             case "pathOfPainEntrance":
             case "whiteLadyRoom":
             case "arcaneEggLifebloodCoreRoom":
+            case "throneRoomLoreTablet":
                 (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
                 break;
 
