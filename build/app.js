@@ -3622,7 +3622,7 @@ var HK = {
     grimmTroupe: {
       h2: "Grimm Troupe Content Pack",
       id: "hk-grimmtroupe",
-      description: "The first Content Pack. Released October 26th, 2017 (1.2.1.0 game update). It added additional +6% to max Game Completion Percentage. Note: It requires making a choice, but no matter what you will choose, you will still get the same +1%.",
+      description: "The first Content Pack. Released October 26th, 2017 (1.2.1.0 Game Update). It added additional +6% to max Game Completion Percentage. Note: It requires making a choice, but no matter what you will choose, you will still get the same +1%.",
       percent: 0,
       maxPercent: 6,
       entries: {
@@ -3687,6 +3687,7 @@ var HK = {
     lifeblood: {
       h2: "Lifeblood Content Pack",
       id: "hk-lifeblood",
+      description: "The second Content Pack. Released April 20th, 2018 (1.3.1.5 Game Update). Among many quality changes, it added one new boss, which increased the max Game Completion Percentage by +1%.",
       percent: 0,
       maxPercent: 1,
       entries: {
