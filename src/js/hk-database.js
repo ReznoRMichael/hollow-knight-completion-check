@@ -1001,6 +1001,7 @@ const HK = {
         godmaster: {
             h2: "Godmaster Content Pack",
             id: "hk-godmaster",
+            description: "The third Content Pack. Released August 23rd, 2018 (1.4.2.4 Game Update). It added additional +5% to max Game Completion Percentage (up to a total of 112%).",
             percent: 0,
             maxPercent: 5,
             entries: {
