@@ -1789,11 +1789,6 @@ const HK = {
                     sceneName: "White_Palace_09",
                     wiki: "White_Palace#Throne_room_Lore_Tablet"
                 },
-                /* 
-                Secret Room #3 ?
-                "id": "Breakable Wall Waterways",
-                "sceneName": "White_Palace_09",
-                */
                 elderbugGaveFlower: {
                     name: "Delicate Flower: Elderbug",
                     spoiler: "Deliver from Traitor's Child Grave",

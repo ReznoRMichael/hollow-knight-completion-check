@@ -98,7 +98,9 @@ If you like the tool and wish it developed further with more functions and easie
   — Changes/Fixes:  
   ✅ Rewrote and optimized large parts of the code. Should work a bit faster now, especially on mobile devices.  
   ✅ Things that are not yet done are now blurred when Spoiler checkbox is unchecked. Hover over the name to uncover it. (thanks to kanna for the idea and inspiration!)  
+  ✅ All sections now have short text descriptions.  
   ✅ Fixed incorrect display of Soul orbs amount for early HK save file versions (like 1.0.0.6).  
+  ✅ Added Secret data information at the bottom of the tool.  
 
   — **Hints** changes:  
   ✅ change: Made the Hints section stand out more from the rest of the tool.  
@@ -120,6 +122,7 @@ If you like the tool and wish it developed further with more functions and easie
   — **Game Statistics** changes/additions:  
   ✅ addition: World Sense Ability (completion rate viewable in inventory/save slot)  
   ✅ addition: Lifeblood Core Room Arcane Egg (the only missable relic in the game)  
+  ✅ addition: White Palace: Secret Room #3 (Lore Tablet)  
 
 * v1.4.1 2021-03-16:
 
