@@ -87,7 +87,7 @@ const HK = {
                     spoiler: "A mysterious shaman is living in a dwelling, somewhere below the town of Dirtmouth."
                 },
                 hornet1Defeated: {
-                    spoiler: "A skilled protector is guarding some ruins in a lush green forest."
+                    spoiler: "A skilled protector is guarding old ruins in a lush green forest."
                 },
                 hasDash: {
                     spoiler: "An old cloak is lying on a green path near a broken shell."
@@ -1832,6 +1832,7 @@ const HK = {
         godhomeStatistics: {
             h2: "Godhome Statistics",
             id: "hk-godhome-statistics",
+            description: "Everything about Godhome, that didn't fit any other category. Currently a little empty here, but I plan to definitively add more stats in the future.",
             entries: {
                 seenGGWastes: {
                     name: "Tuner Memory",
