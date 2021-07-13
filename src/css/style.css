@@ -123,6 +123,10 @@ h6 {
     font-size: 1.2rem;
     font-weight: 500;
     margin: 0.6rem 0;
+    color: rgba(231, 251, 255, 0.6);
+}
+
+.hall-of-fame {
     color: rgba(0, 255, 220, 0.6);
 }
 
