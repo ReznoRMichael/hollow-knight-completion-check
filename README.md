@@ -111,9 +111,10 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ change: Charm #40 Grimmchild Phase detection (No charm, 1-4), Carefree Melody detection and wiki links  
   ✅ change: Nightmare King/Banishment player save choice detection and wiki links  
 
-  — **Game Completion Essentials** additions:  
+  — **Game Completion Essentials** fixes/additions:  
   ✅ addition: God Tamer (needed for Trial of the Fool %)  
   ✅ addition: Vengefly King (needed for Trial of the Warrior %)  
+  ✅ fix: Pale Ore #2 should now be showing up correctly (thanks to EmrldPhoenix for the bug report!)  
 
   — **Achievements Essentials** changes/additions:  
   ✅ change: Moved Creatures Encountered and Hunter Notes Completed to Game Statistics (not all 164 entries are required for the achievements)  
