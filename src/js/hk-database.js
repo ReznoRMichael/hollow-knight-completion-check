@@ -16,6 +16,10 @@ const HK = {
             id: "hk-intro",
             percent: 0,
             maxPercent: 112,
+            maxPercentDefault: 112,
+            maxPercentBaseGame: 100,
+            maxPercentGrimmTroupe: 106,
+            maxPercentLifeblood: 107,
             entries: {
                 timePlayed: {
                     id: "timePlayed",
@@ -32,6 +36,10 @@ const HK = {
                     name: "Game Completion:",
                     spoiler: 0,
                     spoilerAfter: "(out of 112 %)",
+                    spoilerAfterDefault: "(out of 112 %)",
+                    spoilerAfterBaseGame: "(out of 100 %)",
+                    spoilerAfterGrimmTroupe: "(out of 106 %)",
+                    spoilerAfterLifeblood: "(out of 107 %)",
                 },
                 saveVersion: {
                     id: "saveVersion",

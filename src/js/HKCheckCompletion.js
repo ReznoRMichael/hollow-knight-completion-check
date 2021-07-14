@@ -152,7 +152,7 @@ function HKCheckCompletion(jsonObject) {
 
     // ---------------- Game Completion Status ----------------- //
 
-    CheckCompletionPercent(HK.sections.intro, HKPlayerData.completionPercentage);
+    CheckCompletionPercent(HK.sections.intro, HKPlayerData);
 
     // ---------------- Game Completion Status ----------------- //
 
@@ -336,8 +336,22 @@ function PrepareHTMLString(section, textPrefix = "Unknown Completion Element: ",
  */
 function CurrentDataTrue(section = {}, entry = "") {
 
-    section.percent++;
-    if (section.id === "hk-equipment") section.percent++; // double % for equipment
+    /* Increase section percentage except the Game Status and Hints sections */
+    switch (section.id) {
+
+        case "hk-intro":
+        case "hk-hints":
+            break;
+
+        case "hk-equipment":
+
+            // double % for equipment
+            section.percent += 2;
+            break;
+
+        default:
+            section.percent++;
+    }
 
     section.entries[entry].icon = "green";
 }
@@ -396,14 +410,46 @@ function CheckPlayTime(section, playTime) {
  * @param {object} section ID of the HTML element for data appending
  * @param {number} completionPercentage Number of completion percentage
  */
-function CheckCompletionPercent(section, completionPercentage) {
+function CheckCompletionPercent(section, playerData) {
 
-    (completionPercentage >= 112) ? CurrentDataTrue(section, "gameCompletion"): CurrentDataFalse(section, "gameCompletion");
+    let completionPercentage = Math.round(playerData.completionPercentage);
+    let maxPercent = 0;
+
+    /* Normal (current) game version behaviour: 112% */
+    section.maxPercent = section.maxPercentDefault;
+    maxPercent = section.maxPercentDefault;
+    section.entries.gameCompletion.spoilerAfter = section.entries.gameCompletion.spoilerAfterDefault;
 
     section.percent = completionPercentage;
     section.entries.gameCompletion.spoiler = completionPercentage;
 
-    let textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + section.maxPercent + " %)";
+    /* Lifeblood behaviour: 107% */
+    if (!playerData.hasOwnProperty("hasGodfinder")) {
+
+        section.maxPercent = section.maxPercentLifeblood;
+        maxPercent = section.maxPercentLifeblood;
+        section.entries.gameCompletion.spoilerAfter = section.entries.gameCompletion.spoilerAfterLifeblood;
+    }
+
+    /* Grimm Troupe bahaviour: 106% */
+    if (!playerData.hasOwnProperty("killedHiveKnight")) {
+
+        section.maxPercent = section.maxPercentGrimmTroupe;
+        maxPercent = section.maxPercentGrimmTroupe;
+        section.entries.gameCompletion.spoilerAfter = section.entries.gameCompletion.spoilerAfterGrimmTroupe;
+    }
+
+    /* Base Game behaviour with no Content Packs: 100% */
+    if (!playerData.hasOwnProperty("gotCharm_37")) {
+
+        section.maxPercent = section.maxPercentBaseGame;
+        maxPercent = section.maxPercentBaseGame;
+        section.entries.gameCompletion.spoilerAfter = section.entries.gameCompletion.spoilerAfterBaseGame;
+    }
+
+    (completionPercentage >= maxPercent) ? CurrentDataTrue(section, "gameCompletion"): CurrentDataFalse(section, "gameCompletion");
+
+    /* let textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + section.maxPercent + " %)"; */
     // document.getElementById(section.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }
 
@@ -666,7 +712,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
                             dataObject[i].name = dataObject[i].nameGrimmchildP2;
                             dataObject[i].spoiler = dataObject[i].spoilerGrimmchildP2;
                             dataObject[i].wiki = dataObject[i].wikiGrimmchild;
-                                
+
                             CurrentDataTrue(section, i);
 
                             break;
@@ -674,7 +720,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
                             dataObject[i].name = dataObject[i].nameGrimmchildP3;
                             dataObject[i].spoiler = dataObject[i].spoilerGrimmchildP3;
                             dataObject[i].wiki = dataObject[i].wikiGrimmchild;
-                            
+
                             CurrentDataTrue(section, i);
 
                             break;
@@ -682,7 +728,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
                             dataObject[i].name = dataObject[i].nameGrimmchildP4;
                             dataObject[i].spoiler = dataObject[i].spoilerGrimmchildP4;
                             dataObject[i].wiki = dataObject[i].wikiGrimmchild;
-                            
+
                             CurrentDataTrue(section, i);
 
                             break;
@@ -690,7 +736,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
                             dataObject[i].name = dataObject[i].nameCarefreeMelody;
                             dataObject[i].spoiler = dataObject[i].spoilerCarefreeMelody;
                             dataObject[i].wiki = dataObject[i].wikiCarefreeMelody;
-                            
+
                             CurrentDataTrue(section, i);
 
                             break;

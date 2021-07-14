@@ -145,7 +145,7 @@ function HKCheckCompletion(jsonObject) {
 
   CheckPlayTime(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.playTime); // ---------------- Game Completion Status ----------------- //
 
-  CheckCompletionPercent(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.completionPercentage); // ---------------- Game Completion Status ----------------- //
+  CheckCompletionPercent(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData); // ---------------- Game Completion Status ----------------- //
 
   CheckSaveFileVersion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.version); // ---------------- Fleur Divide ----------------- //
   // AppendHTML(HK.sections.intro, FLEUR_DIVIDE);
@@ -263,8 +263,21 @@ function PrepareHTMLString(section) {
 function CurrentDataTrue() {
   var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var entry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
-  section.percent++;
-  if (section.id === "hk-equipment") section.percent++; // double % for equipment
+
+  /* Increase section percentage except the Game Status and Hints sections */
+  switch (section.id) {
+    case "hk-intro":
+    case "hk-hints":
+      break;
+
+    case "hk-equipment":
+      // double % for equipment
+      section.percent += 2;
+      break;
+
+    default:
+      section.percent++;
+  }
 
   section.entries[entry].icon = "green";
 }
@@ -323,11 +336,43 @@ function CheckPlayTime(section, playTime) {
  */
 
 
-function CheckCompletionPercent(section, completionPercentage) {
-  completionPercentage >= 112 ? CurrentDataTrue(section, "gameCompletion") : CurrentDataFalse(section, "gameCompletion");
+function CheckCompletionPercent(section, playerData) {
+  var completionPercentage = Math.round(playerData.completionPercentage);
+  var maxPercent = 0;
+  /* Normal (current) game version behaviour: 112% */
+
+  section.maxPercent = section.maxPercentDefault;
+  maxPercent = section.maxPercentDefault;
+  section.entries.gameCompletion.spoilerAfter = section.entries.gameCompletion.spoilerAfterDefault;
   section.percent = completionPercentage;
   section.entries.gameCompletion.spoiler = completionPercentage;
-  var textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + section.maxPercent + " %)"; // document.getElementById(section.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
+  /* Lifeblood behaviour: 107% */
+
+  if (!playerData.hasOwnProperty("hasGodfinder")) {
+    section.maxPercent = section.maxPercentLifeblood;
+    maxPercent = section.maxPercentLifeblood;
+    section.entries.gameCompletion.spoilerAfter = section.entries.gameCompletion.spoilerAfterLifeblood;
+  }
+  /* Grimm Troupe bahaviour: 106% */
+
+
+  if (!playerData.hasOwnProperty("killedHiveKnight")) {
+    section.maxPercent = section.maxPercentGrimmTroupe;
+    maxPercent = section.maxPercentGrimmTroupe;
+    section.entries.gameCompletion.spoilerAfter = section.entries.gameCompletion.spoilerAfterGrimmTroupe;
+  }
+  /* Base Game behaviour with no Content Packs: 100% */
+
+
+  if (!playerData.hasOwnProperty("gotCharm_37")) {
+    section.maxPercent = section.maxPercentBaseGame;
+    maxPercent = section.maxPercentBaseGame;
+    section.entries.gameCompletion.spoilerAfter = section.entries.gameCompletion.spoilerAfterBaseGame;
+  }
+
+  completionPercentage >= maxPercent ? CurrentDataTrue(section, "gameCompletion") : CurrentDataFalse(section, "gameCompletion");
+  /* let textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + section.maxPercent + " %)"; */
+  // document.getElementById(section.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }
 /**
  * Reads the "version" string from the save file and appends it to the selected div ID element
@@ -2692,6 +2737,10 @@ var HK = {
       id: "hk-intro",
       percent: 0,
       maxPercent: 112,
+      maxPercentDefault: 112,
+      maxPercentBaseGame: 100,
+      maxPercentGrimmTroupe: 106,
+      maxPercentLifeblood: 107,
       entries: {
         timePlayed: {
           id: "timePlayed",
@@ -2707,7 +2756,11 @@ var HK = {
           icon: "red",
           name: "Game Completion:",
           spoiler: 0,
-          spoilerAfter: "(out of 112 %)"
+          spoilerAfter: "(out of 112 %)",
+          spoilerAfterDefault: "(out of 112 %)",
+          spoilerAfterBaseGame: "(out of 100 %)",
+          spoilerAfterGrimmTroupe: "(out of 106 %)",
+          spoilerAfterLifeblood: "(out of 107 %)"
         },
         saveVersion: {
           id: "saveVersion",
@@ -5580,7 +5633,7 @@ function CompletionFill(section) {
 
 
       if (section.id != "hk-intro") cp += "/";
-      fillText = "<div class='percent-box".concat(cl, "'>").concat(section.id === "hk-intro" ? cp : cp + section.maxPercent, "%</div>");
+      fillText = "<div class='percent-box".concat(cl, "'>").concat(section.id === "hk-intro" ? cp : "".concat(cp).concat(section.maxPercent), "%</div>");
     }
 
   return "\t".concat(h2id).concat(h2).concat(fillText, "</h2>\n");
@@ -5595,8 +5648,7 @@ function SingleEntryFill(obj) {
       let iconRed = SYMBOL_FALSE;
       let iconClock = SYMBOL_CLOCK;
       let iconNull = SYMBOL_EMPTY;
-  
-      let textPrefix = "";
+        let textPrefix = "";
       let textSuffix = "";
       let textFill = "";
       let Img = "";
@@ -5609,8 +5661,7 @@ function SingleEntryFill(obj) {
       let geoNormalImage = `<img src='${GEO_IMAGE}' class='geo-symbol' alt='geo symbol image' title='Geo'>`;
       let geoShadeImage = `<img src='${GEO_SHADE_IMAGE}' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'>`;
       let wiki = "";
-  
-      let div = `<div class='single-entry'>`;
+        let div = `<div class='single-entry'>`;
       let divFlex = `<div class='flex-container align-center'>`;
       let b = ["<b>", "</b>"];
       let p = "<span class='p-left-small'></span>";
@@ -5621,8 +5672,7 @@ function SingleEntryFill(obj) {
       if (entry.hasOwnProperty("icon")) {
           
           switch (entry.icon) {
-  
-              case "clock":
+                case "clock":
                   icon = iconClock;
                   break;
               case "green":
@@ -5637,132 +5687,99 @@ function SingleEntryFill(obj) {
       } else {
           icon = iconRed;
       }
-  
-      if (entry.hasOwnProperty("name")) {
+        if (entry.hasOwnProperty("name")) {
           textPrefix = entry.name;
       }
-  
-      if (entry.hasOwnProperty("spoiler")) {
+        if (entry.hasOwnProperty("spoiler")) {
           textSuffix = entry.spoiler;
       }
-  
-      if (entry.hasOwnProperty("wiki")) {
+        if (entry.hasOwnProperty("wiki")) {
           wiki = entry.wiki;
       }
-  
-      if (!textPrefix.length) b = ["", ""];
+        if (!textPrefix.length) b = ["", ""];
       if (wiki.length) b = [`<a class="wiki" href="${WIKI_LINK}${wiki}" target="_blank">`, "</a>"];
-  
-      // #################### Different behaviour depending on the section #######################
-  
-      switch (section) {
-  
-          case "intro":
+        // #################### Different behaviour depending on the section #######################
+        switch (section) {
+            case "intro":
               b = ["", ""];
               span = ["<b>", "</b>"];
-  
-              // Different text and images for each entry in the "Game Status" section
-  
-              switch (entry.id) {
+                // Different text and images for each entry in the "Game Status" section
+                switch (entry.id) {
                   case "gameCompletion":
                       textSuffix = `${entry.spoiler} %`;
-  
-                      break;
-  
-                  case "health":
+                        break;
+                    case "health":
                       div = divFlex;
                       span = ["", ""];
-  
-                      (entry.permadeathMode) ? Img = maskSteel: Img = maskNormal;
-  
-                      for (let i = 0, total = entry.amountTotal; i < total; i++) {
+                        (entry.permadeathMode) ? Img = maskSteel: Img = maskNormal;
+                        for (let i = 0, total = entry.amountTotal; i < total; i++) {
                           textSuffix += Img;
                       }
-  
-                      textSuffix += `${p}<sup>(${entry.amountTotal})</sup>`;
-  
-                      p = "";
+                        textSuffix += `${p}<sup>(${entry.amountTotal})</sup>`;
+                        p = "";
                       break;
-  
-                  case "soul":
+                    case "soul":
                       div = divFlex;
                       span = ["", ""];
                       Img = soulNormal;
-  
-                      for (let i = 0, total = Math.round(entry.amountTotal / 33); i < total; i++) {
+                        for (let i = 0, total = Math.round(entry.amountTotal / 33); i < total; i++) {
                           textSuffix += Img;
                       }
-  
-                      textSuffix += `${p}<sup>(${Math.round(entry.amountTotal / 33)})</sup>`;
-  
-                      p = "";
+                        textSuffix += `${p}<sup>(${Math.round(entry.amountTotal / 33)})</sup>`;
+                        p = "";
                       break;
-  
-                  case "notches":
+                    case "notches":
                       div = divFlex;
                       span = ["", ""];
-  
-                      // First, check filled (used) notches and fill them (skips if no filled notches)
+                        // First, check filled (used) notches and fill them (skips if no filled notches)
                       if (entry.amountFilled > 0) {
                           for (let i = 0, total = entry.amountFilled; i < total; i++) {
                               textSuffix += notchFilledImage;
                           }
                       }
-  
-                      // Second, check overcharmed notches and fill them (skips if player is not overcharmed)
+                        // Second, check overcharmed notches and fill them (skips if player is not overcharmed)
                       if (entry.amountOvercharmed > 0) {
                           for (let i = 0, total = entry.amountOvercharmed; i < total; i++) {
                               textSuffix += notchOvercharmedImage;
                           }
                       }
-  
-                      // Last, fill all unused notches
+                        // Last, fill all unused notches
                       if (entry.amountUnused > 0) {
                           for (let i = 0, total = entry.amountUnused; i < total; i++) {
                               textSuffix += notchNormalImage;
                           }
                       }
-  
-                      textSuffix += `${p}<sup>(${entry.amountTotal})</sup>`;
-  
-                      break;
-  
-                  case "geo":
+                        textSuffix += `${p}<sup>(${entry.amountTotal})</sup>`;
+                        break;
+                    case "geo":
                       div = divFlex;
                       span = ["", ""];
-  
-                      textSuffix += `${geoNormalImage}<b>${entry.amount}</b>`;
+                        textSuffix += `${geoNormalImage}<b>${entry.amount}</b>`;
                       // Show Shade Geo value and image only if Shade has at least 1 Geo on it
                       if (entry.amountShade > 0) textSuffix += `${p}+${geoShadeImage}<b>${entry.amountShade}</b>`;
-  
-                      // Show also total Geo (Geo + Shade Geo) if player has at least 1 geo alongside the shade geo
+                        // Show also total Geo (Geo + Shade Geo) if player has at least 1 geo alongside the shade geo
                       if (entry.amount > 0 && entry.amountShade > 0) textSuffix += `${p}=${p}<b>${entry.amountTotal}</b>`;
                       
                       p = "";
                       break;
-  
-                  default:
+                    default:
               }
-  
-              // Optimized only for the "intro" section!
+                // Optimized only for the "intro" section!
               if (entry.hasOwnProperty("spoilerAfter")) {
                   spoilerAfter = `</b> ${entry.spoilerAfter}`;
                   span[1] = "";
               }
               break;
-  
-          case "hints":
+            case "hints":
               b = ["", ""];
               span = ["<span>", "</span>"];
               icon = iconNull;
               break;
           
           default:
-  
-              span = ["<span class='spoiler-span'>", "</span>"];
+                span = ["<span class='spoiler-span'>", "</span>"];
               spoiler = ["<span class='spoiler-text'>", "</span>"];
-  
-              if (entry.hasOwnProperty("amount")) {
+                if (entry.hasOwnProperty("amount")) {
                   if (entry.hasOwnProperty("disabled")) {
                       if (entry.disabled !== true) {
                           textPrefix += `: ${entry.amount}`;
@@ -5771,35 +5788,26 @@ function SingleEntryFill(obj) {
                       textPrefix += `: ${entry.amount}`;
                   }
               }
-  
-              if (entry.hasOwnProperty("amountTotal")) {
+                if (entry.hasOwnProperty("amountTotal")) {
                   textPrefix += ` / ${entry.amountTotal}`;
               }
-  
-              if (entry.hasOwnProperty("id")) {
-  
-                  switch (entry.id) {
-  
-                      case "geoRocks":
+                if (entry.hasOwnProperty("id")) {
+                    switch (entry.id) {
+                        case "geoRocks":
                       case "itemsDiscovered":
                           textPrefix += `: ${entry.notActivated} | ${entry.activated} | ${entry.discoveredTotal}`;
-  
-                          break;
-  
-                      case "zoteStatus":
+                            break;
+                        case "zoteStatus":
                       case "nailsmithStatus":
                           if (entry.hasOwnProperty("currentName") && entry.hasOwnProperty("currentSpoiler")) {
                               textPrefix = entry[entry.currentName];
                               textSuffix = entry[entry.currentSpoiler];
                           }
-  
-                          break;
-  
-                      default:
+                            break;
+                        default:
                   }
               }
-  
-              if (entry.hasOwnProperty("disabled")) {
+                if (entry.hasOwnProperty("disabled")) {
                   if (entry.disabled === true) {
                       textPrefix = `<del>${textPrefix}</del>`;
                   }
@@ -5808,8 +5816,7 @@ function SingleEntryFill(obj) {
               if (textSuffix.length && textPrefix.length) textSuffix = `— ${textSuffix}`;
               if (textPrefix.includes("<del>")) textSuffix = `<del>${textSuffix}</del>`;
       }
-  
-   */
+     */
 
   /* return [
       div,
