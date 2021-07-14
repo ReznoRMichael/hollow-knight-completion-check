@@ -5388,7 +5388,15 @@ function GenerateInnerHTML(db) {
 
 
         for (var _entry in entries) {
+          obj.p = "<span class='p-left-small'></span>";
+          obj.span = ["<span class='spoiler-span blurred'>", "</span>"];
+          obj.spoiler = ["<span class='spoiler-text'>", "</span>"];
+          obj.div = div;
+          obj.textPrefix = entries[_entry].name;
+          obj.textSuffix = "\u2014 ".concat(entries[_entry].spoiler);
+          obj.wiki = entries[_entry].wiki;
           /* -------- Icons (next to each entry) --------- */
+
           if (entries[_entry].hasOwnProperty("icon")) {
             switch (entries[_entry].icon) {
               case "clock":
@@ -5397,6 +5405,7 @@ function GenerateInnerHTML(db) {
 
               case "green":
                 obj.icon = iconGreen;
+                obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
               case "red":
@@ -5409,11 +5418,8 @@ function GenerateInnerHTML(db) {
           } else {
             obj.icon = iconRed;
           }
-
-          obj.textPrefix = entries[_entry].name;
-          obj.textSuffix = "\u2014 ".concat(entries[_entry].spoiler);
-          obj.wiki = entries[_entry].wiki;
           /* assign the appropriate spoiler class name depending on the completion check (for blurring names) */
+
 
           if (entries[_entry].hasOwnProperty("icon")) {
             switch (entries[_entry].icon) {
@@ -5429,11 +5435,7 @@ function GenerateInnerHTML(db) {
             obj.iconClass = "";
           }
 
-          obj.p = "<span class='p-left-small'></span>";
           obj.b = ["<a class=\"wiki".concat(obj.iconClass, "\" href=\"").concat(WIKI_LINK).concat(obj.wiki, "\" target=\"_blank\">"), "</a>"];
-          obj.span = ["<span class='spoiler-span'>", "</span>"];
-          obj.spoiler = ["<span class='spoiler-text'>", "</span>"];
-          obj.div = div;
 
           if (entries[_entry].hasOwnProperty("amount")) {
             if (entries[_entry].hasOwnProperty("disabled")) {

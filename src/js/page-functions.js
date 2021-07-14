@@ -364,6 +364,14 @@ function GenerateInnerHTML(db) {
 
                 for (let entry in entries) {
 
+                    obj.p = "<span class='p-left-small'></span>";
+                    obj.span = ["<span class='spoiler-span blurred'>", "</span>"];
+                    obj.spoiler = ["<span class='spoiler-text'>", "</span>"];
+                    obj.div = div;
+                    obj.textPrefix = entries[entry].name;
+                    obj.textSuffix = `— ${entries[entry].spoiler}`;
+                    obj.wiki = entries[entry].wiki;
+
                     /* -------- Icons (next to each entry) --------- */
                     if (entries[entry].hasOwnProperty("icon")) {
         
@@ -372,22 +380,24 @@ function GenerateInnerHTML(db) {
                             case "clock":
                                 obj.icon = iconClock;
                                 break;
+
                             case "green":
                                 obj.icon = iconGreen;
+
+                                /* -------- Prevents blurring when a player has already completed the entry --------- */
+                                obj.span[0] = "<span class='spoiler-span-green'>";
                                 break;
+
                             case "red":
                                 obj.icon = iconRed;
                                 break;
+
                             default:
                                 obj.icon = iconNull;
                         }
                     } else {
                         obj.icon = iconRed;
                     }
-
-                    obj.textPrefix = entries[entry].name;
-                    obj.textSuffix = `— ${entries[entry].spoiler}`;
-                    obj.wiki = entries[entry].wiki;
 
                     /* assign the appropriate spoiler class name depending on the completion check (for blurring names) */
                     if (entries[entry].hasOwnProperty("icon")) {
@@ -405,11 +415,7 @@ function GenerateInnerHTML(db) {
                         obj.iconClass = "";
                     }
 
-                    obj.p = "<span class='p-left-small'></span>";
                     obj.b = [`<a class="wiki${obj.iconClass}" href="${WIKI_LINK}${obj.wiki}" target="_blank">`, "</a>"]; 
-                    obj.span = ["<span class='spoiler-span'>", "</span>"];
-                    obj.spoiler = ["<span class='spoiler-text'>", "</span>"];
-                    obj.div = div;
 
                     if (entries[entry].hasOwnProperty("amount")) {
                         if (entries[entry].hasOwnProperty("disabled")) {
