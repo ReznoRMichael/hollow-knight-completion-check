@@ -6083,51 +6083,7 @@ document.getElementById("save-location-input").addEventListener("mouseout", func
 
 document.getElementById("checkbox-hints").addEventListener("click", CheckboxHintsToggle, false);
 document.getElementById("checkbox-spoilers").addEventListener("click", CheckboxSpoilersToggle, false);
-/* Drag and drop functions */
-
-var dropArea = document.getElementById("drop-area");
-/* Prevent default browser functions from firing */
-
-["dragenter", "dragover", "dragleave", "drop"].forEach(function (eventName) {
-  dropArea.addEventListener(eventName, preventDefaults, false);
-});
-
-function preventDefaults(e) {
-  e.preventDefault();
-  e.stopPropagation();
-}
-/* Make the user know that they hover over the right drag and drop area */
-
-
-["dragenter", "dragover"].forEach(function (eventName) {
-  dropArea.addEventListener(eventName, highlight, false);
-});
-["dragleave", "drop"].forEach(function (eventName) {
-  dropArea.addEventListener(eventName, unhighlight, false);
-});
-
-function highlight(e) {
-  dropArea.classList.add("highlight");
-}
-
-function unhighlight(e) {
-  dropArea.classList.remove("highlight");
-}
-/* What to do with the file(s) */
-
-
-dropArea.addEventListener("drop", handleDrop, false);
-
-function handleDrop(e) {
-  var dt = e.dataTransfer;
-  var files = dt.files;
-  console.log(e);
-  console.log(dt);
-  console.log(files);
-  (0,_LoadSaveFile_js__WEBPACK_IMPORTED_MODULE_1__.LoadSaveFile)(dt, new Date());
-}
 /* ------------------------- Exports ------------------------------- */
-
 
 
 
