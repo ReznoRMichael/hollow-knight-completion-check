@@ -343,6 +343,22 @@ input[type="file"] {
     height: 5.65rem;
 }
 
+#drop-area {
+    position: fixed;
+    width: 90%;
+    height: 90%;
+    left: 5%;
+    top: 5%;
+    background-color: rgba(38, 189, 38, 0.5);
+    border: 0.3rem dashed rgba(38, 189, 38, 0.85);
+    border-radius: 1rem;
+    z-index: 9999;
+}
+
+#drop-area.highlight {
+    border-color: rgb(61, 228, 61);
+}
+
 .hint {
     display: block;
     font-style: italic;

@@ -37,6 +37,7 @@ const ECB_STREAM_CIPHER = new aesjs.ModeOfOperation.ecb(AES_KEY); // create a ne
 // eslint-disable-next-line no-unused-vars
 function LoadSaveFile(input, time) {
 
+    console.log(input);
     const inputFileList = input.files;
     // console.info("Input length: " + input.files.length)
     // Cease further processing if user canceled the file input dialog
@@ -207,3 +208,7 @@ document.getElementById("save-area-file").addEventListener("change", (event) => 
 document.getElementById("save-area-file").addEventListener("click", (mouseEvent) => {
     mouseEvent.target.value = "";
 });
+
+export {
+    LoadSaveFile
+};

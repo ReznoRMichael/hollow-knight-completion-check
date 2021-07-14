@@ -1715,6 +1715,9 @@ document.getElementById("save-area-read").addEventListener("click", function () 
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "LoadSaveFile": () => (/* binding */ LoadSaveFile)
+/* harmony export */ });
 /* harmony import */ var _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HKCheckCompletion.js */ "./src/js/HKCheckCompletion.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -1755,6 +1758,7 @@ var ECB_STREAM_CIPHER = new aesjs.ModeOfOperation.ecb(AES_KEY); // create a new 
 // eslint-disable-next-line no-unused-vars
 
 function LoadSaveFile(input, time) {
+  console.log(input);
   var inputFileList = input.files; // console.info("Input length: " + input.files.length)
   // Cease further processing if user canceled the file input dialog
 
@@ -1936,6 +1940,7 @@ document.getElementById("save-area-file").addEventListener("change", function (e
 document.getElementById("save-area-file").addEventListener("click", function (mouseEvent) {
   mouseEvent.target.value = "";
 });
+
 
 /***/ }),
 
@@ -5114,14 +5119,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "StorageAvailable": () => (/* binding */ StorageAvailable)
 /* harmony export */ });
 /* harmony import */ var _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HKCheckCompletion.js */ "./src/js/HKCheckCompletion.js");
-/* harmony import */ var _img_health_mask_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/health-mask.png */ "./src/img/health-mask.png");
-/* harmony import */ var _img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/health-mask-steel.png */ "./src/img/health-mask-steel.png");
-/* harmony import */ var _img_soul_orb_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/soul-orb.png */ "./src/img/soul-orb.png");
-/* harmony import */ var _img_notch_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/notch.png */ "./src/img/notch.png");
-/* harmony import */ var _img_notch_filled_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/notch-filled.png */ "./src/img/notch-filled.png");
-/* harmony import */ var _img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/notch-overcharmed.png */ "./src/img/notch-overcharmed.png");
-/* harmony import */ var _img_geo_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/geo.png */ "./src/img/geo.png");
-/* harmony import */ var _img_geo_shade_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/geo-shade.png */ "./src/img/geo-shade.png");
+/* harmony import */ var _LoadSaveFile_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./LoadSaveFile.js */ "./src/js/LoadSaveFile.js");
+/* harmony import */ var _img_health_mask_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/health-mask.png */ "./src/img/health-mask.png");
+/* harmony import */ var _img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/health-mask-steel.png */ "./src/img/health-mask-steel.png");
+/* harmony import */ var _img_soul_orb_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/soul-orb.png */ "./src/img/soul-orb.png");
+/* harmony import */ var _img_notch_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/notch.png */ "./src/img/notch.png");
+/* harmony import */ var _img_notch_filled_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/notch-filled.png */ "./src/img/notch-filled.png");
+/* harmony import */ var _img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/notch-overcharmed.png */ "./src/img/notch-overcharmed.png");
+/* harmony import */ var _img_geo_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/geo.png */ "./src/img/geo.png");
+/* harmony import */ var _img_geo_shade_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/geo-shade.png */ "./src/img/geo-shade.png");
+
  // ---------------- Load image files (necessary for Webpack) ----------------- //
 
 
@@ -5264,14 +5271,14 @@ function GenerateInnerHTML(db) {
   var finalHTMLFill = "";
   var textFill = "";
   var Img = "";
-  var maskNormal = "<img src='".concat(_img_health_mask_png__WEBPACK_IMPORTED_MODULE_1__, "' class='health-mask' alt='health mask image' title='Health Mask'>");
-  var maskSteel = "<img src='".concat(_img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_2__, "' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>");
-  var soulNormal = "<img src='".concat(_img_soul_orb_png__WEBPACK_IMPORTED_MODULE_3__, "' class='soul-orb' alt='soul orb image' title='Single Soul Orb (one spell cast)'>");
-  var notchNormalImage = "<img src='".concat(_img_notch_png__WEBPACK_IMPORTED_MODULE_4__, "' class='notch' alt='notch image' title='Charm Notch (Free)'>");
-  var notchFilledImage = "<img src='".concat(_img_notch_filled_png__WEBPACK_IMPORTED_MODULE_5__, "' class='notch' alt='notch image' title='Charm Notch (Used)'>");
-  var notchOvercharmedImage = "<img src='".concat(_img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_6__, "' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>");
-  var geoNormalImage = "<img src='".concat(_img_geo_png__WEBPACK_IMPORTED_MODULE_7__, "' class='geo-symbol' alt='geo symbol image' title='Geo'>");
-  var geoShadeImage = "<img src='".concat(_img_geo_shade_png__WEBPACK_IMPORTED_MODULE_8__, "' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'>");
+  var maskNormal = "<img src='".concat(_img_health_mask_png__WEBPACK_IMPORTED_MODULE_2__, "' class='health-mask' alt='health mask image' title='Health Mask'>");
+  var maskSteel = "<img src='".concat(_img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_3__, "' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>");
+  var soulNormal = "<img src='".concat(_img_soul_orb_png__WEBPACK_IMPORTED_MODULE_4__, "' class='soul-orb' alt='soul orb image' title='Single Soul Orb (one spell cast)'>");
+  var notchNormalImage = "<img src='".concat(_img_notch_png__WEBPACK_IMPORTED_MODULE_5__, "' class='notch' alt='notch image' title='Charm Notch (Free)'>");
+  var notchFilledImage = "<img src='".concat(_img_notch_filled_png__WEBPACK_IMPORTED_MODULE_6__, "' class='notch' alt='notch image' title='Charm Notch (Used)'>");
+  var notchOvercharmedImage = "<img src='".concat(_img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_7__, "' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>");
+  var geoNormalImage = "<img src='".concat(_img_geo_png__WEBPACK_IMPORTED_MODULE_8__, "' class='geo-symbol' alt='geo symbol image' title='Geo'>");
+  var geoShadeImage = "<img src='".concat(_img_geo_shade_png__WEBPACK_IMPORTED_MODULE_9__, "' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'>");
   var div = "<div class='single-entry'>";
   var divFlex = "<div class='flex-container align-center'>";
   /* ############################## create all main entries ############################## */
@@ -6076,7 +6083,51 @@ document.getElementById("save-location-input").addEventListener("mouseout", func
 
 document.getElementById("checkbox-hints").addEventListener("click", CheckboxHintsToggle, false);
 document.getElementById("checkbox-spoilers").addEventListener("click", CheckboxSpoilersToggle, false);
+/* Drag and drop functions */
+
+var dropArea = document.getElementById("drop-area");
+/* Prevent default browser functions from firing */
+
+["dragenter", "dragover", "dragleave", "drop"].forEach(function (eventName) {
+  dropArea.addEventListener(eventName, preventDefaults, false);
+});
+
+function preventDefaults(e) {
+  e.preventDefault();
+  e.stopPropagation();
+}
+/* Make the user know that they hover over the right drag and drop area */
+
+
+["dragenter", "dragover"].forEach(function (eventName) {
+  dropArea.addEventListener(eventName, highlight, false);
+});
+["dragleave", "drop"].forEach(function (eventName) {
+  dropArea.addEventListener(eventName, unhighlight, false);
+});
+
+function highlight(e) {
+  dropArea.classList.add("highlight");
+}
+
+function unhighlight(e) {
+  dropArea.classList.remove("highlight");
+}
+/* What to do with the file(s) */
+
+
+dropArea.addEventListener("drop", handleDrop, false);
+
+function handleDrop(e) {
+  var dt = e.dataTransfer;
+  var files = dt.files;
+  console.log(e);
+  console.log(dt);
+  console.log(files);
+  (0,_LoadSaveFile_js__WEBPACK_IMPORTED_MODULE_1__.LoadSaveFile)(dt, new Date());
+}
 /* ------------------------- Exports ------------------------------- */
+
 
 
 

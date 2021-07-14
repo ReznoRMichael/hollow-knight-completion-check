@@ -2,6 +2,10 @@ import {
     benchmarkTimes
 } from "./HKCheckCompletion.js";
 
+import {
+    LoadSaveFile
+} from "./LoadSaveFile.js";
+
 // ---------------- Load image files (necessary for Webpack) ----------------- //
 
 import HEALTH_MASK_IMAGE from "../img/health-mask.png";
@@ -1077,6 +1081,51 @@ document.getElementById("save-location-input").addEventListener("mouseout", () =
 // Checkboxes functions
 document.getElementById("checkbox-hints").addEventListener("click", CheckboxHintsToggle, false);
 document.getElementById("checkbox-spoilers").addEventListener("click", CheckboxSpoilersToggle, false);
+
+/* Drag and drop functions */
+
+let dropArea = document.getElementById("drop-area");
+
+/* Prevent default browser functions from firing */
+["dragenter", "dragover", "dragleave", "drop"].forEach(eventName => {
+    dropArea.addEventListener(eventName, preventDefaults, false);
+});
+
+function preventDefaults(e) {
+    e.preventDefault();
+    e.stopPropagation();
+}
+
+/* Make the user know that they hover over the right drag and drop area */
+["dragenter", "dragover"].forEach(eventName => {
+    dropArea.addEventListener(eventName, highlight, false);
+});
+
+["dragleave", "drop"].forEach(eventName => {
+    dropArea.addEventListener(eventName, unhighlight, false);
+});
+
+function highlight(e) {
+    dropArea.classList.add("highlight");
+}
+
+function unhighlight(e) {
+    dropArea.classList.remove("highlight");
+}
+
+/* What to do with the file(s) */
+dropArea.addEventListener("drop", handleDrop, false);
+
+function handleDrop(e) {
+  let dt = e.dataTransfer;
+  let files = dt.files;
+
+  console.log(e);
+  console.log(dt);
+  console.log(files);
+
+  LoadSaveFile(dt, new Date());
+}
 
 /* ------------------------- Exports ------------------------------- */
 
