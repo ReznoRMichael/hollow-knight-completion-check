@@ -901,7 +901,7 @@ function CheckboxSpoilersToggle(param = "none") {
     switch (param) {
         case "hide":
             for (let i = 0; i < length; i++) {
-                allClassElements[i].classList.add("hidden");
+                allClassElements[i].classList.add("blurred");
             }
 
             for (let i = 0; i < lengthRed; i++) {
@@ -919,7 +919,7 @@ function CheckboxSpoilersToggle(param = "none") {
 
         case "show":
             for (let i = 0; i < length; i++) {
-                allClassElements[i].classList.remove("hidden");
+                allClassElements[i].classList.remove("blurred");
             }
 
             for (let i = 0; i < lengthRed; i++) {
@@ -940,7 +940,7 @@ function CheckboxSpoilersToggle(param = "none") {
             if (checkboxId.checked === false) {
 
                 for (let i = 0; i < length; i++) {
-                    allClassElements[i].classList.add("hidden");
+                    allClassElements[i].classList.add("blurred");
                 }
 
                 for (let i = 0; i < lengthRed; i++) {
@@ -958,7 +958,7 @@ function CheckboxSpoilersToggle(param = "none") {
             // This runs when the checkbox is checked
             else {
                 for (let i = 0; i < length; i++) {
-                    allClassElements[i].classList.remove("hidden");
+                    allClassElements[i].classList.remove("blurred");
                 }
 
                 for (let i = 0; i < lengthRed; i++) {

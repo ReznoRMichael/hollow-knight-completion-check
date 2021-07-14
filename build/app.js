@@ -4491,12 +4491,6 @@ var HK = {
           sceneName: "White_Palace_09",
           wiki: "White_Palace#Throne_room_Lore_Tablet"
         },
-
-        /* 
-        Secret Room #3 ?
-        "id": "Breakable Wall Waterways",
-        "sceneName": "White_Palace_09",
-        */
         elderbugGaveFlower: {
           name: "Delicate Flower: Elderbug",
           spoiler: "Deliver from Traitor's Child Grave",
@@ -5909,7 +5903,7 @@ function CheckboxSpoilersToggle() {
   switch (param) {
     case "hide":
       for (var i = 0; i < length; i++) {
-        allClassElements[i].classList.add("hidden");
+        allClassElements[i].classList.add("blurred");
       }
 
       for (var _i5 = 0; _i5 < lengthRed; _i5++) {
@@ -5927,7 +5921,7 @@ function CheckboxSpoilersToggle() {
 
     case "show":
       for (var _i6 = 0; _i6 < length; _i6++) {
-        allClassElements[_i6].classList.remove("hidden");
+        allClassElements[_i6].classList.remove("blurred");
       }
 
       for (var _i7 = 0; _i7 < lengthRed; _i7++) {
@@ -5947,7 +5941,7 @@ function CheckboxSpoilersToggle() {
       // This runs when the checkbox is not checked
       if (checkboxId.checked === false) {
         for (var _i8 = 0; _i8 < length; _i8++) {
-          allClassElements[_i8].classList.add("hidden");
+          allClassElements[_i8].classList.add("blurred");
         }
 
         for (var _i9 = 0; _i9 < lengthRed; _i9++) {
@@ -5964,7 +5958,7 @@ function CheckboxSpoilersToggle() {
       } // This runs when the checkbox is checked
       else {
           for (var _i10 = 0; _i10 < length; _i10++) {
-            allClassElements[_i10].classList.remove("hidden");
+            allClassElements[_i10].classList.remove("blurred");
           }
 
           for (var _i11 = 0; _i11 < lengthRed; _i11++) {
