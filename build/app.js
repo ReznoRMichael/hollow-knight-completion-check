@@ -5405,6 +5405,8 @@ function GenerateInnerHTML(db) {
 
               case "green":
                 obj.icon = iconGreen;
+                /* -------- Prevents blurring when a player has already completed the entry --------- */
+
                 obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 

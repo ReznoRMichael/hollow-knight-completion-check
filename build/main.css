@@ -127,6 +127,7 @@
 
 :root {
     --rt-main: #1e4d6c;
+    cursor: default;
 }
 
 html {
@@ -356,6 +357,10 @@ input[type="file"] {
 .blurred:hover {
     filter: none;
     -webkit-filter: none;
+}
+
+.spoiler-span.blurred:hover {
+    cursor: default;
 }
 
 .hint::first-letter {
