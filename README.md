@@ -100,6 +100,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Display all entry descriptions by default. They are all blurred when Spoilers checkbox is unchecked. Hover over them to uncover one-by-one.  
   ✅ After analyzing a file, entries that are not yet done are now fully blurred when Spoiler checkbox is unchecked. Hover over the name and/or description to uncover it one-by-one. (thanks to kanna for the idea and inspiration!)  
   ✅ All sections now have short text descriptions.  
+  ✅ Automatically detect the save version's Content Pack and display the correct Max Percent % for each one (Base Game 100%, Grimm Troupe 106%, Lifeblood 107%, Current 112%).  
   ✅ Fixed incorrect display of Soul orbs amount for early HK save file versions (like 1.0.0.6).  
   ✅ Added Secret data information at the bottom of the tool.  
 
