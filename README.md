@@ -97,7 +97,8 @@ If you like the tool and wish it developed further with more functions and easie
 
   — Changes/Fixes:  
   ✅ Rewrote and optimized large parts of the code. Should work a bit faster now, especially on mobile devices.  
-  ✅ Things that are not yet done are now blurred when Spoiler checkbox is unchecked. Hover over the name to uncover it. (thanks to kanna for the idea and inspiration!)  
+  ✅ Display all entry descriptions by default. They are all blurred when Spoilers checkbox is unchecked. Hover over them to uncover one-by-one.  
+  ✅ After analyzing a file, entries that are not yet done are now fully blurred when Spoiler checkbox is unchecked. Hover over the name and/or description to uncover it one-by-one. (thanks to kanna for the idea and inspiration!)  
   ✅ All sections now have short text descriptions.  
   ✅ Fixed incorrect display of Soul orbs amount for early HK save file versions (like 1.0.0.6).  
   ✅ Added Secret data information at the bottom of the tool.  
