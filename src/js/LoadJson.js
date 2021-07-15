@@ -58,7 +58,7 @@ function LoadJSON(filename) {
         document.getElementById("save-area").value = JSON.stringify(jsonObject);
         return jsonObject;
         // console.log(jsonObj);
-    }
+    };
 }
 
 /* function JSONparse(response) {
@@ -107,7 +107,7 @@ function XMLtoJSON(filename) {
         // console.log(JSON.stringify(dictionaryObject));
 
         return dictionaryObject;
-    }
+    };
 }
 
 // XMLtoJSON("../files/TranslatorDictionary.xml");
