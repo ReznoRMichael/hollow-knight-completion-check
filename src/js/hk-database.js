@@ -1849,6 +1849,11 @@ const HK = {
                     spoiler: "Requires completing 3 Pantheons, 2% chance",
                     wiki: "Godhome#Tuner_Memory"
                 },
+                blueRoomDoorUnlocked: {
+                    name: "Lifeblood Door Open",
+                    spoiler: "Complete 8 Pantheon bindings",
+                    wiki: "Godhome#Locked_Lifeblood_Room"
+                },
                 killedVoidIdol_1: {
                     name: "Journal: Void Idol Attuned",
                     spoiler: "Hall of Gods: Defeat All (Attuned)",
