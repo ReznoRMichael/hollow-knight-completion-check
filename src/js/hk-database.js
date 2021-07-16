@@ -1884,7 +1884,7 @@ const HK = {
                     spoiler: "Reach 57 Zotelings defeated",
                     wiki: "Eternal_Ordeal"
                 }
-            }
+            },
         }
     },
 };
