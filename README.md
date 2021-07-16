@@ -127,6 +127,9 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ addition: Lifeblood Core Room Arcane Egg (the only missable relic in the game)  
   ✅ addition: White Palace: Secret Room #3 (Lore Tablet)  
 
+  — **Godhome Statistics** changes/additions:  
+  ✅ addition: Lifeblood Door Open  
+
 * v1.4.1 2021-03-16:
 
   — **Game Completion Essentials** additions:  
