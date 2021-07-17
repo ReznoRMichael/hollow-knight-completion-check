@@ -102,6 +102,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ All sections now have short text descriptions.  
   ✅ Automatically detect the save version's Content Pack and display the correct Max Percent % for each one: Base Game 100%, Grimm Troupe 106%, Lifeblood 107%, Current 112%. (thanks to Perseus for the suggestion!)  
   ✅ Fixed incorrect display of Soul orbs amount for early HK save file versions (like 1.0.0.6).  
+  ✅ Number of Health Masks, Soul Orbs and Charm Notches is now displayed as a number next to the graphics.  
   ✅ Added Secret data information at the bottom of the tool.  
 
   — **Hints** changes:  
