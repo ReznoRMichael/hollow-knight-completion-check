@@ -1017,6 +1017,16 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                 if (i === "journalEntriesCompleted" || i === "journalNotesCompleted") {
                     countTotal = `${amount} / ${playerData.journalEntriesTotal}`;
                     dataObject[i].amountTotal = playerData.journalEntriesTotal;
+
+                    /* when Zote is dead, the max Journal entries will equal = 160 instead of 164. For the green tick */
+                    if (playerData.zoteDead === true) {
+                        dataObject[i].max = 160; /* Substract GPZ and 3 Zotelings from max */
+                    } else {
+                        /* otherwise, set back to 164 */
+                        dataObject[i].max = dataObject[i].maxDefault;
+                    }
+
+                    console.info(i + ".max", dataObject[i].max);
                 }
 
                 if (i === "grubsCollected") {
@@ -1052,6 +1062,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                         break;
                     }
                 }
+
                 (amount >= dataObject[i].max) ? CurrentDataTrue(section, i): CurrentDataBlank(section, i);
                 break;
 

@@ -909,6 +909,17 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         if (i === "journalEntriesCompleted" || i === "journalNotesCompleted") {
           countTotal = "".concat(amount, " / ").concat(playerData.journalEntriesTotal);
           dataObject[i].amountTotal = playerData.journalEntriesTotal;
+          /* when Zote is dead, the max Journal entries will equal = 160 instead of 164. For the green tick */
+
+          if (playerData.zoteDead === true) {
+            dataObject[i].max = 160;
+            /* Substract GPZ and 3 Zotelings from max */
+          } else {
+            /* otherwise, set back to 164 */
+            dataObject[i].max = dataObject[i].maxDefault;
+          }
+
+          console.info(i + ".max", dataObject[i].max);
         }
 
         if (i === "grubsCollected") {
@@ -4329,8 +4340,9 @@ var HK = {
         },
         journalEntriesCompleted: {
           name: "Creatures Encountered",
-          spoiler: "Hunter's Journal (164 max)",
+          spoiler: "Hunter's Journal (160+4 max)",
           max: 164,
+          maxDefault: 164,
           wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
         },
 
@@ -4339,8 +4351,9 @@ var HK = {
         */
         journalNotesCompleted: {
           name: "Hunter Notes Completed",
-          spoiler: "Hunter's Journal (164 max)",
+          spoiler: "Hunter's Journal (160+4 max)",
           max: 164,
+          maxDefault: 164,
           wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
         },
         nailDamage: {

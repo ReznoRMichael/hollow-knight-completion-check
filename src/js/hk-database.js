@@ -1581,8 +1581,9 @@ const HK = {
                 },
                 journalEntriesCompleted: {
                     name: "Creatures Encountered",
-                    spoiler: "Hunter's Journal (164 max)",
+                    spoiler: "Hunter's Journal (160+4 max)",
                     max: 164,
+                    maxDefault: 164,
                     wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
                 },
                 /* 
@@ -1590,8 +1591,9 @@ const HK = {
                 */
                 journalNotesCompleted: {
                     name: "Hunter Notes Completed",
-                    spoiler: "Hunter's Journal (164 max)",
+                    spoiler: "Hunter's Journal (160+4 max)",
                     max: 164,
+                    maxDefault: 164,
                     wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
                 },
                 nailDamage: {
