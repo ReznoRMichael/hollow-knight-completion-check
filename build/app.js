@@ -4193,7 +4193,7 @@ var HK = {
         },
         killedZote: {
           name: "Zote",
-          spoiler: "Colosseum: Trial of the Warrior (per save choice)",
+          spoiler: "Colosseum: Trial of the Warrior or The Eternal Ordeal",
           wiki: "Zote"
         },
         greyPrinceDefeated: {
