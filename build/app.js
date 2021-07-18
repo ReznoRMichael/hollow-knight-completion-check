@@ -922,8 +922,6 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
             dataObject[i].max = dataObject[i].maxDefault;
             dataObject[i].spoiler = dataObject[i].spoilerDefault;
           }
-
-          console.info(i + ".max", dataObject[i].max);
         }
 
         if (i === "grubsCollected") {
