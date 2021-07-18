@@ -914,9 +914,13 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           if (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
             dataObject[i].max = dataObject[i].maxZoteOff;
             /* Substract GPZ and 3 Zotelings from max */
+
+            dataObject[i].spoiler = dataObject[i].spoilerZoteOff;
+            /* Change spoiler for less confusion */
           } else {
             /* otherwise, set back to 164 */
             dataObject[i].max = dataObject[i].maxDefault;
+            dataObject[i].spoiler = dataObject[i].spoilerDefault;
           }
 
           console.info(i + ".max", dataObject[i].max);
@@ -4340,7 +4344,9 @@ var HK = {
         },
         journalEntriesCompleted: {
           name: "Creatures Encountered",
-          spoiler: "Hunter's Journal (160+4 max)",
+          spoiler: "Hunter's Journal (160 or 164 max)",
+          spoilerDefault: "Hunter's Journal (164 max)",
+          spoilerZoteOff: "Hunter's Journal (160 max)",
           max: 164,
           maxDefault: 164,
           maxZoteOff: 160,
@@ -4352,7 +4358,9 @@ var HK = {
         */
         journalNotesCompleted: {
           name: "Hunter Notes Completed",
-          spoiler: "Hunter's Journal (160+4 max)",
+          spoiler: "Hunter's Journal (160 or 164 max)",
+          spoilerDefault: "Hunter's Journal (164 max)",
+          spoilerZoteOff: "Hunter's Journal (160 max)",
           max: 164,
           maxDefault: 164,
           maxZoteOff: 160,

@@ -1581,7 +1581,9 @@ const HK = {
                 },
                 journalEntriesCompleted: {
                     name: "Creatures Encountered",
-                    spoiler: "Hunter's Journal (160+4 max)",
+                    spoiler: "Hunter's Journal (160 or 164 max)",
+                    spoilerDefault: "Hunter's Journal (164 max)",
+                    spoilerZoteOff: "Hunter's Journal (160 max)",
                     max: 164,
                     maxDefault: 164,
                     maxZoteOff: 160,
@@ -1592,7 +1594,9 @@ const HK = {
                 */
                 journalNotesCompleted: {
                     name: "Hunter Notes Completed",
-                    spoiler: "Hunter's Journal (160+4 max)",
+                    spoiler: "Hunter's Journal (160 or 164 max)",
+                    spoilerDefault: "Hunter's Journal (164 max)",
+                    spoilerZoteOff: "Hunter's Journal (160 max)",
                     max: 164,
                     maxDefault: 164,
                     maxZoteOff: 160,
