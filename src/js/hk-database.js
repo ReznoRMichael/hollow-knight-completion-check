@@ -165,7 +165,7 @@ const HK = {
         bosses: {
             h2: "Bosses",
             id: "hk-bosses",
-            description: "Bosses in this section are part of the Game Completion Percentage set by the game developers. Each boss from this list equals +1% Completion. Note: There are many other bosses in the game, some don't count towards % (see below). P1-4 means increasing difficulty as well as which <span class='blurred'>Pantheon</span> it unlocks.",
+            description: "Bosses in this section are part of the Game Completion Percentage set by the game developers. Each boss from this list equals +1% Completion. Note: There are many other bosses in the game, some don't count towards % (see below). P1-4 means increasing difficulty as well as which <span class='spoiler-span blurred'>Pantheon</span> it unlocks.",
             percent: 0,
             maxPercent: 14,
             entries: {
