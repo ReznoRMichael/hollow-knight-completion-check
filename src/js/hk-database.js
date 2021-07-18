@@ -1584,6 +1584,7 @@ const HK = {
                     spoiler: "Hunter's Journal (160+4 max)",
                     max: 164,
                     maxDefault: 164,
+                    maxZoteOff: 160,
                     wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
                 },
                 /* 
@@ -1594,6 +1595,7 @@ const HK = {
                     spoiler: "Hunter's Journal (160+4 max)",
                     max: 164,
                     maxDefault: 164,
+                    maxZoteOff: 160,
                     wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
                 },
                 nailDamage: {

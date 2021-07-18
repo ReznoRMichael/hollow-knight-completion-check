@@ -1019,8 +1019,8 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
                     dataObject[i].amountTotal = playerData.journalEntriesTotal;
 
                     /* when Zote is dead, the max Journal entries will equal = 160 instead of 164. For the green tick */
-                    if (playerData.zoteDead === true) {
-                        dataObject[i].max = 160; /* Substract GPZ and 3 Zotelings from max */
+                    if (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
+                        dataObject[i].max = dataObject[i].maxZoteOff; /* Substract GPZ and 3 Zotelings from max */
                     } else {
                         /* otherwise, set back to 164 */
                         dataObject[i].max = dataObject[i].maxDefault;
