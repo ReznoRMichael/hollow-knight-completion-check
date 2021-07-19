@@ -465,12 +465,6 @@ function CheckExtendedCompletion(db) {
     let gameCompletionExtended = db.sections.intro.entries.gameCompletionExtended;
     let intro = db.sections.intro;
 
-    /* Bring to default values (0) */
-    intro.extendedCompletionDone = 0;
-    intro.extendedCompletionTotal = 0;
-    gameCompletionExtended.spoiler = 0;
-    gameCompletionExtended.spoilerAfter = "";
-
     for (let section in sections) {
 
         entries = sections[section].entries;
@@ -506,8 +500,10 @@ function CheckExtendedCompletion(db) {
         gameCompletionExtended.icon === "green";
     }
 
+    let percent = (intro.extendedCompletionDone/intro.extendedCompletionTotal) * 100;
+
     gameCompletionExtended.spoiler = intro.extendedCompletionDone;
-    gameCompletionExtended.spoilerAfter = ` / ${intro.extendedCompletionTotal}`;
+    gameCompletionExtended.spoilerAfter = ` / ${intro.extendedCompletionTotal} = <b>${percent.toFixed(2)} %</b>`;
 }
 
 /**
@@ -1726,6 +1722,15 @@ function ResetCompletion(db) {
     let entries = {};
 
     db.saveAnalyzed = false;
+
+    /* Bring Extended Completion to default values (0) */
+    let gameCompletionExtended = db.sections.intro.entries.gameCompletionExtended;
+    let intro = db.sections.intro;
+
+    intro.extendedCompletionDone = 0;
+    intro.extendedCompletionTotal = 0;
+    gameCompletionExtended.spoiler = 0;
+    gameCompletionExtended.spoilerAfter = "";
 
     for (let section in sections) {
         entries = sections[section].entries;

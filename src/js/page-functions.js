@@ -208,8 +208,6 @@ function GenerateInnerHTML(db) {
 
             case "intro":
 
-                console.info("Extended Completion:", `${sections[section].extendedCompletionDone} / ${sections[section].extendedCompletionTotal}`);
-
                 /* ############## Create each single entry (intro) ############### */
 
                 for (let entry in entries) {
@@ -249,6 +247,12 @@ function GenerateInnerHTML(db) {
                     switch (entry) {
                         case "gameCompletion":
                             obj.textSuffix = `${obj.textSuffix} %`;
+                            obj.spoilerAfter = `</b> ${entries[entry].spoilerAfter}`;
+                            obj.span[1] = "";
+
+                            break;
+
+                        case "gameCompletionExtended":
                             obj.spoilerAfter = `</b> ${entries[entry].spoilerAfter}`;
                             obj.span[1] = "";
 

@@ -391,12 +391,6 @@ function CheckExtendedCompletion(db) {
   var entries = {};
   var gameCompletionExtended = db.sections.intro.entries.gameCompletionExtended;
   var intro = db.sections.intro;
-  /* Bring to default values (0) */
-
-  intro.extendedCompletionDone = 0;
-  intro.extendedCompletionTotal = 0;
-  gameCompletionExtended.spoiler = 0;
-  gameCompletionExtended.spoilerAfter = "";
 
   for (var section in sections) {
     entries = sections[section].entries;
@@ -428,8 +422,9 @@ function CheckExtendedCompletion(db) {
     gameCompletionExtended.icon === "green";
   }
 
+  var percent = intro.extendedCompletionDone / intro.extendedCompletionTotal * 100;
   gameCompletionExtended.spoiler = intro.extendedCompletionDone;
-  gameCompletionExtended.spoilerAfter = " / ".concat(intro.extendedCompletionTotal);
+  gameCompletionExtended.spoilerAfter = " / ".concat(intro.extendedCompletionTotal, " = <b>").concat(percent.toFixed(2), " %</b>");
 }
 /**
  * Reads the "version" string from the save file and appends it to the selected div ID element
@@ -1648,6 +1643,14 @@ function ResetCompletion(db) {
   var sections = db.sections;
   var entries = {};
   db.saveAnalyzed = false;
+  /* Bring Extended Completion to default values (0) */
+
+  var gameCompletionExtended = db.sections.intro.entries.gameCompletionExtended;
+  var intro = db.sections.intro;
+  intro.extendedCompletionDone = 0;
+  intro.extendedCompletionTotal = 0;
+  gameCompletionExtended.spoiler = 0;
+  gameCompletionExtended.spoilerAfter = "";
 
   for (var section in sections) {
     entries = sections[section].entries;
@@ -2767,10 +2770,10 @@ var HK = {
         gameCompletionExtended: {
           id: "gameCompletionExtended",
           icon: "red",
-          name: "Extended Completion:",
+          name: "Detailed Extended Completion:",
           spoiler: 0,
-          spoilerAfter: "",
-          spoilerAfterDefault: ""
+          spoilerAfter: " / 0 = <b>0.00 %</b>",
+          spoilerAfterDefault: " / 0 = <b>0.00 %</b>"
         },
         saveVersion: {
           id: "saveVersion",
@@ -5320,9 +5323,7 @@ function GenerateInnerHTML(db) {
     switch (section) {
       /* ############### Game Status (intro) ################ */
       case "intro":
-        console.info("Extended Completion:", "".concat(sections[section].extendedCompletionDone, " / ").concat(sections[section].extendedCompletionTotal));
         /* ############## Create each single entry (intro) ############### */
-
         for (var entry in entries) {
           obj.b = ["", ""];
           obj.p = "<span class='p-left-small'></span>";
@@ -5359,6 +5360,11 @@ function GenerateInnerHTML(db) {
           switch (entry) {
             case "gameCompletion":
               obj.textSuffix = "".concat(obj.textSuffix, " %");
+              obj.spoilerAfter = "</b> ".concat(entries[entry].spoilerAfter);
+              obj.span[1] = "";
+              break;
+
+            case "gameCompletionExtended":
               obj.spoilerAfter = "</b> ".concat(entries[entry].spoilerAfter);
               obj.span[1] = "";
               break;
