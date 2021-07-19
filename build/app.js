@@ -208,10 +208,11 @@ function HKCheckCompletion(jsonObject) {
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godhomeStatistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godhomeStatistics.entries, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Hints ----------------------------- //
 
-  CheckHintsTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints.entries, HKPlayerData, HKWorldItems); // ------------------------- Fill completion ----------------------------- //
+  CheckHintsTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints.entries, HKPlayerData, HKWorldItems); // ------------------------- Extended game completion check ----------------------------- //
 
   /* Percent completion is filled inside GenerateInnerHTML() using CompletionFill() */
-  // ------------------------- Indicate that the save file was loaded and analyzed correctly ----------------------------- //
+
+  CheckExtendedCompletion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default); // ------------------------- Indicate that the save file was loaded and analyzed correctly ----------------------------- //
 
   _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.saveAnalyzed = true; // ------------------------- Generate everything on the page with updated values ----------------------------- //
 
@@ -378,6 +379,57 @@ function CheckCompletionPercent(section, playerData) {
   completionPercentage >= maxPercent ? CurrentDataTrue(section, "gameCompletion") : CurrentDataFalse(section, "gameCompletion");
   /* let textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + section.maxPercent + " %)"; */
   // document.getElementById(section.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
+}
+/**
+ * Calculates the amount of all green ticks and total entries. Saves them to database for later display.
+ * @param {object} db reference to the main HK database
+ */
+
+
+function CheckExtendedCompletion(db) {
+  var sections = db.sections;
+  var entries = {};
+  var gameCompletionExtended = db.sections.intro.entries.gameCompletionExtended;
+  var intro = db.sections.intro;
+  /* Bring to default values (0) */
+
+  intro.extendedCompletionDone = 0;
+  intro.extendedCompletionTotal = 0;
+  gameCompletionExtended.spoiler = 0;
+  gameCompletionExtended.spoilerAfter = "";
+
+  for (var section in sections) {
+    entries = sections[section].entries;
+
+    switch (section) {
+      case "intro":
+      case "hints":
+        continue;
+
+      default:
+        for (var entry in entries) {
+          if (entries[entry].hasOwnProperty("icon")) {
+            intro.extendedCompletionTotal++;
+
+            if (entries[entry].icon === "green") {
+              intro.extendedCompletionDone++;
+            }
+
+            if (entries[entry].hasOwnProperty("disabled") && entries[entry].disabled == true) {
+              intro.extendedCompletionTotal--;
+            }
+          }
+        }
+
+    }
+  }
+
+  if (intro.extendedCompletionDone >= intro.extendedCompletionTotal) {
+    gameCompletionExtended.icon === "green";
+  }
+
+  gameCompletionExtended.spoiler = intro.extendedCompletionDone;
+  gameCompletionExtended.spoilerAfter = " / ".concat(intro.extendedCompletionTotal);
 }
 /**
  * Reads the "version" string from the save file and appends it to the selected div ID element
@@ -2689,6 +2741,8 @@ var HK = {
       maxPercentBaseGame: 100,
       maxPercentGrimmTroupe: 106,
       maxPercentLifeblood: 107,
+      extendedCompletionDone: 0,
+      extendedCompletionTotal: 0,
       entries: {
         timePlayed: {
           id: "timePlayed",
@@ -2709,6 +2763,14 @@ var HK = {
           spoilerAfterBaseGame: "(out of 100 %)",
           spoilerAfterGrimmTroupe: "(out of 106 %)",
           spoilerAfterLifeblood: "(out of 107 %)"
+        },
+        gameCompletionExtended: {
+          id: "gameCompletionExtended",
+          icon: "red",
+          name: "Extended Completion:",
+          spoiler: 0,
+          spoilerAfter: "",
+          spoilerAfterDefault: ""
         },
         saveVersion: {
           id: "saveVersion",
@@ -5258,7 +5320,9 @@ function GenerateInnerHTML(db) {
     switch (section) {
       /* ############### Game Status (intro) ################ */
       case "intro":
+        console.info("Extended Completion:", "".concat(sections[section].extendedCompletionDone, " / ").concat(sections[section].extendedCompletionTotal));
         /* ############## Create each single entry (intro) ############### */
+
         for (var entry in entries) {
           obj.b = ["", ""];
           obj.p = "<span class='p-left-small'></span>";

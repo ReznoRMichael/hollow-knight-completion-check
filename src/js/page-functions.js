@@ -208,6 +208,8 @@ function GenerateInnerHTML(db) {
 
             case "intro":
 
+                console.info("Extended Completion:", `${sections[section].extendedCompletionDone} / ${sections[section].extendedCompletionTotal}`);
+
                 /* ############## Create each single entry (intro) ############### */
 
                 for (let entry in entries) {

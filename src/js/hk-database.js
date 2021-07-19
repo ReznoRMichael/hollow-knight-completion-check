@@ -14,12 +14,17 @@ const HK = {
         intro: {
             h2: "Game Status",
             id: "hk-intro",
+
             percent: 0,
             maxPercent: 112,
             maxPercentDefault: 112,
             maxPercentBaseGame: 100,
             maxPercentGrimmTroupe: 106,
             maxPercentLifeblood: 107,
+
+            extendedCompletionDone: 0,
+            extendedCompletionTotal: 0,
+            
             entries: {
                 timePlayed: {
                     id: "timePlayed",
@@ -40,6 +45,14 @@ const HK = {
                     spoilerAfterBaseGame: "(out of 100 %)",
                     spoilerAfterGrimmTroupe: "(out of 106 %)",
                     spoilerAfterLifeblood: "(out of 107 %)",
+                },
+                gameCompletionExtended: {
+                    id: "gameCompletionExtended",
+                    icon: "red",
+                    name: "Extended Completion:",
+                    spoiler: 0,
+                    spoilerAfter: "",
+                    spoilerAfterDefault: "",
                 },
                 saveVersion: {
                     id: "saveVersion",

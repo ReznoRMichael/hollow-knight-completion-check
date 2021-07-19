@@ -270,9 +270,10 @@ function HKCheckCompletion(jsonObject, benchStart = new Date()) {
 
     CheckHintsTrue(HK.sections.hints, HK.sections.hints.entries, HKPlayerData, HKWorldItems);
 
-    // ------------------------- Fill completion ----------------------------- //
+    // ------------------------- Extended game completion check ----------------------------- //
 
     /* Percent completion is filled inside GenerateInnerHTML() using CompletionFill() */
+    CheckExtendedCompletion(HK);
 
     // ------------------------- Indicate that the save file was loaded and analyzed correctly ----------------------------- //
 
@@ -451,6 +452,62 @@ function CheckCompletionPercent(section, playerData) {
 
     /* let textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + section.maxPercent + " %)"; */
     // document.getElementById(section.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
+}
+
+/**
+ * Calculates the amount of all green ticks and total entries. Saves them to database for later display.
+ * @param {object} db reference to the main HK database
+ */
+function CheckExtendedCompletion(db) {
+
+    let sections = db.sections;
+    let entries = {};
+    let gameCompletionExtended = db.sections.intro.entries.gameCompletionExtended;
+    let intro = db.sections.intro;
+
+    /* Bring to default values (0) */
+    intro.extendedCompletionDone = 0;
+    intro.extendedCompletionTotal = 0;
+    gameCompletionExtended.spoiler = 0;
+    gameCompletionExtended.spoilerAfter = "";
+
+    for (let section in sections) {
+
+        entries = sections[section].entries;
+
+        switch (section) {
+
+            case "intro":
+            case "hints":
+                continue;
+
+            default:
+
+                for (let entry in entries) {
+
+                    if (entries[entry].hasOwnProperty("icon")) {
+
+                        intro.extendedCompletionTotal++;
+
+                        if (entries[entry].icon === "green") {
+                            intro.extendedCompletionDone++;
+                        }
+
+                        if (entries[entry].hasOwnProperty("disabled") && entries[entry].disabled == true) {
+                            intro.extendedCompletionTotal--;
+                        }
+                    }
+                }
+
+        }
+    }
+
+    if (intro.extendedCompletionDone >= intro.extendedCompletionTotal) {
+        gameCompletionExtended.icon === "green";
+    }
+
+    gameCompletionExtended.spoiler = intro.extendedCompletionDone;
+    gameCompletionExtended.spoilerAfter = ` / ${intro.extendedCompletionTotal}`;
 }
 
 /**
