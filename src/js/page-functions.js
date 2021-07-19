@@ -1082,6 +1082,25 @@ document.getElementById("save-location-input").addEventListener("mouseout", () =
 document.getElementById("checkbox-hints").addEventListener("click", CheckboxHintsToggle, false);
 document.getElementById("checkbox-spoilers").addEventListener("click", CheckboxSpoilersToggle, false);
 
+/* Drag & drop file to the window */
+window.addEventListener('dragover', (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+
+    // Style the drag-and-drop as a "copy file" operation.
+    event.dataTransfer.dropEffect = 'copy';
+});
+
+window.addEventListener('drop', (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+
+    const dt = event.dataTransfer;
+
+    /* Launch save file analyzing */
+    LoadSaveFile(dt, new Date());
+});
+
 /* ------------------------- Exports ------------------------------- */
 
 export {

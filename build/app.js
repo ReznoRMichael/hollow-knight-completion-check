@@ -6108,6 +6108,22 @@ document.getElementById("save-location-input").addEventListener("mouseout", func
 
 document.getElementById("checkbox-hints").addEventListener("click", CheckboxHintsToggle, false);
 document.getElementById("checkbox-spoilers").addEventListener("click", CheckboxSpoilersToggle, false);
+/* Drag & drop file to the window */
+
+window.addEventListener('dragover', function (event) {
+  event.stopPropagation();
+  event.preventDefault(); // Style the drag-and-drop as a "copy file" operation.
+
+  event.dataTransfer.dropEffect = 'copy';
+});
+window.addEventListener('drop', function (event) {
+  event.stopPropagation();
+  event.preventDefault();
+  var dt = event.dataTransfer;
+  /* Launch save file analyzing */
+
+  (0,_LoadSaveFile_js__WEBPACK_IMPORTED_MODULE_1__.LoadSaveFile)(dt, new Date());
+});
 /* ------------------------- Exports ------------------------------- */
 
 
