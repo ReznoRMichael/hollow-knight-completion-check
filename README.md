@@ -98,12 +98,13 @@ If you like the tool and wish it developed further with more functions and easie
   — Changes/Fixes:  
   ✅ Rewrote and optimized large parts of the code. Should work a bit faster now, especially on mobile devices.  
   ✅ Drag and Drop save file should now work for the whole window (not just for the file input field).  
+  ✅ Number of Health Masks, Soul Orbs and Charm Notches is now displayed as a number next to the graphics.  
   ✅ Display all entry descriptions by default. They are all blurred when Spoilers checkbox is unchecked. Hover over them to uncover one-by-one.  
   ✅ After analyzing a file, entries that are not yet done are now fully blurred when Spoiler checkbox is unchecked. Hover over the name and/or description to uncover it one-by-one. (thanks to kanna for the idea and inspiration!)  
-  ✅ All sections now have short text descriptions.  
+  ✅ All sections now have brief text descriptions.  
   ✅ Automatically detect the save version's Content Pack and display the correct Max Percent % for each one: Base Game 100%, Grimm Troupe 106%, Lifeblood 107%, Current 112%. (thanks to Perseus for the suggestion!)  
   ✅ Fixed incorrect display of Soul orbs amount for early HK save file versions (like 1.0.0.6).  
-  ✅ Number of Health Masks, Soul Orbs and Charm Notches is now displayed as a number next to the graphics.  
+  ✅ Fixed not cleaning text area and file input after page refresh (Firefox).  
   ✅ Added Secret data information at the bottom of the tool.  
 
   — **Hints** changes:  
