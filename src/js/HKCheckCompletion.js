@@ -1640,130 +1640,19 @@ function HKReadTextArea(textAreaId = "") {
  */
 function InitializeHTMLPopulation(db) {
 
-    /* let sFillText = "";
-
-    CurrentDataFalse(); */
+    /* Clean the text area and file input from leftover save file if present (Firefox especially) */
+    (async () => {
+        document.getElementById("save-area").value = "";
+        document.getElementById("save-area-file").value = "";
+    })();
 
     GenerateInnerHTML(db);
-
-    // PrefillHTML(sections);
-    /* 
-        // Play Time
-        CheckPlayTime(sections.intro, 0)
-
-        // Game Completion
-        CheckCompletionPercent(sections.intro, 0);
-
-        // Save File Version
-        CheckSaveFileVersion(sections.intro);
-
-        // Fleur Divide
-        // AppendHTML(sections.intro, FLEUR_DIVIDE);
-
-        // Health Masks
-        CheckHealthMasks(sections.intro);
-
-        // Soul Orbs
-        CheckSoulOrbs(sections.intro, 99);
-
-        // Charm Notches
-        CheckNotches(sections.intro);
-
-        // Geo
-        CheckGeo(sections.intro);
-
-        // Keep symbol False
-        CurrentDataFalse();
-     */
-    // First Hint Only
-    // AppendHTML(sections.hints, sections.hints.entries.fireballLevel.spoiler);
-
-    /* let entries = {};
-
-    for (let section in sections) {
-
-        entries = sections[section].entries;
-
-        switch(section) {
-
-            case "intro":
-            case "hints":
-                break;
-                
-            default:
-
-                for (let entry in entries) {
-
-                    sFillText += PrepareHTMLString(sections[section], entries[entry].name, entries[entry].spoiler, entries[entry].wiki);
-                }
-        
-                // AppendHTML(sections[section], sFillText);
-        }
-
-        sFillText = "";
-    } */
-
-    /*
-
-    // Temp arrays storing references (addresses) to objects for looping through them (duplicates important)
-    let hkObjArray = [HK.BOSSES, HK.CHARMS, HK.EQUIPMENT, HK.NAILARTS, HK.MASKSHARDS, HK.MASKSHARDS_WORLD, HK.VESSELFRAGMENTS, HK.VESSELFRAGMENTS_WORLD, HK.DREAMERS, HK.COLOSSEUM, HK.DREAMNAIL, HK.WARRIORDREAMS, HK.GRIMMTROUPE, HK.LIFEBLOOD, HK.GODMASTER, HK.ESSENTIAL, HK.ACHIEVEMENTS, HK.STATISTICS, HK.GODHOME_STATISTICS];
-
-    // duplicates and order important - must be the same as in hkObjArray[]
-    let divObjArray = [divIdObj.bosses, divIdObj.charms, divIdObj.equipment, divIdObj.nailArts, divIdObj.maskShards, divIdObj.maskShards, divIdObj.vesselFragments, divIdObj.vesselFragments, divIdObj.dreamers, divIdObj.colosseum, divIdObj.dreamNail, divIdObj.warriorDreams, divIdObj.grimmTroupe, divIdObj.lifeblood, divIdObj.godmaster, divIdObj.essential, divIdObj.achievements, divIdObj.statistics, divIdObj.godhomeStatistics];
-
-    // Looped filling to reduce redundancy
-    do {
-        for (let entry in hkObjArray[0]) {
-            if (entry === "mrMushroomState") continue;
-            sFillText += PrepareHTMLString(divObjArray[0], hkObjArray[0][entry].name, hkObjArray[0][entry].spoiler, hkObjArray[0][entry].wiki);
-        }
-        if (divObjArray[0]) {
-            AppendHTML(divObjArray[0], sFillText);
-        }
-        sFillText = "";
-        divObjArray.shift();
-    } while (hkObjArray.shift());
-
-    // Nail Upgrades Misc
-    sFillText = "";
-    for (let i in HK.NAILUPGRADES) {
-        sFillText += PrepareHTMLString(divIdObj.nailUpgrades, HK.NAILUPGRADES[i].name, HK.NAILUPGRADES[i].spoiler, HK.NAILUPGRADES[i].wiki);
-    }
-    AppendHTML(divIdObj.nailUpgrades, sFillText);
-
-    // Spells Misc
-    sFillText = "";
-    for (let i in HK.SPELLS) {
-        sFillText += PrepareHTMLString(divIdObj.spells, HK.SPELLS[i].name, HK.SPELLS[i].spoiler, HK.SPELLS[i].wiki);
-    }
-    AppendHTML(divIdObj.spells, sFillText);
-
-    // Godmaster Doors Misc
-    sFillText = "";
-    for (let i in HK.GODMASTER_DOORS) {
-        sFillText += PrepareHTMLString(divIdObj.godmaster, HK.GODMASTER_DOORS[i].name, HK.GODMASTER_DOORS[i].spoiler, HK.GODMASTER_DOORS[i].wiki);
-    }
-    AppendHTML(divIdObj.godmaster, sFillText);
-
-    // Mr Mushroom 1 - 7
-    sFillText = CheckMrMushroomState(divIdObj.achievements, divIdObj.achievements.entries.mrMushroomState);
-    AppendHTML(divIdObj.achievements, sFillText);
-
-    */
-
-    // Fleur Dividers
-    /* AppendHTML(sections.godmaster, FLEUR_DIVIDE);
-    AppendHTML(sections.essential, FLEUR_DIVIDE);
-    AppendHTML(sections.achievements, FLEUR_DIVIDE); */
 
     // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
     if (StorageAvailable('localStorage')) {
         if (localStorage.getItem("hkCheckboxHints") === "checked") document.getElementById("checkbox-hints").checked = true;
         if (localStorage.getItem("hkCheckboxSpoilers") === "checked") document.getElementById("checkbox-spoilers").checked = true;
     }
-
-    // if (localStorage.getItem("hkCheckboxHints") === "checked") document.getElementById("checkbox-hints").checked = true;
-    // if (localStorage.getItem("hkCheckboxSpoilers") === "checked") document.getElementById("checkbox-spoilers").checked = true;
 
     // Prevents wrong checkbox behaviour (must run after everything is finished)
     CheckboxHintsToggle();
