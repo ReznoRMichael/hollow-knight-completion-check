@@ -109,9 +109,10 @@ function Benchmark(bench) {
 
 
 function HKCheckCompletion(jsonObject) {
+  var benchStart = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Date();
   // start benchmark
   // benchHKCCBegin = new Date();
-  benchmarkTimes.CheckCompletion.timeStart = new Date();
+  benchmarkTimes.CheckCompletion.timeStart = benchStart;
   var HKPlayerData;
   var HKWorldItems;
   var HKSceneData;

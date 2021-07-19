@@ -108,11 +108,11 @@ function Benchmark(bench) {
  * Main Function. Checks Hollow Knight game completion by analyzing the save file
  * @param {object} jsonObject Decoded save data in JavaScript Object Notation form (JSON)
  */
-function HKCheckCompletion(jsonObject) {
+function HKCheckCompletion(jsonObject, benchStart = new Date()) {
 
     // start benchmark
     // benchHKCCBegin = new Date();
-    benchmarkTimes.CheckCompletion.timeStart = new Date();
+    benchmarkTimes.CheckCompletion.timeStart = benchStart;
 
     let HKPlayerData;
     let HKWorldItems;
