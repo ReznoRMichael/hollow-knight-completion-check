@@ -183,7 +183,7 @@ body {
 }
 
 #content {
-    max-width: 550px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 0 .6rem;
     position: relative;
@@ -339,7 +339,7 @@ input[type="file"] {
 #save-area {
     display: block;
     width: 100%;
-    max-width: 542px;
+    max-width: 592px;
     height: 5.65rem;
 }
 
