@@ -402,6 +402,18 @@ function CheckExtendedCompletion(db) {
 
       default:
         for (var entry in entries) {
+          /* Skip counting these entries */
+          switch (entry) {
+            case "oldNail":
+            case "geoPool":
+            case "rancidEggs":
+            case "jinnEggsSold":
+            case "xunFlowerBrokeTimes":
+            case "geoRocks":
+            case "itemsDiscovered":
+              continue;
+          }
+
           if (entries[entry].hasOwnProperty("icon")) {
             intro.extendedCompletionTotal++;
 
