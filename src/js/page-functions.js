@@ -24,6 +24,7 @@ const SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ "
 const SYMBOL_TRUE = "<i class='icon-ok-squared'></i>"; // "✅ "
 // const SYMBOL_INFO = "<i class='icon-info-circled'></i>"; // "ℹ "
 const SYMBOL_CLOCK = "<i class='icon-clock'></i>"; // "🕑 "
+const SYMBOL_FILE = "<i class='icon-doc-text-inv'></i>"; // "📁"
 const SYMBOL_EMPTY = "<span class='padding-left'></span>";
 const FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
 const WIKI_LINK = "https://hollowknight.fandom.com/wiki/";
@@ -1061,6 +1062,7 @@ function SelectCopyInputText(mouseEvent, tooltipId = "", tooltipFill = "") {
 /* ----------------------- Event Listeners -------------------------- */
 
 document.addEventListener("scroll", () => {
+
     TogglePageScrollElement(
         /* the document element root (<html>) */
         ROOT,
@@ -1076,11 +1078,13 @@ SCROLL_BUTTON.addEventListener("click", () => {
 
 // Auto select & copy to clipboard when the save file location input text is clicked once
 document.getElementById("save-location-input").addEventListener("click", (e) => {
+
     SelectCopyInputText(e, "save-location-input-tooltip", "Copied save file location to clipboard");
 }, false);
 
 // Switch text back to the default on mouse out
 document.getElementById("save-location-input").addEventListener("mouseout", () => {
+
     FillInnerHTML("save-location-input-tooltip", "Click once to copy to clipboard");
 }, false);
 
@@ -1090,6 +1094,7 @@ document.getElementById("checkbox-spoilers").addEventListener("click", CheckboxS
 
 /* Drag & drop file to the window */
 window.addEventListener('dragover', (event) => {
+
     event.stopPropagation();
     event.preventDefault();
 
@@ -1098,6 +1103,7 @@ window.addEventListener('dragover', (event) => {
 });
 
 window.addEventListener('drop', (event) => {
+
     event.stopPropagation();
     event.preventDefault();
 
@@ -1105,6 +1111,20 @@ window.addEventListener('drop', (event) => {
 
     /* Launch save file analyzing */
     LoadSaveFile(dt, new Date());
+});
+
+/* Monitor file input change and show the file name when file is loaded */
+document.getElementById("save-area-file").addEventListener("change", (event) => {
+
+    var label = document.getElementById("save-area-file").nextElementSibling;
+    var labelInitialText = label.innerHTML;
+    var fileName = event.target.files[0].name;
+
+    if (fileName) {
+        label.innerHTML = `${SYMBOL_FILE}${fileName}`;
+    } else {
+        label.innerHTML = labelInitialText;
+    }
 });
 
 /* ------------------------- Exports ------------------------------- */

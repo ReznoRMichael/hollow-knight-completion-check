@@ -5181,6 +5181,8 @@ var SYMBOL_TRUE = "<i class='icon-ok-squared'></i>"; // "✅ "
 
 var SYMBOL_CLOCK = "<i class='icon-clock'></i>"; // "🕑 "
 
+var SYMBOL_FILE = "<i class='icon-doc-text-inv'></i>"; // "📁"
+
 var SYMBOL_EMPTY = "<span class='padding-left'></span>";
 var FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
 var WIKI_LINK = "https://hollowknight.fandom.com/wiki/";
@@ -6136,6 +6138,19 @@ window.addEventListener('drop', function (event) {
   /* Launch save file analyzing */
 
   (0,_LoadSaveFile_js__WEBPACK_IMPORTED_MODULE_1__.LoadSaveFile)(dt, new Date());
+});
+/* Monitor file input change and show the file name when file is loaded */
+
+document.getElementById("save-area-file").addEventListener("change", function (event) {
+  var label = document.getElementById("save-area-file").nextElementSibling;
+  var labelInitialText = label.innerHTML;
+  var fileName = event.target.files[0].name;
+
+  if (fileName) {
+    label.innerHTML = "".concat(SYMBOL_FILE).concat(fileName);
+  } else {
+    label.innerHTML = labelInitialText;
+  }
 });
 /* ------------------------- Exports ------------------------------- */
 
