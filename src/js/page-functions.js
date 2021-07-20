@@ -1120,8 +1120,30 @@ document.getElementById("save-area-file").addEventListener("change", (event) => 
     var labelInitialText = label.innerHTML;
     var fileName = event.target.files[0].name;
 
+    var fileDate = new Date(event.target.files[0].lastModified);
+
+    var year = fileDate.getFullYear();
+    var month = fileDate.getMonth() + 1;
+
+    if (month < 10) month = "0" + month;
+
+    var day = fileDate.getDate();
+    var hour = fileDate.getHours();
+
+    if (hour < 10) hour = "0" + hour;
+
+    var minutes = fileDate.getMinutes();
+
+    if (minutes < 10) minutes = "0" + minutes;
+
+    var seconds = fileDate.getSeconds();
+
+    if (seconds < 10) seconds = "0" + seconds;
+    
+    var fileDateFormat = `${year}.${month}.${day} ${hour}:${minutes}:${seconds}`;
+
     if (fileName) {
-        label.innerHTML = `${SYMBOL_FILE}${fileName}`;
+        label.innerHTML = `${SYMBOL_FILE}${fileName} ${fileDateFormat}`;
     } else {
         label.innerHTML = labelInitialText;
     }

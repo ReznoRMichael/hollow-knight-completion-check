@@ -6128,9 +6128,21 @@ document.getElementById("save-area-file").addEventListener("change", function (e
   var label = document.getElementById("save-area-file").nextElementSibling;
   var labelInitialText = label.innerHTML;
   var fileName = event.target.files[0].name;
+  var fileDate = new Date(event.target.files[0].lastModified);
+  var year = fileDate.getFullYear();
+  var month = fileDate.getMonth() + 1;
+  if (month < 10) month = "0" + month;
+  var day = fileDate.getDate();
+  var hour = fileDate.getHours();
+  if (hour < 10) hour = "0" + hour;
+  var minutes = fileDate.getMinutes();
+  if (minutes < 10) minutes = "0" + minutes;
+  var seconds = fileDate.getSeconds();
+  if (seconds < 10) seconds = "0" + seconds;
+  var fileDateFormat = "".concat(year, ".").concat(month, ".").concat(day, " ").concat(hour, ":").concat(minutes, ":").concat(seconds);
 
   if (fileName) {
-    label.innerHTML = "".concat(SYMBOL_FILE).concat(fileName);
+    label.innerHTML = "".concat(SYMBOL_FILE).concat(fileName, " ").concat(fileDateFormat);
   } else {
     label.innerHTML = labelInitialText;
   }
