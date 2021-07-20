@@ -3660,7 +3660,7 @@ var HK = {
       entries: {
         colosseumBronzeCompleted: {
           name: "Trial of the Warrior",
-          spoiler: "Little Fool: 100 Geo",
+          spoiler: "Kingdom's Edge: top area, Little Fool: 100 Geo",
           wiki: "Trial_of_the_Warrior"
         },
         colosseumSilverCompleted: {
@@ -3767,7 +3767,7 @@ var HK = {
       entries: {
         hasGodfinder: {
           name: "Godtuner",
-          spoiler: "Junk Pit: requires Simple Key",
+          spoiler: "Royal Waterways: Junk Pit, requires Simple Key",
           wiki: "Godtuner"
         },
 
