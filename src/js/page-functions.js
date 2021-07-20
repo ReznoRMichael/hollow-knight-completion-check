@@ -1118,8 +1118,8 @@ document.getElementById("save-area-file").addEventListener("change", (event) => 
 
     var label = document.getElementById("save-area-file").nextElementSibling;
     var labelInitialText = label.innerHTML;
-    var fileName = event.target.files[0].name;
 
+    var fileName = event.target.files[0].name;
     var fileDate = new Date(event.target.files[0].lastModified);
 
     var year = fileDate.getFullYear();
@@ -1139,7 +1139,7 @@ document.getElementById("save-area-file").addEventListener("change", (event) => 
     var seconds = fileDate.getSeconds();
 
     if (seconds < 10) seconds = "0" + seconds;
-    
+
     var fileDateFormat = `${year}.${month}.${day} ${hour}:${minutes}:${seconds}`;
 
     if (fileName) {
@@ -1151,7 +1151,7 @@ document.getElementById("save-area-file").addEventListener("change", (event) => 
 
 /* Clean the text area and file input from leftover save file if present (Firefox especially) */
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     (async () => {
         document.getElementById("save-area").value = "";
         document.getElementById("save-area-file").value = "";
