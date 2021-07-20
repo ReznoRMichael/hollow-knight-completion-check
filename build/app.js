@@ -6137,7 +6137,7 @@ document.getElementById("save-area-file").addEventListener("change", function (e
   var fileName = event.target.files[0].name;
   /* Shorten the file name if too long */
 
-  if (fileName.length > 17) {
+  if (fileName.length > 16) {
     var begin = fileName.slice(0, 10); // take 10 characters from the beginning (0)
 
     var end = fileName.slice(-4); // take 4 characters from the end (-)
