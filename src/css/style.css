@@ -238,6 +238,10 @@ input[type="file"] {
 	z-index: -1;
 }
 
+#file-input-label {
+    max-width: 325px;
+}
+
 #save-area {
     display: block;
     width: 100%;

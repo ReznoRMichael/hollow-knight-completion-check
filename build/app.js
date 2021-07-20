@@ -6128,6 +6128,14 @@ document.getElementById("save-area-file").addEventListener("change", function (e
   var label = document.getElementById("save-area-file").nextElementSibling;
   var labelInitialText = label.innerHTML;
   var fileName = event.target.files[0].name;
+  /* Shorten the file name if too long */
+
+  if (fileName.length > 17) {
+    var begin = fileName.slice(0, 10);
+    var end = fileName.slice(-4);
+    fileName = "".concat(begin, "..").concat(end);
+  }
+
   var fileDate = new Date(event.target.files[0].lastModified);
   var year = fileDate.getFullYear();
   var month = fileDate.getMonth() + 1;
