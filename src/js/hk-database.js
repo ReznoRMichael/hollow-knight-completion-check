@@ -167,8 +167,7 @@ const HK = {
           spoiler: "He heard a disturbance from inside a black temple."
         },
         endOfHints: {
-          spoiler: `The Knight still explores the world of Hallownest patiently, in constant search of its remaining secrets.
-                    [this is the end of the hint system (for the moment). The rest is up to you]`
+          spoiler: `The Knight still explores the world of Hallownest patiently, in constant search of its remaining secrets. [this is the end of the hint system (for the moment). The rest is up to you]`
         },
       },
     },
