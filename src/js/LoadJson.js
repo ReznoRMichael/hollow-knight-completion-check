@@ -2,21 +2,21 @@
 // save file names list in the save/ folder
 
 var fileName = [
-    "reznor0", // 0
-    "reznor1beforegruz", // 1
-    "reznor2aftergruz", // 2
-    "reznor5hornet", // 3
-    "reznor29ss", // 4
-    "ext48", // 5
-    "reznor88banish", // 6
-    "reznor99whitefragment", // 7
-    "reznor100", // 8
-    "reznor103ss", // 9
-    "reznor107", // 10
-    "reznor112grimm", // 11
-    "PoP/kanna", // 12
-    "PoP/Reaper4578", // 13
-    "PoP/tintingaroo", // 14
+  "reznor0", // 0
+  "reznor1beforegruz", // 1
+  "reznor2aftergruz", // 2
+  "reznor5hornet", // 3
+  "reznor29ss", // 4
+  "ext48", // 5
+  "reznor88banish", // 6
+  "reznor99whitefragment", // 7
+  "reznor100", // 8
+  "reznor103ss", // 9
+  "reznor107", // 10
+  "reznor112grimm", // 11
+  "PoP/kanna", // 12
+  "PoP/Reaper4578", // 13
+  "PoP/tintingaroo", // 14
 ];
 
 /**
@@ -25,40 +25,40 @@ var fileName = [
  * @param callback Function to be called when the request completes
  */
 function LoadJSON(filename) {
-    // new Http request object (asynchronous), both the web page and the XML file it tries to load, must be located on the same server.
-    var xobj = new XMLHttpRequest();
+  // new Http request object (asynchronous), both the web page and the XML file it tries to load, must be located on the same server.
+  var xobj = new XMLHttpRequest();
 
-    xobj.overrideMimeType("application/json");
+  xobj.overrideMimeType("application/json");
 
-    // Specifies the request
-    /* method: the request type GET or POST
-    url: the file location
-    async: true (asynchronous) or false (synchronous)
-    user: optional user name
-    psw: optional password */
-    xobj.open('GET', filename, true); // Path to the file
+  // Specifies the request
+  /* method: the request type GET or POST
+  url: the file location
+  async: true (asynchronous) or false (synchronous)
+  user: optional user name
+  psw: optional password */
+  xobj.open('GET', filename, true); // Path to the file
 
-    // Sends the request to the server - Used for GET requests
-    xobj.send(null);
+  // Sends the request to the server - Used for GET requests
+  xobj.send(null);
 
-    // Defines a function to be called when the readyState property changes
-    /* xobj.onreadystatechange = function GetResponseText() {
-        if (xobj.readyState == 4 && xobj.status == "200") {
-            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-            // Returns the response data as a string
-            return callback(xobj.responseText);
-        } else return false;
-    }; */
-    // Sends the request to the server - Used for GET requests
-    // xobj.send(null);
+  // Defines a function to be called when the readyState property changes
+  /* xobj.onreadystatechange = function GetResponseText() {
+      if (xobj.readyState == 4 && xobj.status == "200") {
+          // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+          // Returns the response data as a string
+          return callback(xobj.responseText);
+      } else return false;
+  }; */
+  // Sends the request to the server - Used for GET requests
+  // xobj.send(null);
 
-    xobj.onload = function JSONparse() {
-        // Parse JSON string into object
-        const jsonObject = JSON.parse(xobj.responseText);
-        document.getElementById("save-area").value = JSON.stringify(jsonObject);
-        return jsonObject;
-        // console.log(jsonObj);
-    };
+  xobj.onload = function JSONparse() {
+    // Parse JSON string into object
+    const jsonObject = JSON.parse(xobj.responseText);
+    document.getElementById("save-area").value = JSON.stringify(jsonObject);
+    return jsonObject;
+    // console.log(jsonObj);
+  };
 }
 
 /* function JSONparse(response) {
@@ -77,37 +77,37 @@ LoadJSON("../save/" + fileName[11] + ".json");
  * @param {string} filename Path and .xml file name to be loaded
  */
 function XMLtoJSON(filename) {
-    
-    var request = new XMLHttpRequest();
 
-    request.open('GET', filename, true); // Path to the file
+  var request = new XMLHttpRequest();
 
-    request.send();
+  request.open('GET', filename, true); // Path to the file
 
-    request.onload = function XMLparse() {
+  request.send();
 
-        const xml = request.responseXML;
+  request.onload = function XMLparse() {
 
-        // console.log(xml);
+    const xml = request.responseXML;
 
-        let dictionary = xml.getElementsByTagName("Entry");
-    
-        let oldName = "";
-        let newName = "";
-        let dictionaryObject = new Object();
+    // console.log(xml);
 
-        for (let i = 0, length = dictionary.length; i < length; i++) {
-            
-            oldName = dictionary[i].getElementsByTagName("oldName")[0].childNodes[0].nodeValue;
-            newName = dictionary[i].getElementsByTagName("newName")[0].childNodes[0].nodeValue;
+    let dictionary = xml.getElementsByTagName("Entry");
 
-            dictionaryObject[oldName] = newName;
-        }
+    let oldName = "";
+    let newName = "";
+    let dictionaryObject = new Object();
 
-        // console.log(JSON.stringify(dictionaryObject));
+    for (let i = 0, length = dictionary.length; i < length; i++) {
 
-        return dictionaryObject;
-    };
+      oldName = dictionary[i].getElementsByTagName("oldName")[0].childNodes[0].nodeValue;
+      newName = dictionary[i].getElementsByTagName("newName")[0].childNodes[0].nodeValue;
+
+      dictionaryObject[oldName] = newName;
+    }
+
+    // console.log(JSON.stringify(dictionaryObject));
+
+    return dictionaryObject;
+  };
 }
 
 // XMLtoJSON("../files/TranslatorDictionary.xml");

@@ -10,13 +10,13 @@ import MAP from "./hk-dictionary.js";
  * @return {number} length of the Object
  */
 function ObjectLength(object) {
-    let length = 0;
-    for (let key in object) {
-        if (object.hasOwnProperty(key)) {
-            ++length;
-        }
+  let length = 0;
+  for (let key in object) {
+    if (object.hasOwnProperty(key)) {
+      ++length;
     }
-    return length;
+  }
+  return length;
 }
 
 /**
@@ -26,15 +26,15 @@ function ObjectLength(object) {
  */
 function TranslateMapName(mapCode, dictionary = MAP) {
 
-    let translation = mapCode;
-    if (dictionary.hasOwnProperty(mapCode)) translation = dictionary[mapCode];
+  let translation = mapCode;
+  if (dictionary.hasOwnProperty(mapCode)) translation = dictionary[mapCode];
 
-    return translation;
+  return translation;
 }
 
 /* ------------------------- Exports ------------------------------- */
 
 export {
-    ObjectLength,
-    TranslateMapName
+  ObjectLength,
+  TranslateMapName
 };
