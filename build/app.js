@@ -6080,7 +6080,9 @@ function SelectCopyInputText(mouseEvent) {
 
   if (tooltipFill.length && tooltipId.length) FillInnerHTML(tooltipId, tooltipFill);
 }
-/* ----------------------- Event Listeners -------------------------- */
+/* ========================== Event Listeners ========================== */
+
+/* --------------- Toggle visibility of scroll arrow ------------------ */
 
 
 document.addEventListener("scroll", function () {
@@ -6092,21 +6094,26 @@ document.addEventListener("scroll", function () {
   /* How far the user has to scroll to show the element */
   0.1);
 });
+/* ---------------- Scroll to top when clicked ------------------- */
+
 SCROLL_BUTTON.addEventListener("click", function () {
   ScrollToElement(ROOT);
-}); // Auto select & copy to clipboard when the save file location input text is clicked once
+});
+/* ------------- Auto select & copy to clipboard when the save file location input text is clicked once ------------- */
 
 document.getElementById("save-location-input").addEventListener("click", function (e) {
-  SelectCopyInputText(e, "save-location-input-tooltip", "Copied save file location to clipboard");
-}, false); // Switch text back to the default on mouse out
+  SelectCopyInputText(e, "save-location-input-tooltip", "Copied save location to clipboard");
+}, false);
+/* -------------- Switch text back to the default on mouse out -------------- */
 
 document.getElementById("save-location-input").addEventListener("mouseout", function () {
   FillInnerHTML("save-location-input-tooltip", "Click once to copy to clipboard");
-}, false); // Checkboxes functions
+}, false);
+/* ------------- Checkbox functions ---------------------- */
 
 document.getElementById("checkbox-hints").addEventListener("click", CheckboxHintsToggle, false);
 document.getElementById("checkbox-spoilers").addEventListener("click", CheckboxSpoilersToggle, false);
-/* Drag & drop file to the window */
+/* ------------ Drag & drop file to the window -------------- */
 
 window.addEventListener('dragover', function (event) {
   event.stopPropagation();
@@ -6122,7 +6129,7 @@ window.addEventListener('drop', function (event) {
 
   (0,_LoadSaveFile_js__WEBPACK_IMPORTED_MODULE_1__.LoadSaveFile)(dt, new Date());
 });
-/* Monitor file input change and show the file name when file is loaded */
+/* ---------- Monitor file input change and show the file name when file is loaded ----------- */
 
 document.getElementById("save-area-file").addEventListener("change", function (event) {
   var label = document.getElementById("save-area-file").nextElementSibling;
@@ -6131,21 +6138,24 @@ document.getElementById("save-area-file").addEventListener("change", function (e
   /* Shorten the file name if too long */
 
   if (fileName.length > 17) {
-    var begin = fileName.slice(0, 10);
-    var end = fileName.slice(-4);
+    var begin = fileName.slice(0, 10); // take 10 characters from the beginning (0)
+
+    var end = fileName.slice(-4); // take 4 characters from the end (-)
+
     fileName = "".concat(begin, "..").concat(end);
   }
 
   var fileDate = new Date(event.target.files[0].lastModified);
   var year = fileDate.getFullYear();
   var month = fileDate.getMonth() + 1;
-  if (month < 10) month = "0" + month;
   var day = fileDate.getDate();
   var hour = fileDate.getHours();
-  if (hour < 10) hour = "0" + hour;
   var minutes = fileDate.getMinutes();
-  if (minutes < 10) minutes = "0" + minutes;
   var seconds = fileDate.getSeconds();
+  if (month < 10) month = "0" + month;
+  if (day < 10) day = "0" + day;
+  if (hour < 10) hour = "0" + hour;
+  if (minutes < 10) minutes = "0" + minutes;
   if (seconds < 10) seconds = "0" + seconds;
   var fileDateFormat = "".concat(year, ".").concat(month, ".").concat(day, " ").concat(hour, ":").concat(minutes, ":").concat(seconds);
 
@@ -6155,7 +6165,7 @@ document.getElementById("save-area-file").addEventListener("change", function (e
     label.innerHTML = labelInitialText;
   }
 });
-/* Clean the text area and file input from leftover save file if present (Firefox especially) */
+/* -------- Clean the text area and file input from leftover save file if present (Firefox especially) -------- */
 
 document.addEventListener("DOMContentLoaded", function () {
   _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
