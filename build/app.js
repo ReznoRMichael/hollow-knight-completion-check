@@ -25,10 +25,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/notch-overcharmed.png */ "./src/img/notch-overcharmed.png");
 /* harmony import */ var _img_geo_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/geo.png */ "./src/img/geo.png");
 /* harmony import */ var _img_geo_shade_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/geo-shade.png */ "./src/img/geo-shade.png");
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
 /* eslint-disable no-prototype-builtins */
 
 /* ---------------- Load main Hollow Knight database files ----------------- */
@@ -1617,23 +1613,6 @@ function HKReadTextArea() {
 
 
 function InitializeHTMLPopulation(db) {
-  /* Clean the text area and file input from leftover save file if present (Firefox especially) */
-  _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-    return regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            document.getElementById("save-area").value = "";
-            document.getElementById("save-area-file").value = "";
-
-          case 2:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }))();
-
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.GenerateInnerHTML)(db); // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)
 
   if ((0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.StorageAvailable)('localStorage')) {
@@ -5161,6 +5140,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/notch-overcharmed.png */ "./src/img/notch-overcharmed.png");
 /* harmony import */ var _img_geo_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/geo.png */ "./src/img/geo.png");
 /* harmony import */ var _img_geo_shade_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/geo-shade.png */ "./src/img/geo-shade.png");
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
  // ---------------- Load image files (necessary for Webpack) ----------------- //
 
@@ -6151,6 +6134,25 @@ document.getElementById("save-area-file").addEventListener("change", function (e
   } else {
     label.innerHTML = labelInitialText;
   }
+});
+/* Clean the text area and file input from leftover save file if present (Firefox especially) */
+
+document.addEventListener("DOMContentLoaded", function () {
+  _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            document.getElementById("save-area").value = "";
+            document.getElementById("save-area-file").value = "";
+
+          case 2:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }))();
 });
 /* ------------------------- Exports ------------------------------- */
 

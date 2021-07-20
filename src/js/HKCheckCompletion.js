@@ -1706,12 +1706,6 @@ function HKReadTextArea(textAreaId = "") {
  */
 function InitializeHTMLPopulation(db) {
 
-    /* Clean the text area and file input from leftover save file if present (Firefox especially) */
-    (async () => {
-        document.getElementById("save-area").value = "";
-        document.getElementById("save-area-file").value = "";
-    })();
-
     GenerateInnerHTML(db);
 
     // Check local storage first to set proper checkbox state before the below functions start (default is always unchecked)

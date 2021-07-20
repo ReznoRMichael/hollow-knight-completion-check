@@ -1127,6 +1127,15 @@ document.getElementById("save-area-file").addEventListener("change", (event) => 
     }
 });
 
+/* Clean the text area and file input from leftover save file if present (Firefox especially) */
+document.addEventListener("DOMContentLoaded", () => {
+    
+    (async () => {
+        document.getElementById("save-area").value = "";
+        document.getElementById("save-area-file").value = "";
+    })();
+});
+
 /* ------------------------- Exports ------------------------------- */
 
 export {
