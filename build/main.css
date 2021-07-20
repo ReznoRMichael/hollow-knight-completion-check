@@ -332,8 +332,17 @@ textarea::placeholder {
 }
 
 input[type="file"] {
-    max-width: 500px;
-    margin: 0.5rem 0.5rem 0.5rem 0.25rem;
+    /* max-width: 500px; */
+    /* margin: 0.5rem 0.5rem 0.5rem 0.25rem; */
+}
+
+.input-file {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
 
 #save-area {
@@ -443,7 +452,8 @@ input[type="file"] {
     cursor: pointer;
 }
 
-.button:focus {
+.button:focus,
+.input-file:focus + label {
     /* outline: 2px solid #5e8dac; */
     outline: 0;
     border-color: #5e8dac;
@@ -798,6 +808,11 @@ input[type="radio"] {
     border-radius: 50%;
     background: #000;
 }
+
+/* input[type="checkbox"]:focus + label,
+input[type="radio"]:focus + label {
+    outline: solid 1px #aac7d4;
+} */
 
 .tooltip {
     position: relative;
