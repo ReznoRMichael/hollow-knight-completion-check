@@ -94,10 +94,14 @@ let benchmarkTimes = {
 
 function Benchmark(bench) {
 
+  let result = 0;
+
   for (let time in bench) {
 
-    if (bench[time].timeStart !== 0) {
-      console.info(`${bench[time].name} time (ms) =`, bench[time].timeEnd - bench[time].timeStart);
+    if (bench[time].timeStart !== 0 && bench[time].timeEnd !== 0) {
+
+      result = bench[time].timeEnd - bench[time].timeStart;
+      console.info(`${bench[time].name} time (ms) = %c${result.toFixed(2)}`, `color: #008cdc; font-weight: 700;`);
     }
     bench[time].timeStart = 0;
     bench[time].timeEnd = 0;
@@ -1692,7 +1696,9 @@ function HKReadTextArea(textAreaId = "") {
       // end benchmark and show results
       benchmarkTimes.HKReadTextArea.timeEnd = performance.now();
 
-      console.info(`HKReadTextArea() time (ms) =`, benchmarkTimes.HKReadTextArea.timeEnd - benchmarkTimes.HKReadTextArea.timeStart);
+      let result = benchmarkTimes.HKReadTextArea.timeEnd - benchmarkTimes.HKReadTextArea.timeStart;
+
+      console.info(`HKReadTextArea() time (ms) = %c${result.toFixed(2)}`, `color: #008cdc; font-weight: 700;`);
 
     } catch (error) {
       HK.saveAnalyzed = false;

@@ -93,9 +93,12 @@ var benchmarkTimes = {
 /* -------------------------- Functions ----------------------------- */
 
 function Benchmark(bench) {
+  var result = 0;
+
   for (var time in bench) {
-    if (bench[time].timeStart !== 0) {
-      console.info("".concat(bench[time].name, " time (ms) ="), bench[time].timeEnd - bench[time].timeStart);
+    if (bench[time].timeStart !== 0 && bench[time].timeEnd !== 0) {
+      result = bench[time].timeEnd - bench[time].timeStart;
+      console.info("".concat(bench[time].name, " time (ms) = %c").concat(result.toFixed(2)), "color: #008cdc; font-weight: 700;");
     }
 
     bench[time].timeStart = 0;
@@ -1601,7 +1604,8 @@ function HKReadTextArea() {
 
 
       benchmarkTimes.HKReadTextArea.timeEnd = performance.now();
-      console.info("HKReadTextArea() time (ms) =", benchmarkTimes.HKReadTextArea.timeEnd - benchmarkTimes.HKReadTextArea.timeStart);
+      var result = benchmarkTimes.HKReadTextArea.timeEnd - benchmarkTimes.HKReadTextArea.timeStart;
+      console.info("HKReadTextArea() time (ms) = %c".concat(result.toFixed(2)), "color: #008cdc; font-weight: 700;");
     } catch (error) {
       _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.saveAnalyzed = false;
       alert("This seems like not a valid Hollow Knight save.\n".concat(error));
