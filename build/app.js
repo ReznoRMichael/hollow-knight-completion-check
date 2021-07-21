@@ -6136,18 +6136,37 @@ window.addEventListener('drop', function (event) {
 document.getElementById("save-area-file").addEventListener("change", function (event) {
   var label = document.getElementById("save-area-file").nextElementSibling;
   var labelInitialText = label.innerHTML;
-  var fileName = event.target.files[0].name;
+  /* Shorten the file name if longer than 16 characters. Display first 10 characters and last 4. */
+
+  var fileName = FileNameFormat(event.target.files[0], 16, 10, 4);
+  /* Display a custom formatted last modified date. */
+
+  var fileDate = FileDateFormat(event.target.files[0]);
+
+  if (fileName) {
+    label.innerHTML = "".concat(SYMBOL_FILE).concat(fileName, " ").concat(fileDate);
+  } else {
+    label.innerHTML = labelInitialText;
+  }
+});
+
+function FileNameFormat(file, nameLength, beginLength, endLength) {
+  var fileName = file.name;
   /* Shorten the file name if too long */
 
-  if (fileName.length > 16) {
-    var begin = fileName.slice(0, 10); // take 10 characters from the beginning (0)
+  if (fileName.length > nameLength) {
+    var begin = fileName.slice(0, beginLength); // take X characters from the beginning (0)
 
-    var end = fileName.slice(-4); // take 4 characters from the end (-)
+    var end = fileName.slice(-endLength); // take X characters from the end (-)
 
     fileName = "".concat(begin, "..").concat(end);
   }
 
-  var fileDate = new Date(event.target.files[0].lastModified);
+  return fileName;
+}
+
+function FileDateFormat(file) {
+  var fileDate = new Date(file.lastModified);
   var year = fileDate.getFullYear();
   var month = fileDate.getMonth() + 1;
   var day = fileDate.getDate();
@@ -6159,15 +6178,10 @@ document.getElementById("save-area-file").addEventListener("change", function (e
   if (hour < 10) hour = "0" + hour;
   if (minutes < 10) minutes = "0" + minutes;
   if (seconds < 10) seconds = "0" + seconds;
-  var fileDateFormat = "".concat(year, ".").concat(month, ".").concat(day, " ").concat(hour, ":").concat(minutes, ":").concat(seconds);
-
-  if (fileName) {
-    label.innerHTML = "".concat(SYMBOL_FILE).concat(fileName, " ").concat(fileDateFormat);
-  } else {
-    label.innerHTML = labelInitialText;
-  }
-});
+  return "".concat(year, ".").concat(month, ".").concat(day, " ").concat(hour, ":").concat(minutes, ":").concat(seconds);
+}
 /* -------- Clean the text area and file input from leftover save file if present (Firefox especially) -------- */
+
 
 document.addEventListener("DOMContentLoaded", function () {
   _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
