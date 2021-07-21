@@ -793,6 +793,10 @@ input[type="radio"]:focus + label {
   color: #ebf9ff;
 }
 
+.pp-bronze {
+  color: #b98465;
+}
+
 .test {
   color: #59d1da;
 }

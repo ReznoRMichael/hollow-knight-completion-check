@@ -2879,7 +2879,7 @@ var HK = {
           spoiler: "He heard a disturbance from inside a black temple."
         },
         endOfHints: {
-          spoiler: "The Knight still explores the world of Hallownest patiently, in constant search of its remaining secrets.\n                    [this is the end of the hint system (for the moment). The rest is up to you]"
+          spoiler: "The Knight still explores the world of Hallownest patiently, in constant search of its remaining secrets. [this is the end of the hint system (for the moment). The rest is up to you]"
         }
       }
     },
@@ -4294,24 +4294,26 @@ var HK = {
           wiki: "Pantheon_of_Hallownest"
         }
         /* 
-        Mr Mushroom data
-        case SplitName.MrMushroom1: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 2; break;
-        case SplitName.MrMushroom2: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 3; break;
-        case SplitName.MrMushroom3: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 4; break;
-        case SplitName.MrMushroom4: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 5; break;
-        case SplitName.MrMushroom5: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 6; break;
-        case SplitName.MrMushroom6: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 7; break;
-        case SplitName.MrMushroom7: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 8; break;
-                  "mrMushroomState": 4, < this is the current location of Mr Mushroom (Howling Cliffs)
-                  1. Spawn of self, their minds unite, (Fungal Wastes)
-        2. Aside the source of acid blight, (Kingdom's Edge, near Isma's Grove)
-        3. Aglow in darkest, winding depths, (Deepnest, near Galien)
-        4. Winds all howl above fossilstone steps, (Howling Cliffs)
-        5. Monarchflys in air set still, (Ancient Basin, near the Monarch Wings location)
-        6. To Root's domain and snail once shrill, (Fog Canyon, near Overgrown Mound)
-        7. Path of Wyrm, at new lands entered, (King's Pass)
-        8. There journeys end. The kingdom ventured.
-        */
+                Mr Mushroom data
+                case SplitName.MrMushroom1: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 2; break;
+                case SplitName.MrMushroom2: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 3; break;
+                case SplitName.MrMushroom3: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 4; break;
+                case SplitName.MrMushroom4: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 5; break;
+                case SplitName.MrMushroom5: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 6; break;
+                case SplitName.MrMushroom6: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 7; break;
+                case SplitName.MrMushroom7: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 8; break;
+        
+                "mrMushroomState": 4, < this is the current location of Mr Mushroom (Howling Cliffs)
+        
+                1. Spawn of self, their minds unite, (Fungal Wastes)
+                2. Aside the source of acid blight, (Kingdom's Edge, near Isma's Grove)
+                3. Aglow in darkest, winding depths, (Deepnest, near Galien)
+                4. Winds all howl above fossilstone steps, (Howling Cliffs)
+                5. Monarchflys in air set still, (Ancient Basin, near the Monarch Wings location)
+                6. To Root's domain and snail once shrill, (Fog Canyon, near Overgrown Mound)
+                7. Path of Wyrm, at new lands entered, (King's Pass)
+                8. There journeys end. The kingdom ventured.
+                */
 
       }
     },
@@ -5849,17 +5851,17 @@ function SingleEntryFill(obj) {
      */
 
   /* return [
-      div,
-          icon,
-          `${b[0]}${textPrefix}${b[1]}`,
-          span[0],
-              p,
-              spoiler[0],
-                  `${textSuffix}${spoilerAfter}`,
-              spoiler[1],
-          span[1],
-      "</div>\n"
-  ].join("");
+        div,
+            icon,
+            `${b[0]}${textPrefix}${b[1]}`,
+            span[0],
+                p,
+                spoiler[0],
+                    `${textSuffix}${spoilerAfter}`,
+                spoiler[1],
+            span[1],
+        "</div>\n"
+    ].join("");
   */
   return [obj.div, obj.icon, "".concat(obj.b[0]).concat(obj.textPrefix).concat(obj.b[1]), obj.span[0], obj.p, obj.spoiler[0], "".concat(obj.textSuffix).concat(obj.spoilerAfter), obj.spoiler[1], obj.span[1], "</div>\n"].join("");
 }
