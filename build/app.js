@@ -199,7 +199,9 @@ function HKCheckCompletion(jsonObject) {
   // AppendHTML(HK.sections.essential, FLEUR_DIVIDE);
   // ------------------------- Achievements ----------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements.entries, HKPlayerData, HKWorldItems); // ---------------- Fleur Divide ----------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements.entries, HKPlayerData, HKWorldItems); // ------------------------- Hunter's Journal ----------------------------- //
+
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.huntersJournal, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.huntersJournal.entries, HKPlayerData, HKWorldItems); // ---------------- Fleur Divide ----------------- //
   // AppendHTML(HK.sections.achievements, FLEUR_DIVIDE);
   // ------------------------- Game Statistics ----------------------------- //
 
@@ -5334,6 +5336,10 @@ function GenerateInnerHTML(db) {
         textFill += "<div id=\"tab-essential\">";
         break;
 
+      case "huntersJournal":
+        textFill += "<div id=\"tab-journal\">";
+        break;
+
       case "statistics":
         textFill += "<div id=\"tab-statistics\">";
         break;
@@ -5626,6 +5632,8 @@ function GenerateInnerHTML(db) {
       case "godmaster": // main
 
       case "achievements": // essential
+
+      case "huntersJournal": // essential
 
       case "statistics": // stats
 

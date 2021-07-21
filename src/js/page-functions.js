@@ -214,6 +214,12 @@ function GenerateInnerHTML(db) {
 
         break;
 
+      case "huntersJournal":
+
+        textFill += `<div id="tab-journal">`;
+
+        break;
+
       case "statistics":
 
         textFill += `<div id="tab-statistics">`;
@@ -534,6 +540,7 @@ function GenerateInnerHTML(db) {
       /* ending the tabs */
       case "godmaster": // main
       case "achievements": // essential
+      case "huntersJournal": // essential
       case "statistics": // stats
       case "godhomeStatistics": // godhome
         

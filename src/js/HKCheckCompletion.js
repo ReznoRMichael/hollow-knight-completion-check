@@ -258,6 +258,10 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   CheckAdditionalThings(HK.sections.achievements, HK.sections.achievements.entries, HKPlayerData, HKWorldItems);
 
+  // ------------------------- Hunter's Journal ----------------------------- //
+
+  CheckAdditionalThings(HK.sections.huntersJournal, HK.sections.huntersJournal.entries, HKPlayerData, HKWorldItems);
+
   // ---------------- Fleur Divide ----------------- //
 
   // AppendHTML(HK.sections.achievements, FLEUR_DIVIDE);
