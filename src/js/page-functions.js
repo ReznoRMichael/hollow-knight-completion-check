@@ -139,7 +139,7 @@ function CompletionHTML(jsObj, hkGameCompletion) {
 function GenerateInnerHTML(db) {
 
   // start benchmarking
-  benchmarkTimes.GenerateInnerHTML.timeStart = new Date();
+  benchmarkTimes.GenerateInnerHTML.timeStart = performance.now();
 
   let sections = db.sections;
 
@@ -497,7 +497,7 @@ function GenerateInnerHTML(db) {
   document.getElementById("generated").innerHTML = finalHTMLFill;
 
   // finish benchmarking
-  benchmarkTimes.GenerateInnerHTML.timeEnd = new Date();
+  benchmarkTimes.GenerateInnerHTML.timeEnd = performance.now();
 }
 
 function SectionDescription(section) {
@@ -1153,7 +1153,7 @@ window.addEventListener('drop', (event) => {
   const dt = event.dataTransfer;
 
   /* Launch save file analyzing */
-  LoadSaveFile(dt, new Date());
+  LoadSaveFile(dt, performance.now());
 
   var label = document.getElementById("save-area-file").nextElementSibling;
   var labelInitialText = label.innerHTML;

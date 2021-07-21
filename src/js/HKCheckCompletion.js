@@ -108,7 +108,7 @@ function Benchmark(bench) {
  * Main Function. Checks Hollow Knight game completion by analyzing the save file
  * @param {object} jsonObject Decoded save data in JavaScript Object Notation form (JSON)
  */
-function HKCheckCompletion(jsonObject, benchStart = new Date()) {
+function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   // start benchmark
   // benchHKCCBegin = new Date();
@@ -292,7 +292,7 @@ function HKCheckCompletion(jsonObject, benchStart = new Date()) {
 
   // finish and show benchmark
   // benchHKCCEnd = new Date();
-  benchmarkTimes.CheckCompletion.timeEnd = new Date();
+  benchmarkTimes.CheckCompletion.timeEnd = performance.now();
   // console.info("HKCheckCompletion() time (ms) =", benchHKCCEnd - benchHKCCBegin);
 
   // Benchmark(benchmarkTimes);
@@ -1672,7 +1672,7 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
 function HKReadTextArea(textAreaId = "") {
 
   // start benchmark
-  benchmarkTimes.HKReadTextArea.timeStart = new Date();
+  benchmarkTimes.HKReadTextArea.timeStart = performance.now();
 
   // starts the main HTML generating function GenerateInnerHTML() and ensures proper checkbox behaviour
   InitializeHTMLPopulation(HK);
@@ -1688,7 +1688,7 @@ function HKReadTextArea(textAreaId = "") {
       // console.log(jsonObject);
 
       // end benchmark and show results
-      benchmarkTimes.HKReadTextArea.timeEnd = new Date();
+      benchmarkTimes.HKReadTextArea.timeEnd = performance.now();
 
       console.info(`HKReadTextArea() time (ms) =`, benchmarkTimes.HKReadTextArea.timeEnd - benchmarkTimes.HKReadTextArea.timeStart);
 

@@ -96,7 +96,7 @@ function ProcessFileObject() {
 
     // finish and show benchmark
     /* benchLSFEnd = new Date(); */
-    benchmarkTimes.LoadSaveFile.timeEnd = new Date();
+    benchmarkTimes.LoadSaveFile.timeEnd = performance.now();
     /* console.info("LoadSaveFile() time (ms) =", benchLSFEnd - benchLSFBegin); */
 
     // 4. Analyze the decoded string immediately
@@ -114,7 +114,7 @@ function ProcessFileObject() {
     })();
 
     // finish total and show benchmark
-    benchmarkTimes.Total.timeEnd = new Date();
+    benchmarkTimes.Total.timeEnd = performance.now();
 
     Benchmark(benchmarkTimes);
     /* console.info("Total time (ms) =", benchTotal - benchLSFBegin); */
@@ -202,7 +202,7 @@ function AESDecryption(buffer, cipherObject = ECB_STREAM_CIPHER) {
 
 // Assign actions (functions) to launch when a specific element is used
 document.getElementById("save-area-file").addEventListener("change", (event) => {
-  LoadSaveFile(event.target, new Date());
+  LoadSaveFile(event.target, performance.now());
 });
 document.getElementById("save-area-file").addEventListener("click", (mouseEvent) => {
   mouseEvent.target.value = "";

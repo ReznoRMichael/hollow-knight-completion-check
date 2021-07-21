@@ -109,7 +109,7 @@ function Benchmark(bench) {
 
 
 function HKCheckCompletion(jsonObject) {
-  var benchStart = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Date();
+  var benchStart = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : performance.now();
   // start benchmark
   // benchHKCCBegin = new Date();
   benchmarkTimes.CheckCompletion.timeStart = benchStart;
@@ -222,7 +222,7 @@ function HKCheckCompletion(jsonObject) {
   // finish and show benchmark
   // benchHKCCEnd = new Date();
 
-  benchmarkTimes.CheckCompletion.timeEnd = new Date(); // console.info("HKCheckCompletion() time (ms) =", benchHKCCEnd - benchHKCCBegin);
+  benchmarkTimes.CheckCompletion.timeEnd = performance.now(); // console.info("HKCheckCompletion() time (ms) =", benchHKCCEnd - benchHKCCBegin);
   // Benchmark(benchmarkTimes);
 
   return true;
@@ -1585,7 +1585,7 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
 function HKReadTextArea() {
   var textAreaId = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
   // start benchmark
-  benchmarkTimes.HKReadTextArea.timeStart = new Date(); // starts the main HTML generating function GenerateInnerHTML() and ensures proper checkbox behaviour
+  benchmarkTimes.HKReadTextArea.timeStart = performance.now(); // starts the main HTML generating function GenerateInnerHTML() and ensures proper checkbox behaviour
 
   InitializeHTMLPopulation(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default);
   var contents = document.getElementById(textAreaId).value;
@@ -1597,7 +1597,7 @@ function HKReadTextArea() {
       if (jsonObject.hasOwnProperty("playerData")) HKCheckCompletion(jsonObject); // console.log(jsonObject);
       // end benchmark and show results
 
-      benchmarkTimes.HKReadTextArea.timeEnd = new Date();
+      benchmarkTimes.HKReadTextArea.timeEnd = performance.now();
       console.info("HKReadTextArea() time (ms) =", benchmarkTimes.HKReadTextArea.timeEnd - benchmarkTimes.HKReadTextArea.timeStart);
     } catch (error) {
       _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.saveAnalyzed = false;
@@ -1796,7 +1796,7 @@ function ProcessFileObject() {
 
     /* benchLSFEnd = new Date(); */
 
-    _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.LoadSaveFile.timeEnd = new Date();
+    _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.LoadSaveFile.timeEnd = performance.now();
     /* console.info("LoadSaveFile() time (ms) =", benchLSFEnd - benchLSFBegin); */
     // 4. Analyze the decoded string immediately
 
@@ -1829,7 +1829,7 @@ function ProcessFileObject() {
     }))(); // finish total and show benchmark
 
 
-    _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.Total.timeEnd = new Date();
+    _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.Total.timeEnd = performance.now();
     (0,_HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.Benchmark)(_HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes);
     /* console.info("Total time (ms) =", benchTotal - benchLSFBegin); */
     // alert(`Decoded String: ${decodedString}`);
@@ -1924,7 +1924,7 @@ function AESDecryption(buffer) {
 
 
 document.getElementById("save-area-file").addEventListener("change", function (event) {
-  LoadSaveFile(event.target, new Date());
+  LoadSaveFile(event.target, performance.now());
 });
 document.getElementById("save-area-file").addEventListener("click", function (mouseEvent) {
   mouseEvent.target.value = "";
@@ -5266,7 +5266,7 @@ function CompletionHTML(jsObj, hkGameCompletion) {
 
 function GenerateInnerHTML(db) {
   // start benchmarking
-  _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.GenerateInnerHTML.timeStart = new Date();
+  _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.GenerateInnerHTML.timeStart = performance.now();
   var sections = db.sections;
   /* console.log(sections); */
 
@@ -5587,7 +5587,7 @@ function GenerateInnerHTML(db) {
 
   document.getElementById("generated").innerHTML = finalHTMLFill; // finish benchmarking
 
-  _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.GenerateInnerHTML.timeEnd = new Date();
+  _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.GenerateInnerHTML.timeEnd = performance.now();
 }
 
 function SectionDescription(section) {
@@ -6160,7 +6160,7 @@ window.addEventListener('drop', function (event) {
   var dt = event.dataTransfer;
   /* Launch save file analyzing */
 
-  (0,_LoadSaveFile_js__WEBPACK_IMPORTED_MODULE_1__.LoadSaveFile)(dt, new Date());
+  (0,_LoadSaveFile_js__WEBPACK_IMPORTED_MODULE_1__.LoadSaveFile)(dt, performance.now());
   var label = document.getElementById("save-area-file").nextElementSibling;
   var labelInitialText = label.innerHTML;
   /* Shorten the file name if longer than 16 characters. Display first 10 characters and last 4. */
