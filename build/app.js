@@ -5314,10 +5314,19 @@ function GenerateInnerHTML(db) {
   /* ############################## create all main entries ############################## */
 
   for (var section in sections) {
+    textFill = "";
+
+    switch (section) {
+      case "bosses":
+        textFill += ["<div class=\"tab-switch-buttons\">", "<button id=\"tab-switch-base\" class=\"button\">Base</button>", "<button id=\"tab-switch-essential\" class=\"button\">Essential</button>", "<button id=\"tab-switch-journal\" class=\"button\">Journal</button>", "<button id=\"tab-switch-statistics\" class=\"button\">Stats</button>", "<button id=\"tab-switch-godhome\" class=\"button\">Godhome</button>", "</div>"].join("\n");
+        textFill += "<div id=\"tab-base\">";
+        break;
+    }
+
     entries = sections[section].entries;
     /* starts a new <div> with the current section id */
 
-    textFill = SectionStart(sections[section]);
+    textFill += SectionStart(sections[section]);
     /* creates a <h2> tag for the current section and fills with current%/max%
     If the save file was not analyzed, then fill only max% on blue background */
 
@@ -5577,17 +5586,27 @@ function GenerateInnerHTML(db) {
             case "bossDoorStateTier5":
               textFill += FLEUR_DIVIDE;
               break;
-
-            default:
           }
         }
 
+      /* end for (let entry in entries) */
     }
-    /* Cumulate all section texts into one variable for final HTML filling. End section div tag */
+    /* end switch (section) - central */
+
+    /* ############# Cumulate all section texts into one variable for final HTML filling. End section div tag ############### */
 
 
     finalHTMLFill += "".concat(textFill, "\n</div>\n\n");
+    /* ################## End the Tab divs (must be after section ending div) ################# */
+
+    switch (section) {
+      case "statistics":
+        finalHTMLFill += "</div>";
+        break;
+    }
   }
+  /* end for (let section in sections) */
+
   /* console.groupCollapsed("finalHTMLFill");
   console.log(finalHTMLFill);
   console.groupEnd(); */

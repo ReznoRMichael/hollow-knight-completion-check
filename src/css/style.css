@@ -316,6 +316,14 @@ input[type="file"] {
   flex-direction: column;
 }
 
+.tab-switch-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
 .checkboxes {
   margin-top: 0rem;
 }
