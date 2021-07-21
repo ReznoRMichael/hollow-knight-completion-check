@@ -1674,18 +1674,20 @@ function HKReadTextArea(textAreaId = "") {
   // start benchmark
   benchmarkTimes.HKReadTextArea.timeStart = performance.now();
 
-  // starts the main HTML generating function GenerateInnerHTML() and ensures proper checkbox behaviour
-  InitializeHTMLPopulation(HK);
-
   let contents = document.getElementById(textAreaId).value;
 
   if (contents.length) {
 
+    // starts the main HTML generating function GenerateInnerHTML() and ensures proper checkbox behaviour
+    InitializeHTMLPopulation(HK);
+
     try {
       let jsonObject = JSON.parse(contents);
       // console.log(jsonObject);
-      if (jsonObject.hasOwnProperty("playerData")) HKCheckCompletion(jsonObject);
-      // console.log(jsonObject);
+      if (jsonObject.hasOwnProperty("playerData")) {
+
+        HKCheckCompletion(jsonObject);
+      }
 
       // end benchmark and show results
       benchmarkTimes.HKReadTextArea.timeEnd = performance.now();
@@ -1697,6 +1699,9 @@ function HKReadTextArea(textAreaId = "") {
       alert(`This seems like not a valid Hollow Knight save.\n${error}`);
       console.info(`This seems like not a valid Hollow Knight save.\n${error}`);
     }
+  } else {
+    /* reset timer */
+    benchmarkTimes.HKReadTextArea.timeStart = 0;
   }
 }
 

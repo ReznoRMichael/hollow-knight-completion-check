@@ -1585,17 +1585,20 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
 function HKReadTextArea() {
   var textAreaId = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
   // start benchmark
-  benchmarkTimes.HKReadTextArea.timeStart = performance.now(); // starts the main HTML generating function GenerateInnerHTML() and ensures proper checkbox behaviour
-
-  InitializeHTMLPopulation(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default);
+  benchmarkTimes.HKReadTextArea.timeStart = performance.now();
   var contents = document.getElementById(textAreaId).value;
 
   if (contents.length) {
+    // starts the main HTML generating function GenerateInnerHTML() and ensures proper checkbox behaviour
+    InitializeHTMLPopulation(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default);
+
     try {
       var jsonObject = JSON.parse(contents); // console.log(jsonObject);
 
-      if (jsonObject.hasOwnProperty("playerData")) HKCheckCompletion(jsonObject); // console.log(jsonObject);
-      // end benchmark and show results
+      if (jsonObject.hasOwnProperty("playerData")) {
+        HKCheckCompletion(jsonObject);
+      } // end benchmark and show results
+
 
       benchmarkTimes.HKReadTextArea.timeEnd = performance.now();
       console.info("HKReadTextArea() time (ms) =", benchmarkTimes.HKReadTextArea.timeEnd - benchmarkTimes.HKReadTextArea.timeStart);
@@ -1604,6 +1607,9 @@ function HKReadTextArea() {
       alert("This seems like not a valid Hollow Knight save.\n".concat(error));
       console.info("This seems like not a valid Hollow Knight save.\n".concat(error));
     }
+  } else {
+    /* reset timer */
+    benchmarkTimes.HKReadTextArea.timeStart = 0;
   }
 }
 /**
