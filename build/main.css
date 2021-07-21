@@ -894,15 +894,33 @@ input[type="radio"]:focus + label {
 }
 
 .pp-gold {
+  font-weight: 700;
   color: #ffbc00;
+  background: rgb(148, 81, 0);
+  background: linear-gradient(90deg, rgba(148, 81, 0, 1) 0%, rgba(255, 188, 0, 1) 50%, rgba(148, 81, 0, 1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .pp-silver {
+  font-weight: 700;
   color: #ebf9ff;
+  background: rgb(183, 196, 201);
+  background: linear-gradient(90deg, rgba(138, 151, 156, 1) 0%, rgba(235, 249, 255, 1) 50%, rgba(138, 151, 156, 1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .pp-bronze {
+  font-weight: 700;
   color: #b98465;
+  background: rgb(134, 85, 56);
+  background: linear-gradient(90deg, rgba(134, 85, 56, 1) 0%, rgba(222, 168, 136, 1) 50%, rgba(134, 85, 56, 1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .test {
