@@ -188,26 +188,48 @@ function GenerateInnerHTML(db) {
 
     textFill = "";
 
+    /* ############################# Tab Switch buttons ############################# */
+
     switch (section) {
 
       case "bosses":
 
         textFill += [
           `<div class="tab-switch-buttons">`,
-            `<button id="tab-switch-base" class="button">Base</button>`,
-            `<button id="tab-switch-essential" class="button">Essential</button>`,
-            `<button id="tab-switch-journal" class="button">Journal</button>`,
-            `<button id="tab-switch-statistics" class="button">Stats</button>`,
-            `<button id="tab-switch-godhome" class="button">Godhome</button>`,
+            `<button id="button-switch-main" class="button">Main</button>`,
+            `<button id="button-switch-essential" class="button">Essential</button>`,
+            `<button id="button-switch-journal" class="button">Journal</button>`,
+            `<button id="button-switch-statistics" class="button">Stats</button>`,
+            `<button id="button-switch-godhome" class="button">Godhome</button>`,
           `</div>`,
         ].join("\n");
 
-        textFill += `<div id="tab-base">`;
+        textFill += `<div id="tab-main">`;
+
+        break;
+
+      case "essential":
+
+        textFill += `<div id="tab-essential">`;
+
+        break;
+
+      case "statistics":
+
+        textFill += `<div id="tab-statistics">`;
+
+        break;
+
+      case "godhomeStatistics":
+
+        textFill += `<div id="tab-godhome">`;
 
         break;
     }
 
     entries = sections[section].entries;
+
+    /* ####################### Section div id start ########################## */
 
     /* starts a new <div> with the current section id */
     textFill += SectionStart(sections[section]);
@@ -509,11 +531,16 @@ function GenerateInnerHTML(db) {
 
     switch (section) {
 
-      case "statistics":
-
+      /* ending the tabs */
+      case "godmaster": // main
+      case "achievements": // essential
+      case "statistics": // stats
+      case "godhomeStatistics": // godhome
+        
         finalHTMLFill += `</div>`;
 
-        break;
+      break;
+
     }
 
   } /* end for (let section in sections) */
