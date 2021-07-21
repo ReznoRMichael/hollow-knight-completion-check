@@ -1059,6 +1059,41 @@ function SelectCopyInputText(mouseEvent, tooltipId = "", tooltipFill = "") {
   if (tooltipFill.length && tooltipId.length) FillInnerHTML(tooltipId, tooltipFill);
 }
 
+function FileNameFormat(file, nameLength, beginLength, endLength) {
+
+  var fileName = file.name;
+
+  /* Shorten the file name if too long */
+  if (fileName.length > nameLength) {
+
+    let begin = fileName.slice(0, beginLength); // take X characters from the beginning (0)
+    let end = fileName.slice(-endLength); // take X characters from the end (-)
+    fileName = `${begin}..${end}`;
+  }
+
+  return fileName;
+}
+
+function FileDateFormat(file) {
+
+  var fileDate = new Date(file.lastModified);
+
+  var year = fileDate.getFullYear();
+  var month = fileDate.getMonth() + 1;
+  var day = fileDate.getDate();
+  var hour = fileDate.getHours();
+  var minutes = fileDate.getMinutes();
+  var seconds = fileDate.getSeconds();
+
+  if (month < 10) month = "0" + month;
+  if (day < 10) day = "0" + day;
+  if (hour < 10) hour = "0" + hour;
+  if (minutes < 10) minutes = "0" + minutes;
+  if (seconds < 10) seconds = "0" + seconds;
+
+  return `${year}.${month}.${day} ${hour}:${minutes}:${seconds}`;
+}
+
 /* ========================== Event Listeners ========================== */
 
 /* --------------- Toggle visibility of scroll arrow ------------------ */
@@ -1119,6 +1154,22 @@ window.addEventListener('drop', (event) => {
 
   /* Launch save file analyzing */
   LoadSaveFile(dt, new Date());
+
+  var label = document.getElementById("save-area-file").nextElementSibling;
+  var labelInitialText = label.innerHTML;
+
+  /* Shorten the file name if longer than 16 characters. Display first 10 characters and last 4. */
+  var fileName = FileNameFormat(dt.files[0], 16, 10, 4);
+
+  /* Display a custom formatted last modified date. */
+  var fileDate = FileDateFormat(dt.files[0]);
+
+  /* Display the save file name and date on the button */
+  if (fileName) {
+    label.innerHTML = `${SYMBOL_FILE}${fileName} ${fileDate}`;
+  } else {
+    label.innerHTML = labelInitialText;
+  }
 });
 
 /* ---------- Monitor file input change and show the file name when file is loaded ----------- */
@@ -1130,7 +1181,7 @@ document.getElementById("save-area-file").addEventListener("change", (event) => 
 
   /* Shorten the file name if longer than 16 characters. Display first 10 characters and last 4. */
   var fileName = FileNameFormat(event.target.files[0], 16, 10, 4);
-  
+
   /* Display a custom formatted last modified date. */
   var fileDate = FileDateFormat(event.target.files[0]);
 
@@ -1140,41 +1191,6 @@ document.getElementById("save-area-file").addEventListener("change", (event) => 
     label.innerHTML = labelInitialText;
   }
 });
-
-function FileNameFormat(file, nameLength, beginLength, endLength) {
-
-  var fileName = file.name;
-
-  /* Shorten the file name if too long */
-  if (fileName.length > nameLength) {
-
-    let begin = fileName.slice(0, beginLength); // take X characters from the beginning (0)
-    let end = fileName.slice(-endLength); // take X characters from the end (-)
-    fileName = `${begin}..${end}`;
-  }
-
-  return fileName;
-}
-
-function FileDateFormat(file) {
-
-  var fileDate = new Date(file.lastModified);
-
-  var year = fileDate.getFullYear();
-  var month = fileDate.getMonth() + 1;
-  var day = fileDate.getDate();
-  var hour = fileDate.getHours();
-  var minutes = fileDate.getMinutes();
-  var seconds = fileDate.getSeconds();
-
-  if (month < 10) month = "0" + month;
-  if (day < 10) day = "0" + day;
-  if (hour < 10) hour = "0" + hour;
-  if (minutes < 10) minutes = "0" + minutes;
-  if (seconds < 10) seconds = "0" + seconds;
-
-  return `${year}.${month}.${day} ${hour}:${minutes}:${seconds}`;
-}
 
 /* -------- Clean the text area and file input from leftover save file if present (Firefox especially) -------- */
 
