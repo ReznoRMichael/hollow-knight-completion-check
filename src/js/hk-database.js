@@ -1497,94 +1497,99 @@ const HK = {
       description: `All 146 base Hunter's Journal entries that are required for Hunter's Mark and Keen Hunter/True Hunter achievements. There are more entries than base 146, but they are completely optional.`,
       entries: {
         killsBigBuzzer: {
-          name: "Journal: Vengefly King",
+          name: "Vengefly King",
           spoiler: "Greenpath, Colosseum: Trial of the Warrior",
           wiki: "Vengefly_King"
         },
         killedPrayerSlug: {
-          name: "Journal: Maggot",
+          name: "Maggot",
           spoiler: "Forgotten Crossroads: False Knight secret room",
           wiki: "Maggot"
         },
         killedOrangeScuttler: {
-          name: "Journal: Lightseed",
+          name: "Lightseed",
           spoiler: "Infected Crossroads",
           wiki: "Lightseed"
         },
         killedPigeon: {
-          name: "Journal: Maskfly",
+          name: "Maskfly",
           spoiler: "Greenpath, Queen's Gardens",
           wiki: "Maskfly"
         },
         killedLazyFlyer: {
-          name: "Journal: Aluba",
+          name: "Aluba",
           spoiler: "Lake of Unn, Queen's Gardens (near White Lady)",
           wiki: "Aluba"
         },
         killedAcidFlyer: {
-          name: "Journal: Duranda",
+          name: "Duranda",
           spoiler: "Greenpath: Nailmaster Sheo's tent path",
           wiki: "Duranda"
         },
         killedAcidWalker: {
-          name: "Journal: Durandoo",
+          name: "Durandoo",
           spoiler: "Greenpath, Queen's Gardens",
           wiki: "Durandoo"
         },
         killedPlantShooter: {
-          name: "Journal: Gulka",
+          name: "Gulka",
           spoiler: "Greenpath: left of Stone Sanctuary",
           wiki: "Gulka"
         },
         killedMushroomTurret: {
-          name: "Journal: Sporg",
+          name: "Sporg",
           spoiler: "Fungal Wastes",
           wiki: "Sporg"
         },
         killedZapBug: {
-          name: "Journal: Charged Lumafly",
+          name: "Charged Lumafly",
           spoiler: "Fog Canyon: Teacher's Archives (tank)",
           wiki: "Charged_Lumafly"
         },
         killedCrystalCrawler: {
-          name: "Journal: Crystal Crawler",
+          name: "Crystal Crawler",
           spoiler: "Crystal Peak",
           wiki: "Crystal_Crawler"
         },
         killedGorgeousHusk: {
-          name: "Journal: Gorgeous Husk",
+          name: "Gorgeous Husk",
           spoiler: "City of Tears: secret room",
           wiki: "Gorgeous_Husk"
         },
         killedWorm: {
-          name: "Journal: Goam",
+          name: "Goam",
           spoiler: "Infected Crossroads: near Fungal Wastes entrance",
           wiki: "Goam"
         },
         killedBigCentipede: {
-          name: "Journal: Garpede",
+          name: "Garpede",
           spoiler: "Deepnest: right of Hot Spring",
           wiki: "Garpede"
         },
         killedAbyssTendril: {
-          name: "Journal: Void Tendrils",
+          name: "Void Tendrils",
           spoiler: "The Abyss: secret room",
           wiki: "Void_Tendrils"
         },
         killedLobsterLancer: {
-          name: "Journal: God Tamer",
+          name: "God Tamer",
           spoiler: "Colosseum of Fools: Trial of the Fool boss",
           wiki: "God_Tamer"
         },
         killedFatFluke: {
-          name: "Journal: Flukemunga",
+          name: "Flukemunga",
           spoiler: "Royal Waterways: secret area, left of bench",
           wiki: "Flukemunga"
         },
         killedPaleLurker: {
-          name: "Journal: Pale Lurker",
+          name: "Pale Lurker",
           spoiler: "Colosseum of Fools: top right breakable wall",
           wiki: "Pale_Lurker"
+        },
+        killedCrawler: {
+          name: "",
+          spoiler: "",
+          wiki: ""
         },
       },
     },
