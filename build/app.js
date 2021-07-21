@@ -4080,96 +4080,6 @@ var HK = {
           spoiler: "Greenpath: Hunter, complete base 146 Hunter Notes",
           wiki: "Hunter's_Mark"
         },
-        killsBigBuzzer: {
-          name: "Journal: Vengefly King",
-          spoiler: "Greenpath, Colosseum: Trial of the Warrior",
-          wiki: "Vengefly_King"
-        },
-        killedPrayerSlug: {
-          name: "Journal: Maggot",
-          spoiler: "Forgotten Crossroads: False Knight secret room",
-          wiki: "Maggot"
-        },
-        killedOrangeScuttler: {
-          name: "Journal: Lightseed",
-          spoiler: "Infected Crossroads",
-          wiki: "Lightseed"
-        },
-        killedPigeon: {
-          name: "Journal: Maskfly",
-          spoiler: "Greenpath, Queen's Gardens",
-          wiki: "Maskfly"
-        },
-        killedLazyFlyer: {
-          name: "Journal: Aluba",
-          spoiler: "Lake of Unn, Queen's Gardens (near White Lady)",
-          wiki: "Aluba"
-        },
-        killedAcidFlyer: {
-          name: "Journal: Duranda",
-          spoiler: "Greenpath: Nailmaster Sheo's tent path",
-          wiki: "Duranda"
-        },
-        killedAcidWalker: {
-          name: "Journal: Durandoo",
-          spoiler: "Greenpath, Queen's Gardens",
-          wiki: "Durandoo"
-        },
-        killedPlantShooter: {
-          name: "Journal: Gulka",
-          spoiler: "Greenpath: left of Stone Sanctuary",
-          wiki: "Gulka"
-        },
-        killedMushroomTurret: {
-          name: "Journal: Sporg",
-          spoiler: "Fungal Wastes",
-          wiki: "Sporg"
-        },
-        killedZapBug: {
-          name: "Journal: Charged Lumafly",
-          spoiler: "Fog Canyon: Teacher's Archives (tank)",
-          wiki: "Charged_Lumafly"
-        },
-        killedCrystalCrawler: {
-          name: "Journal: Crystal Crawler",
-          spoiler: "Crystal Peak",
-          wiki: "Crystal_Crawler"
-        },
-        killedGorgeousHusk: {
-          name: "Journal: Gorgeous Husk",
-          spoiler: "City of Tears: secret room",
-          wiki: "Gorgeous_Husk"
-        },
-        killedWorm: {
-          name: "Journal: Goam",
-          spoiler: "Infected Crossroads: near Fungal Wastes entrance",
-          wiki: "Goam"
-        },
-        killedBigCentipede: {
-          name: "Journal: Garpede",
-          spoiler: "Deepnest: right of Hot Spring",
-          wiki: "Garpede"
-        },
-        killedAbyssTendril: {
-          name: "Journal: Void Tendrils",
-          spoiler: "The Abyss: secret room",
-          wiki: "Void_Tendrils"
-        },
-        killedLobsterLancer: {
-          name: "Journal: God Tamer",
-          spoiler: "Colosseum of Fools: Trial of the Fool boss",
-          wiki: "God_Tamer"
-        },
-        killedFatFluke: {
-          name: "Journal: Flukemunga",
-          spoiler: "Royal Waterways: secret area, left of bench",
-          wiki: "Flukemunga"
-        },
-        killedPaleLurker: {
-          name: "Journal: Pale Lurker",
-          spoiler: "Colosseum of Fools: top right breakable wall",
-          wiki: "Pale_Lurker"
-        },
         falseKnightDreamDefeated: {
           name: "Failed Champion",
           spoiler: "Forgotten Crossroads, near False Knight",
@@ -4304,27 +4214,124 @@ var HK = {
           wiki: "Pantheon_of_Hallownest"
         }
         /* 
-                Mr Mushroom data
-                case SplitName.MrMushroom1: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 2; break;
-                case SplitName.MrMushroom2: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 3; break;
-                case SplitName.MrMushroom3: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 4; break;
-                case SplitName.MrMushroom4: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 5; break;
-                case SplitName.MrMushroom5: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 6; break;
-                case SplitName.MrMushroom6: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 7; break;
-                case SplitName.MrMushroom7: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 8; break;
-        
-                "mrMushroomState": 4, < this is the current location of Mr Mushroom (Howling Cliffs)
-        
-                1. Spawn of self, their minds unite, (Fungal Wastes)
-                2. Aside the source of acid blight, (Kingdom's Edge, near Isma's Grove)
-                3. Aglow in darkest, winding depths, (Deepnest, near Galien)
-                4. Winds all howl above fossilstone steps, (Howling Cliffs)
-                5. Monarchflys in air set still, (Ancient Basin, near the Monarch Wings location)
-                6. To Root's domain and snail once shrill, (Fog Canyon, near Overgrown Mound)
-                7. Path of Wyrm, at new lands entered, (King's Pass)
-                8. There journeys end. The kingdom ventured.
-                */
+          Mr Mushroom data
+          case SplitName.MrMushroom1: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 2; break;
+          case SplitName.MrMushroom2: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 3; break;
+          case SplitName.MrMushroom3: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 4; break;
+          case SplitName.MrMushroom4: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 5; break;
+          case SplitName.MrMushroom5: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 6; break;
+          case SplitName.MrMushroom6: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 7; break;
+          case SplitName.MrMushroom7: shouldSplit = mem.PlayerData<int>(Offset.mrMushroomState) == 8; break;
+              "mrMushroomState": 4, < this is the current location of Mr Mushroom (Howling Cliffs)
+              1. Spawn of self, their minds unite, (Fungal Wastes)
+          2. Aside the source of acid blight, (Kingdom's Edge, near Isma's Grove)
+          3. Aglow in darkest, winding depths, (Deepnest, near Galien)
+          4. Winds all howl above fossilstone steps, (Howling Cliffs)
+          5. Monarchflys in air set still, (Ancient Basin, near the Monarch Wings location)
+          6. To Root's domain and snail once shrill, (Fog Canyon, near Overgrown Mound)
+          7. Path of Wyrm, at new lands entered, (King's Pass)
+          8. There journeys end. The kingdom ventured.
+          */
 
+      }
+    },
+
+    /* ################ Hunter's Journal ################### */
+    huntersJournal: {
+      h2: "Hunter's Journal",
+      id: "hk-journal",
+      description: "All 146 base Hunter's Journal entries that are required for Hunter's Mark and Keen Hunter/True Hunter achievements. There are more entries than base 146, but they are completely optional.",
+      entries: {
+        killsBigBuzzer: {
+          name: "Journal: Vengefly King",
+          spoiler: "Greenpath, Colosseum: Trial of the Warrior",
+          wiki: "Vengefly_King"
+        },
+        killedPrayerSlug: {
+          name: "Journal: Maggot",
+          spoiler: "Forgotten Crossroads: False Knight secret room",
+          wiki: "Maggot"
+        },
+        killedOrangeScuttler: {
+          name: "Journal: Lightseed",
+          spoiler: "Infected Crossroads",
+          wiki: "Lightseed"
+        },
+        killedPigeon: {
+          name: "Journal: Maskfly",
+          spoiler: "Greenpath, Queen's Gardens",
+          wiki: "Maskfly"
+        },
+        killedLazyFlyer: {
+          name: "Journal: Aluba",
+          spoiler: "Lake of Unn, Queen's Gardens (near White Lady)",
+          wiki: "Aluba"
+        },
+        killedAcidFlyer: {
+          name: "Journal: Duranda",
+          spoiler: "Greenpath: Nailmaster Sheo's tent path",
+          wiki: "Duranda"
+        },
+        killedAcidWalker: {
+          name: "Journal: Durandoo",
+          spoiler: "Greenpath, Queen's Gardens",
+          wiki: "Durandoo"
+        },
+        killedPlantShooter: {
+          name: "Journal: Gulka",
+          spoiler: "Greenpath: left of Stone Sanctuary",
+          wiki: "Gulka"
+        },
+        killedMushroomTurret: {
+          name: "Journal: Sporg",
+          spoiler: "Fungal Wastes",
+          wiki: "Sporg"
+        },
+        killedZapBug: {
+          name: "Journal: Charged Lumafly",
+          spoiler: "Fog Canyon: Teacher's Archives (tank)",
+          wiki: "Charged_Lumafly"
+        },
+        killedCrystalCrawler: {
+          name: "Journal: Crystal Crawler",
+          spoiler: "Crystal Peak",
+          wiki: "Crystal_Crawler"
+        },
+        killedGorgeousHusk: {
+          name: "Journal: Gorgeous Husk",
+          spoiler: "City of Tears: secret room",
+          wiki: "Gorgeous_Husk"
+        },
+        killedWorm: {
+          name: "Journal: Goam",
+          spoiler: "Infected Crossroads: near Fungal Wastes entrance",
+          wiki: "Goam"
+        },
+        killedBigCentipede: {
+          name: "Journal: Garpede",
+          spoiler: "Deepnest: right of Hot Spring",
+          wiki: "Garpede"
+        },
+        killedAbyssTendril: {
+          name: "Journal: Void Tendrils",
+          spoiler: "The Abyss: secret room",
+          wiki: "Void_Tendrils"
+        },
+        killedLobsterLancer: {
+          name: "Journal: God Tamer",
+          spoiler: "Colosseum of Fools: Trial of the Fool boss",
+          wiki: "God_Tamer"
+        },
+        killedFatFluke: {
+          name: "Journal: Flukemunga",
+          spoiler: "Royal Waterways: secret area, left of bench",
+          wiki: "Flukemunga"
+        },
+        killedPaleLurker: {
+          name: "Journal: Pale Lurker",
+          spoiler: "Colosseum of Fools: top right breakable wall",
+          wiki: "Pale_Lurker"
+        }
       }
     },
 
