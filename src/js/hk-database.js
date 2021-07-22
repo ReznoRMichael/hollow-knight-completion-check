@@ -1697,19 +1697,19 @@ const HK = {
           wiki: "Volatile_Mosskin"
         },
         Mosquito: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Squit",
+          spoiler: "Greenpath and the Overgrown Mound",
+          wiki: "Squit"
         },
         BlobFlyer: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Obble",
+          spoiler: "Greenpath: top left of Stone Sanctuary",
+          wiki: "Obble"
         },
         FungifiedZombie: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Fungified Husk",
+          spoiler: "Fungal Wastes",
+          wiki: "Fungified_Husk"
         },
         MossCharger: {
           name: "",
