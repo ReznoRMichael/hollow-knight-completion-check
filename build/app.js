@@ -201,8 +201,7 @@ function HKCheckCompletion(jsonObject) {
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements.entries, HKPlayerData, HKWorldItems); // ------------------------- Hunter's Journal ----------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.huntersJournal, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.huntersJournal.entries, HKPlayerData, HKWorldItems);
-  console.info("huntersJournalLength", (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.ObjectLength)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.huntersJournal.entries)); // ---------------- Fleur Divide ----------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.huntersJournal, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.huntersJournal.entries, HKPlayerData, HKWorldItems); // ---------------- Fleur Divide ----------------- //
   // AppendHTML(HK.sections.achievements, FLEUR_DIVIDE);
   // ------------------------- Game Statistics ----------------------------- //
 
@@ -5060,7 +5059,7 @@ var HK = {
           nameHeld: "trinket4",
           nameSold: "soldTrinket4",
           spoiler: "Arcane Egg (4 Eggs max, 1 missable)",
-          max: 4,
+          max: 3,
           wiki: "Arcane_Egg"
         },
 
