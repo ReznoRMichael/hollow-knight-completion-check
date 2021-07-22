@@ -1587,9 +1587,9 @@ const HK = {
           wiki: "Pale_Lurker"
         },
         Crawler: {
-          name: "Tiktik?",
-          spoiler: "",
-          wiki: ""
+          name: "Crawlid",
+          spoiler: "King's Pass, Forgotten Crossroads, Greenpath",
+          wiki: "Crawlid"
         },
         Buzzer: {
           name: "Gruzzer?",

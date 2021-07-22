@@ -409,6 +409,7 @@ function CheckExtendedCompletion(db) {
     switch (section) {
       case "intro":
       case "hints":
+      case "huntersJournal":
         continue;
 
       default:
@@ -4362,7 +4363,7 @@ var HK = {
           wiki: "Pale_Lurker"
         },
         Crawler: {
-          name: "Tiktik?",
+          name: "Crawlid",
           spoiler: "",
           wiki: ""
         },

@@ -489,6 +489,7 @@ function CheckExtendedCompletion(db) {
 
       case "intro":
       case "hints":
+      case "huntersJournal":
         continue;
 
       default:
