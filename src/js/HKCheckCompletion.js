@@ -260,7 +260,7 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   // ------------------------- Hunter's Journal ----------------------------- //
 
-  CheckAdditionalThings(HK.sections.huntersJournal, HK.sections.huntersJournal.entries, HKPlayerData, HKWorldItems);
+  CheckHuntersJournal(HK, HKPlayerData);
 
   // ---------------- Fleur Divide ----------------- //
 
@@ -363,6 +363,14 @@ function CurrentDataTrue(section = {}, entry = "") {
   }
 
   section.entries[entry].icon = "green";
+}
+
+/**
+ * Switches global variable to a "partially completed" symbol.
+ */
+function CurrentDataPartial(section = {}, entry = "") {
+
+  section.entries[entry].icon = "partial";
 }
 
 /**
@@ -1592,6 +1600,25 @@ function CheckMrMushroomState(section, entry, mrMushroomState = 0) {
     CurrentDataTrue(section, `mrMushroomState${entry.state}`);
   } else {
     CurrentDataFalse(section, `mrMushroomState${entry.state}`);
+  }
+}
+
+function CheckHuntersJournal(db, playerData) {
+
+  let section = db.sections.huntersJournal;
+  let entries = db.sections.huntersJournal.entries;
+
+  for (let entry in entries) {
+
+    if (playerData[`killed${entry}`] === true) {
+      CurrentDataPartial(section, entry);
+    } else {
+      CurrentDataFalse(section, entry);
+    }
+
+    if (playerData[`kills${entry}`] === 0) {
+      CurrentDataTrue(section, entry);
+    }
   }
 }
 

@@ -1332,6 +1332,11 @@ const HK = {
           spoiler: "Greenpath: Hunter, complete base 146 Hunter Notes",
           wiki: "Hunter's_Mark"
         },
+        killsBigBuzzer: {
+          name: "Vengefly King",
+          spoiler: "Greenpath, Colosseum: Trial of the Warrior",
+          wiki: "Vengefly_King"
+        },
         falseKnightDreamDefeated: {
           name: "Failed Champion",
           spoiler: "Forgotten Crossroads, near False Knight",
@@ -1494,734 +1499,729 @@ const HK = {
     huntersJournal: {
       h2: "Hunter's Journal",
       id: "hk-journal",
-      description: `All 146 base Hunter's Journal entries that are required for Hunter's Mark and Keen Hunter/True Hunter achievements. There are more entries than base 146, but they are completely optional.`,
+      description: `All 146 base Hunter's Journal entries that are required for Hunter's Mark and Keen Hunter/True Hunter achievements. There are more entries than base 146, but they are completely optional. Green = note completed. Dark Yellow = entry discovered, but note not completed. Red = entry not yet discovered.`,
       entries: {
-        killsBigBuzzer: {
-          name: "Vengefly King",
-          spoiler: "Greenpath, Colosseum: Trial of the Warrior",
-          wiki: "Vengefly_King"
-        },
-        killedPrayerSlug: {
+        PrayerSlug: {
           name: "Maggot",
           spoiler: "Forgotten Crossroads: False Knight secret room",
           wiki: "Maggot"
         },
-        killedOrangeScuttler: {
+        OrangeScuttler: {
           name: "Lightseed",
           spoiler: "Infected Crossroads",
           wiki: "Lightseed"
         },
-        killedPigeon: {
+        Pigeon: {
           name: "Maskfly",
           spoiler: "Greenpath, Queen's Gardens",
           wiki: "Maskfly"
         },
-        killedLazyFlyer: {
+        LazyFlyer: {
           name: "Aluba",
           spoiler: "Lake of Unn, Queen's Gardens (near White Lady)",
           wiki: "Aluba"
         },
-        killedAcidFlyer: {
+        AcidFlyer: {
           name: "Duranda",
           spoiler: "Greenpath: Nailmaster Sheo's tent path",
           wiki: "Duranda"
         },
-        killedAcidWalker: {
+        AcidWalker: {
           name: "Durandoo",
           spoiler: "Greenpath, Queen's Gardens",
           wiki: "Durandoo"
         },
-        killedPlantShooter: {
+        PlantShooter: {
           name: "Gulka",
           spoiler: "Greenpath: left of Stone Sanctuary",
           wiki: "Gulka"
         },
-        killedMushroomTurret: {
+        MushroomTurret: {
           name: "Sporg",
           spoiler: "Fungal Wastes",
           wiki: "Sporg"
         },
-        killedZapBug: {
+        ZapBug: {
           name: "Charged Lumafly",
           spoiler: "Fog Canyon: Teacher's Archives (tank)",
           wiki: "Charged_Lumafly"
         },
-        killedCrystalCrawler: {
+        CrystalCrawler: {
           name: "Crystal Crawler",
           spoiler: "Crystal Peak",
           wiki: "Crystal_Crawler"
         },
-        killedGorgeousHusk: {
+        GorgeousHusk: {
           name: "Gorgeous Husk",
           spoiler: "City of Tears: secret room",
           wiki: "Gorgeous_Husk"
         },
-        killedWorm: {
+        Worm: {
           name: "Goam",
           spoiler: "Infected Crossroads: near Fungal Wastes entrance",
           wiki: "Goam"
         },
-        killedBigCentipede: {
+        BigCentipede: {
           name: "Garpede",
           spoiler: "Deepnest: right of Hot Spring",
           wiki: "Garpede"
         },
-        killedAbyssTendril: {
+        AbyssTendril: {
           name: "Void Tendrils",
           spoiler: "The Abyss: secret room",
           wiki: "Void_Tendrils"
         },
-        killedLobsterLancer: {
+        LobsterLancer: {
           name: "God Tamer",
           spoiler: "Colosseum of Fools: Trial of the Fool boss",
           wiki: "God_Tamer"
         },
-        killedFatFluke: {
+        FatFluke: {
           name: "Flukemunga",
           spoiler: "Royal Waterways: secret area, left of bench",
           wiki: "Flukemunga"
         },
-        killedPaleLurker: {
+        PaleLurker: {
           name: "Pale Lurker",
           spoiler: "Colosseum of Fools: top right breakable wall",
           wiki: "Pale_Lurker"
         },
-        killedCrawler: {
+        Crawler: {
           name: "Tiktik?",
           spoiler: "",
           wiki: ""
         },
-        killedBuzzer: {
+        Buzzer: {
           name: "Gruzzer?",
           spoiler: "",
           wiki: ""
         },
-        killedBouncer: {
-          name: "killedBouncer",
+        Bouncer: {
+          name: "Bouncer",
           spoiler: "",
           wiki: ""
         },
-        killedClimber: {
-          name: "killedClimber",
+        Climber: {
+          name: "Climber",
           spoiler: "",
           wiki: ""
         },
-        killedHopper: {
+        Hopper: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedSpitter: {
+        Spitter: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedHatcher: {
+        Hatcher: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedHatchling: {
+        Hatchling: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedZombieRunner: {
+        ZombieRunner: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedZombieHornhead: {
+        ZombieHornhead: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedZombieLeaper: {
+        ZombieLeaper: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedZombieBarger: {
+        ZombieBarger: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedZombieShield: {
+        ZombieShield: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedZombieGuard: {
+        ZombieGuard: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedBigBuzzer: {
+        BigBuzzer: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedBigFly: {
+        BigFly: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMawlek: {
+        Mawlek: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedFalseKnight: {
+        FalseKnight: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedRoller: {
+        Roller: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedBlocker: {
+        Blocker: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMossmanRunner: {
+        MossmanRunner: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMossmanShaker: {
+        MossmanShaker: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMosquito: {
+        Mosquito: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedBlobFlyer: {
+        BlobFlyer: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedFungifiedZombie: {
+        FungifiedZombie: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMossCharger: {
+        MossCharger: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMegaMossCharger: {
+        MegaMossCharger: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedSnapperTrap: {
+        SnapperTrap: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMossKnight: {
+        MossKnight: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedGrassHopper: {
+        GrassHopper: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMossFlyer: {
+        MossFlyer: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMossKnightFat: {
+        MossKnightFat: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMossWalker: {
+        MossWalker: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedInfectedKnight: {
+        InfectedKnight: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedJellyfish: {
+        Jellyfish: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedJellyCrawler: {
+        JellyCrawler: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMegaJellyfish: {
+        MegaJellyfish: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedFungoonBaby: {
+        FungoonBaby: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMantis: {
+        Mantis: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMushroomRoller: {
+        MushroomRoller: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMushroomBrawler: {
+        MushroomBrawler: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMushroomBaby: {
+        MushroomBaby: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMantisFlyerChild: {
+        MantisFlyerChild: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedFungusFlyer: {
+        FungusFlyer: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedFungCrawler: {
+        FungCrawler: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMantisLord: {
+        MantisLord: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedBlackKnight: {
+        BlackKnight: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedElectricMage: {
+        ElectricMage: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMage: {
+        Mage: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMageKnight: {
+        MageKnight: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedRoyalDandy: {
+        RoyalDandy: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedRoyalCoward: {
+        RoyalCoward: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedRoyalPlumper: {
+        RoyalPlumper: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedFlyingSentrySword: {
+        FlyingSentrySword: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedFlyingSentryJavelin: {
+        FlyingSentryJavelin: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedSentry: {
+        Sentry: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedSentryFat: {
+        SentryFat: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMageBlob: {
+        MageBlob: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedGreatShieldZombie: {
+        GreatShieldZombie: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedJarCollector: {
+        JarCollector: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMageBalloon: {
+        MageBalloon: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMageLord: {
+        MageLord: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedFlipHopper: {
+        FlipHopper: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedFlukeman: {
+        Flukeman: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedInflater: {
+        Inflater: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedFlukefly: {
+        Flukefly: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedFlukeMother: {
+        FlukeMother: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedDungDefender: {
+        DungDefender: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedCrystalFlyer: {
+        CrystalFlyer: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedLaserBug: {
+        LaserBug: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedBeamMiner: {
+        BeamMiner: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedZombieMiner: {
+        ZombieMiner: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMegaBeamMiner: {
+        MegaBeamMiner: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMinesCrawler: {
+        MinesCrawler: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedAngryBuzzer: {
+        AngryBuzzer: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedBurstingBouncer: {
+        BurstingBouncer: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedBurstingZombie: {
+        BurstingZombie: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedSpittingZombie: {
+        SpittingZombie: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedBabyCentipede: {
+        BabyCentipede: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedCentipedeHatcher: {
+        CentipedeHatcher: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedLesserMawlek: {
+        LesserMawlek: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedSlashSpider: {
+        SlashSpider: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedSpiderCorpse: {
+        SpiderCorpse: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedShootSpider: {
+        ShootSpider: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMiniSpider: {
+        MiniSpider: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedSpiderFlyer: {
+        SpiderFlyer: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMimicSpider: {
+        MimicSpider: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedBeeHatchling: {
+        BeeHatchling: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedBeeStinger: {
+        BeeStinger: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedBigBee: {
+        BigBee: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedHiveKnight: {
+        HiveKnight: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedBlowFly: {
+        BlowFly: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedCeilingDropper: {
+        CeilingDropper: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedGiantHopper: {
+        GiantHopper: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedGrubMimic: {
+        GrubMimic: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMawlekTurret: {
+        MawlekTurret: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedHealthScuttler: {
+        HealthScuttler: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedZombieHive: {
+        ZombieHive: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedHornet: {
+        Hornet: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedAbyssCrawler: {
+        AbyssCrawler: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedSuperSpitter: {
+        SuperSpitter: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedSibling: {
+        Sibling: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedPalaceFly: {
+        PalaceFly: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedEggSac: {
+        EggSac: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMummy: {
+        Mummy: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedOrangeBalloon: {
+        OrangeBalloon: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedHeavyMantis: {
+        HeavyMantis: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedTraitorLord: {
+        TraitorLord: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedMantisHeavyFlyer: {
+        MantisHeavyFlyer: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedGardenZombie: {
+        GardenZombie: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedRoyalGuard: {
+        RoyalGuard: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedWhiteRoyal: {
+        WhiteRoyal: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedOblobble: {
+        Oblobble: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedBlobble: {
+        Blobble: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedColMosquito: {
+        ColMosquito: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedColRoller: {
+        ColRoller: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedColFlyingSentry: {
+        ColFlyingSentry: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedColMiner: {
+        ColMiner: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedColShield: {
+        ColShield: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedColWorm: {
+        ColWorm: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedColHopper: {
+        ColHopper: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedGhostAladar: {
+        GhostAladar: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedGhostXero: {
+        GhostXero: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedGhostHu: {
+        GhostHu: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedGhostMarmu: {
+        GhostMarmu: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedGhostNoEyes: {
+        GhostNoEyes: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedGhostMarkoth: {
+        GhostMarkoth: {
           name: "",
           spoiler: "",
           wiki: ""
         },
-        killedGhostGalien: {
+        GhostGalien: {
           name: "",
           spoiler: "",
           wiki: ""

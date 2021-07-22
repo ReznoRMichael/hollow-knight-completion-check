@@ -466,6 +466,11 @@ a.wiki {
   color: #16c60c;
 }
 
+.partial {
+  color: #000;
+  text-shadow: 0 0 0.3rem #efff00;
+}
+
 .icon-info-circled {
   color: #479ae7;
 }

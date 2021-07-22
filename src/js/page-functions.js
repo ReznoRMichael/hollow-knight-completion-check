@@ -22,6 +22,7 @@ import GEO_SHADE_IMAGE from "../img/geo-shade.png";
 // const DATA_UNKNOWN = "Data unknown";
 const SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ "
 const SYMBOL_TRUE = "<i class='icon-ok-squared'></i>"; // "✅ "
+const SYMBOL_PARTIAL = "<i class='icon-ok-squared partial'></i>"; // "✔ "
 // const SYMBOL_INFO = "<i class='icon-info-circled'></i>"; // "ℹ "
 const SYMBOL_CLOCK = "<i class='icon-clock'></i>"; // "🕑 "
 const SYMBOL_FILE = "<i class='icon-doc-text-inv'></i>"; // "📁"
@@ -162,6 +163,7 @@ function GenerateInnerHTML(db) {
 
   let iconGreen = SYMBOL_TRUE;
   let iconRed = SYMBOL_FALSE;
+  let iconPartial = SYMBOL_PARTIAL;
   let iconClock = SYMBOL_CLOCK;
   let iconNull = SYMBOL_EMPTY;
 
@@ -277,6 +279,9 @@ function GenerateInnerHTML(db) {
                 break;
               case "green":
                 obj.icon = iconGreen;
+                break;
+              case "partial":
+                obj.icon = iconPartial;
                 break;
               case "red":
                 obj.icon = iconRed;
@@ -445,6 +450,13 @@ function GenerateInnerHTML(db) {
                 obj.icon = iconGreen;
 
                 /* -------- Prevents blurring when a player has already completed the entry --------- */
+                obj.span[0] = "<span class='spoiler-span-green'>";
+                break;
+
+              case "partial":
+                obj.icon = iconPartial;
+
+                /* -------- Prevents blurring when a player has already discovered the entry --------- */
                 obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
