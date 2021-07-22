@@ -4408,9 +4408,9 @@ var HK = {
           wiki: "Wandering_Husk"
         },
         ZombieHornhead: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Husk Hornhead",
+          spoiler: "Forgotten Crossroads, City of Tears, Fungal Wastes, Deepnest",
+          wiki: "Husk_Hornhead"
         },
         ZombieLeaper: {
           name: "",

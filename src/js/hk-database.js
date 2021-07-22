@@ -1632,69 +1632,69 @@ const HK = {
           wiki: "Wandering_Husk"
         },
         ZombieHornhead: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Husk Hornhead",
+          spoiler: "Forgotten Crossroads, City of Tears, Deepnest",
+          wiki: "Husk_Hornhead"
         },
         ZombieLeaper: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Leaping Husk",
+          spoiler: "Forgotten Crossroads, City of Tears, Howling Cliffs",
+          wiki: "Leaping_Husk"
         },
         ZombieBarger: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Husk Bully",
+          spoiler: "Forgotten Crossroads, City of Tears, Howling Cliffs",
+          wiki: "Husk_Bully"
         },
         ZombieShield: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Husk Warrior",
+          spoiler: "Forgotten Crossroads: right of the Stag Station",
+          wiki: "Husk_Warrior"
         },
         ZombieGuard: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Husk Guard",
+          spoiler: "Forgotten Crossroads: upper right area",
+          wiki: "Husk_Guard"
         },
         BigBuzzer: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Vengefly King",
+          spoiler: "Greenpath, Colosseum: Trial of the Warrior",
+          wiki: "Vengefly_King"
         },
         BigFly: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Gruz Mother",
+          spoiler: "Forgotten Crossroads: lower right area",
+          wiki: "Gruz_Mother"
         },
         Mawlek: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Brooding Mawlek",
+          spoiler: "Forgotten Crossroads: below Grubfather, Mantis Claw",
+          wiki: "Brooding_Mawlek"
         },
         FalseKnight: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "False Knight",
+          spoiler: "Forgotten Crossroads: middle area map symbol",
+          wiki: "False_Knight"
         },
         Roller: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Baldur",
+          spoiler: "Ancestral Mound, Crystallised Mound, Howling Cliffs",
+          wiki: "Baldur"
         },
         Blocker: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Elder Baldur",
+          spoiler: "Ancestral Mound, Greenpath, Howling Cliffs",
+          wiki: "Elder_Baldur"
         },
         MossmanRunner: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Mosskin",
+          spoiler: "Greenpath: usually near a Volatile Mosskin",
+          wiki: "Mosskin"
         },
         MossmanShaker: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Volatile Mosskin",
+          spoiler: "Greenpath",
+          wiki: "Volatile_Mosskin"
         },
         Mosquito: {
           name: "",
