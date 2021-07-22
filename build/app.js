@@ -4364,48 +4364,48 @@ var HK = {
         },
         Crawler: {
           name: "Crawlid",
-          spoiler: "",
-          wiki: ""
+          spoiler: "King's Pass, Forgotten Crossroads, Greenpath",
+          wiki: "Crawlid"
         },
         Buzzer: {
-          name: "Gruzzer?",
-          spoiler: "",
-          wiki: ""
+          name: "Vengefly",
+          spoiler: "Howling Cliffs, Forgotten Crossroads, Greenpath, City of Tears",
+          wiki: "Vengefly"
         },
         Bouncer: {
-          name: "Bouncer",
-          spoiler: "",
-          wiki: ""
+          name: "Gruzzer",
+          spoiler: "Forgotten Crossroads",
+          wiki: "Gruzzer"
         },
         Climber: {
-          name: "Climber",
-          spoiler: "",
-          wiki: ""
+          name: "Tiktik",
+          spoiler: "Forgotten Crossroads, Howling Cliffs, Greenpath",
+          wiki: "Tiktik"
         },
         Hopper: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Hopper",
+          spoiler: "Kingdom's Edge",
+          wiki: "Hopper"
         },
         Spitter: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Aspid Hunter",
+          spoiler: "Forgotten Crossroads, Ancient Basin, The Collector",
+          wiki: "Aspid_Hunter"
         },
         Hatcher: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Aspid Mother",
+          spoiler: "Forgotten Crossroads, mainly next to the Tram station",
+          wiki: "Aspid_Mother"
         },
         Hatchling: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Aspid Hatchling",
+          spoiler: "Forgotten Crossroads, summoned by Aspid Mother",
+          wiki: "Aspid_Hatchling"
         },
         ZombieRunner: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Wandering Husk",
+          spoiler: "City of Tears, Greenpath, Forgotten Crossroads, Deepnest",
+          wiki: "Wandering_Husk"
         },
         ZombieHornhead: {
           name: "",
