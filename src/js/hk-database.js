@@ -1814,28 +1814,28 @@ const HK = {
           wiki: "Ooma"
         },
         JellyCrawler: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Uoma (25)",
+          nameDefault: "Uoma",
+          spoiler: "Fog Canyon: almost everywhere",
+          wiki: "Uoma"
         },
         MegaJellyfish: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Uumuu (1)",
+          nameDefault: "Uumuu",
+          spoiler: "Fog Canyon: inside Teacher's Archives",
+          wiki: "Uumuu"
         },
         FungoonBaby: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Fungling (35)",
+          nameDefault: "Fungling",
+          spoiler: "Fungal Wastes, Fungal Core, Junk Pit",
+          wiki: "Fungling"
         },
         Mantis: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Mantis Warrior (25)",
+          nameDefault: "Mantis Warrior",
+          spoiler: "Fungal Wastes: Mantis Village",
+          wiki: "Mantis_Warrior"
         },
         MushroomRoller: {
           name: "",
