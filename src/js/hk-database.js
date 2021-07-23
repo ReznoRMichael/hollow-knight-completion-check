@@ -1750,32 +1750,32 @@ const HK = {
         FungifiedZombie: {
           name: "Fungified Husk",
           nameDefault: "Fungified Husk",
-          spoiler: "Fungal Wastes",
+          spoiler: "Found only in Fungal Wastes",
           wiki: "Fungified_Husk"
         },
         MossCharger: {
           name: "Moss Charger",
           nameDefault: "Moss Charger",
-          spoiler: "",
-          wiki: ""
+          spoiler: "Found only in Greenpath",
+          wiki: "Moss_Charger"
         },
         MegaMossCharger: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Massive Moss Charger",
+          nameDefault: "Massive Moss Charger",
+          spoiler: "Greenpath: bottom left near Fog Canyon",
+          wiki: "Massive_Moss_Charger"
         },
         SnapperTrap: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Fool Eater",
+          nameDefault: "Fool Eater",
+          spoiler: "Greenpath and Queen's Gardens",
+          wiki: "Fool_Eater"
         },
         MossKnight: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Moss Knight (10)",
+          nameDefault: "Moss Knight",
+          spoiler: "Found only in Greenpath",
+          wiki: "Moss_Knight"
         },
         GrassHopper: {
           name: "",

@@ -1636,6 +1636,7 @@ function CheckHuntersJournal(db, playerData) {
 
       CurrentDataTrue(section, entry);
 
+    /* If not, show how many remain to defeat in the name */
     } else {
 
       name += ` (${amountKillsLeft})`;

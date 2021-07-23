@@ -1522,8 +1522,6 @@ function CheckHuntersJournal(db, playerData) {
     nameDefault = entries[entry].nameDefault;
     amountKillsLeft = playerData["kills".concat(entry)];
     entries[entry].name = nameDefault;
-    console.info("before entries[entry].name:", entries[entry].name);
-    console.info("before name:", name);
     /* When killed at least 1, the entry has a gray symbol */
 
     if (playerData["killed".concat(entry)] === true) {
@@ -1537,13 +1535,11 @@ function CheckHuntersJournal(db, playerData) {
 
     if (amountKillsLeft === 0) {
       CurrentDataTrue(section, entry);
+      /* If not, show how many remain to defeat in the name */
     } else {
       name += " (".concat(amountKillsLeft, ")");
       entries[entry].name = name;
     }
-
-    console.info("after entries[entry].name:", entries[entry].name);
-    console.info("after name:", name);
   }
 }
 /**
@@ -4546,32 +4542,32 @@ var HK = {
         FungifiedZombie: {
           name: "Fungified Husk",
           nameDefault: "Fungified Husk",
-          spoiler: "Fungal Wastes",
+          spoiler: "Found only in Fungal Wastes",
           wiki: "Fungified_Husk"
         },
         MossCharger: {
           name: "Moss Charger",
           nameDefault: "Moss Charger",
-          spoiler: "",
-          wiki: ""
+          spoiler: "Found only in Greenpath",
+          wiki: "Moss_Charger"
         },
         MegaMossCharger: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Massive Moss Charger",
+          nameDefault: "Massive Moss Charger",
+          spoiler: "Greenpath: bottom left near Fog Canyon",
+          wiki: "Massive_Moss_Charger"
         },
         SnapperTrap: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Fool Eater",
+          nameDefault: "Fool Eater",
+          spoiler: "Greenpath and Queen's Gardens",
+          wiki: "Fool_Eater"
         },
         MossKnight: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Moss Knight (10)",
+          nameDefault: "Moss Knight",
+          spoiler: "Found only in Greenpath",
+          wiki: "Moss_Knight"
         },
         GrassHopper: {
           name: "",
