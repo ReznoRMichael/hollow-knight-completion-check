@@ -1612,7 +1612,7 @@ const HK = {
         Buzzer: {
           name: "Vengefly (45)",
           nameDefault: "Vengefly",
-          spoiler: "Howling Cliffs, Forgotten Crossroads, Greenpath, City of Tears",
+          spoiler: "Howling Cliffs, Forgotten Crossroads, City of Tears",
           wiki: "Vengefly"
         },
         Bouncer: {
@@ -1654,7 +1654,7 @@ const HK = {
         ZombieRunner: {
           name: "Wandering Husk (35)",
           nameDefault: "Wandering Husk",
-          spoiler: "City of Tears, Greenpath, Forgotten Crossroads, Deepnest",
+          spoiler: "Forgotten Crossroads, City of Tears, Deepnest",
           wiki: "Wandering_Husk"
         },
         ZombieHornhead: {
@@ -1702,7 +1702,7 @@ const HK = {
         Mawlek: {
           name: "Brooding Mawlek (1)",
           nameDefault: "Brooding Mawlek",
-          spoiler: "Forgotten Crossroads: below Grubfather, Mantis Claw",
+          spoiler: "Forgotten Crossroads: down from Grubfather",
           wiki: "Brooding_Mawlek"
         },
         FalseKnight: {
@@ -1856,34 +1856,34 @@ const HK = {
           wiki: "Shrumeling"
         },
         MantisFlyerChild: {
-          name: "Mantis Youth",
+          name: "Mantis Youth (25)",
           nameDefault: "Mantis Youth",
           spoiler: "Fungal Wastes: Mantis Village",
           wiki: "Mantis_Youth"
         },
         FungusFlyer: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Fungoon (20)",
+          nameDefault: "Fungoon",
+          spoiler: "Found only in Fungal Wastes",
+          wiki: "Fungoon"
         },
         FungCrawler: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Ambloom (15)",
+          nameDefault: "Ambloom",
+          spoiler: "Fungal Wastes, Fungal Core",
+          wiki: "Ambloom"
         },
         MantisLord: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Mantis Lords (1)",
+          nameDefault: "Mantis Lords",
+          spoiler: "Fungal Wastes: Mantis Village, switch lever",
+          wiki: "Mantis_Lords"
         },
         BlackKnight: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Watcher Knight (1)",
+          nameDefault: "Watcher Knight",
+          spoiler: "City of Tears: Watcher's Spire, Monarch Wings",
+          wiki: "Watcher_Knight"
         },
         ElectricMage: {
           name: "",
