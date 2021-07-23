@@ -4291,7 +4291,7 @@ var HK = {
     huntersJournal: {
       h2: "Hunter's Journal",
       id: "hk-journal",
-      description: "All 146 base Hunter's Journal entries that are required for Hunter's Mark and Keen Hunter/True Hunter achievements. There are more entries than base 146, but they are completely optional. Green = note completed. Gray = entry discovered, but note not completed. Red = entry not yet discovered.",
+      description: "All 146 base Hunter's Journal entries that are required for Hunter's Mark and Keen Hunter/True Hunter achievements. There are more entries than base 146, but they are completely optional. Green = note completed. Gray = entry discovered, but note not completed. Red = entry not yet discovered. (nr) = amount left to complete note.",
       entries: {
         PrayerSlug: {
           name: "Maggot",
