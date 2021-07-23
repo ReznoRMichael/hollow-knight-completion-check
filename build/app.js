@@ -4702,10 +4702,10 @@ var HK = {
           wiki: "Husk_Dandy"
         },
         RoyalCoward: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Cowardly Husk (25)",
+          nameDefault: "Cowardly Husk",
+          spoiler: "City of Tears: right section",
+          wiki: "Cowardly_Husk"
         },
         RoyalPlumper: {
           name: "",
