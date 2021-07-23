@@ -1838,28 +1838,28 @@ const HK = {
           wiki: "Mantis_Warrior"
         },
         MushroomRoller: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Shrumal Warrior (30)",
+          nameDefault: "Shrumal Warrior",
+          spoiler: "Fungal Wastes, Fungal Core",
+          wiki: "Shrumal_Warrior"
         },
         MushroomBrawler: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Shrumal Ogre (8)",
+          nameDefault: "Shrumal Ogre",
+          spoiler: "Fungal Wastes, bottom of Fungal Core",
+          wiki: "Shrumal_Ogre"
         },
         MushroomBaby: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Shrumeling (20)",
+          nameDefault: "Shrumeling",
+          spoiler: "Fungal Wastes, near Shrumal Warriors",
+          wiki: "Shrumeling"
         },
         MantisFlyerChild: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Mantis Youth",
+          nameDefault: "Mantis Youth",
+          spoiler: "Fungal Wastes: Mantis Village",
+          wiki: "Mantis_Youth"
         },
         FungusFlyer: {
           name: "",
