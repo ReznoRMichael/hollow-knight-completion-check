@@ -1778,28 +1778,28 @@ const HK = {
           wiki: "Moss_Knight"
         },
         GrassHopper: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Loodle (15)",
+          nameDefault: "Loodle",
+          spoiler: "Found only in Queen's Gardens",
+          wiki: "Loodle"
         },
         MossFlyer: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Mossfly (30)",
+          nameDefault: "Mossfly",
+          spoiler: "Queen's Gardens, Overgrown Mound",
+          wiki: "Mossfly"
         },
         MossKnightFat: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Mossy Vagabond (5)",
+          nameDefault: "Mossy Vagabond",
+          spoiler: "Queen's Gardens: near exit to Fungal Wastes",
+          wiki: "Mossy_Vagabond"
         },
         MossWalker: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Mosscreep (35)",
+          nameDefault: "Mosscreep",
+          spoiler: "Greenpath and Queen's Gardens",
+          wiki: "Mosscreep"
         },
         InfectedKnight: {
           name: "",
