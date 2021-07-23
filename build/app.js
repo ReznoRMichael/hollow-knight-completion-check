@@ -1513,17 +1513,37 @@ function CheckMrMushroomState(section, entry) {
 function CheckHuntersJournal(db, playerData) {
   var section = db.sections.huntersJournal;
   var entries = db.sections.huntersJournal.entries;
+  var name = "";
+  var nameDefault = "";
+  var amountKillsLeft = 0;
 
   for (var entry in entries) {
+    name = entries[entry].name;
+    nameDefault = entries[entry].nameDefault;
+    amountKillsLeft = playerData["kills".concat(entry)];
+    entries[entry].name = nameDefault;
+    console.info("before entries[entry].name:", entries[entry].name);
+    console.info("before name:", name);
+    /* When killed at least 1, the entry has a gray symbol */
+
     if (playerData["killed".concat(entry)] === true) {
       CurrentDataPartial(section, entry);
+      /* When not killed, the entry is undiscovered */
     } else {
       CurrentDataFalse(section, entry);
     }
+    /* When the Hunter's Note is unlocked, the entry has a green symbol */
 
-    if (playerData["kills".concat(entry)] === 0) {
+
+    if (amountKillsLeft === 0) {
       CurrentDataTrue(section, entry);
+    } else {
+      name += " (".concat(amountKillsLeft, ")");
+      entries[entry].name = name;
     }
+
+    console.info("after entries[entry].name:", entries[entry].name);
+    console.info("after name:", name);
   }
 }
 /**
@@ -4111,8 +4131,8 @@ var HK = {
           wiki: "Hunter's_Mark"
         },
         killsBigBuzzer: {
-          name: "Vengefly King",
-          spoiler: "Greenpath, Colosseum: Trial of the Warrior",
+          name: "Vengefly King Journal Note",
+          spoiler: "Colosseum: Trial of the Warrior",
           wiki: "Vengefly_King"
         },
         falseKnightDreamDefeated: {
@@ -4275,730 +4295,875 @@ var HK = {
     huntersJournal: {
       h2: "Hunter's Journal",
       id: "hk-journal",
-      description: "All 146 base Hunter's Journal entries that are required for Hunter's Mark and Keen Hunter/True Hunter achievements. There are more entries than base 146, but they are completely optional. Green = note completed. Dark Yellow = entry discovered, but note not completed. Red = entry not yet discovered.",
+      description: "All 146 base Hunter's Journal entries that are required for Hunter's Mark and Keen Hunter/True Hunter achievements. There are more entries than base 146, but they are completely optional. Green = note completed. Gray = entry discovered, but note not completed. Red = entry not yet discovered.",
       entries: {
         PrayerSlug: {
           name: "Maggot",
+          nameDefault: "Maggot",
           spoiler: "Forgotten Crossroads: False Knight secret room",
           wiki: "Maggot"
         },
         OrangeScuttler: {
           name: "Lightseed",
+          nameDefault: "Lightseed",
           spoiler: "Infected Crossroads",
           wiki: "Lightseed"
         },
         Pigeon: {
           name: "Maskfly",
+          nameDefault: "Maskfly",
           spoiler: "Greenpath, Queen's Gardens",
           wiki: "Maskfly"
         },
         LazyFlyer: {
           name: "Aluba",
+          nameDefault: "Aluba",
           spoiler: "Lake of Unn, Queen's Gardens (near White Lady)",
           wiki: "Aluba"
         },
         AcidFlyer: {
           name: "Duranda",
+          nameDefault: "Duranda",
           spoiler: "Greenpath: Nailmaster Sheo's tent path",
           wiki: "Duranda"
         },
         AcidWalker: {
           name: "Durandoo",
+          nameDefault: "Durandoo",
           spoiler: "Greenpath, Queen's Gardens",
           wiki: "Durandoo"
         },
         PlantShooter: {
           name: "Gulka",
+          nameDefault: "Gulka",
           spoiler: "Greenpath: left of Stone Sanctuary",
           wiki: "Gulka"
         },
         MushroomTurret: {
           name: "Sporg",
+          nameDefault: "Sporg",
           spoiler: "Fungal Wastes",
           wiki: "Sporg"
         },
         ZapBug: {
           name: "Charged Lumafly",
+          nameDefault: "Charged Lumafly",
           spoiler: "Fog Canyon: Teacher's Archives (tank)",
           wiki: "Charged_Lumafly"
         },
         CrystalCrawler: {
           name: "Crystal Crawler",
+          nameDefault: "Crystal Crawler",
           spoiler: "Crystal Peak",
           wiki: "Crystal_Crawler"
         },
         GorgeousHusk: {
           name: "Gorgeous Husk",
+          nameDefault: "Gorgeous Husk",
           spoiler: "City of Tears: secret room",
           wiki: "Gorgeous_Husk"
         },
         Worm: {
           name: "Goam",
+          nameDefault: "Goam",
           spoiler: "Infected Crossroads: near Fungal Wastes entrance",
           wiki: "Goam"
         },
         BigCentipede: {
           name: "Garpede",
+          nameDefault: "Garpede",
           spoiler: "Deepnest: right of Hot Spring",
           wiki: "Garpede"
         },
         AbyssTendril: {
           name: "Void Tendrils",
+          nameDefault: "Void Tendrils",
           spoiler: "The Abyss: secret room",
           wiki: "Void_Tendrils"
         },
         LobsterLancer: {
           name: "God Tamer",
+          nameDefault: "God Tamer",
           spoiler: "Colosseum of Fools: Trial of the Fool boss",
           wiki: "God_Tamer"
         },
         FatFluke: {
           name: "Flukemunga",
+          nameDefault: "Flukemunga",
           spoiler: "Royal Waterways: secret area, left of bench",
           wiki: "Flukemunga"
         },
         PaleLurker: {
           name: "Pale Lurker",
+          nameDefault: "Pale Lurker",
           spoiler: "Colosseum of Fools: top right breakable wall",
           wiki: "Pale_Lurker"
         },
         Crawler: {
           name: "Crawlid",
+          nameDefault: "Crawlid",
           spoiler: "King's Pass, Forgotten Crossroads, Greenpath",
           wiki: "Crawlid"
         },
         Buzzer: {
           name: "Vengefly",
+          nameDefault: "Vengefly",
           spoiler: "Howling Cliffs, Forgotten Crossroads, Greenpath, City of Tears",
           wiki: "Vengefly"
         },
         Bouncer: {
           name: "Gruzzer",
+          nameDefault: "Gruzzer",
           spoiler: "Forgotten Crossroads",
           wiki: "Gruzzer"
         },
         Climber: {
           name: "Tiktik",
+          nameDefault: "Tiktik",
           spoiler: "Forgotten Crossroads, Howling Cliffs, Greenpath",
           wiki: "Tiktik"
         },
         Hopper: {
           name: "Hopper",
+          nameDefault: "Hopper",
           spoiler: "Kingdom's Edge",
           wiki: "Hopper"
         },
         Spitter: {
           name: "Aspid Hunter",
+          nameDefault: "Aspid Hunter",
           spoiler: "Forgotten Crossroads, Ancient Basin, The Collector",
           wiki: "Aspid_Hunter"
         },
         Hatcher: {
           name: "Aspid Mother",
+          nameDefault: "Aspid Mother",
           spoiler: "Forgotten Crossroads, mainly next to the Tram station",
           wiki: "Aspid_Mother"
         },
         Hatchling: {
           name: "Aspid Hatchling",
+          nameDefault: "Aspid Hatchling",
           spoiler: "Forgotten Crossroads, summoned by Aspid Mother",
           wiki: "Aspid_Hatchling"
         },
         ZombieRunner: {
           name: "Wandering Husk",
+          nameDefault: "Wandering Husk",
           spoiler: "City of Tears, Greenpath, Forgotten Crossroads, Deepnest",
           wiki: "Wandering_Husk"
         },
         ZombieHornhead: {
           name: "Husk Hornhead",
-          spoiler: "Forgotten Crossroads, City of Tears, Fungal Wastes, Deepnest",
+          nameDefault: "Husk Hornhead",
+          spoiler: "Forgotten Crossroads, City of Tears, Deepnest",
           wiki: "Husk_Hornhead"
         },
         ZombieLeaper: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Leaping Husk",
+          nameDefault: "Leaping Husk",
+          spoiler: "Forgotten Crossroads, City of Tears, Howling Cliffs",
+          wiki: "Leaping_Husk"
         },
         ZombieBarger: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Husk Bully",
+          nameDefault: "Husk Bully",
+          spoiler: "Forgotten Crossroads, City of Tears, Howling Cliffs",
+          wiki: "Husk_Bully"
         },
         ZombieShield: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Husk Warrior",
+          nameDefault: "Husk Warrior",
+          spoiler: "Forgotten Crossroads: right of the Stag Station",
+          wiki: "Husk_Warrior"
         },
         ZombieGuard: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Husk Guard",
+          nameDefault: "Husk Guard",
+          spoiler: "Forgotten Crossroads: upper right area",
+          wiki: "Husk_Guard"
         },
         BigBuzzer: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Vengefly King",
+          nameDefault: "Vengefly King",
+          spoiler: "Greenpath, Colosseum: Trial of the Warrior",
+          wiki: "Vengefly_King"
         },
         BigFly: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Gruz Mother",
+          nameDefault: "Gruz Mother",
+          spoiler: "Forgotten Crossroads: lower right area",
+          wiki: "Gruz_Mother"
         },
         Mawlek: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Brooding Mawlek",
+          nameDefault: "Brooding Mawlek",
+          spoiler: "Forgotten Crossroads: below Grubfather, Mantis Claw",
+          wiki: "Brooding_Mawlek"
         },
         FalseKnight: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "False Knight",
+          nameDefault: "False Knight",
+          spoiler: "Forgotten Crossroads: middle area map symbol",
+          wiki: "False_Knight"
         },
         Roller: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Baldur",
+          nameDefault: "Baldur",
+          spoiler: "Ancestral Mound, Crystallised Mound, Howling Cliffs",
+          wiki: "Baldur"
         },
         Blocker: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Elder Baldur",
+          nameDefault: "Elder Baldur",
+          spoiler: "Ancestral Mound, Greenpath, Howling Cliffs",
+          wiki: "Elder_Baldur"
         },
         MossmanRunner: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Mosskin",
+          nameDefault: "Mosskin",
+          spoiler: "Greenpath: usually near a Volatile Mosskin",
+          wiki: "Mosskin"
         },
         MossmanShaker: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Volatile Mosskin",
+          nameDefault: "Volatile Mosskin",
+          spoiler: "Greenpath",
+          wiki: "Volatile_Mosskin"
         },
         Mosquito: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Squit",
+          nameDefault: "Squit",
+          spoiler: "Greenpath and the Overgrown Mound",
+          wiki: "Squit"
         },
         BlobFlyer: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Obble",
+          nameDefault: "Obble",
+          spoiler: "Greenpath: top left of Stone Sanctuary",
+          wiki: "Obble"
         },
         FungifiedZombie: {
-          name: "",
-          spoiler: "",
-          wiki: ""
+          name: "Fungified Husk",
+          nameDefault: "Fungified Husk",
+          spoiler: "Fungal Wastes",
+          wiki: "Fungified_Husk"
         },
         MossCharger: {
-          name: "",
+          name: "Moss Charger",
+          nameDefault: "Moss Charger",
           spoiler: "",
           wiki: ""
         },
         MegaMossCharger: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         SnapperTrap: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MossKnight: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         GrassHopper: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MossFlyer: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MossKnightFat: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MossWalker: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         InfectedKnight: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         Jellyfish: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         JellyCrawler: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MegaJellyfish: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         FungoonBaby: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         Mantis: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MushroomRoller: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MushroomBrawler: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MushroomBaby: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MantisFlyerChild: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         FungusFlyer: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         FungCrawler: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MantisLord: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         BlackKnight: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         ElectricMage: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         Mage: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MageKnight: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         RoyalDandy: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         RoyalCoward: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         RoyalPlumper: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         FlyingSentrySword: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         FlyingSentryJavelin: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         Sentry: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         SentryFat: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MageBlob: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         GreatShieldZombie: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         JarCollector: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MageBalloon: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MageLord: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         FlipHopper: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         Flukeman: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         Inflater: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         Flukefly: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         FlukeMother: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         DungDefender: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         CrystalFlyer: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         LaserBug: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         BeamMiner: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         ZombieMiner: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MegaBeamMiner: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MinesCrawler: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         AngryBuzzer: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         BurstingBouncer: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         BurstingZombie: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         SpittingZombie: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         BabyCentipede: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         CentipedeHatcher: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         LesserMawlek: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         SlashSpider: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         SpiderCorpse: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         ShootSpider: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MiniSpider: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         SpiderFlyer: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MimicSpider: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         BeeHatchling: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         BeeStinger: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         BigBee: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         HiveKnight: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         BlowFly: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         CeilingDropper: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         GiantHopper: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         GrubMimic: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MawlekTurret: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         HealthScuttler: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         ZombieHive: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         Hornet: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         AbyssCrawler: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         SuperSpitter: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         Sibling: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         PalaceFly: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         EggSac: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         Mummy: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         OrangeBalloon: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         HeavyMantis: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         TraitorLord: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         MantisHeavyFlyer: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         GardenZombie: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         RoyalGuard: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         WhiteRoyal: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         Oblobble: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         Blobble: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         ColMosquito: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         ColRoller: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         ColFlyingSentry: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         ColMiner: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         ColShield: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         ColWorm: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         ColHopper: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         GhostAladar: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         GhostXero: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         GhostHu: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         GhostMarmu: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         GhostNoEyes: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         GhostMarkoth: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         },
         GhostGalien: {
           name: "",
+          nameDefault: "",
           spoiler: "",
           wiki: ""
         }

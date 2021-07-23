@@ -1608,17 +1608,38 @@ function CheckHuntersJournal(db, playerData) {
 
   let section = db.sections.huntersJournal;
   let entries = db.sections.huntersJournal.entries;
+  let name = "";
+  let nameDefault = "";
+  let amountKillsLeft = 0;
 
   for (let entry in entries) {
 
+    name = entries[entry].name;
+    nameDefault = entries[entry].nameDefault;
+    amountKillsLeft = playerData[`kills${entry}`];
+
+    entries[entry].name = nameDefault;
+
+    /* When killed at least 1, the entry has a gray symbol */
     if (playerData[`killed${entry}`] === true) {
+
       CurrentDataPartial(section, entry);
+
+    /* When not killed, the entry is undiscovered */
     } else {
+
       CurrentDataFalse(section, entry);
     }
 
-    if (playerData[`kills${entry}`] === 0) {
+    /* When the Hunter's Note is unlocked, the entry has a green symbol */
+    if (amountKillsLeft === 0) {
+
       CurrentDataTrue(section, entry);
+
+    } else {
+
+      name += ` (${amountKillsLeft})`;
+      entries[entry].name = name;
     }
   }
 }
