@@ -1518,7 +1518,7 @@ function CheckHuntersJournal(db, playerData) {
   var amountKillsLeft = 0;
 
   for (var entry in entries) {
-    name = entries[entry].name;
+    name = entries[entry].nameDefault;
     nameDefault = entries[entry].nameDefault;
     amountKillsLeft = playerData["kills".concat(entry)];
     entries[entry].name = nameDefault;

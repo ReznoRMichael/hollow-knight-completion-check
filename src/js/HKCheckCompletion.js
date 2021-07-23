@@ -1614,7 +1614,7 @@ function CheckHuntersJournal(db, playerData) {
 
   for (let entry in entries) {
 
-    name = entries[entry].name;
+    name = entries[entry].nameDefault;
     nameDefault = entries[entry].nameDefault;
     amountKillsLeft = playerData[`kills${entry}`];
 
