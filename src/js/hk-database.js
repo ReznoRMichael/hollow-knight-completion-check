@@ -1502,271 +1502,271 @@ const HK = {
       description: `All 146 base Hunter's Journal entries that are required for Hunter's Mark and Keen Hunter/True Hunter achievements. There are more entries than base 146, but they are completely optional. Green = note completed. Gray = entry discovered, but note not completed. Red = entry not yet discovered. (nr) = amount left to complete note.`,
       entries: {
         PrayerSlug: {
-          name: "Maggot",
+          name: "Maggot (2)",
           nameDefault: "Maggot",
           spoiler: "Forgotten Crossroads: False Knight secret room",
           wiki: "Maggot"
         },
         OrangeScuttler: {
-          name: "Lightseed",
+          name: "Lightseed (20)",
           nameDefault: "Lightseed",
           spoiler: "Infected Crossroads",
           wiki: "Lightseed"
         },
         Pigeon: {
-          name: "Maskfly",
+          name: "Maskfly (15)",
           nameDefault: "Maskfly",
           spoiler: "Greenpath, Queen's Gardens",
           wiki: "Maskfly"
         },
         LazyFlyer: {
-          name: "Aluba",
+          name: "Aluba (1)",
           nameDefault: "Aluba",
           spoiler: "Lake of Unn, Queen's Gardens (near White Lady)",
           wiki: "Aluba"
         },
         AcidFlyer: {
-          name: "Duranda",
+          name: "Duranda (8)",
           nameDefault: "Duranda",
           spoiler: "Greenpath: Nailmaster Sheo's tent path",
           wiki: "Duranda"
         },
         AcidWalker: {
-          name: "Durandoo",
+          name: "Durandoo (8)",
           nameDefault: "Durandoo",
           spoiler: "Greenpath, Queen's Gardens",
           wiki: "Durandoo"
         },
         PlantShooter: {
-          name: "Gulka",
+          name: "Gulka (15)",
           nameDefault: "Gulka",
           spoiler: "Greenpath: left of Stone Sanctuary",
           wiki: "Gulka"
         },
         MushroomTurret: {
-          name: "Sporg",
+          name: "Sporg (20)",
           nameDefault: "Sporg",
           spoiler: "Fungal Wastes",
           wiki: "Sporg"
         },
         ZapBug: {
-          name: "Charged Lumafly",
+          name: "Charged Lumafly (1)",
           nameDefault: "Charged Lumafly",
           spoiler: "Fog Canyon: Teacher's Archives (tank)",
           wiki: "Charged_Lumafly"
         },
         CrystalCrawler: {
-          name: "Crystal Crawler",
+          name: "Crystal Crawler (15)",
           nameDefault: "Crystal Crawler",
           spoiler: "Crystal Peak",
           wiki: "Crystal_Crawler"
         },
         GorgeousHusk: {
-          name: "Gorgeous Husk",
+          name: "Gorgeous Husk (1)",
           nameDefault: "Gorgeous Husk",
           spoiler: "City of Tears: secret room",
           wiki: "Gorgeous_Husk"
         },
         Worm: {
-          name: "Goam",
+          name: "Goam (1)",
           nameDefault: "Goam",
           spoiler: "Infected Crossroads: near Fungal Wastes entrance",
           wiki: "Goam"
         },
         BigCentipede: {
-          name: "Garpede",
+          name: "Garpede (1)",
           nameDefault: "Garpede",
           spoiler: "Deepnest: right of Hot Spring",
           wiki: "Garpede"
         },
         AbyssTendril: {
-          name: "Void Tendrils",
+          name: "Void Tendrils (1)",
           nameDefault: "Void Tendrils",
           spoiler: "The Abyss: secret room",
           wiki: "Void_Tendrils"
         },
         LobsterLancer: {
-          name: "God Tamer",
+          name: "God Tamer (1)",
           nameDefault: "God Tamer",
           spoiler: "Colosseum of Fools: Trial of the Fool boss",
           wiki: "God_Tamer"
         },
         FatFluke: {
-          name: "Flukemunga",
+          name: "Flukemunga (8)",
           nameDefault: "Flukemunga",
           spoiler: "Royal Waterways: secret area, left of bench",
           wiki: "Flukemunga"
         },
         PaleLurker: {
-          name: "Pale Lurker",
+          name: "Pale Lurker (1)",
           nameDefault: "Pale Lurker",
           spoiler: "Colosseum of Fools: top right breakable wall",
           wiki: "Pale_Lurker"
         },
         Crawler: {
-          name: "Crawlid",
+          name: "Crawlid (0)",
           nameDefault: "Crawlid",
           spoiler: "King's Pass, Forgotten Crossroads, Greenpath",
           wiki: "Crawlid"
         },
         Buzzer: {
-          name: "Vengefly",
+          name: "Vengefly (45)",
           nameDefault: "Vengefly",
           spoiler: "Howling Cliffs, Forgotten Crossroads, Greenpath, City of Tears",
           wiki: "Vengefly"
         },
         Bouncer: {
-          name: "Gruzzer",
+          name: "Gruzzer (30)",
           nameDefault: "Gruzzer",
           spoiler: "Forgotten Crossroads",
           wiki: "Gruzzer"
         },
         Climber: {
-          name: "Tiktik",
+          name: "Tiktik (30)",
           nameDefault: "Tiktik",
           spoiler: "Forgotten Crossroads, Howling Cliffs, Greenpath",
           wiki: "Tiktik"
         },
         Hopper: {
-          name: "Hopper",
+          name: "Hopper (30)",
           nameDefault: "Hopper",
           spoiler: "Kingdom's Edge",
           wiki: "Hopper"
         },
         Spitter: {
-          name: "Aspid Hunter",
+          name: "Aspid Hunter (20)",
           nameDefault: "Aspid Hunter",
           spoiler: "Forgotten Crossroads, Ancient Basin, The Collector",
           wiki: "Aspid_Hunter"
         },
         Hatcher: {
-          name: "Aspid Mother",
+          name: "Aspid Mother (15)",
           nameDefault: "Aspid Mother",
           spoiler: "Forgotten Crossroads, mainly next to the Tram station",
           wiki: "Aspid_Mother"
         },
         Hatchling: {
-          name: "Aspid Hatchling",
+          name: "Aspid Hatchling (30)",
           nameDefault: "Aspid Hatchling",
           spoiler: "Forgotten Crossroads, summoned by Aspid Mother",
           wiki: "Aspid_Hatchling"
         },
         ZombieRunner: {
-          name: "Wandering Husk",
+          name: "Wandering Husk (35)",
           nameDefault: "Wandering Husk",
           spoiler: "City of Tears, Greenpath, Forgotten Crossroads, Deepnest",
           wiki: "Wandering_Husk"
         },
         ZombieHornhead: {
-          name: "Husk Hornhead",
+          name: "Husk Hornhead (35)",
           nameDefault: "Husk Hornhead",
           spoiler: "Forgotten Crossroads, City of Tears, Deepnest",
           wiki: "Husk_Hornhead"
         },
         ZombieLeaper: {
-          name: "Leaping Husk",
+          name: "Leaping Husk (35)",
           nameDefault: "Leaping Husk",
           spoiler: "Forgotten Crossroads, City of Tears, Howling Cliffs",
           wiki: "Leaping_Husk"
         },
         ZombieBarger: {
-          name: "Husk Bully",
+          name: "Husk Bully (35)",
           nameDefault: "Husk Bully",
           spoiler: "Forgotten Crossroads, City of Tears, Howling Cliffs",
           wiki: "Husk_Bully"
         },
         ZombieShield: {
-          name: "Husk Warrior",
+          name: "Husk Warrior (10)",
           nameDefault: "Husk Warrior",
           spoiler: "Forgotten Crossroads: right of the Stag Station",
           wiki: "Husk_Warrior"
         },
         ZombieGuard: {
-          name: "Husk Guard",
+          name: "Husk Guard (10)",
           nameDefault: "Husk Guard",
           spoiler: "Forgotten Crossroads: upper right area",
           wiki: "Husk_Guard"
         },
         BigBuzzer: {
-          name: "Vengefly King",
+          name: "Vengefly King (2)",
           nameDefault: "Vengefly King",
           spoiler: "Greenpath, Colosseum: Trial of the Warrior",
           wiki: "Vengefly_King"
         },
         BigFly: {
-          name: "Gruz Mother",
+          name: "Gruz Mother (3)",
           nameDefault: "Gruz Mother",
           spoiler: "Forgotten Crossroads: lower right area",
           wiki: "Gruz_Mother"
         },
         Mawlek: {
-          name: "Brooding Mawlek",
+          name: "Brooding Mawlek (1)",
           nameDefault: "Brooding Mawlek",
           spoiler: "Forgotten Crossroads: below Grubfather, Mantis Claw",
           wiki: "Brooding_Mawlek"
         },
         FalseKnight: {
-          name: "False Knight",
+          name: "False Knight (1)",
           nameDefault: "False Knight",
           spoiler: "Forgotten Crossroads: middle area map symbol",
           wiki: "False_Knight"
         },
         Roller: {
-          name: "Baldur",
+          name: "Baldur (20)",
           nameDefault: "Baldur",
           spoiler: "Ancestral Mound, Crystallised Mound, Howling Cliffs",
           wiki: "Baldur"
         },
         Blocker: {
-          name: "Elder Baldur",
+          name: "Elder Baldur (1)",
           nameDefault: "Elder Baldur",
           spoiler: "Ancestral Mound, Greenpath, Howling Cliffs",
           wiki: "Elder_Baldur"
         },
         MossmanRunner: {
-          name: "Mosskin",
+          name: "Mosskin (25)",
           nameDefault: "Mosskin",
           spoiler: "Greenpath: usually near a Volatile Mosskin",
           wiki: "Mosskin"
         },
         MossmanShaker: {
-          name: "Volatile Mosskin",
+          name: "Volatile Mosskin (25)",
           nameDefault: "Volatile Mosskin",
           spoiler: "Greenpath",
           wiki: "Volatile_Mosskin"
         },
         Mosquito: {
-          name: "Squit",
+          name: "Squit (30)",
           nameDefault: "Squit",
           spoiler: "Greenpath and the Overgrown Mound",
           wiki: "Squit"
         },
         BlobFlyer: {
-          name: "Obble",
+          name: "Obble (20)",
           nameDefault: "Obble",
           spoiler: "Greenpath: top left of Stone Sanctuary",
           wiki: "Obble"
         },
         FungifiedZombie: {
-          name: "Fungified Husk",
+          name: "Fungified Husk (10)",
           nameDefault: "Fungified Husk",
           spoiler: "Found only in Fungal Wastes",
           wiki: "Fungified_Husk"
         },
         MossCharger: {
-          name: "Moss Charger",
+          name: "Moss Charger (15)",
           nameDefault: "Moss Charger",
           spoiler: "Found only in Greenpath",
           wiki: "Moss_Charger"
         },
         MegaMossCharger: {
-          name: "Massive Moss Charger",
+          name: "Massive Moss Charger (1)",
           nameDefault: "Massive Moss Charger",
           spoiler: "Greenpath: bottom left near Fog Canyon",
           wiki: "Massive_Moss_Charger"
         },
         SnapperTrap: {
-          name: "Fool Eater",
+          name: "Fool Eater (15)",
           nameDefault: "Fool Eater",
           spoiler: "Greenpath and Queen's Gardens",
           wiki: "Fool_Eater"
@@ -1802,16 +1802,16 @@ const HK = {
           wiki: "Mosscreep"
         },
         InfectedKnight: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Broken Vessel (1)",
+          nameDefault: "Broken Vessel",
+          spoiler: "Ancient Basin: far left, needs Crystal Heart",
+          wiki: "Broken_Vessel"
         },
         Jellyfish: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Ooma (12)",
+          nameDefault: "Ooma",
+          spoiler: "Fog Canyon: almost everywhere",
+          wiki: "Ooma"
         },
         JellyCrawler: {
           name: "",
