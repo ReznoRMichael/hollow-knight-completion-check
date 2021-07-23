@@ -4678,28 +4678,28 @@ var HK = {
           wiki: "Watcher_Knight"
         },
         ElectricMage: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Volt Twister (6)",
+          nameDefault: "Volt Twister",
+          spoiler: "Colosseum of Fools: Trial of the Fool",
+          wiki: "Volt_Twister"
         },
         Mage: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Soul Twister (20)",
+          nameDefault: "Soul Twister",
+          spoiler: "City of Tears: Soul Sanctum, Trial of the Fool",
+          wiki: "Soul_Twister"
         },
         MageKnight: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Soul Warrior (2)",
+          nameDefault: "Soul Warrior",
+          spoiler: "City of Tears: Soul Sanctum, Trial of the Fool",
+          wiki: "Soul_Warrior"
         },
         RoyalDandy: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Husk Dandy (25)",
+          nameDefault: "Husk Dandy",
+          spoiler: "City of Tears: right section",
+          wiki: "Husk_Dandy"
         },
         RoyalCoward: {
           name: "",
