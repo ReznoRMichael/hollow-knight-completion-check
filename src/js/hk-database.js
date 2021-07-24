@@ -1916,28 +1916,28 @@ const HK = {
           wiki: "Cowardly_Husk"
         },
         RoyalPlumper: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Gluttonous Husk (25)",
+          nameDefault: "Gluttonous Husk",
+          spoiler: "City of Tears: right section",
+          wiki: "Gluttonous_Husk"
         },
         FlyingSentrySword: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Winged Sentry (35)",
+          nameDefault: "Winged Sentry",
+          spoiler: "City of Tears, Royal Waterways, Ancient Basin",
+          wiki: "Winged_Sentry"
         },
         FlyingSentryJavelin: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Lance Sentry (30)",
+          nameDefault: "Lance Sentry",
+          spoiler: "City of Tears, Royal Waterways, Ancient Basin",
+          wiki: "Lance_Sentry"
         },
         Sentry: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Husk Sentry (30)",
+          nameDefault: "Husk Sentry",
+          spoiler: "City of Tears, Royal Waterways, Isma's Grove",
+          wiki: "Husk_Sentry"
         },
         SentryFat: {
           name: "",
