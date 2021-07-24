@@ -682,6 +682,12 @@ a.wiki {
   opacity: 1;
 }
 
+.wiki.blurred {
+  color: #0000;
+  background-color: #ffffff2d;
+  transition: all 0.3s ease;
+}
+
 .blurred {
   color: #0000;
   background-color: #ffffff1f;
