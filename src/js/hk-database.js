@@ -1555,10 +1555,10 @@ const HK = {
           spoiler: "Fog Canyon: Teacher's Archives (tank)",
           wiki: "Charged_Lumafly"
         },
-        CrystalCrawler: {
+        LaserBug: {
           name: "Crystal Crawler (15)",
           nameDefault: "Crystal Crawler",
-          spoiler: "Crystal Peak",
+          spoiler: "Crystal Peak: use spells",
           wiki: "Crystal_Crawler"
         },
         GorgeousHusk: {
@@ -2012,16 +2012,10 @@ const HK = {
           wiki: "Dung_Defender"
         },
         CrystalFlyer: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
-        },
-        LaserBug: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Crystal Hunter (20)",
+          nameDefault: "Crystal Hunter",
+          spoiler: "Crystal Peak, Crystallized Mound",
+          wiki: "Crystal_Hunter"
         },
         BeamMiner: {
           name: "",
@@ -2046,6 +2040,12 @@ const HK = {
           nameDefault: "",
           spoiler: "",
           wiki: ""
+        },
+        CrystalCrawler: {
+          name: "Glimback (15)",
+          nameDefault: "Glimback",
+          spoiler: "Crystal Peak, Forgotten Crossroads toll booth",
+          wiki: "Glimback"
         },
         AngryBuzzer: {
           name: "",
