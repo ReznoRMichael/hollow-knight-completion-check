@@ -4864,28 +4864,28 @@ var HK = {
           wiki: "Slobbering_Husk"
         },
         BabyCentipede: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Dirtcarver (35)",
+          nameDefault: "Dirtcarver",
+          spoiler: "Deepnest, Carver Hatcher",
+          wiki: "Dirtcarver"
         },
         CentipedeHatcher: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Carver Hatcher (15)",
+          nameDefault: "Carver Hatcher",
+          spoiler: "Deepnest: top area Failed Tramway",
+          wiki: "Carver_Hatcher"
         },
         LesserMawlek: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Lesser Mawlek (10)",
+          nameDefault: "Lesser Mawlek",
+          spoiler: "Ancient Basin: left of tram, Trial of the Fool",
+          wiki: "Lesser_Mawlek"
         },
         SlashSpider: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Stalking Devout (15)",
+          nameDefault: "Stalking Devout",
+          spoiler: "Deepnest: left area, Distant Village",
+          wiki: "Stalking_Devout"
         },
         SpiderCorpse: {
           name: "",
