@@ -110,7 +110,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Added Secret data information at the bottom of the tool.  
 
   — **(New) Hunter's Journal** additions/changes/fixes:  
-  ✅ change + addition: now showing all 146 base entries needed for Keen/True Hunter achievements (with partial completion and number of kills left).  
+  ✅ change + addition: now showing all 146 base entries needed for Keen/True Hunter achievements (with partial completion and number of kills left). The most commonly missed entries are shown at the top.  
   ✅ fix: Crystal Crawler was actually Glimback before, despite being named CrystalCrawler in the save files.  
 
   — **Hints** changes:  
