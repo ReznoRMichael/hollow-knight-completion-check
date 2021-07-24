@@ -98,6 +98,7 @@ If you like the tool and wish it developed further with more functions and easie
   — Changes/Fixes:  
   ✅ Rewrote and optimized large parts of the code. Should work a bit faster now, especially on mobile devices.  
   ✅ Drag and Drop save file should now work for the whole window (not just for the file input field).  
+  ✅ Added full Hunter's Journal to the program. Now you can see and check all journal entries, as well as partial note completion and number of kills left to uncover Hunter's notes for each creature.  
   ✅ Choose Save File appearance change. Will now show file's name, date and time after file is loaded (also after drag & drop).  
   ✅ Number of Health Masks, Soul Orbs and Charm Notches is now displayed as a number next to the graphics.  
   ✅ Display all entry descriptions by default. They are all blurred when Spoilers checkbox is unchecked. Hover over them to uncover one-by-one.  
@@ -108,7 +109,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Fixed not cleaning text area and file input after page refresh (Firefox).  
   ✅ Added Secret data information at the bottom of the tool.  
 
-  — **New Hunter's Journal** additions/changes/fixes:  
+  — **(New) Hunter's Journal** additions/changes/fixes:  
   ✅ change + addition: now showing all 146 base entries needed for Keen/True Hunter achievements (with partial completion and number of kills left).  
   ✅ fix: Crystal Crawler was actually Glimback before, despite being named CrystalCrawler in the save files.  
 
