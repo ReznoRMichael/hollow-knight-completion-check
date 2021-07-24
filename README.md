@@ -108,6 +108,10 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Fixed not cleaning text area and file input after page refresh (Firefox).  
   ✅ Added Secret data information at the bottom of the tool.  
 
+  — **New Hunter's Journal** additions/changes/fixes:  
+  ✅ change + addition: now showing all 146 base entries needed for Keen/True Hunter achievements (with partial completion and number of kills left).  
+  ✅ fix: Crystal Crawler was actually Glimback before, despite being named CrystalCrawler in the save files.  
+
   — **Hints** changes:  
   ✅ change: Made the Hints section stand out more from the rest of the tool.  
   ✅ change: Re-phrased all clues.  
