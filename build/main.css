@@ -387,17 +387,6 @@ input[type="file"] {
   font-style: italic;
 }
 
-.blurred {
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-  transition: all 0.3s ease;
-}
-
-.blurred:hover {
-  filter: none;
-  -webkit-filter: none;
-}
-
 .spoiler-span.blurred:hover {
   cursor: default;
 }
@@ -575,8 +564,8 @@ a.wiki {
 }
 
 .partial {
-  color: #000;
-  text-shadow: 0 0 0.3rem #fff;
+  color: #797979;
+  /* text-shadow: 0 0 0.3rem #fff; */
 }
 
 .icon-info-circled {
@@ -691,6 +680,21 @@ a.wiki {
 
 .opacity-full {
   opacity: 1;
+}
+
+.blurred {
+  color: #0000;
+  background-color: #ffffff1f;
+/*   filter: blur(5px);
+  -webkit-filter: blur(5px); */
+  transition: all 0.3s ease;
+}
+
+.blurred:hover {
+  /* filter: none;
+  -webkit-filter: none; */
+  color: inherit;
+  background-color: inherit;
 }
 
 .spoiler-text {
