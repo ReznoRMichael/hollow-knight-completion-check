@@ -2011,6 +2011,12 @@ const HK = {
           spoiler: "Royal Waterways: right area",
           wiki: "Dung_Defender"
         },
+        CrystalCrawler: {
+          name: "Glimback (15)",
+          nameDefault: "Glimback",
+          spoiler: "Crystal Peak, Forgotten Crossroads toll booth",
+          wiki: "Glimback"
+        },
         CrystalFlyer: {
           name: "Crystal Hunter (20)",
           nameDefault: "Crystal Hunter",
@@ -2018,34 +2024,28 @@ const HK = {
           wiki: "Crystal_Hunter"
         },
         BeamMiner: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Crystallised Husk (15)",
+          nameDefault: "Crystallised Husk",
+          spoiler: "Crystal Peak: top right areas",
+          wiki: "Crystallised_Husk"
         },
         ZombieMiner: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Husk Miner (20)",
+          nameDefault: "Husk Miner",
+          spoiler: "Found only in Crystal Peak",
+          wiki: "Husk_Miner"
         },
         MegaBeamMiner: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Crystal Guardian (2)",
+          nameDefault: "Crystal Guardian",
+          spoiler: "Crystal Peak: center bench area",
+          wiki: "Crystal_Guardian"
         },
         MinesCrawler: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
-        },
-        CrystalCrawler: {
-          name: "Glimback (15)",
-          nameDefault: "Glimback",
-          spoiler: "Crystal Peak, Forgotten Crossroads toll booth",
-          wiki: "Glimback"
+          name: "Shardmite (15)",
+          nameDefault: "Shardmite",
+          spoiler: "Found only in Crystal Peak",
+          wiki: "Shardmite"
         },
         AngryBuzzer: {
           name: "",

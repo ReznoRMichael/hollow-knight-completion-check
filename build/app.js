@@ -4347,10 +4347,10 @@ var HK = {
           spoiler: "Fog Canyon: Teacher's Archives (tank)",
           wiki: "Charged_Lumafly"
         },
-        CrystalCrawler: {
+        LaserBug: {
           name: "Crystal Crawler (15)",
           nameDefault: "Crystal Crawler",
-          spoiler: "Crystal Peak",
+          spoiler: "Crystal Peak: use spells",
           wiki: "Crystal_Crawler"
         },
         GorgeousHusk: {
@@ -4803,41 +4803,41 @@ var HK = {
           spoiler: "Royal Waterways: right area",
           wiki: "Dung_Defender"
         },
-        CrystalFlyer: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+        CrystalCrawler: {
+          name: "Glimback (15)",
+          nameDefault: "Glimback",
+          spoiler: "Crystal Peak, Forgotten Crossroads toll booth",
+          wiki: "Glimback"
         },
-        LaserBug: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+        CrystalFlyer: {
+          name: "Crystal Hunter (20)",
+          nameDefault: "Crystal Hunter",
+          spoiler: "Crystal Peak, Crystallized Mound",
+          wiki: "Crystal_Hunter"
         },
         BeamMiner: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Crystallised Husk (15)",
+          nameDefault: "Crystallised Husk",
+          spoiler: "Crystal Peak: top right areas",
+          wiki: "Crystallised_Husk"
         },
         ZombieMiner: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Husk Miner (20)",
+          nameDefault: "Husk Miner",
+          spoiler: "Found only in Crystal Peak",
+          wiki: "Husk_Miner"
         },
         MegaBeamMiner: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Crystal Guardian (2)",
+          nameDefault: "Crystal Guardian",
+          spoiler: "Crystal Peak: center bench area",
+          wiki: "Crystal_Guardian"
         },
         MinesCrawler: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Shardmite (15)",
+          nameDefault: "Shardmite",
+          spoiler: "Found only in Crystal Peak",
+          wiki: "Shardmite"
         },
         AngryBuzzer: {
           name: "",
