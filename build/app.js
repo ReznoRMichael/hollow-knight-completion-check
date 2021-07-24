@@ -4840,28 +4840,28 @@ var HK = {
           wiki: "Shardmite"
         },
         AngryBuzzer: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Furious Vengefly (15)",
+          nameDefault: "Furious Vengefly",
+          spoiler: "Infected Crossroads, Trial of the Fool",
+          wiki: "Furious_Vengefly"
         },
         BurstingBouncer: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Volatile Gruzzer (15)",
+          nameDefault: "Volatile Gruzzer",
+          spoiler: "Infected Crossroads, Colosseum Trials",
+          wiki: "Volatile_Gruzzer"
         },
         BurstingZombie: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Violent Husk (15)",
+          nameDefault: "Violent Husk",
+          spoiler: "Found only in Infected Crossroads",
+          wiki: "Violent_Husk"
         },
         SpittingZombie: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Slobbering Husk (15)",
+          nameDefault: "Slobbering Husk",
+          spoiler: "Found only in Infected Crossroads",
+          wiki: "Slobbering_Husk"
         },
         BabyCentipede: {
           name: "",
