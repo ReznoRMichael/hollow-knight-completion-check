@@ -1970,46 +1970,46 @@ const HK = {
           wiki: "Folly"
         },
         MageLord: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Soul Master (1)",
+          nameDefault: "Soul Master",
+          spoiler: "City of Tears: Soul Sanctum",
+          wiki: "Soul_Master"
         },
         FlipHopper: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Pilflip (20)",
+          nameDefault: "Pilflip",
+          spoiler: "Royal Waterways: central part",
+          wiki: "Pilflip"
         },
         Flukeman: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Flukemon (20)",
+          nameDefault: "Flukemon",
+          spoiler: "Royal Waterways: central part",
+          wiki: "Flukemon"
         },
         Inflater: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Hwurmp (20)",
+          nameDefault: "Hwurmp",
+          spoiler: "Royal Waterways, Isma's Grove",
+          wiki: "Hwurmp"
         },
         Flukefly: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Flukefey (15)",
+          nameDefault: "Flukefey",
+          spoiler: "Found only in Royal Waterways",
+          wiki: "Flukefey"
         },
         FlukeMother: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Flukemarm (1)",
+          nameDefault: "Flukemarm",
+          spoiler: "Royal Waterways: bottom, Desolate Dive",
+          wiki: "Flukemarm"
         },
         DungDefender: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Dung Defender (1)",
+          nameDefault: "Dung Defender",
+          spoiler: "Royal Waterways: right area",
+          wiki: "Dung_Defender"
         },
         CrystalFlyer: {
           name: "",
