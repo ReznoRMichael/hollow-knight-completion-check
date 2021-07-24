@@ -1940,34 +1940,34 @@ const HK = {
           wiki: "Husk_Sentry"
         },
         SentryFat: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Heavy Sentry (20)",
+          nameDefault: "Heavy Sentry",
+          spoiler: "Found only in City of Tears",
+          wiki: "Heavy_Sentry"
         },
         MageBlob: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Mistake (25)",
+          nameDefault: "Mistake",
+          spoiler: "City of Tears: Soul Sanctum, Trial of the Fool",
+          wiki: "Mistake"
         },
         GreatShieldZombie: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Great Husk Sentry (10)",
+          nameDefault: "Great Husk Sentry",
+          spoiler: "City of Tears, Watcher's Spire",
+          wiki: "Great_Husk_Sentry"
         },
         JarCollector: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "The Collector (1)",
+          nameDefault: "The Collector",
+          spoiler: "City of Tears: Tower of Love, Love Key",
+          wiki: "The_Collector"
         },
         MageBalloon: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Folly (15)",
+          nameDefault: "Folly",
+          spoiler: "City of Tears: Soul Sanctum, Trial of the Fool",
+          wiki: "Folly"
         },
         MageLord: {
           name: "",
