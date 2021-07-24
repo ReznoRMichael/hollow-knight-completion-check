@@ -1558,7 +1558,7 @@ const HK = {
         LaserBug: {
           name: "Crystal Crawler (15)",
           nameDefault: "Crystal Crawler",
-          spoiler: "Crystal Peak: use spells",
+          spoiler: "Crystal Peak: try to use spells",
           wiki: "Crystal_Crawler"
         },
         GorgeousHusk: {
