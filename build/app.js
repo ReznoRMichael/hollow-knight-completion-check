@@ -6356,7 +6356,8 @@ function GenerateInnerHTML(db) {
 
 
         for (var _entry in entries) {
-          obj.p = "<span class='p-left-small'></span>";
+          /* obj.p = "<span class='p-left-small'></span>"; */
+          obj.p = "";
           obj.span = ["<span class='spoiler-span blurred'>", "</span>"];
           obj.spoiler = ["<span class='spoiler-text'>", "</span>"];
           obj.div = div;

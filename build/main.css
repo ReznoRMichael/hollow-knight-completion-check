@@ -387,6 +387,11 @@ input[type="file"] {
   font-style: italic;
 }
 
+.single-entry .spoiler-span,
+.single-entry .spoiler-span-green {
+  margin-left: 0.4rem;
+}
+
 .spoiler-span.blurred:hover {
   cursor: default;
 }
