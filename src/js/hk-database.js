@@ -2096,34 +2096,34 @@ const HK = {
           wiki: "Stalking_Devout"
         },
         SpiderCorpse: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Corpse Creeper (15)",
+          nameDefault: "Corpse Creeper",
+          spoiler: "Found only in Deepnest: middle area",
+          wiki: "Corpse_Creeper"
         },
         ShootSpider: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Deephunter (20)",
+          nameDefault: "Deephunter",
+          spoiler: "Found only in Deepnest",
+          wiki: "Deephunter"
         },
         MiniSpider: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Deepling (25)",
+          nameDefault: "Deepling",
+          spoiler: "Deepnest: left areas",
+          wiki: "Deepling"
         },
         SpiderFlyer: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Little Weaver (20)",
+          nameDefault: "Little Weaver",
+          spoiler: "Deepnest: left areas",
+          wiki: "Little_Weaver"
         },
         MimicSpider: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Nosk (1)",
+          nameDefault: "Nosk",
+          spoiler: "Deepnest: left of Hot Spring, use Crystal Heart",
+          wiki: "Nosk"
         },
         BeeHatchling: {
           name: "",
