@@ -4966,28 +4966,28 @@ var HK = {
           wiki: "Grub_Mimic"
         },
         MawlekTurret: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Mawlurk (10)",
+          nameDefault: "Mawlurk",
+          spoiler: "Ancient Basin: left area",
+          wiki: "Mawlurk"
         },
         HealthScuttler: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Lifeseed (10)",
+          nameDefault: "Lifeseed",
+          spoiler: "Hallownest: inside Lifeblood Cocoons",
+          wiki: "Lifeseed"
         },
         ZombieHive: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Husk Hive (10)",
+          nameDefault: "Husk Hive",
+          spoiler: "found only in the Hive",
+          wiki: "Husk_Hive"
         },
         Hornet: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Hornet (2)",
+          nameDefault: "Hornet",
+          spoiler: "Greenpath, Kingdom's Edge",
+          wiki: "Hornet"
         },
         AbyssCrawler: {
           name: "",
