@@ -4360,19 +4360,19 @@ var HK = {
           wiki: "Gorgeous_Husk"
         },
         Worm: {
-          name: "Goam (1)",
+          name: "Goam (10)",
           nameDefault: "Goam",
           spoiler: "Infected Crossroads: near Fungal Wastes entrance",
           wiki: "Goam"
         },
         BigCentipede: {
-          name: "Garpede (1)",
+          name: "Garpede (10)",
           nameDefault: "Garpede",
           spoiler: "Deepnest: right of Hot Spring",
           wiki: "Garpede"
         },
         AbyssTendril: {
-          name: "Void Tendrils (1)",
+          name: "Void Tendrils (10)",
           nameDefault: "Void Tendrils",
           spoiler: "The Abyss: secret room",
           wiki: "Void_Tendrils"
@@ -4408,7 +4408,7 @@ var HK = {
           wiki: "Vengefly"
         },
         Bouncer: {
-          name: "Gruzzer (30)",
+          name: "Gruzzer (25)",
           nameDefault: "Gruzzer",
           spoiler: "Forgotten Crossroads",
           wiki: "Gruzzer"
@@ -4420,7 +4420,7 @@ var HK = {
           wiki: "Tiktik"
         },
         Hopper: {
-          name: "Hopper (30)",
+          name: "Hopper (25)",
           nameDefault: "Hopper",
           spoiler: "Kingdom's Edge",
           wiki: "Hopper"
@@ -4474,7 +4474,7 @@ var HK = {
           wiki: "Husk_Warrior"
         },
         ZombieGuard: {
-          name: "Husk Guard (10)",
+          name: "Husk Guard (6)",
           nameDefault: "Husk Guard",
           spoiler: "Forgotten Crossroads: upper right area",
           wiki: "Husk_Guard"
@@ -4528,7 +4528,7 @@ var HK = {
           wiki: "Volatile_Mosskin"
         },
         Mosquito: {
-          name: "Squit (30)",
+          name: "Squit (25)",
           nameDefault: "Squit",
           spoiler: "Greenpath and the Overgrown Mound",
           wiki: "Squit"
@@ -4564,7 +4564,7 @@ var HK = {
           wiki: "Fool_Eater"
         },
         MossKnight: {
-          name: "Moss Knight (10)",
+          name: "Moss Knight (8)",
           nameDefault: "Moss Knight",
           spoiler: "Found only in Greenpath",
           wiki: "Moss_Knight"
@@ -4576,19 +4576,19 @@ var HK = {
           wiki: "Loodle"
         },
         MossFlyer: {
-          name: "Mossfly (30)",
+          name: "Mossfly (25)",
           nameDefault: "Mossfly",
           spoiler: "Queen's Gardens, Overgrown Mound",
           wiki: "Mossfly"
         },
         MossKnightFat: {
-          name: "Mossy Vagabond (5)",
+          name: "Mossy Vagabond (10)",
           nameDefault: "Mossy Vagabond",
           spoiler: "Queen's Gardens: near exit to Fungal Wastes",
           wiki: "Mossy_Vagabond"
         },
         MossWalker: {
-          name: "Mosscreep (35)",
+          name: "Mosscreep (30)",
           nameDefault: "Mosscreep",
           spoiler: "Greenpath and Queen's Gardens",
           wiki: "Mosscreep"
