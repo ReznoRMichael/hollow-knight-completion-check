@@ -4986,32 +4986,32 @@ var HK = {
         Hornet: {
           name: "Hornet (2)",
           nameDefault: "Hornet",
-          spoiler: "Greenpath, Kingdom's Edge",
+          spoiler: "Greenpath, Kingdom's Edge, Godhome",
           wiki: "Hornet"
         },
         AbyssCrawler: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Shadow Creeper (20)",
+          nameDefault: "Shadow Creeper",
+          spoiler: "Ancient Basin, the Abyss",
+          wiki: "Shadow_Creeper"
         },
         SuperSpitter: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Primal Aspid (25)",
+          nameDefault: "Primal Aspid",
+          spoiler: "Kingdom's Edge, Colosseum of Fools Trials",
+          wiki: "Primal_Aspid"
         },
         Sibling: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Sibling (25)",
+          nameDefault: "Sibling",
+          spoiler: "The Abyss, lighthouse, Birthplace",
+          wiki: "Sibling"
         },
         PalaceFly: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Wingmould (10)",
+          nameDefault: "Wingmould",
+          spoiler: "Found only in the White Palace",
+          wiki: "Wingmould"
         },
         EggSac: {
           name: "",
