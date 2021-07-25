@@ -5014,34 +5014,34 @@ var HK = {
           wiki: "Wingmould"
         },
         EggSac: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Bluggsac (5)",
+          nameDefault: "Bluggsac",
+          spoiler: "Royal Waterways, Crystal Peak, Deepnest, Hallownest",
+          wiki: "Bluggsac"
         },
         Mummy: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Entombed Husk (10)",
+          nameDefault: "Entombed Husk",
+          spoiler: "Resting Grounds: bottom area tombs",
+          wiki: "Entombed_Husk"
         },
         OrangeBalloon: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Infected Balloon (10)",
+          nameDefault: "Infected Balloon",
+          spoiler: "Ancient Basin: left areas",
+          wiki: "Infected_Balloon"
         },
         HeavyMantis: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Mantis Traitor (15)",
+          nameDefault: "Mantis Traitor",
+          spoiler: "Queen's Gardens, Trial of the Fool",
+          wiki: "Mantis_Traitor"
         },
         TraitorLord: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Traitor Lord (1)",
+          nameDefault: "Traitor Lord",
+          spoiler: "Queen's Gardens: upper left, Shade Cloak",
+          wiki: "Traitor_Lord"
         },
         MantisHeavyFlyer: {
           name: "",
