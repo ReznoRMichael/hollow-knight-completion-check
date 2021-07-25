@@ -5044,28 +5044,28 @@ var HK = {
           wiki: "Traitor_Lord"
         },
         MantisHeavyFlyer: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Mantis Petra (16)",
+          nameDefault: "Mantis Petra",
+          spoiler: "Queen's Gardens, Trial of the Fool",
+          wiki: "Mantis_Petra"
         },
         GardenZombie: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Spiny Husk (20)",
+          nameDefault: "Spiny Husk",
+          spoiler: "Found only in Queen's Gardens",
+          wiki: "Spiny_Husk"
         },
         RoyalGuard: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Kingsmould (2)",
+          nameDefault: "Kingsmould",
+          spoiler: "Found only in the White Palace",
+          wiki: "Kingsmould"
         },
         WhiteRoyal: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Royal Retainer (10)",
+          nameDefault: "Royal Retainer",
+          spoiler: "Found only in the White Palace",
+          wiki: "Royal_Retainer"
         },
         Oblobble: {
           name: "",
