@@ -2150,28 +2150,28 @@ const HK = {
           wiki: "Hive_Knight"
         },
         BlowFly: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Boofly (20)",
+          nameDefault: "Boofly",
+          spoiler: "Found only in Kingdom's Edge",
+          wiki: "Boofly"
         },
         CeilingDropper: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Belfly (15)",
+          nameDefault: "Belfly",
+          spoiler: "City of Tears, Royal Waterways, Kingdom's Edge",
+          wiki: "Belfly"
         },
         GiantHopper: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Great Hopper (10)",
+          nameDefault: "Great Hopper",
+          spoiler: "Kingdom's Edge, Trial of the Conqueror",
+          wiki: "Great_Hopper"
         },
         GrubMimic: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Grub Mimic (5)",
+          nameDefault: "Grub Mimic",
+          spoiler: "Crystal Peak, Deepnest, Trial of the Conqueror",
+          wiki: "Grub_Mimic"
         },
         MawlekTurret: {
           name: "",
