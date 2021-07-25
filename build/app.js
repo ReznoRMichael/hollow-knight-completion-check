@@ -5116,28 +5116,28 @@ var HK = {
           wiki: "Heavy_Fool"
         },
         ColHopper: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Death Loodle (15)",
+          nameDefault: "Death Loodle",
+          spoiler: "Colosseum of Fools: Trial of the Fool",
+          wiki: "Death_Loodle"
         },
         GhostAladar: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Gorb (1)",
+          nameDefault: "Gorb",
+          spoiler: "Howling Cliffs: top area",
+          wiki: "Gorb"
         },
         GhostXero: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Xero (1)",
+          nameDefault: "Xero",
+          spoiler: "Resting Grounds: left area",
+          wiki: "Xero"
         },
         GhostHu: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Elder Hu (1)",
+          nameDefault: "Elder Hu",
+          spoiler: "Fungal Wastes: above acid bridge",
+          wiki: "Elder_Hu"
         },
         GhostMarmu: {
           name: "",
