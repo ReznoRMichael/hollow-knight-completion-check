@@ -2126,28 +2126,28 @@ const HK = {
           wiki: "Nosk"
         },
         BeeHatchling: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Hiveling (30)",
+          nameDefault: "Hiveling",
+          spoiler: "The Hive, Kingdom's Edge",
+          wiki: "Hiveling"
         },
         BeeStinger: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Hive Soldier (15)",
+          nameDefault: "Hive Soldier",
+          spoiler: "Found only in the Hive",
+          wiki: "Hive_Soldier"
         },
         BigBee: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Hive Guardian (12)",
+          nameDefault: "Hive Guardian",
+          spoiler: "Found only in the Hive",
+          wiki: "Hive_Guardian"
         },
         HiveKnight: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Hive Knight (1)",
+          nameDefault: "Hive Knight",
+          spoiler: "The Hive: right area",
+          wiki: "Hive_Knight"
         },
         BlowFly: {
           name: "",
