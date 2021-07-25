@@ -5140,28 +5140,28 @@ var HK = {
           wiki: "Elder_Hu"
         },
         GhostMarmu: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Marmu (1)",
+          nameDefault: "Marmu",
+          spoiler: "Queen's Gardens: left of Stag Station",
+          wiki: "Marmu"
         },
         GhostNoEyes: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "No Eyes (1)",
+          nameDefault: "No Eyes",
+          spoiler: "Greenpath: Stone Sanctuary, requires Lumafly Lantern",
+          wiki: "No_Eyes"
         },
         GhostMarkoth: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Markoth (1)",
+          nameDefault: "Markoth",
+          spoiler: "Kingdom's Edge, requires Shade Cloak",
+          wiki: "Markoth"
         },
         GhostGalien: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Galien (1)",
+          nameDefault: "Galien",
+          spoiler: "Deepnest: below Failed Tramway",
+          wiki: "Galien"
         }
       }
     },
