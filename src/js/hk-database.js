@@ -2300,28 +2300,28 @@ const HK = {
           wiki: "Sharp_Baldur"
         },
         ColFlyingSentry: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Winged Fool (25)",
+          nameDefault: "Winged Fool",
+          spoiler: "Colosseum of Fools: Trials #2 and #3",
+          wiki: "Winged_Fool"
         },
         ColMiner: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Sturdy Fool (25)",
+          nameDefault: "Sturdy Fool",
+          spoiler: "Colosseum of Fools: Trials #1 and #3",
+          wiki: "Sturdy_Fool"
         },
         ColShield: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Shielded Fool (25)",
+          nameDefault: "Shielded Fool",
+          spoiler: "Colosseum of Fools: All Trials",
+          wiki: "Shielded_Fool"
         },
         ColWorm: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Heavy Fool (20)",
+          nameDefault: "Heavy Fool",
+          spoiler: "Colosseum of Fools: Trials #2 and #3",
+          wiki: "Heavy_Fool"
         },
         ColHopper: {
           name: "",
