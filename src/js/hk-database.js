@@ -2276,28 +2276,28 @@ const HK = {
           wiki: "Royal_Retainer"
         },
         Oblobble: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Oblobble (3)",
+          nameDefault: "Oblobble",
+          spoiler: "Trial of the Conqueror, Godhome",
+          wiki: "Oblobbles"
         },
         Blobble: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Battle Obble (15)",
+          nameDefault: "Battle Obble",
+          spoiler: "Colosseum of Fools: Trials #2 and #3",
+          wiki: "Battle_Obble"
         },
         ColMosquito: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Armoured Squit (15)",
+          nameDefault: "Armoured Squit",
+          spoiler: "Colosseum of Fools: Trials #2 and #3",
+          wiki: "Armoured_Squit"
         },
         ColRoller: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Sharp Baldur (20)",
+          nameDefault: "Sharp Baldur",
+          spoiler: "Colosseum of Fools: Trials #1 and #3",
+          wiki: "Sharp_Baldur"
         },
         ColFlyingSentry: {
           name: "",
