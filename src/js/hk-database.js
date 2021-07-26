@@ -1582,7 +1582,7 @@ const HK = {
         AbyssTendril: {
           name: "Void Tendrils (10)",
           nameDefault: "Void Tendrils",
-          spoiler: "The Abyss: secret room",
+          spoiler: "The Abyss: secret room near Shade Cloak",
           wiki: "Void_Tendrils"
         },
         LobsterLancer: {
