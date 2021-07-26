@@ -4606,7 +4606,7 @@ var HK = {
           wiki: "Ooma"
         },
         JellyCrawler: {
-          name: "Uoma (25)",
+          name: "Uoma (20)",
           nameDefault: "Uoma",
           spoiler: "Fog Canyon: almost everywhere",
           wiki: "Uoma"
@@ -4618,7 +4618,7 @@ var HK = {
           wiki: "Uumuu"
         },
         FungoonBaby: {
-          name: "Fungling (35)",
+          name: "Fungling (30)",
           nameDefault: "Fungling",
           spoiler: "Fungal Wastes, Fungal Core, Junk Pit",
           wiki: "Fungling"
@@ -4630,7 +4630,7 @@ var HK = {
           wiki: "Mantis_Warrior"
         },
         MushroomRoller: {
-          name: "Shrumal Warrior (30)",
+          name: "Shrumal Warrior (20)",
           nameDefault: "Shrumal Warrior",
           spoiler: "Fungal Wastes, Fungal Core",
           wiki: "Shrumal_Warrior"
@@ -4672,7 +4672,7 @@ var HK = {
           wiki: "Mantis_Lords"
         },
         BlackKnight: {
-          name: "Watcher Knight (1)",
+          name: "Watcher Knight (10)",
           nameDefault: "Watcher Knight",
           spoiler: "City of Tears: Watcher's Spire, Monarch Wings",
           wiki: "Watcher_Knight"
@@ -4714,19 +4714,19 @@ var HK = {
           wiki: "Gluttonous_Husk"
         },
         FlyingSentrySword: {
-          name: "Winged Sentry (35)",
+          name: "Winged Sentry (30)",
           nameDefault: "Winged Sentry",
           spoiler: "City of Tears, Royal Waterways, Ancient Basin",
           wiki: "Winged_Sentry"
         },
         FlyingSentryJavelin: {
-          name: "Lance Sentry (30)",
+          name: "Lance Sentry (25)",
           nameDefault: "Lance Sentry",
           spoiler: "City of Tears, Royal Waterways, Ancient Basin",
           wiki: "Lance_Sentry"
         },
         Sentry: {
-          name: "Husk Sentry (30)",
+          name: "Husk Sentry (25)",
           nameDefault: "Husk Sentry",
           spoiler: "City of Tears, Royal Waterways, Isma's Grove",
           wiki: "Husk_Sentry"
