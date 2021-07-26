@@ -420,6 +420,7 @@ input[type="file"] {
 
 .tab-switch-buttons {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -431,9 +432,7 @@ input[type="file"] {
 }
 
 .button {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  display: inline-flex;
   width: max-content;
   font-size: 1rem;
   font-weight: 500;
@@ -475,7 +474,7 @@ input[type="file"] {
 @media screen and (max-width: 570px) {
   .centered {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 }
 
@@ -488,11 +487,6 @@ input[type="file"] {
   .input-buttons {
     align-items: center;
     justify-content: center;
-  }
-
-  .centered {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .checkboxes {
