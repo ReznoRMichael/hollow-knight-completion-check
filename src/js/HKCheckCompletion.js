@@ -1604,6 +1604,11 @@ function CheckMrMushroomState(section, entry, mrMushroomState = 0) {
   }
 }
 
+/**
+ * Checks and marks all the Hunter's Journal creatures entries with amounts, partial completion etc.
+ * @param {object} db Reference to the HK database
+ * @param {object} playerData Reference to the player's save data
+ */
 function CheckHuntersJournal(db, playerData) {
 
   let section = db.sections.huntersJournal;
@@ -1616,31 +1621,43 @@ function CheckHuntersJournal(db, playerData) {
 
     name = entries[entry].nameDefault;
     nameDefault = entries[entry].nameDefault;
-    amountKillsLeft = playerData[`kills${entry}`];
 
     entries[entry].name = nameDefault;
 
-    /* When killed at least 1, the entry has a gray symbol */
-    if (playerData[`killed${entry}`] === true) {
+    if (playerData.hasOwnProperty(`kills${entry}`)) {
 
-      CurrentDataPartial(section, entry);
+      amountKillsLeft = playerData[`kills${entry}`];
 
-    /* When not killed, the entry is undiscovered */
+      /* When killed at least 1, the entry has a gray symbol */
+      if (playerData[`killed${entry}`] === true) {
+
+        CurrentDataPartial(section, entry);
+
+      /* When not killed, the entry is undiscovered */
+      } else {
+
+        CurrentDataFalse(section, entry);
+      }
+
+      /* When the Hunter's Note is unlocked, the entry has a green symbol */
+      if (amountKillsLeft === 0) {
+
+        CurrentDataTrue(section, entry);
+
+      /* If not, show how many remain to defeat in the name */
+      } else {
+
+        name += ` (${amountKillsLeft})`;
+        entries[entry].name = name;
+      }
+
+    /* Earlier save files backwards compatibility (no undefined) */
     } else {
 
-      CurrentDataFalse(section, entry);
-    }
-
-    /* When the Hunter's Note is unlocked, the entry has a green symbol */
-    if (amountKillsLeft === 0) {
-
-      CurrentDataTrue(section, entry);
-
-    /* If not, show how many remain to defeat in the name */
-    } else {
-
-      name += ` (${amountKillsLeft})`;
+      amountKillsLeft = 0;
+      entries[entry].disabled = true;
       entries[entry].name = name;
+      CurrentDataBlank(section, entry);
     }
   }
 }
