@@ -366,11 +366,19 @@ function CurrentDataTrue(section = {}, entry = "") {
 }
 
 /**
- * Switches global variable to a "partially completed" symbol.
+ * Switches global variable to a "partially completed" symbol (prevents blurring the textPrefix).
  */
 function CurrentDataPartial(section = {}, entry = "") {
 
   section.entries[entry].icon = "partial";
+}
+
+/**
+ * Switches global variable to a "partially completed" symbol (prevents blurring whole entry).
+ */
+function CurrentDataPartialJournal(section = {}, entry = "") {
+
+  section.entries[entry].icon = "partialJournal";
 }
 
 /**
@@ -1631,7 +1639,7 @@ function CheckHuntersJournal(db, playerData) {
       /* When killed at least 1, the entry has a gray symbol */
       if (playerData[`killed${entry}`] === true) {
 
-        CurrentDataPartial(section, entry);
+        CurrentDataPartialJournal(section, entry);
 
       /* When not killed, the entry is undiscovered */
       } else {
