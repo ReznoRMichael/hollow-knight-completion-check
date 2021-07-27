@@ -1325,7 +1325,7 @@ const HK = {
         hasJournal: {
           name: "Hunter's Journal",
           spoiler: "Greenpath: Hunter, above Stone Sanctuary",
-          wiki: "Hunter%27s_Journal"
+          wiki: "Hunter's_Journal"
         },
         hasHuntersMark: {
           name: "Hunter's Mark",
@@ -2374,8 +2374,14 @@ const HK = {
     huntersJournalOptional: {
       h2: "Optional Journal Entries",
       id: "hk-journal-optional",
-      description: "The remaining Hunter's Journal entries which don't count to Hunter's Mark and Keen/True Hunter achievements.",
+      description: "The remaining Hunter's Journal entries which don't count for Hunter's Mark and Keen/True Hunter achievements.",
       entries: {
+        HunterMark: {
+          name: "Hunter's Mark (1)",
+          nameDefault: "Hunter's Mark",
+          spoiler: "Greenpath: Hunter, complete base 146 Hunter Notes",
+          wiki: "Hunter's_Mark"
+        },
         MenderBug: {
           name: "Menderbug (1)",
           nameDefault: "Menderbug",
@@ -2415,26 +2421,20 @@ const HK = {
         ZotelingBalloon: {
           name: "Volatile Zoteling (1)",
           nameDefault: "Volatile Zoteling",
-          spoiler: "Spawned by Grey Prince Zote, Battle 3+",
+          spoiler: "Only from Grey Prince Zote, Battle 3+",
           wiki: "Volatile_Zoteling"
         },
         ZotelingHopper: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Hopping Zoteling (1)",
+          nameDefault: "Hopping Zoteling",
+          spoiler: "Only from Grey Prince Zote, Battle 2+",
+          wiki: "Hopping_Zoteling"
         },
         ZotelingBuzzer: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
-        },
-        HunterMark: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Winged Zoteling (1)",
+          nameDefault: "Winged Zoteling",
+          spoiler: "Only from Grey Prince Zote, Battle 1+",
+          wiki: "Winged_Zoteling"
         },
         FlameBearerSmall: {
           name: "",
