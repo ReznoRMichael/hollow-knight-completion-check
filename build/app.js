@@ -4107,7 +4107,7 @@ var HK = {
           wiki: "Enraged_Guardian"
         },
         killedNailBros: {
-          name: "Brothers Oro & Mato",
+          name: "Nailmasters Oro & Mato",
           spoiler: "Godhome: Pantheon of the Master",
           wiki: "Brothers_Oro_%26_Mato"
         },
@@ -5291,28 +5291,28 @@ var HK = {
           wiki: "Seal_of_Binding"
         },
         NailBros: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Nailmasters Oro & Mato (1)",
+          nameDefault: "Nailmasters Oro & Mato",
+          spoiler: "Godhome: Pantheon of the Master",
+          wiki: "Brothers_Oro_%26_Mato"
         },
         Paintmaster: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Paintmaster Sheo (1)",
+          nameDefault: "Paintmaster Sheo",
+          spoiler: "Godhome: Pantheon of the Artist",
+          wiki: "Paintmaster_Sheo"
         },
         Nailsage: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Great Nailsage Sly (1)",
+          nameDefault: "Great Nailsage Sly",
+          spoiler: "Godhome: Pantheon of the Sage",
+          wiki: "Great_Nailsage_Sly"
         },
         HollowKnightPrime: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Pure Vessel (1)",
+          nameDefault: "Pure Vessel",
+          spoiler: "Godhome: Pantheon of the Knight",
+          wiki: "Pure_Vessel"
         },
         GodseekerMask: {
           name: "",
