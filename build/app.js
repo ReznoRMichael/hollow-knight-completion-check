@@ -4177,11 +4177,6 @@ var HK = {
           spoiler: "Royal Waterways, Dung Defender, use Desolate Dive",
           wiki: "White_Defender"
         },
-        killedZote: {
-          name: "Zote",
-          spoiler: "Colosseum: Trial of the Warrior or The Eternal Ordeal",
-          wiki: "Zote"
-        },
         greyPrinceDefeated: {
           name: "Grey Prince Zote",
           spoiler: "Dirtmouth: Bretta's Room (per save choice)",
@@ -5193,6 +5188,45 @@ var HK = {
     },
 
     /* ################ Game Statistics ################### */
+    huntersJournalOptional: {
+      h2: "Optional Journal Entries",
+      id: "hk-journal-optional",
+      description: "The remaining Hunter's Journal entries which don't count to Hunter's Mark and Keen/True Hunter achievements.",
+      entries: {
+        MenderBug: {
+          name: "Menderbug (1)",
+          nameDefault: "Menderbug",
+          spoiler: "Forgotten Crossroads: destroy sign",
+          wiki: "Menderbug"
+        },
+        Zote: {
+          name: "Zote (1)",
+          nameDefault: "Zote",
+          spoiler: "Colosseum: Trial of the Warrior or The Eternal Ordeal",
+          wiki: "Zote"
+        },
+        HollowKnight: {
+          name: "Hollow Knight (1)",
+          nameDefault: "Hollow Knight",
+          spoiler: "Forgotten Crossroads: Black Egg Temple",
+          wiki: "Hollow_Knight"
+        },
+        FinalBoss: {
+          name: "The Radiance (1)",
+          nameDefault: "The Radiance",
+          spoiler: "Requires Void Heart & Dream Nail Hollow Knight",
+          wiki: "Radiance"
+        },
+        GhostGalien: {
+          name: "",
+          nameDefault: "",
+          spoiler: "",
+          wiki: ""
+        }
+      }
+    },
+
+    /* ################ Game Statistics ################### */
     statistics: {
       h2: "Game Statistics",
       id: "hk-statistics",
@@ -5386,11 +5420,6 @@ var HK = {
           name: "Unbreakable Strength",
           spoiler: "Divine: Fragile Strength + 15000 Geo",
           wiki: "Divine#Unbreakable_Charms"
-        },
-        killedMenderBug: {
-          name: "Journal: Menderbug",
-          spoiler: "Forgotten Crossroads + destroy sign",
-          wiki: "Menderbug"
         },
 
         /* 
