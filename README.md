@@ -110,7 +110,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Added Secret data information at the bottom of the tool.  
 
   — **(New) Hunter's Journal** additions/changes/fixes:  
-  ✅ change + addition: now showing all 146 base entries needed for Keen/True Hunter achievements (with partial completion and number of kills left). The most commonly missed entries are shown at the top.  
+  ✅ change + addition: now showing all 146 base entries needed for Keen/True Hunter achievements (with partial completion and number of kills left). The most commonly missed entries are shown at the top. Entries that are not required are in a separate section: Optional Journal Entries.  
   ✅ fix: Crystal Crawler was actually Glimback before, despite being named CrystalCrawler in the save files.  
 
   — **Hints** changes:  
@@ -129,13 +129,15 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **Achievements Essentials** changes/additions:  
   ✅ change: Moved Creatures Encountered and Hunter Notes Completed to Game Statistics (not all 164 entries are required for the achievements)  
+  ✅ change: Moved all Journal entries to Hunter's Journal section  
   ✅ addition: Journal: Flukemunga (needed for Keen Hunter/True Hunter achievements)  
 
-  — **Game Statistics** fixes/additions:  
+  — **Game Statistics** fixes/additions/changes:  
   ✅ fix: Hunter's Journal now detects and displays the correct amount of maximum entries on both Zote routes (160 or 164).  
   ✅ addition: World Sense Ability (completion rate viewable in inventory/save slot)  
   ✅ addition: Lifeblood Core Room Arcane Egg (the only missable relic in the game)  
   ✅ addition: White Palace: Secret Room #3 (Lore Tablet)  
+  ✅ change: Moved Menderbug and Seal of Binding to Optional Journal Entries  
 
   — **Godhome Statistics** changes/additions:  
   ✅ addition: Lifeblood Door Open  
