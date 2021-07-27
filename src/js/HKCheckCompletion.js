@@ -260,7 +260,8 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   // ------------------------- Hunter's Journal ----------------------------- //
 
-  CheckHuntersJournal(HK, HKPlayerData);
+  CheckHuntersJournal(HK, "huntersJournal", HKPlayerData);
+  CheckHuntersJournal(HK, "huntersJournalOptional", HKPlayerData);
 
   // ---------------- Fleur Divide ----------------- //
 
@@ -1617,10 +1618,10 @@ function CheckMrMushroomState(section, entry, mrMushroomState = 0) {
  * @param {object} db Reference to the HK database
  * @param {object} playerData Reference to the player's save data
  */
-function CheckHuntersJournal(db, playerData) {
+function CheckHuntersJournal(db, sectionName, playerData) {
 
-  let section = db.sections.huntersJournal;
-  let entries = db.sections.huntersJournal.entries;
+  let section = db.sections[sectionName];
+  let entries = db.sections[sectionName].entries;
   let name = "";
   let nameDefault = "";
   let amountKillsLeft = 0;
