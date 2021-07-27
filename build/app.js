@@ -1059,8 +1059,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "jinnEggsSold":
       case "xunFlowerBrokeTimes":
         // textPrefix += ": " + Math.abs(playerData[i]);
-        dataObject[i].amount = Math.abs(playerData[i]);
-        i === "geoPool" && playerData[i] > 0 ? CurrentDataPartial(section, i) : CurrentDataTrue(section, i);
+        amount = Math.abs(playerData[i]);
+        dataObject[i].amount = amount;
+        i === "geoPool" && playerData[i] > 0 ? CurrentDataPartial(section, i) : CurrentDataBlank(section, i);
 
         if (i === "jinnEggsSold") {
           // fade out if not on Steel Soul
