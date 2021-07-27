@@ -755,7 +755,7 @@ input[type="radio"]:focus + label {
   z-index: 1;
   bottom: 130%;
   left: 50%;
-  margin-left: -109px;
+  margin-left: -108.5px;
   opacity: 0;
   transition: opacity 0.3s;
 }
