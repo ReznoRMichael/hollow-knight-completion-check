@@ -2400,7 +2400,121 @@ const HK = {
           spoiler: "Requires Void Heart & Dream Nail Hollow Knight",
           wiki: "Radiance"
         },
-        GhostGalien: {
+        WhiteDefender: {
+          name: "White Defender (1)",
+          nameDefault: "White Defender",
+          spoiler: "Royal Waterways: Dung Defender, Desolate Dive",
+          wiki: "White_Defender"
+        },
+        GreyPrince: {
+          name: "Grey Prince Zote (1)",
+          nameDefault: "Grey Prince Zote",
+          spoiler: "Dirtmouth: Bretta's Room (per save choice)",
+          wiki: "Grey_Prince_Zote"
+        },
+        ZotelingBalloon: {
+          name: "Volatile Zoteling (1)",
+          nameDefault: "Volatile Zoteling",
+          spoiler: "Spawned by Grey Prince Zote, Battle 3+",
+          wiki: "Volatile_Zoteling"
+        },
+        ZotelingHopper: {
+          name: "",
+          nameDefault: "",
+          spoiler: "",
+          wiki: ""
+        },
+        ZotelingBuzzer: {
+          name: "",
+          nameDefault: "",
+          spoiler: "",
+          wiki: ""
+        },
+        HunterMark: {
+          name: "",
+          nameDefault: "",
+          spoiler: "",
+          wiki: ""
+        },
+        FlameBearerSmall: {
+          name: "",
+          nameDefault: "",
+          spoiler: "",
+          wiki: ""
+        },
+        FlameBearerMed: {
+          name: "",
+          nameDefault: "",
+          spoiler: "",
+          wiki: ""
+        },
+        FlameBearerLarge: {
+          name: "",
+          nameDefault: "",
+          spoiler: "",
+          wiki: ""
+        },
+        Grimm: {
+          name: "",
+          nameDefault: "",
+          spoiler: "",
+          wiki: ""
+        },
+        NightmareGrimm: {
+          name: "",
+          nameDefault: "",
+          spoiler: "",
+          wiki: ""
+        },
+        BindingSeal: {
+          name: "",
+          nameDefault: "",
+          spoiler: "",
+          wiki: ""
+        },
+        NailBros: {
+          name: "",
+          nameDefault: "",
+          spoiler: "",
+          wiki: ""
+        },
+        Paintmaster: {
+          name: "",
+          nameDefault: "",
+          spoiler: "",
+          wiki: ""
+        },
+        Nailsage: {
+          name: "",
+          nameDefault: "",
+          spoiler: "",
+          wiki: ""
+        },
+        HollowKnightPrime: {
+          name: "",
+          nameDefault: "",
+          spoiler: "",
+          wiki: ""
+        },
+        GodseekerMask: {
+          name: "",
+          nameDefault: "",
+          spoiler: "",
+          wiki: ""
+        },
+        VoidIdol_1: {
+          name: "",
+          nameDefault: "",
+          spoiler: "",
+          wiki: ""
+        },
+        VoidIdol_2: {
+          name: "",
+          nameDefault: "",
+          spoiler: "",
+          wiki: ""
+        },
+        VoidIdol_3: {
           name: "",
           nameDefault: "",
           spoiler: "",
