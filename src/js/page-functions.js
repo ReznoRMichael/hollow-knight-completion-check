@@ -969,11 +969,9 @@ document.getElementById("save-location-input").addEventListener("click", (e) => 
   let tooltip = document.getElementById("save-location-input-tooltip");
 
   SelectCopyInputText(e, "save-location-input-tooltip", "Copied save files location to clipboard");
-  
-  let tooltipWidth = tooltip.offsetWidth;
 
   /* make sure that the tooltip is centered */
-  tooltip.style.marginLeft = `-${tooltipWidth / 2}px`;
+  tooltip.style.marginLeft = `-${tooltip.offsetWidth / 2}px`;
 }, false);
 
 /* -------------- Switch text back to the default on mouse out -------------- */
@@ -982,12 +980,14 @@ document.getElementById("save-location-input").addEventListener("mouseout", () =
 
   let tooltip = document.getElementById("save-location-input-tooltip");
 
-  FillInnerHTML("save-location-input-tooltip", "Click once to copy to clipboard");
-
-  let tooltipWidth = tooltip.offsetWidth;
-
-  /* make sure that the tooltip is centered */
-  tooltip.style.marginLeft = `-${tooltipWidth / 2}px`;
+  /* change the text and center only when the text was different */
+  if (tooltip.innerHTML !== "Click once to copy to clipboard") {
+    
+      FillInnerHTML("save-location-input-tooltip", "Click once to copy to clipboard");
+    
+      /* make sure that the tooltip is centered */
+      tooltip.style.marginLeft = `-${tooltip.offsetWidth / 2}px`;
+  }
 }, false);
 
 /* ------------- Checkbox functions ---------------------- */
