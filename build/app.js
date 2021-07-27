@@ -201,7 +201,8 @@ function HKCheckCompletion(jsonObject) {
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements.entries, HKPlayerData, HKWorldItems); // ------------------------- Hunter's Journal ----------------------------- //
 
-  CheckHuntersJournal(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, HKPlayerData); // ---------------- Fleur Divide ----------------- //
+  CheckHuntersJournal(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "huntersJournal", HKPlayerData);
+  CheckHuntersJournal(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "huntersJournalOptional", HKPlayerData); // ---------------- Fleur Divide ----------------- //
   // AppendHTML(HK.sections.achievements, FLEUR_DIVIDE);
   // ------------------------- Game Statistics ----------------------------- //
 
@@ -1526,9 +1527,9 @@ function CheckMrMushroomState(section, entry) {
  */
 
 
-function CheckHuntersJournal(db, playerData) {
-  var section = db.sections.huntersJournal;
-  var entries = db.sections.huntersJournal.entries;
+function CheckHuntersJournal(db, sectionName, playerData) {
+  var section = db.sections[sectionName];
+  var entries = db.sections[sectionName].entries;
   var name = "";
   var nameDefault = "";
   var amountKillsLeft = 0;
@@ -5254,22 +5255,22 @@ var HK = {
           wiki: "Winged_Zoteling"
         },
         FlameBearerSmall: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Grimmkin Novice (3)",
+          nameDefault: "Grimmkin Novice",
+          spoiler: "Greenpath, Crystal Peak, City of Tears",
+          wiki: "Grimmkin_Novice"
         },
         FlameBearerMed: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Grimmkin Master (4)",
+          nameDefault: "Grimmkin Master",
+          spoiler: "King's Pass, Resting Grounds, Kingdom's Edge",
+          wiki: "Grimmkin_Master"
         },
         FlameBearerLarge: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Grimmkin Nightmare (5)",
+          nameDefault: "Grimmkin Nightmare",
+          spoiler: "Fungal Core, Royal Waterways, Hive",
+          wiki: "Grimmkin_Nightmare"
         },
         Grimm: {
           name: "",

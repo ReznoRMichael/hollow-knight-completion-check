@@ -2437,22 +2437,22 @@ const HK = {
           wiki: "Winged_Zoteling"
         },
         FlameBearerSmall: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Grimmkin Novice (3)",
+          nameDefault: "Grimmkin Novice",
+          spoiler: "Greenpath, Crystal Peak, City of Tears",
+          wiki: "Grimmkin_Novice"
         },
         FlameBearerMed: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Grimmkin Master (4)",
+          nameDefault: "Grimmkin Master",
+          spoiler: "King's Pass, Resting Grounds, Kingdom's Edge",
+          wiki: "Grimmkin_Master"
         },
         FlameBearerLarge: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Grimmkin Nightmare (5)",
+          nameDefault: "Grimmkin Nightmare",
+          spoiler: "Fungal Core, Royal Waterways, Hive",
+          wiki: "Grimmkin_Nightmare"
         },
         Grimm: {
           name: "",
