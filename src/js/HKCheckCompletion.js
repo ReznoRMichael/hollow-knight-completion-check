@@ -1155,7 +1155,13 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           }
         }
 
-        (amount >= dataObject[i].max) ? CurrentDataTrue(section, i): CurrentDataBlank(section, i);
+        if (amount >= dataObject[i].max) {
+          CurrentDataTrue(section, i);
+        } else if (amount > 0) {
+          CurrentDataPartial(section, i);
+        } else {
+          CurrentDataBlank(section, i);
+        }
         break;
 
       case "geoPool":
