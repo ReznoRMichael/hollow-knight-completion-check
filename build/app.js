@@ -5315,28 +5315,28 @@ var HK = {
           wiki: "Pure_Vessel"
         },
         GodseekerMask: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Weathered Mask (1)",
+          nameDefault: "Weathered Mask",
+          spoiler: "Land of Storms: All Pantheons & Bindings",
+          wiki: "Weathered_Mask"
         },
         VoidIdol_1: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Void Idol Attuned (1)",
+          nameDefault: "Void Idol Attuned",
+          spoiler: "Hall of Gods: Defeat All (Attuned)",
+          wiki: "Void_Idol"
         },
         VoidIdol_2: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Void Idol Ascended (1)",
+          nameDefault: "Void Idol Ascended",
+          spoiler: "Hall of Gods: Defeat All (Ascended)",
+          wiki: "Void_Idol"
         },
         VoidIdol_3: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Void Idol Radiant (1)",
+          nameDefault: "Void Idol Radiant",
+          spoiler: "Hall of Gods: Defeat All (Radiant)",
+          wiki: "Void_Idol"
         }
       }
     },
