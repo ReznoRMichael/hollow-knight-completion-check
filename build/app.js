@@ -5273,22 +5273,22 @@ var HK = {
           wiki: "Grimmkin_Nightmare"
         },
         Grimm: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Troupe Master Grimm (1)",
+          nameDefault: "Troupe Master Grimm",
+          spoiler: "Dirtmouth: collect 6 flames",
+          wiki: "Grimm"
         },
         NightmareGrimm: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Nightmare King (1)",
+          nameDefault: "Nightmare King",
+          spoiler: "Dirtmouth: collect 9 flames",
+          wiki: "Nightmare_King"
         },
         BindingSeal: {
-          name: "",
-          nameDefault: "",
-          spoiler: "",
-          wiki: ""
+          name: "Seal of Binding (1)",
+          nameDefault: "Seal of Binding",
+          spoiler: "White Palace: Path of Pain completion",
+          wiki: "Seal_of_Binding"
         },
         NailBros: {
           name: "",
@@ -5551,11 +5551,6 @@ var HK = {
           name: "White Palace: Path of Pain",
           spoiler: "Main Secret Area, After Middle Lift",
           wiki: "White_Palace#Sub-area:_Path_of_Pain"
-        },
-        killedBindingSeal: {
-          name: "Journal: Seal of Binding",
-          spoiler: "White Palace: Path of Pain completion",
-          wiki: "Seal_of_Binding"
         },
         whitePalaceSecretRoomVisited: {
           name: "White Palace: Secret Room #1",
