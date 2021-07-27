@@ -1660,6 +1660,16 @@ function CheckHuntersJournal(db, sectionName, playerData) {
         entries[entry].name = name;
       }
 
+      /* Void Idol backwards compatibility */
+      if (entry === "VoidIdol_1") {
+        if (playerData.killedVoidIdol_1 === false
+        && (playerData.killedVoidIdol_2 === true || playerData.killedVoidIdol_3 === true)) {
+
+          CurrentDataTrue(section, entry);
+          entries[entry].name = nameDefault;
+        }
+      }
+
     /* Earlier save files backwards compatibility (no undefined) */
     } else {
 
