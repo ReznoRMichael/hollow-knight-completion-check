@@ -558,7 +558,7 @@ function GenerateInnerHTML(db) {
       /* ending the tabs */
       case "godmaster": // main
       case "achievements": // essential
-      case "huntersJournal": // essential
+      case "huntersJournalOptional": // essential
       case "statistics": // stats
       case "godhomeStatistics": // godhome
         

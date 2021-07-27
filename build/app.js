@@ -6672,7 +6672,7 @@ function GenerateInnerHTML(db) {
 
       case "achievements": // essential
 
-      case "huntersJournal": // essential
+      case "huntersJournalOptional": // essential
 
       case "statistics": // stats
 
