@@ -1202,7 +1202,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         dataObject[i].activated = activated;
 
         /* textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`; */
-        CurrentDataTrue(section, i);
+        CurrentDataBlank(section, i);
         break;
 
       case "itemsDiscovered":
@@ -1216,7 +1216,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         dataObject[i].activated = activated;
 
         /* textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`; */
-        CurrentDataTrue(section, i);
+        CurrentDataBlank(section, i);
         break;
 
       case "shopkeeperKey":
