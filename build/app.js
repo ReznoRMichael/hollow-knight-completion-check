@@ -1060,7 +1060,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "xunFlowerBrokeTimes":
         // textPrefix += ": " + Math.abs(playerData[i]);
         dataObject[i].amount = Math.abs(playerData[i]);
-        i === "geoPool" && playerData[i] > 0 ? CurrentDataBlank(section, i) : CurrentDataTrue(section, i);
+        i === "geoPool" && playerData[i] > 0 ? CurrentDataPartial(section, i) : CurrentDataTrue(section, i);
 
         if (i === "jinnEggsSold") {
           // fade out if not on Steel Soul
@@ -1147,7 +1147,15 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "relicsKingsIdol":
       case "relicsArcaneEgg":
         total = playerData[dataObject[i].nameHeld] + playerData[dataObject[i].nameSold];
-        total >= dataObject[i].max ? CurrentDataTrue(section, i) : CurrentDataBlank(section, i);
+
+        if (total >= dataObject[i].max) {
+          CurrentDataTrue(section, i);
+        } else if (total > 0) {
+          CurrentDataPartial(section, i);
+        } else {
+          CurrentDataBlank(section, i);
+        }
+
         dataObject[i].amount = total;
         /* textPrefix += ": " + total; */
 

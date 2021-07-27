@@ -1156,10 +1156,13 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         }
 
         if (amount >= dataObject[i].max) {
+
           CurrentDataTrue(section, i);
         } else if (amount > 0) {
+
           CurrentDataPartial(section, i);
         } else {
+
           CurrentDataBlank(section, i);
         }
         break;
@@ -1172,11 +1175,12 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         dataObject[i].amount = Math.abs(playerData[i]);
 
-        (i === "geoPool" && playerData[i] > 0) ? CurrentDataBlank(section, i): CurrentDataTrue(section, i);
+        (i === "geoPool" && playerData[i] > 0) ? CurrentDataPartial(section, i): CurrentDataTrue(section, i);
 
         if (i === "jinnEggsSold") {
           // fade out if not on Steel Soul
           if (playerData.permadeathMode < 1) {
+
             CurrentDataBlank(section, i);
             dataObject[i].disabled = true;
             // textPrefix = `<del>${textPrefix}</del>`;
@@ -1255,7 +1259,16 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "relicsArcaneEgg":
         total = playerData[dataObject[i].nameHeld] + playerData[dataObject[i].nameSold];
 
-        (total >= dataObject[i].max) ? CurrentDataTrue(section, i): CurrentDataBlank(section, i);
+        if (total >= dataObject[i].max) {
+
+          CurrentDataTrue(section, i);
+        } else if (total > 0) {
+
+          CurrentDataPartial(section, i);
+        } else {
+
+          CurrentDataBlank(section, i);
+        }
 
         dataObject[i].amount = total;
 
@@ -1421,15 +1434,20 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         break;
 
       default:
+
         // backwards compatibility with earlier game versions
         if (playerData.hasOwnProperty(i) === false) {
+
           CurrentDataBlank(section, i);
           dataObject[i].disabled = true;
           // textPrefix = `<del>${dataObject[i].name}</del>`;
           break;
+
         } else if (playerData[i] === true) {
+
           CurrentDataTrue(section, i);
         } else {
+          
           CurrentDataFalse(section, i);
         }
     } // end switch (i)
