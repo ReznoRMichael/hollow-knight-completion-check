@@ -382,6 +382,14 @@ input[type="file"] {
   border-color: rgb(61, 228, 61);
 }
 
+.code-little {
+  font-family: 'Consolas', monospace;
+  font-size: 0.7rem;
+  text-align: left;
+  margin: 0 0 0 0.5rem;
+  color: #fff;
+}
+
 .hint {
   display: block;
   font-style: italic;
@@ -433,6 +441,8 @@ input[type="file"] {
 
 .button {
   display: inline-flex;
+  align-content: center;
+  align-items: center;
   width: max-content;
   font-size: 1rem;
   font-weight: 500;

@@ -6702,6 +6702,11 @@ function GenerateInnerHTML(db) {
 
   _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.GenerateInnerHTML.timeEnd = performance.now();
 }
+/**
+ * Hides all other tabs, except the one which button was clicked (shows only the chosen tab)
+ * @param {EventTarget} clickedButton The click target (button clicked)
+ */
+
 
 function PageSwitchTab(clickedButton) {
   var sectionList = document.querySelectorAll(".large-section");
@@ -7142,7 +7147,7 @@ document.getElementById("save-area-file").addEventListener("change", function (e
   var fileDate = FileDateFormat(event.target.files[0]);
 
   if (fileName) {
-    label.innerHTML = "".concat(SYMBOL_FILE).concat(fileName, " ").concat(fileDate);
+    label.innerHTML = "".concat(SYMBOL_FILE).concat(fileName, "<div class=\"code-little\">").concat(fileDate, "</div>");
   } else {
     label.innerHTML = labelInitialText;
   }

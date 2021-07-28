@@ -1079,7 +1079,7 @@ document.getElementById("save-area-file").addEventListener("change", (event) => 
   var fileDate = FileDateFormat(event.target.files[0]);
 
   if (fileName) {
-    label.innerHTML = `${SYMBOL_FILE}${fileName} ${fileDate}`;
+    label.innerHTML = `${SYMBOL_FILE}${fileName}<div class="code-little">${fileDate}</div>`;
   } else {
     label.innerHTML = labelInitialText;
   }
