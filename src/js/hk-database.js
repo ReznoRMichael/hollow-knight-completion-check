@@ -2374,7 +2374,7 @@ const HK = {
     huntersJournalOptional: {
       h2: "Optional Journal Entries",
       id: "hk-journal-optional",
-      description: "The remaining Hunter's Journal entries which don't count for Hunter's Mark and Keen/True Hunter achievements.",
+      description: "The remaining Hunter's Journal entries which don't count for Hunter's Mark and Keen/True Hunter achievements. Note: 6 entries can be permanently unobtainable, depending on your choices in the game (<span class='spoiler-span blurred'>Grey Prince Zote, all 3 Zotelings, Grimmkin Nightmare and Nightmare King</span>).",
       entries: {
         HunterMark: {
           name: "Hunter's Mark (1)",
