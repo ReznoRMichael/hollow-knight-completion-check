@@ -100,6 +100,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Drag and Drop save file should now work for the whole window (not just for the file input field).  
   ✅ Added full Hunter's Journal to the program. Now you can see and check all journal entries, as well as partial note completion and number of kills left to uncover Hunter's notes for each creature.  
   ✅ Choose Save File appearance change. Will now show file's name, date and time after file is loaded (also after drag & drop).  
+  ✅ Divided the page to different switchable tabs. Less scrolling needed.  
   ✅ Number of Health Masks, Soul Orbs and Charm Notches is now displayed as a number next to the graphics.  
   ✅ Display all entry descriptions by default. They are all blurred when Spoilers checkbox is unchecked. Hover over them to uncover one-by-one.  
   ✅ After analyzing a file, entries that are not yet done are now fully blurred when Spoiler checkbox is unchecked. Hover over the name and/or description to uncover it one-by-one. (thanks to kanna for the idea and inspiration!)  
