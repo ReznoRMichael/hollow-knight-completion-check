@@ -1556,6 +1556,23 @@ function CheckHuntersJournal(db, sectionName, playerData) {
     entries[entry].name = nameDefault;
 
     if (playerData.hasOwnProperty("kills".concat(entry))) {
+      switch (entry) {
+        case "GreyPrince":
+        case "ZotelingBalloon":
+        case "ZotelingHopper":
+        case "ZotelingBuzzer":
+          /* When Zote == OFF (Neglect route), fade the entry and move to the next entry */
+          if (playerData.zoteDead === true || playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
+            amountKillsLeft = 0;
+            entries[entry].disabled = true;
+            entries[entry].name = name;
+            CurrentDataBlank(section, entry);
+            continue;
+          }
+
+          break;
+      }
+
       amountKillsLeft = playerData["kills".concat(entry)];
       /* When killed at least 1, the entry has a gray symbol */
 
