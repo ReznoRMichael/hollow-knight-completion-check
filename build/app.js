@@ -1573,7 +1573,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
 
         case "FlameBearerLarge":
           /* If the troupe was banished and the player didn't defeat any Grimmkin Nightmare, then it's entry cannot be obtained on this save */
-          if (playerData.grimmChildLevel >= 5 && playerData.killedFlameBearerLarge === false) {
+          if (playerData.destroyedNightmareLantern === true && playerData.killedFlameBearerLarge === false) {
             entries[entry].disabled = true;
             entries[entry].name = nameDefault;
             CurrentDataBlank(section, entry);
@@ -1584,7 +1584,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
 
         case "NightmareGrimm":
           /* if the troupe was banished, the Nightmare King entry cannot be obtained on this save */
-          if (playerData.grimmChildLevel >= 5) {
+          if (playerData.destroyedNightmareLantern === true) {
             entries[entry].disabled = true;
             entries[entry].name = nameDefault;
             CurrentDataBlank(section, entry);
