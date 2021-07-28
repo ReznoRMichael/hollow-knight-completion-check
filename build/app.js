@@ -1561,11 +1561,32 @@ function CheckHuntersJournal(db, sectionName, playerData) {
         case "ZotelingBalloon":
         case "ZotelingHopper":
         case "ZotelingBuzzer":
-          /* When Zote == OFF (Neglect route), fade the entry and move to the next entry */
+          /* When Zote == OFF (Neglect route), fade the entry and move to the next iteration */
           if (playerData.zoteDead === true || playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
-            amountKillsLeft = 0;
             entries[entry].disabled = true;
-            entries[entry].name = name;
+            entries[entry].name = nameDefault;
+            CurrentDataBlank(section, entry);
+            continue;
+          }
+
+          break;
+
+        case "FlameBearerLarge":
+          /* If the troupe was banished and the player didn't defeat any Grimmkin Nightmare, then it's entry cannot be obtained on this save */
+          if (playerData.grimmChildLevel >= 5 && playerData.killedFlameBearerLarge === false) {
+            entries[entry].disabled = true;
+            entries[entry].name = nameDefault;
+            CurrentDataBlank(section, entry);
+            continue;
+          }
+
+          break;
+
+        case "NightmareGrimm":
+          /* if the troupe was banished, the Nightmare King entry cannot be obtained on this save */
+          if (playerData.grimmChildLevel >= 5) {
+            entries[entry].disabled = true;
+            entries[entry].name = nameDefault;
             CurrentDataBlank(section, entry);
             continue;
           }
