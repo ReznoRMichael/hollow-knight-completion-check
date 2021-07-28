@@ -589,22 +589,25 @@ function GenerateInnerHTML(db) {
   benchmarkTimes.GenerateInnerHTML.timeEnd = performance.now();
 }
 
+/**
+ * Hides all other tabs, except the one which button was clicked (shows only the chosen tab)
+ * @param {EventTarget} clickedButton The click target (button clicked)
+ */
 function PageSwitchTab(clickedButton) {
 
   let sectionList = document.querySelectorAll(".large-section");
 
-  console.log(sectionList);
-
   for (let i = 0, length = sectionList.length; i < length; i++) {
-    
+
     if (sectionList[i].id !== `tab-${clickedButton.name}`) {
 
-      if (sectionList[i].classList.contains(".hidden")) {
-        sectionList[i].classList.add(".hidden");
+      if (!sectionList[i].classList.contains("hidden")) {
+        sectionList[i].classList.add("hidden");
       }
     } else {
-      if (sectionList[i].classList.contains(".hidden")) {
-        sectionList[i].classList.remove(".hidden");
+
+      if (sectionList[i].classList.contains("hidden")) {
+        sectionList[i].classList.remove("hidden");
       }
     }
   }

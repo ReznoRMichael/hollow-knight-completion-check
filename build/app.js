@@ -6705,16 +6705,15 @@ function GenerateInnerHTML(db) {
 
 function PageSwitchTab(clickedButton) {
   var sectionList = document.querySelectorAll(".large-section");
-  console.log(sectionList);
 
   for (var i = 0, length = sectionList.length; i < length; i++) {
     if (sectionList[i].id !== "tab-".concat(clickedButton.name)) {
-      if (sectionList[i].classList.contains(".hidden")) {
-        sectionList[i].classList.add(".hidden");
+      if (!sectionList[i].classList.contains("hidden")) {
+        sectionList[i].classList.add("hidden");
       }
     } else {
-      if (sectionList[i].classList.contains(".hidden")) {
-        sectionList[i].classList.remove(".hidden");
+      if (sectionList[i].classList.contains("hidden")) {
+        sectionList[i].classList.remove("hidden");
       }
     }
   }
