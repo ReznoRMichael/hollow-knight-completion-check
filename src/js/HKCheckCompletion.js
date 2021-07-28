@@ -1178,7 +1178,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         dataObject[i].amount = amount;
 
-        (i === "geoPool" && playerData[i] > 0) ? CurrentDataPartial(section, i): CurrentDataBlank(section, i);
+        if (amount > 0 && i == "geoPool") {
+          CurrentDataPartial(section, i);
+        } else {
+          CurrentDataBlank(section, i);
+        }
 
         if (i === "jinnEggsSold") {
           // fade out if not on Steel Soul
