@@ -996,18 +996,33 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         if (i === "journalEntriesCompleted" || i === "journalNotesCompleted") {
           countTotal = "".concat(amount, " / ").concat(playerData.journalEntriesTotal);
           dataObject[i].amountTotal = playerData.journalEntriesTotal;
-          /* when Zote is dead, the max Journal entries will equal = 160 instead of 164. For the green tick */
+          dataObject[i].max = dataObject[i].maxDefault;
+          dataObject[i].spoiler = "".concat(dataObject[i].spoilerDefault, " (").concat(dataObject[i].max, " max)");
+          /* when Zote is dead, the max Journal entries will equal 4 less instead of 164. For the green tick */
 
           if (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
-            dataObject[i].max = dataObject[i].maxZoteOff;
+            dataObject[i].max -= 4;
             /* Substract GPZ and 3 Zotelings from max */
 
-            dataObject[i].spoiler = dataObject[i].spoilerZoteOff;
+            dataObject[i].spoiler = "".concat(dataObject[i].spoilerDefault, " (").concat(dataObject[i].max, " max)");
             /* Change spoiler for less confusion */
-          } else {
-            /* otherwise, set back to 164 */
-            dataObject[i].max = dataObject[i].maxDefault;
-            dataObject[i].spoiler = dataObject[i].spoilerDefault;
+          }
+          /* when Grimm Troupe is banished, max Journal entries will be 1 or 2 less */
+
+
+          if (playerData.destroyedNightmareLantern === true) {
+            dataObject[i].max--;
+            /* Substract Nightmare King from max */
+
+            /* if the player didn't defeat any Grimmkin Nightmare before banishing, substract it from max */
+
+            if (playerData.killedFlameBearerLarge === false) {
+              dataObject[i].max--;
+              /* Substract Grimmkin Nightmare from max */
+
+              dataObject[i].spoiler = "".concat(dataObject[i].spoilerDefault, " (").concat(dataObject[i].max, " max)");
+              /* Change spoiler for less confusion */
+            }
           }
         }
 
@@ -5422,12 +5437,10 @@ var HK = {
         },
         journalEntriesCompleted: {
           name: "Creatures Encountered",
-          spoiler: "Hunter's Journal (160 or 164 max)",
-          spoilerDefault: "Hunter's Journal (164 max)",
-          spoilerZoteOff: "Hunter's Journal (160 max)",
+          spoiler: "Hunter's Journal (158-164 max)",
+          spoilerDefault: "Hunter's Journal",
           max: 164,
           maxDefault: 164,
-          maxZoteOff: 160,
           wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
         },
 
@@ -5436,12 +5449,10 @@ var HK = {
         */
         journalNotesCompleted: {
           name: "Hunter Notes Completed",
-          spoiler: "Hunter's Journal (160 or 164 max)",
-          spoilerDefault: "Hunter's Journal (164 max)",
-          spoilerZoteOff: "Hunter's Journal (160 max)",
+          spoiler: "Hunter's Journal (158-164 max)",
+          spoilerDefault: "Hunter's Journal",
           max: 164,
           maxDefault: 164,
-          maxZoteOff: 160,
           wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
         },
         nailDamage: {

@@ -1112,14 +1112,26 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           countTotal = `${amount} / ${playerData.journalEntriesTotal}`;
           dataObject[i].amountTotal = playerData.journalEntriesTotal;
 
-          /* when Zote is dead, the max Journal entries will equal = 160 instead of 164. For the green tick */
+          dataObject[i].max = dataObject[i].maxDefault;
+          dataObject[i].spoiler = `${dataObject[i].spoilerDefault} (${dataObject[i].max} max)`;
+
+          /* when Zote is dead, the max Journal entries will equal 4 less instead of 164. For the green tick */
           if (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
-            dataObject[i].max = dataObject[i].maxZoteOff; /* Substract GPZ and 3 Zotelings from max */
-            dataObject[i].spoiler = dataObject[i].spoilerZoteOff; /* Change spoiler for less confusion */
-          } else {
-            /* otherwise, set back to 164 */
-            dataObject[i].max = dataObject[i].maxDefault;
-            dataObject[i].spoiler = dataObject[i].spoilerDefault;
+
+            dataObject[i].max -= 4; /* Substract GPZ and 3 Zotelings from max */
+            dataObject[i].spoiler = `${dataObject[i].spoilerDefault} (${dataObject[i].max} max)`; /* Change spoiler for less confusion */
+          }
+
+          /* when Grimm Troupe is banished, max Journal entries will be 1 or 2 less */
+          if (playerData.destroyedNightmareLantern === true) {
+
+            dataObject[i].max --; /* Substract Nightmare King from max */
+
+            /* if the player didn't defeat any Grimmkin Nightmare before banishing, substract it from max */
+            if (playerData.killedFlameBearerLarge === false) {
+              dataObject[i].max --; /* Substract Grimmkin Nightmare from max */
+              dataObject[i].spoiler = `${dataObject[i].spoilerDefault} (${dataObject[i].max} max)`; /* Change spoiler for less confusion */
+            }
           }
         }
 

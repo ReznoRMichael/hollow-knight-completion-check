@@ -2537,12 +2537,10 @@ const HK = {
         },
         journalEntriesCompleted: {
           name: "Creatures Encountered",
-          spoiler: "Hunter's Journal (160 or 164 max)",
-          spoilerDefault: "Hunter's Journal (164 max)",
-          spoilerZoteOff: "Hunter's Journal (160 max)",
+          spoiler: "Hunter's Journal (158-164 max)",
+          spoilerDefault: "Hunter's Journal",
           max: 164,
           maxDefault: 164,
-          maxZoteOff: 160,
           wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
         },
         /* 
@@ -2550,12 +2548,10 @@ const HK = {
         */
         journalNotesCompleted: {
           name: "Hunter Notes Completed",
-          spoiler: "Hunter's Journal (160 or 164 max)",
-          spoilerDefault: "Hunter's Journal (164 max)",
-          spoilerZoteOff: "Hunter's Journal (160 max)",
+          spoiler: "Hunter's Journal (158-164 max)",
+          spoilerDefault: "Hunter's Journal",
           max: 164,
           maxDefault: 164,
-          maxZoteOff: 160,
           wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
         },
         nailDamage: {
