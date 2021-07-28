@@ -6350,24 +6350,24 @@ function GenerateInnerHTML(db) {
 
     switch (section) {
       case "bosses":
-        textFill += ["<div class=\"tab-switch-buttons\">", "<button id=\"button-switch-main\" name=\"main\" class=\"button\" type=\"button\">Main</button>", "<button id=\"button-switch-essential\" name=\"essential\" class=\"button\" type=\"button\">Essential</button>", "<button id=\"button-switch-journal\" name=\"journal\" class=\"button\" type=\"button\">Journal</button>", "<button id=\"button-switch-statistics\" name=\"statistics\" class=\"button\" type=\"button\">Stats</button>", "<button id=\"button-switch-godhome\" name=\"godhome\" class=\"button\" type=\"button\">Godhome</button>", "</div>"].join("\n");
-        textFill += "<div id=\"tab-main\">";
+        textFill += ["<div class=\"tab-switch-buttons\">", "<button id=\"button-switch-main\" name=\"main\" class=\"button tab-switch\" type=\"button\">Main</button>", "<button id=\"button-switch-essential\" name=\"essential\" class=\"button tab-switch\" type=\"button\">Essential</button>", "<button id=\"button-switch-journal\" name=\"journal\" class=\"button tab-switch\" type=\"button\">Journal</button>", "<button id=\"button-switch-statistics\" name=\"statistics\" class=\"button tab-switch\" type=\"button\">Stats</button>", "<button id=\"button-switch-godhome\" name=\"godhome\" class=\"button tab-switch\" type=\"button\">Godhome</button>", "</div>"].join("\n");
+        textFill += "<div id=\"tab-main\" class=\"large-section\">";
         break;
 
       case "essential":
-        textFill += "<div id=\"tab-essential\">";
+        textFill += "<div id=\"tab-essential\" class=\"large-section\">";
         break;
 
       case "huntersJournal":
-        textFill += "<div id=\"tab-journal\">";
+        textFill += "<div id=\"tab-journal\" class=\"large-section\">";
         break;
 
       case "statistics":
-        textFill += "<div id=\"tab-statistics\">";
+        textFill += "<div id=\"tab-statistics\" class=\"large-section\">";
         break;
 
       case "godhomeStatistics":
-        textFill += "<div id=\"tab-godhome\">";
+        textFill += "<div id=\"tab-godhome\" class=\"large-section\">";
         break;
     }
 
@@ -6691,9 +6691,33 @@ function GenerateInnerHTML(db) {
   /* Final single HTML access and fill here */
 
 
-  document.getElementById("generated").innerHTML = finalHTMLFill; // finish benchmarking
+  document.getElementById("generated").innerHTML = finalHTMLFill;
+  /* make tab switch buttons working (on click) */
+
+  document.querySelectorAll(".tab-switch").forEach(function (button) {
+    button.addEventListener("click", function (e) {
+      PageSwitchTab(e.target);
+    });
+  }); // finish benchmarking
 
   _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.GenerateInnerHTML.timeEnd = performance.now();
+}
+
+function PageSwitchTab(clickedButton) {
+  var sectionList = document.querySelectorAll(".large-section");
+  console.log(sectionList);
+
+  for (var i = 0, length = sectionList.length; i < length; i++) {
+    if (sectionList[i].id !== "tab-".concat(clickedButton.name)) {
+      if (sectionList[i].classList.contains(".hidden")) {
+        sectionList[i].classList.add(".hidden");
+      }
+    } else {
+      if (sectionList[i].classList.contains(".hidden")) {
+        sectionList[i].classList.remove(".hidden");
+      }
+    }
+  }
 }
 
 function SectionDescription(section) {
