@@ -7050,13 +7050,15 @@ function FileDateFormat(file) {
   var day = fileDate.getDate();
   var hour = fileDate.getHours();
   var minutes = fileDate.getMinutes();
-  var seconds = fileDate.getSeconds();
+  /* var seconds = fileDate.getSeconds(); */
+
   if (month < 10) month = "0" + month;
   if (day < 10) day = "0" + day;
   if (hour < 10) hour = "0" + hour;
   if (minutes < 10) minutes = "0" + minutes;
-  if (seconds < 10) seconds = "0" + seconds;
-  return "".concat(year, ".").concat(month, ".").concat(day, " ").concat(hour, ":").concat(minutes, ":").concat(seconds);
+  /* if (seconds < 10) seconds = "0" + seconds; */
+
+  return "".concat(year, ".").concat(month, ".").concat(day, " ").concat(hour, ":").concat(minutes);
 }
 /* ========================== Event Listeners ========================== */
 
