@@ -499,6 +499,7 @@ function CheckExtendedCompletion(db) {
       case "intro":
       case "hints":
       case "huntersJournal":
+      case "huntersJournalOptional":
         continue;
 
       default:
@@ -520,13 +521,15 @@ function CheckExtendedCompletion(db) {
 
           if (entries[entry].hasOwnProperty("icon")) {
 
-            intro.extendedCompletionTotal++;
+            if (entries[entry].icon !== "none") {
+              intro.extendedCompletionTotal++;
+            }
 
             if (entries[entry].icon === "green") {
               intro.extendedCompletionDone++;
             }
 
-            if (entries[entry].hasOwnProperty("disabled") && entries[entry].disabled == true) {
+            if (entries[entry].hasOwnProperty("disabled") && entries[entry].disabled === true) {
               intro.extendedCompletionTotal--;
             }
           }
