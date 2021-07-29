@@ -344,7 +344,7 @@ function PrepareHTMLString(section, textPrefix = "Unknown Completion Element: ",
 /**
  * Switches global variable to a "completed" symbol. Adds +1 or +2 to percent property.
  */
-function CurrentDataTrue(section = {}, entry = "") {
+function SetIconGreen(section = {}, entry = "") {
 
   /* Increase section percentage except the Game Status and Hints sections */
   switch (section.id) {
@@ -369,7 +369,7 @@ function CurrentDataTrue(section = {}, entry = "") {
 /**
  * Switches global variable to a "partially completed" symbol (prevents blurring the textPrefix).
  */
-function CurrentDataPartial(section = {}, entry = "") {
+function SetIconPartial(section = {}, entry = "") {
 
   section.entries[entry].icon = "partial";
 }
@@ -377,7 +377,7 @@ function CurrentDataPartial(section = {}, entry = "") {
 /**
  * Switches global variable to a "partially completed" symbol (prevents blurring whole entry).
  */
-function CurrentDataPartialJournal(section = {}, entry = "") {
+function SetIconPartialJournal(section = {}, entry = "") {
 
   section.entries[entry].icon = "partialJournal";
 }
@@ -385,7 +385,7 @@ function CurrentDataPartialJournal(section = {}, entry = "") {
 /**
  * Switches global variable to a "not completed" symbol
  */
-function CurrentDataFalse(section = {}, entry = "") {
+function SetIconRed(section = {}, entry = "") {
 
   section.entries[entry].icon = "red";
 }
@@ -400,7 +400,7 @@ function CurrentDataFalse(section = {}, entry = "") {
 /**
  * Switches global variable to no symbol (span with left padding)
  */
-function CurrentDataBlank(section = {}, entry = "") {
+function SetIconNone(section = {}, entry = "") {
 
   section.entries[entry].icon = "none";
 }
@@ -473,7 +473,7 @@ function CheckCompletionPercent(section, playerData) {
     section.entries.gameCompletion.spoilerAfter = section.entries.gameCompletion.spoilerAfterBaseGame;
   }
 
-  (completionPercentage >= maxPercent) ? CurrentDataTrue(section, "gameCompletion"): CurrentDataFalse(section, "gameCompletion");
+  (completionPercentage >= maxPercent) ? SetIconGreen(section, "gameCompletion"): SetIconRed(section, "gameCompletion");
 
   /* let textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + section.maxPercent + " %)"; */
   // document.getElementById(section.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
@@ -562,7 +562,7 @@ function CheckExtendedCompletion(db) {
  */
 function CheckSaveFileVersion(section, saveVersion = HK.sections.intro.entries.saveVersion.spoiler) {
 
-  CurrentDataBlank(section, section.entries.saveVersion.id);
+  SetIconNone(section, section.entries.saveVersion.id);
 
   section.entries.saveVersion.spoiler = `${saveVersion}`;
 
@@ -738,7 +738,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
     switch (i) {
       case "gotCharm_36":
         // prevents green checkbox and adding 1% when only got one white fragment
-        (playerData.gotQueenFragment === true && playerData.gotKingFragment === true) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+        (playerData.gotQueenFragment === true && playerData.gotKingFragment === true) ? SetIconGreen(section, i): SetIconRed(section, i);
         break;
 
       case "gotCharm_37":
@@ -752,7 +752,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
 
         // fades out the entries if save file is from older game versions
         if (playerData.hasOwnProperty(i) === false) {
-          CurrentDataBlank(section, i);
+          SetIconNone(section, i);
           dataObject[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
 
@@ -761,7 +761,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
 
         // Checks for Nightmare King (4) or Banishment (5)
         if (i === "grimmChildLevel") {
-          // (playerData.grimmChildLevel >= 4) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+          // (playerData.grimmChildLevel >= 4) ? SetIconGreen(section, i): SetIconRed(section, i);
 
           /* Check if Nightmare King or Banishment by looking at grimmChildLevel */
           switch (playerData[i]) {
@@ -771,7 +771,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
               dataObject[i].spoiler = dataObject[i].spoilerNightmareKing;
               dataObject[i].wiki = dataObject[i].wikiNightmareKing;
 
-              CurrentDataTrue(section, i);
+              SetIconGreen(section, i);
 
               break;
 
@@ -780,12 +780,12 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
               dataObject[i].spoiler = dataObject[i].spoilerBanishment;
               dataObject[i].wiki = dataObject[i].wikiBanishment;
 
-              CurrentDataTrue(section, i);
+              SetIconGreen(section, i);
 
               break;
 
             default:
-              CurrentDataFalse(section, i);
+              SetIconRed(section, i);
               dataObject[i].name = dataObject[i].nameDefault;
               dataObject[i].spoiler = dataObject[i].spoilerDefault;
               dataObject[i].wiki = dataObject[i].wikiDefault;
@@ -795,7 +795,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
         }
 
         if (i === "gotCharm_40") {
-          CurrentDataFalse(section, i);
+          SetIconRed(section, i);
           dataObject[i].name = dataObject[i].nameDefault;
           dataObject[i].spoiler = dataObject[i].spoilerDefault;
           dataObject[i].wiki = dataObject[i].wikiDefault;
@@ -808,7 +808,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
                 dataObject[i].spoiler = dataObject[i].spoilerGrimmchildP1;
                 dataObject[i].wiki = dataObject[i].wikiGrimmchild;
 
-                CurrentDataTrue(section, i);
+                SetIconGreen(section, i);
               }
 
               break;
@@ -817,7 +817,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
               dataObject[i].spoiler = dataObject[i].spoilerGrimmchildP2;
               dataObject[i].wiki = dataObject[i].wikiGrimmchild;
 
-              CurrentDataTrue(section, i);
+              SetIconGreen(section, i);
 
               break;
             case 3:
@@ -825,7 +825,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
               dataObject[i].spoiler = dataObject[i].spoilerGrimmchildP3;
               dataObject[i].wiki = dataObject[i].wikiGrimmchild;
 
-              CurrentDataTrue(section, i);
+              SetIconGreen(section, i);
 
               break;
             case 4:
@@ -833,7 +833,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
               dataObject[i].spoiler = dataObject[i].spoilerGrimmchildP4;
               dataObject[i].wiki = dataObject[i].wikiGrimmchild;
 
-              CurrentDataTrue(section, i);
+              SetIconGreen(section, i);
 
               break;
             case 5:
@@ -841,7 +841,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
               dataObject[i].spoiler = dataObject[i].spoilerCarefreeMelody;
               dataObject[i].wiki = dataObject[i].wikiCarefreeMelody;
 
-              CurrentDataTrue(section, i);
+              SetIconGreen(section, i);
 
               break;
             default:
@@ -853,7 +853,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
           break;
         }
 
-        (playerData[i] === true) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+        (playerData[i] === true) ? SetIconGreen(section, i): SetIconRed(section, i);
 
         break;
 
@@ -875,7 +875,7 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
       case "vesselFragmentCityOfTears":
       case "vesselFragmentDeepnest":
       case "vesselFragmentFountain":
-        (WorldDataActivated(dataObject[i].id, dataObject[i].sceneName, worldData)) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+        (WorldDataActivated(dataObject[i].id, dataObject[i].sceneName, worldData)) ? SetIconGreen(section, i): SetIconRed(section, i);
         break;
 
       case "pantheonMaster":
@@ -885,22 +885,22 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
         checkText = CheckGodmasterDoors(dataObject[i], playerData);
 
         if (checkText === "PropertyNotFound") {
-          CurrentDataBlank(section, i);
+          SetIconNone(section, i);
           dataObject[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
           break;
 
         } else if (checkText === "PantheonCompleted") {
-          CurrentDataTrue(section, i);
+          SetIconGreen(section, i);
           break;
 
         } else {
-          CurrentDataFalse(section, i);
+          SetIconRed(section, i);
         }
         break;
 
       default:
-        (playerData[i] === true) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+        (playerData[i] === true) ? SetIconGreen(section, i): SetIconRed(section, i);
     }
 
     /* sFillText += PrepareHTMLString(section, textPrefix, textSuffix, wiki); */
@@ -923,17 +923,17 @@ function CheckSpellLevel(section, dataObject, playerData) {
     switch (i) {
       case "vengefulSpirit":
       case "shadeSoul":
-        (playerData.fireballLevel >= dataObject[i].fireballLevel) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+        (playerData.fireballLevel >= dataObject[i].fireballLevel) ? SetIconGreen(section, i): SetIconRed(section, i);
         sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
         break;
       case "desolateDive":
       case "descendingDark":
-        (playerData.quakeLevel >= dataObject[i].quakeLevel) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+        (playerData.quakeLevel >= dataObject[i].quakeLevel) ? SetIconGreen(section, i): SetIconRed(section, i);
         sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
         break;
       case "howlingWraiths":
       case "abyssShriek":
-        (playerData.screamLevel >= dataObject[i].screamLevel) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+        (playerData.screamLevel >= dataObject[i].screamLevel) ? SetIconGreen(section, i): SetIconRed(section, i);
         sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
         break;
       default:
@@ -955,7 +955,7 @@ function CheckWarriorDreams(section, dataObject, playerData) {
   let sFillText = "";
 
   for (let i in dataObject) {
-    (playerData[i] >= 2) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+    (playerData[i] >= 2) ? SetIconGreen(section, i): SetIconRed(section, i);
     sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
   }
 
@@ -993,7 +993,7 @@ function CheckNailUpgrades(section, dataObject, playerData) {
   let sFillText = "";
 
   for (let i = 0; i < 5; i++) {
-    (playerData.nailSmithUpgrades >= i) ? CurrentDataTrue(section, nail[i]): CurrentDataFalse(section, nail[i]);
+    (playerData.nailSmithUpgrades >= i) ? SetIconGreen(section, nail[i]): SetIconRed(section, nail[i]);
     sFillText += PrepareHTMLString(section, dataObject[nail[i]].name, dataObject[nail[i]].spoiler, dataObject[nail[i]].wiki);
   }
   if (section.percent) section.percent--; // subject one for the Old Nail
@@ -1048,8 +1048,8 @@ function WorldDataActivated(idText, sceneNameText, worldData) {
 
     // Display the items as they were initially ordered
     for (let i = 0; i < size; i++) {
-        CurrentDataFalse();
-        if (orderedArray[i][4] === true) CurrentDataTrue(section);
+        SetIconRed();
+        if (orderedArray[i][4] === true) SetIconGreen(section);
         sFillText += PrepareHTMLString(section, orderedArray[i][1], orderedArray[i][2], orderedArray[i][3]);
     }
 
@@ -1159,7 +1159,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         if (i === "greyPrinceDefeats") {
           // backwards compatibility with earlier game versions
           if (playerData.hasOwnProperty(i) === false) {
-            CurrentDataBlank(section, i);
+            SetIconNone(section, i);
             dataObject[i].disabled = true;
             // textPrefix = `<del>${dataObject[i].name}</del>`;
             break;
@@ -1172,7 +1172,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         if (i === "whiteDefenderDefeats") {
           // backwards compatibility with earlier game versions
           if (playerData.hasOwnProperty(i) === false) {
-            CurrentDataBlank(section, i);
+            SetIconNone(section, i);
             dataObject[i].disabled = true;
             // textPrefix = `<del>${dataObject[i].name}</del>`;
             break;
@@ -1181,13 +1181,13 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         if (amount >= dataObject[i].max) {
 
-          CurrentDataTrue(section, i);
+          SetIconGreen(section, i);
         } else if (amount > 0) {
 
-          CurrentDataPartial(section, i);
+          SetIconPartial(section, i);
         } else {
 
-          CurrentDataBlank(section, i);
+          SetIconNone(section, i);
         }
         break;
 
@@ -1201,16 +1201,16 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         dataObject[i].amount = amount;
 
         if (amount > 0 && i == "geoPool") {
-          CurrentDataPartial(section, i);
+          SetIconPartial(section, i);
         } else {
-          CurrentDataBlank(section, i);
+          SetIconNone(section, i);
         }
 
         if (i === "jinnEggsSold") {
           // fade out if not on Steel Soul
           if (playerData.permadeathMode < 1) {
 
-            CurrentDataBlank(section, i);
+            SetIconNone(section, i);
             dataObject[i].disabled = true;
             // textPrefix = `<del>${textPrefix}</del>`;
             break;
@@ -1230,7 +1230,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         dataObject[i].activated = activated;
 
         /* textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`; */
-        CurrentDataBlank(section, i);
+        SetIconNone(section, i);
         break;
 
       case "itemsDiscovered":
@@ -1244,23 +1244,23 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         dataObject[i].activated = activated;
 
         /* textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`; */
-        CurrentDataBlank(section, i);
+        SetIconNone(section, i);
         break;
 
       case "shopkeeperKey":
-        (playerData.hasSlykey === true || playerData.gaveSlykey === true) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+        (playerData.hasSlykey === true || playerData.gaveSlykey === true) ? SetIconGreen(section, i): SetIconRed(section, i);
         break;
 
       case "elegantKey":
-        (playerData.hasWhiteKey === true || playerData.usedWhiteKey === true) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+        (playerData.hasWhiteKey === true || playerData.usedWhiteKey === true) ? SetIconGreen(section, i): SetIconRed(section, i);
         break;
 
       case "loveKey":
-        (playerData.hasLoveKey === true || playerData.openedLoveDoor === true) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+        (playerData.hasLoveKey === true || playerData.openedLoveDoor === true) ? SetIconGreen(section, i): SetIconRed(section, i);
         break;
 
       case "paleOreSeer": // #2
-        (playerData.dreamReward3 === true) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+        (playerData.dreamReward3 === true) ? SetIconGreen(section, i): SetIconRed(section, i);
         break;
 
         /* -------------------- Interactables ------------------------------- */
@@ -1279,7 +1279,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "whiteLadyRoom":
       case "arcaneEggLifebloodCoreRoom":
       case "throneRoomLoreTablet":
-        (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+        (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) ? SetIconGreen(section, i): SetIconRed(section, i);
         break;
 
       case "relicsWandererJournal":
@@ -1290,13 +1290,13 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         if (total >= dataObject[i].max) {
 
-          CurrentDataTrue(section, i);
+          SetIconGreen(section, i);
         } else if (total > 0) {
 
-          CurrentDataPartial(section, i);
+          SetIconPartial(section, i);
         } else {
 
-          CurrentDataBlank(section, i);
+          SetIconNone(section, i);
         }
 
         dataObject[i].amount = total;
@@ -1306,54 +1306,54 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
       case "bossDoorStateTier5":
         if (playerData.hasOwnProperty("bossDoorStateTier5") === false) {
-          CurrentDataBlank(section, i);
+          SetIconNone(section, i);
           dataObject[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
         } else {
-          (playerData[i].completed === true) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+          (playerData[i].completed === true) ? SetIconGreen(section, i): SetIconRed(section, i);
         }
         break;
 
       case "killsBindingSeal":
         if (playerData.hasOwnProperty(i) === false) {
-          CurrentDataBlank(section, i);
+          SetIconNone(section, i);
           dataObject[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
           break;
         }
-        (playerData[i] == 0) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+        (playerData[i] == 0) ? SetIconGreen(section, i): SetIconRed(section, i);
         break;
 
       case "killsBigBuzzer":
-        (playerData[i] == 0) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
+        (playerData[i] == 0) ? SetIconGreen(section, i): SetIconRed(section, i);
         break;
 
       case "killedVoidIdol_1":
         if (playerData.hasOwnProperty(i) === false) {
-          CurrentDataBlank(section, i);
+          SetIconNone(section, i);
           dataObject[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
           break;
         }
-        (playerData[i] === true) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
-        if (playerData[i] === false && (playerData.killedVoidIdol_2 === true || playerData.killedVoidIdol_3 === true)) CurrentDataTrue(section, i);
+        (playerData[i] === true) ? SetIconGreen(section, i): SetIconRed(section, i);
+        if (playerData[i] === false && (playerData.killedVoidIdol_2 === true || playerData.killedVoidIdol_3 === true)) SetIconGreen(section, i);
         break;
 
       case "killedVoidIdol_2":
         if (playerData.hasOwnProperty(i) === false) {
-          CurrentDataBlank(section, i);
+          SetIconNone(section, i);
           dataObject[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
           break;
         }
-        (playerData[i] === true) ? CurrentDataTrue(section, i): CurrentDataFalse(section, i);
-        if (playerData[i] === false && playerData.killedVoidIdol_3 === true) CurrentDataTrue(section, i);
+        (playerData[i] === true) ? SetIconGreen(section, i): SetIconRed(section, i);
+        if (playerData[i] === false && playerData.killedVoidIdol_3 === true) SetIconGreen(section, i);
         break;
 
       case "greyPrinceDefeated":
         // compatibility with earlier game versions
         if (playerData.hasOwnProperty(i) === false) {
-          CurrentDataBlank(section, i);
+          SetIconNone(section, i);
           dataObject[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
           break;
@@ -1361,12 +1361,12 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           dataObject[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
         }
-        (playerData[i] === true) ? CurrentDataTrue(section, i): CurrentDataBlank(section, i);
-        if (playerData.zoteRescuedBuzzer === true && playerData[i] === false) CurrentDataFalse(section, i);
+        (playerData[i] === true) ? SetIconGreen(section, i): SetIconNone(section, i);
+        if (playerData.zoteRescuedBuzzer === true && playerData[i] === false) SetIconRed(section, i);
         break;
 
       case "zoteStatus":
-        CurrentDataFalse(section, i);
+        SetIconRed(section, i);
         dataObject[i].name = dataObject[i].nameDefault;
         dataObject[i].spoiler = dataObject[i].spoilerDefault;
 
@@ -1376,7 +1376,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           dataObject[i].name = dataObject[i].nameNeglect;
           dataObject[i].spoiler = dataObject[i].spoilerNeglect;
 
-          CurrentDataTrue(section, i);
+          SetIconGreen(section, i);
 
         } else if (playerData.killedZote === true) {
           /* textPrefix = dataObject[i].nameRivalry;
@@ -1384,7 +1384,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           dataObject[i].name = dataObject[i].nameRivalry;
           dataObject[i].spoiler = dataObject[i].spoilerRivalry;
 
-          CurrentDataTrue(section, i);
+          SetIconGreen(section, i);
 
         } else if (playerData.zoteRescuedBuzzer === false) {
           if (playerData.hasWalljump === false) {
@@ -1418,7 +1418,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         break;
 
       case "nailsmithStatus":
-        CurrentDataFalse(section, i);
+        SetIconRed(section, i);
         dataObject[i].name = dataObject[i].nameDefault;
         dataObject[i].spoiler = dataObject[i].spoilerDefault;
 
@@ -1428,7 +1428,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           dataObject[i].name = dataObject[i].namePurity;
           dataObject[i].spoiler = dataObject[i].spoilerPurity;
 
-          CurrentDataTrue(section, i);
+          SetIconGreen(section, i);
 
         } else if (playerData.nailsmithConvoArt === true) {
           /* textPrefix = dataObject[i].nameHappyCouple;
@@ -1436,7 +1436,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           dataObject[i].name = dataObject[i].nameHappyCouple;
           dataObject[i].spoiler = dataObject[i].spoilerHappyCouple;
 
-          CurrentDataTrue(section, i);
+          SetIconGreen(section, i);
 
         } else if (playerData.nailsmithSpared === true) {
           /* textPrefix = dataObject[i].nameSheoHutWaiting;
@@ -1467,17 +1467,17 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         // backwards compatibility with earlier game versions
         if (playerData.hasOwnProperty(i) === false) {
 
-          CurrentDataBlank(section, i);
+          SetIconNone(section, i);
           dataObject[i].disabled = true;
           // textPrefix = `<del>${dataObject[i].name}</del>`;
           break;
 
         } else if (playerData[i] === true) {
 
-          CurrentDataTrue(section, i);
+          SetIconGreen(section, i);
         } else {
 
-          CurrentDataFalse(section, i);
+          SetIconRed(section, i);
         }
     } // end switch (i)
 
@@ -1660,9 +1660,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 function CheckMrMushroomState(section, entry, mrMushroomState = 0) {
 
   if (mrMushroomState >= entry.state) {
-    CurrentDataTrue(section, `mrMushroomState${entry.state}`);
+    SetIconGreen(section, `mrMushroomState${entry.state}`);
   } else {
-    CurrentDataFalse(section, `mrMushroomState${entry.state}`);
+    SetIconRed(section, `mrMushroomState${entry.state}`);
   }
 }
 
@@ -1700,7 +1700,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
 
             entries[entry].disabled = true;
             entries[entry].name = nameDefault;
-            CurrentDataBlank(section, entry);
+            SetIconNone(section, entry);
 
             continue;
           }
@@ -1714,7 +1714,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
 
             entries[entry].disabled = true;
             entries[entry].name = nameDefault;
-            CurrentDataBlank(section, entry);
+            SetIconNone(section, entry);
 
             continue;
           }
@@ -1728,7 +1728,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
 
             entries[entry].disabled = true;
             entries[entry].name = nameDefault;
-            CurrentDataBlank(section, entry);
+            SetIconNone(section, entry);
 
             continue;
           }
@@ -1741,18 +1741,18 @@ function CheckHuntersJournal(db, sectionName, playerData) {
       /* When killed at least 1, the entry has a gray symbol */
       if (playerData[`killed${entry}`] === true) {
 
-        CurrentDataPartialJournal(section, entry);
+        SetIconPartialJournal(section, entry);
 
       /* When not killed, the entry is undiscovered */
       } else {
 
-        CurrentDataFalse(section, entry);
+        SetIconRed(section, entry);
       }
 
       /* When the Hunter's Note is unlocked, the entry has a green symbol */
       if (amountKillsLeft === 0) {
 
-        CurrentDataTrue(section, entry);
+        SetIconGreen(section, entry);
 
       /* If not, show how many remain to defeat in the name */
       } else {
@@ -1766,7 +1766,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
         if (playerData.killedVoidIdol_1 === false
         && (playerData.killedVoidIdol_2 === true || playerData.killedVoidIdol_3 === true)) {
 
-          CurrentDataTrue(section, entry);
+          SetIconGreen(section, entry);
           entries[entry].name = nameDefault;
         }
       }
@@ -1777,7 +1777,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
       amountKillsLeft = 0;
       entries[entry].disabled = true;
       entries[entry].name = name;
-      CurrentDataBlank(section, entry);
+      SetIconNone(section, entry);
     }
   }
 }
