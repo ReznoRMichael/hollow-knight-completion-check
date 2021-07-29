@@ -98,6 +98,7 @@ If you like the tool and wish it developed further with more functions and easie
   — Changes/Fixes:  
   ✅ Rewrote and optimized large parts of the code. Should work a bit faster now, especially on mobile devices.  
   ✅ Drag and Drop save file should now work for the whole window (not just for the file input field).  
+  ✅ Added Detailed Extended Completion to the program. A true perfectionist's dream come true/nightmare.  
   ✅ Added full Hunter's Journal to the program. Now you can see and check all journal entries, as well as partial note completion and number of kills left to uncover Hunter's notes for each creature.  
   ✅ Choose Save File appearance change. Will now show file's name, date and time after file is loaded (also after drag & drop).  
   ✅ Divided the page to different switchable tabs. Less scrolling needed.  
@@ -109,6 +110,9 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Fixed incorrect display of Soul orbs amount for early HK save file versions (like 1.0.0.6).  
   ✅ Fixed not cleaning text area and file input after page refresh (Firefox).  
   ✅ Added Secret data information at the bottom of the tool.  
+
+  — **(New) Game Status** additions:  
+  ✅ addition: Detailed Extended Completion. Shows the true game completion by counting basically everything in the program.  
 
   — **(New) Hunter's Journal** additions/changes/fixes:  
   ✅ change + addition: now showing all 146 base entries needed for Keen/True Hunter achievements (with partial completion and number of kills left). The most commonly missed entries are shown at the top. Entries that are not required are in a separate section: Optional Journal Entries.  
