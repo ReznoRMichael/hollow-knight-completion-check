@@ -418,6 +418,7 @@ function CheckExtendedCompletion(db) {
     entries = sections[section].entries;
 
     switch (section) {
+      /* Ignore these sections totally */
       case "intro":
       case "hints":
       case "huntersJournal":
@@ -426,10 +427,14 @@ function CheckExtendedCompletion(db) {
 
       default:
         for (var entry in entries) {
-          /* Skip counting these entries */
+          /* Do not count these entries */
           switch (entry) {
             case "oldNail":
             case "geoPool":
+            case "dreamOrbs":
+            case "charmsOwned":
+            case "charmSlots":
+            case "nailDamage":
             case "rancidEggs":
             case "jinnEggsSold":
             case "xunFlowerBrokeTimes":

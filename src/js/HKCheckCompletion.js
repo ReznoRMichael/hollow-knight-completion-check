@@ -508,17 +508,21 @@ function CheckExtendedCompletion(db) {
 
         for (let entry in entries) {
 
-          /* Skip counting these entries */
+          /* Do not count these entries */
           switch (entry) {
 
             case "oldNail":
             case "geoPool":
+            case "dreamOrbs":
+            case "charmsOwned":
+            case "charmSlots":
+            case "nailDamage":
             case "rancidEggs":
             case "jinnEggsSold":
             case "xunFlowerBrokeTimes":
             case "geoRocks":
             case "itemsDiscovered":
-              
+
               continue;
           }
 
