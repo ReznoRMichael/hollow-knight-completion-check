@@ -446,16 +446,47 @@ function CheckExtendedCompletion(db) {
           }
 
           if (entries[entry].hasOwnProperty("icon")) {
-            if (entries[entry].icon !== "none") {
-              intro.extendedCompletionTotal++;
-            }
+            switch (entry) {
+              /* Do not add these to total and done (they will be added as amount/max later instead) */
+              case "grubsCollected":
+              case "grubRewards":
+              case "stationsOpened":
+              case "areaMaps":
+              case "journalEntriesCompleted":
+              case "journalNotesCompleted":
+              case "whisperingRoots":
+              case "relicsWandererJournal":
+              case "relicsHallownestSeal":
+              case "relicsKingsIdol":
+              case "relicsArcaneEgg":
+              case "whiteDefenderDefeats":
+              case "greyPrinceDefeats":
+                break;
 
-            if (entries[entry].icon === "green") {
-              intro.extendedCompletionDone++;
+              default:
+                if (entries[entry].icon !== "none") {
+                  intro.extendedCompletionTotal++;
+                }
+
+                if (entries[entry].icon === "green") {
+                  intro.extendedCompletionDone++;
+                }
+
             }
+            /* Skip disabled entries entirely from counting */
+
 
             if (entries[entry].hasOwnProperty("disabled") && entries[entry].disabled === true) {
+              /* Do not substract a point for WD/GPZ Defeats nr if they were not added to Total in the first place */
+              if (entry === "greyPrinceDefeats" || entry === "whiteDefenderDefeats") {
+                break;
+              }
+
               intro.extendedCompletionTotal--;
+
+              if (entry === "greyPrinceDefeats" || entry === "whiteDefenderDefeats") {
+                console.log(entry);
+              }
             } else if (entries[entry].hasOwnProperty("amount") && entries[entry].hasOwnProperty("max")) {
               /* Skip counting 3000 Fountain Geo, too much */
               if (entry === "fountainGeo") {
@@ -472,7 +503,7 @@ function CheckExtendedCompletion(db) {
 
               intro.extendedCompletionDone += amount;
               intro.extendedCompletionTotal += max;
-              console.info("Adding amount/max: ".concat(amount, "/").concat(max), entries[entry].name);
+              console.info("".concat(entry, ": ").concat(amount, "/").concat(max), entries[entry].name);
               amount = 0;
               max = 0;
             }

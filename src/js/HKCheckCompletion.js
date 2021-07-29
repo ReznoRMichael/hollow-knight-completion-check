@@ -531,15 +531,42 @@ function CheckExtendedCompletion(db) {
 
           if (entries[entry].hasOwnProperty("icon")) {
 
-            if (entries[entry].icon !== "none") {
-              intro.extendedCompletionTotal++;
+            switch (entry) {
+
+              /* Do not add these to total and done (they will be added as amount/max later instead) */
+              case "grubsCollected":
+              case "grubRewards":
+              case "stationsOpened":
+              case "areaMaps":
+              case "journalEntriesCompleted":
+              case "journalNotesCompleted":
+              case "whisperingRoots":
+              case "relicsWandererJournal":
+              case "relicsHallownestSeal":
+              case "relicsKingsIdol":
+              case "relicsArcaneEgg":
+              case "whiteDefenderDefeats":
+              case "greyPrinceDefeats":
+                break;
+              
+              default:
+
+                if (entries[entry].icon !== "none") {
+                  intro.extendedCompletionTotal++;
+                }
+    
+                if (entries[entry].icon === "green") {
+                  intro.extendedCompletionDone++;
+                }
             }
 
-            if (entries[entry].icon === "green") {
-              intro.extendedCompletionDone++;
-            }
-
+            /* Skip disabled entries entirely from counting (substract a point from Total) */
             if (entries[entry].hasOwnProperty("disabled") && entries[entry].disabled === true) {
+
+              /* Do not substract a point for WD/GPZ Defeats nr if they were not added to Total in the first place */
+              if (entry === "greyPrinceDefeats" || entry === "whiteDefenderDefeats") {
+                break;
+              }
 
               intro.extendedCompletionTotal--;
             }
@@ -561,7 +588,7 @@ function CheckExtendedCompletion(db) {
               intro.extendedCompletionDone += amount;
               intro.extendedCompletionTotal += max;
 
-              console.info(`Adding amount/max: ${amount}/${max}`, entries[entry].name);
+              console.info(`${entry}: ${amount}/${max}`, entries[entry].name);
 
               amount = 0;
               max = 0;
