@@ -496,10 +496,12 @@ function CheckExtendedCompletion(db) {
 
     switch (section) {
 
+      /* Ignore these sections totally */
       case "intro":
       case "hints":
       case "huntersJournal":
       case "huntersJournalOptional":
+
         continue;
 
       default:
@@ -516,6 +518,7 @@ function CheckExtendedCompletion(db) {
             case "xunFlowerBrokeTimes":
             case "geoRocks":
             case "itemsDiscovered":
+              
               continue;
           }
 
