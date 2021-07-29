@@ -490,6 +490,9 @@ function CheckExtendedCompletion(db) {
   let gameCompletionExtended = db.sections.intro.entries.gameCompletionExtended;
   let intro = db.sections.intro;
 
+  let amount = 0;
+  let max = 0;
+
   for (let section in sections) {
 
     entries = sections[section].entries;
@@ -537,7 +540,31 @@ function CheckExtendedCompletion(db) {
             }
 
             if (entries[entry].hasOwnProperty("disabled") && entries[entry].disabled === true) {
+
               intro.extendedCompletionTotal--;
+            }
+            else if (entries[entry].hasOwnProperty("amount") && entries[entry].hasOwnProperty("max")) {
+
+              /* Skip counting 3000 Fountain Geo, too much */
+              if (entry === "fountainGeo") {
+                break;
+              }
+
+              amount = entries[entry].amount;
+              max = entries[entry].max;
+
+              /* Prevent overflowing the counter */
+              if (amount > max) {
+                amount = max;
+              }
+
+              intro.extendedCompletionDone += amount;
+              intro.extendedCompletionTotal += max;
+
+              console.info(`Adding amount/max: ${amount}/${max}`, entries[entry].name);
+
+              amount = 0;
+              max = 0;
             }
           }
         }
