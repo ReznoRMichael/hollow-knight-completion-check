@@ -2802,6 +2802,11 @@ const HK = {
           spoiler: "Fog Canyon: Millibelle the Banker",
           wiki: "Millibelle"
         },
+        millibelleLeft: {
+          name: "Millibelle Disappeared",
+          spoiler: "Fog Canyon: Millibelle the Banker",
+          wiki: "Millibelle"
+        },
         /* 
         Path of Pain entrance discovered
         */
