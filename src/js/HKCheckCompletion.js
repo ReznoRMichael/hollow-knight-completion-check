@@ -1921,8 +1921,6 @@ function CheckHuntersJournal(db, sectionName, playerData) {
           entriesStatistics.journalNotesCompleted.max--;
       }
 
-      console.info(entry, entriesStatistics.journalEntriesCompleted.max);
-
       SetIconNone(section, entry);
     }
   }

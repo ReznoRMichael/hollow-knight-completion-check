@@ -1075,7 +1075,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
           if (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
             if (playerData.hasOwnProperty("killedGreyPrince")) {
-              dataObject[i].max -= 4; // Substract GPZ and 3 Zotelings from max
+              dataObject[i].max -= 4; // Subtract GPZ and 3 Zotelings from max
             }
 
             dataObject[i].spoiler = "".concat(dataObject[i].spoilerDefault, " (").concat(dataObject[i].max, " max)");
@@ -1788,7 +1788,6 @@ function CheckHuntersJournal(db, sectionName, playerData) {
           entriesStatistics.journalNotesCompleted.max--;
       }
 
-      console.info(entry, entriesStatistics.journalEntriesCompleted.max);
       SetIconNone(section, entry);
     }
   }
@@ -4601,9 +4600,9 @@ var HK = {
 
     /* ################ Hunter's Journal ################### */
     huntersJournal: {
-      h2: "Hunter's Journal",
+      h2: "Hunter's Journal (Base)",
       id: "hk-journal",
-      description: "All 146 base Hunter's Journal entries that are required for Hunter's Mark and Keen Hunter/True Hunter achievements. There are more entries than base 146, but they are completely optional. Green = note completed. Gray = entry discovered, but note not completed. Red = entry not yet discovered. (nr) = amount left to complete note.",
+      description: "All 146 base Hunter's Journal entries that are required for Hunter's Mark and Keen Hunter/True Hunter achievements. There are more entries than base 146 (below), but they are completely optional. Green = note completed. Gray = entry discovered, but note not completed. Red = entry not yet discovered. (nr) = amount left to complete note.",
       entries: {
         PrayerSlug: {
           name: "Maggot (2)",
@@ -5482,7 +5481,7 @@ var HK = {
     huntersJournalOptional: {
       h2: "Optional Journal Entries",
       id: "hk-journal-optional",
-      description: "The remaining Hunter's Journal entries which don't count for Hunter's Mark and Keen/True Hunter achievements. Note: 6 entries can be permanently unobtainable, depending on your choices in the game (<span class='spoiler-span blurred'>Grey Prince Zote, all 3 Zotelings, Grimmkin Nightmare and Nightmare King</span>).",
+      description: "The remaining Hunter's Journal entries which don't count for Hunter's Mark and Keen/True Hunter achievements. Note: 6 entries can be permanently unobtainable, depending on your choices in the save file (<span class='spoiler-span blurred'>Grey Prince Zote, all 3 Zotelings, Grimmkin Nightmare and Nightmare King</span>).",
       entries: {
         HunterMark: {
           name: "Hunter's Mark (1)",
