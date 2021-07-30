@@ -1180,7 +1180,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         break;
 
       case "millibelleLeft":
-        if (playerData.bankerTheft === 1) {
+        if (playerData.bankerTheft >= 1) {
           SetIconGreen(section, i);
         } else {
           SetIconRed(section, i);
@@ -5894,6 +5894,11 @@ var HK = {
         millibelleCheckedStand: {
           name: "Checked Millibelle Stand",
           spoiler: "Fog Canyon: Millibelle the Banker",
+          wiki: "Millibelle"
+        },
+        bankerSpaMet: {
+          name: "Found Millibelle",
+          spoiler: "City of Tears: Hot Springs, needs Simple Key",
           wiki: "Millibelle"
         },
 

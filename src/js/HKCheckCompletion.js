@@ -1304,7 +1304,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       
       case "millibelleLeft":
 
-        if (playerData.bankerTheft === 1) {
+        if (playerData.bankerTheft >= 1) {
           SetIconGreen(section, i);
         } else {
           SetIconRed(section, i);

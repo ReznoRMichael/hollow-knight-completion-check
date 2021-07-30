@@ -2812,6 +2812,11 @@ const HK = {
           spoiler: "Fog Canyon: Millibelle the Banker",
           wiki: "Millibelle"
         },
+        bankerSpaMet: {
+          name: "Found Millibelle",
+          spoiler: "City of Tears: Hot Springs, needs Simple Key",
+          wiki: "Millibelle"
+        },
         /* 
         Path of Pain entrance discovered
         */
