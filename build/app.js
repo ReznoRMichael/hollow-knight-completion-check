@@ -1066,7 +1066,16 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         }
 
         if (i === "stationsOpened") {
-          if (playerData.openedHiddenStation === true) amount++;
+          /* Add Dirtmouth and Hidden Station */
+          if (playerData.openedTownBuilding === true) amount++;
+          /* backwards compatibility check */
+
+          if (playerData.hasOwnProperty("openedHiddenStation")) {
+            if (playerData.openedHiddenStation === true) amount++;
+          } else {
+            /* Subtract one from maximum for extended completion counting */
+            dataObject[i].max--;
+          }
         }
 
         countTotal = amount;
@@ -4086,8 +4095,8 @@ var HK = {
         },
         stationsOpened: {
           name: "Stag Stations Opened",
-          spoiler: "10 Stag Stations total",
-          max: 10,
+          spoiler: "11 Stag Stations total including Dirtmouth",
+          max: 11,
           wiki: "Fast_Travel_(Hollow_Knight)#Locations_and_Prices"
         },
         fountainGeo: {

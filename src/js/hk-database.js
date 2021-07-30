@@ -1095,17 +1095,72 @@ const HK = {
           max: 2400,
           wiki: "Dream_Nail#Essence"
         },
-        stationsOpened: {
-          name: "Stag Stations Opened",
-          spoiler: "10 Stag Stations total",
-          max: 10,
-          wiki: "Fast_Travel_(Hollow_Knight)#Locations_and_Prices"
-        },
         fountainGeo: {
           name: "Geo in Fountain",
           spoiler: "Ancient Basin: 3000 Geo maximum",
           max: 3000,
           wiki: "Ancient_Basin#Description"
+        },
+        openedTownBuilding: {
+          name: "Stag Station: Dirtmouth",
+          spoiler: "Opened from inside after travelling",
+          wiki: "Dirtmouth"
+        },
+        openedCrossroads: {
+          name: "Stag Station: Forgotten Crossroads",
+          spoiler: "Right middle-bottom area",
+          wiki: "Forgotten_Crossroads"
+        },
+        openedGreenpath: {
+          name: "Stag Station: Greenpath",
+          spoiler: "Top middle area, below Hornet entrance",
+          wiki: "Greenpath"
+        },
+        openedRuins1: {
+          name: "Stag Station: City Storerooms",
+          spoiler: "Top left area of City of Tears",
+          wiki: "City_of_Tears"
+        },
+        openedRuins2: {
+          name: "Stag Station: King's Station",
+          spoiler: "Far right area of City of Tears",
+          wiki: "City_of_Tears"
+        },
+        openedFungalWastes: {
+          name: "Stag Station: Queen's Station",
+          spoiler: "Left area of Fungal Wastes, near Fog Canyon",
+          wiki: "Fungal_Wastes"
+        },
+        openedRoyalGardens: {
+          name: "Stag Station: Queen's Gardens",
+          spoiler: "Middle area of Queen's Gardens",
+          wiki: "Queen's_Gardens"
+        },
+        openedRestingGrounds: {
+          name: "Stag Station: Resting Grounds",
+          spoiler: "Right middle area of Resting Grounds",
+          wiki: "Resting_Grounds"
+        },
+        openedDeepnest: {
+          name: "Stag Station: Distant Village",
+          spoiler: "",
+          wiki: ""
+        },
+        openedHiddenStation: {
+          name: "Stag Station: Hidden Station",
+          spoiler: "",
+          wiki: ""
+        },
+        openedStagNest: {
+          name: "Stag Station: Stag Nest",
+          spoiler: "",
+          wiki: ""
+        },
+        stagStationsOpened: {
+          name: "Stag Stations Opened",
+          spoiler: "11 Stag Stations total including Dirtmouth",
+          max: 11,
+          wiki: "Fast_Travel_(Hollow_Knight)#Locations_and_Prices"
         },
         slyRescued: {
           name: "Sly Rescued",
