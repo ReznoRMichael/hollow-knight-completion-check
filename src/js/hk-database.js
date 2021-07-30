@@ -2797,6 +2797,11 @@ const HK = {
           spoiler: "100 Geo: Fog Canyon: Millibelle the Banker",
           wiki: "Millibelle"
         },
+        bankerBalance: {
+          name: "Bank Account Balance",
+          spoiler: "Fog Canyon: Millibelle the Banker",
+          wiki: "Millibelle"
+        },
         /* 
         Path of Pain entrance discovered
         */

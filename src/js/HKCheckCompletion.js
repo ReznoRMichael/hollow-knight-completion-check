@@ -1287,6 +1287,21 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         break;
 
+      case "bankerBalance":
+
+        amount = playerData[i];
+
+        /* When value is negative, reset to zero */
+        if (amount < 0) {
+          amount = 0;
+        }
+        
+        dataObject[i].amount = amount;
+
+        SetIconNone(section, i);
+
+        break;
+
       case "geoRocks":
         discoveredTotal = sceneData.geoRocks.length;
 

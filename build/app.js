@@ -1167,6 +1167,18 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         break;
 
+      case "bankerBalance":
+        amount = playerData[i];
+        /* When value is negative, reset to zero */
+
+        if (amount < 0) {
+          amount = 0;
+        }
+
+        dataObject[i].amount = amount;
+        SetIconNone(section, i);
+        break;
+
       case "geoRocks":
         discoveredTotal = sceneData.geoRocks.length;
         notActivated = CountGeoRocks(discoveredTotal, "unbroken");
@@ -5849,6 +5861,11 @@ var HK = {
         bankerAccountPurchased: {
           name: "Opened Bank Account",
           spoiler: "100 Geo: Fog Canyon: Millibelle the Banker",
+          wiki: "Millibelle"
+        },
+        bankerBalance: {
+          name: "Bank Account Balance",
+          spoiler: "Fog Canyon: Millibelle the Banker",
           wiki: "Millibelle"
         },
 
