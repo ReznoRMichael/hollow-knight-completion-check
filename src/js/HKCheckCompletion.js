@@ -162,10 +162,6 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   CheckSaveFileVersion(HK.sections.intro, HKPlayerData.version);
 
-  // ---------------- Fleur Divide ----------------- //
-
-  // AppendHTML(HK.sections.intro, FLEUR_DIVIDE);
-
   // ---------------- Health Masks ----------------- //
 
   CheckHealthMasks(HK.sections.intro, HKPlayerData.maxHealthBase, HKPlayerData.permadeathMode);
@@ -241,31 +237,20 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
   // ---------------- Godmaster Content Pack --------------------- //
 
   CheckIfDataTrue(HK.sections.godmaster, HK.sections.godmaster.entries, HKPlayerData);
+  
+  // ------------------------- Hunter's Journal ----------------------------- //
+  /* Must be checked before Statistics (for correct entry numbers) */
 
-  // ---------------- Fleur Divide ----------------- //
-
-  // AppendHTML(HK.sections.godmaster, FLEUR_DIVIDE);
+  CheckHuntersJournal(HK, "huntersJournal", HKPlayerData);
+  CheckHuntersJournal(HK, "huntersJournalOptional", HKPlayerData);
 
   // ------------------------- Essential Things ----------------------------- //
 
   CheckAdditionalThings(HK.sections.essential, HK.sections.essential.entries, HKPlayerData, HKWorldItems);
 
-  // ---------------- Fleur Divide ----------------- //
-
-  // AppendHTML(HK.sections.essential, FLEUR_DIVIDE);
-
   // ------------------------- Achievements ----------------------------- //
 
   CheckAdditionalThings(HK.sections.achievements, HK.sections.achievements.entries, HKPlayerData, HKWorldItems);
-
-  // ------------------------- Hunter's Journal ----------------------------- //
-
-  CheckHuntersJournal(HK, "huntersJournal", HKPlayerData);
-  CheckHuntersJournal(HK, "huntersJournalOptional", HKPlayerData);
-
-  // ---------------- Fleur Divide ----------------- //
-
-  // AppendHTML(HK.sections.achievements, FLEUR_DIVIDE);
 
   // ------------------------- Game Statistics ----------------------------- //
 
@@ -1815,6 +1800,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
 
   let section = db.sections[sectionName];
   let entries = db.sections[sectionName].entries;
+  let entriesStatistics = db.sections.statistics.entries;
   let name = "";
   let nameDefault = "";
   let amountKillsLeft = 0;
@@ -1917,6 +1903,25 @@ function CheckHuntersJournal(db, sectionName, playerData) {
       amountKillsLeft = 0;
       entries[entry].disabled = true;
       entries[entry].name = name;
+
+      /* Subtract one from maximum of journal entries (for extended completion and green icons) */
+      switch (entry) {
+        case "VoidIdol_1":
+        case "VoidIdol_2":
+        case "VoidIdol_3":
+        case "BindingSeal":
+        case "GodseekerMask":
+
+          break;
+
+        default:
+
+          entriesStatistics.journalEntriesCompleted.max--;
+          entriesStatistics.journalNotesCompleted.max--;
+      }
+
+      console.info(entry, entriesStatistics.journalEntriesCompleted.max);
+
       SetIconNone(section, entry);
     }
   }

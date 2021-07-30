@@ -151,9 +151,7 @@ function HKCheckCompletion(jsonObject) {
 
   CheckCompletionPercent(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData); // ---------------- Game Completion Status ----------------- //
 
-  CheckSaveFileVersion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.version); // ---------------- Fleur Divide ----------------- //
-  // AppendHTML(HK.sections.intro, FLEUR_DIVIDE);
-  // ---------------- Health Masks ----------------- //
+  CheckSaveFileVersion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.version); // ---------------- Health Masks ----------------- //
 
   CheckHealthMasks(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.maxHealthBase, HKPlayerData.permadeathMode); // ---------------- Soul Orbs ----------------- //
 
@@ -191,20 +189,16 @@ function HKCheckCompletion(jsonObject) {
 
   CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.lifeblood, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.lifeblood.entries, HKPlayerData); // ---------------- Godmaster Content Pack --------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godmaster.entries, HKPlayerData); // ---------------- Fleur Divide ----------------- //
-  // AppendHTML(HK.sections.godmaster, FLEUR_DIVIDE);
-  // ------------------------- Essential Things ----------------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godmaster.entries, HKPlayerData); // ------------------------- Hunter's Journal ----------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.essential, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.essential.entries, HKPlayerData, HKWorldItems); // ---------------- Fleur Divide ----------------- //
-  // AppendHTML(HK.sections.essential, FLEUR_DIVIDE);
-  // ------------------------- Achievements ----------------------------- //
-
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements.entries, HKPlayerData, HKWorldItems); // ------------------------- Hunter's Journal ----------------------------- //
+  /* Must be checked before Statistics (for correct entry numbers) */
 
   CheckHuntersJournal(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "huntersJournal", HKPlayerData);
-  CheckHuntersJournal(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "huntersJournalOptional", HKPlayerData); // ---------------- Fleur Divide ----------------- //
-  // AppendHTML(HK.sections.achievements, FLEUR_DIVIDE);
-  // ------------------------- Game Statistics ----------------------------- //
+  CheckHuntersJournal(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "huntersJournalOptional", HKPlayerData); // ------------------------- Essential Things ----------------------------- //
+
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.essential, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.essential.entries, HKPlayerData, HKWorldItems); // ------------------------- Achievements ----------------------------- //
+
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements.entries, HKPlayerData, HKWorldItems); // ------------------------- Game Statistics ----------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.statistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.statistics.entries, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Godhome Statistics ----------------------------- //
 
@@ -1698,6 +1692,7 @@ function CheckMrMushroomState(section, entry) {
 function CheckHuntersJournal(db, sectionName, playerData) {
   var section = db.sections[sectionName];
   var entries = db.sections[sectionName].entries;
+  var entriesStatistics = db.sections.statistics.entries;
   var name = "";
   var nameDefault = "";
   var amountKillsLeft = 0;
@@ -1780,6 +1775,22 @@ function CheckHuntersJournal(db, sectionName, playerData) {
       amountKillsLeft = 0;
       entries[entry].disabled = true;
       entries[entry].name = name;
+      /* Subtract one from maximum of journal entries (for extended completion and green icons) */
+
+      switch (entry) {
+        case "VoidIdol_1":
+        case "VoidIdol_2":
+        case "VoidIdol_3":
+        case "BindingSeal":
+        case "GodseekerMask":
+          break;
+
+        default:
+          entriesStatistics.journalEntriesCompleted.max--;
+          entriesStatistics.journalNotesCompleted.max--;
+      }
+
+      console.info(entry, entriesStatistics.journalEntriesCompleted.max);
       SetIconNone(section, entry);
     }
   }
