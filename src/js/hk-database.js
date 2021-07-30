@@ -1075,30 +1075,35 @@ const HK = {
           name: "Grubs Rescued",
           spoiler: "46 Grubs total",
           max: 46,
+          maxDefault: 46,
           wiki: "Grub"
         },
         grubRewards: {
           name: "Grubfather Rewards Awarded",
           spoiler: "46 Rewards total",
           max: 46,
+          maxDefault: 46,
           wiki: "Grub#Rewards_and_locations"
         },
         charmsOwned: {
           name: "Charms Owned",
           spoiler: "40 Charms total, useful for Salubra Notches",
           max: 40,
+          maxDefault: 40,
           wiki: "Category:Charms#List_of_Charms"
         },
         dreamOrbs: {
           name: "Essence Collected",
           spoiler: "Dream Nail (2400 for completion)",
           max: 2400,
+          maxDefault: 2400,
           wiki: "Dream_Nail#Essence"
         },
         fountainGeo: {
           name: "Geo in Fountain",
           spoiler: "Ancient Basin: 3000 Geo maximum",
           max: 3000,
+          maxDefault: 3000,
           wiki: "Ancient_Basin#Description"
         },
         openedTownBuilding: {
@@ -1116,30 +1121,30 @@ const HK = {
           spoiler: "140 Geo: Top middle area, below Hornet",
           wiki: "Greenpath"
         },
+        openedFungalWastes: {
+          name: "Stag Station: Queen's Station",
+          spoiler: "120 Geo: Fungal Wastes, near Fog Canyon",
+          wiki: "Fungal_Wastes#Sub-area:_Queen.27s_Station"
+        },
         openedRuins1: {
           name: "Stag Station: City Storerooms",
           spoiler: "200 Geo: City of Tears, top left area",
           wiki: "City_of_Tears#City_Storerooms"
+        },
+        openedRestingGrounds: {
+          name: "Stag Station: Resting Grounds",
+          spoiler: "0 Geo: Right middle area, near Seer",
+          wiki: "Resting_Grounds"
         },
         openedRuins2: {
           name: "Stag Station: King's Station",
           spoiler: "300 Geo: City of Tears, far right area",
           wiki: "City_of_Tears#Sub-area:_King.27s_Station"
         },
-        openedFungalWastes: {
-          name: "Stag Station: Queen's Station",
-          spoiler: "120 Geo: Fungal Wastes: left area, near Fog Canyon",
-          wiki: "Fungal_Wastes#Sub-area:_Queen.27s_Station"
-        },
         openedRoyalGardens: {
           name: "Stag Station: Queen's Gardens",
           spoiler: "200 Geo: Middle area, near Traitor's Grave",
           wiki: "Queen's_Gardens"
-        },
-        openedRestingGrounds: {
-          name: "Stag Station: Resting Grounds",
-          spoiler: "0 Geo: Right middle area, near Seer",
-          wiki: "Resting_Grounds"
         },
         openedDeepnest: {
           name: "Stag Station: Distant Village",
@@ -1160,6 +1165,7 @@ const HK = {
           name: "Stag Stations Opened",
           spoiler: "11 Stag Stations total including Dirtmouth",
           max: 11,
+          maxDefault: 11,
           wiki: "Fast_Travel_(Hollow_Knight)#Locations_and_Prices"
         },
         slyRescued: {
@@ -1372,6 +1378,7 @@ const HK = {
           name: "Area Maps",
           spoiler: "Cornifer and Iselda, 13 Area Maps total",
           max: 13,
+          maxDefault: 13,
           list: [
             "mapCrossroads", "mapGreenpath", "mapFogCanyon", "mapRoyalGardens", "mapFungalWastes", "mapCity", "mapWaterways", "mapMines", "mapDeepnest", "mapCliffs", "mapOutskirts", "mapRestingGrounds", "mapAbyss"
           ],
@@ -2613,18 +2620,21 @@ const HK = {
           name: "Base Nail Damage",
           spoiler: "Nailsmith upgrades, City of Tears",
           max: 21,
+          maxDefault: 21,
           wiki: "Nail#Nail_Upgrades"
         },
         charmSlots: {
           name: "Charm Notches",
           spoiler: "11 Charm Notches total",
           max: 11,
+          maxDefault: 11,
           wiki: "Category:Charms#Notches"
         },
         whisperingRoots: {
           name: "Whispering Roots Completed",
           spoiler: "Dream Nail (15 Roots total)",
           max: 15,
+          maxDefault: 15,
           wiki: "Whispering_Root"
         },
         relicsWandererJournal: {
@@ -2633,6 +2643,7 @@ const HK = {
           nameSold: "soldTrinket1",
           spoiler: "Wanderer's Journal (14 Journals total)",
           max: 14,
+          maxDefault: 14,
           wiki: "Wanderer's_Journal"
         },
         relicsHallownestSeal: {
@@ -2641,6 +2652,7 @@ const HK = {
           nameSold: "soldTrinket2",
           spoiler: "Hallownest Seal (17 Seals total)",
           max: 17,
+          maxDefault: 17,
           wiki: "Hallownest_Seal"
         },
         relicsKingsIdol: {
@@ -2649,6 +2661,7 @@ const HK = {
           nameSold: "soldTrinket3",
           spoiler: "King's Idol (8 Idols total)",
           max: 8,
+          maxDefault: 8,
           wiki: "King's_Idol"
         },
         relicsArcaneEgg: {
@@ -2657,6 +2670,7 @@ const HK = {
           nameSold: "soldTrinket4",
           spoiler: "Arcane Egg (4 Eggs max, 1 missable)",
           max: 3,
+          maxDefault: 3,
           wiki: "Arcane_Egg"
         },
         /* "id": "Shiny Item (1)",
@@ -2698,7 +2712,8 @@ const HK = {
           notActivated: 0,
           activated: 0,
           discoveredTotal: 0,
-          max: 205
+          max: 205,
+          maxDefault: 205,
         },
         itemsDiscovered: {
           id: "itemsDiscovered",
@@ -2832,12 +2847,14 @@ const HK = {
           name: "White Defender Times Defeated",
           spoiler: "Royal Waterways (5 max)",
           max: 5,
+          maxDefault: 5,
           wiki: "White_Defender"
         },
         greyPrinceDefeats: {
           name: "Grey Prince Zote Times Defeated",
           spoiler: "Dirtmouth (10 max)",
           max: 10,
+          maxDefault: 10,
           wiki: "Grey_Prince_Zote"
         }
       },

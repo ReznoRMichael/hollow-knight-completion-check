@@ -1180,7 +1180,6 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "whisperingRoots":
       case "fountainGeo":
       case "nailDamage":
-      case "stationsOpened":
       case "journalEntriesCompleted":
       case "journalNotesCompleted":
       case "whiteDefenderDefeats":
@@ -1191,22 +1190,6 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           amount = CountWorldItem("Dream Plant");
         } else {
           amount = playerData[i];
-        }
-
-        if (i === "stationsOpened") {
-
-          /* Add Dirtmouth and Hidden Station */
-          if (playerData.openedTownBuilding === true) amount++;
-
-          /* backwards compatibility check */
-          if (playerData.hasOwnProperty("openedHiddenStation")) {
-
-            if (playerData.openedHiddenStation === true) amount++;
-          } else {
-
-            /* Subtract one from maximum for extended completion counting */
-            dataObject[i].max--;
-          }
         }
 
         countTotal = amount;
@@ -1557,6 +1540,61 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "mrMushroomState6":
       case "mrMushroomState7":
         CheckMrMushroomState(section, dataObject[i], playerData["mrMushroomState"]);
+        break;
+
+      case "openedTownBuilding":
+      case "openedCrossroads":
+      case "openedGreenpath":
+      case "openedRuins1":
+      case "openedRuins2":
+      case "openedFungalWastes":
+      case "openedRoyalGardens":
+      case "openedRestingGrounds":
+      case "openedDeepnest":
+      case "openedHiddenStation":
+      case "openedStagNest":
+
+        /* backwards compatibility with earlier game versions */
+        if (playerData.hasOwnProperty(i) === false) {
+
+          SetIconNone(section, i);
+          dataObject[i].disabled = true;
+
+          break;
+
+        } else if (playerData[i] === true) {
+
+          SetIconGreen(section, i);
+
+          /* Create amount property before incrementing (avoids NaN) */
+          if (!dataObject.stagStationsOpened.hasOwnProperty("amount")) {
+            dataObject.stagStationsOpened.amount = 0;
+          }
+
+          /* increment the stag stations amount by one */
+          dataObject.stagStationsOpened.amount++;
+
+        } else {
+          SetIconRed(section, i);
+        }
+
+        break;
+
+      case "stagStationsOpened":
+
+        /* backwards compatibility check */
+        if (!playerData.hasOwnProperty("openedHiddenStation")) {
+
+          /* Subtract one from maximum for extended completion counting */
+          dataObject[i].max--;
+        }
+
+        if (dataObject[i].amount >= dataObject[i].max) {
+          SetIconGreen(section, i);
+        } else {
+          SetIconRed(section, i);
+        }
+
         break;
 
       default:
@@ -2065,6 +2103,10 @@ function ResetCompletion(db) {
 
           if (entries[entry].hasOwnProperty("amountTotal")) {
             entries[entry].amountTotal = 0;
+          }
+
+          if (entries[entry].hasOwnProperty("max")) {
+            entries[entry].max = entries[entry].maxDefault;
           }
 
           if (entry.hasOwnProperty("currentName")) {
