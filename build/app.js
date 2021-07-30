@@ -1070,13 +1070,13 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         if (i === "journalEntriesCompleted" || i === "journalNotesCompleted") {
           countTotal = "".concat(amount, " / ").concat(playerData.journalEntriesTotal);
           dataObject[i].amountTotal = playerData.journalEntriesTotal;
-          dataObject[i].max = dataObject[i].maxDefault;
           dataObject[i].spoiler = "".concat(dataObject[i].spoilerDefault, " (").concat(dataObject[i].max, " max)");
           /* when Zote is dead, the max Journal entries will equal 4 less instead of 164. For the green tick */
 
           if (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
-            dataObject[i].max -= 4;
-            /* Substract GPZ and 3 Zotelings from max */
+            if (playerData.hasOwnProperty("killedGreyPrince")) {
+              dataObject[i].max -= 4; // Substract GPZ and 3 Zotelings from max
+            }
 
             dataObject[i].spoiler = "".concat(dataObject[i].spoilerDefault, " (").concat(dataObject[i].max, " max)");
             /* Change spoiler for less confusion */
@@ -1084,15 +1084,13 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           /* when Grimm Troupe is banished, max Journal entries will be 1 or 2 less */
 
 
-          if (playerData.destroyedNightmareLantern === true) {
-            dataObject[i].max--;
-            /* Substract Nightmare King from max */
+          if (playerData.hasOwnProperty("destroyedNightmareLantern") && playerData.destroyedNightmareLantern === true) {
+            dataObject[i].max--; // Subtract Nightmare King from max
 
-            /* if the player didn't defeat any Grimmkin Nightmare before banishing, substract it from max */
+            /* if the player didn't defeat any Grimmkin Nightmare before banishing, subtract it from max */
 
             if (playerData.killedFlameBearerLarge === false) {
-              dataObject[i].max--;
-              /* Substract Grimmkin Nightmare from max */
+              dataObject[i].max--; // Subtract Grimmkin Nightmare from max
 
               dataObject[i].spoiler = "".concat(dataObject[i].spoilerDefault, " (").concat(dataObject[i].max, " max)");
               /* Change spoiler for less confusion */
