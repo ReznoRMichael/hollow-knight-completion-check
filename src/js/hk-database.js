@@ -2433,7 +2433,7 @@ const HK = {
         ShadeJournal: {
           name: "Shade (0)",
           nameDefault: "Shade",
-          spoiler: "Entry unlocked by default",
+          spoiler: "Unlocked automatically after getting the Journal",
           wiki: "Shade"
         },
       },

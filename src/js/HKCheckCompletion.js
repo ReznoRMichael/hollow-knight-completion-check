@@ -1813,6 +1813,14 @@ function CheckHuntersJournal(db, sectionName, playerData) {
 
     entries[entry].name = nameDefault;
 
+    /* Entry Shade always unlocked */
+    if (entry === "ShadeJournal") {
+      SetIconGreen(section, entry);
+
+      /* Proceed to next entry immediately */
+      continue;
+    }
+
     if (playerData.hasOwnProperty(`kills${entry}`)) {
 
       switch (entry) {

@@ -1699,6 +1699,14 @@ function CheckHuntersJournal(db, sectionName, playerData) {
     name = entries[entry].nameDefault;
     nameDefault = entries[entry].nameDefault;
     entries[entry].name = nameDefault;
+    /* Entry Shade always unlocked */
+
+    if (entry === "ShadeJournal") {
+      SetIconGreen(section, entry);
+      /* Proceed to next entry immediately */
+
+      continue;
+    }
 
     if (playerData.hasOwnProperty("kills".concat(entry))) {
       switch (entry) {
@@ -5479,7 +5487,7 @@ var HK = {
         ShadeJournal: {
           name: "Shade (0)",
           nameDefault: "Shade",
-          spoiler: "Entry unlocked by default",
+          spoiler: "Unlocked automatically after getting the Journal",
           wiki: "Shade"
         }
       }
