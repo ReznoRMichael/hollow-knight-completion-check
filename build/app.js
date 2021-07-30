@@ -517,9 +517,15 @@ function CheckExtendedCompletion(db) {
                 max = 0;
               }
               /* Counting Geo Rocks */
-              else if (entries[entry].hasOwnProperty("activated") && entries[entry].hasOwnProperty("discoveredTotal")) {
+              else if (entries[entry].hasOwnProperty("activated") && entries[entry].hasOwnProperty("max")) {
                   amount = entries[entry].activated;
-                  max = entries[entry].discoveredTotal;
+                  max = entries[entry].max;
+                  /* Check in case the player has discovered more than 205 (max) Geo Rocks */
+
+                  if (max < entries[entry].discoveredTotal) {
+                    max = entries[entry].discoveredTotal;
+                  }
+
                   intro.extendedCompletionDone += amount;
                   intro.extendedCompletionTotal += max;
                   console.info("".concat(entry, ": ").concat(amount, "/").concat(max), entries[entry].name);
