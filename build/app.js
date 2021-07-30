@@ -1188,6 +1188,15 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         break;
 
+      case "millibelleCheckedStand":
+        if (playerData.bankerTheft >= 2) {
+          SetIconGreen(section, i);
+        } else {
+          SetIconRed(section, i);
+        }
+
+        break;
+
       case "geoRocks":
         discoveredTotal = sceneData.geoRocks.length;
         notActivated = CountGeoRocks(discoveredTotal, "unbroken");
@@ -5879,6 +5888,11 @@ var HK = {
         },
         millibelleLeft: {
           name: "Millibelle Disappeared",
+          spoiler: "Fog Canyon: Millibelle the Banker",
+          wiki: "Millibelle"
+        },
+        millibelleCheckedStand: {
+          name: "Checked Millibelle Stand",
           spoiler: "Fog Canyon: Millibelle the Banker",
           wiki: "Millibelle"
         },

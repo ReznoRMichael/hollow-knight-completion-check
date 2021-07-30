@@ -1311,6 +1311,16 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         }
 
         break;
+      
+      case "millibelleCheckedStand":
+
+        if (playerData.bankerTheft >= 2) {
+          SetIconGreen(section, i);
+        } else {
+          SetIconRed(section, i);
+        }
+
+        break;
 
       case "geoRocks":
         discoveredTotal = sceneData.geoRocks.length;
