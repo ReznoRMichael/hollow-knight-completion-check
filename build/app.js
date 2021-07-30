@@ -7028,12 +7028,16 @@ function CompletionFillNoSave(section) {
   var h2 = "";
   var h2id = "";
   var mp = ""; // max Percent
-  // let cl = ""; // class
+
+  var symbol = "%"; // let cl = ""; // class
 
   id = section.id;
   h2 = section.h2;
   h2id = "h2-" + section.id;
-  mp = "<div class='percent-box'>".concat(id === "hk-intro" ? 0 : section.maxPercent, "%</div>");
+  /* Do not display % when showing Hunter's Journal entries */
+
+  if (section.id === "hk-journal") symbol = "";
+  mp = "<div class='percent-box'>".concat(id === "hk-intro" ? 0 : section.maxPercent).concat(symbol, "</div>");
   if (!section.hasOwnProperty("maxPercent")) mp = "";
   /* return [
       `<div id="${id}" ${cl}>`,
@@ -7058,6 +7062,7 @@ function CompletionFill(section) {
 
   var mp = 0; // max Percent
 
+  var symbol = "%";
   var fillText = "";
   section.hasOwnProperty("percent") ? cp = section.percent : cp = 0; // Don't use percent-box for Essentials, Achievements, Statistics
 
@@ -7085,8 +7090,11 @@ function CompletionFill(section) {
         else cl = ""; // needed for Game Status to show percentage properly (adds a slash for all boxes except the Game Status one)
 
 
-      if (section.id != "hk-intro") cp += "/";
-      fillText = "<div class='percent-box".concat(cl, "'>").concat(section.id === "hk-intro" ? cp : "".concat(cp).concat(section.maxPercent), "%</div>");
+      if (section.id !== "hk-intro") cp += "/";
+      /* Do not display % when showing Hunter's Journal entries */
+
+      if (section.id === "hk-journal") symbol = "";
+      fillText = "<div class='percent-box".concat(cl, "'>").concat(section.id === "hk-intro" ? cp : "".concat(cp).concat(section.maxPercent)).concat(symbol, "</div>");
     }
 
   return "\t".concat(h2id).concat(h2).concat(fillText, "</h2>\n");

@@ -632,13 +632,17 @@ function CompletionFillNoSave(section) {
   let h2 = "";
   let h2id = "";
   let mp = ""; // max Percent
+  let symbol = "%";
   // let cl = ""; // class
 
   id = section.id;
   h2 = section.h2;
   h2id = "h2-" + section.id;
 
-  mp = `<div class='percent-box'>${(id === "hk-intro") ? 0: section.maxPercent}%</div>`;
+  /* Do not display % when showing Hunter's Journal entries */
+  if (section.id === "hk-journal") symbol = "";
+
+  mp = `<div class='percent-box'>${(id === "hk-intro") ? 0: section.maxPercent}${symbol}</div>`;
   if (!section.hasOwnProperty("maxPercent")) mp = "";
 
   /* return [
@@ -661,6 +665,7 @@ function CompletionFill(section) {
   let clRed = "box-red";
   let cp = 0; // current Percent
   let mp = 0; // max Percent
+  let symbol = "%";
   let fillText = "";
 
   (section.hasOwnProperty("percent")) ? cp = section.percent: cp = 0;
@@ -694,9 +699,12 @@ function CompletionFill(section) {
     else cl = "";
 
     // needed for Game Status to show percentage properly (adds a slash for all boxes except the Game Status one)
-    if (section.id != "hk-intro") cp += "/";
+    if (section.id !== "hk-intro") cp += "/";
 
-    fillText = `<div class='percent-box${cl}'>${(section.id === "hk-intro") ? cp: `${cp}${section.maxPercent}`}%</div>`;
+    /* Do not display % when showing Hunter's Journal entries */
+    if (section.id === "hk-journal") symbol = "";
+
+    fillText = `<div class='percent-box${cl}'>${(section.id === "hk-intro") ? cp: `${cp}${section.maxPercent}`}${symbol}</div>`;
   }
 
   return `\t${h2id}${h2}${fillText}</h2>\n`;
