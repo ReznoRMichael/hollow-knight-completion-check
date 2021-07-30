@@ -112,7 +112,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Added Secret data information at the bottom of the tool.  
 
   — **(New) Game Status** additions:  
-  ✅ addition: Detailed Extended Completion. Shows the true game completion by counting basically everything in the program.  
+  ✅ addition: Detailed Extended Completion. Shows the true game completion by counting basically as much as possible in the game and current program version.  
 
   — **(New) Hunter's Journal** additions/changes/fixes:  
   ✅ change + addition: now showing all 146 base entries needed for Keen/True Hunter achievements (with partial completion and number of kills left). The most commonly missed entries are shown at the top. Entries that are not required are in a separate section: Optional Journal Entries.  
