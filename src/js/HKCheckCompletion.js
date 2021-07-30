@@ -523,7 +523,6 @@ function CheckExtendedCompletion(db) {
             case "rancidEggs":
             case "jinnEggsSold":
             case "xunFlowerBrokeTimes":
-            case "geoRocks":
             case "itemsDiscovered":
 
               continue;
@@ -545,6 +544,7 @@ function CheckExtendedCompletion(db) {
               case "relicsHallownestSeal":
               case "relicsKingsIdol":
               case "relicsArcaneEgg":
+              case "geoRocks":
               case "whiteDefenderDefeats":
               case "greyPrinceDefeats":
                 break;
@@ -570,6 +570,7 @@ function CheckExtendedCompletion(db) {
 
               intro.extendedCompletionTotal--;
             }
+            /* Counting amount/max for several entries */
             else if (entries[entry].hasOwnProperty("amount") && entries[entry].hasOwnProperty("max")) {
 
               /* Skip counting 3000 Fountain Geo, too much */
@@ -593,6 +594,25 @@ function CheckExtendedCompletion(db) {
               amount = 0;
               max = 0;
             }
+            /* Counting Geo Rocks */
+            else if (entries[entry].hasOwnProperty("activated") && entries[entry].hasOwnProperty("discoveredTotal")) {
+
+              amount = entries[entry].activated;
+              max = entries[entry].discoveredTotal;
+
+              intro.extendedCompletionDone += amount;
+              intro.extendedCompletionTotal += max;
+
+              console.info(`${entry}: ${amount}/${max}`, entries[entry].name);
+
+              amount = 0;
+              max = 0;
+            }
+            /* Missable Arcane Egg exception */
+            /* else if (entry === "arcaneEggLifebloodCoreRoom") {
+
+              if ()
+            } */
           }
         }
 
