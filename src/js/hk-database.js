@@ -2642,7 +2642,8 @@ const HK = {
           wiki: "Geo#How_to_Acquire",
           notActivated: 0,
           activated: 0,
-          discoveredTotal: 0
+          discoveredTotal: 0,
+          max: 205
         },
         itemsDiscovered: {
           id: "itemsDiscovered",

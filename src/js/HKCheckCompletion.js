@@ -1310,9 +1310,12 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         dataObject[i].discoveredTotal = discoveredTotal;
         dataObject[i].notActivated = notActivated;
         dataObject[i].activated = activated;
-
-        /* textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`; */
-        SetIconNone(section, i);
+        
+        if (activated >= dataObject[i].max) {
+          SetIconGreen(section, i);
+        } else {
+          SetIconNone(section, i);
+        }
         break;
 
       case "itemsDiscovered":
