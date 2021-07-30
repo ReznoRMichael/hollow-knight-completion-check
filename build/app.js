@@ -5846,6 +5846,11 @@ var HK = {
           spoiler: "Divine: Fragile Strength + 15000 Geo",
           wiki: "Divine#Unbreakable_Charms"
         },
+        bankerAccountPurchased: {
+          name: "Opened Bank Account",
+          spoiler: "100 Geo: Fog Canyon: Millibelle the Banker",
+          wiki: "Millibelle"
+        },
 
         /* 
         Path of Pain entrance discovered
