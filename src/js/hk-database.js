@@ -1108,53 +1108,53 @@ const HK = {
         },
         openedCrossroads: {
           name: "Stag Station: Forgotten Crossroads",
-          spoiler: "Right middle-bottom area",
+          spoiler: "50 Geo: Right middle-bottom area",
           wiki: "Forgotten_Crossroads"
         },
         openedGreenpath: {
           name: "Stag Station: Greenpath",
-          spoiler: "Top middle area, below Hornet entrance",
+          spoiler: "140 Geo: Top middle area, below Hornet",
           wiki: "Greenpath"
         },
         openedRuins1: {
           name: "Stag Station: City Storerooms",
-          spoiler: "Top left area of City of Tears",
-          wiki: "City_of_Tears"
+          spoiler: "200 Geo: City of Tears, top left area",
+          wiki: "City_of_Tears#City_Storerooms"
         },
         openedRuins2: {
           name: "Stag Station: King's Station",
-          spoiler: "Far right area of City of Tears",
-          wiki: "City_of_Tears"
+          spoiler: "300 Geo: City of Tears, far right area",
+          wiki: "City_of_Tears#Sub-area:_King.27s_Station"
         },
         openedFungalWastes: {
           name: "Stag Station: Queen's Station",
-          spoiler: "Left area of Fungal Wastes, near Fog Canyon",
-          wiki: "Fungal_Wastes"
+          spoiler: "120 Geo: Fungal Wastes: left area, near Fog Canyon",
+          wiki: "Fungal_Wastes#Sub-area:_Queen.27s_Station"
         },
         openedRoyalGardens: {
           name: "Stag Station: Queen's Gardens",
-          spoiler: "Middle area of Queen's Gardens",
+          spoiler: "200 Geo: Middle area, near Traitor's Grave",
           wiki: "Queen's_Gardens"
         },
         openedRestingGrounds: {
           name: "Stag Station: Resting Grounds",
-          spoiler: "Right middle area of Resting Grounds",
+          spoiler: "0 Geo: Right middle area, near Seer",
           wiki: "Resting_Grounds"
         },
         openedDeepnest: {
           name: "Stag Station: Distant Village",
-          spoiler: "",
-          wiki: ""
+          spoiler: "250 Geo: Deepnest, far left area",
+          wiki: "Deepnest#Sub-area:_Distant_Village"
         },
         openedHiddenStation: {
           name: "Stag Station: Hidden Station",
-          spoiler: "",
-          wiki: ""
+          spoiler: "300 Geo: Ancient Basin: Palace Grounds",
+          wiki: "Ancient_Basin#Sub-Area:_Palace_Grounds"
         },
         openedStagNest: {
           name: "Stag Station: Stag Nest",
-          spoiler: "",
-          wiki: ""
+          spoiler: "Open all stations: Howling Cliffs, top area",
+          wiki: "Howling_Cliffs#Sub-area:_Stag_Nest"
         },
         stagStationsOpened: {
           name: "Stag Stations Opened",
