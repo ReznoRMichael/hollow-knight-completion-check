@@ -2803,18 +2803,23 @@ const HK = {
           wiki: "Millibelle"
         },
         millibelleLeft: {
-          name: "Millibelle Disappeared",
+          name: "Banker Disappeared",
           spoiler: "Fog Canyon: Millibelle the Banker",
           wiki: "Millibelle"
         },
         millibelleCheckedStand: {
-          name: "Checked Millibelle Stand",
+          name: "Investigated Banker Stand",
           spoiler: "Fog Canyon: Millibelle the Banker",
           wiki: "Millibelle"
         },
         bankerSpaMet: {
-          name: "Found Millibelle",
-          spoiler: "City of Tears: Hot Springs, needs Simple Key",
+          name: "Found & Talked to the Thief",
+          spoiler: "City of Tears: Hot Springs, Simple Key",
+          wiki: "Millibelle"
+        },
+        millibelleReclaimedAllGeo: {
+          name: "Reclaimed All Geo",
+          spoiler: "City of Tears: Hot Springs, Millibelle the Thief",
           wiki: "Millibelle"
         },
         /* 

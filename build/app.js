@@ -1197,6 +1197,15 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         break;
 
+      case "millibelleReclaimedAllGeo":
+        if (playerData.bankerTheft >= 1 && playerData.bankerBalance <= 0) {
+          SetIconGreen(section, i);
+        } else {
+          SetIconRed(section, i);
+        }
+
+        break;
+
       case "geoRocks":
         discoveredTotal = sceneData.geoRocks.length;
         notActivated = CountGeoRocks(discoveredTotal, "unbroken");
@@ -5887,18 +5896,23 @@ var HK = {
           wiki: "Millibelle"
         },
         millibelleLeft: {
-          name: "Millibelle Disappeared",
+          name: "Banker Disappeared",
           spoiler: "Fog Canyon: Millibelle the Banker",
           wiki: "Millibelle"
         },
         millibelleCheckedStand: {
-          name: "Checked Millibelle Stand",
+          name: "Investigated Banker Stand",
           spoiler: "Fog Canyon: Millibelle the Banker",
           wiki: "Millibelle"
         },
         bankerSpaMet: {
-          name: "Found Millibelle",
-          spoiler: "City of Tears: Hot Springs, needs Simple Key",
+          name: "Found & Talked to the Thief",
+          spoiler: "City of Tears: Hot Springs, Simple Key",
+          wiki: "Millibelle"
+        },
+        millibelleReclaimedAllGeo: {
+          name: "Reclaimed All Geo",
+          spoiler: "City of Tears: Hot Springs, Millibelle the Thief",
           wiki: "Millibelle"
         },
 

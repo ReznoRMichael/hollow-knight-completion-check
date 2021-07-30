@@ -1321,6 +1321,16 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         }
 
         break;
+      
+      case "millibelleReclaimedAllGeo":
+
+        if (playerData.bankerTheft >= 1 && playerData.bankerBalance <= 0) {
+          SetIconGreen(section, i);
+        } else {
+          SetIconRed(section, i);
+        }
+
+        break;
 
       case "geoRocks":
         discoveredTotal = sceneData.geoRocks.length;
