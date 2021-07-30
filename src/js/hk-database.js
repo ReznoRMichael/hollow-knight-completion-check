@@ -2555,7 +2555,7 @@ const HK = {
           wiki: "Category:Enemies_(Hollow_Knight)#Compendium"
         },
         nailDamage: {
-          name: "Nail Damage",
+          name: "Base Nail Damage",
           spoiler: "Nailsmith upgrades, City of Tears",
           max: 21,
           wiki: "Nail#Nail_Upgrades"
