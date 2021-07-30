@@ -466,6 +466,17 @@ function CheckExtendedCompletion(db) {
               default:
                 if (entries[entry].icon !== "none") {
                   intro.extendedCompletionTotal++;
+                  /* Missable Arcane Egg exception, subtract from total */
+
+                  if (entries[entry].icon === "red" && entry === "arcaneEggLifebloodCoreRoom") {
+                    /* console.info(`${entry} has passed:`, entries[entry].icon); */
+
+                    /* When got the Lifeblood Core charm, but didn't pick up the Arcane Egg */
+                    if (sections.charms.entries.gotCharm_9.icon === "green") {
+                      intro.extendedCompletionTotal--;
+                      /* console.info(`${entry} completion Total subtracted`); */
+                    }
+                  }
                 }
 
                 if (entries[entry].icon === "green") {
@@ -515,12 +526,6 @@ function CheckExtendedCompletion(db) {
                   amount = 0;
                   max = 0;
                 }
-            /* Missable Arcane Egg exception */
-
-            /* else if (entry === "arcaneEggLifebloodCoreRoom") {
-                if ()
-            } */
-
           }
         }
 
