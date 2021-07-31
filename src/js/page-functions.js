@@ -1067,7 +1067,7 @@ window.addEventListener('drop', (event) => {
 
   /* Display the save file name and date on the button */
   if (fileName) {
-    label.innerHTML = `${SYMBOL_FILE}${fileName} ${fileDate}`;
+    label.innerHTML = `${SYMBOL_FILE}${fileName}<div class="code-little">${fileDate}</div>`;
   } else {
     label.innerHTML = labelInitialText;
   }

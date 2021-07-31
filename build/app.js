@@ -7495,7 +7495,7 @@ window.addEventListener('drop', function (event) {
   /* Display the save file name and date on the button */
 
   if (fileName) {
-    label.innerHTML = "".concat(SYMBOL_FILE).concat(fileName, " ").concat(fileDate);
+    label.innerHTML = "".concat(SYMBOL_FILE).concat(fileName, "<div class=\"code-little\">").concat(fileDate, "</div>");
   } else {
     label.innerHTML = labelInitialText;
   }
