@@ -1435,8 +1435,8 @@ const HK = {
           wiki: "Salubra's_Blessing"
         },
         quirrelEpilogueCompleted: {
-          name: "Final Moment With Quirrel",
-          spoiler: "Blue Lake: after defeating Monomon",
+          name: "Witness Quirrel",
+          spoiler: "Blue Lake: after defeating Monomon the Teacher",
           wiki: "Quirrel"
         },
         zoteStatus: {
