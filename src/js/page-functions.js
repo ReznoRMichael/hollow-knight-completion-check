@@ -602,62 +602,6 @@ function GenerateInnerHTML(db) {
   benchmarkTimes.GenerateInnerHTML.timeEnd = performance.now();
 }
 
-/**
- * Hides all other tabs, except the one which button was clicked (shows only the chosen tab)
- * @param {String} clickedButton The click target (button clicked)
- */
-function PageSwitchTab(clickedButton) {
-
-  let sectionList = document.querySelectorAll(".large-section");
-  let buttonList = document.querySelectorAll(".tab-switch");
-
-  /* Make Active Tab Visible */
-  for (let i = 0, length = sectionList.length; i < length; i++) {
-
-    /* Other tabs except the clicked one */
-    if (sectionList[i].id !== `tab-${clickedButton}`) {
-
-      if (!sectionList[i].classList.contains("hidden")) {
-        sectionList[i].classList.add("hidden");
-      }
-    }
-    /* The clicked tab */
-    else {
-
-      if (sectionList[i].classList.contains("hidden")) {
-        sectionList[i].classList.remove("hidden");
-      }
-    }
-  }
-
-  /* Make Active Button stand out */
-  for (let i = 0, length = buttonList.length; i < length; i++) {
-
-    /* Other buttons except the clicked one */
-    if (buttonList[i].id !== `button-switch-${clickedButton}`) {
-
-      if (buttonList[i].classList.contains("tab-active")) {
-        buttonList[i].classList.remove("tab-active");
-      }
-    }
-    /* The clicked button */
-    else {
-
-      if (!buttonList[i].classList.contains("tab-active")) {
-        buttonList[i].classList.add("tab-active");
-      }
-    }
-  }
-
-  /* remember this choice for subsequent page visits and browser restarts */
-  if (StorageAvailable('localStorage')) {
-
-    if (clickedButton) {
-      localStorage.setItem("hkTabActive", clickedButton);
-    }
-  }
-}
-
 function SectionDescription(section) {
 
   return `<p class="section-description">${section.description}</p>`;
@@ -921,6 +865,62 @@ function CheckboxSpoilersToggle(param = "none") {
           localStorage.setItem("hkCheckboxSpoilers", "checked");
         }
       }
+  }
+}
+
+/**
+ * Hides all other tabs, except the one which button was clicked (shows only the chosen tab)
+ * @param {String} clickedButton The click target (button clicked)
+ */
+ function PageSwitchTab(clickedButton) {
+
+  let sectionList = document.querySelectorAll(".large-section");
+  let buttonList = document.querySelectorAll(".tab-switch");
+
+  /* Make Active Tab Visible */
+  for (let i = 0, length = sectionList.length; i < length; i++) {
+
+    /* Other tabs except the clicked one */
+    if (sectionList[i].id !== `tab-${clickedButton}`) {
+
+      if (!sectionList[i].classList.contains("hidden")) {
+        sectionList[i].classList.add("hidden");
+      }
+    }
+    /* The clicked tab */
+    else {
+
+      if (sectionList[i].classList.contains("hidden")) {
+        sectionList[i].classList.remove("hidden");
+      }
+    }
+  }
+
+  /* Make Active Button stand out */
+  for (let i = 0, length = buttonList.length; i < length; i++) {
+
+    /* Other buttons except the clicked one */
+    if (buttonList[i].id !== `button-switch-${clickedButton}`) {
+
+      if (buttonList[i].classList.contains("tab-active")) {
+        buttonList[i].classList.remove("tab-active");
+      }
+    }
+    /* The clicked button */
+    else {
+
+      if (!buttonList[i].classList.contains("tab-active")) {
+        buttonList[i].classList.add("tab-active");
+      }
+    }
+  }
+
+  /* remember this choice for subsequent page visits and browser restarts */
+  if (StorageAvailable('localStorage')) {
+
+    if (clickedButton) {
+      localStorage.setItem("hkTabActive", clickedButton);
+    }
   }
 }
 
