@@ -5918,7 +5918,7 @@ var HK = {
           wiki: "Millibelle"
         },
         bankerSpaMet: {
-          name: "Found & Talked to the Thief",
+          name: "Found & Talked to Millibelle",
           spoiler: "City of Tears: Hot Springs, Simple Key",
           wiki: "Millibelle"
         },
@@ -7067,7 +7067,7 @@ function GenerateInnerHTML(db) {
       PageSwitchTab(e.target.name);
     });
   });
-  /* Check local storage first, and set the last selected Tab on the page */
+  /* Check local storage first, and set the last selected Tab on the page (remembers last clicked tab) */
 
   if (StorageAvailable('localStorage')) {
     if (localStorage.getItem("hkTabActive")) {

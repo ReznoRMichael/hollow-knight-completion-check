@@ -587,7 +587,7 @@ function GenerateInnerHTML(db) {
     });
   });
 
-  /* Check local storage first, and set the last selected Tab on the page */
+  /* Check local storage first, and set the last selected Tab on the page (remembers last clicked tab) */
 
   if (StorageAvailable('localStorage')) {
 

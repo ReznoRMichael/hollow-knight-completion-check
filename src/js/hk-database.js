@@ -2823,7 +2823,7 @@ const HK = {
           wiki: "Millibelle"
         },
         bankerSpaMet: {
-          name: "Found & Talked to the Thief",
+          name: "Found & Talked to Millibelle",
           spoiler: "City of Tears: Hot Springs, Simple Key",
           wiki: "Millibelle"
         },
