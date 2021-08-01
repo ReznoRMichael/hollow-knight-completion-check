@@ -129,13 +129,11 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **Game Completion Essentials** fixes/additions:  
   ✅ addition: God Tamer (needed for Trial of the Fool %)  
-  ✅ addition: Vengefly King (needed for Trial of the Warrior %)  
   ✅ fix: Pale Ore #2 should now be showing up correctly (thanks to EmrldPhoenix for the bug report!)  
 
   — **Achievements Essentials** changes/additions:  
   ✅ change: Moved Creatures Encountered and Hunter Notes Completed to Game Statistics (not all 164 entries are required for the achievements)  
   ✅ change: Moved all Journal entries to Hunter's Journal section  
-  ✅ addition: Journal: Flukemunga (needed for Keen Hunter/True Hunter achievements)  
   ✅ addition: Quirrel: Witness achievement  
   ✅ addition: Grey Mourner: Solace achievement  
 
