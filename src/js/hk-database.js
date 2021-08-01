@@ -1434,6 +1434,11 @@ const HK = {
           spoiler: "Salubra: 800 Geo + all 40 Charms Owned",
           wiki: "Salubra's_Blessing"
         },
+        quirrelEpilogueCompleted: {
+          name: "Final Moment With Quirrel",
+          spoiler: "Blue Lake: after defeating Monomon",
+          wiki: "Quirrel"
+        },
         zoteStatus: {
           id: "zoteStatus",
           name: "Zote Status",
