@@ -136,7 +136,8 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ change: Moved Creatures Encountered and Hunter Notes Completed to Game Statistics (not all 164 entries are required for the achievements)  
   ✅ change: Moved all Journal entries to Hunter's Journal section  
   ✅ addition: Journal: Flukemunga (needed for Keen Hunter/True Hunter achievements)  
-  ✅ addition: Final Moment With Quirrel (Witness achievement)  
+  ✅ addition: Quirrel: Witness achievement  
+  ✅ addition: Grey Mourner: Solace achievement  
 
   — **Game Statistics** fixes/additions/changes:  
   ✅ fix: Hunter's Journal now detects and displays the correct amount of maximum entries on both Zote routes (160 or 164).  
