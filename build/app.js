@@ -506,7 +506,8 @@ function CheckExtendedCompletion(db) {
 
                 intro.extendedCompletionDone += amount;
                 intro.extendedCompletionTotal += max;
-                console.info("".concat(entry, ": ").concat(amount, "/").concat(max), entries[entry].name);
+                /* console.info(`${entry}: ${amount}/${max}`, entries[entry].name); */
+
                 amount = 0;
                 max = 0;
               }
@@ -522,7 +523,8 @@ function CheckExtendedCompletion(db) {
 
                   intro.extendedCompletionDone += amount;
                   intro.extendedCompletionTotal += max;
-                  console.info("".concat(entry, ": ").concat(amount, "/").concat(max), entries[entry].name);
+                  /* console.info(`${entry}: ${amount}/${max}`, entries[entry].name); */
+
                   amount = 0;
                   max = 0;
                 }
