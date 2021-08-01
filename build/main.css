@@ -476,6 +476,25 @@ input[type="file"] {
   /* outline-offset: -2px; */
 }
 
+.tab-switch {
+  background-color: rgba(30, 77, 108, 0);
+  color: rgba(0, 255, 220, 0.6);
+  border: 2px solid rgba(0, 255, 220, 0);
+  border-radius: 5px;
+}
+
+.tab-switch:hover,
+.tab-active {
+  background-color: rgb(0, 180, 156);
+  color: rgb(0, 0, 0);
+  border: 2px solid rgb(0, 180, 156);
+}
+
+.tab-switch:focus {
+  outline: 0;
+  border-color: rgb(0, 255, 221);
+}
+
 .centered {
   flex-direction: row;
   align-items: center;
