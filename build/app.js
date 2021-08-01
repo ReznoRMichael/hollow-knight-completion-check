@@ -4530,9 +4530,14 @@ var HK = {
           wiki: "Salubra's_Blessing"
         },
         quirrelEpilogueCompleted: {
-          name: "Witness Quirrel",
+          name: "Quirrel: Witness",
           spoiler: "Blue Lake: after defeating Monomon the Teacher",
           wiki: "Quirrel"
+        },
+        xunRewardGiven: {
+          name: "Grey Mourner: Solace",
+          spoiler: "Complete Delicate Flower quest and talk",
+          wiki: "Grey_Mourner"
         },
         zoteStatus: {
           id: "zoteStatus",
