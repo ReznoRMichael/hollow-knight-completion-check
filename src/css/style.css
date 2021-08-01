@@ -368,6 +368,10 @@ input[type="file"] {
   /* outline-offset: -2px; */
 }
 
+.button:focus:not(:focus-visible) {
+  border-color: #1e4d6c;
+}
+
 .tab-switch {
   background-color: rgba(0, 0, 0, 0);
   color: rgb(0, 180, 156);
@@ -380,6 +384,10 @@ input[type="file"] {
   background-color: rgb(0, 180, 156);
   color: rgb(0, 0, 0);
   border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.tab-active {
+  box-shadow: 0 0 1rem rgb(0, 180, 156);
 }
 
 .tab-switch:focus {
