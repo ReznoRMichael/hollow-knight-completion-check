@@ -574,16 +574,29 @@ function GenerateInnerHTML(db) {
   console.log(finalHTMLFill);
   console.groupEnd(); */
 
-  /* Final single HTML access and fill here */
+  /* --------------- Final single HTML access and fill here ------------------ */
+
   document.getElementById("generated").innerHTML = finalHTMLFill;
 
-  /* make tab switch buttons working (on click) */
+  /* make tab switch buttons working (on click) - must run after inner HTML generation is finished */
+
   document.querySelectorAll(".tab-switch").forEach( (button) => {
 
     button.addEventListener("click", (e) => {
-      PageSwitchTab(e.target);
+      PageSwitchTab(e.target.name);
     });
   });
+
+  /* Check local storage first, and set the last selected Tab on the page */
+
+  if (StorageAvailable('localStorage')) {
+
+    if (localStorage.getItem("hkTabActive")) {
+      PageSwitchTab(localStorage.getItem("hkTabActive"));
+    } else {
+      PageSwitchTab("main");
+    }
+  }
 
   // finish benchmarking
   benchmarkTimes.GenerateInnerHTML.timeEnd = performance.now();
@@ -591,7 +604,7 @@ function GenerateInnerHTML(db) {
 
 /**
  * Hides all other tabs, except the one which button was clicked (shows only the chosen tab)
- * @param {EventTarget} clickedButton The click target (button clicked)
+ * @param {String} clickedButton The click target (button clicked)
  */
 function PageSwitchTab(clickedButton) {
 
@@ -599,7 +612,7 @@ function PageSwitchTab(clickedButton) {
 
   for (let i = 0, length = sectionList.length; i < length; i++) {
 
-    if (sectionList[i].id !== `tab-${clickedButton.name}`) {
+    if (sectionList[i].id !== `tab-${clickedButton}`) {
 
       if (!sectionList[i].classList.contains("hidden")) {
         sectionList[i].classList.add("hidden");
@@ -609,6 +622,14 @@ function PageSwitchTab(clickedButton) {
       if (sectionList[i].classList.contains("hidden")) {
         sectionList[i].classList.remove("hidden");
       }
+    }
+  }
+
+  /* remember this choice for subsequent page visits and browser restarts */
+  if (StorageAvailable('localStorage')) {
+
+    if (clickedButton) {
+      localStorage.setItem("hkTabActive", clickedButton);
     }
   }
 }
