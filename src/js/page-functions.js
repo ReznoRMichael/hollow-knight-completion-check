@@ -609,18 +609,40 @@ function GenerateInnerHTML(db) {
 function PageSwitchTab(clickedButton) {
 
   let sectionList = document.querySelectorAll(".large-section");
+  let buttonList = document.querySelectorAll(".tab-switch");
 
   for (let i = 0, length = sectionList.length; i < length; i++) {
 
+    /* Other tabs except the clicked one */
     if (sectionList[i].id !== `tab-${clickedButton}`) {
 
       if (!sectionList[i].classList.contains("hidden")) {
         sectionList[i].classList.add("hidden");
       }
-    } else {
+    }
+    /* The clicked tab */
+    else {
 
       if (sectionList[i].classList.contains("hidden")) {
         sectionList[i].classList.remove("hidden");
+      }
+    }
+  }
+
+  for (let i = 0, length = buttonList.length; i < length; i++) {
+
+    /* Other buttons except the clicked one */
+    if (buttonList[i].id !== `button-switch-${clickedButton}`) {
+
+      if (buttonList[i].classList.contains("tab-active")) {
+        buttonList[i].classList.remove("tab-active");
+      }
+    }
+    /* The clicked button */
+    else {
+
+      if (!buttonList[i].classList.contains("tab-active")) {
+        buttonList[i].classList.add("tab-active");
       }
     }
   }

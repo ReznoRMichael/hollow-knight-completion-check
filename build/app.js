@@ -7088,17 +7088,36 @@ function GenerateInnerHTML(db) {
 
 function PageSwitchTab(clickedButton) {
   var sectionList = document.querySelectorAll(".large-section");
+  var buttonList = document.querySelectorAll(".tab-switch");
 
   for (var i = 0, length = sectionList.length; i < length; i++) {
+    /* Other tabs except the clicked one */
     if (sectionList[i].id !== "tab-".concat(clickedButton)) {
       if (!sectionList[i].classList.contains("hidden")) {
         sectionList[i].classList.add("hidden");
       }
-    } else {
-      if (sectionList[i].classList.contains("hidden")) {
-        sectionList[i].classList.remove("hidden");
+    }
+    /* The clicked tab */
+    else {
+        if (sectionList[i].classList.contains("hidden")) {
+          sectionList[i].classList.remove("hidden");
+        }
+      }
+  }
+
+  for (var _i5 = 0, _length = buttonList.length; _i5 < _length; _i5++) {
+    /* Other buttons except the clicked one */
+    if (buttonList[_i5].id !== "button-switch-".concat(clickedButton)) {
+      if (buttonList[_i5].classList.contains("tab-active")) {
+        buttonList[_i5].classList.remove("tab-active");
       }
     }
+    /* The clicked button */
+    else {
+        if (!buttonList[_i5].classList.contains("tab-active")) {
+          buttonList[_i5].classList.add("tab-active");
+        }
+      }
   }
   /* remember this choice for subsequent page visits and browser restarts */
 
@@ -7288,8 +7307,8 @@ function CheckboxSpoilersToggle() {
         allClassElements[i].classList.add("blurred");
       }
 
-      for (var _i5 = 0; _i5 < lengthRed; _i5++) {
-        allClassElementsRed[_i5].classList.add("blurred");
+      for (var _i6 = 0; _i6 < lengthRed; _i6++) {
+        allClassElementsRed[_i6].classList.add("blurred");
       }
 
       checkboxId.value = "spoilers-off";
@@ -7302,12 +7321,12 @@ function CheckboxSpoilersToggle() {
       break;
 
     case "show":
-      for (var _i6 = 0; _i6 < length; _i6++) {
-        allClassElements[_i6].classList.remove("blurred");
+      for (var _i7 = 0; _i7 < length; _i7++) {
+        allClassElements[_i7].classList.remove("blurred");
       }
 
-      for (var _i7 = 0; _i7 < lengthRed; _i7++) {
-        allClassElementsRed[_i7].classList.remove("blurred");
+      for (var _i8 = 0; _i8 < lengthRed; _i8++) {
+        allClassElementsRed[_i8].classList.remove("blurred");
       }
 
       checkboxId.value = "spoilers-on";
@@ -7322,12 +7341,12 @@ function CheckboxSpoilersToggle() {
     default:
       // This runs when the checkbox is not checked
       if (checkboxId.checked === false) {
-        for (var _i8 = 0; _i8 < length; _i8++) {
-          allClassElements[_i8].classList.add("blurred");
+        for (var _i9 = 0; _i9 < length; _i9++) {
+          allClassElements[_i9].classList.add("blurred");
         }
 
-        for (var _i9 = 0; _i9 < lengthRed; _i9++) {
-          allClassElementsRed[_i9].classList.add("blurred");
+        for (var _i10 = 0; _i10 < lengthRed; _i10++) {
+          allClassElementsRed[_i10].classList.add("blurred");
         }
 
         checkboxId.value = "spoilers-off"; // remember this choice for subsequent page visits and browser restarts
@@ -7339,12 +7358,12 @@ function CheckboxSpoilersToggle() {
         break;
       } // This runs when the checkbox is checked
       else {
-          for (var _i10 = 0; _i10 < length; _i10++) {
-            allClassElements[_i10].classList.remove("blurred");
+          for (var _i11 = 0; _i11 < length; _i11++) {
+            allClassElements[_i11].classList.remove("blurred");
           }
 
-          for (var _i11 = 0; _i11 < lengthRed; _i11++) {
-            allClassElementsRed[_i11].classList.remove("blurred");
+          for (var _i12 = 0; _i12 < lengthRed; _i12++) {
+            allClassElementsRed[_i12].classList.remove("blurred");
           }
 
           checkboxId.value = "spoilers-on"; // remember this choice for subsequent page visits and browser restarts
