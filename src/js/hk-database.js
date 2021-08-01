@@ -1441,7 +1441,7 @@ const HK = {
         },
         xunRewardGiven: {
           name: "Grey Mourner: Solace",
-          spoiler: "Complete Delicate Flower quest and talk",
+          spoiler: "Resting Grounds: Complete Delicate Flower quest",
           wiki: "Grey_Mourner"
         },
         zoteStatus: {
