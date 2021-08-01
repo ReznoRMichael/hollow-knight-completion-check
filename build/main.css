@@ -487,7 +487,7 @@ input[type="file"] {
 .tab-active {
   background-color: rgb(0, 180, 156);
   color: rgb(0, 0, 0);
-  border: 2px solid rgb(0, 180, 156);
+  border: 2px solid rgba(0, 180, 156, 0);
 }
 
 .tab-switch:focus {

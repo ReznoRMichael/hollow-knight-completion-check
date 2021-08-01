@@ -611,6 +611,7 @@ function PageSwitchTab(clickedButton) {
   let sectionList = document.querySelectorAll(".large-section");
   let buttonList = document.querySelectorAll(".tab-switch");
 
+  /* Make Active Tab Visible */
   for (let i = 0, length = sectionList.length; i < length; i++) {
 
     /* Other tabs except the clicked one */
@@ -629,6 +630,7 @@ function PageSwitchTab(clickedButton) {
     }
   }
 
+  /* Make Active Button stand out */
   for (let i = 0, length = buttonList.length; i < length; i++) {
 
     /* Other buttons except the clicked one */

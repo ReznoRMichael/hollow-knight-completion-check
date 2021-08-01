@@ -7089,6 +7089,7 @@ function GenerateInnerHTML(db) {
 function PageSwitchTab(clickedButton) {
   var sectionList = document.querySelectorAll(".large-section");
   var buttonList = document.querySelectorAll(".tab-switch");
+  /* Make Active Tab Visible */
 
   for (var i = 0, length = sectionList.length; i < length; i++) {
     /* Other tabs except the clicked one */
@@ -7104,6 +7105,8 @@ function PageSwitchTab(clickedButton) {
         }
       }
   }
+  /* Make Active Button stand out */
+
 
   for (var _i5 = 0, _length = buttonList.length; _i5 < _length; _i5++) {
     /* Other buttons except the clicked one */
