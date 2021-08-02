@@ -880,10 +880,17 @@ input[type="radio"] {
   background: #000;
 }
 
-/* input[type="checkbox"]:focus + label,
+input[type="checkbox"]:focus + label,
 input[type="radio"]:focus + label {
-    outline: solid 1px #aac7d4;
-} */
+    outline: 0;
+    box-shadow: 0 0 0.2rem #aac7d4;
+}
+
+input[type="checkbox"]:focus:not(:focus-visible) + label,
+input[type="radio"]:focus:not(:focus-visible) + label {
+    outline: 0;
+    /* box-shadow: 0 0 0.2rem #aac7d4; */
+}
 
 .tooltip {
   position: relative;
