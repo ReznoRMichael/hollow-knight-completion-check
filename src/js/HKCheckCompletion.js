@@ -588,9 +588,9 @@ function CheckExtendedCompletion(db) {
             /* Skip disabled entries entirely from counting (substract a point from Total) */
             if (entries[entry].hasOwnProperty("disabled") && entries[entry].disabled === true) {
 
-              /* Do not substract a point for WD/GPZ Defeats nr if they were not added to Total in the first place */
+              /* Do not subtract a point for WD/GPZ Defeats nr if they were not added to Total in the first place */
               if (entry === "greyPrinceDefeats" || entry === "whiteDefenderDefeats") {
-                break;
+                continue;
               }
 
               intro.extendedCompletionTotal--;
