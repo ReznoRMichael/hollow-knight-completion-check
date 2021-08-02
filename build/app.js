@@ -4498,6 +4498,21 @@ var HK = {
       id: "hk-achievements",
       description: "All the completely optional things that matter for achievements. This includes the rarest and most likely missable Hunter's Journal enemies (prefixed by \"Journal: \"). You will also see your Zote/Nailsmith choices that you've made.",
       entries: {
+        hasMap: {
+          name: "Inventory Map",
+          spoiler: "Any map bought from Cornifer or Iselda",
+          wiki: "Map_and_Quill"
+        },
+        mapCrossroads: {
+          name: "Map: Forgotten Crossroads",
+          spoiler: "30/40 Geo: below Gruzzer area",
+          wiki: "Forgotten_Crossroads"
+        },
+        mapGreenpath: {
+          name: "Map: Greenpath",
+          spoiler: "60/80 Geo: just below Greenpath entrance",
+          wiki: "Greenpath"
+        },
         areaMaps: {
           name: "Area Maps",
           spoiler: "Cornifer and Iselda, 13 Area Maps total",
@@ -5569,7 +5584,7 @@ var HK = {
       }
     },
 
-    /* ################ Game Statistics ################### */
+    /* ################ Optional Journal Entries ################### */
     huntersJournalOptional: {
       h2: "Optional Journal Entries",
       id: "hk-journal-optional",
@@ -6749,7 +6764,7 @@ function GenerateInnerHTML(db) {
 
     switch (section) {
       case "bosses":
-        textFill += ["<div class=\"tab-switch-buttons\">", "<button id=\"button-switch-main\" name=\"main\" class=\"button tab-switch\" type=\"button\">Main</button>", "<button id=\"button-switch-essential\" name=\"essential\" class=\"button tab-switch\" type=\"button\">Essential</button>", "<button id=\"button-switch-journal\" name=\"journal\" class=\"button tab-switch\" type=\"button\">Journal</button>", "<button id=\"button-switch-statistics\" name=\"statistics\" class=\"button tab-switch\" type=\"button\">Stats</button>", "<button id=\"button-switch-godhome\" name=\"godhome\" class=\"button tab-switch\" type=\"button\">Godhome</button>", "</div>"].join("\n");
+        textFill += ["<div class=\"tab-switch-buttons\">", "<button id=\"button-switch-main\" name=\"main\" class=\"button tab-switch\" type=\"button\">Main</button>", "<button id=\"button-switch-essential\" name=\"essential\" class=\"button tab-switch\" type=\"button\">Essentials</button>", "<button id=\"button-switch-journal\" name=\"journal\" class=\"button tab-switch\" type=\"button\">Journal</button>", "<button id=\"button-switch-statistics\" name=\"statistics\" class=\"button tab-switch\" type=\"button\">Stats</button>", "<button id=\"button-switch-godhome\" name=\"godhome\" class=\"button tab-switch\" type=\"button\">Godmaster</button>", "</div>"].join("\n");
         textFill += "<div id=\"tab-main\" class=\"large-section\">";
         break;
 
