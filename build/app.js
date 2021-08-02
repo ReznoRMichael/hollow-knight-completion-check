@@ -422,8 +422,11 @@ function CheckExtendedCompletion(db) {
         continue;
 
       default:
+        // console.info("Section loop:", section);
         for (var entry in entries) {
-          /* Do not count these entries */
+          // console.info("Entry loop:", entry);
+
+          /* Do not count (ignore) these entries at all */
           switch (entry) {
             case "oldNail":
             case "geoPool":
@@ -435,6 +438,22 @@ function CheckExtendedCompletion(db) {
             case "jinnEggsSold":
             case "xunFlowerBrokeTimes":
             case "itemsDiscovered":
+            case "stagStationsOpened":
+            case "killedMegaMossCharger":
+            case "killedBigBuzzer":
+            case "killedOblobble":
+            case "killedLobsterLancer":
+            case "killedFlukeMother":
+            case "killedNailBros":
+            case "killedPaintmaster":
+            case "killedNailsage":
+            case "killedHollowKnightPrime":
+            case "killsBigBuzzer":
+            case "whiteDefenderDefeated":
+            case "greyPrinceDefeated":
+            case "killedHollowKnight":
+            case "killedFinalBoss":
+              // console.info("Ignored:", entry);
               continue;
           }
 
@@ -443,7 +462,6 @@ function CheckExtendedCompletion(db) {
               /* Do not add these to total and done (they will be added as amount/max later instead) */
               case "grubsCollected":
               case "grubRewards":
-              case "stationsOpened":
               case "areaMaps":
               case "journalEntriesCompleted":
               case "journalNotesCompleted":
@@ -455,11 +473,13 @@ function CheckExtendedCompletion(db) {
               case "geoRocks":
               case "whiteDefenderDefeats":
               case "greyPrinceDefeats":
+                /* console.info("Ignored:", entry); */
                 break;
 
               default:
                 if (entries[entry].icon !== "none") {
                   intro.extendedCompletionTotal++;
+                  /* console.info("Counted:", entry); */
                 }
                 /* Missable Arcane Egg exception, subtract from total */
 
@@ -476,6 +496,7 @@ function CheckExtendedCompletion(db) {
 
                 if (entries[entry].icon === "green") {
                   intro.extendedCompletionDone++;
+                  /* console.info("Counted (Done):", entry); */
                 }
 
             }
@@ -494,7 +515,7 @@ function CheckExtendedCompletion(db) {
             else if (entries[entry].hasOwnProperty("amount") && entries[entry].hasOwnProperty("max")) {
                 /* Skip counting 3000 Fountain Geo, too much */
                 if (entry === "fountainGeo") {
-                  break;
+                  continue; // continue to next entry loop
                 }
 
                 amount = entries[entry].amount;
