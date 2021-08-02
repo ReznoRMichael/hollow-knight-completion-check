@@ -130,6 +130,7 @@ If you like the tool and wish it developed further with more functions and easie
   — **Game Completion Essentials** fixes/additions:  
   ✅ addition: God Tamer (needed for Trial of the Fool %)  
   ✅ addition: Vengefly King (needed for Trial of the Warrior %)  
+  ✅ addition: All 11 Stag Stations listed one by one  
   ✅ fix: Pale Ore #2 should now be showing up correctly (thanks to EmrldPhoenix for the bug report!)  
 
   — **Achievements Essentials** changes/additions:  
