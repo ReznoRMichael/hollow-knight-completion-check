@@ -2866,6 +2866,11 @@ const HK = {
           sceneName: "White_Palace_09",
           wiki: "White_Palace#Throne_room_Lore_Tablet"
         },
+        /* 
+        #52 Quake Floor 🗺️ Palace Caged Lever ⌨️ White_Palace_15
+        #53 Breakable Wall Waterways 🗺️ Palace Spike Drop ⌨️ White_Palace_12
+        #54 Break Floor 1 🗺️ Palace Spike Drop ⌨️ White_Palace_12
+        */
         elderbugGaveFlower: {
           name: "Delicate Flower: Elderbug",
           spoiler: "Deliver from Traitor's Child Grave",

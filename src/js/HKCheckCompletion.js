@@ -538,18 +538,18 @@ function CheckExtendedCompletion(db) {
 
                 if (entries[entry].icon !== "none") {
                   intro.extendedCompletionTotal++;
+                }
 
-                  /* Missable Arcane Egg exception, subtract from total */
-                  if (entries[entry].icon === "red" && entry === "arcaneEggLifebloodCoreRoom") {
+                /* Missable Arcane Egg exception, subtract from total */
+                if (entries[entry].icon === "none" && entry === "arcaneEggLifebloodCoreRoom") {
       
-                    /* console.info(`${entry} has passed:`, entries[entry].icon); */
-      
-                    /* When got the Lifeblood Core charm, but didn't pick up the Arcane Egg */
-                    if (sections.charms.entries.gotCharm_9.icon === "green") {
-                      intro.extendedCompletionTotal--;
-      
-                      /* console.info(`${entry} completion Total subtracted`); */
-                    }
+                  /* console.info(`${entry} has passed:`, entries[entry].icon); */
+    
+                  /* When got the Lifeblood Core charm, but didn't pick up the Arcane Egg */
+                  if (sections.charms.entries.gotCharm_9.icon === "green") {
+                    intro.extendedCompletionTotal--;
+    
+                    /* console.info(`${entry} completion Total subtracted`); */
                   }
                 }
     
@@ -1393,7 +1393,6 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "mantisVillageFloorLever":
       case "pathOfPainEntrance":
       case "whiteLadyRoom":
-      case "arcaneEggLifebloodCoreRoom":
       case "throneRoomLoreTablet":
         (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) ? SetIconGreen(section, i): SetIconRed(section, i);
         break;
@@ -1419,6 +1418,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         /* textPrefix += ": " + total; */
         break;
+
+      case "arcaneEggLifebloodCoreRoom":
+          (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) ? SetIconGreen(section, i): SetIconNone(section, i);
+          break;
 
       case "bossDoorStateTier5":
         if (playerData.hasOwnProperty("bossDoorStateTier5") === false) {

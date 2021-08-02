@@ -460,16 +460,17 @@ function CheckExtendedCompletion(db) {
               default:
                 if (entries[entry].icon !== "none") {
                   intro.extendedCompletionTotal++;
-                  /* Missable Arcane Egg exception, subtract from total */
+                }
+                /* Missable Arcane Egg exception, subtract from total */
 
-                  if (entries[entry].icon === "red" && entry === "arcaneEggLifebloodCoreRoom") {
-                    /* console.info(`${entry} has passed:`, entries[entry].icon); */
 
-                    /* When got the Lifeblood Core charm, but didn't pick up the Arcane Egg */
-                    if (sections.charms.entries.gotCharm_9.icon === "green") {
-                      intro.extendedCompletionTotal--;
-                      /* console.info(`${entry} completion Total subtracted`); */
-                    }
+                if (entries[entry].icon === "none" && entry === "arcaneEggLifebloodCoreRoom") {
+                  /* console.info(`${entry} has passed:`, entries[entry].icon); */
+
+                  /* When got the Lifeblood Core charm, but didn't pick up the Arcane Egg */
+                  if (sections.charms.entries.gotCharm_9.icon === "green") {
+                    intro.extendedCompletionTotal--;
+                    /* console.info(`${entry} completion Total subtracted`); */
                   }
                 }
 
@@ -1275,7 +1276,6 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "mantisVillageFloorLever":
       case "pathOfPainEntrance":
       case "whiteLadyRoom":
-      case "arcaneEggLifebloodCoreRoom":
       case "throneRoomLoreTablet":
         FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? SetIconGreen(section, i) : SetIconRed(section, i);
         break;
@@ -1297,6 +1297,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         dataObject[i].amount = total;
         /* textPrefix += ": " + total; */
 
+        break;
+
+      case "arcaneEggLifebloodCoreRoom":
+        FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? SetIconGreen(section, i) : SetIconNone(section, i);
         break;
 
       case "bossDoorStateTier5":
@@ -5962,6 +5966,12 @@ var HK = {
           sceneName: "White_Palace_09",
           wiki: "White_Palace#Throne_room_Lore_Tablet"
         },
+
+        /* 
+        #52 Quake Floor 🗺️ Palace Caged Lever ⌨️ White_Palace_15
+        #53 Breakable Wall Waterways 🗺️ Palace Spike Drop ⌨️ White_Palace_12
+        #54 Break Floor 1 🗺️ Palace Spike Drop ⌨️ White_Palace_12
+        */
         elderbugGaveFlower: {
           name: "Delicate Flower: Elderbug",
           spoiler: "Deliver from Traitor's Child Grave",
