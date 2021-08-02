@@ -379,14 +379,16 @@ input[type="file"] {
   border-radius: 5px;
 }
 
-.tab-switch:hover,
-.tab-active {
+.tab-switch:hover {
   background-color: rgb(0, 180, 156);
   color: rgb(0, 0, 0);
   border: 2px solid rgba(0, 0, 0, 0);
 }
 
 .tab-active {
+  background-color: rgb(235, 235, 235);
+  color: rgb(0, 39, 34);
+  border: 2px solid rgba(0, 0, 0, 0);
   box-shadow: 0 0 1rem rgb(0, 180, 156);
 }
 
