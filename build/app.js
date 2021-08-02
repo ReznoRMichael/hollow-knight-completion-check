@@ -6017,7 +6017,7 @@ var HK = {
         },
         blueRoomDoorUnlocked: {
           name: "Lifeblood Door Open",
-          spoiler: "Complete 8 Pantheon bindings",
+          spoiler: "Complete any 8 Pantheon bindings total",
           wiki: "Godhome#Locked_Lifeblood_Room"
         },
         killedVoidIdol_1: {
