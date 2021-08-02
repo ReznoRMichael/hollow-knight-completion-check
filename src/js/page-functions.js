@@ -538,8 +538,10 @@ function GenerateInnerHTML(db) {
 
           switch (entry) {
             case "pantheonKnight":
-            case "killedHollowKnightPrime":
             case "bossDoorStateTier5":
+            case "VoidIdol_3":
+            case "greyPrinceDefeats":
+            case "ordealAchieved":
               textFill += FLEUR_DIVIDE;
 
               break;
