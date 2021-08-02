@@ -369,7 +369,7 @@ input[type="file"] {
 }
 
 .button:focus:not(:focus-visible) {
-  border-color: #1e4d6c;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .tab-switch {
