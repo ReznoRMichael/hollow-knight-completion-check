@@ -454,7 +454,7 @@ function CheckExtendedCompletion(db) {
             case "greyPrinceDefeated":
             case "killedHollowKnight":
             case "killedFinalBoss":
-              console.info("Ignored:", entry);
+              // console.info("Ignored:", entry);
               continue;
           }
 
@@ -479,8 +479,7 @@ function CheckExtendedCompletion(db) {
 
               default:
                 if (entries[entry].icon !== "none") {
-                  intro.extendedCompletionTotal++;
-                  /* console.info("Counted:", entry); */
+                  intro.extendedCompletionTotal++; // console.info("Counted Total:", entry);
                 }
                 /* Missable Arcane Egg exception, subtract from total */
 
@@ -4565,12 +4564,12 @@ var HK = {
           wiki: "Resting_Grounds"
         },
         mapAbyss: {
-          name: "Map: Ancient Basin + Abyss",
+          name: "Map: Ancient Basin",
           spoiler: "112/150 Geo: center area, near fountain",
           wiki: "Ancient_Basin"
         },
         mapOutskirts: {
-          name: "Map: Kingdom's Edge + Hive",
+          name: "Map: Kingdom's Edge",
           spoiler: "112/150 Geo: left bottom area, inside pipe",
           wiki: "Kingdom's_Edge"
         },
@@ -4594,7 +4593,6 @@ var HK = {
           spoiler: "Cornifer and Iselda, 13 Area Maps total",
           max: 13,
           maxDefault: 13,
-          list: ["mapCrossroads", "mapGreenpath", "mapFogCanyon", "mapRoyalGardens", "mapFungalWastes", "mapCity", "mapWaterways", "mapMines", "mapDeepnest", "mapCliffs", "mapOutskirts", "mapRestingGrounds", "mapAbyss"],
           wiki: "Map_and_Quill#Maps"
         },
         hasJournal: {

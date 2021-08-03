@@ -563,7 +563,7 @@ function CheckExtendedCompletion(db) {
                 if (entries[entry].icon !== "none") {
                   intro.extendedCompletionTotal++;
 
-                  /* console.info("Counted:", entry); */
+                  // console.info("Counted Total:", entry);
                 }
 
                 /* Missable Arcane Egg exception, subtract from total */
