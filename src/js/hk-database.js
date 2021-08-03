@@ -1454,6 +1454,11 @@ const HK = {
           ],
           wiki: "Map_and_Quill#Maps"
         },
+        hasPinGrub: {
+          name: "Collector's Map",
+          spoiler: "Kingdom's Edge: Tower of Love, Love Key",
+          wiki: "Map_and_Quill#The_Collector's_Map"
+        },
         hasJournal: {
           name: "Hunter's Journal",
           spoiler: "Greenpath: Hunter, above Stone Sanctuary",
