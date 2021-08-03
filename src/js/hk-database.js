@@ -1399,6 +1399,31 @@ const HK = {
           spoiler: "150/200 Geo: below Fog Canyon entrance",
           wiki: "Queen's_Gardens"
         },
+        mapFungalWastes: {
+          name: "Map: Fungal Wastes",
+          spoiler: "75/100 Geo: right of Queen's Station",
+          wiki: "Fungal_Wastes"
+        },
+        mapCity: {
+          name: "Map: City of Tears",
+          spoiler: "90/120 Geo: left of Soul Sanctum",
+          wiki: "City_of_Tears"
+        },
+        mapWaterways: {
+          name: "Map: Royal Waterways",
+          spoiler: "75/100 Geo: far left area, near Fungal",
+          wiki: "Royal_Waterways"
+        },
+        mapMines: {
+          name: "Map: Crystal Peak",
+          spoiler: "120/150 Geo: top left area",
+          wiki: "Crystal_Peak"
+        },
+        mapDeepnest: {
+          name: "Map: Deepnest",
+          spoiler: "38/50 Geo: near both Fungal Wastes entrances",
+          wiki: "Deepnest"
+        },
         areaMaps: {
           name: "Area Maps",
           spoiler: "Cornifer and Iselda, 13 Area Maps total",

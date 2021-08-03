@@ -4500,7 +4500,7 @@ var HK = {
       entries: {
         hasMap: {
           name: "Inventory Map",
-          spoiler: "Any map bought from Cornifer or Iselda",
+          spoiler: "First map bought from Cornifer or Iselda",
           wiki: "Map_and_Quill"
         },
         mapCrossroads: {
@@ -4512,6 +4512,16 @@ var HK = {
           name: "Map: Greenpath",
           spoiler: "60/80 Geo: just below Greenpath entrance",
           wiki: "Greenpath"
+        },
+        mapFogCanyon: {
+          name: "Map: Fog Canyon",
+          spoiler: "150/200 Geo: above Teacher's Archives",
+          wiki: "Fog_Canyon"
+        },
+        mapRoyalGardens: {
+          name: "Map: Queen's Gardens",
+          spoiler: "150/200 Geo: below Fog Canyon entrance",
+          wiki: "Queen's_Gardens"
         },
         areaMaps: {
           name: "Area Maps",
