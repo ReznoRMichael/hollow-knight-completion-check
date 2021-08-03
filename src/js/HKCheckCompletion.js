@@ -1305,10 +1305,23 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
             SetIconNone(section, i);
             dataObject[i].disabled = true;
-            // textPrefix = `<del>${textPrefix}</del>`;
-            break;
           }
         }
+
+        break;
+
+      case "tukDungEgg":
+
+        // fade out if on Steel Soul
+        if (playerData.permadeathMode > 0) {
+
+          SetIconNone(section, i);
+          dataObject[i].disabled = true;
+
+          continue;
+        }
+
+        (playerData[i] === true) ? SetIconGreen(section, i): SetIconRed(section, i);
 
         break;
 

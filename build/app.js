@@ -1180,12 +1180,21 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           // fade out if not on Steel Soul
           if (playerData.permadeathMode < 1) {
             SetIconNone(section, i);
-            dataObject[i].disabled = true; // textPrefix = `<del>${textPrefix}</del>`;
-
-            break;
+            dataObject[i].disabled = true;
           }
         }
 
+        break;
+
+      case "tukDungEgg":
+        // fade out if on Steel Soul
+        if (playerData.permadeathMode > 0) {
+          SetIconNone(section, i);
+          dataObject[i].disabled = true;
+          continue;
+        }
+
+        playerData[i] === true ? SetIconGreen(section, i) : SetIconRed(section, i);
         break;
 
       case "bankerBalance":
@@ -5920,6 +5929,11 @@ var HK = {
           name: "Rancid Eggs",
           spoiler: "Find: Hallownest, Buy: Sly, Tuk",
           wiki: "Rancid_Egg"
+        },
+        tukDungEgg: {
+          name: "Tuk: Free Rancid Egg",
+          spoiler: "Royal Waterways: Tuk, with Defender's Crest",
+          wiki: "Tuk"
         },
         jinnEggsSold: {
           name: "Rancid Eggs Sold to Jinn",

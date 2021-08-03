@@ -2779,6 +2779,11 @@ const HK = {
           spoiler: "Find: Hallownest, Buy: Sly, Tuk",
           wiki: "Rancid_Egg"
         },
+        tukDungEgg: {
+          name: "Tuk: Free Rancid Egg",
+          spoiler: "Royal Waterways: Tuk, with Defender's Crest",
+          wiki: "Tuk"
+        },
         jinnEggsSold: {
           name: "Rancid Eggs Sold to Jinn",
           spoiler: "Only in Steel Soul Mode",
