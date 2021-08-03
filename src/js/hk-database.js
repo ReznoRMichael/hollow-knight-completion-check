@@ -2889,6 +2889,11 @@ const HK = {
           spoiler: "150 Geo: Iselda's Shop, acquire Dream Nail",
           wiki: "Whispering_Root"
         },
+        hasPinTram: {
+          name: "Map Pin: Tram",
+          spoiler: "100 Geo: Iselda's Shop, acquire Tram Pass",
+          wiki: "Tram"
+        },
         hasMarker_r: {
           name: "Map Pin: Shell Marker",
           spoiler: "100 Geo: Iselda's Shop",
@@ -2906,18 +2911,13 @@ const HK = {
         },
         hasMarker_w: {
           name: "Map Pin: Gleaming Marker",
-          spoiler: "210 Geo: Iselda's Shop, acquire Mothwing Cloak",
+          spoiler: "210 Geo: Iselda, acquire Mothwing Cloak",
           wiki: "Iselda#Map_Pins"
         },
         hasPinGuardian: {
           name: "Map Pin: Dreamers",
           spoiler: "Resting Grounds: Inspect the shrine",
           wiki: "Dreamers"
-        },
-        hasPinTram: {
-          name: "Map Pin: Tram",
-          spoiler: "100 Geo: Iselda's Shop, acquire Tram Pass",
-          wiki: "Tram"
         },
         hasPinBlackEgg: {
           name: "Map Pin: Temple of the Black Egg",
