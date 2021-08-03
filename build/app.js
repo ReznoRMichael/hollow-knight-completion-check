@@ -432,7 +432,6 @@ function CheckExtendedCompletion(db) {
             case "geoPool":
             case "dreamOrbs":
             case "charmsOwned":
-            case "charmSlots":
             case "nailDamage":
             case "rancidEggs":
             case "jinnEggsSold":
@@ -1070,7 +1069,6 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "grubsCollected":
       case "grubRewards":
       case "charmsOwned":
-      case "charmSlots":
       case "dreamOrbs":
       case "whisperingRoots":
       case "fountainGeo":
@@ -5857,13 +5855,6 @@ var HK = {
           max: 21,
           maxDefault: 21,
           wiki: "Nail#Nail_Upgrades"
-        },
-        charmSlots: {
-          name: "Charm Notches",
-          spoiler: "11 Charm Notches total",
-          max: 11,
-          maxDefault: 11,
-          wiki: "Category:Charms#Notches"
         },
         whisperingRoots: {
           name: "Whispering Roots Completed",

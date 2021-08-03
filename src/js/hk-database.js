@@ -2708,13 +2708,6 @@ const HK = {
           maxDefault: 21,
           wiki: "Nail#Nail_Upgrades"
         },
-        charmSlots: {
-          name: "Charm Notches",
-          spoiler: "11 Charm Notches total",
-          max: 11,
-          maxDefault: 11,
-          wiki: "Category:Charms#Notches"
-        },
         whisperingRoots: {
           name: "Whispering Roots Completed",
           spoiler: "Dream Nail (15 Roots total)",

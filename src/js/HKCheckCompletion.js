@@ -507,7 +507,6 @@ function CheckExtendedCompletion(db) {
             case "geoPool":
             case "dreamOrbs":
             case "charmsOwned":
-            case "charmSlots":
             case "nailDamage":
             case "rancidEggs":
             case "jinnEggsSold":
@@ -1192,7 +1191,6 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "grubsCollected":
       case "grubRewards":
       case "charmsOwned":
-      case "charmSlots":
       case "dreamOrbs":
       case "whisperingRoots":
       case "fountainGeo":
