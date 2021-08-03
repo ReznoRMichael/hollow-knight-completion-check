@@ -142,12 +142,14 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **Game Statistics** fixes/additions/changes:  
   ✅ fix: Hunter's Journal now detects and displays the correct amount of maximum entries on both Zote routes (160 or 164).  
+  ✅ change: Moved Menderbug and Seal of Binding to Optional Journal Entries  
   ✅ addition: World Sense Ability (completion rate viewable in inventory/save slot)  
   ✅ addition: Lifeblood Core Room Arcane Egg (the only missable relic in the game)  
   ✅ addition: White Palace: Secret Room #3 (Lore Tablet)  
   ✅ additions: 6 entries related to Millibelle the Banker: Account, Balance, Disappeared, Investigate Stand, Found & Talked, Reclaimed All Geo  
+  ✅ additions: All Map Pins  
   ✅ addition: Collector's Map  
-  ✅ change: Moved Menderbug and Seal of Binding to Optional Journal Entries  
+  ✅ addition: Tuk: Free Rancid Egg  
 
   — **Godhome Statistics** changes/additions:  
   ✅ addition: Lifeblood Door Open  
