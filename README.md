@@ -138,6 +138,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ change: Moved all Journal entries to Hunter's Journal section  
   ✅ addition: Quirrel: Witness achievement  
   ✅ addition: Grey Mourner: Solace achievement  
+  ✅ additions: all maps for all areas  
 
   — **Game Statistics** fixes/additions/changes:  
   ✅ fix: Hunter's Journal now detects and displays the correct amount of maximum entries on both Zote routes (160 or 164).  
