@@ -514,6 +514,7 @@ function CheckExtendedCompletion(db) {
             case "xunFlowerBrokeTimes":
             case "itemsDiscovered":
             case "stagStationsOpened":
+            case "areaMaps":
             case "killedMegaMossCharger":
             case "killedBigBuzzer":
             case "killedOblobble":
@@ -1188,7 +1189,6 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     } = 0;
 
     switch (i) {
-      case "areaMaps":
       case "grubsCollected":
       case "grubRewards":
       case "charmsOwned":
@@ -1201,9 +1201,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "journalNotesCompleted":
       case "whiteDefenderDefeats":
       case "greyPrinceDefeats":
-        if (i === "areaMaps") {
-          amount = CountMaps(dataObject[i].list);
-        } else if (i === "whisperingRoots") {
+        if (i === "whisperingRoots") {
           amount = CountWorldItem("Dream Plant");
         } else {
           amount = playerData[i];
@@ -1663,6 +1661,48 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         break;
 
+      case "mapCrossroads":
+      case "mapGreenpath":
+      case "mapFungalWastes":
+      case "mapCliffs":
+      case "mapCity":
+      case "mapMines":
+      case "mapWaterways":
+      case "mapRestingGrounds":
+      case "mapAbyss":
+      case "mapOutskirts":
+      case "mapFogCanyon":
+      case "mapRoyalGardens":
+      case "mapDeepnest":
+
+        if (playerData[i] === true) {
+
+          SetIconGreen(section, i);
+
+          /* Create amount property before incrementing (avoids NaN) */
+          if (!dataObject.areaMaps.hasOwnProperty("amount")) {
+            dataObject.areaMaps.amount = 0;
+          }
+
+          /* increment the area maps amount by one */
+          dataObject.areaMaps.amount++;
+
+        } else {
+          SetIconRed(section, i);
+        }
+
+        break;
+
+      case "areaMaps":
+
+        if (dataObject[i].amount >= dataObject[i].max) {
+          SetIconGreen(section, i);
+        } else {
+          SetIconRed(section, i);
+        }
+
+        break;
+
       default:
 
         // backwards compatibility with earlier game versions
@@ -1718,19 +1758,6 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       }
     }
     return total;
-  }
-
-  /**
-   * Counts the number of maps the player has acquired (from the list in an array)
-   * @param {array} mapArray Array of strings with area map names
-   * @returns {number}
-   */
-  function CountMaps(mapArray) {
-    let totalMaps = 0;
-    for (let i = 0, len = mapArray.length; i < len; i++) {
-      if (playerData[mapArray[i]] === true) totalMaps++;
-    }
-    return totalMaps;
   }
 
   /**

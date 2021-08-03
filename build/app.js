@@ -439,6 +439,7 @@ function CheckExtendedCompletion(db) {
             case "xunFlowerBrokeTimes":
             case "itemsDiscovered":
             case "stagStationsOpened":
+            case "areaMaps":
             case "killedMegaMossCharger":
             case "killedBigBuzzer":
             case "killedOblobble":
@@ -453,7 +454,7 @@ function CheckExtendedCompletion(db) {
             case "greyPrinceDefeated":
             case "killedHollowKnight":
             case "killedFinalBoss":
-              // console.info("Ignored:", entry);
+              console.info("Ignored:", entry);
               continue;
           }
 
@@ -1067,7 +1068,6 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         discoveredTotal = _2.discoveredTotal;
 
     switch (i) {
-      case "areaMaps":
       case "grubsCollected":
       case "grubRewards":
       case "charmsOwned":
@@ -1080,9 +1080,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "journalNotesCompleted":
       case "whiteDefenderDefeats":
       case "greyPrinceDefeats":
-        if (i === "areaMaps") {
-          amount = CountMaps(dataObject[i].list);
-        } else if (i === "whisperingRoots") {
+        if (i === "whisperingRoots") {
           amount = CountWorldItem("Dream Plant");
         } else {
           amount = playerData[i];
@@ -1530,6 +1528,45 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         break;
 
+      case "mapCrossroads":
+      case "mapGreenpath":
+      case "mapFungalWastes":
+      case "mapCliffs":
+      case "mapCity":
+      case "mapMines":
+      case "mapWaterways":
+      case "mapRestingGrounds":
+      case "mapAbyss":
+      case "mapOutskirts":
+      case "mapFogCanyon":
+      case "mapRoyalGardens":
+      case "mapDeepnest":
+        if (playerData[i] === true) {
+          SetIconGreen(section, i);
+          /* Create amount property before incrementing (avoids NaN) */
+
+          if (!dataObject.areaMaps.hasOwnProperty("amount")) {
+            dataObject.areaMaps.amount = 0;
+          }
+          /* increment the area maps amount by one */
+
+
+          dataObject.areaMaps.amount++;
+        } else {
+          SetIconRed(section, i);
+        }
+
+        break;
+
+      case "areaMaps":
+        if (dataObject[i].amount >= dataObject[i].max) {
+          SetIconGreen(section, i);
+        } else {
+          SetIconRed(section, i);
+        }
+
+        break;
+
       default:
         // backwards compatibility with earlier game versions
         if (playerData.hasOwnProperty(i) === false) {
@@ -1592,22 +1629,6 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     return total;
   }
   /**
-   * Counts the number of maps the player has acquired (from the list in an array)
-   * @param {array} mapArray Array of strings with area map names
-   * @returns {number}
-   */
-
-
-  function CountMaps(mapArray) {
-    var totalMaps = 0;
-
-    for (var _i3 = 0, len = mapArray.length; _i3 < len; _i3++) {
-      if (playerData[mapArray[_i3]] === true) totalMaps++;
-    }
-
-    return totalMaps;
-  }
-  /**
    * Counts the total amount of Geo Rocks Unbroken or Broken. Logs to console all the Unbroken IDs and Map locations.
    * @param {number} arrayLength How many items the Geo Rocks array is currently storing (for iteration)
    * @param {string} mode Choose which Geo Rocks to count (broken or unbroken)
@@ -1620,10 +1641,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     var geoRocksLog = [];
 
     if (mode === "unbroken") {
-      for (var _i4 = 0; _i4 < arrayLength; _i4++) {
-        if (sceneData.geoRocks[_i4].hitsLeft > 0) {
+      for (var _i3 = 0; _i3 < arrayLength; _i3++) {
+        if (sceneData.geoRocks[_i3].hitsLeft > 0) {
           countTotal++;
-          geoRocksLog.push("#".concat(countTotal, " \uD83C\uDFD4\uFE0F ").concat(sceneData.geoRocks[_i4].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(sceneData.geoRocks[_i4].sceneName), " \u2328\uFE0F ").concat(sceneData.geoRocks[_i4].sceneName));
+          geoRocksLog.push("#".concat(countTotal, " \uD83C\uDFD4\uFE0F ").concat(sceneData.geoRocks[_i3].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(sceneData.geoRocks[_i3].sceneName), " \u2328\uFE0F ").concat(sceneData.geoRocks[_i3].sceneName));
         }
       }
 
@@ -1632,15 +1653,15 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       } else {
         console.groupCollapsed("%cUnbroken Geo Rocks (".concat(countTotal, "):"), "color: #16c60c; font-weight: 700;");
 
-        for (var _i5 = 0, length = geoRocksLog.length; _i5 < length; _i5++) {
-          console.log(geoRocksLog[_i5]);
+        for (var _i4 = 0, length = geoRocksLog.length; _i4 < length; _i4++) {
+          console.log(geoRocksLog[_i4]);
         }
 
         console.groupEnd();
       }
     } else {
-      for (var _i6 = 0; _i6 < arrayLength; _i6++) {
-        if (sceneData.geoRocks[_i6].hitsLeft === 0) countTotal++;
+      for (var _i5 = 0; _i5 < arrayLength; _i5++) {
+        if (sceneData.geoRocks[_i5].hitsLeft === 0) countTotal++;
       }
     }
 
@@ -1659,10 +1680,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     var itemsLog = [];
 
     if (mode === "notActivated") {
-      for (var _i7 = 0; _i7 < arrayLength; _i7++) {
-        if (worldData[_i7].activated === false && worldData[_i7].semiPersistent === false) {
+      for (var _i6 = 0; _i6 < arrayLength; _i6++) {
+        if (worldData[_i6].activated === false && worldData[_i6].semiPersistent === false) {
           countTotal++;
-          itemsLog.push("#".concat(countTotal, " ").concat(worldData[_i7].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(worldData[_i7].sceneName), " \u2328\uFE0F ").concat(worldData[_i7].sceneName));
+          itemsLog.push("#".concat(countTotal, " ").concat(worldData[_i6].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(worldData[_i6].sceneName), " \u2328\uFE0F ").concat(worldData[_i6].sceneName));
         }
       }
 
@@ -1671,15 +1692,15 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       } else {
         console.groupCollapsed("%cNot Activated Interactables (".concat(countTotal, "):"), "color: #16c60c; font-weight: 700;");
 
-        for (var _i8 = 0, length = itemsLog.length; _i8 < length; _i8++) {
-          console.log(itemsLog[_i8]);
+        for (var _i7 = 0, length = itemsLog.length; _i7 < length; _i7++) {
+          console.log(itemsLog[_i7]);
         }
 
         console.groupEnd();
       }
     } else {
-      for (var _i9 = 0; _i9 < arrayLength; _i9++) {
-        if (worldData[_i9].activated === true) countTotal++;
+      for (var _i8 = 0; _i8 < arrayLength; _i8++) {
+        if (worldData[_i8].activated === true) countTotal++;
       }
     }
 
@@ -1693,9 +1714,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
   function LogMissingGrubs() {
     var rescuedGrubsSceneList = [];
 
-    for (var _i10 = 0, _length = worldData.length; _i10 < _length; _i10++) {
-      if (worldData[_i10].id.includes("Grub Bottle")) {
-        if (worldData[_i10].activated === true) {
+    for (var _i9 = 0, _length = worldData.length; _i9 < _length; _i9++) {
+      if (worldData[_i9].id.includes("Grub Bottle")) {
+        if (worldData[_i9].activated === true) {
           // There are 3 duplicates of the same map scene name from older game save files. Prevents adding duplicates
 
           /* if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (1)") {
@@ -1703,7 +1724,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           } else if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (2)") {
               continue;
           } else { */
-          rescuedGrubsSceneList.push(worldData[_i10].sceneName); // }
+          rescuedGrubsSceneList.push(worldData[_i9].sceneName); // }
         }
       }
     } // Filtering the reference database Grub list to include only the missing values
@@ -1719,8 +1740,8 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     } else {
       console.groupCollapsed("%cUnrescued Grubs (".concat(length, "):"), "color: #16c60c; font-weight: 700;");
 
-      for (var _i11 = 0; _i11 < length; _i11++) {
-        console.log("#".concat(section.grubsList.indexOf(missingGrubsList[_i11]) + 1, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(missingGrubsList[_i11]), " \u2328\uFE0F ").concat(missingGrubsList[_i11]));
+      for (var _i10 = 0; _i10 < length; _i10++) {
+        console.log("#".concat(section.grubsList.indexOf(missingGrubsList[_i10]) + 1, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(missingGrubsList[_i10]), " \u2328\uFE0F ").concat(missingGrubsList[_i10]));
       }
 
       console.groupEnd();
@@ -4513,50 +4534,30 @@ var HK = {
           spoiler: "60/80 Geo: just below Greenpath entrance",
           wiki: "Greenpath"
         },
-        mapFogCanyon: {
-          name: "Map: Fog Canyon",
-          spoiler: "150/200 Geo: above Teacher's Archives",
-          wiki: "Fog_Canyon"
-        },
-        mapRoyalGardens: {
-          name: "Map: Queen's Gardens",
-          spoiler: "150/200 Geo: below Fog Canyon entrance",
-          wiki: "Queen's_Gardens"
-        },
         mapFungalWastes: {
           name: "Map: Fungal Wastes",
           spoiler: "75/100 Geo: right of Queen's Station",
           wiki: "Fungal_Wastes"
-        },
-        mapCity: {
-          name: "Map: City of Tears",
-          spoiler: "90/120 Geo: left of Soul Sanctum",
-          wiki: "City_of_Tears"
-        },
-        mapWaterways: {
-          name: "Map: Royal Waterways",
-          spoiler: "75/100 Geo: far left area, near Fungal",
-          wiki: "Royal_Waterways"
-        },
-        mapMines: {
-          name: "Map: Crystal Peak",
-          spoiler: "120/150 Geo: top left area",
-          wiki: "Crystal_Peak"
-        },
-        mapDeepnest: {
-          name: "Map: Deepnest",
-          spoiler: "38/50 Geo: near both Fungal Wastes entrances",
-          wiki: "Deepnest"
         },
         mapCliffs: {
           name: "Map: Howling Cliffs",
           spoiler: "75/100 Geo: left middle area, near Journal",
           wiki: "Howling_Cliffs"
         },
-        mapOutskirts: {
-          name: "Map: Kingdom's Edge + Hive",
-          spoiler: "112/150 Geo: left bottom area, inside pipe",
-          wiki: "Kingdom's_Edge"
+        mapCity: {
+          name: "Map: City of Tears",
+          spoiler: "90/120 Geo: left of Soul Sanctum",
+          wiki: "City_of_Tears"
+        },
+        mapMines: {
+          name: "Map: Crystal Peak",
+          spoiler: "120/150 Geo: top left area",
+          wiki: "Crystal_Peak"
+        },
+        mapWaterways: {
+          name: "Map: Royal Waterways",
+          spoiler: "75/100 Geo: far left area, near Fungal",
+          wiki: "Royal_Waterways"
         },
         mapRestingGrounds: {
           name: "Map: Resting Grounds",
@@ -4568,6 +4569,26 @@ var HK = {
           spoiler: "112/150 Geo: center area, near fountain",
           wiki: "Ancient_Basin"
         },
+        mapOutskirts: {
+          name: "Map: Kingdom's Edge + Hive",
+          spoiler: "112/150 Geo: left bottom area, inside pipe",
+          wiki: "Kingdom's_Edge"
+        },
+        mapFogCanyon: {
+          name: "Map: Fog Canyon",
+          spoiler: "150/200 Geo: above Teacher's Archives",
+          wiki: "Fog_Canyon"
+        },
+        mapRoyalGardens: {
+          name: "Map: Queen's Gardens",
+          spoiler: "150/200 Geo: below Fog Canyon entrance",
+          wiki: "Queen's_Gardens"
+        },
+        mapDeepnest: {
+          name: "Map: Deepnest",
+          spoiler: "38/50 Geo: near both Fungal Wastes entrances",
+          wiki: "Deepnest"
+        },
         areaMaps: {
           name: "Area Maps",
           spoiler: "Cornifer and Iselda, 13 Area Maps total",
@@ -4575,11 +4596,6 @@ var HK = {
           maxDefault: 13,
           list: ["mapCrossroads", "mapGreenpath", "mapFogCanyon", "mapRoyalGardens", "mapFungalWastes", "mapCity", "mapWaterways", "mapMines", "mapDeepnest", "mapCliffs", "mapOutskirts", "mapRestingGrounds", "mapAbyss"],
           wiki: "Map_and_Quill#Maps"
-        },
-        hasPinGrub: {
-          name: "Collector's Map",
-          spoiler: "Kingdom's Edge: Tower of Love, Love Key",
-          wiki: "Map_and_Quill#The_Collector's_Map"
         },
         hasJournal: {
           name: "Hunter's Journal",
@@ -5976,6 +5992,11 @@ var HK = {
           name: "Charm Notch #8",
           spoiler: "Dirtmouth: Troupe Leader Grimm",
           wiki: "Category:Charms#Notches"
+        },
+        hasPinGrub: {
+          name: "Collector's Map",
+          spoiler: "Kingdom's Edge: Tower of Love, Love Key",
+          wiki: "Map_and_Quill#The_Collector's_Map"
         },
         hasDreamGate: {
           name: "Dreamgate",
