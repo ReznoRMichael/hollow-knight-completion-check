@@ -2849,6 +2849,31 @@ const HK = {
           spoiler: "Dirtmouth: Troupe Leader Grimm",
           wiki: "Category:Charms#Notches"
         },
+        hasQuill: {
+          name: "Quill",
+          spoiler: "120 Geo: Iselda's Shop, updates maps with discovered areas",
+          wiki: "Map_and_Quill#Mapping_Tools"
+        },
+        hasPinBench: {
+          name: "Map Pin: Bench",
+          spoiler: "100 Geo: Iselda's Shop",
+          wiki: "Bench_(Hollow_Knight)"
+        },
+        hasPinCocoon: {
+          name: "Map Pin: Lifeblood Cocoon",
+          spoiler: "100 Geo: Iselda's Shop",
+          wiki: "Lifeblood_Cocoon"
+        },
+        hasPinDreamPlant: {
+          name: "Map Pin: Whispering Root",
+          spoiler: "150 Geo: Iselda's Shop, requires Dream Nail",
+          wiki: "Whispering_Root"
+        },
+        hasPinGuardian: {
+          name: "Map Pin: Dreamers",
+          spoiler: "Inspect the shrine in the Resting Grounds",
+          wiki: "Dreamers"
+        },
         hasPinGrub: {
           name: "Collector's Map",
           spoiler: "Kingdom's Edge: Tower of Love, Love Key",
