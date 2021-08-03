@@ -5921,15 +5921,15 @@ var HK = {
           spoiler: "Find: Hallownest, Buy: Sly, Tuk",
           wiki: "Rancid_Egg"
         },
+        jinnEggsSold: {
+          name: "Rancid Eggs Sold",
+          spoiler: "Dirtmouth: Jinn, Steel Soul Mode only",
+          wiki: "Jinn"
+        },
         tukDungEgg: {
           name: "Tuk: Free Rancid Egg",
           spoiler: "Royal Waterways: Tuk, with Defender's Crest",
           wiki: "Tuk"
-        },
-        jinnEggsSold: {
-          name: "Rancid Eggs Sold to Jinn",
-          spoiler: "Only in Steel Soul Mode",
-          wiki: "Jinn"
         },
         xunFlowerBrokeTimes: {
           name: "Delicate Flowers Destroyed",
@@ -5998,7 +5998,7 @@ var HK = {
         },
         hasQuill: {
           name: "Quill",
-          spoiler: "120 Geo: Iselda's Shop, updates maps with discovered areas",
+          spoiler: "120 Geo: Iselda's Shop, updates map with explored areas",
           wiki: "Map_and_Quill#Mapping_Tools"
         },
         hasPinBench: {
