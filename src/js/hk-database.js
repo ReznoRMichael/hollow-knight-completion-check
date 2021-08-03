@@ -1420,12 +1420,12 @@ const HK = {
           wiki: "Resting_Grounds"
         },
         mapAbyss: {
-          name: "Map: Ancient Basin + Abyss",
+          name: "Map: Ancient Basin",
           spoiler: "112/150 Geo: center area, near fountain",
           wiki: "Ancient_Basin"
         },
         mapOutskirts: {
-          name: "Map: Kingdom's Edge + Hive",
+          name: "Map: Kingdom's Edge",
           spoiler: "112/150 Geo: left bottom area, inside pipe",
           wiki: "Kingdom's_Edge"
         },
@@ -1449,9 +1449,6 @@ const HK = {
           spoiler: "Cornifer and Iselda, 13 Area Maps total",
           max: 13,
           maxDefault: 13,
-          list: [
-            "mapCrossroads", "mapGreenpath", "mapFogCanyon", "mapRoyalGardens", "mapFungalWastes", "mapCity", "mapWaterways", "mapMines", "mapDeepnest", "mapCliffs", "mapOutskirts", "mapRestingGrounds", "mapAbyss"
-          ],
           wiki: "Map_and_Quill#Maps"
         },
         hasJournal: {
