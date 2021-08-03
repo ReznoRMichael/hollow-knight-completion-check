@@ -150,7 +150,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ additions: 6 entries related to Millibelle the Banker: Account, Balance, Disappeared, Investigate Stand, Found & Talked, Reclaimed All Geo  
   ✅ additions: All Map Pins  
   ✅ addition: Collector's Map  
-  ✅ addition: Tuk: Free Rancid Egg  
+  ✅ addition: Tuk: Free Rancid Egg (while Defender's Crest equipped)  
 
   — **Godhome Statistics** changes/additions:  
   ✅ addition: Lifeblood Door Open  
