@@ -146,6 +146,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ addition: Lifeblood Core Room Arcane Egg (the only missable relic in the game)  
   ✅ addition: White Palace: Secret Room #3 (Lore Tablet)  
   ✅ additions: 6 entries related to Millibelle the Banker: Account, Balance, Disappeared, Investigate Stand, Found & Talked, Reclaimed All Geo  
+  ✅ addition: Collector's Map  
   ✅ change: Moved Menderbug and Seal of Binding to Optional Journal Entries  
 
   — **Godhome Statistics** changes/additions:  
