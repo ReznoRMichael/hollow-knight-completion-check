@@ -4523,6 +4523,51 @@ var HK = {
           spoiler: "150/200 Geo: below Fog Canyon entrance",
           wiki: "Queen's_Gardens"
         },
+        mapFungalWastes: {
+          name: "Map: Fungal Wastes",
+          spoiler: "75/100 Geo: right of Queen's Station",
+          wiki: "Fungal_Wastes"
+        },
+        mapCity: {
+          name: "Map: City of Tears",
+          spoiler: "90/120 Geo: left of Soul Sanctum",
+          wiki: "City_of_Tears"
+        },
+        mapWaterways: {
+          name: "Map: Royal Waterways",
+          spoiler: "75/100 Geo: far left area, near Fungal",
+          wiki: "Royal_Waterways"
+        },
+        mapMines: {
+          name: "Map: Crystal Peak",
+          spoiler: "120/150 Geo: top left area",
+          wiki: "Crystal_Peak"
+        },
+        mapDeepnest: {
+          name: "Map: Deepnest",
+          spoiler: "38/50 Geo: near both Fungal Wastes entrances",
+          wiki: "Deepnest"
+        },
+        mapCliffs: {
+          name: "Map: Howling Cliffs",
+          spoiler: "75/100 Geo: left middle area, near Journal",
+          wiki: "Howling_Cliffs"
+        },
+        mapOutskirts: {
+          name: "Map: Kingdom's Edge + Hive",
+          spoiler: "112/150 Geo: left bottom area, inside pipe",
+          wiki: "Kingdom's_Edge"
+        },
+        mapRestingGrounds: {
+          name: "Map: Resting Grounds",
+          spoiler: "75 Geo: Iselda's Shop",
+          wiki: "Resting_Grounds"
+        },
+        mapAbyss: {
+          name: "Map: Ancient Basin + Abyss",
+          spoiler: "112/150 Geo: center area, near fountain",
+          wiki: "Ancient_Basin"
+        },
         areaMaps: {
           name: "Area Maps",
           spoiler: "Cornifer and Iselda, 13 Area Maps total",

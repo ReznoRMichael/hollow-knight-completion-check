@@ -1424,6 +1424,26 @@ const HK = {
           spoiler: "38/50 Geo: near both Fungal Wastes entrances",
           wiki: "Deepnest"
         },
+        mapCliffs: {
+          name: "Map: Howling Cliffs",
+          spoiler: "75/100 Geo: left middle area, near Journal",
+          wiki: "Howling_Cliffs"
+        },
+        mapOutskirts: {
+          name: "Map: Kingdom's Edge + Hive",
+          spoiler: "112/150 Geo: left bottom area, inside pipe",
+          wiki: "Kingdom's_Edge"
+        },
+        mapRestingGrounds: {
+          name: "Map: Resting Grounds",
+          spoiler: "75 Geo: Iselda's Shop",
+          wiki: "Resting_Grounds"
+        },
+        mapAbyss: {
+          name: "Map: Ancient Basin + Abyss",
+          spoiler: "112/150 Geo: center area, near fountain",
+          wiki: "Ancient_Basin"
+        },
         areaMaps: {
           name: "Area Maps",
           spoiler: "Cornifer and Iselda, 13 Area Maps total",
