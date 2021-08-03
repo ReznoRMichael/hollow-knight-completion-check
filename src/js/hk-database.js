@@ -1389,50 +1389,30 @@ const HK = {
           spoiler: "60/80 Geo: just below Greenpath entrance",
           wiki: "Greenpath"
         },
-        mapFogCanyon: {
-          name: "Map: Fog Canyon",
-          spoiler: "150/200 Geo: above Teacher's Archives",
-          wiki: "Fog_Canyon"
-        },
-        mapRoyalGardens: {
-          name: "Map: Queen's Gardens",
-          spoiler: "150/200 Geo: below Fog Canyon entrance",
-          wiki: "Queen's_Gardens"
-        },
         mapFungalWastes: {
           name: "Map: Fungal Wastes",
           spoiler: "75/100 Geo: right of Queen's Station",
           wiki: "Fungal_Wastes"
-        },
-        mapCity: {
-          name: "Map: City of Tears",
-          spoiler: "90/120 Geo: left of Soul Sanctum",
-          wiki: "City_of_Tears"
-        },
-        mapWaterways: {
-          name: "Map: Royal Waterways",
-          spoiler: "75/100 Geo: far left area, near Fungal",
-          wiki: "Royal_Waterways"
-        },
-        mapMines: {
-          name: "Map: Crystal Peak",
-          spoiler: "120/150 Geo: top left area",
-          wiki: "Crystal_Peak"
-        },
-        mapDeepnest: {
-          name: "Map: Deepnest",
-          spoiler: "38/50 Geo: near both Fungal Wastes entrances",
-          wiki: "Deepnest"
         },
         mapCliffs: {
           name: "Map: Howling Cliffs",
           spoiler: "75/100 Geo: left middle area, near Journal",
           wiki: "Howling_Cliffs"
         },
-        mapOutskirts: {
-          name: "Map: Kingdom's Edge + Hive",
-          spoiler: "112/150 Geo: left bottom area, inside pipe",
-          wiki: "Kingdom's_Edge"
+        mapCity: {
+          name: "Map: City of Tears",
+          spoiler: "90/120 Geo: left of Soul Sanctum",
+          wiki: "City_of_Tears"
+        },
+        mapMines: {
+          name: "Map: Crystal Peak",
+          spoiler: "120/150 Geo: top left area",
+          wiki: "Crystal_Peak"
+        },
+        mapWaterways: {
+          name: "Map: Royal Waterways",
+          spoiler: "75/100 Geo: far left area, near Fungal",
+          wiki: "Royal_Waterways"
         },
         mapRestingGrounds: {
           name: "Map: Resting Grounds",
@@ -1444,6 +1424,26 @@ const HK = {
           spoiler: "112/150 Geo: center area, near fountain",
           wiki: "Ancient_Basin"
         },
+        mapOutskirts: {
+          name: "Map: Kingdom's Edge + Hive",
+          spoiler: "112/150 Geo: left bottom area, inside pipe",
+          wiki: "Kingdom's_Edge"
+        },
+        mapFogCanyon: {
+          name: "Map: Fog Canyon",
+          spoiler: "150/200 Geo: above Teacher's Archives",
+          wiki: "Fog_Canyon"
+        },
+        mapRoyalGardens: {
+          name: "Map: Queen's Gardens",
+          spoiler: "150/200 Geo: below Fog Canyon entrance",
+          wiki: "Queen's_Gardens"
+        },
+        mapDeepnest: {
+          name: "Map: Deepnest",
+          spoiler: "38/50 Geo: near both Fungal Wastes entrances",
+          wiki: "Deepnest"
+        },
         areaMaps: {
           name: "Area Maps",
           spoiler: "Cornifer and Iselda, 13 Area Maps total",
@@ -1453,11 +1453,6 @@ const HK = {
             "mapCrossroads", "mapGreenpath", "mapFogCanyon", "mapRoyalGardens", "mapFungalWastes", "mapCity", "mapWaterways", "mapMines", "mapDeepnest", "mapCliffs", "mapOutskirts", "mapRestingGrounds", "mapAbyss"
           ],
           wiki: "Map_and_Quill#Maps"
-        },
-        hasPinGrub: {
-          name: "Collector's Map",
-          spoiler: "Kingdom's Edge: Tower of Love, Love Key",
-          wiki: "Map_and_Quill#The_Collector's_Map"
         },
         hasJournal: {
           name: "Hunter's Journal",
@@ -2856,6 +2851,11 @@ const HK = {
           name: "Charm Notch #8",
           spoiler: "Dirtmouth: Troupe Leader Grimm",
           wiki: "Category:Charms#Notches"
+        },
+        hasPinGrub: {
+          name: "Collector's Map",
+          spoiler: "Kingdom's Edge: Tower of Love, Love Key",
+          wiki: "Map_and_Quill#The_Collector's_Map"
         },
         hasDreamGate: {
           name: "Dreamgate",
