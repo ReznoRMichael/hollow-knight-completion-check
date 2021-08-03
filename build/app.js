@@ -5991,6 +5991,61 @@ var HK = {
           spoiler: "Dirtmouth: Troupe Leader Grimm",
           wiki: "Category:Charms#Notches"
         },
+        hasQuill: {
+          name: "Quill",
+          spoiler: "120 Geo: Iselda's Shop, updates maps with discovered areas",
+          wiki: "Map_and_Quill#Mapping_Tools"
+        },
+        hasPinBench: {
+          name: "Map Pin: Bench",
+          spoiler: "100 Geo: Iselda's Shop",
+          wiki: "Bench_(Hollow_Knight)"
+        },
+        hasPinShop: {
+          name: "Map Pin: Vendor",
+          spoiler: "100 Geo: Iselda's Shop",
+          wiki: "Category:NPCs_(Hollow_Knight)#Merchants"
+        },
+        hasPinCocoon: {
+          name: "Map Pin: Lifeblood Cocoon",
+          spoiler: "100 Geo: Iselda's Shop",
+          wiki: "Lifeblood_Cocoon"
+        },
+        hasPinSpa: {
+          name: "Map Pin: Hot Springs",
+          spoiler: "100 Geo: Iselda's Shop",
+          wiki: "Hot_Springs"
+        },
+        hasPinStag: {
+          name: "Map Pin: Stag Station",
+          spoiler: "100 Geo: Iselda's Shop, unlock first Station",
+          wiki: "Stag_Station"
+        },
+        hasPinGhost: {
+          name: "Map Pin: Warrior's Grave",
+          spoiler: "100 Geo: Iselda's Shop, acquire Dream Nail",
+          wiki: "Warrior_Dreams"
+        },
+        hasPinDreamPlant: {
+          name: "Map Pin: Whispering Root",
+          spoiler: "150 Geo: Iselda's Shop, acquire Dream Nail",
+          wiki: "Whispering_Root"
+        },
+        hasPinGuardian: {
+          name: "Map Pin: Dreamers",
+          spoiler: "Resting Grounds: Inspect the shrine",
+          wiki: "Dreamers"
+        },
+        hasPinTram: {
+          name: "Map Pin: Tram",
+          spoiler: "100 Geo: Iselda's Shop, acquire Tram Pass",
+          wiki: "Tram"
+        },
+        hasPinBlackEgg: {
+          name: "Map Pin: Temple of the Black Egg",
+          spoiler: "City of Tears: Inspect fountain",
+          wiki: "Temple_of_the_Black_Egg"
+        },
         hasPinGrub: {
           name: "Collector's Map",
           spoiler: "Kingdom's Edge: Tower of Love, Love Key",
