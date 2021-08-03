@@ -2881,13 +2881,33 @@ const HK = {
         },
         hasPinGhost: {
           name: "Map Pin: Warrior's Grave",
-          spoiler: "100 Geo: Iselda's Shop, acquire Dream Nail",
+          spoiler: "180 Geo: Iselda's Shop, acquire Dream Nail",
           wiki: "Warrior_Dreams"
         },
         hasPinDreamPlant: {
           name: "Map Pin: Whispering Root",
           spoiler: "150 Geo: Iselda's Shop, acquire Dream Nail",
           wiki: "Whispering_Root"
+        },
+        hasMarker_r: {
+          name: "Map Pin: Shell Marker",
+          spoiler: "100 Geo: Iselda's Shop",
+          wiki: "Iselda#Map_Pins"
+        },
+        hasMarker_b: {
+          name: "Map Pin: Scarab Marker",
+          spoiler: "100 Geo: Iselda's Shop",
+          wiki: "Iselda#Map_Pins"
+        },
+        hasMarker_y: {
+          name: "Map Pin: Token Marker",
+          spoiler: "100 Geo: Iselda's Shop, acquire Mothwing Cloak",
+          wiki: "Iselda#Map_Pins"
+        },
+        hasMarker_w: {
+          name: "Map Pin: Gleaming Marker",
+          spoiler: "210 Geo: Iselda's Shop, acquire Mothwing Cloak",
+          wiki: "Iselda#Map_Pins"
         },
         hasPinGuardian: {
           name: "Map Pin: Dreamers",
