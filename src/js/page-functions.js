@@ -208,6 +208,7 @@ function GenerateInnerHTML(db) {
   let iconPartial = SYMBOL_PARTIAL;
   let iconClock = SYMBOL_CLOCK;
   let iconNull = SYMBOL_EMPTY;
+  let iconBindingNail = SYMBOL_BINDING_NAIL;
 
   let finalHTMLFill = "";
   let textFill = "";
@@ -457,7 +458,7 @@ function GenerateInnerHTML(db) {
 
         break;
 
-        /* ###################### Create all other sections ##################### */
+      /* ######################### Create all other sections ################################################################## */
 
       default:
 
@@ -507,6 +508,10 @@ function GenerateInnerHTML(db) {
                 obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
+              case "bindingNail":
+                obj.icon = iconBindingNail;
+                break;
+  
               case "red":
                 obj.icon = iconRed;
                 break;

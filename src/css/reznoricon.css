@@ -1,7 +1,7 @@
 [class^="reznoricon-"],
 [class*=" reznoricon-"] {
     position: relative;
-    padding-left: 1.6em;
+    padding-left: 1.48em;
 }
 
 [class^="reznoricon-"]:before,
@@ -12,13 +12,16 @@
     top: 0;
     width: 1.2em;
     height: 1.2em;
-    margin-right: .2em;
+    padding: 0.1em 0 0.1em 0.1em;
+    margin: 0;
     text-align: center;
     line-height: 0;
-    margin-left: .2em;
-    padding-top: 0.1em;
+    content: "";
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .reznoricon-binding-nail:before {
-    content: url("../img/binding-nail.png");
+    background-image: url("../img/binding-nail.png");
 }

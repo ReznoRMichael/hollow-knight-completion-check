@@ -1970,7 +1970,16 @@ function CheckPantheon(db, sectionName, playerData) {
   for (let entry in entries) {
 
     if (playerData[property][entry] === true) {
-      SetIconGreen(section, entry);
+
+      switch(entry) {
+
+        case "boundNail":
+          SetIcon(section, entry, "bindingNail");
+          break;
+
+        default:
+          SetIconGreen(section, entry);
+      }
     } else {
       SetIconRed(section, entry);
     }

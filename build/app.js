@@ -1796,7 +1796,14 @@ function CheckPantheon(db, sectionName, playerData) {
 
   for (var entry in entries) {
     if (playerData[property][entry] === true) {
-      (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, entry);
+      switch (entry) {
+        case "boundNail":
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "bindingNail");
+          break;
+
+        default:
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, entry);
+      }
     } else {
       (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, entry);
     }
@@ -6851,6 +6858,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "SetIconPartialJournal": () => (/* binding */ SetIconPartialJournal),
 /* harmony export */   "SetIconRed": () => (/* binding */ SetIconRed),
 /* harmony export */   "SetIconNone": () => (/* binding */ SetIconNone),
+/* harmony export */   "SetIcon": () => (/* binding */ SetIcon),
 /* harmony export */   "ObjectLength": () => (/* binding */ ObjectLength),
 /* harmony export */   "TranslateMapName": () => (/* binding */ TranslateMapName)
 /* harmony export */ });
@@ -6915,14 +6923,6 @@ function SetIconRed() {
   section.entries[entry].icon = "red";
 }
 /**
- * Switches global variable to an "information" symbol
- */
-
-/* function CurrentDataInfo() {
-    completionSymbol = SYMBOL_INFO;
-} */
-
-/**
  * Switches global variable to no symbol (span with left padding)
  */
 
@@ -6931,6 +6931,17 @@ function SetIconNone() {
   var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var entry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
   section.entries[entry].icon = "none";
+}
+/**
+ * Switches global variable to a chosen symbol
+ */
+
+
+function SetIcon() {
+  var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var entry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+  var icon = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
+  section.entries[entry].icon = icon;
 }
 /**
  * Checks the length of a JavaScript Object like Array.length
@@ -7024,6 +7035,8 @@ var SYMBOL_PARTIAL = "<i class='icon-ok-squared partial'></i>"; // "✔ "
 var SYMBOL_CLOCK = "<i class='icon-clock'></i>"; // "🕑 "
 
 var SYMBOL_FILE = "<i class='icon-doc-text-inv'></i>"; // "📁"
+
+var SYMBOL_BINDING_NAIL = "<i class='reznoricon-binding-nail'></i>"; // Nail Binding
 
 var SYMBOL_EMPTY = "<span class='padding-left'></span>";
 var FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
@@ -7189,6 +7202,7 @@ function GenerateInnerHTML(db) {
   var iconPartial = SYMBOL_PARTIAL;
   var iconClock = SYMBOL_CLOCK;
   var iconNull = SYMBOL_EMPTY;
+  var iconBindingNail = SYMBOL_BINDING_NAIL;
   var finalHTMLFill = "";
   var textFill = "";
   var Img = "";
@@ -7395,7 +7409,7 @@ function GenerateInnerHTML(db) {
         textFill += SingleEntryFill(obj);
         break;
 
-      /* ###################### Create all other sections ##################### */
+      /* ######################### Create all other sections ################################################################## */
 
       default:
         /* ###################### Create section descriptions under each H2 title ##################### */
@@ -7438,6 +7452,10 @@ function GenerateInnerHTML(db) {
                 /* -------- Prevents textSuffix blurring when a player has already discovered the entry --------- */
 
                 obj.span[0] = "<span class='spoiler-span-green'>";
+                break;
+
+              case "bindingNail":
+                obj.icon = iconBindingNail;
                 break;
 
               case "red":
