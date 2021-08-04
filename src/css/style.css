@@ -103,20 +103,33 @@ strong {
 }
 
 h1 {
-  font-size: 1.7rem;
-  color: #d9f3ff;
-  margin: 0.6rem 0;
+  font-size: 2.3rem;
+  color: #fff;
+  margin: 2rem 0 0 0;
 }
 
 #h1-title {
+  font-family: 'Cinzel', 'Times New Roman', serif;
+  font-weight: 400;
   text-align: center;
+  line-height: 2rem;
+}
+
+#sub-title {
+  font-family: 'Cinzel', 'Times New Roman', serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  line-height: 1.5rem;
 }
 
 h2 {
+  font-family: 'Cinzel', 'Times New Roman', serif;
   text-align: center;
   margin: 0.6rem 0;
-  color: rgba(231, 251, 255, 0.6);
-  font-weight: 700;
+  color: #fff;
+  font-weight: 400;
 }
 
 h6 {
