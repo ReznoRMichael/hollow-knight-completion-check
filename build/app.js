@@ -207,7 +207,8 @@ function HKCheckCompletion(jsonObject) {
 
   CheckPantheon(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "pantheonOfTheMaster", HKPlayerData);
   CheckPantheon(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "pantheonOfTheArtist", HKPlayerData);
-  CheckPantheon(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "pantheonOfTheSage", HKPlayerData); // ------------------------- Hints ----------------------------- //
+  CheckPantheon(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "pantheonOfTheSage", HKPlayerData);
+  CheckPantheon(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "pantheonOfTheKnight", HKPlayerData); // ------------------------- Hints ----------------------------- //
 
   CheckHintsTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints.entries, HKPlayerData, HKWorldItems); // ------------------------- Extended game completion check ----------------------------- //
 
@@ -6417,6 +6418,54 @@ var HK = {
         },
         noHits: {
           name: "P3 No Damage",
+          spoiler: "Complete without taking a single hit",
+          wiki: "Pantheons"
+        }
+      }
+    },
+    pantheonOfTheKnight: {
+      h2: "Pantheon of the Knight (P4)",
+      id: "hk-pantheon-knight",
+      property: "bossDoorStateTier4",
+      description: "Seek the Pure God",
+      entries: {
+        unlocked: {
+          name: "P4 Unlocked",
+          spoiler: "Complete 3 previous Pantheons to unlock",
+          wiki: "Pantheon_of_the_Knight"
+        },
+        completed: {
+          name: "P4 Completed",
+          spoiler: "Defeat all bosses in a row to complete",
+          wiki: "Pantheon_of_the_Knight"
+        },
+        boundNail: {
+          name: "P4 Binding: Nail",
+          spoiler: "Complete with the Nail binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundShell: {
+          name: "P4 Binding: Shell",
+          spoiler: "Complete with the Shell binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundCharms: {
+          name: "P4 Binding: Charms",
+          spoiler: "Complete with the Charm binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundSoul: {
+          name: "P4 Binding: Soul",
+          spoiler: "Complete with the Soul binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        allBindings: {
+          name: "P4 All Bindings",
+          spoiler: "Complete with all bindings active at once",
+          wiki: "Pantheons#Bindings"
+        },
+        noHits: {
+          name: "P4 No Damage",
           spoiler: "Complete without taking a single hit",
           wiki: "Pantheons"
         }
