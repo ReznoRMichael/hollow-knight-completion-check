@@ -3301,6 +3301,54 @@ const HK = {
           wiki: "Pantheons"
         },
       },
+    },
+    pantheonOfHallownest: {
+      h2: "Pantheon of Hallownest (P5)",
+      id: "hk-pantheon-hallownest",
+      property: "bossDoorStateTier5",
+      description: "Seek the Kingdom's Forgotten Light",
+      entries: {
+        unlocked: {
+          name: "P5 Unlocked",
+          spoiler: "Complete 4 previous Pantheons to unlock",
+          wiki: "Pantheon_of_Hallownest"
+        },
+        completed: {
+          name: "P5 Completed",
+          spoiler: "Defeat all bosses in a row to complete",
+          wiki: "Pantheon_of_Hallownest"
+        },
+        boundNail: {
+          name: "P5 Binding: Nail",
+          spoiler: "Complete with the Nail binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundShell: {
+          name: "P5 Binding: Shell",
+          spoiler: "Complete with the Shell binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundCharms: {
+          name: "P5 Binding: Charms",
+          spoiler: "Complete with the Charm binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundSoul: {
+          name: "P5 Binding: Soul",
+          spoiler: "Complete with the Soul binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        allBindings: {
+          name: "P5 All Bindings",
+          spoiler: "Complete with all bindings active at once",
+          wiki: "Pantheons#Bindings"
+        },
+        noHits: {
+          name: "P5 No Damage",
+          spoiler: "Complete without taking a single hit",
+          wiki: "Pantheons"
+        },
+      },
     }
   },
 };
