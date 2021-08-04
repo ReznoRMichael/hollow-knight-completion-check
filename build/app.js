@@ -436,7 +436,8 @@ function CheckExtendedCompletion(db) {
           /* Do not count (ignore) these entries at all */
           switch (entry) {
             case "oldNail":
-            case "pantheonMaster":
+            case "pantheonMaster": // Pantheons are counted in Godmaster section
+
             case "pantheonArtist":
             case "pantheonSage":
             case "pantheonKnight":
@@ -6234,7 +6235,7 @@ var HK = {
       }
     },
 
-    /* ################ Godhome Statistics ################### */
+    /* ################################################# Godhome Statistics ############################################## */
     godhomeStatistics: {
       h2: "Godhome Statistics",
       id: "hk-godhome-statistics",
@@ -6332,6 +6333,8 @@ var HK = {
         }
       }
     },
+
+    /* ################################################### Pantheon of the Artist #################################################### */
     pantheonOfTheArtist: {
       h2: "Pantheon of the Artist (P2)",
       id: "hk-pantheon-artist",
@@ -6380,6 +6383,8 @@ var HK = {
         }
       }
     },
+
+    /* ################################################### Pantheon of the Sage #################################################### */
     pantheonOfTheSage: {
       h2: "Pantheon of the Sage (P3)",
       id: "hk-pantheon-sage",
@@ -6428,6 +6433,8 @@ var HK = {
         }
       }
     },
+
+    /* ################################################### Pantheon of the Knight #################################################### */
     pantheonOfTheKnight: {
       h2: "Pantheon of the Knight (P4)",
       id: "hk-pantheon-knight",
@@ -6476,6 +6483,8 @@ var HK = {
         }
       }
     },
+
+    /* ################################################### Pantheon of Hallownest #################################################### */
     pantheonOfHallownest: {
       h2: "Pantheon of Hallownest (P5)",
       id: "hk-pantheon-hallownest",
