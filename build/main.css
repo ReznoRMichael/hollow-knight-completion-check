@@ -228,7 +228,7 @@ h1 {
   font-weight: 400;
   text-align: center;
   font-size: 1.2rem;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
   line-height: 1.5rem;
 }
 
@@ -955,8 +955,10 @@ input[type="radio"]:focus:not(:focus-visible) + label {
 
 .percent-box {
   display: inline-block;
+  font-family: 'Heebo', sans-serif;
   text-align: center;
   font-size: 1.1rem;
+  font-weight: 700;
   vertical-align: middle;
   color: #d9f3ff;
   margin: 0 0.5rem 0rem 0.5rem;
