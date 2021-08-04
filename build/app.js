@@ -222,80 +222,6 @@ function PrepareHTMLString(section) {
   return "\n    ".concat(divStart, "\n        ").concat(icon).concat(b[0]).concat(textPrefix).concat(b[1]).concat(span[0]).concat(pSpan).concat(spoilerSpan[0]).concat(textSuffix).concat(spoilerSpan[1]).concat(span[1], "\n    ").concat(divEnd, "\n    ");
 }
 /**
- * Switches global variable to a "completed" symbol. Adds +1 or +2 to percent property.
- */
-
-
-function SetIconGreen() {
-  var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var entry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
-
-  /* Increase section percentage except the Game Status and Hints sections */
-  switch (section.id) {
-    case "hk-intro":
-    case "hk-hints":
-      break;
-
-    case "hk-equipment":
-      // double % for equipment
-      section.percent += 2;
-      break;
-
-    default:
-      section.percent++;
-  }
-
-  section.entries[entry].icon = "green";
-}
-/**
- * Switches global variable to a "partially completed" symbol (prevents blurring the textPrefix).
- */
-
-
-function SetIconPartial() {
-  var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var entry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
-  section.entries[entry].icon = "partial";
-}
-/**
- * Switches global variable to a "partially completed" symbol (prevents blurring whole entry).
- */
-
-
-function SetIconPartialJournal() {
-  var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var entry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
-  section.entries[entry].icon = "partialJournal";
-}
-/**
- * Switches global variable to a "not completed" symbol
- */
-
-
-function SetIconRed() {
-  var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var entry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
-  section.entries[entry].icon = "red";
-}
-/**
- * Switches global variable to an "information" symbol
- */
-
-/* function CurrentDataInfo() {
-    completionSymbol = SYMBOL_INFO;
-} */
-
-/**
- * Switches global variable to no symbol (span with left padding)
- */
-
-
-function SetIconNone() {
-  var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var entry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
-  section.entries[entry].icon = "none";
-}
-/**
  * Fills HTML with the playTime value of the save file
  * @param {object} section ID of the HTML element for data appending
  * @param {number} playTime Number of total gameplay time in seconds
@@ -356,7 +282,7 @@ function CheckCompletionPercent(section, playerData) {
     section.entries.gameCompletion.spoilerAfter = section.entries.gameCompletion.spoilerAfterBaseGame;
   }
 
-  completionPercentage >= maxPercent ? SetIconGreen(section, "gameCompletion") : SetIconRed(section, "gameCompletion");
+  completionPercentage >= maxPercent ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, "gameCompletion") : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, "gameCompletion");
   /* let textFill = "Game Completion:" + pSpan + "<b>" + completionPercentage + " %</b>" + pSpan + "(out of " + section.maxPercent + " %)"; */
   // document.getElementById(section.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
 }
@@ -542,7 +468,7 @@ function CheckExtendedCompletion(db) {
 
 function CheckSaveFileVersion(section) {
   var saveVersion = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro.entries.saveVersion.spoiler;
-  SetIconNone(section, section.entries.saveVersion.id);
+  (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, section.entries.saveVersion.id);
   section.entries.saveVersion.spoiler = "".concat(saveVersion);
   /* let textFill = `Save Version:${pSpan}<b>${saveVersion}</b>${pSpan}`; */
   // document.getElementById(section.id).innerHTML += divStart + completionSymbol + textFill + divEnd;
@@ -697,7 +623,7 @@ function CheckIfDataTrue(section, dataObject, playerData) {
     switch (i) {
       case "gotCharm_36":
         // prevents green checkbox and adding 1% when only got one white fragment
-        playerData.gotQueenFragment === true && playerData.gotKingFragment === true ? SetIconGreen(section, i) : SetIconRed(section, i);
+        playerData.gotQueenFragment === true && playerData.gotKingFragment === true ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
       case "gotCharm_37":
@@ -710,7 +636,7 @@ function CheckIfDataTrue(section, dataObject, playerData) {
       case "hasGodfinder":
         // fades out the entries if save file is from older game versions
         if (playerData.hasOwnProperty(i) === false) {
-          SetIconNone(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
           dataObject[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
 
@@ -727,18 +653,18 @@ function CheckIfDataTrue(section, dataObject, playerData) {
               dataObject[i].name = dataObject[i].nameNightmareKing;
               dataObject[i].spoiler = dataObject[i].spoilerNightmareKing;
               dataObject[i].wiki = dataObject[i].wikiNightmareKing;
-              SetIconGreen(section, i);
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
               break;
 
             case 5:
               dataObject[i].name = dataObject[i].nameBanishment;
               dataObject[i].spoiler = dataObject[i].spoilerBanishment;
               dataObject[i].wiki = dataObject[i].wikiBanishment;
-              SetIconGreen(section, i);
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
               break;
 
             default:
-              SetIconRed(section, i);
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
               dataObject[i].name = dataObject[i].nameDefault;
               dataObject[i].spoiler = dataObject[i].spoilerDefault;
               dataObject[i].wiki = dataObject[i].wikiDefault;
@@ -748,7 +674,7 @@ function CheckIfDataTrue(section, dataObject, playerData) {
         }
 
         if (i === "gotCharm_40") {
-          SetIconRed(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
           dataObject[i].name = dataObject[i].nameDefault;
           dataObject[i].spoiler = dataObject[i].spoilerDefault;
           dataObject[i].wiki = dataObject[i].wikiDefault;
@@ -759,7 +685,7 @@ function CheckIfDataTrue(section, dataObject, playerData) {
                 dataObject[i].name = dataObject[i].nameGrimmchildP1;
                 dataObject[i].spoiler = dataObject[i].spoilerGrimmchildP1;
                 dataObject[i].wiki = dataObject[i].wikiGrimmchild;
-                SetIconGreen(section, i);
+                (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
               }
 
               break;
@@ -768,28 +694,28 @@ function CheckIfDataTrue(section, dataObject, playerData) {
               dataObject[i].name = dataObject[i].nameGrimmchildP2;
               dataObject[i].spoiler = dataObject[i].spoilerGrimmchildP2;
               dataObject[i].wiki = dataObject[i].wikiGrimmchild;
-              SetIconGreen(section, i);
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
               break;
 
             case 3:
               dataObject[i].name = dataObject[i].nameGrimmchildP3;
               dataObject[i].spoiler = dataObject[i].spoilerGrimmchildP3;
               dataObject[i].wiki = dataObject[i].wikiGrimmchild;
-              SetIconGreen(section, i);
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
               break;
 
             case 4:
               dataObject[i].name = dataObject[i].nameGrimmchildP4;
               dataObject[i].spoiler = dataObject[i].spoilerGrimmchildP4;
               dataObject[i].wiki = dataObject[i].wikiGrimmchild;
-              SetIconGreen(section, i);
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
               break;
 
             case 5:
               dataObject[i].name = dataObject[i].nameCarefreeMelody;
               dataObject[i].spoiler = dataObject[i].spoilerCarefreeMelody;
               dataObject[i].wiki = dataObject[i].wikiCarefreeMelody;
-              SetIconGreen(section, i);
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
               break;
 
             default:
@@ -801,7 +727,7 @@ function CheckIfDataTrue(section, dataObject, playerData) {
           break;
         }
 
-        playerData[i] === true ? SetIconGreen(section, i) : SetIconRed(section, i);
+        playerData[i] === true ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
       case "bossGruzMother":
@@ -822,7 +748,7 @@ function CheckIfDataTrue(section, dataObject, playerData) {
       case "vesselFragmentCityOfTears":
       case "vesselFragmentDeepnest":
       case "vesselFragmentFountain":
-        WorldDataActivated(dataObject[i].id, dataObject[i].sceneName, worldData) ? SetIconGreen(section, i) : SetIconRed(section, i);
+        WorldDataActivated(dataObject[i].id, dataObject[i].sceneName, worldData) ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
       case "pantheonMaster":
@@ -832,22 +758,22 @@ function CheckIfDataTrue(section, dataObject, playerData) {
         checkText = CheckGodmasterDoors(dataObject[i], playerData);
 
         if (checkText === "PropertyNotFound") {
-          SetIconNone(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
           dataObject[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
 
           break;
         } else if (checkText === "PantheonCompleted") {
-          SetIconGreen(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
           break;
         } else {
-          SetIconRed(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         }
 
         break;
 
       default:
-        playerData[i] === true ? SetIconGreen(section, i) : SetIconRed(section, i);
+        playerData[i] === true ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
     }
     /* sFillText += PrepareHTMLString(section, textPrefix, textSuffix, wiki); */
 
@@ -869,19 +795,19 @@ function CheckSpellLevel(section, dataObject, playerData) {
     switch (i) {
       case "vengefulSpirit":
       case "shadeSoul":
-        playerData.fireballLevel >= dataObject[i].fireballLevel ? SetIconGreen(section, i) : SetIconRed(section, i);
+        playerData.fireballLevel >= dataObject[i].fireballLevel ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
         break;
 
       case "desolateDive":
       case "descendingDark":
-        playerData.quakeLevel >= dataObject[i].quakeLevel ? SetIconGreen(section, i) : SetIconRed(section, i);
+        playerData.quakeLevel >= dataObject[i].quakeLevel ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
         break;
 
       case "howlingWraiths":
       case "abyssShriek":
-        playerData.screamLevel >= dataObject[i].screamLevel ? SetIconGreen(section, i) : SetIconRed(section, i);
+        playerData.screamLevel >= dataObject[i].screamLevel ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
         break;
 
@@ -903,7 +829,7 @@ function CheckWarriorDreams(section, dataObject, playerData) {
   var sFillText = "";
 
   for (var i in dataObject) {
-    playerData[i] >= 2 ? SetIconGreen(section, i) : SetIconRed(section, i);
+    playerData[i] >= 2 ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
     sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
   } // AppendHTML(section, sFillText);
 
@@ -941,7 +867,7 @@ function CheckNailUpgrades(section, dataObject, playerData) {
   var sFillText = "";
 
   for (var i = 0; i < 5; i++) {
-    playerData.nailSmithUpgrades >= i ? SetIconGreen(section, nail[i]) : SetIconRed(section, nail[i]);
+    playerData.nailSmithUpgrades >= i ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, nail[i]) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, nail[i]);
     sFillText += PrepareHTMLString(section, dataObject[nail[i]].name, dataObject[nail[i]].spoiler, dataObject[nail[i]].wiki);
   }
 
@@ -1101,7 +1027,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         if (i === "greyPrinceDefeats") {
           // backwards compatibility with earlier game versions
           if (playerData.hasOwnProperty(i) === false) {
-            SetIconNone(section, i);
+            (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
             dataObject[i].disabled = true; // textPrefix = `<del>${dataObject[i].name}</del>`;
 
             break;
@@ -1113,7 +1039,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         if (i === "whiteDefenderDefeats") {
           // backwards compatibility with earlier game versions
           if (playerData.hasOwnProperty(i) === false) {
-            SetIconNone(section, i);
+            (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
             dataObject[i].disabled = true; // textPrefix = `<del>${dataObject[i].name}</del>`;
 
             break;
@@ -1121,11 +1047,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         }
 
         if (amount >= dataObject[i].max) {
-          SetIconGreen(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else if (amount > 0) {
-          SetIconPartial(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconPartial)(section, i);
         } else {
-          SetIconNone(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
         }
 
         break;
@@ -1139,15 +1065,15 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         dataObject[i].amount = amount;
 
         if (amount > 0 && i == "geoPool") {
-          SetIconPartial(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconPartial)(section, i);
         } else {
-          SetIconNone(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
         }
 
         if (i === "jinnEggsSold") {
           // fade out if not on Steel Soul
           if (playerData.permadeathMode < 1) {
-            SetIconNone(section, i);
+            (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
             dataObject[i].disabled = true;
           }
         }
@@ -1157,12 +1083,12 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "tukDungEgg":
         // fade out if on Steel Soul
         if (playerData.permadeathMode > 0) {
-          SetIconNone(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
           dataObject[i].disabled = true;
           continue;
         }
 
-        playerData[i] === true ? SetIconGreen(section, i) : SetIconRed(section, i);
+        playerData[i] === true ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
       case "bankerBalance":
@@ -1174,32 +1100,32 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         }
 
         dataObject[i].amount = amount;
-        SetIconNone(section, i);
+        (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
         break;
 
       case "millibelleLeft":
         if (playerData.bankerTheft >= 1) {
-          SetIconGreen(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else {
-          SetIconRed(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         }
 
         break;
 
       case "millibelleCheckedStand":
         if (playerData.bankerTheft >= 2) {
-          SetIconGreen(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else {
-          SetIconRed(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         }
 
         break;
 
       case "millibelleReclaimedAllGeo":
         if (playerData.bankerTheft >= 1 && playerData.bankerBalance <= 0) {
-          SetIconGreen(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else {
-          SetIconRed(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         }
 
         break;
@@ -1213,9 +1139,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         dataObject[i].activated = activated;
 
         if (activated >= dataObject[i].max) {
-          SetIconGreen(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else {
-          SetIconNone(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
         }
 
         break;
@@ -1229,24 +1155,24 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         dataObject[i].activated = activated;
         /* textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`; */
 
-        SetIconNone(section, i);
+        (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
         break;
 
       case "shopkeeperKey":
-        playerData.hasSlykey === true || playerData.gaveSlykey === true ? SetIconGreen(section, i) : SetIconRed(section, i);
+        playerData.hasSlykey === true || playerData.gaveSlykey === true ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
       case "elegantKey":
-        playerData.hasWhiteKey === true || playerData.usedWhiteKey === true ? SetIconGreen(section, i) : SetIconRed(section, i);
+        playerData.hasWhiteKey === true || playerData.usedWhiteKey === true ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
       case "loveKey":
-        playerData.hasLoveKey === true || playerData.openedLoveDoor === true ? SetIconGreen(section, i) : SetIconRed(section, i);
+        playerData.hasLoveKey === true || playerData.openedLoveDoor === true ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
       case "paleOreSeer":
         // #2
-        playerData.dreamReward3 === true ? SetIconGreen(section, i) : SetIconRed(section, i);
+        playerData.dreamReward3 === true ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
       /* -------------------- Interactables ------------------------------- */
@@ -1272,7 +1198,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "pathOfPainEntrance":
       case "whiteLadyRoom":
       case "throneRoomLoreTablet":
-        FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? SetIconGreen(section, i) : SetIconRed(section, i);
+        FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
       case "relicsWandererJournal":
@@ -1282,11 +1208,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         total = playerData[dataObject[i].nameHeld] + playerData[dataObject[i].nameSold];
 
         if (total >= dataObject[i].max) {
-          SetIconGreen(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else if (total > 0) {
-          SetIconPartial(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconPartial)(section, i);
         } else {
-          SetIconNone(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
         }
 
         dataObject[i].amount = total;
@@ -1295,65 +1221,65 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         break;
 
       case "arcaneEggLifebloodCoreRoom":
-        FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? SetIconGreen(section, i) : SetIconNone(section, i);
+        FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
         break;
 
       case "pantheonHallownest":
         if (playerData.hasOwnProperty("bossDoorStateTier5") === false) {
-          SetIconNone(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
           dataObject[i].disabled = true;
         } else {
-          playerData.bossDoorStateTier5.completed === true ? SetIconGreen(section, i) : SetIconRed(section, i);
+          playerData.bossDoorStateTier5.completed === true ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         }
 
         break;
 
       case "killsBindingSeal":
         if (playerData.hasOwnProperty(i) === false) {
-          SetIconNone(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
           dataObject[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
 
           break;
         }
 
-        playerData[i] == 0 ? SetIconGreen(section, i) : SetIconRed(section, i);
+        playerData[i] == 0 ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
       case "killsBigBuzzer":
-        playerData[i] == 0 ? SetIconGreen(section, i) : SetIconRed(section, i);
+        playerData[i] == 0 ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
       case "killedVoidIdol_1":
         if (playerData.hasOwnProperty(i) === false) {
-          SetIconNone(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
           dataObject[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
 
           break;
         }
 
-        playerData[i] === true ? SetIconGreen(section, i) : SetIconRed(section, i);
-        if (playerData[i] === false && (playerData.killedVoidIdol_2 === true || playerData.killedVoidIdol_3 === true)) SetIconGreen(section, i);
+        playerData[i] === true ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
+        if (playerData[i] === false && (playerData.killedVoidIdol_2 === true || playerData.killedVoidIdol_3 === true)) (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         break;
 
       case "killedVoidIdol_2":
         if (playerData.hasOwnProperty(i) === false) {
-          SetIconNone(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
           dataObject[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
 
           break;
         }
 
-        playerData[i] === true ? SetIconGreen(section, i) : SetIconRed(section, i);
-        if (playerData[i] === false && playerData.killedVoidIdol_3 === true) SetIconGreen(section, i);
+        playerData[i] === true ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
+        if (playerData[i] === false && playerData.killedVoidIdol_3 === true) (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         break;
 
       case "greyPrinceDefeated":
         // compatibility with earlier game versions
         if (playerData.hasOwnProperty(i) === false) {
-          SetIconNone(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
           dataObject[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
 
@@ -1363,12 +1289,12 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           /* textPrefix = `<del>${textPrefix}</del>`; */
         }
 
-        playerData[i] === true ? SetIconGreen(section, i) : SetIconNone(section, i);
-        if (playerData.zoteRescuedBuzzer === true && playerData[i] === false) SetIconRed(section, i);
+        playerData[i] === true ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
+        if (playerData.zoteRescuedBuzzer === true && playerData[i] === false) (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
       case "zoteStatus":
-        SetIconRed(section, i);
+        (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         dataObject[i].name = dataObject[i].nameDefault;
         dataObject[i].spoiler = dataObject[i].spoilerDefault;
 
@@ -1377,13 +1303,13 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           textSuffix = dataObject[i].spoilerNeglect; */
           dataObject[i].name = dataObject[i].nameNeglect;
           dataObject[i].spoiler = dataObject[i].spoilerNeglect;
-          SetIconGreen(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else if (playerData.killedZote === true) {
           /* textPrefix = dataObject[i].nameRivalry;
           textSuffix = dataObject[i].spoilerRivalry; */
           dataObject[i].name = dataObject[i].nameRivalry;
           dataObject[i].spoiler = dataObject[i].spoilerRivalry;
-          SetIconGreen(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else if (playerData.zoteRescuedBuzzer === false) {
           if (playerData.hasWalljump === false) {
             /* textPrefix = dataObject[i].nameTrappedVengefly;
@@ -1415,7 +1341,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         break;
 
       case "nailsmithStatus":
-        SetIconRed(section, i);
+        (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         dataObject[i].name = dataObject[i].nameDefault;
         dataObject[i].spoiler = dataObject[i].spoilerDefault;
 
@@ -1424,13 +1350,13 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           textSuffix = dataObject[i].spoilerPurity; */
           dataObject[i].name = dataObject[i].namePurity;
           dataObject[i].spoiler = dataObject[i].spoilerPurity;
-          SetIconGreen(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else if (playerData.nailsmithConvoArt === true) {
           /* textPrefix = dataObject[i].nameHappyCouple;
           textSuffix = dataObject[i].spoilerHappyCouple; */
           dataObject[i].name = dataObject[i].nameHappyCouple;
           dataObject[i].spoiler = dataObject[i].spoilerHappyCouple;
-          SetIconGreen(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else if (playerData.nailsmithSpared === true) {
           /* textPrefix = dataObject[i].nameSheoHutWaiting;
           textSuffix = dataObject[i].spoilerSheoHutWaiting; */
@@ -1468,11 +1394,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "openedStagNest":
         /* backwards compatibility with earlier game versions */
         if (playerData.hasOwnProperty(i) === false) {
-          SetIconNone(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
           dataObject[i].disabled = true;
           break;
         } else if (playerData[i] === true) {
-          SetIconGreen(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
           /* Create amount property before incrementing (avoids NaN) */
 
           if (!dataObject.stagStationsOpened.hasOwnProperty("amount")) {
@@ -1483,7 +1409,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
           dataObject.stagStationsOpened.amount++;
         } else {
-          SetIconRed(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         }
 
         break;
@@ -1496,9 +1422,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         }
 
         if (dataObject[i].amount >= dataObject[i].max) {
-          SetIconGreen(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else {
-          SetIconRed(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         }
 
         break;
@@ -1517,7 +1443,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "mapRoyalGardens":
       case "mapDeepnest":
         if (playerData[i] === true) {
-          SetIconGreen(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
           /* Create amount property before incrementing (avoids NaN) */
 
           if (!dataObject.areaMaps.hasOwnProperty("amount")) {
@@ -1528,16 +1454,16 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
           dataObject.areaMaps.amount++;
         } else {
-          SetIconRed(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         }
 
         break;
 
       case "areaMaps":
         if (dataObject[i].amount >= dataObject[i].max) {
-          SetIconGreen(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else {
-          SetIconRed(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         }
 
         break;
@@ -1545,14 +1471,14 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       default:
         // backwards compatibility with earlier game versions
         if (playerData.hasOwnProperty(i) === false) {
-          SetIconNone(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
           dataObject[i].disabled = true; // textPrefix = `<del>${dataObject[i].name}</del>`;
 
           break;
         } else if (playerData[i] === true) {
-          SetIconGreen(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else {
-          SetIconRed(section, i);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         }
 
     } // end switch (i)
@@ -1737,9 +1663,9 @@ function CheckMrMushroomState(section, entry) {
   var mrMushroomState = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
 
   if (mrMushroomState >= entry.state) {
-    SetIconGreen(section, "mrMushroomState".concat(entry.state));
+    (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, "mrMushroomState".concat(entry.state));
   } else {
-    SetIconRed(section, "mrMushroomState".concat(entry.state));
+    (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, "mrMushroomState".concat(entry.state));
   }
 }
 /**
@@ -1764,7 +1690,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
     /* Entry Shade always unlocked */
 
     if (entry === "ShadeJournal") {
-      SetIconGreen(section, entry);
+      (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, entry);
       /* Proceed to next entry immediately */
 
       continue;
@@ -1780,7 +1706,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
           if (playerData.zoteDead === true || playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
             entries[entry].disabled = true;
             entries[entry].name = nameDefault;
-            SetIconNone(section, entry);
+            (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, entry);
             continue;
           }
 
@@ -1791,7 +1717,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
           if (playerData.destroyedNightmareLantern === true && playerData.killedFlameBearerLarge === false) {
             entries[entry].disabled = true;
             entries[entry].name = nameDefault;
-            SetIconNone(section, entry);
+            (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, entry);
             continue;
           }
 
@@ -1802,7 +1728,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
           if (playerData.destroyedNightmareLantern === true) {
             entries[entry].disabled = true;
             entries[entry].name = nameDefault;
-            SetIconNone(section, entry);
+            (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, entry);
             continue;
           }
 
@@ -1813,16 +1739,16 @@ function CheckHuntersJournal(db, sectionName, playerData) {
       /* When killed at least 1, the entry has a gray symbol */
 
       if (playerData["killed".concat(entry)] === true) {
-        SetIconPartialJournal(section, entry);
+        (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconPartialJournal)(section, entry);
         /* When not killed, the entry is undiscovered */
       } else {
-        SetIconRed(section, entry);
+        (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, entry);
       }
       /* When the Hunter's Note is unlocked, the entry has a green symbol */
 
 
       if (amountKillsLeft === 0) {
-        SetIconGreen(section, entry);
+        (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, entry);
         /* If not, show how many remain to defeat in the name */
       } else {
         name += " (".concat(amountKillsLeft, ")");
@@ -1833,7 +1759,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
 
       if (entry === "VoidIdol_1") {
         if (playerData.killedVoidIdol_1 === false && (playerData.killedVoidIdol_2 === true || playerData.killedVoidIdol_3 === true)) {
-          SetIconGreen(section, entry);
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, entry);
           entries[entry].name = nameDefault;
         }
       }
@@ -1858,7 +1784,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
           entriesStatistics.journalNotesCompleted.max--;
       }
 
-      SetIconNone(section, entry);
+      (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, entry);
     }
   }
 }
@@ -1870,9 +1796,9 @@ function CheckPantheon(db, sectionName, playerData) {
 
   for (var entry in entries) {
     if (playerData[property][entry] === true) {
-      SetIconGreen(section, entry);
+      (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, entry);
     } else {
-      SetIconRed(section, entry);
+      (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, entry);
     }
   }
 }
@@ -6920,6 +6846,11 @@ var MAP = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SetIconGreen": () => (/* binding */ SetIconGreen),
+/* harmony export */   "SetIconPartial": () => (/* binding */ SetIconPartial),
+/* harmony export */   "SetIconPartialJournal": () => (/* binding */ SetIconPartialJournal),
+/* harmony export */   "SetIconRed": () => (/* binding */ SetIconRed),
+/* harmony export */   "SetIconNone": () => (/* binding */ SetIconNone),
 /* harmony export */   "ObjectLength": () => (/* binding */ ObjectLength),
 /* harmony export */   "TranslateMapName": () => (/* binding */ TranslateMapName)
 /* harmony export */ });
@@ -6929,10 +6860,84 @@ __webpack_require__.r(__webpack_exports__);
 /* -------------------------- Functions ----------------------------- */
 
 /**
+ * Switches global variable to a "completed" symbol. Adds +1 or +2 to percent property.
+ */
+
+function SetIconGreen() {
+  var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var entry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+
+  /* Increase section percentage except the Game Status and Hints sections */
+  switch (section.id) {
+    case "hk-intro":
+    case "hk-hints":
+      break;
+
+    case "hk-equipment":
+      // double % for equipment
+      section.percent += 2;
+      break;
+
+    default:
+      section.percent++;
+  }
+
+  section.entries[entry].icon = "green";
+}
+/**
+ * Switches global variable to a "partially completed" symbol (prevents blurring the textPrefix).
+ */
+
+
+function SetIconPartial() {
+  var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var entry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+  section.entries[entry].icon = "partial";
+}
+/**
+ * Switches global variable to a "partially completed" symbol (prevents blurring whole entry).
+ */
+
+
+function SetIconPartialJournal() {
+  var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var entry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+  section.entries[entry].icon = "partialJournal";
+}
+/**
+ * Switches global variable to a "not completed" symbol
+ */
+
+
+function SetIconRed() {
+  var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var entry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+  section.entries[entry].icon = "red";
+}
+/**
+ * Switches global variable to an "information" symbol
+ */
+
+/* function CurrentDataInfo() {
+    completionSymbol = SYMBOL_INFO;
+} */
+
+/**
+ * Switches global variable to no symbol (span with left padding)
+ */
+
+
+function SetIconNone() {
+  var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var entry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+  section.entries[entry].icon = "none";
+}
+/**
  * Checks the length of a JavaScript Object like Array.length
  * @param {object} object JavaScript Object
  * @return {number} length of the Object
  */
+
 
 function ObjectLength(object) {
   var length = 0;
