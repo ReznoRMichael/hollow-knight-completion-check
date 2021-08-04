@@ -624,6 +624,11 @@ a.wiki {
   margin: 0.25rem;
 }
 
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  margin-right: 0.275em;
+}
+
 .icon-cancel {
   color: #f03a17;
 }
