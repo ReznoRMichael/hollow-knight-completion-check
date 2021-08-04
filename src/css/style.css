@@ -800,9 +800,8 @@ input[type="radio"]:focus:not(:focus-visible) + label {
 .tooltip {
   position: relative;
   display: block;
-  margin: 0 auto;
+  margin: 0;
   width: 100%;
-  max-width: 550px;
 }
 
 .tooltip .tooltip-text {
