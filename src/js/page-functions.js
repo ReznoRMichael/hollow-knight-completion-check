@@ -562,7 +562,7 @@ function GenerateInnerHTML(db) {
       case "achievements": // essential
       case "huntersJournalOptional": // essential
       case "statistics": // stats
-      case "godhomeStatistics": // godhome
+      case "pantheonOfHallownest": // godhome
         
         finalHTMLFill += `</div>`;
 

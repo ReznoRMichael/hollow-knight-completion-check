@@ -7514,7 +7514,7 @@ function GenerateInnerHTML(db) {
 
       case "statistics": // stats
 
-      case "godhomeStatistics":
+      case "pantheonOfHallownest":
         // godhome
         finalHTMLFill += "</div>";
         break;
