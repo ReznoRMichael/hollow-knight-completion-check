@@ -126,10 +126,11 @@ h1 {
 
 h2 {
   font-family: 'Cinzel', 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: 1.6rem;
   text-align: center;
   margin: 1.8rem 0 0.6rem 0;
   color: #fff;
-  font-weight: 400;
 }
 
 h6 {
@@ -141,7 +142,20 @@ h6 {
 }
 
 .hall-of-fame {
-  color: rgba(0, 255, 220, 0.6);
+  font-family: 'Cinzel', 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  color: rgb(0, 255, 221);
+  margin-bottom: 1rem;
+}
+
+.hall-of-fame-border {
+  border: 0.2rem solid rgba(0, 255, 220, 0.6);
+  border-radius: 1rem;
+  border-style: double;
+  padding: 0.7rem 1.3rem 0.7rem 1.3rem;
+  margin: 1.3rem;
 }
 
 #hk-hints {
