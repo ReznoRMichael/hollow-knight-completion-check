@@ -3205,6 +3205,54 @@ const HK = {
           wiki: "Pantheons"
         },
       },
+    },
+    pantheonOfTheSage: {
+      h2: "Pantheon of the Sage (P3)",
+      id: "hk-pantheon-sage",
+      property: "bossDoorStateTier3",
+      description: "Seek the God of Wealth and Power",
+      entries: {
+        unlocked: {
+          name: "P3 Unlocked",
+          spoiler: "Defeat P3 bosses in the game world to unlock",
+          wiki: "Pantheon_of_the_Sage"
+        },
+        completed: {
+          name: "P3 Completed",
+          spoiler: "Defeat all bosses in a row to complete",
+          wiki: "Pantheon_of_the_Sage"
+        },
+        boundNail: {
+          name: "P3 Binding: Nail",
+          spoiler: "Complete with the Nail binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundShell: {
+          name: "P3 Binding: Shell",
+          spoiler: "Complete with the Shell binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundCharms: {
+          name: "P3 Binding: Charms",
+          spoiler: "Complete with the Charm binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundSoul: {
+          name: "P3 Binding: Soul",
+          spoiler: "Complete with the Soul binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        allBindings: {
+          name: "P3 All Bindings",
+          spoiler: "Complete with all bindings active at once",
+          wiki: "Pantheons#Bindings"
+        },
+        noHits: {
+          name: "P3 No Damage",
+          spoiler: "Complete without taking a single hit",
+          wiki: "Pantheons"
+        },
+      },
     }
   },
 };
