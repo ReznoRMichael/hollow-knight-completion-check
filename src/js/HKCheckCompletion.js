@@ -22,6 +22,7 @@ import {
   SetIconPartialJournal,
   SetIconRed,
   SetIconNone,
+  SetIcon,
   ObjectLength,
   TranslateMapName
 } from "./hk-functions.js";

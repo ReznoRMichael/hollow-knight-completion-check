@@ -22,6 +22,7 @@ const SYMBOL_PARTIAL = "<i class='icon-ok-squared partial'></i>"; // "✔ "
 // const SYMBOL_INFO = "<i class='icon-info-circled'></i>"; // "ℹ "
 const SYMBOL_CLOCK = "<i class='icon-clock'></i>"; // "🕑 "
 const SYMBOL_FILE = "<i class='icon-doc-text-inv'></i>"; // "📁"
+const SYMBOL_BINDING_NAIL = "<i class='reznoricon-binding-nail'></i>"; // Nail Binding
 const SYMBOL_EMPTY = "<span class='padding-left'></span>";
 const FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
 const WIKI_LINK = "https://hollowknight.fandom.com/wiki/";

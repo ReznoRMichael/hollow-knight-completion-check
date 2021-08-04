@@ -54,18 +54,19 @@ function SetIconRed(section = {}, entry = "") {
 }
 
 /**
- * Switches global variable to an "information" symbol
- */
-/* function CurrentDataInfo() {
-    completionSymbol = SYMBOL_INFO;
-} */
-
-/**
  * Switches global variable to no symbol (span with left padding)
  */
 function SetIconNone(section = {}, entry = "") {
 
   section.entries[entry].icon = "none";
+}
+
+/**
+ * Switches global variable to a chosen symbol
+ */
+ function SetIcon(section = {}, entry = "", icon = "") {
+
+  section.entries[entry].icon = icon;
 }
 
 /**
@@ -104,6 +105,7 @@ export {
   SetIconPartialJournal,
   SetIconRed,
   SetIconNone,
+  SetIcon,
   ObjectLength,
   TranslateMapName
 };
