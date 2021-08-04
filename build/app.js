@@ -389,9 +389,16 @@ function CheckExtendedCompletion(db) {
                   }
                 }
 
-                if (entries[entry].icon === "green") {
-                  intro.extendedCompletionDone++;
-                  /* console.info("Counted (Done):", entry); */
+                switch (entries[entry].icon) {
+                  case "red":
+                  case "none":
+                  case "partial":
+                  case "partialJournal":
+                    break;
+
+                  default:
+                    intro.extendedCompletionDone++;
+                  // console.info("Counted (Done):", entry);
                 }
 
             }
