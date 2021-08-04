@@ -198,11 +198,11 @@ function GenerateInnerHTML(db) {
 
         textFill += [
           `<div class="tab-switch-buttons">`,
-            `<button id="button-switch-main" name="main" class="button tab-switch" type="button">Main</button>`,
-            `<button id="button-switch-essential" name="essential" class="button tab-switch" type="button">Essentials</button>`,
-            `<button id="button-switch-journal" name="journal" class="button tab-switch" type="button">Journal</button>`,
-            `<button id="button-switch-statistics" name="statistics" class="button tab-switch" type="button">Stats</button>`,
-            `<button id="button-switch-godhome" name="godhome" class="button tab-switch" type="button">Godmaster</button>`,
+          `<button id="button-switch-main" name="main" class="button tab-switch" type="button">Main</button>`,
+          `<button id="button-switch-essential" name="essential" class="button tab-switch" type="button">Essentials</button>`,
+          `<button id="button-switch-journal" name="journal" class="button tab-switch" type="button">Journal</button>`,
+          `<button id="button-switch-statistics" name="statistics" class="button tab-switch" type="button">Stats</button>`,
+          `<button id="button-switch-godhome" name="godhome" class="button tab-switch" type="button">Godmaster</button>`,
           `</div>`,
         ].join("\n");
 
@@ -534,18 +534,6 @@ function GenerateInnerHTML(db) {
           /* textFill += SingleEntryFill(section, entries[entry]); */
           textFill += SingleEntryFill(obj);
 
-          /* ##################### Horizontal lines ####################### */
-
-          switch (entry) {
-            case "pantheonKnight":
-            case "bossDoorStateTier5":
-            case "VoidIdol_3":
-            case "greyPrinceDefeats":
-            case "ordealAchieved":
-              textFill += FLEUR_DIVIDE;
-
-              break;
-          }
         } /* end for (let entry in entries) */
     } /* end switch (section) - central */
 
@@ -563,10 +551,10 @@ function GenerateInnerHTML(db) {
       case "huntersJournalOptional": // essential
       case "statistics": // stats
       case "pantheonOfHallownest": // godhome
-        
+
         finalHTMLFill += `</div>`;
 
-      break;
+        break;
 
     }
 
@@ -576,13 +564,17 @@ function GenerateInnerHTML(db) {
   console.log(finalHTMLFill);
   console.groupEnd(); */
 
+  /* ##################### Horizontal line ####################### */
+
+  finalHTMLFill += FLEUR_DIVIDE;
+
   /* --------------- Final single HTML access and fill here ------------------ */
 
   document.getElementById("generated").innerHTML = finalHTMLFill;
 
   /* make tab switch buttons working (on click) - must run after inner HTML generation is finished */
 
-  document.querySelectorAll(".tab-switch").forEach( (button) => {
+  document.querySelectorAll(".tab-switch").forEach((button) => {
 
     button.addEventListener("click", (e) => {
       PageSwitchTab(e.target.name);
@@ -874,7 +866,7 @@ function CheckboxSpoilersToggle(param = "none") {
  * Hides all other tabs, except the one which button was clicked (shows only the chosen tab)
  * @param {String} clickedButton The click target (button clicked)
  */
- function PageSwitchTab(clickedButton) {
+function PageSwitchTab(clickedButton) {
 
   let sectionList = document.querySelectorAll(".large-section");
   let buttonList = document.querySelectorAll(".tab-switch");
@@ -1069,11 +1061,11 @@ document.getElementById("save-location-input").addEventListener("mouseout", () =
 
   /* change the text and center only when the text was different */
   if (tooltip.innerHTML !== "Click once to copy to clipboard") {
-    
-      FillInnerHTML("save-location-input-tooltip", "Click once to copy to clipboard");
-    
-      /* make sure that the tooltip is centered */
-      tooltip.style.marginLeft = `-${tooltip.offsetWidth / 2}px`;
+
+    FillInnerHTML("save-location-input-tooltip", "Click once to copy to clipboard");
+
+    /* make sure that the tooltip is centered */
+    tooltip.style.marginLeft = `-${tooltip.offsetWidth / 2}px`;
   }
 }, false);
 

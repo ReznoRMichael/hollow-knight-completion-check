@@ -7481,17 +7481,6 @@ function GenerateInnerHTML(db) {
           /* textFill += SingleEntryFill(section, entries[entry]); */
 
           textFill += SingleEntryFill(obj);
-          /* ##################### Horizontal lines ####################### */
-
-          switch (_entry) {
-            case "pantheonKnight":
-            case "bossDoorStateTier5":
-            case "VoidIdol_3":
-            case "greyPrinceDefeats":
-            case "ordealAchieved":
-              textFill += FLEUR_DIVIDE;
-              break;
-          }
         }
 
       /* end for (let entry in entries) */
@@ -7526,8 +7515,11 @@ function GenerateInnerHTML(db) {
   console.log(finalHTMLFill);
   console.groupEnd(); */
 
-  /* --------------- Final single HTML access and fill here ------------------ */
+  /* ##################### Horizontal line ####################### */
 
+
+  finalHTMLFill += FLEUR_DIVIDE;
+  /* --------------- Final single HTML access and fill here ------------------ */
 
   document.getElementById("generated").innerHTML = finalHTMLFill;
   /* make tab switch buttons working (on click) - must run after inner HTML generation is finished */
