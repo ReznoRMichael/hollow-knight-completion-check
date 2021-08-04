@@ -5,6 +5,7 @@
 // require("../css/cookieconsent.css");
 require("../css/fontello.css");
 require("../css/simpleicon.css");
+require("../css/reznoricon.css");
 require("../css/style.css");
 
 // required for meta tags (social) to be visible by Webpack
