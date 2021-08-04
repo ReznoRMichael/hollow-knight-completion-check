@@ -1599,7 +1599,7 @@ const HK = {
           wiki: "Mister_Mushroom",
           state: 7
         },
-        bossDoorStateTier5: {
+        pantheonHallownest: {
           name: "P5 Embrace the Void",
           spoiler: "Godhome: Pantheon of Hallownest",
           wiki: "Pantheon_of_Hallownest"

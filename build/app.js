@@ -436,6 +436,11 @@ function CheckExtendedCompletion(db) {
           /* Do not count (ignore) these entries at all */
           switch (entry) {
             case "oldNail":
+            case "pantheonMaster":
+            case "pantheonArtist":
+            case "pantheonSage":
+            case "pantheonKnight":
+            case "pantheonHallownest":
             case "geoPool":
             case "dreamOrbs":
             case "charmsOwned":
@@ -1335,13 +1340,12 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? SetIconGreen(section, i) : SetIconNone(section, i);
         break;
 
-      case "bossDoorStateTier5":
+      case "pantheonHallownest":
         if (playerData.hasOwnProperty("bossDoorStateTier5") === false) {
           SetIconNone(section, i);
           dataObject[i].disabled = true;
-          /* textPrefix = `<del>${textPrefix}</del>`; */
         } else {
-          playerData[i].completed === true ? SetIconGreen(section, i) : SetIconRed(section, i);
+          playerData.bossDoorStateTier5.completed === true ? SetIconGreen(section, i) : SetIconRed(section, i);
         }
 
         break;
@@ -4771,7 +4775,7 @@ var HK = {
           wiki: "Mister_Mushroom",
           state: 7
         },
-        bossDoorStateTier5: {
+        pantheonHallownest: {
           name: "P5 Embrace the Void",
           spoiler: "Godhome: Pantheon of Hallownest",
           wiki: "Pantheon_of_Hallownest"
