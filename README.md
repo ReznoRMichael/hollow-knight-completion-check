@@ -118,6 +118,10 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ change + addition: now showing all 146 base entries needed for Keen/True Hunter achievements (with partial completion and number of kills left). The most commonly missed entries are shown at the top. Entries that are not required are in a separate section: Optional Journal Entries.  
   ✅ fix: Crystal Crawler was actually Glimback before, despite being named CrystalCrawler in the save files.  
 
+  — **(New) Godmaster Section** additions:  
+  ✅ additions: All Pantheon details. Unlocked, Completed, Bindings, Completed with No Damage, All Bindings.  
+  ✅ additions: Unique Icons for completed Bindings.  
+
   — **Hints** changes:  
   ✅ change: Made the Hints section stand out more from the rest of the tool.  
   ✅ change: Re-phrased all clues.  
