@@ -202,7 +202,10 @@ function HKCheckCompletion(jsonObject) {
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.statistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.statistics.entries, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Godhome Statistics ----------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godhomeStatistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godhomeStatistics.entries, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Hints ----------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godhomeStatistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godhomeStatistics.entries, HKPlayerData, HKWorldItems, HKSceneData);
+  /* ------------------------- Pantheon Statistics ----------------------------- */
+
+  CheckPantheon(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "pantheonOfTheMaster", HKPlayerData); // ------------------------- Hints ----------------------------- //
 
   CheckHintsTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints.entries, HKPlayerData, HKWorldItems); // ------------------------- Extended game completion check ----------------------------- //
 
@@ -1890,6 +1893,20 @@ function CheckHuntersJournal(db, sectionName, playerData) {
       }
 
       SetIconNone(section, entry);
+    }
+  }
+}
+
+function CheckPantheon(db, sectionName, playerData) {
+  var section = db.sections[sectionName];
+  var property = db.sections[sectionName].property;
+  var entries = db.sections[sectionName].entries;
+
+  for (var entry in entries) {
+    if (playerData[property][entry] === true) {
+      SetIconGreen(section, entry);
+    } else {
+      SetIconRed(section, entry);
     }
   }
 }
@@ -6254,6 +6271,56 @@ var HK = {
           name: "The Eternal Ordeal",
           spoiler: "Reach 57 Zotelings defeated",
           wiki: "Eternal_Ordeal"
+        }
+      }
+    },
+
+    /* ################################################### Pantheon of the Master #################################################### */
+    pantheonOfTheMaster: {
+      h2: "Pantheon of the Master (P1)",
+      id: "hk-pantheon-master",
+      property: "bossDoorStateTier1",
+      description: "Seek the Gods of Nail and Shell",
+      entries: {
+        unlocked: {
+          name: "P1 Unlocked",
+          spoiler: "Defeat P1 bosses in the game world to unlock",
+          wiki: "Pantheon_of_the_Master"
+        },
+        completed: {
+          name: "P1 Completed",
+          spoiler: "Defeat all bosses in a row to complete",
+          wiki: "Pantheon_of_the_Master"
+        },
+        boundNail: {
+          name: "P1 Binding: Nail",
+          spoiler: "Complete with the Nail binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundShell: {
+          name: "P1 Binding: Shell",
+          spoiler: "Complete with the Shell binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundCharms: {
+          name: "P1 Binding: Charms",
+          spoiler: "Complete with the Charm binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundSoul: {
+          name: "P1 Binding: Soul",
+          spoiler: "Complete with the Soul binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        allBindings: {
+          name: "P1 All Bindings",
+          spoiler: "Complete with all bindings active at once",
+          wiki: "Pantheons#Bindings"
+        },
+        noHits: {
+          name: "P1 No Damage",
+          spoiler: "Complete without taking a single hit",
+          wiki: "Pantheons"
         }
       }
     }

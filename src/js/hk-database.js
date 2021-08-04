@@ -3106,6 +3106,57 @@ const HK = {
           wiki: "Eternal_Ordeal"
         }
       },
+    },
+
+    /* ################################################### Pantheon of the Master #################################################### */
+
+    pantheonOfTheMaster: {
+      h2: "Pantheon of the Master (P1)",
+      id: "hk-pantheon-master",
+      property: "bossDoorStateTier1",
+      description: "Seek the Gods of Nail and Shell",
+      entries: {
+        unlocked: {
+          name: "P1 Unlocked",
+          spoiler: "Defeat P1 bosses in the game world to unlock",
+          wiki: "Pantheon_of_the_Master"
+        },
+        completed: {
+          name: "P1 Completed",
+          spoiler: "Defeat all bosses in a row to complete",
+          wiki: "Pantheon_of_the_Master"
+        },
+        boundNail: {
+          name: "P1 Binding: Nail",
+          spoiler: "Complete with the Nail binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundShell: {
+          name: "P1 Binding: Shell",
+          spoiler: "Complete with the Shell binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundCharms: {
+          name: "P1 Binding: Charms",
+          spoiler: "Complete with the Charm binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundSoul: {
+          name: "P1 Binding: Soul",
+          spoiler: "Complete with the Soul binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        allBindings: {
+          name: "P1 All Bindings",
+          spoiler: "Complete with all bindings active at once",
+          wiki: "Pantheons#Bindings"
+        },
+        noHits: {
+          name: "P1 No Damage",
+          spoiler: "Complete without taking a single hit",
+          wiki: "Pantheons"
+        },
+      },
     }
   },
 };

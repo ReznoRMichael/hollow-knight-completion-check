@@ -260,6 +260,10 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   CheckAdditionalThings(HK.sections.godhomeStatistics, HK.sections.godhomeStatistics.entries, HKPlayerData, HKWorldItems, HKSceneData);
 
+  /* ------------------------- Pantheon Statistics ----------------------------- */
+
+  CheckPantheon(HK, "pantheonOfTheMaster", HKPlayerData);
+
   // ------------------------- Hints ----------------------------- //
 
   CheckHintsTrue(HK.sections.hints, HK.sections.hints.entries, HKPlayerData, HKWorldItems);
@@ -2046,6 +2050,25 @@ function CheckHuntersJournal(db, sectionName, playerData) {
     }
   }
 }
+
+
+function CheckPantheon(db, sectionName, playerData) {
+
+  let section = db.sections[sectionName];
+  let property = db.sections[sectionName].property;
+  let entries = db.sections[sectionName].entries;
+
+  for (let entry in entries) {
+
+    if (playerData[property][entry] === true) {
+      SetIconGreen(section, entry);
+    } else {
+      SetIconRed(section, entry);
+    }
+  }
+}
+
+
 
 /**
  * Checks, validates and shows hints to the player depending on their save progression, in chronological order. Shows only hint for the last uncompleted event. If Hollow Knight is defeated, shows a dummy text.
