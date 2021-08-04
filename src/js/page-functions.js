@@ -1,12 +1,8 @@
 import {
-  benchmarkTimes
-} from "./HKCheckCompletion.js";
-
-import {
   LoadSaveFile
 } from "./LoadSaveFile.js";
 
-// ---------------- Load image files (necessary for Webpack) ----------------- //
+/* ------------------------ Load image files (necessary for Webpack) ---------------------------------------------------------- */
 
 import HEALTH_MASK_IMAGE from "../img/health-mask.png";
 import HEALTH_MASK_STEEL_IMAGE from "../img/health-mask-steel.png";
@@ -17,7 +13,7 @@ import NOTCH_OVERCHARMED_IMAGE from "../img/notch-overcharmed.png";
 import GEO_IMAGE from "../img/geo.png";
 import GEO_SHADE_IMAGE from "../img/geo-shade.png";
 
-// ---------------- Constants ----------------- //
+/* ------------------------- Constants ---------------------------------------------------------------------------------------- */
 
 // const DATA_UNKNOWN = "Data unknown";
 const SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ "
@@ -33,9 +29,54 @@ const WIKI_LINK = "https://hollowknight.fandom.com/wiki/";
 const ROOT = document.documentElement;
 const SCROLL_BUTTON = document.querySelector(".scroll-up-button");
 
+/* -------------------------- Variables --------------------------------------------------------------------------------------- */
+
+let benchmarkTimes = {
+  LoadSaveFile: {
+    name: "LoadSaveFile()",
+    timeStart: 0,
+    timeEnd: 0
+  },
+  CheckCompletion: {
+    name: "HKCheckCompletion()",
+    timeStart: 0,
+    timeEnd: 0
+  },
+  GenerateInnerHTML: {
+    name: "GenerateInnerHTML()",
+    timeStart: 0,
+    timeEnd: 0
+  },
+  HKReadTextArea: {
+    name: "HKReadTextArea()",
+    timeStart: 0,
+    timeEnd: 0
+  },
+  Total: {
+    name: "Total",
+    timeStart: 0,
+    timeEnd: 0
+  }
+};
+
 
 /* ######################################################################################### */
 
+function Benchmark(bench) {
+
+  let result = 0;
+
+  for (let time in bench) {
+
+    if (bench[time].timeStart !== 0 && bench[time].timeEnd !== 0) {
+
+      result = bench[time].timeEnd - bench[time].timeStart;
+      console.info(`${bench[time].name} time (ms) = %c${result.toFixed(2)}`, `color: #008cdc; font-weight: 700;`);
+    }
+    bench[time].timeStart = 0;
+    bench[time].timeEnd = 0;
+  }
+}
 
 function ScrollToElement(element) {
 
@@ -1149,5 +1190,7 @@ export {
   AppendHTML,
   CheckboxHintsToggle,
   CheckboxSpoilersToggle,
-  StorageAvailable
+  StorageAvailable,
+  Benchmark,
+  benchmarkTimes
 };

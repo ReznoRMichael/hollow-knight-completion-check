@@ -10,9 +10,7 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "HKCheckCompletion": () => (/* binding */ HKCheckCompletion),
-/* harmony export */   "benchmarkTimes": () => (/* binding */ benchmarkTimes),
-/* harmony export */   "Benchmark": () => (/* binding */ Benchmark)
+/* harmony export */   "HKCheckCompletion": () => (/* binding */ HKCheckCompletion)
 /* harmony export */ });
 /* harmony import */ var _hk_database_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hk-database.js */ "./src/js/hk-database.js");
 /* harmony import */ var _page_functions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-functions.js */ "./src/js/page-functions.js");
@@ -63,59 +61,18 @@ var divEnd = ["</div>"].join("\n");
 var pSpan = "<span class='p-left-small'></span>";
 /* let benchHKCCBegin, benchHKCCEnd; */
 
-var benchmarkTimes = {
-  LoadSaveFile: {
-    name: "LoadSaveFile()",
-    timeStart: 0,
-    timeEnd: 0
-  },
-  CheckCompletion: {
-    name: "HKCheckCompletion()",
-    timeStart: 0,
-    timeEnd: 0
-  },
-  GenerateInnerHTML: {
-    name: "GenerateInnerHTML()",
-    timeStart: 0,
-    timeEnd: 0
-  },
-  HKReadTextArea: {
-    name: "HKReadTextArea()",
-    timeStart: 0,
-    timeEnd: 0
-  },
-  Total: {
-    name: "Total",
-    timeStart: 0,
-    timeEnd: 0
-  }
-};
 /* -------------------------- Functions ----------------------------- */
 
-function Benchmark(bench) {
-  var result = 0;
-
-  for (var time in bench) {
-    if (bench[time].timeStart !== 0 && bench[time].timeEnd !== 0) {
-      result = bench[time].timeEnd - bench[time].timeStart;
-      console.info("".concat(bench[time].name, " time (ms) = %c").concat(result.toFixed(2)), "color: #008cdc; font-weight: 700;");
-    }
-
-    bench[time].timeStart = 0;
-    bench[time].timeEnd = 0;
-  }
-}
 /**
  * Main Function. Checks Hollow Knight game completion by analyzing the save file
  * @param {object} jsonObject Decoded save data in JavaScript Object Notation form (JSON)
  */
 
-
 function HKCheckCompletion(jsonObject) {
   var benchStart = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : performance.now();
   // start benchmark
   // benchHKCCBegin = new Date();
-  benchmarkTimes.CheckCompletion.timeStart = benchStart;
+  _page_functions_js__WEBPACK_IMPORTED_MODULE_1__.benchmarkTimes.CheckCompletion.timeStart = benchStart;
   var HKPlayerData;
   var HKWorldItems;
   var HKSceneData;
@@ -229,7 +186,7 @@ function HKCheckCompletion(jsonObject) {
   // finish and show benchmark
   // benchHKCCEnd = new Date();
 
-  benchmarkTimes.CheckCompletion.timeEnd = performance.now(); // console.info("HKCheckCompletion() time (ms) =", benchHKCCEnd - benchHKCCBegin);
+  _page_functions_js__WEBPACK_IMPORTED_MODULE_1__.benchmarkTimes.CheckCompletion.timeEnd = performance.now(); // console.info("HKCheckCompletion() time (ms) =", benchHKCCEnd - benchHKCCBegin);
   // Benchmark(benchmarkTimes);
 
   return true;
@@ -2011,7 +1968,7 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
 function HKReadTextArea() {
   var textAreaId = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
   // start benchmark
-  benchmarkTimes.HKReadTextArea.timeStart = performance.now();
+  _page_functions_js__WEBPACK_IMPORTED_MODULE_1__.benchmarkTimes.HKReadTextArea.timeStart = performance.now();
   var contents = document.getElementById(textAreaId).value;
 
   if (contents.length) {
@@ -2026,8 +1983,8 @@ function HKReadTextArea() {
       } // end benchmark and show results
 
 
-      benchmarkTimes.HKReadTextArea.timeEnd = performance.now();
-      var result = benchmarkTimes.HKReadTextArea.timeEnd - benchmarkTimes.HKReadTextArea.timeStart;
+      _page_functions_js__WEBPACK_IMPORTED_MODULE_1__.benchmarkTimes.HKReadTextArea.timeEnd = performance.now();
+      var result = _page_functions_js__WEBPACK_IMPORTED_MODULE_1__.benchmarkTimes.HKReadTextArea.timeEnd - _page_functions_js__WEBPACK_IMPORTED_MODULE_1__.benchmarkTimes.HKReadTextArea.timeStart;
       console.info("HKReadTextArea() time (ms) = %c".concat(result.toFixed(2)), "color: #008cdc; font-weight: 700;");
     } catch (error) {
       _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.saveAnalyzed = false;
@@ -2036,7 +1993,7 @@ function HKReadTextArea() {
     }
   } else {
     /* reset timer */
-    benchmarkTimes.HKReadTextArea.timeStart = 0;
+    _page_functions_js__WEBPACK_IMPORTED_MODULE_1__.benchmarkTimes.HKReadTextArea.timeStart = 0;
   }
 }
 /**
@@ -2146,6 +2103,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "LoadSaveFile": () => (/* binding */ LoadSaveFile)
 /* harmony export */ });
 /* harmony import */ var _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HKCheckCompletion.js */ "./src/js/HKCheckCompletion.js");
+/* harmony import */ var _page_functions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-functions.js */ "./src/js/page-functions.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -2158,6 +2116,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 // ---------------- Constants ----------------- //
 // AES JS for file decryption
 var aesjs = __webpack_require__(/*! ./aes-js.js */ "./src/js/aes-js.js"); // For reading the text area after save decoding
+
 
 
 
@@ -2190,8 +2149,10 @@ function LoadSaveFile(input, time) {
 
   if (inputFileList.length < 1) return false; // start benchmark
 
-  _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.LoadSaveFile.timeStart = time;
-  _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.Total.timeStart = time; // Prepares a File object from the first file of the input files for reading as an Array Buffer
+  _page_functions_js__WEBPACK_IMPORTED_MODULE_1__.benchmarkTimes.LoadSaveFile.timeStart = time;
+  _page_functions_js__WEBPACK_IMPORTED_MODULE_1__.benchmarkTimes.Total.timeStart = time;
+  _page_functions_js__WEBPACK_IMPORTED_MODULE_1__.benchmarkTimes.HKReadTextArea.timeStart = 0;
+  _page_functions_js__WEBPACK_IMPORTED_MODULE_1__.benchmarkTimes.HKReadTextArea.timeEnd = 0; // Prepares a File object from the first file of the input files for reading as an Array Buffer
 
   var inputFileObject = inputFileList[0]; // Cleans the file list to avoid problems after subsequent use
   // document.getElementById("save-area-file").value = "";
@@ -2233,7 +2194,7 @@ function ProcessFileObject() {
 
     /* benchLSFEnd = new Date(); */
 
-    _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.LoadSaveFile.timeEnd = performance.now();
+    _page_functions_js__WEBPACK_IMPORTED_MODULE_1__.benchmarkTimes.LoadSaveFile.timeEnd = performance.now();
     /* console.info("LoadSaveFile() time (ms) =", benchLSFEnd - benchLSFBegin); */
     // 4. Analyze the decoded string immediately
 
@@ -2266,8 +2227,8 @@ function ProcessFileObject() {
     }))(); // finish total and show benchmark
 
 
-    _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.Total.timeEnd = performance.now();
-    (0,_HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.Benchmark)(_HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes);
+    _page_functions_js__WEBPACK_IMPORTED_MODULE_1__.benchmarkTimes.Total.timeEnd = performance.now();
+    (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.Benchmark)(_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.benchmarkTimes);
     /* console.info("Total time (ms) =", benchTotal - benchLSFBegin); */
     // alert(`Decoded String: ${decodedString}`);
     // alert(`Array Buffer: ${inputArrayBuffer}`);
@@ -7017,24 +6978,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "AppendHTML": () => (/* binding */ AppendHTML),
 /* harmony export */   "CheckboxHintsToggle": () => (/* binding */ CheckboxHintsToggle),
 /* harmony export */   "CheckboxSpoilersToggle": () => (/* binding */ CheckboxSpoilersToggle),
-/* harmony export */   "StorageAvailable": () => (/* binding */ StorageAvailable)
+/* harmony export */   "StorageAvailable": () => (/* binding */ StorageAvailable),
+/* harmony export */   "Benchmark": () => (/* binding */ Benchmark),
+/* harmony export */   "benchmarkTimes": () => (/* binding */ benchmarkTimes)
 /* harmony export */ });
-/* harmony import */ var _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HKCheckCompletion.js */ "./src/js/HKCheckCompletion.js");
-/* harmony import */ var _LoadSaveFile_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./LoadSaveFile.js */ "./src/js/LoadSaveFile.js");
-/* harmony import */ var _img_health_mask_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/health-mask.png */ "./src/img/health-mask.png");
-/* harmony import */ var _img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/health-mask-steel.png */ "./src/img/health-mask-steel.png");
-/* harmony import */ var _img_soul_orb_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/soul-orb.png */ "./src/img/soul-orb.png");
-/* harmony import */ var _img_notch_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/notch.png */ "./src/img/notch.png");
-/* harmony import */ var _img_notch_filled_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/notch-filled.png */ "./src/img/notch-filled.png");
-/* harmony import */ var _img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/notch-overcharmed.png */ "./src/img/notch-overcharmed.png");
-/* harmony import */ var _img_geo_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/geo.png */ "./src/img/geo.png");
-/* harmony import */ var _img_geo_shade_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/geo-shade.png */ "./src/img/geo-shade.png");
+/* harmony import */ var _LoadSaveFile_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LoadSaveFile.js */ "./src/js/LoadSaveFile.js");
+/* harmony import */ var _img_health_mask_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/health-mask.png */ "./src/img/health-mask.png");
+/* harmony import */ var _img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/health-mask-steel.png */ "./src/img/health-mask-steel.png");
+/* harmony import */ var _img_soul_orb_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/soul-orb.png */ "./src/img/soul-orb.png");
+/* harmony import */ var _img_notch_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/notch.png */ "./src/img/notch.png");
+/* harmony import */ var _img_notch_filled_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../img/notch-filled.png */ "./src/img/notch-filled.png");
+/* harmony import */ var _img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/notch-overcharmed.png */ "./src/img/notch-overcharmed.png");
+/* harmony import */ var _img_geo_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/geo.png */ "./src/img/geo.png");
+/* harmony import */ var _img_geo_shade_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/geo-shade.png */ "./src/img/geo-shade.png");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
- // ---------------- Load image files (necessary for Webpack) ----------------- //
+/* ------------------------ Load image files (necessary for Webpack) ---------------------------------------------------------- */
 
 
 
@@ -7043,7 +7005,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
- // ---------------- Constants ----------------- //
+
+/* ------------------------- Constants ---------------------------------------------------------------------------------------- */
 // const DATA_UNKNOWN = "Data unknown";
 
 var SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ "
@@ -7062,7 +7025,50 @@ var FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
 var WIKI_LINK = "https://hollowknight.fandom.com/wiki/";
 var ROOT = document.documentElement;
 var SCROLL_BUTTON = document.querySelector(".scroll-up-button");
+/* -------------------------- Variables --------------------------------------------------------------------------------------- */
+
+var benchmarkTimes = {
+  LoadSaveFile: {
+    name: "LoadSaveFile()",
+    timeStart: 0,
+    timeEnd: 0
+  },
+  CheckCompletion: {
+    name: "HKCheckCompletion()",
+    timeStart: 0,
+    timeEnd: 0
+  },
+  GenerateInnerHTML: {
+    name: "GenerateInnerHTML()",
+    timeStart: 0,
+    timeEnd: 0
+  },
+  HKReadTextArea: {
+    name: "HKReadTextArea()",
+    timeStart: 0,
+    timeEnd: 0
+  },
+  Total: {
+    name: "Total",
+    timeStart: 0,
+    timeEnd: 0
+  }
+};
 /* ######################################################################################### */
+
+function Benchmark(bench) {
+  var result = 0;
+
+  for (var time in bench) {
+    if (bench[time].timeStart !== 0 && bench[time].timeEnd !== 0) {
+      result = bench[time].timeEnd - bench[time].timeStart;
+      console.info("".concat(bench[time].name, " time (ms) = %c").concat(result.toFixed(2)), "color: #008cdc; font-weight: 700;");
+    }
+
+    bench[time].timeStart = 0;
+    bench[time].timeEnd = 0;
+  }
+}
 
 function ScrollToElement(element) {
   /* Scroll to the element top */
@@ -7155,7 +7161,7 @@ function CompletionHTML(jsObj, hkGameCompletion) {
 
 function GenerateInnerHTML(db) {
   // start benchmarking
-  _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.GenerateInnerHTML.timeStart = performance.now();
+  benchmarkTimes.GenerateInnerHTML.timeStart = performance.now();
   var sections = db.sections;
   /* console.log(sections); */
 
@@ -7181,14 +7187,14 @@ function GenerateInnerHTML(db) {
   var finalHTMLFill = "";
   var textFill = "";
   var Img = "";
-  var maskNormal = "<img src='".concat(_img_health_mask_png__WEBPACK_IMPORTED_MODULE_2__, "' class='health-mask' alt='health mask image' title='Health Mask'>");
-  var maskSteel = "<img src='".concat(_img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_3__, "' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>");
-  var soulNormal = "<img src='".concat(_img_soul_orb_png__WEBPACK_IMPORTED_MODULE_4__, "' class='soul-orb' alt='soul orb image' title='Single Soul Orb (one spell cast)'>");
-  var notchNormalImage = "<img src='".concat(_img_notch_png__WEBPACK_IMPORTED_MODULE_5__, "' class='notch' alt='notch image' title='Charm Notch (Free)'>");
-  var notchFilledImage = "<img src='".concat(_img_notch_filled_png__WEBPACK_IMPORTED_MODULE_6__, "' class='notch' alt='notch image' title='Charm Notch (Used)'>");
-  var notchOvercharmedImage = "<img src='".concat(_img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_7__, "' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>");
-  var geoNormalImage = "<img src='".concat(_img_geo_png__WEBPACK_IMPORTED_MODULE_8__, "' class='geo-symbol' alt='geo symbol image' title='Geo'>");
-  var geoShadeImage = "<img src='".concat(_img_geo_shade_png__WEBPACK_IMPORTED_MODULE_9__, "' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'>");
+  var maskNormal = "<img src='".concat(_img_health_mask_png__WEBPACK_IMPORTED_MODULE_1__, "' class='health-mask' alt='health mask image' title='Health Mask'>");
+  var maskSteel = "<img src='".concat(_img_health_mask_steel_png__WEBPACK_IMPORTED_MODULE_2__, "' class='health-mask' alt='steel health mask image' title='Steel Health Mask'>");
+  var soulNormal = "<img src='".concat(_img_soul_orb_png__WEBPACK_IMPORTED_MODULE_3__, "' class='soul-orb' alt='soul orb image' title='Single Soul Orb (one spell cast)'>");
+  var notchNormalImage = "<img src='".concat(_img_notch_png__WEBPACK_IMPORTED_MODULE_4__, "' class='notch' alt='notch image' title='Charm Notch (Free)'>");
+  var notchFilledImage = "<img src='".concat(_img_notch_filled_png__WEBPACK_IMPORTED_MODULE_5__, "' class='notch' alt='notch image' title='Charm Notch (Used)'>");
+  var notchOvercharmedImage = "<img src='".concat(_img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_6__, "' class='notch' alt='notch image' title='Charm Notch (Overcharmed)'>");
+  var geoNormalImage = "<img src='".concat(_img_geo_png__WEBPACK_IMPORTED_MODULE_7__, "' class='geo-symbol' alt='geo symbol image' title='Geo'>");
+  var geoShadeImage = "<img src='".concat(_img_geo_shade_png__WEBPACK_IMPORTED_MODULE_8__, "' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'>");
   var div = "<div class='single-entry'>";
   var divFlex = "<div class='flex-container align-center'>";
   /* ############################## create all main entries ############################## */
@@ -7553,7 +7559,7 @@ function GenerateInnerHTML(db) {
   } // finish benchmarking
 
 
-  _HKCheckCompletion_js__WEBPACK_IMPORTED_MODULE_0__.benchmarkTimes.GenerateInnerHTML.timeEnd = performance.now();
+  benchmarkTimes.GenerateInnerHTML.timeEnd = performance.now();
 }
 
 function SectionDescription(section) {
@@ -8010,7 +8016,7 @@ window.addEventListener('drop', function (event) {
   var dt = event.dataTransfer;
   /* Launch save file analyzing */
 
-  (0,_LoadSaveFile_js__WEBPACK_IMPORTED_MODULE_1__.LoadSaveFile)(dt, performance.now());
+  (0,_LoadSaveFile_js__WEBPACK_IMPORTED_MODULE_0__.LoadSaveFile)(dt, performance.now());
   var label = document.getElementById("save-area-file").nextElementSibling;
   var labelInitialText = label.innerHTML;
   /* Shorten the file name if longer than 16 characters. Display first 10 characters and last 4. */
@@ -27535,6 +27541,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/css/reznoricon.css":
+/*!********************************!*\
+  !*** ./src/css/reznoricon.css ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./src/css/simpleicon.css":
 /*!********************************!*\
   !*** ./src/css/simpleicon.css ***!
@@ -29592,6 +29611,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ../css/fontello.css */ "./src/css/fontello.css");
 
 __webpack_require__(/*! ../css/simpleicon.css */ "./src/css/simpleicon.css");
+
+__webpack_require__(/*! ../css/reznoricon.css */ "./src/css/reznoricon.css");
 
 __webpack_require__(/*! ../css/style.css */ "./src/css/style.css"); // required for meta tags (social) to be visible by Webpack
 

@@ -10,10 +10,13 @@
 const aesjs = require("./aes-js.js");
 // For reading the text area after save decoding
 import {
-  HKCheckCompletion,
-  benchmarkTimes,
-  Benchmark
+  HKCheckCompletion
 } from "./HKCheckCompletion.js";
+
+import {
+  Benchmark,
+  benchmarkTimes
+} from "./page-functions.js";
 
 const CSHARP_HEADER = [0, 1, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 0, 0]; // 22 bytes
 
@@ -45,6 +48,8 @@ function LoadSaveFile(input, time) {
   // start benchmark
   benchmarkTimes.LoadSaveFile.timeStart = time;
   benchmarkTimes.Total.timeStart = time;
+  benchmarkTimes.HKReadTextArea.timeStart = 0;
+  benchmarkTimes.HKReadTextArea.timeEnd = 0;
 
   // Prepares a File object from the first file of the input files for reading as an Array Buffer
   let inputFileObject = inputFileList[0];

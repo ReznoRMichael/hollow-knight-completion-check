@@ -11,7 +11,9 @@ import {
   AppendHTML,
   CheckboxHintsToggle,
   CheckboxSpoilersToggle,
-  StorageAvailable
+  StorageAvailable,
+  Benchmark,
+  benchmarkTimes
 } from "./page-functions.js";
 
 import {
@@ -62,51 +64,7 @@ let pSpan = "<span class='p-left-small'></span>";
 
 /* let benchHKCCBegin, benchHKCCEnd; */
 
-let benchmarkTimes = {
-  LoadSaveFile: {
-    name: "LoadSaveFile()",
-    timeStart: 0,
-    timeEnd: 0
-  },
-  CheckCompletion: {
-    name: "HKCheckCompletion()",
-    timeStart: 0,
-    timeEnd: 0
-  },
-  GenerateInnerHTML: {
-    name: "GenerateInnerHTML()",
-    timeStart: 0,
-    timeEnd: 0
-  },
-  HKReadTextArea: {
-    name: "HKReadTextArea()",
-    timeStart: 0,
-    timeEnd: 0
-  },
-  Total: {
-    name: "Total",
-    timeStart: 0,
-    timeEnd: 0
-  }
-};
-
 /* -------------------------- Functions ----------------------------- */
-
-function Benchmark(bench) {
-
-  let result = 0;
-
-  for (let time in bench) {
-
-    if (bench[time].timeStart !== 0 && bench[time].timeEnd !== 0) {
-
-      result = bench[time].timeEnd - bench[time].timeStart;
-      console.info(`${bench[time].name} time (ms) = %c${result.toFixed(2)}`, `color: #008cdc; font-weight: 700;`);
-    }
-    bench[time].timeStart = 0;
-    bench[time].timeEnd = 0;
-  }
-}
 
 /**
  * Main Function. Checks Hollow Knight game completion by analyzing the save file
@@ -2297,7 +2255,5 @@ document.getElementById("save-area-read").addEventListener("click", () => {
 
 export {
   // to use in LoadSaveFile.js for auto-analyzing file after decoding
-  HKCheckCompletion,
-  benchmarkTimes,
-  Benchmark
+  HKCheckCompletion
 };
