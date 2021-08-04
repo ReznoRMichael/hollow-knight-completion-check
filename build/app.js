@@ -1801,6 +1801,22 @@ function CheckPantheon(db, sectionName, playerData) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "bindingNail");
           break;
 
+        case "boundShell":
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "bindingShell");
+          break;
+
+        case "boundCharms":
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "bindingCharms");
+          break;
+
+        case "boundSoul":
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "bindingSoul");
+          break;
+
+        case "allBindings":
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "bindingAll");
+          break;
+
         default:
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, entry);
       }
@@ -7038,6 +7054,14 @@ var SYMBOL_FILE = "<i class='icon-doc-text-inv'></i>"; // "📁"
 
 var SYMBOL_BINDING_NAIL = "<i class='reznoricon-binding-nail'></i>"; // Nail Binding
 
+var SYMBOL_BINDING_SHELL = "<i class='reznoricon-binding-shell'></i>"; // Shell Binding
+
+var SYMBOL_BINDING_CHARMS = "<i class='reznoricon-binding-charms'></i>"; // Charm Binding
+
+var SYMBOL_BINDING_SOUL = "<i class='reznoricon-binding-soul'></i>"; // Soul Binding
+
+var SYMBOL_BINDING_ALL = "<i class='reznoricon-binding-all'></i>"; // All Bindings
+
 var SYMBOL_EMPTY = "<span class='padding-left'></span>";
 var FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
 var WIKI_LINK = "https://hollowknight.fandom.com/wiki/";
@@ -7203,6 +7227,10 @@ function GenerateInnerHTML(db) {
   var iconClock = SYMBOL_CLOCK;
   var iconNull = SYMBOL_EMPTY;
   var iconBindingNail = SYMBOL_BINDING_NAIL;
+  var iconBindingShell = SYMBOL_BINDING_SHELL;
+  var iconBindingCharms = SYMBOL_BINDING_CHARMS;
+  var iconBindingSoul = SYMBOL_BINDING_SOUL;
+  var iconBindingAll = SYMBOL_BINDING_ALL;
   var finalHTMLFill = "";
   var textFill = "";
   var Img = "";
@@ -7456,6 +7484,22 @@ function GenerateInnerHTML(db) {
 
               case "bindingNail":
                 obj.icon = iconBindingNail;
+                break;
+
+              case "bindingShell":
+                obj.icon = iconBindingShell;
+                break;
+
+              case "bindingCharms":
+                obj.icon = iconBindingCharms;
+                break;
+
+              case "bindingSoul":
+                obj.icon = iconBindingSoul;
+                break;
+
+              case "bindingAll":
+                obj.icon = iconBindingAll;
                 break;
 
               case "red":

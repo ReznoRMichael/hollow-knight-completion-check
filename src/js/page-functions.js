@@ -23,6 +23,10 @@ const SYMBOL_PARTIAL = "<i class='icon-ok-squared partial'></i>"; // "✔ "
 const SYMBOL_CLOCK = "<i class='icon-clock'></i>"; // "🕑 "
 const SYMBOL_FILE = "<i class='icon-doc-text-inv'></i>"; // "📁"
 const SYMBOL_BINDING_NAIL = "<i class='reznoricon-binding-nail'></i>"; // Nail Binding
+const SYMBOL_BINDING_SHELL = "<i class='reznoricon-binding-shell'></i>"; // Shell Binding
+const SYMBOL_BINDING_CHARMS = "<i class='reznoricon-binding-charms'></i>"; // Charm Binding
+const SYMBOL_BINDING_SOUL = "<i class='reznoricon-binding-soul'></i>"; // Soul Binding
+const SYMBOL_BINDING_ALL = "<i class='reznoricon-binding-all'></i>"; // All Bindings
 const SYMBOL_EMPTY = "<span class='padding-left'></span>";
 const FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
 const WIKI_LINK = "https://hollowknight.fandom.com/wiki/";
@@ -209,6 +213,10 @@ function GenerateInnerHTML(db) {
   let iconClock = SYMBOL_CLOCK;
   let iconNull = SYMBOL_EMPTY;
   let iconBindingNail = SYMBOL_BINDING_NAIL;
+  let iconBindingShell = SYMBOL_BINDING_SHELL;
+  let iconBindingCharms = SYMBOL_BINDING_CHARMS;
+  let iconBindingSoul = SYMBOL_BINDING_SOUL;
+  let iconBindingAll = SYMBOL_BINDING_ALL;
 
   let finalHTMLFill = "";
   let textFill = "";
@@ -512,6 +520,22 @@ function GenerateInnerHTML(db) {
                 obj.icon = iconBindingNail;
                 break;
   
+              case "bindingShell":
+                obj.icon = iconBindingShell;
+                break;
+  
+              case "bindingCharms":
+                obj.icon = iconBindingCharms;
+                break;
+  
+              case "bindingSoul":
+                obj.icon = iconBindingSoul;
+                break;
+              
+              case "bindingAll":
+                obj.icon = iconBindingAll;
+                break;
+              
               case "red":
                 obj.icon = iconRed;
                 break;

@@ -1977,6 +1977,22 @@ function CheckPantheon(db, sectionName, playerData) {
           SetIcon(section, entry, "bindingNail");
           break;
 
+        case "boundShell":
+          SetIcon(section, entry, "bindingShell");
+          break;
+
+        case "boundCharms":
+          SetIcon(section, entry, "bindingCharms");
+          break;
+
+        case "boundSoul":
+          SetIcon(section, entry, "bindingSoul");
+          break;
+
+        case "allBindings":
+          SetIcon(section, entry, "bindingAll");
+          break;
+
         default:
           SetIconGreen(section, entry);
       }

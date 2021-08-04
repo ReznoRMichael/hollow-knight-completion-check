@@ -25,3 +25,19 @@
 .reznoricon-binding-nail:before {
     background-image: url("../img/binding-nail.png");
 }
+
+.reznoricon-binding-shell:before {
+  background-image: url("../img/binding-shell.png");
+}
+
+.reznoricon-binding-charms:before {
+  background-image: url("../img/binding-charms.png");
+}
+
+.reznoricon-binding-soul:before {
+  background-image: url("../img/binding-soul.png");
+}
+
+.reznoricon-binding-all:before {
+  background-image: url("../img/binding-all.png");
+}
