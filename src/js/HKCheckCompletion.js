@@ -263,6 +263,7 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
   /* ------------------------- Pantheon Statistics ----------------------------- */
 
   CheckPantheon(HK, "pantheonOfTheMaster", HKPlayerData);
+  CheckPantheon(HK, "pantheonOfTheArtist", HKPlayerData);
 
   // ------------------------- Hints ----------------------------- //
 

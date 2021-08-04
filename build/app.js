@@ -205,7 +205,8 @@ function HKCheckCompletion(jsonObject) {
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godhomeStatistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godhomeStatistics.entries, HKPlayerData, HKWorldItems, HKSceneData);
   /* ------------------------- Pantheon Statistics ----------------------------- */
 
-  CheckPantheon(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "pantheonOfTheMaster", HKPlayerData); // ------------------------- Hints ----------------------------- //
+  CheckPantheon(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "pantheonOfTheMaster", HKPlayerData);
+  CheckPantheon(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "pantheonOfTheArtist", HKPlayerData); // ------------------------- Hints ----------------------------- //
 
   CheckHintsTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints.entries, HKPlayerData, HKWorldItems); // ------------------------- Extended game completion check ----------------------------- //
 
@@ -6319,6 +6320,54 @@ var HK = {
         },
         noHits: {
           name: "P1 No Damage",
+          spoiler: "Complete without taking a single hit",
+          wiki: "Pantheons"
+        }
+      }
+    },
+    pantheonOfTheArtist: {
+      h2: "Pantheon of the Artist (P2)",
+      id: "hk-pantheon-artist",
+      property: "bossDoorStateTier2",
+      description: "Seek the God Inspired",
+      entries: {
+        unlocked: {
+          name: "P2 Unlocked",
+          spoiler: "Defeat P2 bosses in the game world to unlock",
+          wiki: "Pantheon_of_the_Artist"
+        },
+        completed: {
+          name: "P2 Completed",
+          spoiler: "Defeat all bosses in a row to complete",
+          wiki: "Pantheon_of_the_Artist"
+        },
+        boundNail: {
+          name: "P2 Binding: Nail",
+          spoiler: "Complete with the Nail binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundShell: {
+          name: "P2 Binding: Shell",
+          spoiler: "Complete with the Shell binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundCharms: {
+          name: "P2 Binding: Charms",
+          spoiler: "Complete with the Charm binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        boundSoul: {
+          name: "P2 Binding: Soul",
+          spoiler: "Complete with the Soul binding active",
+          wiki: "Pantheons#Bindings"
+        },
+        allBindings: {
+          name: "P2 All Bindings",
+          spoiler: "Complete with all bindings active at once",
+          wiki: "Pantheons#Bindings"
+        },
+        noHits: {
+          name: "P2 No Damage",
           spoiler: "Complete without taking a single hit",
           wiki: "Pantheons"
         }
