@@ -7570,6 +7570,34 @@ var HK = {
           id: "Nailmasters",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Oro_.26_Mato"
+        },
+        PaintmasterUnlocked: {
+          name: "Paintmaster Sheo: Unlocked",
+          spoiler: "Together, we stand at a Pantheon's peak",
+          id: "Paintmaster",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Paintmaster_Sheo"
+        },
+        PaintmasterAttuned: {
+          name: "Paintmaster Sheo: Attuned",
+          spoiler: "Loyal brother gods of the nail",
+          id: "Paintmaster",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Paintmaster_Sheo"
+        },
+        PaintmasterAscended: {
+          name: "Paintmaster Sheo: Ascended",
+          spoiler: "Loyal brother gods of the nail",
+          id: "Paintmaster",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Paintmaster_Sheo"
+        },
+        PaintmasterRadiant: {
+          name: "Paintmaster Sheo: Radiant",
+          spoiler: "Loyal brother gods of the nail",
+          id: "Paintmaster",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Paintmaster_Sheo"
         }
       }
     }
