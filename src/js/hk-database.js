@@ -3374,14 +3374,13 @@ const HK = {
         statueStateGruzMother: {
           name: "P1 Gruz Mother",
           nameDefault: "P1 Gruz Mother",
-          nameSeen: "P1 Gruz Mother: Seen",
           nameUnlocked: "P1 Gruz Mother: Unlocked",
           nameAttuned: "P1 Gruz Mother: Attuned",
           nameAscended: "P1 Gruz Mother: Ascended",
           nameRadiant: "P1 Gruz Mother: Radiant",
           spoiler: "I sleep amongst winding roads",
           spoilerDefault: "I sleep amongst winding roads",
-          spoilerSeen: "Slumbering god of fertility",
+          spoilerUnlocked: "Slumbering god of fertility",
           wiki: "Hall_of_Gods#Gruz_Mother"
         },
       },

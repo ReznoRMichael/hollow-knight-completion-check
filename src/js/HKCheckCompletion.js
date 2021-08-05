@@ -1,10 +1,10 @@
 /* eslint-disable no-prototype-builtins */
 
-/* ---------------- Load main Hollow Knight database files ----------------- */
+/* ---------------- Load main Hollow Knight database files ------------------------------------------------------------------------ */
 
 import HK from "./hk-database.js";
 
-/* ----------------- Helper functions --------------------------------------- */
+/* ----------------- Helper functions --------------------------------------------------------------------------------------------- */
 
 import {
   GenerateInnerHTML,
@@ -27,7 +27,7 @@ import {
   TranslateMapName
 } from "./hk-functions.js";
 
-// ---------------- Load image files (necessary for Webpack) ----------------- //
+// ---------------- Load image files (necessary for Webpack) ----------------------------------------------------------------------- //
 
 import HEALTH_MASK_IMAGE from "../img/health-mask.png";
 import HEALTH_MASK_STEEL_IMAGE from "../img/health-mask-steel.png";
@@ -38,7 +38,7 @@ import NOTCH_OVERCHARMED_IMAGE from "../img/notch-overcharmed.png";
 import GEO_IMAGE from "../img/geo.png";
 import GEO_SHADE_IMAGE from "../img/geo-shade.png";
 
-// ---------------- Constants ----------------- //
+// ---------------- Constants ------------------------------------------------------------------------------------------------------- //
 
 // const DATA_UNKNOWN = "Data unknown";
 const SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ "
@@ -49,7 +49,7 @@ const SYMBOL_EMPTY = "<span class='padding-left'></span>";
 const FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
 const WIKI_LINK = "https://hollowknight.fandom.com/wiki/";
 
-// ---------------- Variables ----------------- //
+// ---------------- Variables ------------------------------------------------------------------------------------------------------- //
 
 // let currentData = DATA_UNKNOWN;
 let completionSymbol = SYMBOL_FALSE;
@@ -70,7 +70,7 @@ let pSpan = "<span class='p-left-small'></span>";
 
 /* let benchHKCCBegin, benchHKCCEnd; */
 
-/* -------------------------- Functions ----------------------------- */
+/* -------------------------- Functions ------------------------------------------------------------------------------------------- */
 
 /**
  * Main Function. Checks Hollow Knight game completion by analyzing the save file
@@ -112,119 +112,119 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
   // Prevents adding current percent data after each function call and resets what the analyzing has done to the original object. Prevents wrong data display after subsequent save analyzing.
   ResetCompletion(HK);
 
-  // ================================================================================== //
+  // ============================================================================================================================= //
 
-  // ---------------- Time Played ----------------- //
+  // ---------------- Time Played ----------------------------------------------------------------------------------------------- //
 
   CheckPlayTime(HK.sections.intro, HKPlayerData.playTime);
 
-  // ---------------- Game Completion Status ----------------- //
+  // ---------------- Game Completion Status ------------------------------------------------------------------------------------ //
 
   CheckCompletionPercent(HK.sections.intro, HKPlayerData);
 
-  // ---------------- Game Completion Status ----------------- //
+  // ---------------- Game Completion Status ------------------------------------------------------------------------------------ //
 
   CheckSaveFileVersion(HK.sections.intro, HKPlayerData.version);
 
-  // ---------------- Health Masks ----------------- //
+  // ---------------- Health Masks ---------------------------------------------------------------------------------------------- //
 
   CheckHealthMasks(HK.sections.intro, HKPlayerData.maxHealthBase, HKPlayerData.permadeathMode);
 
-  // ---------------- Soul Orbs ----------------- //
+  // ---------------- Soul Orbs ------------------------------------------------------------------------------------------------- //
 
   CheckSoulOrbs(HK.sections.intro, HKPlayerData.maxMP + HKPlayerData.MPReserveMax);
 
-  // ---------------- Charm Notches (Slots) ----------------- //
+  // ---------------- Charm Notches (Slots) ------------------------------------------------------------------------------------- //
 
   CheckNotches(HK.sections.intro, HKPlayerData.charmSlots, HKPlayerData.charmSlotsFilled);
 
-  // ---------------- Geo Amount ----------------- //
+  // ---------------- Geo Amount ------------------------------------------------------------------------------------------------ //
 
   CheckGeo(HK.sections.intro, HKPlayerData.geo, HKPlayerData.geoPool);
 
-  // ---------------- Bosses (Base Game) --------------------- //
+  // ---------------- Bosses (Base Game) ---------------------------------------------------------------------------------------- //
 
   CheckIfDataTrue(HK.sections.bosses, HK.sections.bosses.entries, HKPlayerData, HKWorldItems);
 
-  // ---------------- Charms --------------------- //
+  // ---------------- Charms ---------------------------------------------------------------------------------------------------- //
 
   CheckIfDataTrue(HK.sections.charms, HK.sections.charms.entries, HKPlayerData);
 
-  // ---------------- Colosseum of Fools --------------------- //
+  // ---------------- Colosseum of Fools ---------------------------------------------------------------------------------------- //
 
   CheckIfDataTrue(HK.sections.colosseum, HK.sections.colosseum.entries, HKPlayerData);
 
-  // ---------------- Dreamers --------------------- //
+  // ---------------- Dreamers -------------------------------------------------------------------------------------------------- //
 
   CheckIfDataTrue(HK.sections.dreamers, HK.sections.dreamers.entries, HKPlayerData);
 
-  // ---------------- Dream Nail and Essence --------------------- //
+  // ---------------- Dream Nail and Essence ------------------------------------------------------------------------------------ //
 
   CheckIfDataTrue(HK.sections.dreamNail, HK.sections.dreamNail.entries, HKPlayerData);
 
-  // ---------------- Equipment --------------------- //
+  // ---------------- Equipment ------------------------------------------------------------------------------------------------- //
 
   CheckIfDataTrue(HK.sections.equipment, HK.sections.equipment.entries, HKPlayerData);
 
-  // ---------------- Nail Upgrades --------------------- //
+  // ---------------- Nail Upgrades --------------------------------------------------------------------------------------------- //
 
   CheckNailUpgrades(HK.sections.nailUpgrades, HK.sections.nailUpgrades.entries, HKPlayerData);
 
-  // ---------------- Mask Shards --------------------- //
+  // ---------------- Mask Shards ----------------------------------------------------------------------------------------------- //
 
   CheckIfDataTrue(HK.sections.maskShards, HK.sections.maskShards.entries, HKPlayerData, HKWorldItems);
 
-  // ---------------- Nail Arts --------------------- //
+  // ---------------- Nail Arts ------------------------------------------------------------------------------------------------- //
 
   CheckIfDataTrue(HK.sections.nailArts, HK.sections.nailArts.entries, HKPlayerData);
 
-  // ---------------- Spells --------------------- //
+  // ---------------- Spells ---------------------------------------------------------------------------------------------------- //
 
   CheckSpellLevel(HK.sections.spells, HK.sections.spells.entries, HKPlayerData);
 
-  // ---------------- Vessel Fragments --------------------- //
+  // ---------------- Vessel Fragments ------------------------------------------------------------------------------------------ //
 
   CheckIfDataTrue(HK.sections.vesselFragments, HK.sections.vesselFragments.entries, HKPlayerData, HKWorldItems);
 
-  // ---------------- Warrior Dreams --------------------- //
+  // ---------------- Warrior Dreams -------------------------------------------------------------------------------------------- //
 
   CheckWarriorDreams(HK.sections.warriorDreams, HK.sections.warriorDreams.entries, HKPlayerData);
 
-  // ---------------- Grimm Troupe Content Pack --------------------- //
+  // ---------------- Grimm Troupe Content Pack --------------------------------------------------------------------------------- //
 
   CheckIfDataTrue(HK.sections.grimmTroupe, HK.sections.grimmTroupe.entries, HKPlayerData);
 
-  // ---------------- Lifeblood Content Pack --------------------- //
+  // ---------------- Lifeblood Content Pack ------------------------------------------------------------------------------------ //
 
   CheckIfDataTrue(HK.sections.lifeblood, HK.sections.lifeblood.entries, HKPlayerData);
 
-  // ---------------- Godmaster Content Pack --------------------- //
+  // ---------------- Godmaster Content Pack ------------------------------------------------------------------------------------ //
 
   CheckIfDataTrue(HK.sections.godmaster, HK.sections.godmaster.entries, HKPlayerData);
   
-  // ------------------------- Hunter's Journal ----------------------------- //
+  // ------------------------- Hunter's Journal --------------------------------------------------------------------------------- //
   /* Must be checked before Statistics (for correct entry numbers) */
 
   CheckHuntersJournal(HK, "huntersJournal", HKPlayerData);
   CheckHuntersJournal(HK, "huntersJournalOptional", HKPlayerData);
 
-  // ------------------------- Essential Things ----------------------------- //
+  // ------------------------- Essential Things --------------------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.essential, HK.sections.essential.entries, HKPlayerData, HKWorldItems);
 
-  // ------------------------- Achievements ----------------------------- //
+  // ------------------------- Achievements ------------------------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.achievements, HK.sections.achievements.entries, HKPlayerData, HKWorldItems);
 
-  // ------------------------- Game Statistics ----------------------------- //
+  // ------------------------- Game Statistics ---------------------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.statistics, HK.sections.statistics.entries, HKPlayerData, HKWorldItems, HKSceneData);
 
-  // ------------------------- Godhome Statistics ----------------------------- //
+  // ------------------------- Godhome Statistics ------------------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.godhomeStatistics, HK.sections.godhomeStatistics.entries, HKPlayerData, HKWorldItems, HKSceneData);
 
-  /* ------------------------- Pantheon Statistics ----------------------------- */
+  /* ------------------------- Pantheon Statistics ------------------------------------------------------------------------------ */
 
   CheckPantheon(HK, "pantheonOfTheMaster", HKPlayerData);
   CheckPantheon(HK, "pantheonOfTheArtist", HKPlayerData);
@@ -232,20 +232,22 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
   CheckPantheon(HK, "pantheonOfTheKnight", HKPlayerData);
   CheckPantheon(HK, "pantheonOfHallownest", HKPlayerData);
 
-  // ------------------------- Hints ----------------------------- //
+  CheckHallOfGods(HK, HKPlayerData);
+
+  // ------------------------- Hints ---------------------------------------------------------------------------------------------- //
 
   CheckHintsTrue(HK.sections.hints, HK.sections.hints.entries, HKPlayerData, HKWorldItems);
 
-  // ------------------------- Extended game completion check ----------------------------- //
+  // ------------------------- Extended game completion check --------------------------------------------------------------------- //
 
   /* Percent completion is filled inside GenerateInnerHTML() using CompletionFill() */
   CheckExtendedCompletion(HK);
 
-  // ------------------------- Indicate that the save file was loaded and analyzed correctly ----------------------------- //
+  // ------------------------- Indicate that the save file was loaded and analyzed correctly -------------------------------------- //
 
   HK.saveAnalyzed = true;
 
-  // ------------------------- Generate everything on the page with updated values ----------------------------- //
+  // ------------------------- Generate everything on the page with updated values ------------------------------------------------ //
 
   GenerateInnerHTML(HK);
 
@@ -2011,6 +2013,50 @@ function CheckPantheon(db, sectionName, playerData) {
   }
 }
 
+
+function CheckHallOfGods(db, playerData) {
+
+  let section = db.sections.hallOfGods;
+  let entries = db.sections.hallOfGods.entries;
+  let check = {};
+
+  for (let entry in entries) {
+
+    check = playerData[entry];
+
+    if (check.completedTier3 === true) {
+
+      SetIcon(section, entry, "radiant");
+      entries[entry].name = entries[entry].nameRadiant;
+      entries[entry].spoiler = entries[entry].spoilerUnlocked;
+    }
+    else if (check.completedTier2 === true) {
+
+      SetIcon(section, entry, "ascended");
+      entries[entry].name = entries[entry].nameAscended;
+      entries[entry].spoiler = entries[entry].spoilerUnlocked;
+    }
+    else if (check.completedTier1 === true) {
+
+      SetIcon(section, entry, "attuned");
+      entries[entry].name = entries[entry].nameAttuned;
+      entries[entry].spoiler = entries[entry].spoilerUnlocked;
+    }
+    else if (check.isUnlocked === true) {
+
+      SetIcon(section, entry, "partial");
+      entries[entry].name = entries[entry].nameUnlocked;
+      entries[entry].spoiler = entries[entry].spoilerUnlocked;
+    }
+    else {
+
+      SetIconRed(section, entry);
+      entries[entry].name = entries[entry].nameDefault;
+      entries[entry].spoiler = entries[entry].spoilerDefault;
+    }
+
+  }
+}
 
 
 /**
