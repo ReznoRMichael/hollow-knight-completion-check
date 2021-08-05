@@ -3847,6 +3847,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Winged_Nosk"
         },
+        CollectorUnlocked: {
+          name: "The Collector: Unlocked",
+          spoiler: "I lurk at the peak of a forsaken tower",
+          id: "Collector",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#The_Collector"
+        },
+        CollectorAttuned: {
+          name: "The Collector: Attuned",
+          spoiler: "Joyful god of protection",
+          id: "Collector",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#The_Collector"
+        },
+        CollectorAscended: {
+          name: "The Collector: Ascended",
+          spoiler: "Joyful god of protection",
+          id: "Collector",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#The_Collector"
+        },
+        CollectorRadiant: {
+          name: "The Collector: Radiant",
+          spoiler: "Joyful god of protection",
+          id: "Collector",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#The_Collector"
+        },
       },
     }
 
