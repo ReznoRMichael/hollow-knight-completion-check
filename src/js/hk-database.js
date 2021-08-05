@@ -3875,6 +3875,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#The_Collector"
         },
+        GodTamerUnlocked: {
+          name: "God Tamer: Unlocked",
+          spoiler: "I wait, weapon in hand, within the colosseum",
+          id: "GodTamer",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#God_Tamer"
+        },
+        GodTamerAttuned: {
+          name: "God Tamer: Attuned",
+          spoiler: "Gallant god of the arena",
+          id: "GodTamer",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#God_Tamer"
+        },
+        GodTamerAscended: {
+          name: "God Tamer: Ascended",
+          spoiler: "Gallant god of the arena",
+          id: "GodTamer",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#God_Tamer"
+        },
+        GodTamerRadiant: {
+          name: "God Tamer: Radiant",
+          spoiler: "Gallant god of the arena",
+          id: "GodTamer",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#God_Tamer"
+        },
       },
     }
 
