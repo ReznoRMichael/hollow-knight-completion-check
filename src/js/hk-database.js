@@ -4295,6 +4295,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Galien"
         },
+        MarkothUnlocked: {
+          name: "Markoth: Unlocked",
+          spoiler: "I lie dreaming at the edge of the world",
+          id: "Markoth",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Markoth"
+        },
+        MarkothAttuned: {
+          name: "Markoth: Attuned",
+          spoiler: "Dreamborn god of meditation and isolation",
+          id: "Markoth",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Markoth"
+        },
+        MarkothAscended: {
+          name: "Markoth: Ascended",
+          spoiler: "Dreamborn god of meditation and isolation",
+          id: "Markoth",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Markoth"
+        },
+        MarkothRadiant: {
+          name: "Markoth: Radiant",
+          spoiler: "Dreamborn god of meditation and isolation",
+          id: "Markoth",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Markoth"
+        },
       },
     }
 
