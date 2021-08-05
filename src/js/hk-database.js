@@ -3595,6 +3595,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Massive_Moss_Charger"
         },
+        FlukemarmUnlocked: {
+          name: "Flukemarm: Unlocked",
+          spoiler: "I lie within a maze of pipes",
+          id: "Flukemarm",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Flukemarm"
+        },
+        FlukemarmAttuned: {
+          name: "Flukemarm: Attuned",
+          spoiler: "Alluring god of motherhood",
+          id: "Flukemarm",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Flukemarm"
+        },
+        FlukemarmAscended: {
+          name: "Flukemarm: Ascended",
+          spoiler: "Alluring god of motherhood",
+          id: "Flukemarm",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Flukemarm"
+        },
+        FlukemarmRadiant: {
+          name: "Flukemarm: Radiant",
+          spoiler: "Alluring god of motherhood",
+          id: "Flukemarm",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Flukemarm"
+        },
         MantisLordsUnlocked: {
           name: "Mantis Lords: Unlocked",
           spoiler: "We watch over a village of warriors",
