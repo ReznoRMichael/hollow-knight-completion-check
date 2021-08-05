@@ -7122,6 +7122,34 @@ var HK = {
           id: "Uumuu",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Uumuu"
+        },
+        TraitorLordUnlocked: {
+          name: "Traitor Lord: Unlocked",
+          spoiler: "I defile the gardens of false royalty",
+          id: "TraitorLord",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Traitor_Lord"
+        },
+        TraitorLordAttuned: {
+          name: "Traitor Lord: Attuned",
+          spoiler: "Treacherous god of anger",
+          id: "TraitorLord",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Traitor_Lord"
+        },
+        TraitorLordAscended: {
+          name: "Traitor Lord: Ascended",
+          spoiler: "Treacherous god of anger",
+          id: "TraitorLord",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Traitor_Lord"
+        },
+        TraitorLordRadiant: {
+          name: "Traitor Lord: Radiant",
+          spoiler: "Treacherous god of anger",
+          id: "TraitorLord",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Traitor_Lord"
         }
       }
     }
