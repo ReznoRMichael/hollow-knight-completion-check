@@ -3735,6 +3735,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Hive_Knight"
         },
+        BrokenVesselUnlocked: {
+          name: "Broken Vessel: Unlocked",
+          spoiler: "I sleep in the deep caves below the world",
+          id: "BrokenVessel",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Broken_Vessel"
+        },
+        BrokenVesselAttuned: {
+          name: "Broken Vessel: Attuned",
+          spoiler: "Broken shell of an empty god",
+          id: "BrokenVessel",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Broken_Vessel"
+        },
+        BrokenVesselAscended: {
+          name: "Broken Vessel: Ascended",
+          spoiler: "Broken shell of an empty god",
+          id: "BrokenVessel",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Broken_Vessel"
+        },
+        BrokenVesselRadiant: {
+          name: "Broken Vessel: Radiant",
+          spoiler: "Broken shell of an empty god",
+          id: "BrokenVessel",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Broken_Vessel"
+        },
       },
     }
 
