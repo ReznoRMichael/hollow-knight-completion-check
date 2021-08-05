@@ -4155,6 +4155,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Dung_Defender"
         },
+        WhiteDefenderUnlocked: {
+          name: "White Defender: Unlocked",
+          spoiler: "Kindly god of bravery and honour",
+          id: "WhiteDefender",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#White_Defender"
+        },
+        WhiteDefenderAttuned: {
+          name: "White Defender: Attuned",
+          spoiler: "Kindly god of bravery and honour",
+          id: "WhiteDefender",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#White_Defender"
+        },
+        WhiteDefenderAscended: {
+          name: "White Defender: Ascended",
+          spoiler: "Kindly god of bravery and honour",
+          id: "WhiteDefender",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#White_Defender"
+        },
+        WhiteDefenderRadiant: {
+          name: "White Defender: Radiant",
+          spoiler: "Kindly god of bravery and honour",
+          id: "WhiteDefender",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#White_Defender"
+        },
       },
     }
 
