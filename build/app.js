@@ -7682,6 +7682,34 @@ var HK = {
           id: "Grimm",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Grimm"
+        },
+        NightmareGrimmUnlocked: {
+          name: "Nightmare King: Unlocked",
+          spoiler: "God of nightmares",
+          id: "NightmareGrimm",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Nightmare_King"
+        },
+        NightmareGrimmAttuned: {
+          name: "Nightmare King: Attuned",
+          spoiler: "God of nightmares",
+          id: "NightmareGrimm",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Nightmare_King"
+        },
+        NightmareGrimmAscended: {
+          name: "Nightmare King: Ascended",
+          spoiler: "God of nightmares",
+          id: "NightmareGrimm",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Nightmare_King"
+        },
+        NightmareGrimmRadiant: {
+          name: "Nightmare King: Radiant",
+          spoiler: "God of nightmares",
+          id: "NightmareGrimm",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Nightmare_King"
         }
       }
     }
