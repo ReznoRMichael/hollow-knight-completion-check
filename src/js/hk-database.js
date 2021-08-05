@@ -4351,6 +4351,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Xero"
         },
+        GorbUnlocked: {
+          name: "Gorb: Unlocked",
+          spoiler: "I lie dreaming at a wind-blasted peak",
+          id: "Gorb",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Gorb"
+        },
+        GorbAttuned: {
+          name: "Gorb: Attuned",
+          spoiler: "Dreamborn god of the beyond",
+          id: "Gorb",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Gorb"
+        },
+        GorbAscended: {
+          name: "Gorb: Ascended",
+          spoiler: "Dreamborn god of the beyond",
+          id: "Gorb",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Gorb"
+        },
+        GorbRadiant: {
+          name: "Gorb: Radiant",
+          spoiler: "Dreamborn god of the beyond",
+          id: "Gorb",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Gorb"
+        },
       },
     }
 
