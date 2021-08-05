@@ -7710,6 +7710,34 @@ var HK = {
           id: "NightmareGrimm",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Nightmare_King"
+        },
+        RadianceUnlocked: {
+          name: "Radiance: Unlocked",
+          spoiler: "Forgotten god of light",
+          id: "Radiance",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Radiance"
+        },
+        RadianceAttuned: {
+          name: "Radiance: Attuned",
+          spoiler: "Forgotten god of light",
+          id: "Radiance",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Radiance"
+        },
+        RadianceAscended: {
+          name: "Radiance: Ascended",
+          spoiler: "Forgotten god of light",
+          id: "Radiance",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Radiance"
+        },
+        RadianceRadiant: {
+          name: "Radiance: Radiant",
+          spoiler: "Forgotten god of light",
+          id: "Radiance",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Radiance"
         }
       }
     }
