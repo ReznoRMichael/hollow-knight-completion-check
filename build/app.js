@@ -7402,6 +7402,34 @@ var HK = {
           id: "Marmu",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Marmu"
+        },
+        GalienUnlocked: {
+          name: "Galien: Unlocked",
+          spoiler: "I lie dreaming in darkness, surrounded by predators",
+          id: "Galien",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Galien"
+        },
+        GalienAttuned: {
+          name: "Galien: Attuned",
+          spoiler: "Dreamborn god of heroic hearts",
+          id: "Galien",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Galien"
+        },
+        GalienAscended: {
+          name: "Galien: Ascended",
+          spoiler: "Dreamborn god of heroic hearts",
+          id: "Galien",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Galien"
+        },
+        GalienRadiant: {
+          name: "Galien: Radiant",
+          spoiler: "Dreamborn god of heroic hearts",
+          id: "Galien",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Galien"
         }
       }
     }
