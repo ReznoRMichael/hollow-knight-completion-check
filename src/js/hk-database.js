@@ -4491,6 +4491,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Nailsage_Sly"
         },
+        HollowKnightUnlocked: {
+          name: "Pure Vessel: Unlocked",
+          spoiler: "This empty god stands at a Pantheon's peak",
+          id: "HollowKnight",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Pure_Vessel"
+        },
+        HollowKnightAttuned: {
+          name: "Pure Vessel: Attuned",
+          spoiler: "Mighty god of nothingness",
+          id: "HollowKnight",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Pure_Vessel"
+        },
+        HollowKnightAscended: {
+          name: "Pure Vessel: Ascended",
+          spoiler: "Mighty god of nothingness",
+          id: "HollowKnight",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Pure_Vessel"
+        },
+        HollowKnightRadiant: {
+          name: "Pure Vessel: Radiant",
+          spoiler: "Mighty god of nothingness",
+          id: "HollowKnight",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Pure_Vessel"
+        },
       },
     }
 
