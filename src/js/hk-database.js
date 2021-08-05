@@ -4099,6 +4099,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Soul_Master"
         },
+        SoulTyrantUnlocked: {
+          name: "Soul Tyrant: Unlocked",
+          spoiler: "Frenzied god of mortality",
+          id: "SoulTyrant",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Soul_Tyrant"
+        },
+        SoulTyrantAttuned: {
+          name: "Soul Tyrant: Attuned",
+          spoiler: "Frenzied god of mortality",
+          id: "SoulTyrant",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Soul_Tyrant"
+        },
+        SoulTyrantAscended: {
+          name: "Soul Tyrant: Ascended",
+          spoiler: "Frenzied god of mortality",
+          id: "SoulTyrant",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Soul_Tyrant"
+        },
+        SoulTyrantRadiant: {
+          name: "Soul Tyrant: Radiant",
+          spoiler: "Frenzied god of mortality",
+          id: "SoulTyrant",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Soul_Tyrant"
+        },
       },
     }
 
