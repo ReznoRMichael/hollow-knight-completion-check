@@ -3567,6 +3567,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Hornet_Sentinel"
         },
+        MegaMossChargerUnlocked: {
+          name: "Massive Moss Charger: Unlocked",
+          spoiler: "Together we hunt in paths...",
+          id: "MegaMossCharger",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Massive_Moss_Charger"
+        },
+        MegaMossChargerAttuned: {
+          name: "Massive Moss Charger: Attuned",
+          spoiler: "...overgrown with green",
+          id: "MegaMossCharger",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Massive_Moss_Charger"
+        },
+        MegaMossChargerAscended: {
+          name: "Massive Moss Charger: Ascended",
+          spoiler: "Restless god of those...",
+          id: "MegaMossCharger",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Massive_Moss_Charger"
+        },
+        MegaMossChargerRadiant: {
+          name: "Massive Moss Charger: Radiant",
+          spoiler: "...who band together",
+          id: "MegaMossCharger",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Massive_Moss_Charger"
+        },
       },
     }
 
