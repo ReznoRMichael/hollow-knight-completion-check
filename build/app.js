@@ -6898,6 +6898,34 @@ var HK = {
           id: "BrokenVessel",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Broken_Vessel"
+        },
+        LostKinUnlocked: {
+          name: "Lost Kin: Unlocked",
+          spoiler: "Lost god of the Abyss",
+          id: "LostKin",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Lost_Kin"
+        },
+        LostKinAttuned: {
+          name: "Lost Kin: Attuned",
+          spoiler: "Lost god of the Abyss",
+          id: "LostKin",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Lost_Kin"
+        },
+        LostKinAscended: {
+          name: "Lost Kin: Ascended",
+          spoiler: "Lost god of the Abyss",
+          id: "LostKin",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Lost_Kin"
+        },
+        LostKinRadiant: {
+          name: "Lost Kin: Radiant",
+          spoiler: "Lost god of the Abyss",
+          id: "LostKin",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Lost_Kin"
         }
       }
     }
