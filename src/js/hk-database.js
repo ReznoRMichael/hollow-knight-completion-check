@@ -4071,6 +4071,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Soul_Warrior"
         },
+        SoulMasterUnlocked: {
+          name: "Soul Master: Unlocked",
+          spoiler: "Immortal, I rule the Sanctum",
+          id: "SoulMaster",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Soul_Master"
+        },
+        SoulMasterAttuned: {
+          name: "Soul Master: Attuned",
+          spoiler: "Covetous god of soul",
+          id: "SoulMaster",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Soul_Master"
+        },
+        SoulMasterAscended: {
+          name: "Soul Master: Ascended",
+          spoiler: "Covetous god of soul",
+          id: "SoulMaster",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Soul_Master"
+        },
+        SoulMasterRadiant: {
+          name: "Soul Master: Radiant",
+          spoiler: "Covetous god of soul",
+          id: "SoulMaster",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Soul_Master"
+        },
       },
     }
 
