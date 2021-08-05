@@ -4519,6 +4519,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Pure_Vessel"
         },
+        GrimmUnlocked: {
+          name: "Grimm: Unlocked",
+          spoiler: "I await the lighting of the lantern",
+          id: "Grimm",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Grimm"
+        },
+        GrimmAttuned: {
+          name: "Grimm: Attuned",
+          spoiler: "Travelling god of the troupe",
+          id: "Grimm",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Grimm"
+        },
+        GrimmAscended: {
+          name: "Grimm: Ascended",
+          spoiler: "Travelling god of the troupe",
+          id: "Grimm",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Grimm"
+        },
+        GrimmRadiant: {
+          name: "Grimm: Radiant",
+          spoiler: "Travelling god of the troupe",
+          id: "Grimm",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Grimm"
+        },
       },
     }
 
