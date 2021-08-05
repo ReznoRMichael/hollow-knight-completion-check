@@ -4043,6 +4043,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Grey_Prince_Zote"
         },
+        MageKnightUnlocked: {
+          name: "Soul Warrior: Unlocked",
+          spoiler: "I haunt the halls of a sanctum",
+          id: "MageKnight",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Soul_Warrior"
+        },
+        MageKnightAttuned: {
+          name: "Soul Warrior: Attuned",
+          spoiler: "Haunted god of the sanctum",
+          id: "MageKnight",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Soul_Warrior"
+        },
+        MageKnightAscended: {
+          name: "Soul Warrior: Ascended",
+          spoiler: "Haunted god of the sanctum",
+          id: "MageKnight",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Soul_Warrior"
+        },
+        MageKnightRadiant: {
+          name: "Soul Warrior: Radiant",
+          spoiler: "Haunted god of the sanctum",
+          id: "MageKnight",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Soul_Warrior"
+        },
       },
     }
 
