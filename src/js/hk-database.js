@@ -3483,6 +3483,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#False_Knight"
         },
+        FailedChampionUnlocked: {
+          name: "Failed Champion: Unlocked",
+          spoiler: "Baleful god of regrets",
+          id: "FailedChampion",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Failed_Champion"
+        },
+        FailedChampionAttuned: {
+          name: "Failed Champion: Attuned",
+          spoiler: "Baleful god of regrets",
+          id: "FailedChampion",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Failed_Champion"
+        },
+        FailedChampionAscended: {
+          name: "Failed Champion: Ascended",
+          spoiler: "Baleful god of regrets",
+          id: "FailedChampion",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Failed_Champion"
+        },
+        FailedChampionRadiant: {
+          name: "Failed Champion: Radiant",
+          spoiler: "Baleful god of regrets",
+          id: "FailedChampion",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Failed_Champion"
+        },
       },
     }
 
