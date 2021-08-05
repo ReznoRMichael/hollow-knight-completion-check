@@ -1837,33 +1837,45 @@ function CheckPantheon(db, sectionName, playerData) {
 function CheckHallOfGods(db, playerData) {
   var section = db.sections.hallOfGods;
   var entries = db.sections.hallOfGods.entries;
-  var check = {};
+  var id = "";
+  var check = "";
+  var isUnlocked = false;
 
   for (var entry in entries) {
-    check = playerData[entry];
+    id = entries[entry].id;
+    check = entries[entry].check;
+    isUnlocked = playerData["statueState".concat(id)].isUnlocked;
 
-    if (check.completedTier3 === true) {
-      (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "radiant");
-      entries[entry].name = entries[entry].nameRadiant;
-      entries[entry].spoiler = entries[entry].spoilerUnlocked;
-    } else if (check.completedTier2 === true) {
-      (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "ascended");
-      entries[entry].name = entries[entry].nameAscended;
-      entries[entry].spoiler = entries[entry].spoilerUnlocked;
-    } else if (check.completedTier1 === true) {
-      (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "attuned");
-      entries[entry].name = entries[entry].nameAttuned;
-      entries[entry].spoiler = entries[entry].spoilerUnlocked;
-    } else if (check.isUnlocked === true) {
+    if (playerData["statueState".concat(id)][check] === true) {
+      switch (check) {
+        case "isUnlocked":
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, entry);
+          break;
+
+        case "completedTier1":
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "attuned");
+          break;
+
+        case "completedTier2":
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "ascended");
+          break;
+
+        case "completedTier3":
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "radiant");
+          break;
+
+        default:
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "partial");
+          break;
+      }
+    } else if (isUnlocked) {
       (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "partial");
-      entries[entry].name = entries[entry].nameUnlocked;
-      entries[entry].spoiler = entries[entry].spoilerUnlocked;
     } else {
       (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, entry);
-      entries[entry].name = entries[entry].nameDefault;
-      entries[entry].spoiler = entries[entry].spoilerDefault;
     }
   }
+  /* end for (let entry in entries) */
+
 }
 /**
  * Checks, validates and shows hints to the player depending on their save progression, in chronological order. Shows only hint for the last uncompleted event. If Hollow Knight is defeated, shows a dummy text.
@@ -6491,16 +6503,32 @@ var HK = {
       property: "statueState",
       description: "Bottom of Godhome. Detecting what bosses have been unlocked and defeated on all three difficulty levels: Attuned, Ascended and Radiant.",
       entries: {
-        statueStateGruzMother: {
-          name: "P1 Gruz Mother",
-          nameDefault: "P1 Gruz Mother",
-          nameUnlocked: "P1 Gruz Mother: Unlocked",
-          nameAttuned: "P1 Gruz Mother: Attuned",
-          nameAscended: "P1 Gruz Mother: Ascended",
-          nameRadiant: "P1 Gruz Mother: Radiant",
+        GruzMotherUnlocked: {
+          name: "P1 Gruz Mother: Unlocked",
           spoiler: "I sleep amongst winding roads",
-          spoilerDefault: "I sleep amongst winding roads",
-          spoilerUnlocked: "Slumbering god of fertility",
+          id: "GruzMother",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Gruz_Mother"
+        },
+        GruzMotherAttuned: {
+          name: "P1 Gruz Mother: Attuned",
+          spoiler: "Slumbering god of fertility",
+          id: "GruzMother",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Gruz_Mother"
+        },
+        GruzMotherAscended: {
+          name: "P1 Gruz Mother: Ascended",
+          spoiler: "Slumbering god of fertility",
+          id: "GruzMother",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Gruz_Mother"
+        },
+        GruzMotherRadiant: {
+          name: "P1 Gruz Mother: Radiant",
+          spoiler: "Slumbering god of fertility",
+          id: "GruzMother",
+          check: "completedTier3",
           wiki: "Hall_of_Gods#Gruz_Mother"
         }
       }

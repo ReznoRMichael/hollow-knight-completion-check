@@ -3371,16 +3371,32 @@ const HK = {
       property: "statueState",
       description: "Bottom of Godhome. Detecting what bosses have been unlocked and defeated on all three difficulty levels: Attuned, Ascended and Radiant.",
       entries: {
-        statueStateGruzMother: {
-          name: "P1 Gruz Mother",
-          nameDefault: "P1 Gruz Mother",
-          nameUnlocked: "P1 Gruz Mother: Unlocked",
-          nameAttuned: "P1 Gruz Mother: Attuned",
-          nameAscended: "P1 Gruz Mother: Ascended",
-          nameRadiant: "P1 Gruz Mother: Radiant",
+        GruzMotherUnlocked: {
+          name: "P1 Gruz Mother: Unlocked",
           spoiler: "I sleep amongst winding roads",
-          spoilerDefault: "I sleep amongst winding roads",
-          spoilerUnlocked: "Slumbering god of fertility",
+          id: "GruzMother",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Gruz_Mother"
+        },
+        GruzMotherAttuned: {
+          name: "P1 Gruz Mother: Attuned",
+          spoiler: "Slumbering god of fertility",
+          id: "GruzMother",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Gruz_Mother"
+        },
+        GruzMotherAscended: {
+          name: "P1 Gruz Mother: Ascended",
+          spoiler: "Slumbering god of fertility",
+          id: "GruzMother",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Gruz_Mother"
+        },
+        GruzMotherRadiant: {
+          name: "P1 Gruz Mother: Radiant",
+          spoiler: "Slumbering god of fertility",
+          id: "GruzMother",
+          check: "completedTier3",
           wiki: "Hall_of_Gods#Gruz_Mother"
         },
       },

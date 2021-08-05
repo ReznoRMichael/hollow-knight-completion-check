@@ -2018,44 +2018,51 @@ function CheckHallOfGods(db, playerData) {
 
   let section = db.sections.hallOfGods;
   let entries = db.sections.hallOfGods.entries;
-  let check = {};
+  let id = "";
+  let check = "";
+  let isUnlocked = false;
 
   for (let entry in entries) {
 
-    check = playerData[entry];
+    id = entries[entry].id;
+    check = entries[entry].check;
+    isUnlocked = playerData[`statueState${id}`].isUnlocked;
 
-    if (check.completedTier3 === true) {
+    if (playerData[`statueState${id}`][check] === true) {
 
-      SetIcon(section, entry, "radiant");
-      entries[entry].name = entries[entry].nameRadiant;
-      entries[entry].spoiler = entries[entry].spoilerUnlocked;
+      switch(check) {
+
+        case "isUnlocked":
+          SetIconGreen(section, entry);
+          break;
+
+        case "completedTier1":
+          SetIcon(section, entry, "attuned");
+          break;
+
+        case "completedTier2":
+          SetIcon(section, entry, "ascended");
+          break;
+
+        case "completedTier3":
+          SetIcon(section, entry, "radiant");
+          break;
+
+        default:
+          SetIcon(section, entry, "partial");
+          break;
+      }
+      
     }
-    else if (check.completedTier2 === true) {
-
-      SetIcon(section, entry, "ascended");
-      entries[entry].name = entries[entry].nameAscended;
-      entries[entry].spoiler = entries[entry].spoilerUnlocked;
-    }
-    else if (check.completedTier1 === true) {
-
-      SetIcon(section, entry, "attuned");
-      entries[entry].name = entries[entry].nameAttuned;
-      entries[entry].spoiler = entries[entry].spoilerUnlocked;
-    }
-    else if (check.isUnlocked === true) {
-
+    else if (isUnlocked) {
       SetIcon(section, entry, "partial");
-      entries[entry].name = entries[entry].nameUnlocked;
-      entries[entry].spoiler = entries[entry].spoilerUnlocked;
     }
     else {
-
       SetIconRed(section, entry);
-      entries[entry].name = entries[entry].nameDefault;
-      entries[entry].spoiler = entries[entry].spoilerDefault;
     }
 
-  }
+  } /* end for (let entry in entries) */
+  
 }
 
 
