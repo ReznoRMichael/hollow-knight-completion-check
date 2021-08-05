@@ -7094,6 +7094,34 @@ var HK = {
           id: "CrystalGuardian2",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Enraged_Guardian"
+        },
+        UumuuUnlocked: {
+          name: "Uumuu: Unlocked",
+          spoiler: "I sleep submerged in the depths of the archive",
+          id: "Uumuu",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Uumuu"
+        },
+        UumuuAttuned: {
+          name: "Uumuu: Attuned",
+          spoiler: "Uncanny god of knowledge",
+          id: "Uumuu",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Uumuu"
+        },
+        UumuuAscended: {
+          name: "Uumuu: Ascended",
+          spoiler: "Uncanny god of knowledge",
+          id: "Uumuu",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Uumuu"
+        },
+        UumuuRadiant: {
+          name: "Uumuu: Radiant",
+          spoiler: "Uncanny god of knowledge",
+          id: "Uumuu",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Uumuu"
         }
       }
     }
