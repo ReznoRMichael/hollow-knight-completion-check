@@ -422,6 +422,7 @@ input[type="file"] {
   color: rgb(0, 39, 34);
   border: 2px solid rgba(0, 0, 0, 0);
   box-shadow: 0 0 1rem rgb(0, 180, 156);
+  text-shadow: 0 0 0.5rem #67ffeb;
 }
 
 .tab-switch:focus {

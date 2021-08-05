@@ -3903,6 +3903,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#God_Tamer"
         },
+        CrystalGuardian1Unlocked: {
+          name: "Crystal Guardian: Unlocked",
+          spoiler: "I wait, weapon in hand, within the colosseum",
+          id: "CrystalGuardian1",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#God_Tamer"
+        },
+        CrystalGuardian1Attuned: {
+          name: "God Tamer: Attuned",
+          spoiler: "Gallant god of the arena",
+          id: "CrystalGuardian1",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#God_Tamer"
+        },
+        CrystalGuardian1Ascended: {
+          name: "God Tamer: Ascended",
+          spoiler: "Gallant god of the arena",
+          id: "CrystalGuardian1",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#God_Tamer"
+        },
+        CrystalGuardian1Radiant: {
+          name: "God Tamer: Radiant",
+          spoiler: "Gallant god of the arena",
+          id: "CrystalGuardian1",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#God_Tamer"
+        },
       },
     }
 
