@@ -3595,6 +3595,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Massive_Moss_Charger"
         },
+        MantisLordsUnlocked: {
+          name: "Mantis Lords: Unlocked",
+          spoiler: "We watch over a village of warriors",
+          id: "MantisLords",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Mantis_Lords"
+        },
+        MantisLordsAttuned: {
+          name: "Mantis Lords: Attuned",
+          spoiler: "Noble sister gods of combat",
+          id: "MantisLords",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Mantis_Lords"
+        },
+        MantisLordsAscended: {
+          name: "Mantis Lords: Ascended",
+          spoiler: "Noble sister gods of combat",
+          id: "MantisLords",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Mantis_Lords"
+        },
+        MantisLordsRadiant: {
+          name: "Mantis Lords: Radiant",
+          spoiler: "Noble sister gods of combat",
+          id: "MantisLords",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Mantis_Lords"
+        },
       },
     }
 
