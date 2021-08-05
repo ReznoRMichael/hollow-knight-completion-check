@@ -7346,6 +7346,34 @@ var HK = {
           id: "WatcherKnights",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Watcher_Knight"
+        },
+        NoEyesUnlocked: {
+          name: "No Eyes: Unlocked",
+          spoiler: "I lie dreaming in a silent sanctuary",
+          id: "NoEyes",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#No_Eyes"
+        },
+        NoEyesAttuned: {
+          name: "No Eyes: Attuned",
+          spoiler: "Dreamborn god of fear and relief",
+          id: "NoEyes",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#No_Eyes"
+        },
+        NoEyesAscended: {
+          name: "No Eyes: Ascended",
+          spoiler: "Dreamborn god of fear and relief",
+          id: "NoEyes",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#No_Eyes"
+        },
+        NoEyesRadiant: {
+          name: "No Eyes: Radiant",
+          spoiler: "Dreamborn god of fear and relief",
+          id: "NoEyes",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#No_Eyes"
         }
       }
     }
