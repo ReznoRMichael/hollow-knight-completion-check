@@ -3539,6 +3539,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Hornet_Protector"
         },
+        Hornet2Unlocked: {
+          name: "Hornet Sentinel: Unlocked",
+          spoiler: "God protector of a fading land",
+          id: "Hornet2",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Hornet_Sentinel"
+        },
+        Hornet2Attuned: {
+          name: "Hornet Sentinel: Attuned",
+          spoiler: "God protector of a fading land",
+          id: "Hornet2",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Hornet_Sentinel"
+        },
+        Hornet2Ascended: {
+          name: "Hornet Sentinel: Ascended",
+          spoiler: "God protector of a fading land",
+          id: "Hornet2",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Hornet_Sentinel"
+        },
+        Hornet2Radiant: {
+          name: "Hornet Sentinel: Radiant",
+          spoiler: "God protector of a fading land",
+          id: "Hornet2",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Hornet_Sentinel"
+        },
       },
     }
 
