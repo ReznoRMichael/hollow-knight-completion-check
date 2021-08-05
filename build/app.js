@@ -6842,6 +6842,34 @@ var HK = {
           id: "Oblobbles",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Oblobbles"
+        },
+        HiveKnightUnlocked: {
+          name: "Hive Knight: Unlocked",
+          spoiler: "I guard the heart of the hive for my Queen",
+          id: "HiveKnight",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Hive_Knight"
+        },
+        HiveKnightAttuned: {
+          name: "Hive Knight: Attuned",
+          spoiler: "Watchful god of duty",
+          id: "HiveKnight",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Hive_Knight"
+        },
+        HiveKnightAscended: {
+          name: "Hive Knight: Ascended",
+          spoiler: "Watchful god of duty",
+          id: "HiveKnight",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Hive_Knight"
+        },
+        HiveKnightRadiant: {
+          name: "Hive Knight: Radiant",
+          spoiler: "Watchful god of duty",
+          id: "HiveKnight",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Hive_Knight"
         }
       }
     }
