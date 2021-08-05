@@ -4015,6 +4015,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Traitor_Lord"
         },
+        GreyPrinceUnlocked: {
+          name: "Grey Prince Zote: Unlocked",
+          spoiler: "I serve my Queen inside her dreams",
+          id: "GreyPrince",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Grey_Prince_Zote"
+        },
+        GreyPrinceAttuned: {
+          name: "Grey Prince Zote: Attuned",
+          spoiler: "False god conjured by the lonely",
+          id: "GreyPrince",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Grey_Prince_Zote"
+        },
+        GreyPrinceAscended: {
+          name: "Grey Prince Zote: Ascended",
+          spoiler: "False god conjured by the lonely",
+          id: "GreyPrince",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Grey_Prince_Zote"
+        },
+        GreyPrinceRadiant: {
+          name: "Grey Prince Zote: Radiant",
+          spoiler: "False god conjured by the lonely",
+          id: "GreyPrince",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Grey_Prince_Zote"
+        },
       },
     }
 
