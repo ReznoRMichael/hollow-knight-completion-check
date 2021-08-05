@@ -4407,6 +4407,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Elder_Hu"
         },
+        NailmastersUnlocked: {
+          name: "Oro & Mato: Unlocked",
+          spoiler: "Together, we stand at a Pantheon's peak",
+          id: "Nailmasters",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Oro_.26_Mato"
+        },
+        NailmastersAttuned: {
+          name: "Oro & Mato: Attuned",
+          spoiler: "Loyal brother gods of the nail",
+          id: "Nailmasters",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Oro_.26_Mato"
+        },
+        NailmastersAscended: {
+          name: "Oro & Mato: Ascended",
+          spoiler: "Loyal brother gods of the nail",
+          id: "Nailmasters",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Oro_.26_Mato"
+        },
+        NailmastersRadiant: {
+          name: "Oro & Mato: Radiant",
+          spoiler: "Loyal brother gods of the nail",
+          id: "Nailmasters",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Oro_.26_Mato"
+        },
       },
     }
 
