@@ -3651,6 +3651,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Mantis_Lords"
         },
+        MantisLordsExtraUnlocked: {
+          name: "Sisters of Battle: Unlocked",
+          spoiler: "Revered gods of a proud tribe",
+          id: "MantisLordsExtra",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Sisters_of_Battle"
+        },
+        MantisLordsExtraAttuned: {
+          name: "Sisters of Battle: Attuned",
+          spoiler: "Revered gods of a proud tribe",
+          id: "MantisLordsExtra",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Sisters_of_Battle"
+        },
+        MantisLordsExtraAscended: {
+          name: "Sisters of Battle: Ascended",
+          spoiler: "Revered gods of a proud tribe",
+          id: "MantisLordsExtra",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Sisters_of_Battle"
+        },
+        MantisLordsExtraRadiant: {
+          name: "Sisters of Battle: Radiant",
+          spoiler: "Revered gods of a proud tribe",
+          id: "MantisLordsExtra",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Sisters_of_Battle"
+        },
       },
     }
 
