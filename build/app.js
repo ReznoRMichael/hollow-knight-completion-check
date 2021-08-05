@@ -6562,6 +6562,34 @@ var HK = {
           id: "Vengefly",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Vengefly_King"
+        },
+        BroodingMawlekUnlocked: {
+          name: "Brooding Mawlek: Unlocked",
+          spoiler: "I call out to no one...",
+          id: "BroodingMawlek",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Brooding_Mawlek"
+        },
+        BroodingMawlekAttuned: {
+          name: "Brooding Mawlek: Attuned",
+          spoiler: "...hidden by roads and highways",
+          id: "BroodingMawlek",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Brooding_Mawlek"
+        },
+        BroodingMawlekAscended: {
+          name: "Brooding Mawlek: Ascended",
+          spoiler: "Lonely god of the nest",
+          id: "BroodingMawlek",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Brooding_Mawlek"
+        },
+        BroodingMawlekRadiant: {
+          name: "Brooding Mawlek: Radiant",
+          spoiler: "Lonely god of the nest",
+          id: "BroodingMawlek",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Brooding_Mawlek"
         }
       }
     }
