@@ -6954,6 +6954,34 @@ var HK = {
           id: "Nosk",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Nosk"
+        },
+        NoskHornetUnlocked: {
+          name: "Winged Nosk: Unlocked",
+          spoiler: "Deceptive god assuming a protector's form",
+          id: "NoskHornet",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Winged_Nosk"
+        },
+        NoskHornetAttuned: {
+          name: "Winged Nosk: Attuned",
+          spoiler: "Deceptive god assuming a protector's form",
+          id: "NoskHornet",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Winged_Nosk"
+        },
+        NoskHornetAscended: {
+          name: "Winged Nosk: Ascended",
+          spoiler: "Deceptive god assuming a protector's form",
+          id: "NoskHornet",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Winged_Nosk"
+        },
+        NoskHornetRadiant: {
+          name: "Winged Nosk: Radiant",
+          spoiler: "Deceptive god assuming a protector's form",
+          id: "NoskHornet",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Winged_Nosk"
         }
       }
     }
