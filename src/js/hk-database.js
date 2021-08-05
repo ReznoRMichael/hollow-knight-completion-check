@@ -4239,6 +4239,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#No_Eyes"
         },
+        MarmuUnlocked: {
+          name: "Marmu: Unlocked",
+          spoiler: "I lie dreaming patiently in a garden",
+          id: "Marmu",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Marmu"
+        },
+        MarmuAttuned: {
+          name: "Marmu: Attuned",
+          spoiler: "Dreamborn god of gardens",
+          id: "Marmu",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Marmu"
+        },
+        MarmuAscended: {
+          name: "Marmu: Ascended",
+          spoiler: "Dreamborn god of gardens",
+          id: "Marmu",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Marmu"
+        },
+        MarmuRadiant: {
+          name: "Marmu: Radiant",
+          spoiler: "Dreamborn god of gardens",
+          id: "Marmu",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Marmu"
+        },
       },
     }
 
