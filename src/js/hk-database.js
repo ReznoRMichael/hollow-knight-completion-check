@@ -3905,14 +3905,14 @@ const HK = {
         },
         CrystalGuardian1Unlocked: {
           name: "Crystal Guardian: Unlocked",
-          spoiler: "I rest amongst crystals and strange machinery",
+          spoiler: "I rest amongst crystals...",
           id: "CrystalGuardian1",
           check: "isUnlocked",
           wiki: "Hall_of_Gods#Crystal_Guardian"
         },
         CrystalGuardian1Attuned: {
           name: "Crystal Guardian: Attuned",
-          spoiler: "Shining god of greed",
+          spoiler: "...and strange machinery",
           id: "CrystalGuardian1",
           check: "completedTier1",
           wiki: "Hall_of_Gods#Crystal_Guardian"
@@ -3930,6 +3930,34 @@ const HK = {
           id: "CrystalGuardian1",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Crystal_Guardian"
+        },
+        CrystalGuardian2Unlocked: {
+          name: "Enraged Guardian: Unlocked",
+          spoiler: "Shining god of greed",
+          id: "CrystalGuardian2",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Enraged_Guardian"
+        },
+        CrystalGuardian2Attuned: {
+          name: "Enraged Guardian: Attuned",
+          spoiler: "Shining god of greed",
+          id: "CrystalGuardian2",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Enraged_Guardian"
+        },
+        CrystalGuardian2Ascended: {
+          name: "Enraged Guardian: Ascended",
+          spoiler: "Shining god of greed",
+          id: "CrystalGuardian2",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Enraged_Guardian"
+        },
+        CrystalGuardian2Radiant: {
+          name: "Enraged Guardian: Radiant",
+          spoiler: "Shining god of greed",
+          id: "CrystalGuardian2",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Enraged_Guardian"
         },
       },
     }
