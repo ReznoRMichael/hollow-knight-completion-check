@@ -25,21 +25,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _img_geo_shade_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/geo-shade.png */ "./src/img/geo-shade.png");
 /* eslint-disable no-prototype-builtins */
 
-/* ---------------- Load main Hollow Knight database files ----------------- */
+/* ---------------- Load main Hollow Knight database files ------------------------------------------------------------------------ */
 
-/* ----------------- Helper functions --------------------------------------- */
-
-
- // ---------------- Load image files (necessary for Webpack) ----------------- //
+/* ----------------- Helper functions --------------------------------------------------------------------------------------------- */
 
 
+ // ---------------- Load image files (necessary for Webpack) ----------------------------------------------------------------------- //
 
 
 
 
 
 
- // ---------------- Constants ----------------- //
+
+
+ // ---------------- Constants ------------------------------------------------------------------------------------------------------- //
 // const DATA_UNKNOWN = "Data unknown";
 
 var SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ "
@@ -51,7 +51,7 @@ var SYMBOL_CLOCK = "<i class='icon-clock'></i>"; // "🕑 "
 
 var SYMBOL_EMPTY = "<span class='padding-left'></span>";
 var FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
-var WIKI_LINK = "https://hollowknight.fandom.com/wiki/"; // ---------------- Variables ----------------- //
+var WIKI_LINK = "https://hollowknight.fandom.com/wiki/"; // ---------------- Variables ------------------------------------------------------------------------------------------------------- //
 // let currentData = DATA_UNKNOWN;
 
 var completionSymbol = SYMBOL_FALSE;
@@ -61,7 +61,7 @@ var divEnd = ["</div>"].join("\n");
 var pSpan = "<span class='p-left-small'></span>";
 /* let benchHKCCBegin, benchHKCCEnd; */
 
-/* -------------------------- Functions ----------------------------- */
+/* -------------------------- Functions ------------------------------------------------------------------------------------------- */
 
 /**
  * Main Function. Checks Hollow Knight game completion by analyzing the save file
@@ -101,80 +101,81 @@ function HKCheckCompletion(jsonObject) {
   // Prevents adding current percent data after each function call and resets what the analyzing has done to the original object. Prevents wrong data display after subsequent save analyzing.
 
 
-  ResetCompletion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default); // ================================================================================== //
-  // ---------------- Time Played ----------------- //
+  ResetCompletion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default); // ============================================================================================================================= //
+  // ---------------- Time Played ----------------------------------------------------------------------------------------------- //
 
-  CheckPlayTime(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.playTime); // ---------------- Game Completion Status ----------------- //
+  CheckPlayTime(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.playTime); // ---------------- Game Completion Status ------------------------------------------------------------------------------------ //
 
-  CheckCompletionPercent(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData); // ---------------- Game Completion Status ----------------- //
+  CheckCompletionPercent(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData); // ---------------- Game Completion Status ------------------------------------------------------------------------------------ //
 
-  CheckSaveFileVersion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.version); // ---------------- Health Masks ----------------- //
+  CheckSaveFileVersion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.version); // ---------------- Health Masks ---------------------------------------------------------------------------------------------- //
 
-  CheckHealthMasks(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.maxHealthBase, HKPlayerData.permadeathMode); // ---------------- Soul Orbs ----------------- //
+  CheckHealthMasks(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.maxHealthBase, HKPlayerData.permadeathMode); // ---------------- Soul Orbs ------------------------------------------------------------------------------------------------- //
 
-  CheckSoulOrbs(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.maxMP + HKPlayerData.MPReserveMax); // ---------------- Charm Notches (Slots) ----------------- //
+  CheckSoulOrbs(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.maxMP + HKPlayerData.MPReserveMax); // ---------------- Charm Notches (Slots) ------------------------------------------------------------------------------------- //
 
-  CheckNotches(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.charmSlots, HKPlayerData.charmSlotsFilled); // ---------------- Geo Amount ----------------- //
+  CheckNotches(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.charmSlots, HKPlayerData.charmSlotsFilled); // ---------------- Geo Amount ------------------------------------------------------------------------------------------------ //
 
-  CheckGeo(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.geo, HKPlayerData.geoPool); // ---------------- Bosses (Base Game) --------------------- //
+  CheckGeo(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.intro, HKPlayerData.geo, HKPlayerData.geoPool); // ---------------- Bosses (Base Game) ---------------------------------------------------------------------------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.bosses, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.bosses.entries, HKPlayerData, HKWorldItems); // ---------------- Charms --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.bosses, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.bosses.entries, HKPlayerData, HKWorldItems); // ---------------- Charms ---------------------------------------------------------------------------------------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.charms, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.charms.entries, HKPlayerData); // ---------------- Colosseum of Fools --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.charms, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.charms.entries, HKPlayerData); // ---------------- Colosseum of Fools ---------------------------------------------------------------------------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.colosseum, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.colosseum.entries, HKPlayerData); // ---------------- Dreamers --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.colosseum, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.colosseum.entries, HKPlayerData); // ---------------- Dreamers -------------------------------------------------------------------------------------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.dreamers, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.dreamers.entries, HKPlayerData); // ---------------- Dream Nail and Essence --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.dreamers, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.dreamers.entries, HKPlayerData); // ---------------- Dream Nail and Essence ------------------------------------------------------------------------------------ //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.dreamNail, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.dreamNail.entries, HKPlayerData); // ---------------- Equipment --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.dreamNail, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.dreamNail.entries, HKPlayerData); // ---------------- Equipment ------------------------------------------------------------------------------------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.equipment, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.equipment.entries, HKPlayerData); // ---------------- Nail Upgrades --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.equipment, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.equipment.entries, HKPlayerData); // ---------------- Nail Upgrades --------------------------------------------------------------------------------------------- //
 
-  CheckNailUpgrades(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.nailUpgrades, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.nailUpgrades.entries, HKPlayerData); // ---------------- Mask Shards --------------------- //
+  CheckNailUpgrades(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.nailUpgrades, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.nailUpgrades.entries, HKPlayerData); // ---------------- Mask Shards ----------------------------------------------------------------------------------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.maskShards, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.maskShards.entries, HKPlayerData, HKWorldItems); // ---------------- Nail Arts --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.maskShards, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.maskShards.entries, HKPlayerData, HKWorldItems); // ---------------- Nail Arts ------------------------------------------------------------------------------------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.nailArts, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.nailArts.entries, HKPlayerData); // ---------------- Spells --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.nailArts, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.nailArts.entries, HKPlayerData); // ---------------- Spells ---------------------------------------------------------------------------------------------------- //
 
-  CheckSpellLevel(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.spells, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.spells.entries, HKPlayerData); // ---------------- Vessel Fragments --------------------- //
+  CheckSpellLevel(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.spells, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.spells.entries, HKPlayerData); // ---------------- Vessel Fragments ------------------------------------------------------------------------------------------ //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.vesselFragments, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.vesselFragments.entries, HKPlayerData, HKWorldItems); // ---------------- Warrior Dreams --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.vesselFragments, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.vesselFragments.entries, HKPlayerData, HKWorldItems); // ---------------- Warrior Dreams -------------------------------------------------------------------------------------------- //
 
-  CheckWarriorDreams(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.warriorDreams, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.warriorDreams.entries, HKPlayerData); // ---------------- Grimm Troupe Content Pack --------------------- //
+  CheckWarriorDreams(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.warriorDreams, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.warriorDreams.entries, HKPlayerData); // ---------------- Grimm Troupe Content Pack --------------------------------------------------------------------------------- //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.grimmTroupe, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.grimmTroupe.entries, HKPlayerData); // ---------------- Lifeblood Content Pack --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.grimmTroupe, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.grimmTroupe.entries, HKPlayerData); // ---------------- Lifeblood Content Pack ------------------------------------------------------------------------------------ //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.lifeblood, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.lifeblood.entries, HKPlayerData); // ---------------- Godmaster Content Pack --------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.lifeblood, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.lifeblood.entries, HKPlayerData); // ---------------- Godmaster Content Pack ------------------------------------------------------------------------------------ //
 
-  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godmaster.entries, HKPlayerData); // ------------------------- Hunter's Journal ----------------------------- //
+  CheckIfDataTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godmaster, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godmaster.entries, HKPlayerData); // ------------------------- Hunter's Journal --------------------------------------------------------------------------------- //
 
   /* Must be checked before Statistics (for correct entry numbers) */
 
   CheckHuntersJournal(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "huntersJournal", HKPlayerData);
-  CheckHuntersJournal(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "huntersJournalOptional", HKPlayerData); // ------------------------- Essential Things ----------------------------- //
+  CheckHuntersJournal(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "huntersJournalOptional", HKPlayerData); // ------------------------- Essential Things --------------------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.essential, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.essential.entries, HKPlayerData, HKWorldItems); // ------------------------- Achievements ----------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.essential, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.essential.entries, HKPlayerData, HKWorldItems); // ------------------------- Achievements ------------------------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements.entries, HKPlayerData, HKWorldItems); // ------------------------- Game Statistics ----------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.achievements.entries, HKPlayerData, HKWorldItems); // ------------------------- Game Statistics ---------------------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.statistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.statistics.entries, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Godhome Statistics ----------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.statistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.statistics.entries, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Godhome Statistics ------------------------------------------------------------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godhomeStatistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.godhomeStatistics.entries, HKPlayerData, HKWorldItems, HKSceneData);
-  /* ------------------------- Pantheon Statistics ----------------------------- */
+  /* ------------------------- Pantheon Statistics ------------------------------------------------------------------------------ */
 
   CheckPantheon(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "pantheonOfTheMaster", HKPlayerData);
   CheckPantheon(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "pantheonOfTheArtist", HKPlayerData);
   CheckPantheon(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "pantheonOfTheSage", HKPlayerData);
   CheckPantheon(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "pantheonOfTheKnight", HKPlayerData);
-  CheckPantheon(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "pantheonOfHallownest", HKPlayerData); // ------------------------- Hints ----------------------------- //
+  CheckPantheon(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, "pantheonOfHallownest", HKPlayerData);
+  CheckHallOfGods(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default, HKPlayerData); // ------------------------- Hints ---------------------------------------------------------------------------------------------- //
 
-  CheckHintsTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints.entries, HKPlayerData, HKWorldItems); // ------------------------- Extended game completion check ----------------------------- //
+  CheckHintsTrue(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.sections.hints.entries, HKPlayerData, HKWorldItems); // ------------------------- Extended game completion check --------------------------------------------------------------------- //
 
   /* Percent completion is filled inside GenerateInnerHTML() using CompletionFill() */
 
-  CheckExtendedCompletion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default); // ------------------------- Indicate that the save file was loaded and analyzed correctly ----------------------------- //
+  CheckExtendedCompletion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default); // ------------------------- Indicate that the save file was loaded and analyzed correctly -------------------------------------- //
 
-  _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.saveAnalyzed = true; // ------------------------- Generate everything on the page with updated values ----------------------------- //
+  _hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default.saveAnalyzed = true; // ------------------------- Generate everything on the page with updated values ------------------------------------------------ //
 
   (0,_page_functions_js__WEBPACK_IMPORTED_MODULE_1__.GenerateInnerHTML)(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__.default); // Prevents wrong checkbox behaviour (must run after everything is finished)
 
@@ -1829,6 +1830,38 @@ function CheckPantheon(db, sectionName, playerData) {
       }
     } else {
       (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, entry);
+    }
+  }
+}
+
+function CheckHallOfGods(db, playerData) {
+  var section = db.sections.hallOfGods;
+  var entries = db.sections.hallOfGods.entries;
+  var check = {};
+
+  for (var entry in entries) {
+    check = playerData[entry];
+
+    if (check.completedTier3 === true) {
+      (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "radiant");
+      entries[entry].name = entries[entry].nameRadiant;
+      entries[entry].spoiler = entries[entry].spoilerUnlocked;
+    } else if (check.completedTier2 === true) {
+      (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "ascended");
+      entries[entry].name = entries[entry].nameAscended;
+      entries[entry].spoiler = entries[entry].spoilerUnlocked;
+    } else if (check.completedTier1 === true) {
+      (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "attuned");
+      entries[entry].name = entries[entry].nameAttuned;
+      entries[entry].spoiler = entries[entry].spoilerUnlocked;
+    } else if (check.isUnlocked === true) {
+      (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, entry, "partial");
+      entries[entry].name = entries[entry].nameUnlocked;
+      entries[entry].spoiler = entries[entry].spoilerUnlocked;
+    } else {
+      (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, entry);
+      entries[entry].name = entries[entry].nameDefault;
+      entries[entry].spoiler = entries[entry].spoilerDefault;
     }
   }
 }
@@ -6456,19 +6489,18 @@ var HK = {
       h2: "Hall of Gods",
       id: "hk-hall-of-gods",
       property: "statueState",
-      description: "Bottom of Godhome. Detecting what bosses have been seen, unlocked and defeated on all three difficulty levels: Attuned, Ascended and Radiant.",
+      description: "Bottom of Godhome. Detecting what bosses have been unlocked and defeated on all three difficulty levels: Attuned, Ascended and Radiant.",
       entries: {
         statueStateGruzMother: {
           name: "P1 Gruz Mother",
           nameDefault: "P1 Gruz Mother",
-          nameSeen: "P1 Gruz Mother: Seen",
           nameUnlocked: "P1 Gruz Mother: Unlocked",
           nameAttuned: "P1 Gruz Mother: Attuned",
           nameAscended: "P1 Gruz Mother: Ascended",
           nameRadiant: "P1 Gruz Mother: Radiant",
           spoiler: "I sleep amongst winding roads",
           spoilerDefault: "I sleep amongst winding roads",
-          spoilerSeen: "Slumbering god of fertility",
+          spoilerUnlocked: "Slumbering god of fertility",
           wiki: "Hall_of_Gods#Gruz_Mother"
         }
       }
@@ -7076,7 +7108,6 @@ var SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ "
 var SYMBOL_TRUE = "<i class='icon-ok-squared'></i>"; // "✅ "
 
 var SYMBOL_PARTIAL = "<i class='icon-ok-squared partial'></i>"; // "✔ "
-// const SYMBOL_INFO = "<i class='icon-info-circled'></i>"; // "ℹ "
 
 var SYMBOL_CLOCK = "<i class='icon-clock'></i>"; // "🕑 "
 
@@ -7092,7 +7123,14 @@ var SYMBOL_BINDING_SOUL = "<i class='reznoricon-binding-soul'></i>"; // Soul Bin
 
 var SYMBOL_BINDING_ALL = "<i class='reznoricon-binding-all'></i>"; // All Bindings
 
-var SYMBOL_EMPTY = "<span class='padding-left'></span>";
+var SYMBOL_ATTUNED = "<i class='reznoricon-attuned'></i>"; // Attuned
+
+var SYMBOL_ASCENDED = "<i class='reznoricon-ascended'></i>"; // Ascended
+
+var SYMBOL_RADIANT = "<i class='reznoricon-radiant'></i>"; // Radiant
+
+var SYMBOL_EMPTY = "<span class='padding-left'></span>"; // No symbol
+
 var FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
 var WIKI_LINK = "https://hollowknight.fandom.com/wiki/";
 var ROOT = document.documentElement;
@@ -7251,16 +7289,6 @@ function GenerateInnerHTML(db) {
     spoiler: ["", ""],
     spoilerAfter: ""
   };
-  var iconGreen = SYMBOL_TRUE;
-  var iconRed = SYMBOL_FALSE;
-  var iconPartial = SYMBOL_PARTIAL;
-  var iconClock = SYMBOL_CLOCK;
-  var iconNull = SYMBOL_EMPTY;
-  var iconBindingNail = SYMBOL_BINDING_NAIL;
-  var iconBindingShell = SYMBOL_BINDING_SHELL;
-  var iconBindingCharms = SYMBOL_BINDING_CHARMS;
-  var iconBindingSoul = SYMBOL_BINDING_SOUL;
-  var iconBindingAll = SYMBOL_BINDING_ALL;
   var finalHTMLFill = "";
   var textFill = "";
   var Img = "";
@@ -7334,26 +7362,26 @@ function GenerateInnerHTML(db) {
           if (entries[entry].hasOwnProperty("icon")) {
             switch (entries[entry].icon) {
               case "clock":
-                obj.icon = iconClock;
+                obj.icon = SYMBOL_CLOCK;
                 break;
 
               case "green":
-                obj.icon = iconGreen;
+                obj.icon = SYMBOL_TRUE;
                 break;
 
               case "partial":
-                obj.icon = iconPartial;
+                obj.icon = SYMBOL_PARTIAL;
                 break;
 
               case "red":
-                obj.icon = iconRed;
+                obj.icon = SYMBOL_FALSE;
                 break;
 
               default:
-                obj.icon = iconNull;
+                obj.icon = SYMBOL_EMPTY;
             }
           } else {
-            obj.icon = iconRed;
+            obj.icon = SYMBOL_FALSE;
           }
 
           obj.textPrefix = entries[entry].name;
@@ -7491,56 +7519,68 @@ function GenerateInnerHTML(db) {
           if (entries[_entry].hasOwnProperty("icon")) {
             switch (entries[_entry].icon) {
               case "clock":
-                obj.icon = iconClock;
+                obj.icon = SYMBOL_CLOCK;
                 break;
 
               case "green":
-                obj.icon = iconGreen;
+                obj.icon = SYMBOL_TRUE;
                 /* -------- Prevents blurring when a player has already completed the entry --------- */
 
                 obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
               case "partial":
-                obj.icon = iconPartial;
+                obj.icon = SYMBOL_PARTIAL;
                 break;
 
               case "partialJournal":
-                obj.icon = iconPartial;
+                obj.icon = SYMBOL_PARTIAL;
                 /* -------- Prevents textSuffix blurring when a player has already discovered the entry --------- */
 
                 obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
               case "bindingNail":
-                obj.icon = iconBindingNail;
+                obj.icon = SYMBOL_BINDING_NAIL;
                 break;
 
               case "bindingShell":
-                obj.icon = iconBindingShell;
+                obj.icon = SYMBOL_BINDING_SHELL;
                 break;
 
               case "bindingCharms":
-                obj.icon = iconBindingCharms;
+                obj.icon = SYMBOL_BINDING_CHARMS;
                 break;
 
               case "bindingSoul":
-                obj.icon = iconBindingSoul;
+                obj.icon = SYMBOL_BINDING_SOUL;
                 break;
 
               case "bindingAll":
-                obj.icon = iconBindingAll;
+                obj.icon = SYMBOL_BINDING_ALL;
+                break;
+
+              case "attuned":
+                obj.icon = SYMBOL_ATTUNED;
+                break;
+
+              case "ascended":
+                obj.icon = SYMBOL_ASCENDED;
+                break;
+
+              case "radiant":
+                obj.icon = SYMBOL_RADIANT;
                 break;
 
               case "red":
-                obj.icon = iconRed;
+                obj.icon = SYMBOL_FALSE;
                 break;
 
               default:
-                obj.icon = iconNull;
+                obj.icon = SYMBOL_EMPTY;
             }
           } else {
-            obj.icon = iconRed;
+            obj.icon = SYMBOL_FALSE;
           }
           /* assign the appropriate spoiler class name depending on the completion check (for blurring names) */
 

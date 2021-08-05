@@ -19,7 +19,6 @@ import GEO_SHADE_IMAGE from "../img/geo-shade.png";
 const SYMBOL_FALSE = "<i class='icon-cancel'></i>"; // "❌ "
 const SYMBOL_TRUE = "<i class='icon-ok-squared'></i>"; // "✅ "
 const SYMBOL_PARTIAL = "<i class='icon-ok-squared partial'></i>"; // "✔ "
-// const SYMBOL_INFO = "<i class='icon-info-circled'></i>"; // "ℹ "
 const SYMBOL_CLOCK = "<i class='icon-clock'></i>"; // "🕑 "
 const SYMBOL_FILE = "<i class='icon-doc-text-inv'></i>"; // "📁"
 const SYMBOL_BINDING_NAIL = "<i class='reznoricon-binding-nail'></i>"; // Nail Binding
@@ -27,7 +26,10 @@ const SYMBOL_BINDING_SHELL = "<i class='reznoricon-binding-shell'></i>"; // Shel
 const SYMBOL_BINDING_CHARMS = "<i class='reznoricon-binding-charms'></i>"; // Charm Binding
 const SYMBOL_BINDING_SOUL = "<i class='reznoricon-binding-soul'></i>"; // Soul Binding
 const SYMBOL_BINDING_ALL = "<i class='reznoricon-binding-all'></i>"; // All Bindings
-const SYMBOL_EMPTY = "<span class='padding-left'></span>";
+const SYMBOL_ATTUNED = "<i class='reznoricon-attuned'></i>"; // Attuned
+const SYMBOL_ASCENDED = "<i class='reznoricon-ascended'></i>"; // Ascended
+const SYMBOL_RADIANT = "<i class='reznoricon-radiant'></i>"; // Radiant
+const SYMBOL_EMPTY = "<span class='padding-left'></span>"; // No symbol
 const FLEUR_DIVIDE = "<div class='horizontal-line'></div>";
 const WIKI_LINK = "https://hollowknight.fandom.com/wiki/";
 
@@ -207,17 +209,6 @@ function GenerateInnerHTML(db) {
     spoilerAfter: "",
   };
 
-  let iconGreen = SYMBOL_TRUE;
-  let iconRed = SYMBOL_FALSE;
-  let iconPartial = SYMBOL_PARTIAL;
-  let iconClock = SYMBOL_CLOCK;
-  let iconNull = SYMBOL_EMPTY;
-  let iconBindingNail = SYMBOL_BINDING_NAIL;
-  let iconBindingShell = SYMBOL_BINDING_SHELL;
-  let iconBindingCharms = SYMBOL_BINDING_CHARMS;
-  let iconBindingSoul = SYMBOL_BINDING_SOUL;
-  let iconBindingAll = SYMBOL_BINDING_ALL;
-
   let finalHTMLFill = "";
   let textFill = "";
 
@@ -326,22 +317,22 @@ function GenerateInnerHTML(db) {
             switch (entries[entry].icon) {
 
               case "clock":
-                obj.icon = iconClock;
+                obj.icon = SYMBOL_CLOCK;
                 break;
               case "green":
-                obj.icon = iconGreen;
+                obj.icon = SYMBOL_TRUE;
                 break;
               case "partial":
-                obj.icon = iconPartial;
+                obj.icon = SYMBOL_PARTIAL;
                 break;
               case "red":
-                obj.icon = iconRed;
+                obj.icon = SYMBOL_FALSE;
                 break;
               default:
-                obj.icon = iconNull;
+                obj.icon = SYMBOL_EMPTY;
             }
           } else {
-            obj.icon = iconRed;
+            obj.icon = SYMBOL_FALSE;
           }
 
           obj.textPrefix = entries[entry].name;
@@ -495,56 +486,68 @@ function GenerateInnerHTML(db) {
             switch (entries[entry].icon) {
 
               case "clock":
-                obj.icon = iconClock;
+                obj.icon = SYMBOL_CLOCK;
                 break;
 
               case "green":
-                obj.icon = iconGreen;
+                obj.icon = SYMBOL_TRUE;
 
                 /* -------- Prevents blurring when a player has already completed the entry --------- */
                 obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
               case "partial":
-                obj.icon = iconPartial;
+                obj.icon = SYMBOL_PARTIAL;
                 break;
 
               case "partialJournal":
-                obj.icon = iconPartial;
+                obj.icon = SYMBOL_PARTIAL;
 
                 /* -------- Prevents textSuffix blurring when a player has already discovered the entry --------- */
                 obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
               case "bindingNail":
-                obj.icon = iconBindingNail;
+                obj.icon = SYMBOL_BINDING_NAIL;
                 break;
   
               case "bindingShell":
-                obj.icon = iconBindingShell;
+                obj.icon = SYMBOL_BINDING_SHELL;
                 break;
   
               case "bindingCharms":
-                obj.icon = iconBindingCharms;
+                obj.icon = SYMBOL_BINDING_CHARMS;
                 break;
   
               case "bindingSoul":
-                obj.icon = iconBindingSoul;
+                obj.icon = SYMBOL_BINDING_SOUL;
                 break;
               
               case "bindingAll":
-                obj.icon = iconBindingAll;
+                obj.icon = SYMBOL_BINDING_ALL;
+                break;
+              
+              case "attuned":
+                obj.icon = SYMBOL_ATTUNED;
+                break;
+              
+              case "ascended":
+                obj.icon = SYMBOL_ASCENDED;
+                break;
+              
+              case "radiant":
+                obj.icon = SYMBOL_RADIANT;
                 break;
               
               case "red":
-                obj.icon = iconRed;
+                obj.icon = SYMBOL_FALSE;
                 break;
 
               default:
-                obj.icon = iconNull;
+                obj.icon = SYMBOL_EMPTY;
             }
           } else {
-            obj.icon = iconRed;
+            obj.icon = SYMBOL_FALSE;
           }
 
           /* assign the appropriate spoiler class name depending on the completion check (for blurring names) */

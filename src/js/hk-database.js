@@ -3369,7 +3369,7 @@ const HK = {
       h2: "Hall of Gods",
       id: "hk-hall-of-gods",
       property: "statueState",
-      description: "Bottom of Godhome. Detecting what bosses have been seen, unlocked and defeated on all three difficulty levels: Attuned, Ascended and Radiant.",
+      description: "Bottom of Godhome. Detecting what bosses have been unlocked and defeated on all three difficulty levels: Attuned, Ascended and Radiant.",
       entries: {
         statueStateGruzMother: {
           name: "P1 Gruz Mother",

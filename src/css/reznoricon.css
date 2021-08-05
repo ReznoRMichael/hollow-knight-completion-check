@@ -41,3 +41,15 @@
 .reznoricon-binding-all:before {
   background-image: url("../img/binding-all.png");
 }
+
+.reznoricon-attuned:before {
+  background-image: url("../img/attuned.png");
+}
+
+.reznoricon-ascended:before {
+  background-image: url("../img/ascended.png");
+}
+
+.reznoricon-radiant:before {
+  background-image: url("../img/radiant.png");
+}
