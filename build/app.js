@@ -7262,6 +7262,34 @@ var HK = {
           id: "SoulTyrant",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Soul_Tyrant"
+        },
+        DungDefenderUnlocked: {
+          name: "Dung Defender: Unlocked",
+          spoiler: "I protect the pipeways of the kingdom",
+          id: "DungDefender",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Dung_Defender"
+        },
+        DungDefenderAttuned: {
+          name: "Dung Defender: Attuned",
+          spoiler: "Kindly god of bravery and honour",
+          id: "DungDefender",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Dung_Defender"
+        },
+        DungDefenderAscended: {
+          name: "Dung Defender: Ascended",
+          spoiler: "Kindly god of bravery and honour",
+          id: "DungDefender",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Dung_Defender"
+        },
+        DungDefenderRadiant: {
+          name: "Dung Defender: Radiant",
+          spoiler: "Kindly god of bravery and honour",
+          id: "DungDefender",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Dung_Defender"
         }
       }
     }
