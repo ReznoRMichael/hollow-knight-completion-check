@@ -6590,6 +6590,34 @@ var HK = {
           id: "BroodingMawlek",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Brooding_Mawlek"
+        },
+        FalseKnightUnlocked: {
+          name: "False Knight: Unlocked",
+          spoiler: "I protect the weak in...",
+          id: "FalseKnight",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#False_Knight"
+        },
+        FalseKnightAttuned: {
+          name: "False Knight: Attuned",
+          spoiler: "...the heart of the crossroads",
+          id: "FalseKnight",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#False_Knight"
+        },
+        FalseKnightAscended: {
+          name: "False Knight: Ascended",
+          spoiler: "Angry god of the downtrodden",
+          id: "FalseKnight",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#False_Knight"
+        },
+        FalseKnightRadiant: {
+          name: "False Knight: Radiant",
+          spoiler: "Angry god of the downtrodden",
+          id: "FalseKnight",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#False_Knight"
         }
       }
     }
