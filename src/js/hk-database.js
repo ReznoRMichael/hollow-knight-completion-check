@@ -1372,7 +1372,7 @@ const HK = {
     achievements: {
       h2: "Achievements Essentials",
       id: "hk-achievements",
-      description: `All the completely optional things that matter for achievements. This includes the rarest and most likely missable Hunter's Journal enemies (prefixed by "Journal: "). You will also see your Zote/Nailsmith choices that you've made.`,
+      description: `All the completely optional things that matter for achievements. This includes Zote/Nailsmith choices that you've made on your save file.`,
       entries: {
         hasMap: {
           name: "Inventory Map",
