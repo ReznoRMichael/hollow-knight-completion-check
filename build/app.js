@@ -7458,6 +7458,34 @@ var HK = {
           id: "Markoth",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Markoth"
+        },
+        XeroUnlocked: {
+          name: "Xero: Unlocked",
+          spoiler: "I lie dreaming amongst peaceful graves",
+          id: "Xero",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Xero"
+        },
+        XeroAttuned: {
+          name: "Xero: Attuned",
+          spoiler: "Dreamborn god of faith and betrayal",
+          id: "Xero",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Xero"
+        },
+        XeroAscended: {
+          name: "Xero: Ascended",
+          spoiler: "Dreamborn god of faith and betrayal",
+          id: "Xero",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Xero"
+        },
+        XeroRadiant: {
+          name: "Xero: Radiant",
+          spoiler: "Dreamborn god of faith and betrayal",
+          id: "Xero",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Xero"
         }
       }
     }
