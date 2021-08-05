@@ -4437,31 +4437,59 @@ const HK = {
         },
         PaintmasterUnlocked: {
           name: "Paintmaster Sheo: Unlocked",
-          spoiler: "Together, we stand at a Pantheon's peak",
+          spoiler: "I hone my craft at a Pantheon's peak",
           id: "Paintmaster",
           check: "isUnlocked",
           wiki: "Hall_of_Gods#Paintmaster_Sheo"
         },
         PaintmasterAttuned: {
           name: "Paintmaster Sheo: Attuned",
-          spoiler: "Loyal brother gods of the nail",
+          spoiler: "Talented god of artists and creators",
           id: "Paintmaster",
           check: "completedTier1",
           wiki: "Hall_of_Gods#Paintmaster_Sheo"
         },
         PaintmasterAscended: {
           name: "Paintmaster Sheo: Ascended",
-          spoiler: "Loyal brother gods of the nail",
+          spoiler: "Talented god of artists and creators",
           id: "Paintmaster",
           check: "completedTier2",
           wiki: "Hall_of_Gods#Paintmaster_Sheo"
         },
         PaintmasterRadiant: {
           name: "Paintmaster Sheo: Radiant",
-          spoiler: "Loyal brother gods of the nail",
+          spoiler: "Talented god of artists and creators",
           id: "Paintmaster",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Paintmaster_Sheo"
+        },
+        SlyUnlocked: {
+          name: "Nailsage Sly: Unlocked",
+          spoiler: "I await you at a Pantheon's peak",
+          id: "Sly",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Nailsage_Sly"
+        },
+        SlyAttuned: {
+          name: "Nailsage Sly: Attuned",
+          spoiler: "Cunning god of opportunity",
+          id: "Sly",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Nailsage_Sly"
+        },
+        SlyAscended: {
+          name: "Nailsage Sly: Ascended",
+          spoiler: "Cunning god of opportunity",
+          id: "Sly",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Nailsage_Sly"
+        },
+        SlyRadiant: {
+          name: "Nailsage Sly: Radiant",
+          spoiler: "Cunning god of opportunity",
+          id: "Sly",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Nailsage_Sly"
         },
       },
     }
