@@ -1063,7 +1063,7 @@ const HK = {
     essential: {
       h2: "Game Completion Essentials",
       id: "hk-essential",
-      description: "All things that don't count directly towards 112% Game Completion, but are indirectly required to achieve a large part of the 112% points.",
+      description: "All things that don't count directly towards 112% Game Completion, but are required to achieve a large part of 112% points.",
       entries: {
         /* 
         Soul Warrior 2 (Shade Soul)

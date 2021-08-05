@@ -180,7 +180,7 @@ function CompletionHTML(jsObj, hkGameCompletion) {
 }
 
 
-/* ################################### Optimized Functions ###################################### */
+/* ################################### Optimized Functions ########################################################################## */
 
 
 function GenerateInnerHTML(db) {
@@ -234,14 +234,14 @@ function GenerateInnerHTML(db) {
   let divFlex = `<div class='flex-container align-center'>`;
 
 
-  /* ############################## create all main entries ############################## */
+  /* ############################## create all main entries ########################################################################## */
 
 
   for (let section in sections) {
 
     textFill = "";
 
-    /* ############################# Tab Switch buttons and <div>s ############################# */
+    /* ############################# Tab Switch buttons and <div>s ################################################################### */
 
     switch (section) {
 
@@ -249,8 +249,8 @@ function GenerateInnerHTML(db) {
 
         textFill += [
           `<div class="tab-switch-buttons">`,
-          `<button id="button-switch-main" name="main" class="button tab-switch" type="button">Main</button>`,
-          `<button id="button-switch-essential" name="essential" class="button tab-switch" type="button">Essentials</button>`,
+          `<button id="button-switch-main" name="main" class="button tab-switch" type="button">Main %</button>`,
+          `<button id="button-switch-essential" name="essential" class="button tab-switch" type="button">Essentials %</button>`,
           `<button id="button-switch-journal" name="journal" class="button tab-switch" type="button">Journal</button>`,
           `<button id="button-switch-statistics" name="statistics" class="button tab-switch" type="button">Stats</button>`,
           `<button id="button-switch-godhome" name="godhome" class="button tab-switch" type="button">Godmaster</button>`,
@@ -302,7 +302,7 @@ function GenerateInnerHTML(db) {
     }
 
 
-    /* #################### Different behaviour depending on the section ####################### */
+    /* ######################## Different behaviour depending on the section ###################################################### */
 
 
     switch (section) {
@@ -635,7 +635,7 @@ function GenerateInnerHTML(db) {
   console.log(finalHTMLFill);
   console.groupEnd(); */
 
-  /* ##################### Horizontal line ####################### */
+  /* ################################## Horizontal line ############################################################################# */
 
   finalHTMLFill += FLEUR_DIVIDE;
 

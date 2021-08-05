@@ -4157,7 +4157,7 @@ var HK = {
     essential: {
       h2: "Game Completion Essentials",
       id: "hk-essential",
-      description: "All things that don't count directly towards 112% Game Completion, but are indirectly required to achieve a large part of the 112% points.",
+      description: "All things that don't count directly towards 112% Game Completion, but are required to achieve a large part of 112% points.",
       entries: {
         /* 
         Soul Warrior 2 (Shade Soul)
@@ -7228,7 +7228,7 @@ function CompletionHTML(jsObj, hkGameCompletion) {
       }
   }
 }
-/* ################################### Optimized Functions ###################################### */
+/* ################################### Optimized Functions ########################################################################## */
 
 
 function GenerateInnerHTML(db) {
@@ -7274,15 +7274,15 @@ function GenerateInnerHTML(db) {
   var geoShadeImage = "<img src='".concat(_img_geo_shade_png__WEBPACK_IMPORTED_MODULE_8__, "' class='geo-symbol' alt='shade geo symbol image' title='Shade Geo'>");
   var div = "<div class='single-entry'>";
   var divFlex = "<div class='flex-container align-center'>";
-  /* ############################## create all main entries ############################## */
+  /* ############################## create all main entries ########################################################################## */
 
   for (var section in sections) {
     textFill = "";
-    /* ############################# Tab Switch buttons and <div>s ############################# */
+    /* ############################# Tab Switch buttons and <div>s ################################################################### */
 
     switch (section) {
       case "bosses":
-        textFill += ["<div class=\"tab-switch-buttons\">", "<button id=\"button-switch-main\" name=\"main\" class=\"button tab-switch\" type=\"button\">Main</button>", "<button id=\"button-switch-essential\" name=\"essential\" class=\"button tab-switch\" type=\"button\">Essentials</button>", "<button id=\"button-switch-journal\" name=\"journal\" class=\"button tab-switch\" type=\"button\">Journal</button>", "<button id=\"button-switch-statistics\" name=\"statistics\" class=\"button tab-switch\" type=\"button\">Stats</button>", "<button id=\"button-switch-godhome\" name=\"godhome\" class=\"button tab-switch\" type=\"button\">Godmaster</button>", "</div>"].join("\n");
+        textFill += ["<div class=\"tab-switch-buttons\">", "<button id=\"button-switch-main\" name=\"main\" class=\"button tab-switch\" type=\"button\">Main %</button>", "<button id=\"button-switch-essential\" name=\"essential\" class=\"button tab-switch\" type=\"button\">Essentials %</button>", "<button id=\"button-switch-journal\" name=\"journal\" class=\"button tab-switch\" type=\"button\">Journal</button>", "<button id=\"button-switch-statistics\" name=\"statistics\" class=\"button tab-switch\" type=\"button\">Stats</button>", "<button id=\"button-switch-godhome\" name=\"godhome\" class=\"button tab-switch\" type=\"button\">Godmaster</button>", "</div>"].join("\n");
         textFill += "<div id=\"tab-main\" class=\"large-section\">";
         break;
 
@@ -7317,7 +7317,7 @@ function GenerateInnerHTML(db) {
     } else {
       textFill += CompletionFillNoSave(sections[section]);
     }
-    /* #################### Different behaviour depending on the section ####################### */
+    /* ######################## Different behaviour depending on the section ###################################################### */
 
 
     switch (section) {
@@ -7631,7 +7631,7 @@ function GenerateInnerHTML(db) {
   console.log(finalHTMLFill);
   console.groupEnd(); */
 
-  /* ##################### Horizontal line ####################### */
+  /* ################################## Horizontal line ############################################################################# */
 
 
   finalHTMLFill += FLEUR_DIVIDE;
