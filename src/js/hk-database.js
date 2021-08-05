@@ -3511,6 +3511,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Failed_Champion"
         },
+        Hornet1Unlocked: {
+          name: "Hornet Protector: Unlocked",
+          spoiler: "I watch over lush pathways...",
+          id: "Hornet1",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Hornet_Protector"
+        },
+        Hornet1Attuned: {
+          name: "Hornet Protector: Attuned",
+          spoiler: "...and distant ash-swept graves",
+          id: "Hornet1",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Hornet_Protector"
+        },
+        Hornet1Ascended: {
+          name: "Hornet Protector: Ascended",
+          spoiler: "God protector of a fading land",
+          id: "Hornet1",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Hornet_Protector"
+        },
+        Hornet1Radiant: {
+          name: "Hornet Protector: Radiant",
+          spoiler: "God protector of a fading land",
+          id: "Hornet1",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Hornet_Protector"
+        },
       },
     }
 
