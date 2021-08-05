@@ -6814,6 +6814,34 @@ var HK = {
           id: "MantisLordsExtra",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Sisters_of_Battle"
+        },
+        OblobblesUnlocked: {
+          name: "Oblobbles: Unlocked",
+          spoiler: "Together we are chained in a strange colosseum",
+          id: "Oblobbles",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Oblobbles"
+        },
+        OblobblesAttuned: {
+          name: "Oblobbles: Attuned",
+          spoiler: "Lover gods of faith and devotion",
+          id: "Oblobbles",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Oblobbles"
+        },
+        OblobblesAscended: {
+          name: "Oblobbles: Ascended",
+          spoiler: "Lover gods of faith and devotion",
+          id: "Oblobbles",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Oblobbles"
+        },
+        OblobblesRadiant: {
+          name: "Oblobbles: Radiant",
+          spoiler: "Lover gods of faith and devotion",
+          id: "Oblobbles",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Oblobbles"
         }
       }
     }
