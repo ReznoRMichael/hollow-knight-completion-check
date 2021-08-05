@@ -7318,6 +7318,34 @@ var HK = {
           id: "WhiteDefender",
           check: "completedTier3",
           wiki: "Hall_of_Gods#White_Defender"
+        },
+        WatcherKnightsUnlocked: {
+          name: "Watcher Knight: Unlocked",
+          spoiler: "We lie dormant, guarding the Spire's peak",
+          id: "WatcherKnights",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Watcher_Knight"
+        },
+        WatcherKnightsAttuned: {
+          name: "Watcher Knight: Attuned",
+          spoiler: "Sentinel gods of the spire",
+          id: "WatcherKnights",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Watcher_Knight"
+        },
+        WatcherKnightsAscended: {
+          name: "Watcher Knight: Ascended",
+          spoiler: "Sentinel gods of the spire",
+          id: "WatcherKnights",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Watcher_Knight"
+        },
+        WatcherKnightsRadiant: {
+          name: "Watcher Knight: Radiant",
+          spoiler: "Sentinel gods of the spire",
+          id: "WatcherKnights",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Watcher_Knight"
         }
       }
     }
