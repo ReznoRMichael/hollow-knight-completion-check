@@ -3905,31 +3905,31 @@ const HK = {
         },
         CrystalGuardian1Unlocked: {
           name: "Crystal Guardian: Unlocked",
-          spoiler: "I wait, weapon in hand, within the colosseum",
+          spoiler: "I rest amongst crystals and strange machinery",
           id: "CrystalGuardian1",
           check: "isUnlocked",
-          wiki: "Hall_of_Gods#God_Tamer"
+          wiki: "Hall_of_Gods#Crystal_Guardian"
         },
         CrystalGuardian1Attuned: {
-          name: "God Tamer: Attuned",
-          spoiler: "Gallant god of the arena",
+          name: "Crystal Guardian: Attuned",
+          spoiler: "Shining god of greed",
           id: "CrystalGuardian1",
           check: "completedTier1",
-          wiki: "Hall_of_Gods#God_Tamer"
+          wiki: "Hall_of_Gods#Crystal_Guardian"
         },
         CrystalGuardian1Ascended: {
-          name: "God Tamer: Ascended",
-          spoiler: "Gallant god of the arena",
+          name: "Crystal Guardian: Ascended",
+          spoiler: "Shining god of greed",
           id: "CrystalGuardian1",
           check: "completedTier2",
-          wiki: "Hall_of_Gods#God_Tamer"
+          wiki: "Hall_of_Gods#Crystal_Guardian"
         },
         CrystalGuardian1Radiant: {
-          name: "God Tamer: Radiant",
-          spoiler: "Gallant god of the arena",
+          name: "Crystal Guardian: Radiant",
+          spoiler: "Shining god of greed",
           id: "CrystalGuardian1",
           check: "completedTier3",
-          wiki: "Hall_of_Gods#God_Tamer"
+          wiki: "Hall_of_Gods#Crystal_Guardian"
         },
       },
     }

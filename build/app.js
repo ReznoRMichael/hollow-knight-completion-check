@@ -7038,6 +7038,34 @@ var HK = {
           id: "GodTamer",
           check: "completedTier3",
           wiki: "Hall_of_Gods#God_Tamer"
+        },
+        CrystalGuardian1Unlocked: {
+          name: "Crystal Guardian: Unlocked",
+          spoiler: "I rest amongst crystals and strange machinery",
+          id: "CrystalGuardian1",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Crystal_Guardian"
+        },
+        CrystalGuardian1Attuned: {
+          name: "Crystal Guardian: Attuned",
+          spoiler: "Shining god of greed",
+          id: "CrystalGuardian1",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Crystal_Guardian"
+        },
+        CrystalGuardian1Ascended: {
+          name: "Crystal Guardian: Ascended",
+          spoiler: "Shining god of greed",
+          id: "CrystalGuardian1",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Crystal_Guardian"
+        },
+        CrystalGuardian1Radiant: {
+          name: "Crystal Guardian: Radiant",
+          spoiler: "Shining god of greed",
+          id: "CrystalGuardian1",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Crystal_Guardian"
         }
       }
     }
