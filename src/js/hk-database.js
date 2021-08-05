@@ -3791,6 +3791,34 @@ const HK = {
           check: "completedTier3",
           wiki: "Hall_of_Gods#Lost_Kin"
         },
+        NoskUnlocked: {
+          name: "Nosk: Unlocked",
+          spoiler: "I wait patiently in a dark nest of predators",
+          id: "Nosk",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Nosk"
+        },
+        NoskAttuned: {
+          name: "Nosk: Attuned",
+          spoiler: "Everchanging god of the faceless",
+          id: "Nosk",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Nosk"
+        },
+        NoskAscended: {
+          name: "Nosk: Ascended",
+          spoiler: "Everchanging god of the faceless",
+          id: "Nosk",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Nosk"
+        },
+        NoskRadiant: {
+          name: "Nosk: Radiant",
+          spoiler: "Everchanging god of the faceless",
+          id: "Nosk",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Nosk"
+        },
       },
     }
 
