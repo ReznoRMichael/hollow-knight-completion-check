@@ -1803,6 +1803,13 @@ function CheckPantheon(db, sectionName, playerData) {
   var entries = db.sections[sectionName].entries;
 
   for (var entry in entries) {
+    /* Backwards compatibility, disable and skip to next when not found */
+    if (!playerData.hasOwnProperty(property)) {
+      (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, entry);
+      entries[entry].disabled = true;
+      continue;
+    }
+
     if (playerData[property][entry] === true) {
       switch (entry) {
         case "boundNail":

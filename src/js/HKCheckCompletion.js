@@ -1980,6 +1980,15 @@ function CheckPantheon(db, sectionName, playerData) {
 
   for (let entry in entries) {
 
+    /* Backwards compatibility, disable and skip to next when not found */
+    if (!playerData.hasOwnProperty(property)) {
+
+      SetIconNone(section, entry);
+      entries[entry].disabled = true;
+
+      continue;
+    }
+
     if (playerData[property][entry] === true) {
 
       switch (entry) {
