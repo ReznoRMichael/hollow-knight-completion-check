@@ -3372,32 +3372,60 @@ const HK = {
       description: "Bottom of Godhome. Detecting what bosses have been unlocked and defeated on all three difficulty levels: Attuned, Ascended and Radiant.",
       entries: {
         GruzMotherUnlocked: {
-          name: "P1 Gruz Mother: Unlocked",
+          name: "Gruz Mother: Unlocked",
           spoiler: "I sleep amongst winding roads",
           id: "GruzMother",
           check: "isUnlocked",
           wiki: "Hall_of_Gods#Gruz_Mother"
         },
         GruzMotherAttuned: {
-          name: "P1 Gruz Mother: Attuned",
+          name: "Gruz Mother: Attuned",
           spoiler: "Slumbering god of fertility",
           id: "GruzMother",
           check: "completedTier1",
           wiki: "Hall_of_Gods#Gruz_Mother"
         },
         GruzMotherAscended: {
-          name: "P1 Gruz Mother: Ascended",
+          name: "Gruz Mother: Ascended",
           spoiler: "Slumbering god of fertility",
           id: "GruzMother",
           check: "completedTier2",
           wiki: "Hall_of_Gods#Gruz_Mother"
         },
         GruzMotherRadiant: {
-          name: "P1 Gruz Mother: Radiant",
+          name: "Gruz Mother: Radiant",
           spoiler: "Slumbering god of fertility",
           id: "GruzMother",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Gruz_Mother"
+        },
+        VengeflyUnlocked: {
+          name: "Vengefly King: Unlocked",
+          spoiler: "I keep guard above a verdant land",
+          id: "Vengefly",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Vengefly_King"
+        },
+        VengeflyAttuned: {
+          name: "Vengefly King: Attuned",
+          spoiler: "Vicious god of territories",
+          id: "Vengefly",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Vengefly_King"
+        },
+        VengeflyAscended: {
+          name: "Vengefly King: Ascended",
+          spoiler: "Vicious god of territories",
+          id: "Vengefly",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Vengefly_King"
+        },
+        VengeflyRadiant: {
+          name: "Vengefly King: Radiant",
+          spoiler: "Vicious god of territories",
+          id: "Vengefly",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Vengefly_King"
         },
       },
     }

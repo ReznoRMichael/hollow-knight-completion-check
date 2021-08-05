@@ -2054,15 +2054,17 @@ function CheckHallOfGods(db, playerData) {
       }
       
     }
+    /* When boss is only unlocked, other entries get a gray icon (awaiting completion) */
     else if (isUnlocked) {
       SetIcon(section, entry, "partial");
     }
+    /* When not unlocked, every entry gets a red icon */
     else {
       SetIconRed(section, entry);
     }
 
   } /* end for (let entry in entries) */
-  
+
 }
 
 
