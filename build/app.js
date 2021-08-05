@@ -1843,8 +1843,30 @@ function CheckHallOfGods(db, playerData) {
 
   for (var entry in entries) {
     id = entries[entry].id;
+    /* Backwards compatibility, disable and skip to next when not found */
+
+    if (!playerData.hasOwnProperty("statueState".concat(id))) {
+      (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, entry);
+      entries[entry].disabled = true;
+      continue;
+    }
+
     check = entries[entry].check;
     isUnlocked = playerData["statueState".concat(id)].isUnlocked;
+
+    switch (entry) {
+      case "GreyPrinceUnlocked":
+      case "GreyPrinceAttuned":
+      case "GreyPrinceAscended":
+      case "GreyPrinceRadiant":
+        /* When Zote OFF, disable entry and skip to next entry */
+        if (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, entry);
+          entries[entry].disabled = true;
+          continue;
+        }
+
+    }
 
     if (playerData["statueState".concat(id)][check] === true) {
       switch (check) {

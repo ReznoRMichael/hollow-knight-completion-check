@@ -201,7 +201,7 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
   // ---------------- Godmaster Content Pack ------------------------------------------------------------------------------------ //
 
   CheckIfDataTrue(HK.sections.godmaster, HK.sections.godmaster.entries, HKPlayerData);
-  
+
   // ------------------------- Hunter's Journal --------------------------------------------------------------------------------- //
   /* Must be checked before Statistics (for correct entry numbers) */
 
@@ -471,7 +471,7 @@ function CheckExtendedCompletion(db) {
                 /* console.info("Ignored:", entry); */
 
                 break;
-              
+
               default:
 
                 if (entries[entry].icon !== "none") {
@@ -482,18 +482,18 @@ function CheckExtendedCompletion(db) {
 
                 /* Missable Arcane Egg exception, subtract from total */
                 if (entries[entry].icon === "none" && entry === "arcaneEggLifebloodCoreRoom") {
-      
+
                   /* console.info(`${entry} has passed:`, entries[entry].icon); */
-    
+
                   /* When got the Lifeblood Core charm, but didn't pick up the Arcane Egg */
                   if (sections.charms.entries.gotCharm_9.icon === "green") {
                     intro.extendedCompletionTotal--;
-    
+
                     /* console.info(`${entry} completion Total subtracted`); */
                   }
                 }
-    
-                switch(entries[entry].icon) {
+
+                switch (entries[entry].icon) {
 
                   case "red":
                   case "none":
@@ -505,7 +505,7 @@ function CheckExtendedCompletion(db) {
 
                     intro.extendedCompletionDone++;
 
-                  // console.info("Counted (Done):", entry);
+                    // console.info("Counted (Done):", entry);
                 }
             }
 
@@ -1150,11 +1150,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           /* when Grimm Troupe is banished, max Journal entries will be 1 or 2 less */
           if (playerData.hasOwnProperty("destroyedNightmareLantern") && playerData.destroyedNightmareLantern === true) {
 
-            dataObject[i].max --; // Subtract Nightmare King from max
+            dataObject[i].max--; // Subtract Nightmare King from max
 
             /* if the player didn't defeat any Grimmkin Nightmare before banishing, subtract it from max */
             if (playerData.killedFlameBearerLarge === false) {
-              dataObject[i].max --; // Subtract Grimmkin Nightmare from max
+              dataObject[i].max--; // Subtract Grimmkin Nightmare from max
               dataObject[i].spoiler = `${dataObject[i].spoilerDefault} (${dataObject[i].max} max)`; /* Change spoiler for less confusion */
             }
           }
@@ -1255,13 +1255,13 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         if (amount < 0) {
           amount = 0;
         }
-        
+
         dataObject[i].amount = amount;
 
         SetIconNone(section, i);
 
         break;
-      
+
       case "millibelleLeft":
 
         if (playerData.bankerTheft >= 1) {
@@ -1271,7 +1271,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         }
 
         break;
-      
+
       case "millibelleCheckedStand":
 
         if (playerData.bankerTheft >= 2) {
@@ -1281,7 +1281,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         }
 
         break;
-      
+
       case "millibelleReclaimedAllGeo":
 
         if (playerData.bankerTheft >= 1 && playerData.bankerBalance <= 0) {
@@ -1301,7 +1301,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         dataObject[i].discoveredTotal = discoveredTotal;
         dataObject[i].notActivated = notActivated;
         dataObject[i].activated = activated;
-        
+
         if (activated >= dataObject[i].max) {
           SetIconGreen(section, i);
         } else {
@@ -1380,8 +1380,8 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         break;
 
       case "arcaneEggLifebloodCoreRoom":
-          (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) ? SetIconGreen(section, i): SetIconNone(section, i);
-          break;
+        (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) ? SetIconGreen(section, i): SetIconNone(section, i);
+        break;
 
       case "pantheonHallownest":
         if (playerData.hasOwnProperty("bossDoorStateTier5") === false) {
@@ -1876,12 +1876,12 @@ function CheckHuntersJournal(db, sectionName, playerData) {
 
             continue;
           }
-          
+
           break;
 
         case "FlameBearerLarge":
 
-        /* If the troupe was banished and the player didn't defeat any Grimmkin Nightmare, then it's entry cannot be obtained on this save */
+          /* If the troupe was banished and the player didn't defeat any Grimmkin Nightmare, then it's entry cannot be obtained on this save */
           if (playerData.destroyedNightmareLantern === true && playerData.killedFlameBearerLarge === false) {
 
             entries[entry].disabled = true;
@@ -1890,12 +1890,12 @@ function CheckHuntersJournal(db, sectionName, playerData) {
 
             continue;
           }
-        
+
           break;
 
         case "NightmareGrimm":
 
-        /* if the troupe was banished, the Nightmare King entry cannot be obtained on this save */
+          /* if the troupe was banished, the Nightmare King entry cannot be obtained on this save */
           if (playerData.destroyedNightmareLantern === true) {
 
             entries[entry].disabled = true;
@@ -1904,7 +1904,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
 
             continue;
           }
-        
+
           break;
       }
 
@@ -1915,7 +1915,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
 
         SetIconPartialJournal(section, entry);
 
-      /* When not killed, the entry is undiscovered */
+        /* When not killed, the entry is undiscovered */
       } else {
 
         SetIconRed(section, entry);
@@ -1926,7 +1926,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
 
         SetIconGreen(section, entry);
 
-      /* If not, show how many remain to defeat in the name */
+        /* If not, show how many remain to defeat in the name */
       } else {
 
         name += ` (${amountKillsLeft})`;
@@ -1935,15 +1935,15 @@ function CheckHuntersJournal(db, sectionName, playerData) {
 
       /* Void Idol backwards compatibility */
       if (entry === "VoidIdol_1") {
-        if (playerData.killedVoidIdol_1 === false
-        && (playerData.killedVoidIdol_2 === true || playerData.killedVoidIdol_3 === true)) {
+        if (playerData.killedVoidIdol_1 === false &&
+          (playerData.killedVoidIdol_2 === true || playerData.killedVoidIdol_3 === true)) {
 
           SetIconGreen(section, entry);
           entries[entry].name = nameDefault;
         }
       }
 
-    /* Earlier save files backwards compatibility (no undefined) */
+      /* Earlier save files backwards compatibility (no undefined) */
     } else {
 
       amountKillsLeft = 0;
@@ -1982,7 +1982,7 @@ function CheckPantheon(db, sectionName, playerData) {
 
     if (playerData[property][entry] === true) {
 
-      switch(entry) {
+      switch (entry) {
 
         case "boundNail":
           SetIcon(section, entry, "bindingNail");
@@ -2025,12 +2025,39 @@ function CheckHallOfGods(db, playerData) {
   for (let entry in entries) {
 
     id = entries[entry].id;
+
+    /* Backwards compatibility, disable and skip to next when not found */
+    if (!playerData.hasOwnProperty(`statueState${id}`)) {
+
+      SetIconNone(section, entry);
+      entries[entry].disabled = true;
+
+      continue;
+    }
+
     check = entries[entry].check;
     isUnlocked = playerData[`statueState${id}`].isUnlocked;
 
+    switch (entry) {
+
+      case "GreyPrinceUnlocked":
+      case "GreyPrinceAttuned":
+      case "GreyPrinceAscended":
+      case "GreyPrinceRadiant":
+
+        /* When Zote OFF, disable entry and skip to next entry */
+        if (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
+
+          SetIconNone(section, entry);
+          entries[entry].disabled = true;
+
+          continue;
+        }
+    }
+
     if (playerData[`statueState${id}`][check] === true) {
 
-      switch(check) {
+      switch (check) {
 
         case "isUnlocked":
           SetIconGreen(section, entry);
@@ -2052,7 +2079,7 @@ function CheckHallOfGods(db, playerData) {
           SetIcon(section, entry, "partial");
           break;
       }
-      
+
     }
     /* When boss is only unlocked, other entries get a gray icon (awaiting completion) */
     else if (isUnlocked) {
