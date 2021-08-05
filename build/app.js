@@ -7514,6 +7514,34 @@ var HK = {
           id: "Gorb",
           check: "completedTier3",
           wiki: "Hall_of_Gods#Gorb"
+        },
+        ElderHuUnlocked: {
+          name: "Elder Hu: Unlocked",
+          spoiler: "I lie dreaming in the wastes",
+          id: "ElderHu",
+          check: "isUnlocked",
+          wiki: "Hall_of_Gods#Elder_Hu"
+        },
+        ElderHuAttuned: {
+          name: "Elder Hu: Attuned",
+          spoiler: "Dreamborn god of travellers and sages",
+          id: "ElderHu",
+          check: "completedTier1",
+          wiki: "Hall_of_Gods#Elder_Hu"
+        },
+        ElderHuAscended: {
+          name: "Elder Hu: Ascended",
+          spoiler: "Dreamborn god of travellers and sages",
+          id: "ElderHu",
+          check: "completedTier2",
+          wiki: "Hall_of_Gods#Elder_Hu"
+        },
+        ElderHuRadiant: {
+          name: "Elder Hu: Radiant",
+          spoiler: "Dreamborn god of travellers and sages",
+          id: "ElderHu",
+          check: "completedTier3",
+          wiki: "Hall_of_Gods#Elder_Hu"
         }
       }
     }
