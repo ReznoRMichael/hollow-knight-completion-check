@@ -6449,6 +6449,29 @@ var HK = {
           wiki: "Pantheons"
         }
       }
+    },
+
+    /* ################################################### Hall of Gods ############################################################# */
+    hallOfGods: {
+      h2: "Hall of Gods",
+      id: "hk-hall-of-gods",
+      property: "statueState",
+      description: "Bottom of Godhome. Detecting what bosses have been seen, unlocked and defeated on all three difficulty levels: Attuned, Ascended and Radiant.",
+      entries: {
+        statueStateGruzMother: {
+          name: "P1 Gruz Mother",
+          nameDefault: "P1 Gruz Mother",
+          nameSeen: "P1 Gruz Mother: Seen",
+          nameUnlocked: "P1 Gruz Mother: Unlocked",
+          nameAttuned: "P1 Gruz Mother: Attuned",
+          nameAscended: "P1 Gruz Mother: Ascended",
+          nameRadiant: "P1 Gruz Mother: Radiant",
+          spoiler: "I sleep amongst winding roads",
+          spoilerDefault: "I sleep amongst winding roads",
+          spoilerSeen: "Slumbering god of fertility",
+          wiki: "Hall_of_Gods#Gruz_Mother"
+        }
+      }
     }
   }
 };
@@ -7590,14 +7613,14 @@ function GenerateInnerHTML(db) {
       /* ending the tabs */
       case "godmaster": // main
 
-      case "achievements": // essential
+      case "achievements": // essentials
 
-      case "huntersJournalOptional": // essential
+      case "huntersJournalOptional": // journal
 
       case "statistics": // stats
 
-      case "pantheonOfHallownest":
-        // godhome
+      case "hallOfGods":
+        // godmaster
         finalHTMLFill += "</div>";
         break;
     }

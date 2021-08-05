@@ -618,10 +618,10 @@ function GenerateInnerHTML(db) {
 
       /* ending the tabs */
       case "godmaster": // main
-      case "achievements": // essential
-      case "huntersJournalOptional": // essential
+      case "achievements": // essentials
+      case "huntersJournalOptional": // journal
       case "statistics": // stats
-      case "pantheonOfHallownest": // godhome
+      case "hallOfGods": // godmaster
 
         finalHTMLFill += `</div>`;
 
