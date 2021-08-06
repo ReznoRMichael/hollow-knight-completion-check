@@ -357,7 +357,7 @@ h6 {
   font-family: 'Consolas', monospace;
   font-size: 0.75rem;
   text-align: center;
-  width: 100%;
+  width: 32em;
   max-width: 32em;
   color: #fff;
   background-color: rgba(128, 128, 128, 0.5);
@@ -994,8 +994,8 @@ input[type="radio"]:focus:not(:focus-visible) + label {
 .tooltip {
   position: relative;
   display: block;
-  margin: 0;
-  width: 100%;
+  margin: 0 auto;
+  width: max-content;
 }
 
 .tooltip .tooltip-text {
