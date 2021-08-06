@@ -49,7 +49,7 @@ const HK = {
         gameCompletionExtended: {
           id: "gameCompletionExtended",
           icon: "red",
-          name: "Detailed Extended Completion:",
+          name: "<strong>True Completion:</strong>",
           spoiler: 0,
           spoilerAfter: " / 0 = <b>0.00 %</b>",
           spoilerAfterDefault: " / 0 = <b>0.00 %</b>",
