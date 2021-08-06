@@ -179,6 +179,7 @@ h6 {
   color: rgba(255, 255, 255, 1.0);
   font-weight: 400;
   text-align: left;
+  justify-content: flex-start;
 }
 
 .section-description {
