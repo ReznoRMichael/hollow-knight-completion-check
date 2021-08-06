@@ -112,7 +112,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Added Secret data information at the bottom of the tool.  
 
   — **(New) Game Status** additions:  
-  ✅ addition: True Completion. Shows the detailed extended game completion by counting basically as much as possible in the game and for the current save and Analyzer version. Missable things are not counted, unless you didn't miss them. Choices in the save file are taken into account. True Completion will most likely expand after adding new things to the Analyzer.  
+  ✅ addition: True Completion. Shows a detailed extended game completion by counting basically as much as possible in the game and for the current save and Analyzer version. Missable things are not counted, unless you didn't miss them. Choices in the save file are taken into account and not counted when not available. True Completion will most likely expand after adding new things to the Analyzer.  
 
   — **(New) Hunter's Journal Section** additions/changes/fixes:  
   ✅ change + addition: now showing all 146 base entries needed for Keen/True Hunter achievements (with partial completion and number of kills left). The most commonly missed entries are shown at the top.  
