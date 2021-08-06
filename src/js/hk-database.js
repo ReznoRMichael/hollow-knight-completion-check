@@ -3063,7 +3063,7 @@ const HK = {
     godhomeStatistics: {
       h2: "Godhome Statistics",
       id: "hk-godhome-statistics",
-      description: "Everything about Godhome, that didn't fit any other category. Currently a little empty here, but I plan to definitively add more stats in the future.",
+      description: "Everything in Godhome, that didn't fit any other category.",
       entries: {
         seenGGWastes: {
           name: "Tuner Memory",
