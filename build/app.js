@@ -377,6 +377,10 @@ function CheckExtendedCompletion(db) {
                 if (entries[entry].icon !== "none") {
                   intro.extendedCompletionTotal++; // console.info("Counted Total:", entry);
                 }
+                /* else {
+                  console.info("Not Counted Total:", entry);
+                } */
+
                 /* Missable Arcane Egg exception, subtract from total */
 
 
@@ -395,7 +399,7 @@ function CheckExtendedCompletion(db) {
                   case "none":
                   case "partial":
                   case "partialJournal":
-                    break;
+                    continue;
 
                   default:
                     intro.extendedCompletionDone++;
@@ -403,7 +407,7 @@ function CheckExtendedCompletion(db) {
                 }
 
             }
-            /* Skip disabled entries entirely from counting (substract a point from Total) */
+            /* Skip disabled entries entirely from counting (subtract a point from Total) */
 
 
             if (entries[entry].hasOwnProperty("disabled") && entries[entry].disabled === true) {
@@ -412,7 +416,7 @@ function CheckExtendedCompletion(db) {
                 continue;
               }
 
-              intro.extendedCompletionTotal--;
+              intro.extendedCompletionTotal--; // console.info("Subtracted Total:", entry);
             }
             /* Counting amount/max for several entries */
             else if (entries[entry].hasOwnProperty("amount") && entries[entry].hasOwnProperty("max")) {
@@ -430,8 +434,7 @@ function CheckExtendedCompletion(db) {
                 }
 
                 intro.extendedCompletionDone += amount;
-                intro.extendedCompletionTotal += max;
-                /* console.info(`${entry}: ${amount}/${max}`, entries[entry].name); */
+                intro.extendedCompletionTotal += max; // console.info(`${entry}: ${amount}/${max}`, entries[entry].name);
 
                 amount = 0;
                 max = 0;
@@ -447,8 +450,7 @@ function CheckExtendedCompletion(db) {
                   }
 
                   intro.extendedCompletionDone += amount;
-                  intro.extendedCompletionTotal += max;
-                  /* console.info(`${entry}: ${amount}/${max}`, entries[entry].name); */
+                  intro.extendedCompletionTotal += max; // console.info(`${entry}: ${amount}/${max}`, entries[entry].name);
 
                   amount = 0;
                   max = 0;
