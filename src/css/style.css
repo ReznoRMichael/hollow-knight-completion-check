@@ -716,8 +716,8 @@ input[type="radio"] {
 .checkbox-label {
   display: inline-block;
   position: relative;
-  padding: 0 0 0 1.8rem;
-  margin: 0.25rem 1rem 0.25rem 0.5rem;
+  margin: 0.4rem 0 0 0.5rem;
+  padding: 0.25rem 0.5rem 0.25rem 2rem;
   cursor: pointer;
   font-size: 1rem;
   -webkit-user-select: none;
@@ -735,10 +735,10 @@ input[type="radio"] {
 .radiomark,
 .checkmark {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 22px;
-  width: 22px;
+  top: 0.27em;
+  left: 0.27em;
+  height: 1.3em;
+  width: 1.3em;
   background-color: #aac7d4;
   border: 1px solid #1e4d6c;
   border: 1px solid var(--rt-main);
