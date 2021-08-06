@@ -8809,34 +8809,58 @@ function GenerateInnerHTML(db) {
 
               case "bindingNail":
                 obj.icon = SYMBOL_BINDING_NAIL;
+                /* -------- Prevents blurring when a player has already completed the entry --------- */
+
+                obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
               case "bindingShell":
                 obj.icon = SYMBOL_BINDING_SHELL;
+                /* -------- Prevents blurring when a player has already completed the entry --------- */
+
+                obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
               case "bindingCharms":
                 obj.icon = SYMBOL_BINDING_CHARMS;
+                /* -------- Prevents blurring when a player has already completed the entry --------- */
+
+                obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
               case "bindingSoul":
                 obj.icon = SYMBOL_BINDING_SOUL;
+                /* -------- Prevents blurring when a player has already completed the entry --------- */
+
+                obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
               case "bindingAll":
                 obj.icon = SYMBOL_BINDING_ALL;
+                /* -------- Prevents blurring when a player has already completed the entry --------- */
+
+                obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
               case "attuned":
                 obj.icon = SYMBOL_ATTUNED;
+                /* -------- Prevents blurring when a player has already completed the entry --------- */
+
+                obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
               case "ascended":
                 obj.icon = SYMBOL_ASCENDED;
+                /* -------- Prevents blurring when a player has already completed the entry --------- */
+
+                obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
               case "radiant":
                 obj.icon = SYMBOL_RADIANT;
+                /* -------- Prevents blurring when a player has already completed the entry --------- */
+
+                obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
               case "red":
