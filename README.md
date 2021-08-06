@@ -112,15 +112,18 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Added Secret data information at the bottom of the tool.  
 
   — **(New) Game Status** additions:  
-  ✅ addition: Detailed Extended Completion. Shows the true game completion by counting basically as much as possible in the game and current program version.  
+  ✅ addition: True Completion. Shows the detailed extended game completion by counting basically as much as possible in the game and for the current save and Analyzer version. Missable things are not counted, unless you didn't miss them. Choices in the save file are taken into account. True Completion will most likely expand after adding new things to the Analyzer.  
 
-  — **(New) Hunter's Journal** additions/changes/fixes:  
-  ✅ change + addition: now showing all 146 base entries needed for Keen/True Hunter achievements (with partial completion and number of kills left). The most commonly missed entries are shown at the top. Entries that are not required are in a separate section: Optional Journal Entries.  
+  — **(New) Hunter's Journal Section** additions/changes/fixes:  
+  ✅ change + addition: now showing all 146 base entries needed for Keen/True Hunter achievements (with partial completion and number of kills left). The most commonly missed entries are shown at the top.  
+  ✅ addition: Optional Journal Entries. All other Hunter's Journal entries that are not required for Keen/True Hunter achievements.  
   ✅ fix: Crystal Crawler was actually Glimback before, despite being named CrystalCrawler in the save files.  
 
   — **(New) Godmaster Section** additions:  
-  ✅ additions: All Pantheon details. Unlocked, Completed, Bindings, Completed with No Damage, All Bindings.  
+  ✅ additions: All Pantheons details. Unlocked, Completed, Bindings, Completed with No Damage, All Bindings.  
+  ✅ additions: All Hall of Gods bosses. Unlocked, Attuned, Ascended, Radiant.  
   ✅ additions: Unique Icons for completed Bindings.  
+  ✅ additions: Unique Icons for completed bosses in the Hall of Gods (Attuned, Ascended, Radiant).  
 
   — **Hints** changes:  
   ✅ change: Made the Hints section stand out more from the rest of the tool.  
@@ -142,10 +145,10 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ change: Moved all Journal entries to Hunter's Journal section  
   ✅ addition: Quirrel: Witness achievement  
   ✅ addition: Grey Mourner: Solace achievement  
-  ✅ additions: all maps for all areas  
+  ✅ additions: Maps for all areas  
 
   — **Game Statistics** fixes/additions/changes:  
-  ✅ fix: Hunter's Journal now detects and displays the correct amount of maximum entries on both Zote routes (160 or 164).  
+  ✅ fix: Hunter's Journal now detects and displays the correct amount of maximum entries on both Zote routes and Banishment route (158-164).  
   ✅ change: Moved Menderbug and Seal of Binding to Optional Journal Entries  
   ✅ change: Removed Charm Notches (they are already shown in Game Status section)  
   ✅ addition: World Sense Ability (completion rate viewable in inventory/save slot)  
