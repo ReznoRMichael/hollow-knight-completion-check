@@ -334,11 +334,14 @@ input[type="file"] {
 
 .hint::first-letter {
   position: absolute;
+  top: 0;
+  left: 0;
   float: left;
-  margin-right: 0.6rem;
-  margin-top: 0.5rem;
-  font-size: 2.8rem;
-  line-height: 0.8;
+  padding: 0;
+  margin: 0.2em 0.1em 0 0;
+  font-size: 2.8em;
+  font-style: normal;
+  line-height: 0.6em;
   font-weight: 500;
 }
 
