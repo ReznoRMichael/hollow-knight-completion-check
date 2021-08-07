@@ -95,7 +95,7 @@ If you like the tool and wish it developed further with more functions and easie
 
 * v1.5.0 (in development):  
 
-  — Changes/Fixes:  
+  — **General Changes/Fixes:**  
   ✅ Rewrote and optimized large parts of the code. Should work a bit faster now, especially on mobile devices. Most people probably won't notice any change.  
   ✅ Drag and Drop save file should now work for the whole window (not just for the file input field).  
   ✅ Added True Completion to the program. A true perfectionist's dream/nightmare come true.  
