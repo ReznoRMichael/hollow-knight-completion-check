@@ -164,7 +164,7 @@ const HK = {
           spoiler: "A dreamer is sleeping somewhere, at the top of a high spire."
         },
         killedHollowKnight: {
-          spoiler: "He heard a disturbance from inside a black temple."
+          spoiler: "He heard a disturbance from inside a black temple. Maybe it's worth investigating."
         },
         endOfHints: {
           spoiler: `The Knight still explores the world of Hallownest patiently, in constant search of its remaining secrets. [this is the end of the hint system (for the moment). The rest is up to you]`
