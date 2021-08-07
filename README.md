@@ -96,15 +96,16 @@ If you like the tool and wish it developed further with more functions and easie
 * v1.5.0 (in development):  
 
   — Changes/Fixes:  
-  ✅ Rewrote and optimized large parts of the code. Should work a bit faster now, especially on mobile devices.  
+  ✅ Rewrote and optimized large parts of the code. Should work a bit faster now, especially on mobile devices. Most people probably won't notice any change.  
   ✅ Drag and Drop save file should now work for the whole window (not just for the file input field).  
   ✅ Added True Completion to the program. A true perfectionist's dream/nightmare come true.  
   ✅ Added full Hunter's Journal to the program. Now you can see and check all journal entries, as well as partial note completion and number of kills left to uncover Hunter's notes for each creature.  
-  ✅ Choose Save File appearance change. Will now show file's name, date and time after file is loaded (also after drag & drop).  
+  ✅ Choose Save File button appearance change. Will now show file's name, date and time after file is loaded (also after drag & drop).  
   ✅ Divided the page to different switchable tabs for easier navigation.  
   ✅ Number of Health Masks, Soul Orbs and Charm Notches is now displayed as a number next to the graphics.  
-  ✅ Hide the whole entry when Spoilers are disabled. Display all entries when Spoilers enabled. Hover over the name and/or description to uncover it one-by-one.  
-  ✅ When an entry is already completed, the whole entry is visible even when Spoilers are disabled. (thanks to kanna for the idea and inspiration!)  
+  ✅ Hide the whole entry when Spoilers are disabled. Display all entries when Spoilers enabled. Hover over the name and/or description to uncover it one-by-one. (thanks to kanna for the idea and inspiration!)  
+  ✅ When an entry is already done/completed, the whole entry is always visible (even when Spoilers are disabled).  
+  ✅ When an entry is partially done, the name of the entry is always visible, but the entry description is hidden.  
   ✅ All sections now have brief text descriptions and/or explanations.  
   ✅ Automatically detect the save version's Content Pack and display the correct Max Percent % for each one: Base Game 100%, Grimm Troupe 106%, Lifeblood 107%, Current 112%. (thanks to Perseus for the suggestion!)  
   ✅ Fixed incorrect display of Soul orbs amount for early HK save file versions (like 1.0.0.6).  
@@ -112,7 +113,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Added Secret data information at the bottom of the tool.  
 
   — **(New) Game Status** additions:  
-  ✅ addition: True Completion. Shows a detailed extended game completion by counting basically as much as possible in the game and for the current save and Analyzer version. Missable things are not counted, unless you didn't miss them. Choices in the save file are taken into account and not counted when not available. True Completion will most likely expand after adding new things to the Analyzer.  
+  ✅ addition: True Completion. Shows a detailed extended game completion (up to 100%) by counting basically as much as possible in the game and for the current save and Analyzer version. Missable things are not counted, unless you already did them. Choices in the save file are taken into account and not counted when not available. True Completion will most likely expand after adding new things to the Analyzer. Note: this is still rather experimental and may not always work accurately. When you will find any bugs, please let me know.  
 
   — **(New) Hunter's Journal Section** additions/changes/fixes:  
   ✅ change + addition: now showing all 146 base entries needed for Keen/True Hunter achievements (with partial completion and number of kills left). The most commonly missed entries are shown at the top.  
