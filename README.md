@@ -93,7 +93,7 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
-* v1.5.0 (in development):  
+* v1.5.0 2021-08-08:  
 
   — **General Changes/Fixes:**  
   ✅ Rewrote and optimized large parts of the code. Should work a bit faster now, especially on mobile devices. Most people probably won't notice any change.  
