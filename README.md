@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/static/v1?label=Instagram&message=reznor.technology&labelColor=lightgrey&color=E4405F&style=flat&logo=Instagram"></a>
 </p>
 
-# Hollow Knight: Analyze Save Completion Web Tool
+# Save Completion Analyzer for Hollow Knight
 
 > Now you can see what you missed easily! Game Completion %, every Shard/Fragment/Ore, costs, locations, Game Statistics, Hunter's Journal, Achievements, Game Completion essentials. And if you are completely lost, I designed a spoiler-free Hint system based on your individual game progress.
 
@@ -25,7 +25,7 @@ Every single penny counts: [Donate any amount](https://www.paypal.me/ReznoRMicha
 
 ## General info
 
-Hollow Knight doesn't have a game completion list in-game. There is no easy way to check in-game what specific things you forgot to do or missed for full 112% Game Completion, Hunter's Journal and Achievements. Until now! I wrote a tool for that for you.
+There is no game completion list in Hollow Knight. There is no easy way to check in-game what specific things you forgot to do or missed for full 112% Game Completion, Hunter's Journal, Achievements and many other hidden things. This Analyzer I created should help checking all of it incredibly easier for you.
 
 *Inspirations and thanks: love for Hollow Knight, discussions on the forum, [KayDeeTee](https://github.com/KayDeeTee/Hollow-Knight-SaveManager) and [bloodorca](https://bloodorca.github.io/hollow)'s Save Editors, programming learning, Elderbug, ManicJamie for [HKTranslator](https://github.com/ManicJamie/HKTranslator), [Klocus](https://klocus.pl/) for cookiealert.*
 
@@ -62,7 +62,7 @@ You can use this if you want to check your save progress without access to your 
 ### Windows
 
 `%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight\`  
-**Pro Tip:** Copy and paste this code into the folder path bar of the Windows File Explorer window and press Enter to go there instantly (Windows 10).  
+**Pro Tip:** Copy and paste this code into the folder path bar of the Windows File Explorer window and press Enter to go there instantly (Windows 10). You can also paste it inside the Run window (Windows key + R).  
 *Example path: C:\Users\your-username\AppData\LocalLow\Team Cherry\Hollow Knight*
 
 ### Linux
@@ -76,7 +76,8 @@ You can use this if you want to check your save progress without access to your 
 ### Filenames
 
 **user\*.dat** — main save file. Where \* is a number between 1 and 4, and it is the appropriate save slot inside the game.  
-**user\*.dat.bakX** — backup save files. Where X is a number in ascending order meaning how many backups were made during the whole playthrough of that save. The higher the number, the more recent the backup. There are usually 3 save backups at one time, older backups are deleted.
+**user\*.dat.bak1** — auto-backup save file.  
+**user\*_\[game-version-numbers\].dat** — duplicate of the main save file. Serves as a backup after any game update.
 
 ## Use offline or online (web) - your choice
 
@@ -404,10 +405,10 @@ If you like the tool and wish it developed further with more functions and easie
 * [Babel](https://github.com/babel/babel)
 * [core-js](https://github.com/zloirock/core-js)
 * [regenerator-runtime](https://github.com/facebook/regenerator/tree/master/packages/regenerator-runtime)
-* HTML5/CSS
-* JSON
-* Fontello
-* Google Fonts
+* [Simple Icons](https://github.com/simple-icons/simple-icons)
+* [Fontello](https://github.com/fontello/fontello)
+* [Google Fonts](https://fonts.google.com/)
+* HTML5/CSS/JSON
 
 ## Contact
 
