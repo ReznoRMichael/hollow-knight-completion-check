@@ -1749,6 +1749,12 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     let itemsLog = [];
 
     if (mode === "notActivated") {
+
+      /* 
+      let list = new ItemListBox(worldData);
+      
+      */
+
       for (let i = 0; i < arrayLength; i++) {
         if (worldData[i].activated === false &&
           worldData[i].semiPersistent === false) {
