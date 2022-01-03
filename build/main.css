@@ -524,7 +524,7 @@ input[type="file"] {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .input-buttons {
