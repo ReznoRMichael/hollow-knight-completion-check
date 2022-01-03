@@ -98,6 +98,7 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **General Changes/Fixes:**  
   ✅ Increased scrollbar width.  
+  ✅ Toggle Mode: File/Text.  
 
 * v1.5.0 2021-08-08:  
 
