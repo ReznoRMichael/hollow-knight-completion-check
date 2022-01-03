@@ -212,8 +212,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 1rem;
+  height: 1rem;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -456,7 +456,7 @@ input[type="file"] {
 #save-area {
   display: block;
   width: 100%;
-  max-width: 592px;
+  max-width: 584px;
   height: 5.65rem;
 }
 

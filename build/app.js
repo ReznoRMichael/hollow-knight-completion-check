@@ -1591,6 +1591,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     var itemsLog = [];
 
     if (mode === "notActivated") {
+      /* 
+      let list = new ItemListBox(worldData);
+      
+      */
       for (var _i6 = 0; _i6 < arrayLength; _i6++) {
         if (worldData[_i6].activated === false && worldData[_i6].semiPersistent === false) {
           countTotal++;
