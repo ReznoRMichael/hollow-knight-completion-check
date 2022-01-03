@@ -88,20 +88,23 @@
       <div class="buttons centered">
 
         <div class="input-buttons">
+          <button id="toggle-mode" class="button" type="button">🔄</button>
           <!-- <input id="save-area-file" class="" type="file" name="file" accept=".dat,.bak*" onchange="LoadSaveFile(this);" onclick="this.value = '';"> -->
           <input id="save-area-file" class="input-file" type="file" name="file" accept=".dat,.bak*">
           <label for="save-area-file" id="file-input-label" class="button"><i class="icon-doc-text-inv"></i>Choose Save
             File</label>
+          
+          <button id="save-area-read" class="button hidden" type="button">Analyze Text</button>
         </div>
 
-        <div class="input-buttons">
+        <!-- <div class="input-buttons">
           <a class="button" href="https://store.steampowered.com/account/remotestorageapp/?appid=367520"
             target="_blank">Steam Cloud Saves<i class="icon-download-cloud"></i></a>
-        </div>
+        </div> -->
 
       </div>
 
-      <textarea name="save-area" id="save-area" rows="6" spellcheck="false"
+      <textarea name="save-area" id="save-area" class="hidden" rows="6" spellcheck="false"
         placeholder="Choose or drag &amp; drop a user*.dat save file OR paste your decoded save here manually (Ctrl + V)"
         autofocus></textarea>
 
@@ -111,7 +114,9 @@
           <!-- <button id="save-area-file" class="button" onclick="">Load Save</button> -->
           <!-- <input id="save-area-file" class="" type="file" name="file" accept=".dat,.bak*" onchange="LoadSaveFile(this)"> -->
           <!-- <button id="save-area-read" class="button" onclick="HKReadTextArea('save-area');">Analyze Text</button> -->
-          <button id="save-area-read" class="button" type="button">Analyze Text</button>
+          <!-- <button id="save-area-read" class="button" type="button">Analyze Text</button> -->
+          <a class="button" href="https://store.steampowered.com/account/remotestorageapp/?appid=367520"
+            target="_blank">Steam Cloud Saves<i class="icon-download-cloud"></i></a>
         </div>
 
         <div class="checkboxes">

@@ -391,6 +391,7 @@ input {
 }
 
 textarea {
+  display: block;
   font-family: 'Consolas', monospace;
   font-size: 0.8rem;
   text-align: left;
@@ -454,7 +455,6 @@ input[type="file"] {
 }
 
 #save-area {
-  display: block;
   width: 100%;
   max-width: 584px;
   height: 5.65rem;
