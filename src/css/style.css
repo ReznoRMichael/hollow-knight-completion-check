@@ -355,6 +355,7 @@ input[type="file"] {
 .input-buttons {
   display: flex;
   flex-direction: row;
+  align-items: inherit;
 }
 
 .tab-switch-buttons {
@@ -375,6 +376,7 @@ input[type="file"] {
   align-content: center;
   align-items: center;
   width: max-content;
+  height: max-content;
   font-size: 1rem;
   font-weight: 500;
   font-family: 'Heebo', sans-serif;
@@ -409,6 +411,11 @@ input[type="file"] {
 
 .button:focus:not(:focus-visible) {
   border-color: rgba(0, 0, 0, 0);
+}
+
+.button-large {
+  border-width: 7px;
+  border-radius: 4px;
 }
 
 .tab-switch {
