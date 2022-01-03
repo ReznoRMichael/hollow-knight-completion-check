@@ -529,7 +529,7 @@ input[type="file"] {
 
 .input-buttons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .tab-switch-buttons {
