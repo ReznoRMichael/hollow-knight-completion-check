@@ -94,6 +94,11 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
+* v1.6.0 Upcoming:  
+
+  — **General Changes/Fixes:**  
+  ✅ Increased scrollbar width.  
+
 * v1.5.0 2021-08-08:  
 
   — **General Changes/Fixes:**  
