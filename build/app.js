@@ -3416,7 +3416,7 @@ var HK = {
     charms: {
       h2: "Charms",
       id: "hk-charms",
-      description: "Each Charm found in the game equals +1% to Game Completion Percentage. Note: 4 new Charms were added to the game in version 1.2.1.0. They are part of the Grimm Troupe Content Pack section below.",
+      description: "Each Charm found in the game provides 1% Game Completion.<br>\n      Note: 4 new Charms were added to the game in <a href=\"https://steamcommunity.com/app/367520/discussions/0/1480982338946444782/\" target=\"_blank\" title=\"See the official Patch Notes.\">patch version 1.2.1.0</a> (October 26th, 2017). They are part of the Grimm Troupe Content Pack section below.",
       percent: 0,
       maxPercent: 36,
       // reference: https://radiance.host/apidocs/Charms.html
