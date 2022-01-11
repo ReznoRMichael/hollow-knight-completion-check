@@ -819,6 +819,17 @@ function AppendHTML(divId, content) {
   document.getElementById(divId.id).innerHTML += "\n" + content;
 }
 
+function ToggleSaveModeSwitch() {
+
+  let mode = this.value;
+
+  let toggleModeButtonLabel = document.getElementById("toggle-mode-label");
+  let chooseFileButtonLabel = document.getElementById("file-input-label");
+  let analyzeTextButton = document.getElementById("save-area-read");
+  let saveTextArea = document.getElementById("toggle-mode-label");
+
+}
+
 /**
  * Toggles display of "hk-hints". On click with no parameters or on demand when called with a parameter
  * @param {string} param "hide", "show" or none (optional)
@@ -1166,6 +1177,10 @@ document.getElementById("save-location-input").addEventListener("mouseout", () =
     tooltip.style.marginLeft = `-${tooltip.offsetWidth / 2}px`;
   }
 }, false);
+
+/* ------------ Toggle Save Mode Switch: Text Mode or File Mode -------------- */
+
+document.getElementById("toggle-mode").addEventListener("click", ToggleSaveModeSwitch, false);
 
 /* ------------- Checkbox functions ---------------------- */
 
