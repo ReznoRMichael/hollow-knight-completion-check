@@ -732,7 +732,7 @@ a.wiki {
 }
 
 .partial {
-  color: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.4);
   /* text-shadow: 0 0 0.3rem #fff; */
 }
 
@@ -790,7 +790,7 @@ a.wiki {
 }
 
 .padding-left {
-  padding-left: 1.4rem;
+  padding-left: 1.47rem;
   height: 1.47rem;
 }
 
