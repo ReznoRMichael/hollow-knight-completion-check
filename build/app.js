@@ -6287,7 +6287,7 @@ var HK = {
 
     /* ################################################### Pantheon of the Master #################################################### */
     pantheonOfTheMaster: {
-      h2: "Pantheon of the Master (P1)",
+      h2: "P1 – Pantheon of the Master",
       id: "hk-pantheon-master",
       property: "bossDoorStateTier1",
       description: "Seek the Gods of Nail and Shell",
@@ -6337,7 +6337,7 @@ var HK = {
 
     /* ################################################### Pantheon of the Artist #################################################### */
     pantheonOfTheArtist: {
-      h2: "Pantheon of the Artist (P2)",
+      h2: "P2 – Pantheon of the Artist",
       id: "hk-pantheon-artist",
       property: "bossDoorStateTier2",
       description: "Seek the God Inspired",
@@ -6387,7 +6387,7 @@ var HK = {
 
     /* ################################################### Pantheon of the Sage #################################################### */
     pantheonOfTheSage: {
-      h2: "Pantheon of the Sage (P3)",
+      h2: "P3 – Pantheon of the Sage",
       id: "hk-pantheon-sage",
       property: "bossDoorStateTier3",
       description: "Seek the God of Wealth and Power",
@@ -6437,7 +6437,7 @@ var HK = {
 
     /* ################################################### Pantheon of the Knight #################################################### */
     pantheonOfTheKnight: {
-      h2: "Pantheon of the Knight (P4)",
+      h2: "P4 – Pantheon of the Knight",
       id: "hk-pantheon-knight",
       property: "bossDoorStateTier4",
       description: "Seek the Pure God",
@@ -6487,7 +6487,7 @@ var HK = {
 
     /* ################################################### Pantheon of Hallownest #################################################### */
     pantheonOfHallownest: {
-      h2: "Pantheon of Hallownest (P5)",
+      h2: "P5 – Pantheon of Hallownest",
       id: "hk-pantheon-hallownest",
       property: "bossDoorStateTier5",
       description: "Seek the Kingdom's Forgotten Light",
