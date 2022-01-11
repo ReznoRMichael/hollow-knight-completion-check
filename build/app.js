@@ -4807,7 +4807,7 @@ var HK = {
 
     /* ################ Hunter's Journal ################### */
     huntersJournal: {
-      h2: "Hunter's Journal (Base)",
+      h2: "Hunter's Journal",
       id: "hk-journal",
       description: "All 146 base Hunter's Journal entries that are required for Hunter's Mark and Keen Hunter/True Hunter achievements.<br>\n      <i class=\"icon-ok-squared\"></i>= note completed.<br>\n      <i class=\"icon-ok-squared partial\"></i>= entry discovered, but note not completed.<br>\n      <i class=\"icon-cancel\"></i>= entry not yet discovered.<br>\n      <b>(no.)</b> = amount left to complete note.",
       percent: 0,

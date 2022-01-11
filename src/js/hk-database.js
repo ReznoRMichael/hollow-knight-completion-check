@@ -1636,7 +1636,7 @@ const HK = {
     /* ################ Hunter's Journal ################### */
 
     huntersJournal: {
-      h2: "Hunter's Journal (Base)",
+      h2: "Hunter's Journal",
       id: "hk-journal",
       description: `All 146 base Hunter's Journal entries that are required for Hunter's Mark and Keen Hunter/True Hunter achievements.<br>
       <i class="icon-ok-squared"></i>= note completed.<br>
