@@ -96,11 +96,14 @@ If you like the tool and wish it developed further with more functions and easie
 
 * v1.6.0 Upcoming:  
 
-  — **General Changes/Fixes:**  
+  — **General Changes:**  
   ✅ Increased scrollbar width.  
   ✅ Switch between two Modes: File or Text.  
   ✅ More descriptive location names in the Console Tab.  
   ✅ Several text description changes for improved readability.  
+
+  — **Bug Fixes:**  
+  ✅ Fixed Mr. Mushroom status bug where it was marked as green one step too early.  
 
 * v1.5.0 2021-08-08:  
 
