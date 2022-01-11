@@ -99,7 +99,7 @@ If you like the tool and wish it developed further with more functions and easie
   — **General Changes/Fixes:**  
   ✅ Increased scrollbar width.  
   ✅ Switch between two Modes: File or Text.  
-  ✅ (In Progress) More descriptive location names in the Console Tab.  
+  ✅ More descriptive location names in the Console Tab.  
   ✅ Several text/description changes for improved readability.  
 
 * v1.5.0 2021-08-08:  
