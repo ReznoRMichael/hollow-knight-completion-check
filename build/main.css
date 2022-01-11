@@ -1123,6 +1123,21 @@ input[type="radio"]:focus:not(:focus-visible) + label {
   -webkit-text-fill-color: transparent;
 }
 
+.t-green {
+  font-weight: 700;
+  color: #16c60c;
+}
+
+.t-red {
+  font-weight: 700;
+  color: #f03a17;
+}
+
+.t-gray {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.18);
+}
+
 .test {
   color: #59d1da;
 }
