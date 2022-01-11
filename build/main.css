@@ -593,6 +593,10 @@ input[type="file"] {
   border-radius: 4px;
 }
 
+.button-square {
+  padding: 0.3rem;
+}
+
 .tab-switch {
   background-color: rgba(0, 0, 0, 0);
   color: rgb(0, 180, 156);
