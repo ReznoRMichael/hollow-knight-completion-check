@@ -840,6 +840,7 @@ function ToggleSaveModeSwitch() {
     chooseFileButtonLabel.classList.add("hidden");
     analyzeTextButton.classList.remove("hidden");
     saveTextArea.classList.remove("hidden");
+    saveTextArea.focus();
     /* alert(this.value); */
   }
 }
