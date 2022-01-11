@@ -823,11 +823,25 @@ function ToggleSaveModeSwitch() {
 
   let mode = this.value;
 
-  let toggleModeButtonLabel = document.getElementById("toggle-mode-label");
   let chooseFileButtonLabel = document.getElementById("file-input-label");
   let analyzeTextButton = document.getElementById("save-area-read");
-  let saveTextArea = document.getElementById("toggle-mode-label");
+  let saveTextArea = document.getElementById("save-area");
 
+  if (mode === "modeText") {
+    this.value = "modeFile";
+
+    chooseFileButtonLabel.classList.remove("hidden");
+    analyzeTextButton.classList.add("hidden");
+    saveTextArea.classList.add("hidden");
+    /* alert(this.value); */
+  } else {
+    this.value = "modeText";
+
+    chooseFileButtonLabel.classList.add("hidden");
+    analyzeTextButton.classList.remove("hidden");
+    saveTextArea.classList.remove("hidden");
+    /* alert(this.value); */
+  }
 }
 
 /**

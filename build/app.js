@@ -9098,6 +9098,27 @@ function SingleEntryFill(obj) {
 function AppendHTML(divId, content) {
   document.getElementById(divId.id).innerHTML += "\n" + content;
 }
+
+function ToggleSaveModeSwitch() {
+  var mode = this.value;
+  var chooseFileButtonLabel = document.getElementById("file-input-label");
+  var analyzeTextButton = document.getElementById("save-area-read");
+  var saveTextArea = document.getElementById("save-area");
+
+  if (mode === "modeText") {
+    this.value = "modeFile";
+    chooseFileButtonLabel.classList.remove("hidden");
+    analyzeTextButton.classList.add("hidden");
+    saveTextArea.classList.add("hidden");
+    /* alert(this.value); */
+  } else {
+    this.value = "modeText";
+    chooseFileButtonLabel.classList.add("hidden");
+    analyzeTextButton.classList.remove("hidden");
+    saveTextArea.classList.remove("hidden");
+    /* alert(this.value); */
+  }
+}
 /**
  * Toggles display of "hk-hints". On click with no parameters or on demand when called with a parameter
  * @param {string} param "hide", "show" or none (optional)
@@ -9430,6 +9451,9 @@ document.getElementById("save-location-input").addEventListener("mouseout", func
     tooltip.style.marginLeft = "-".concat(tooltip.offsetWidth / 2, "px");
   }
 }, false);
+/* ------------ Toggle Save Mode Switch: Text Mode or File Mode -------------- */
+
+document.getElementById("toggle-mode").addEventListener("click", ToggleSaveModeSwitch, false);
 /* ------------- Checkbox functions ---------------------- */
 
 document.getElementById("checkbox-hints").addEventListener("click", CheckboxHintsToggle, false);
