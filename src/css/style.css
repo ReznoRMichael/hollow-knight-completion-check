@@ -266,7 +266,8 @@ input[type="file"] {
   /* margin: 0.5rem 0.5rem 0.5rem 0.25rem; */
 }
 
-.input-file {
+.input-file,
+.input-button {
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
