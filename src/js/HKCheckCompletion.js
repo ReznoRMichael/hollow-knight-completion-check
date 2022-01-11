@@ -1834,9 +1834,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 function CheckMrMushroomState(section, entry, mrMushroomState = 0) {
 
   if (mrMushroomState >= entry.state) {
-    SetIconGreen(section, `mrMushroomState${entry.state}`);
+    SetIconGreen(section, `mrMushroomState${entry.state - 1}`);
   } else {
-    SetIconRed(section, `mrMushroomState${entry.state}`);
+    SetIconRed(section, `mrMushroomState${entry.state - 1}`);
   }
 }
 

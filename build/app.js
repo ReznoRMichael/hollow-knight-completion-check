@@ -1677,9 +1677,9 @@ function CheckMrMushroomState(section, entry) {
   var mrMushroomState = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
 
   if (mrMushroomState >= entry.state) {
-    (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, "mrMushroomState".concat(entry.state));
+    (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, "mrMushroomState".concat(entry.state - 1));
   } else {
-    (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, "mrMushroomState".concat(entry.state));
+    (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, "mrMushroomState".concat(entry.state - 1));
   }
 }
 /**
@@ -4739,43 +4739,43 @@ var HK = {
           name: "Mr Mushroom #1",
           spoiler: "Fungal Wastes, near Cornifer",
           wiki: "Mister_Mushroom",
-          state: 1
+          state: 2
         },
         mrMushroomState2: {
           name: "Mr Mushroom #2",
           spoiler: "Kingdom's Edge, near Isma's Grove",
           wiki: "Mister_Mushroom",
-          state: 2
+          state: 3
         },
         mrMushroomState3: {
           name: "Mr Mushroom #3",
           spoiler: "Deepnest, near Galien",
           wiki: "Mister_Mushroom",
-          state: 3
+          state: 4
         },
         mrMushroomState4: {
           name: "Mr Mushroom #4",
           spoiler: "Howling Cliffs, near Nailmaster Mato",
           wiki: "Mister_Mushroom",
-          state: 4
+          state: 5
         },
         mrMushroomState5: {
           name: "Mr Mushroom #5",
           spoiler: "Ancient Basin, near Monarch Wings",
           wiki: "Mister_Mushroom",
-          state: 5
+          state: 6
         },
         mrMushroomState6: {
           name: "Mr Mushroom #6",
           spoiler: "Fog Canyon, near Overgrown Mound",
           wiki: "Mister_Mushroom",
-          state: 6
+          state: 7
         },
         mrMushroomState7: {
           name: "Mr Mushroom #7",
           spoiler: "King's Pass, game starting location",
           wiki: "Mister_Mushroom",
-          state: 7
+          state: 8
         },
         pantheonHallownest: {
           name: "P5 Embrace the Void",
