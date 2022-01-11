@@ -270,7 +270,7 @@ const HK = {
       h2: "Charms",
       id: "hk-charms",
       description: `Each Charm found in the game provides 1% Game Completion.<br>
-      Note: 4 new Charms were added to the game in <a href="https://steamcommunity.com/app/367520/discussions/0/1480982338946444782/" target="_blank" title="See the official Patch Notes.">patch version 1.2.1.0</a> (October 26th, 2017). They are part of the Grimm Troupe Content Pack section below.`,
+      Note: 4 new Charms were added to the game in <a href="https://steamcommunity.com/app/367520/discussions/0/1480982338946444782/" target="_blank" title="See the official Patch Notes.">patch version 1.2.1.0</a>. They are part of the Grimm Troupe Content Pack section below.`,
       percent: 0,
       maxPercent: 36,
       // reference: https://radiance.host/apidocs/Charms.html
@@ -467,7 +467,7 @@ const HK = {
     equipment: {
       h2: "Equipment",
       id: "hk-equipment",
-      description: "Also known as Abilities. Each piece of equipment collected provides +2% to Game Completion Percentage.",
+      description: "Also known as Abilities. Each piece of equipment collected provides 2% Game Completion.",
       percent: 0,
       maxPercent: 14,
       entries: {
@@ -514,7 +514,7 @@ const HK = {
     nailUpgrades: {
       h2: "Nail Upgrades",
       id: "hk-nailupgrades",
-      description: "Upgrades to the Knight's main weapon damage. Each upgrade provides +1% to Game Completion Percentage.",
+      description: "Upgrades to the Knight's main weapon damage. Each upgrade provides 1% Game Completion.",
       percent: 0,
       maxPercent: 4,
       entries: {
@@ -551,7 +551,7 @@ const HK = {
     nailArts: {
       h2: "Nail Arts",
       id: "hk-nailarts",
-      description: "Advanced weapon combat techniques. Each new technique learned provides +1% to Game Completion Percentage.",
+      description: "Advanced weapon combat techniques. Each new technique learned provides 1% Game Completion.",
       percent: 0,
       maxPercent: 3,
       entries: {
@@ -580,7 +580,7 @@ const HK = {
     spells: {
       h2: "Spells",
       id: "hk-spells",
-      description: "Skills that consume Soul. Each new spell learned or upgraded provides +1% to Game Completion Percentage.",
+      description: "Skills that consume Soul. Each new spell learned or upgraded provides 1% Game Completion.",
       percent: 0,
       maxPercent: 6,
       entries: {
@@ -628,7 +628,7 @@ const HK = {
     maskShards: {
       h2: "Mask Shards",
       id: "hk-maskshards",
-      description: "Fragments for increasing max health. Each 4 Mask Fragments collected (a full Mask) provide +1% to Game Completion Percentage.",
+      description: "Fragments for increasing max health. Each 4 Mask Fragments collected (a full Mask) provide 1% Game Completion.",
       percent: 0,
       maxPercent: 4,
       entries: {
@@ -744,7 +744,7 @@ const HK = {
     vesselFragments: {
       h2: "Vessel Fragments",
       id: "hk-vesselfragments",
-      description: "Fragments for increasing max soul. Each 3 Vessel Fragments collected (a full Soul Vessel) provide +1% to Game Completion Percentage.",
+      description: "Fragments for increasing max soul. Each 3 Vessel Fragments collected (a full Soul Vessel) provide 1% Game Completion.",
       percent: 0,
       maxPercent: 3,
       entries: {
@@ -813,7 +813,7 @@ const HK = {
     dreamNail: {
       h2: "Dream Nail and Essence",
       id: "hk-dreamnail",
-      description: "A special dream Ability. Can collect Essence and enter dreams. Each milestone here will provide +1% to Game Completion Percentage.",
+      description: "A special dream Ability. Can collect Essence and enter dreams. Each milestone here will provide 1% Game Completion.",
       percent: 0,
       maxPercent: 3,
       entries: {
@@ -840,7 +840,8 @@ const HK = {
     warriorDreams: {
       h2: "Warrior Dreams",
       id: "hk-warriordreams",
-      description: "Special kind of bosses in Hollow Knight, which provide Essence after defeat. The Essence must be collected before each boss will provide +1% to Game Completion Percentage.",
+      description: `Special kind of bosses in Hollow Knight, which provide Essence and 1% Game Completion after defeat.<br>
+      Note: The Essence must be collected before each boss will provide 1% Game Completion. Uncollected Essence will be marked as not completed.`,
       percent: 0,
       maxPercent: 7,
       entries: {
@@ -887,7 +888,7 @@ const HK = {
     dreamers: {
       h2: "Dreamers",
       id: "hk-dreamers",
-      description: "Each Dreamer will provide +1% to Game Completion Percentage.",
+      description: "Each Dreamer will provide 1% Game Completion.",
       percent: 0,
       maxPercent: 3,
       entries: {
@@ -914,7 +915,7 @@ const HK = {
     colosseum: {
       h2: "Colosseum of Fools",
       id: "hk-colosseum",
-      description: "Completing each Trial in the Colosseum provides +1% to Game Completion Percentage. This section sums up the original 100% Game Completion Percentage from Hollow Knight in 2017 (without Content Packs).",
+      description: "Completing each Trial in the Colosseum provides 1% Game Completion. This section sums up the original 100% Game Completion Percentage from Hollow Knight in 2017 (without Content Packs).",
       percent: 0,
       maxPercent: 3,
       entries: {
@@ -941,7 +942,8 @@ const HK = {
     grimmTroupe: {
       h2: "Grimm Troupe Content Pack",
       id: "hk-grimmtroupe",
-      description: "The first Content Pack. Released October 26th, 2017 (1.2.1.0 Game Update). It added additional +6% to max Game Completion Percentage. Note: It requires making a choice, but no matter what you will choose, you will still get the same +1%.",
+      description: `The first Content Pack. Released October 26th, 2017 (<a href="https://steamcommunity.com/app/367520/discussions/0/1480982338946444782/" target="_blank" title="See the official Patch Notes.">1.2.1.0 Game Update</a>). It added additional +6% to max Game Completion Percentage.<br>
+      Note: It requires making a choice, but no matter what you will choose, you will still get the same +1%.`,
       percent: 0,
       maxPercent: 6,
       entries: {
@@ -1007,7 +1009,7 @@ const HK = {
     lifeblood: {
       h2: "Lifeblood Content Pack",
       id: "hk-lifeblood",
-      description: "The second Content Pack. Released April 20th, 2018 (1.3.1.5 Game Update). Among many quality changes, it added one new boss, which increased the max Game Completion Percentage by +1%.",
+      description: `The second Content Pack. Released April 20th, 2018 (<a href="https://steamcommunity.com/app/367520/discussions/0/3211505894131332245/" target="_blank" title="See the official Patch Notes.">1.3.1.5 Game Update</a>). Among many quality changes, it added one new boss, which increased the max Game Completion Percentage by +1%.`,
       percent: 0,
       maxPercent: 1,
       entries: {
@@ -1024,7 +1026,7 @@ const HK = {
     godmaster: {
       h2: "Godmaster Content Pack",
       id: "hk-godmaster",
-      description: "The third Content Pack. Released August 23rd, 2018 (1.4.2.4 Game Update). It added additional +5% to max Game Completion Percentage (up to a total of 112%).",
+      description: `The third Content Pack. Released August 23rd, 2018 (<a href="https://hollowknight.fandom.com/wiki/Updates_(Hollow_Knight)?so=search#1.4.2.4" target="_blank" title="See the official Patch Notes.">1.4.2.4 Game Update</a>). It added additional +5% to max Game Completion Percentage (up to a total of 112%).`,
       percent: 0,
       maxPercent: 5,
       entries: {
