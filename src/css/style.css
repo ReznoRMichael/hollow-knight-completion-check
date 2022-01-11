@@ -356,6 +356,7 @@ input[type="file"] {
 .input-buttons {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: inherit;
 }
 
