@@ -2986,6 +2986,13 @@ const HK = {
           spoiler: "City of Tears: Hot Springs, Millibelle the Thief",
           wiki: "Millibelle"
         },
+        grimmTentSecret: {
+          name: "Grimm's Tent Secret Discovered",
+          spoiler: "Dirtmouth: inside Grimm's Tent",
+          id: "Secret Mask",
+          sceneName: "Grimm_Main_Tent",
+          wiki: "Dirtmouth#The_Grimm_Troupe.27s_Tents"
+        },
         /* 
         Path of Pain entrance discovered
         */
