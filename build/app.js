@@ -9139,7 +9139,10 @@ function ToggleSaveModeSwitch() {
     chooseFileButtonLabel.classList.add("hidden");
     analyzeTextButton.classList.remove("hidden");
     saveTextArea.classList.remove("hidden");
-    saveTextArea.focus();
+    /* Warning! focus() somehow makes the textarea text offset to the left */
+
+    /* saveTextArea.focus(); */
+
     /* alert(this.value); */
   }
 }
