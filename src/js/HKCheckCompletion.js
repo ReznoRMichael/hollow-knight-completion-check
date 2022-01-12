@@ -1643,6 +1643,32 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         break;
 
+      /* Unobtainable Unbreakable Charms after Grimm Troupe Banishment */
+      case "fragileGreed_unbreakable":
+      case "fragileHealth_unbreakable":
+      case "fragileStrength_unbreakable":
+
+        /* backwards compatibility with earlier game versions */
+        if (playerData.hasOwnProperty(i) === false) {
+
+          SetIconNone(section, i);
+          dataObject[i].disabled = true;
+
+        } else if (playerData[i] === true) {
+          SetIconGreen(section, i);
+        } else {
+
+          /* If player doesn't have an Unbreakable Charm, and they Banished the Grimm Troupe, the entry needs to be disabled */
+          if (playerData.hasOwnProperty("destroyedNightmareLantern") && playerData.destroyedNightmareLantern === true) {
+            SetIconNone(section, i);
+            dataObject[i].disabled = true;
+          } else {
+            SetIconRed(section, i);
+          }
+        }
+
+        break;
+
       default:
 
         // backwards compatibility with earlier game versions
