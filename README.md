@@ -94,17 +94,17 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
-* v1.6.0 Upcoming:  
+* v1.6.0 2022-01-12:  
 
   — **General Changes:**  
   ✅ Increased scrollbar width.  
   ✅ Switch between two Modes: File or Text. File Mode set as default.  
-  ✅ More descriptive location names in the Console Tab.  
+  ✅ More descriptive location names in the Secret Console Tab.  
   ✅ Several text description changes for improved readability.  
 
   — **Bug Fixes:**  
   ✅ Fixed Mr. Mushroom status bug where it was marked as green one step too early. (thanks to Perseus)  
-  ✅ Fixed Unbreakable Charms not obtained after Banishment: now are recognized, not included in True Completion % and have their entry names in gray.  
+  ✅ Fixed Unbreakable Charms not obtained after Banishment: are now recognized, not included in True Completion % and have their entry names faded out.  
 
   — **(New) Game Statistics** additions:  
   ✅ Grimm's Tent: Secret Room (missable).  
