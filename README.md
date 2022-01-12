@@ -98,12 +98,13 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **General Changes:**  
   ✅ Increased scrollbar width.  
-  ✅ Switch between two Modes: File or Text.  
+  ✅ Switch between two Modes: File or Text. File Mode set as default.  
   ✅ More descriptive location names in the Console Tab.  
   ✅ Several text description changes for improved readability.  
 
   — **Bug Fixes:**  
-  ✅ Fixed Mr. Mushroom status bug where it was marked as green one step too early.  
+  ✅ Fixed Mr. Mushroom status bug where it was marked as green one step too early. (thanks to Perseus)  
+  ✅ Fixed Unbreakable Charms not obtained after Banishment: now are recognized, not included in True Completion % and have their entry names in gray.  
 
 * v1.5.0 2021-08-08:  
 
