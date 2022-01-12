@@ -2993,6 +2993,20 @@ const HK = {
           sceneName: "Grimm_Main_Tent",
           wiki: "Dirtmouth#The_Grimm_Troupe.27s_Tents"
         },
+        weaversDenSecretRoom1: {
+          name: "Weaver's Den Secret Room #1",
+          spoiler: "Deepnest: inside Weaver's Den",
+          id: "Breakable Wall",
+          sceneName: "Deepnest_45_v02",
+          wiki: "Deepnest#Sub-area:_Weavers.27_Den"
+        },
+        weaversDenSecretRoom2: {
+          name: "Weaver's Den Secret Room #2",
+          spoiler: "Deepnest: inside Weaver's Den",
+          id: "Breakable Wall Waterways",
+          sceneName: "Deepnest_45_v02",
+          wiki: "Deepnest#Sub-area:_Weavers.27_Den"
+        },
         /* 
         Path of Pain entrance discovered
         */
