@@ -1208,6 +1208,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "pathOfPainEntrance":
       case "whiteLadyRoom":
       case "throneRoomLoreTablet":
+      case "towerOfLoveSecretRoom":
       case "weaversDenSecretRoom1":
       case "weaversDenSecretRoom2":
         FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
@@ -6198,21 +6199,28 @@ var HK = {
           wiki: "Millibelle"
         },
         grimmTentSecretRoom: {
-          name: "Grimm's Tent Secret Room",
+          name: "Grimm's Tent: Secret Room",
           spoiler: "Dirtmouth: inside Grimm's Tent",
           id: "Secret Mask",
           sceneName: "Grimm_Main_Tent",
           wiki: "Dirtmouth#The_Grimm_Troupe.27s_Tents"
         },
+        towerOfLoveSecretRoom: {
+          name: "Tower of Love: Secret Room",
+          spoiler: "City of Tears: near The Collector's Map",
+          id: "secret sound_grub room",
+          sceneName: "Ruins2_11",
+          wiki: "Collector#Trivia"
+        },
         weaversDenSecretRoom1: {
-          name: "Weaver's Den Secret Room #1",
+          name: "Weaver's Den: Secret Room #1",
           spoiler: "Deepnest: inside Weaver's Den",
           id: "Breakable Wall",
           sceneName: "Deepnest_45_v02",
           wiki: "Deepnest#Sub-area:_Weavers.27_Den"
         },
         weaversDenSecretRoom2: {
-          name: "Weaver's Den Secret Room #2",
+          name: "Weaver's Den: Secret Room #2",
           spoiler: "Deepnest: inside Weaver's Den",
           id: "Breakable Wall Waterways",
           sceneName: "Deepnest_45_v02",
