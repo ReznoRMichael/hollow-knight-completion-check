@@ -1211,6 +1211,25 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
+      case "grimmTentSecretRoom":
+        /* Backwards compatibility with older save files */
+        if (playerData.hasOwnProperty("destroyedNightmareLantern") === false) {
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
+          dataObject[i].disabled = true;
+        } else if (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) {
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
+        } else {
+          /* When the Ritual has been completed or Grimm Troupe has been Banished, the secret is no longer possible to discover */
+          if (playerData.grimmChildLevel >= 4) {
+            (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
+            dataObject[i].disabled = true;
+          } else {
+            (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
+          }
+        }
+
+        break;
+
       case "relicsWandererJournal":
       case "relicsHallownestSeal":
       case "relicsKingsIdol":
@@ -6175,6 +6194,13 @@ var HK = {
           name: "Reclaimed All Geo",
           spoiler: "City of Tears: Hot Springs, Millibelle the Thief",
           wiki: "Millibelle"
+        },
+        grimmTentSecretRoom: {
+          name: "Grimm's Tent Secret Room",
+          spoiler: "Dirtmouth: inside Grimm's Tent",
+          id: "Secret Mask",
+          sceneName: "Grimm_Main_Tent",
+          wiki: "Dirtmouth#The_Grimm_Troupe.27s_Tents"
         },
 
         /* 

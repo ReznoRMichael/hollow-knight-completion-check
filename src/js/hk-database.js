@@ -2986,8 +2986,8 @@ const HK = {
           spoiler: "City of Tears: Hot Springs, Millibelle the Thief",
           wiki: "Millibelle"
         },
-        grimmTentSecret: {
-          name: "Grimm's Tent Secret Discovered",
+        grimmTentSecretRoom: {
+          name: "Grimm's Tent Secret Room",
           spoiler: "Dirtmouth: inside Grimm's Tent",
           id: "Secret Mask",
           sceneName: "Grimm_Main_Tent",

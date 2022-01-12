@@ -1362,6 +1362,27 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) ? SetIconGreen(section, i): SetIconRed(section, i);
         break;
 
+      case "grimmTentSecretRoom":
+
+        /* Backwards compatibility with older save files */
+        if (playerData.hasOwnProperty("destroyedNightmareLantern") === false) {
+          SetIconNone(section, i);
+          dataObject[i].disabled = true;
+        } else if (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) {
+          SetIconGreen(section, i);
+        } else {
+
+          /* When the Ritual has been completed or Grimm Troupe has been Banished, the secret is no longer possible to discover */
+          if (playerData.grimmChildLevel >= 4) {
+            SetIconNone(section, i);
+            dataObject[i].disabled = true;
+          } else {
+            SetIconRed(section, i);
+          }
+        }
+        
+        break;
+
       case "relicsWandererJournal":
       case "relicsHallownestSeal":
       case "relicsKingsIdol":
