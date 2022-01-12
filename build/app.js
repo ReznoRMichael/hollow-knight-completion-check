@@ -8654,7 +8654,7 @@ function GenerateInnerHTML(db) {
 
     switch (section) {
       case "bosses":
-        textFill += ["<div class=\"tab-switch-buttons\">", "<button id=\"button-switch-main\" name=\"main\" class=\"button tab-switch\" type=\"button\">Main %</button>", "<button id=\"button-switch-essential\" name=\"essential\" class=\"button tab-switch\" type=\"button\">Essentials %</button>", "<button id=\"button-switch-journal\" name=\"journal\" class=\"button tab-switch\" type=\"button\">Journal</button>", "<button id=\"button-switch-statistics\" name=\"statistics\" class=\"button tab-switch\" type=\"button\">Stats</button>", "<button id=\"button-switch-godhome\" name=\"godhome\" class=\"button tab-switch\" type=\"button\">Godmaster</button>", "</div>"].join("\n");
+        textFill += ["<div class=\"tab-switch-buttons\">", "<button id=\"button-switch-main\" name=\"main\" class=\"button tab-switch\" type=\"button\">Main %</button>", "<button id=\"button-switch-essential\" name=\"essential\" class=\"button tab-switch\" type=\"button\">Essentials %</button>", "<button id=\"button-switch-journal\" name=\"journal\" class=\"button tab-switch\" type=\"button\">Journal</button>", "<button id=\"button-switch-godhome\" name=\"godhome\" class=\"button tab-switch\" type=\"button\">Godmaster</button>", "<button id=\"button-switch-statistics\" name=\"statistics\" class=\"button tab-switch\" type=\"button\">Misc</button>", "</div>"].join("\n");
         textFill += "<div id=\"tab-main\" class=\"large-section\">";
         break;
 
