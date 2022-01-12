@@ -106,6 +106,9 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Fixed Mr. Mushroom status bug where it was marked as green one step too early. (thanks to Perseus)  
   ✅ Fixed Unbreakable Charms not obtained after Banishment: now are recognized, not included in True Completion % and have their entry names in gray.  
 
+  — **(New) Game Statistics** additions:  
+  ✅ Grimm's Tent Secret Room.  
+
 * v1.5.0 2021-08-08:  
 
   — **General Changes/Fixes:**  
