@@ -107,9 +107,10 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Fixed Unbreakable Charms not obtained after Banishment: now are recognized, not included in True Completion % and have their entry names in gray.  
 
   — **(New) Game Statistics** additions:  
-  ✅ Grimm's Tent Secret Room (missable).  
-  ✅ Weaver's Den Secret Room #1.  
-  ✅ Weaver's Den Secret Room #2.  
+  ✅ Grimm's Tent: Secret Room (missable).  
+  ✅ Tower of Love: Secret Room.  
+  ✅ Weaver's Den: Secret Room #1.  
+  ✅ Weaver's Den: Secret Room #2.  
 
 * v1.5.0 2021-08-08:  
 
