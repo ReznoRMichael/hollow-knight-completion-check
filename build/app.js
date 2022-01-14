@@ -5892,6 +5892,55 @@ var HK = {
       }
     },
 
+    /* ###################################### Collectibles: Charm Notches ############################################## */
+    charmNotches: {
+      h2: "Charm Notches",
+      id: "hk-charm-notches",
+      description: "Charm Notches are required to equip Charms. They can be found in the game world, bought from Salubra or won from certain challenges.",
+      entries: {
+        notchShroomOgres: {
+          name: "Charm Notch #1",
+          spoiler: "Fungal Wastes: Shroom Ogres room",
+          wiki: "Category:Charms#Notches"
+        },
+        salubraNotch1: {
+          name: "Charm Notch #2",
+          spoiler: "Salubra: 120 Geo + 5 Charms found",
+          wiki: "Category:Charms#Notches"
+        },
+        salubraNotch2: {
+          name: "Charm Notch #3",
+          spoiler: "Salubra: 500 Geo + 10 Charms found",
+          wiki: "Category:Charms#Notches"
+        },
+        salubraNotch3: {
+          name: "Charm Notch #4",
+          spoiler: "Salubra: 900 Geo + 18 Charms found",
+          wiki: "Category:Charms#Notches"
+        },
+        salubraNotch4: {
+          name: "Charm Notch #5",
+          spoiler: "Salubra: 1400 Geo + 25 Charms found",
+          wiki: "Category:Charms#Notches"
+        },
+        colosseumBronzeCompleted: {
+          name: "Charm Notch #6",
+          spoiler: "Colosseum of Fools: Trial of the Warrior",
+          wiki: "Category:Charms#Notches"
+        },
+        notchFogCanyon: {
+          name: "Charm Notch #7",
+          spoiler: "Fog Canyon: explosive eggs room",
+          wiki: "Category:Charms#Notches"
+        },
+        gotGrimmNotch: {
+          name: "Charm Notch #8",
+          spoiler: "Dirtmouth: Troupe Leader Grimm",
+          wiki: "Category:Charms#Notches"
+        }
+      }
+    },
+
     /* ################ Game Statistics ################### */
     statistics: {
       h2: "Game Statistics",
@@ -6029,46 +6078,6 @@ var HK = {
           notActivated: 0,
           activated: 0,
           discoveredTotal: 0
-        },
-        notchShroomOgres: {
-          name: "Charm Notch #1",
-          spoiler: "Fungal Wastes: Shroom Ogres room",
-          wiki: "Category:Charms#Notches"
-        },
-        salubraNotch1: {
-          name: "Charm Notch #2",
-          spoiler: "Salubra: 120 Geo + 5 Charms found",
-          wiki: "Category:Charms#Notches"
-        },
-        salubraNotch2: {
-          name: "Charm Notch #3",
-          spoiler: "Salubra: 500 Geo + 10 Charms found",
-          wiki: "Category:Charms#Notches"
-        },
-        salubraNotch3: {
-          name: "Charm Notch #4",
-          spoiler: "Salubra: 900 Geo + 18 Charms found",
-          wiki: "Category:Charms#Notches"
-        },
-        salubraNotch4: {
-          name: "Charm Notch #5",
-          spoiler: "Salubra: 1400 Geo + 25 Charms found",
-          wiki: "Category:Charms#Notches"
-        },
-        colosseumBronzeCompleted: {
-          name: "Charm Notch #6",
-          spoiler: "Colosseum of Fools: Trial of the Warrior",
-          wiki: "Category:Charms#Notches"
-        },
-        notchFogCanyon: {
-          name: "Charm Notch #7",
-          spoiler: "Fog Canyon: explosive eggs room",
-          wiki: "Category:Charms#Notches"
-        },
-        gotGrimmNotch: {
-          name: "Charm Notch #8",
-          spoiler: "Dirtmouth: Troupe Leader Grimm",
-          wiki: "Category:Charms#Notches"
         },
         hasQuill: {
           name: "Quill",
