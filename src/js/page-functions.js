@@ -232,10 +232,12 @@ function GenerateInnerHTML(db) {
 
     textFill = "";
 
-    /* ############################# Tab Switch buttons and <div>s ################################################################### */
+    /* ############################# Tab Switch buttons and Large Section <div>s for switching ############################## */
+    /* Important: Ending Tab </div>s are at "End the Tab divs" */
 
     switch (section) {
 
+      /* Main % */
       case "bosses":
 
         textFill += [
@@ -254,24 +256,35 @@ function GenerateInnerHTML(db) {
 
         break;
 
+      /* Essentials % */
       case "essential":
 
         textFill += `<div id="tab-essential" class="large-section">`;
 
         break;
 
+      /* Journal */
       case "huntersJournal":
 
         textFill += `<div id="tab-journal" class="large-section">`;
 
         break;
 
+      /* Collectibles */
+      case "charmNotches":
+
+        textFill += `<div id="tab-collectibles" class="large-section">`;
+
+        break;
+
+      /* Statistics */
       case "statistics":
 
         textFill += `<div id="tab-statistics" class="large-section">`;
 
         break;
 
+      /* Godmaster */
       case "godhomeStatistics":
 
         textFill += `<div id="tab-godhome" class="large-section">`;
@@ -646,11 +659,12 @@ function GenerateInnerHTML(db) {
     switch (section) {
 
       /* ending the tabs */
-      case "godmaster": // main
-      case "achievements": // essentials
-      case "huntersJournalOptional": // journal
-      case "statistics": // stats
-      case "hallOfGods": // godmaster
+      case "godmaster": // Main
+      case "achievements": // Essentials
+      case "huntersJournalOptional": // Journal
+      case "charmNotches": // Collectibles
+      case "statistics": // Stats
+      case "hallOfGods": // Godmaster
 
         finalHTMLFill += `</div>`;
 

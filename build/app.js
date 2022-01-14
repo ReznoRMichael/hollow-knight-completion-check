@@ -8661,25 +8661,42 @@ function GenerateInnerHTML(db) {
 
   for (var section in sections) {
     textFill = "";
-    /* ############################# Tab Switch buttons and <div>s ################################################################### */
+    /* ############################# Tab Switch buttons and Large Section <div>s for switching ############################## */
+
+    /* Important: Ending Tab </div>s are at "End the Tab divs" */
 
     switch (section) {
+      /* Main % */
       case "bosses":
         textFill += ["<div class=\"tab-switch-buttons\">", "<button id=\"button-switch-main\" name=\"main\" class=\"button tab-switch\" type=\"button\">Main %</button>", "<button id=\"button-switch-essential\" name=\"essential\" class=\"button tab-switch\" type=\"button\">Essentials %</button>", "<button id=\"button-switch-journal\" name=\"journal\" class=\"button tab-switch\" type=\"button\">Journal</button>", "<button id=\"button-switch-collectibles\" name=\"collectibles\" class=\"button tab-switch\" type=\"button\">Collectibles</button>", "<button id=\"button-switch-secrets\" name=\"secrets\" class=\"button tab-switch\" type=\"button\">Secrets</button>", "<button id=\"button-switch-godhome\" name=\"godhome\" class=\"button tab-switch\" type=\"button\">Godmaster</button>", "<button id=\"button-switch-statistics\" name=\"statistics\" class=\"button tab-switch\" type=\"button\">Statistics</button>", "</div>"].join("\n");
         textFill += "<div id=\"tab-main\" class=\"large-section\">";
         break;
 
+      /* Essentials % */
+
       case "essential":
         textFill += "<div id=\"tab-essential\" class=\"large-section\">";
         break;
+
+      /* Journal */
 
       case "huntersJournal":
         textFill += "<div id=\"tab-journal\" class=\"large-section\">";
         break;
 
+      /* Collectibles */
+
+      case "charmNotches":
+        textFill += "<div id=\"tab-collectibles\" class=\"large-section\">";
+        break;
+
+      /* Statistics */
+
       case "statistics":
         textFill += "<div id=\"tab-statistics\" class=\"large-section\">";
         break;
+
+      /* Godmaster */
 
       case "godhomeStatistics":
         textFill += "<div id=\"tab-godhome\" class=\"large-section\">";
@@ -9030,16 +9047,18 @@ function GenerateInnerHTML(db) {
 
     switch (section) {
       /* ending the tabs */
-      case "godmaster": // main
+      case "godmaster": // Main
 
-      case "achievements": // essentials
+      case "achievements": // Essentials
 
-      case "huntersJournalOptional": // journal
+      case "huntersJournalOptional": // Journal
 
-      case "statistics": // stats
+      case "charmNotches": // Collectibles
+
+      case "statistics": // Stats
 
       case "hallOfGods":
-        // godmaster
+        // Godmaster
         finalHTMLFill += "</div>";
         break;
     }
