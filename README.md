@@ -97,7 +97,7 @@ If you like the tool and wish it developed further with more functions and easie
 * v1.6.1 2022-01-14:  
 
   — **Bug Fixes:**  
-  ✅ Fixed True Completion showing a red X instead of green check when at 100.00%.  
+  ✅ Fixed True Completion showing a red X instead of a green check when at 100.00% (thanks to Araraura).  
 
 * v1.6.0 2022-01-12:  
 
