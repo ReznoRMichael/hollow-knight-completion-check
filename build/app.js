@@ -462,7 +462,9 @@ function CheckExtendedCompletion(db) {
   }
 
   if (intro.extendedCompletionDone >= intro.extendedCompletionTotal) {
-    gameCompletionExtended.icon === "green";
+    gameCompletionExtended.icon = "green";
+  } else {
+    gameCompletionExtended.icon = "red";
   }
 
   var percent = intro.extendedCompletionDone / intro.extendedCompletionTotal * 100;
