@@ -4246,7 +4246,7 @@ var HK = {
     godmaster: {
       h2: "Godmaster Content Pack",
       id: "hk-godmaster",
-      description: "The third Content Pack. Released August 23rd, 2018 (<a href=\"https://hollowknight.fandom.com/wiki/Updates_(Hollow_Knight)?so=search#1.4.2.4\" target=\"_blank\" title=\"See the official Patch Notes.\">1.4.2.4 Game Update</a>). It added additional +5% to max Game Completion Percentage (up to a total of 112%).",
+      description: "The third Content Pack. Released August 23rd, 2018 (<a href=\"https://hollowknight.fandom.com/wiki/Updates_(Hollow_Knight)#1.4.2.4\" target=\"_blank\" title=\"See the official Patch Notes.\">1.4.2.4 Game Update</a>). It added additional +5% to max Game Completion Percentage (up to a total of 112%).",
       percent: 0,
       maxPercent: 5,
       entries: {
