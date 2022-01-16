@@ -5989,6 +5989,22 @@ var HK = {
       entries: {}
     },
 
+    /* ###################################### Collectibles -> Relics - Arcane Egg ############################################## */
+    relicsArcaneEgg: {
+      h2: "Relics - Arcane Egg",
+      id: "hk-relics-egg",
+      description: "Relics - Arcane Egg Description.",
+      entries: {
+        arcaneEggLifebloodCoreRoom: {
+          name: "Arcane Egg #4 (missable)",
+          spoiler: "The Abyss: Lifeblood Core Room",
+          id: "Shiny Item (1)",
+          sceneName: "Abyss_08",
+          wiki: "Abyss#Lifeblood_Chamber"
+        }
+      }
+    },
+
     /* ###################################### Collectibles -> Items ############################################## */
     items: {
       h2: "Items",
@@ -6132,13 +6148,6 @@ var HK = {
           name: "World Sense Ability",
           spoiler: "Temple of the Black Egg: Lore Tablet",
           wiki: "World_Sense"
-        },
-        arcaneEggLifebloodCoreRoom: {
-          name: "Lifeblood Core Room Arcane Egg",
-          spoiler: "Missable Relic",
-          id: "Shiny Item (1)",
-          sceneName: "Abyss_08",
-          wiki: "Abyss#Lifeblood_Chamber"
         },
         tukDungEgg: {
           name: "Tuk: Free Rancid Egg",
