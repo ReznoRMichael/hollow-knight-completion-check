@@ -2759,6 +2759,16 @@ const HK = {
       },
     },
 
+    /* ###################################### Collectibles -> Relics - Hallownest Seal ############################################## */
+
+    relicsHallownestSeal: {
+      h2: "Relics - Hallownest Seal",
+      id: "hk-relics-seal",
+      description: `Relics - Hallownest Seal Description.`,
+      entries: {
+      },
+    },
+
     /* ###################################### Collectibles -> Items ############################################## */
 
     items: {
