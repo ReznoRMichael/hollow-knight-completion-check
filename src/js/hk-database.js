@@ -2796,6 +2796,21 @@ const HK = {
       },
     },
 
+    /* ###################################### Collectibles -> Rancid Eggs ############################################## */
+
+    rancidEggs: {
+      h2: "Rancid Eggs",
+      id: "hk-rancid-eggs",
+      description: `Rancid Eggs Description.`,
+      entries: {
+        tukDungEgg: {
+          name: "Rancid Egg #21",
+          spoiler: "Royal Waterways: Tuk, with Defender's Crest",
+          wiki: "Tuk"
+        },
+      },
+    },
+
     /* ###################################### Collectibles -> Items ############################################## */
 
     items: {
@@ -2944,11 +2959,6 @@ const HK = {
           name: "World Sense Ability",
           spoiler: "Temple of the Black Egg: Lore Tablet",
           wiki: "World_Sense"
-        },
-        tukDungEgg: {
-          name: "Tuk: Free Rancid Egg",
-          spoiler: "Royal Waterways: Tuk, with Defender's Crest",
-          wiki: "Tuk"
         },
         bankerAccountPurchased: {
           name: "Opened Bank Account",
