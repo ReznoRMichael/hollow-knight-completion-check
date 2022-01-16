@@ -216,9 +216,13 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   CheckAdditionalThings(HK.sections.achievements, HK.sections.achievements.entries, HKPlayerData, HKWorldItems);
 
-  // ------------------------- Collectibles: Charm Notches ---------------------------------------------------------------------- //
+  // ------------------------- Collectibles -> Charm Notches ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.charmNotches, HK.sections.charmNotches.entries, HKPlayerData, HKWorldItems);
+
+  // ------------------------- Secrets -> World Interactions ---------------------------------------------------------------------- //
+
+  CheckAdditionalThings(HK.sections.worldInteractions, HK.sections.worldInteractions.entries, HKPlayerData, HKWorldItems);
 
   // ------------------------- Game Statistics ---------------------------------------------------------------------------------- //
 

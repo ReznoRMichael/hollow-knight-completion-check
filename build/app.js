@@ -155,9 +155,11 @@ function HKCheckCompletion(jsonObject) {
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.essential, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.essential.entries, HKPlayerData, HKWorldItems); // ------------------------- Achievements ------------------------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievements.entries, HKPlayerData, HKWorldItems); // ------------------------- Collectibles: Charm Notches ---------------------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievements.entries, HKPlayerData, HKWorldItems); // ------------------------- Collectibles -> Charm Notches ---------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches.entries, HKPlayerData, HKWorldItems); // ------------------------- Game Statistics ---------------------------------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches.entries, HKPlayerData, HKWorldItems); // ------------------------- Secrets -> World Interactions ---------------------------------------------------------------------- //
+
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.worldInteractions, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.worldInteractions.entries, HKPlayerData, HKWorldItems); // ------------------------- Game Statistics ---------------------------------------------------------------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.statistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.statistics.entries, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Godhome Statistics ------------------------------------------------------------------------------- //
 
@@ -5894,7 +5896,7 @@ var HK = {
       }
     },
 
-    /* ###################################### Collectibles: Charm Notches ############################################## */
+    /* ###################################### Collectibles -> Charm Notches ############################################## */
     charmNotches: {
       h2: "Charm Notches",
       id: "hk-charm-notches",
@@ -5943,17 +5945,98 @@ var HK = {
       }
     },
 
-    /* ################ Game Statistics ################### */
-    statistics: {
-      h2: "Game Statistics",
-      id: "hk-statistics",
-      description: "This section is dedicated to all secrets, numbers and stats fans. Everything else you wish to know or the game doesn't tell you: Secrets, Whispering Roots, Geo deposits, Nail damage, Notches, total Relics found and many others.",
+    /* ###################################### Secrets -> World Interactions ############################################## */
+    worldInteractions: {
+      h2: "World Interactions",
+      id: "hk-world-interactions",
+      description: "World Interactions Description.",
       entries: {
         unlockedCompletionRate: {
           name: "World Sense Ability",
           spoiler: "Temple of the Black Egg: Lore Tablet",
           wiki: "World_Sense"
         },
+        hasPinGuardian: {
+          name: "Map Pin: Dreamers",
+          spoiler: "Resting Grounds: Inspect the shrine",
+          wiki: "Dreamers"
+        },
+        hasPinBlackEgg: {
+          name: "Map Pin: Temple of the Black Egg",
+          spoiler: "City of Tears: Inspect fountain",
+          wiki: "Temple_of_the_Black_Egg"
+        },
+        arcaneEggLifebloodCoreRoom: {
+          name: "Lifeblood Core Room Arcane Egg",
+          spoiler: "Missable Relic",
+          id: "Shiny Item (1)",
+          sceneName: "Abyss_08",
+          wiki: "Abyss#Lifeblood_Chamber"
+        },
+        tukDungEgg: {
+          name: "Tuk: Free Rancid Egg",
+          spoiler: "Royal Waterways: Tuk, with Defender's Crest",
+          wiki: "Tuk"
+        },
+        bankerAccountPurchased: {
+          name: "Opened Bank Account",
+          spoiler: "100 Geo: Fog Canyon: Millibelle the Banker",
+          wiki: "Millibelle"
+        },
+        millibelleLeft: {
+          name: "Banker Disappeared",
+          spoiler: "Fog Canyon: Millibelle the Banker",
+          wiki: "Millibelle"
+        },
+        millibelleCheckedStand: {
+          name: "Investigated Banker Stand",
+          spoiler: "Fog Canyon: Millibelle the Banker",
+          wiki: "Millibelle"
+        },
+        bankerSpaMet: {
+          name: "Found & Talked to Millibelle",
+          spoiler: "City of Tears: Hot Springs, Simple Key",
+          wiki: "Millibelle"
+        },
+        millibelleReclaimedAllGeo: {
+          name: "Reclaimed All Geo",
+          spoiler: "City of Tears: Hot Springs, Millibelle the Thief",
+          wiki: "Millibelle"
+        },
+        elderbugGaveFlower: {
+          name: "Delicate Flower: Elderbug",
+          spoiler: "Deliver from Traitor's Child Grave",
+          wiki: "Delicate_Flower#List_of_Possible_Recipients"
+        },
+        givenGodseekerFlower: {
+          name: "Delicate Flower: Godseeker",
+          spoiler: "Possible after completing 2 Pantheons",
+          wiki: "Delicate_Flower#List_of_Possible_Recipients"
+        },
+        givenOroFlower: {
+          name: "Delicate Flower: Nailmaster Oro",
+          spoiler: "D. from Traitor's Child Grave",
+          wiki: "Delicate_Flower#List_of_Possible_Recipients"
+        },
+        givenWhiteLadyFlower: {
+          name: "Delicate Flower: White Lady",
+          spoiler: "Deliver from Traitor's Child Grave",
+          wiki: "Delicate_Flower#List_of_Possible_Recipients"
+        },
+        givenEmilitiaFlower: {
+          name: "Delicate Flower: Emilitia",
+          spoiler: "Deliver from Traitor's Child Grave",
+          wiki: "Delicate_Flower#List_of_Possible_Recipients"
+        }
+      }
+    },
+
+    /* ################ Game Statistics ################### */
+    statistics: {
+      h2: "Game Statistics",
+      id: "hk-statistics",
+      description: "This section is dedicated to all secrets, numbers and stats fans. Everything else you wish to know or the game doesn't tell you: Secrets, Whispering Roots, Geo deposits, Nail damage, Notches, total Relics found and many others.",
+      entries: {
         journalEntriesCompleted: {
           name: "Creatures Encountered",
           spoiler: "Hunter's Journal (158-164 max)",
@@ -6024,16 +6107,6 @@ var HK = {
           maxDefault: 3,
           wiki: "Arcane_Egg"
         },
-
-        /* "id": "Shiny Item (1)",
-        "sceneName": "Abyss_08", */
-        arcaneEggLifebloodCoreRoom: {
-          name: "Lifeblood Core Room Arcane Egg",
-          spoiler: "The only missable Relic",
-          id: "Shiny Item (1)",
-          sceneName: "Abyss_08",
-          wiki: "Abyss#Lifeblood_Chamber"
-        },
         // not ghostCoins
         geoPool: {
           name: "Shade Geo",
@@ -6050,11 +6123,6 @@ var HK = {
           name: "Rancid Eggs Sold",
           spoiler: "Dirtmouth: Jinn, Steel Soul Mode only",
           wiki: "Jinn"
-        },
-        tukDungEgg: {
-          name: "Tuk: Free Rancid Egg",
-          spoiler: "Royal Waterways: Tuk, with Defender's Crest",
-          wiki: "Tuk"
         },
         xunFlowerBrokeTimes: {
           name: "Delicate Flowers Destroyed",
@@ -6146,16 +6214,6 @@ var HK = {
           spoiler: "210 Geo: Iselda, acquire Mothwing Cloak",
           wiki: "Iselda#Map_Pins"
         },
-        hasPinGuardian: {
-          name: "Map Pin: Dreamers",
-          spoiler: "Resting Grounds: Inspect the shrine",
-          wiki: "Dreamers"
-        },
-        hasPinBlackEgg: {
-          name: "Map Pin: Temple of the Black Egg",
-          spoiler: "City of Tears: Inspect fountain",
-          wiki: "Temple_of_the_Black_Egg"
-        },
         hasPinGrub: {
           name: "Collector's Map",
           spoiler: "Kingdom's Edge: Tower of Love, Love Key",
@@ -6181,34 +6239,9 @@ var HK = {
           spoiler: "Divine: Fragile Strength + 15000 Geo",
           wiki: "Divine#Unbreakable_Charms"
         },
-        bankerAccountPurchased: {
-          name: "Opened Bank Account",
-          spoiler: "100 Geo: Fog Canyon: Millibelle the Banker",
-          wiki: "Millibelle"
-        },
         bankerBalance: {
           name: "Bank Account Balance",
           spoiler: "Fog Canyon: Millibelle the Banker",
-          wiki: "Millibelle"
-        },
-        millibelleLeft: {
-          name: "Banker Disappeared",
-          spoiler: "Fog Canyon: Millibelle the Banker",
-          wiki: "Millibelle"
-        },
-        millibelleCheckedStand: {
-          name: "Investigated Banker Stand",
-          spoiler: "Fog Canyon: Millibelle the Banker",
-          wiki: "Millibelle"
-        },
-        bankerSpaMet: {
-          name: "Found & Talked to Millibelle",
-          spoiler: "City of Tears: Hot Springs, Simple Key",
-          wiki: "Millibelle"
-        },
-        millibelleReclaimedAllGeo: {
-          name: "Reclaimed All Geo",
-          spoiler: "City of Tears: Hot Springs, Millibelle the Thief",
           wiki: "Millibelle"
         },
         grimmTentSecretRoom: {
@@ -6280,31 +6313,6 @@ var HK = {
         #53 Breakable Wall Waterways 🗺️ Palace Spike Drop ⌨️ White_Palace_12
         #54 Break Floor 1 🗺️ Palace Spike Drop ⌨️ White_Palace_12
         */
-        elderbugGaveFlower: {
-          name: "Delicate Flower: Elderbug",
-          spoiler: "Deliver from Traitor's Child Grave",
-          wiki: "Delicate_Flower#List_of_Possible_Recipients"
-        },
-        givenGodseekerFlower: {
-          name: "Delicate Flower: Godseeker",
-          spoiler: "Possible after completing 2 Pantheons",
-          wiki: "Delicate_Flower#List_of_Possible_Recipients"
-        },
-        givenOroFlower: {
-          name: "Delicate Flower: Nailmaster Oro",
-          spoiler: "D. from Traitor's Child Grave",
-          wiki: "Delicate_Flower#List_of_Possible_Recipients"
-        },
-        givenWhiteLadyFlower: {
-          name: "Delicate Flower: White Lady",
-          spoiler: "Deliver from Traitor's Child Grave",
-          wiki: "Delicate_Flower#List_of_Possible_Recipients"
-        },
-        givenEmilitiaFlower: {
-          name: "Delicate Flower: Emilitia",
-          spoiler: "Deliver from Traitor's Child Grave",
-          wiki: "Delicate_Flower#List_of_Possible_Recipients"
-        },
         whiteDefenderDefeats: {
           name: "White Defender Times Defeated",
           spoiler: "Royal Waterways (5 max)",
