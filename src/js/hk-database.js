@@ -2729,6 +2729,116 @@ const HK = {
       },
     },
 
+    /* ###################################### Collectibles -> Items ############################################## */
+
+    items: {
+      h2: "Items",
+      id: "hk-items",
+      description: `Items Description.`,
+      entries: {
+        hasQuill: {
+          name: "Quill",
+          spoiler: "120 Geo: Iselda's Shop, updates map with explored areas",
+          wiki: "Map_and_Quill#Mapping_Tools"
+        },
+        hasPinBench: {
+          name: "Map Pin: Bench",
+          spoiler: "100 Geo: Iselda's Shop",
+          wiki: "Bench_(Hollow_Knight)"
+        },
+        hasPinShop: {
+          name: "Map Pin: Vendor",
+          spoiler: "100 Geo: Iselda's Shop",
+          wiki: "Category:NPCs_(Hollow_Knight)#Merchants"
+        },
+        hasPinCocoon: {
+          name: "Map Pin: Lifeblood Cocoon",
+          spoiler: "100 Geo: Iselda's Shop",
+          wiki: "Lifeblood_Cocoon"
+        },
+        hasPinSpa: {
+          name: "Map Pin: Hot Springs",
+          spoiler: "100 Geo: Iselda's Shop",
+          wiki: "Hot_Springs"
+        },
+        hasPinStag: {
+          name: "Map Pin: Stag Station",
+          spoiler: "100 Geo: Iselda's Shop, unlock first Station",
+          wiki: "Stag_Station"
+        },
+        hasPinGhost: {
+          name: "Map Pin: Warrior's Grave",
+          spoiler: "180 Geo: Iselda's Shop, acquire Dream Nail",
+          wiki: "Warrior_Dreams"
+        },
+        hasPinDreamPlant: {
+          name: "Map Pin: Whispering Root",
+          spoiler: "150 Geo: Iselda's Shop, acquire Dream Nail",
+          wiki: "Whispering_Root"
+        },
+        hasPinTram: {
+          name: "Map Pin: Tram",
+          spoiler: "100 Geo: Iselda's Shop, acquire Tram Pass",
+          wiki: "Tram"
+        },
+        hasMarker_r: {
+          name: "Map Pin: Shell Marker",
+          spoiler: "100 Geo: Iselda's Shop",
+          wiki: "Iselda#Map_Pins"
+        },
+        hasMarker_b: {
+          name: "Map Pin: Scarab Marker",
+          spoiler: "100 Geo: Iselda's Shop",
+          wiki: "Iselda#Map_Pins"
+        },
+        hasMarker_y: {
+          name: "Map Pin: Token Marker",
+          spoiler: "100 Geo: Iselda's Shop, acquire Mothwing Cloak",
+          wiki: "Iselda#Map_Pins"
+        },
+        hasMarker_w: {
+          name: "Map Pin: Gleaming Marker",
+          spoiler: "210 Geo: Iselda, acquire Mothwing Cloak",
+          wiki: "Iselda#Map_Pins"
+        },
+        hasPinGuardian: {
+          name: "Map Pin: Dreamers",
+          spoiler: "Resting Grounds: Inspect the shrine",
+          wiki: "Dreamers"
+        },
+        hasPinBlackEgg: {
+          name: "Map Pin: Temple of the Black Egg",
+          spoiler: "City of Tears: Inspect fountain",
+          wiki: "Temple_of_the_Black_Egg"
+        },
+        hasPinGrub: {
+          name: "Collector's Map",
+          spoiler: "Kingdom's Edge: Tower of Love, Love Key",
+          wiki: "Map_and_Quill#The_Collector's_Map"
+        },
+        hasDreamGate: {
+          name: "Dreamgate",
+          spoiler: "Seer: 900 Essence",
+          wiki: "Dreamgate"
+        },
+        fragileGreed_unbreakable: {
+          name: "Unbreakable Greed",
+          spoiler: "Divine: Fragile Greed + 9000 Geo",
+          wiki: "Divine#Unbreakable_Charms"
+        },
+        fragileHealth_unbreakable: {
+          name: "Unbreakable Heart",
+          spoiler: "Divine: Fragile Heart + 12000 Geo",
+          wiki: "Divine#Unbreakable_Charms"
+        },
+        fragileStrength_unbreakable: {
+          name: "Unbreakable Strength",
+          spoiler: "Divine: Fragile Strength + 15000 Geo",
+          wiki: "Divine#Unbreakable_Charms"
+        },
+      },
+    },
+
     /* ###################################### Secrets -> World Interactions ############################################## */
 
     worldInteractions: {
@@ -2740,16 +2850,6 @@ const HK = {
           name: "World Sense Ability",
           spoiler: "Temple of the Black Egg: Lore Tablet",
           wiki: "World_Sense"
-        },
-        hasPinGuardian: {
-          name: "Map Pin: Dreamers",
-          spoiler: "Resting Grounds: Inspect the shrine",
-          wiki: "Dreamers"
-        },
-        hasPinBlackEgg: {
-          name: "Map Pin: Temple of the Black Egg",
-          spoiler: "City of Tears: Inspect fountain",
-          wiki: "Temple_of_the_Black_Egg"
         },
         arcaneEggLifebloodCoreRoom: {
           name: "Lifeblood Core Room Arcane Egg",
@@ -3007,96 +3107,6 @@ const HK = {
           notActivated: 0,
           activated: 0,
           discoveredTotal: 0
-        },
-        hasQuill: {
-          name: "Quill",
-          spoiler: "120 Geo: Iselda's Shop, updates map with explored areas",
-          wiki: "Map_and_Quill#Mapping_Tools"
-        },
-        hasPinBench: {
-          name: "Map Pin: Bench",
-          spoiler: "100 Geo: Iselda's Shop",
-          wiki: "Bench_(Hollow_Knight)"
-        },
-        hasPinShop: {
-          name: "Map Pin: Vendor",
-          spoiler: "100 Geo: Iselda's Shop",
-          wiki: "Category:NPCs_(Hollow_Knight)#Merchants"
-        },
-        hasPinCocoon: {
-          name: "Map Pin: Lifeblood Cocoon",
-          spoiler: "100 Geo: Iselda's Shop",
-          wiki: "Lifeblood_Cocoon"
-        },
-        hasPinSpa: {
-          name: "Map Pin: Hot Springs",
-          spoiler: "100 Geo: Iselda's Shop",
-          wiki: "Hot_Springs"
-        },
-        hasPinStag: {
-          name: "Map Pin: Stag Station",
-          spoiler: "100 Geo: Iselda's Shop, unlock first Station",
-          wiki: "Stag_Station"
-        },
-        hasPinGhost: {
-          name: "Map Pin: Warrior's Grave",
-          spoiler: "180 Geo: Iselda's Shop, acquire Dream Nail",
-          wiki: "Warrior_Dreams"
-        },
-        hasPinDreamPlant: {
-          name: "Map Pin: Whispering Root",
-          spoiler: "150 Geo: Iselda's Shop, acquire Dream Nail",
-          wiki: "Whispering_Root"
-        },
-        hasPinTram: {
-          name: "Map Pin: Tram",
-          spoiler: "100 Geo: Iselda's Shop, acquire Tram Pass",
-          wiki: "Tram"
-        },
-        hasMarker_r: {
-          name: "Map Pin: Shell Marker",
-          spoiler: "100 Geo: Iselda's Shop",
-          wiki: "Iselda#Map_Pins"
-        },
-        hasMarker_b: {
-          name: "Map Pin: Scarab Marker",
-          spoiler: "100 Geo: Iselda's Shop",
-          wiki: "Iselda#Map_Pins"
-        },
-        hasMarker_y: {
-          name: "Map Pin: Token Marker",
-          spoiler: "100 Geo: Iselda's Shop, acquire Mothwing Cloak",
-          wiki: "Iselda#Map_Pins"
-        },
-        hasMarker_w: {
-          name: "Map Pin: Gleaming Marker",
-          spoiler: "210 Geo: Iselda, acquire Mothwing Cloak",
-          wiki: "Iselda#Map_Pins"
-        },
-        hasPinGrub: {
-          name: "Collector's Map",
-          spoiler: "Kingdom's Edge: Tower of Love, Love Key",
-          wiki: "Map_and_Quill#The_Collector's_Map"
-        },
-        hasDreamGate: {
-          name: "Dreamgate",
-          spoiler: "Seer: 900 Essence",
-          wiki: "Dreamgate"
-        },
-        fragileGreed_unbreakable: {
-          name: "Unbreakable Greed",
-          spoiler: "Divine: Fragile Greed + 9000 Geo",
-          wiki: "Divine#Unbreakable_Charms"
-        },
-        fragileHealth_unbreakable: {
-          name: "Unbreakable Heart",
-          spoiler: "Divine: Fragile Heart + 12000 Geo",
-          wiki: "Divine#Unbreakable_Charms"
-        },
-        fragileStrength_unbreakable: {
-          name: "Unbreakable Strength",
-          spoiler: "Divine: Fragile Strength + 15000 Geo",
-          wiki: "Divine#Unbreakable_Charms"
         },
         bankerBalance: {
           name: "Bank Account Balance",
