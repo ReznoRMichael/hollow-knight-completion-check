@@ -2839,6 +2839,23 @@ const HK = {
       },
     },
 
+    /* ###################################### Geo Caches -> Geo Chests ############################################## */
+
+    geoChests: {
+      h2: "Geo Chests",
+      id: "hk-geo-chests",
+      description: `Geo Chests Description.`,
+      entries: {
+        chest1: {
+          name: "Chest #1",
+          spoiler: "Chest",
+          id: "Chest",
+          sceneName: "",
+          wiki: "Geo#How_to_Acquire"
+        },
+      },
+    },
+
     /* ###################################### Secrets -> World Interactions ############################################## */
 
     worldInteractions: {
