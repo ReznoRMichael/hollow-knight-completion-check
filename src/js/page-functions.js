@@ -246,6 +246,7 @@ function GenerateInnerHTML(db) {
           `<button id="button-switch-essential" name="essential" class="button tab-switch" type="button">Essentials %</button>`,
           `<button id="button-switch-journal" name="journal" class="button tab-switch" type="button">Journal</button>`,
           `<button id="button-switch-collectibles" name="collectibles" class="button tab-switch" type="button">Collectibles</button>`,
+          `<button id="button-switch-geo-caches" name="geoCaches" class="button tab-switch" type="button">Geo Caches</button>`,
           `<button id="button-switch-secrets" name="secrets" class="button tab-switch" type="button">Secrets</button>`,
           `<button id="button-switch-godhome" name="godhome" class="button tab-switch" type="button">Godmaster</button>`,
           `<button id="button-switch-statistics" name="statistics" class="button tab-switch" type="button">Statistics</button>`,
