@@ -2856,6 +2856,16 @@ const HK = {
       },
     },
 
+    /* ###################################### Geo Caches -> Geo Rocks ############################################## */
+
+    geoRocks: {
+      h2: "Geo Rocks",
+      id: "hk-geo-rocks",
+      description: `Geo Rocks Description.`,
+      entries: {
+      },
+    },
+
     /* ###################################### Secrets -> World Interactions ############################################## */
 
     worldInteractions: {

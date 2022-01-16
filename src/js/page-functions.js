@@ -678,7 +678,7 @@ function GenerateInnerHTML(db) {
       case "achievements": // Essentials
       case "huntersJournalOptional": // Journal
       case "items": // Collectibles
-      case "geoChests": // Geo Caches
+      case "geoRocks": // Geo Caches
       case "secretRooms": // Secrets
       case "statistics": // Statistics
       case "hallOfGods": // Godmaster

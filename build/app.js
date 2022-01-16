@@ -6074,6 +6074,14 @@ var HK = {
       }
     },
 
+    /* ###################################### Geo Caches -> Geo Rocks ############################################## */
+    geoRocks: {
+      h2: "Geo Rocks",
+      id: "hk-geo-rocks",
+      description: "Geo Rocks Description.",
+      entries: {}
+    },
+
     /* ###################################### Secrets -> World Interactions ############################################## */
     worldInteractions: {
       h2: "World Interactions",
@@ -9111,7 +9119,7 @@ function GenerateInnerHTML(db) {
 
       case "items": // Collectibles
 
-      case "geoChests": // Geo Caches
+      case "geoRocks": // Geo Caches
 
       case "secretRooms": // Secrets
 
