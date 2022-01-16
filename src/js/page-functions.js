@@ -278,6 +278,13 @@ function GenerateInnerHTML(db) {
 
         break;
 
+      /* Geo Caches */
+      case "geoChests":
+
+        textFill += `<div id="tab-geocaches" class="large-section">`;
+
+        break;
+
       /* Secrets */
       case "worldInteractions":
 
@@ -671,8 +678,9 @@ function GenerateInnerHTML(db) {
       case "achievements": // Essentials
       case "huntersJournalOptional": // Journal
       case "items": // Collectibles
+      case "geoChests": // Geo Caches
       case "secretRooms": // Secrets
-      case "statistics": // Stats
+      case "statistics": // Statistics
       case "hallOfGods": // Godmaster
 
         finalHTMLFill += `</div>`;

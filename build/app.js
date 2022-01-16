@@ -6058,6 +6058,22 @@ var HK = {
       }
     },
 
+    /* ###################################### Geo Caches -> Geo Chests ############################################## */
+    geoChests: {
+      h2: "Geo Chests",
+      id: "hk-geo-chests",
+      description: "Geo Chests Description.",
+      entries: {
+        chest1: {
+          name: "Chest #1",
+          spoiler: "Chest",
+          id: "Chest",
+          sceneName: "",
+          wiki: "Geo#How_to_Acquire"
+        }
+      }
+    },
+
     /* ###################################### Secrets -> World Interactions ############################################## */
     worldInteractions: {
       h2: "World Interactions",
@@ -8718,6 +8734,12 @@ function GenerateInnerHTML(db) {
         textFill += "<div id=\"tab-collectibles\" class=\"large-section\">";
         break;
 
+      /* Geo Caches */
+
+      case "geoChests":
+        textFill += "<div id=\"tab-geocaches\" class=\"large-section\">";
+        break;
+
       /* Secrets */
 
       case "worldInteractions":
@@ -9089,9 +9111,11 @@ function GenerateInnerHTML(db) {
 
       case "items": // Collectibles
 
+      case "geoChests": // Geo Caches
+
       case "secretRooms": // Secrets
 
-      case "statistics": // Stats
+      case "statistics": // Statistics
 
       case "hallOfGods":
         // Godmaster
