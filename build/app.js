@@ -6135,10 +6135,24 @@ var HK = {
       description: "Geo Chests Description.",
       entries: {
         chest1: {
-          name: "Chest #1",
-          spoiler: "Chest",
+          name: "Chest #1: 200 Geo",
+          spoiler: "Forgotten Crossroads: False Knight Reward",
           id: "Chest",
-          sceneName: "",
+          sceneName: "Crossroads_10",
+          wiki: "Geo#How_to_Acquire"
+        },
+        chest2: {
+          name: "Chest #2: 1 Geo",
+          spoiler: "Howling Cliffs: Baldur's Shell Room",
+          id: "Chest",
+          sceneName: "Fungus1_28",
+          wiki: "Geo#How_to_Acquire"
+        },
+        chest3: {
+          name: "Chest #3: 78 Geo",
+          spoiler: "Crystal Peak: Crushers Room",
+          id: "Chest",
+          sceneName: "Mines_37",
           wiki: "Geo#How_to_Acquire"
         }
       }
