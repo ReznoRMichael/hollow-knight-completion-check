@@ -2749,6 +2749,16 @@ const HK = {
       },
     },
 
+    /* ###################################### Collectibles -> Relics - Wanderer's Journal ############################################## */
+
+    relicsWanderersJournal: {
+      h2: "Relics - Wanderer's Journal",
+      id: "hk-relics-journal",
+      description: `Relics - Wanderer's Journal Description.`,
+      entries: {
+      },
+    },
+
     /* ###################################### Collectibles -> Items ############################################## */
 
     items: {
