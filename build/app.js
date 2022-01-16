@@ -6154,6 +6154,83 @@ var HK = {
           id: "Chest",
           sceneName: "Mines_37",
           wiki: "Geo#How_to_Acquire"
+        },
+        chest4: {
+          name: "Chest #4: 380 Geo",
+          spoiler: "City of Tears: Soul Master Reward",
+          id: "Chest",
+          sceneName: "Ruins1_32",
+          wiki: "Geo#How_to_Acquire"
+        },
+        chest5: {
+          name: "Chest #5: 150 Geo",
+          spoiler: "Resting Grounds: Crypts",
+          id: "Chest",
+          sceneName: "RestingGrounds_10",
+          wiki: "Geo#How_to_Acquire"
+        },
+        chest6: {
+          name: "Chest #6: 85 Geo",
+          spoiler: "Greenpath: Whispering Root Room",
+          id: "Chest",
+          sceneName: "Fungus1_13",
+          wiki: "Geo#How_to_Acquire"
+        },
+        chest7: {
+          name: "Chest #7: 620 Geo",
+          spoiler: "Fungal Wastes: Mantis Lords Reward",
+          id: "Mantis Chest (2)",
+          sceneName: "Fungus2_31",
+          wiki: "Geo#How_to_Acquire"
+        },
+        chest8: {
+          name: "Chest #8: 655 Geo",
+          spoiler: "City of Tears: Watcher Knight Reward",
+          id: "Chest",
+          sceneName: "Ruins2_03",
+          wiki: "Geo#How_to_Acquire"
+        },
+        chest9: {
+          name: "Chest #9: 160 Geo",
+          spoiler: "Deepnest: Weaver's Den, Secret Room",
+          id: "Chest",
+          sceneName: "Deepnest_45_v02",
+          wiki: "Geo#How_to_Acquire"
+        },
+        chest10: {
+          name: "Chest #10: 8 Geo",
+          spoiler: "Royal Waterways: Junk Pit",
+          id: "Chest",
+          sceneName: "GG_Waterways",
+          wiki: "Geo#How_to_Acquire"
+        },
+        chest11: {
+          name: "Chest #11: 8 Geo",
+          spoiler: "Royal Waterways: Junk Pit",
+          id: "Chest (1)",
+          sceneName: "GG_Waterways",
+          wiki: "Geo#How_to_Acquire"
+        },
+        chest12: {
+          name: "Chest #12: 25 Geo",
+          spoiler: "Royal Waterways: Junk Pit",
+          id: "Chest (2)",
+          sceneName: "GG_Waterways",
+          wiki: "Geo#How_to_Acquire"
+        },
+        chest13: {
+          name: "Chest #13: 0 Geo",
+          spoiler: "Royal Waterways: Junk Pit",
+          id: "Chest (3)",
+          sceneName: "GG_Waterways",
+          wiki: "Geo#How_to_Acquire"
+        },
+        chest14: {
+          name: "Chest #14: 10 Geo",
+          spoiler: "Royal Waterways: Junk Pit",
+          id: "Chest (4)",
+          sceneName: "GG_Waterways",
+          wiki: "Geo#How_to_Acquire"
         }
       }
     },

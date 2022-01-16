@@ -3026,13 +3026,6 @@ const HK = {
           sceneName: "GG_Waterways",
           wiki: "Geo#How_to_Acquire"
         },
-        chest15: {
-          name: "Chest #15:  Geo",
-          spoiler: "",
-          id: "Chest",
-          sceneName: "",
-          wiki: "Geo#How_to_Acquire"
-        },
       },
     },
 
