@@ -5949,6 +5949,14 @@ var HK = {
       }
     },
 
+    /* ###################################### Collectibles -> Grubs ############################################## */
+    grubs: {
+      h2: "Grubs",
+      id: "hk-grubs",
+      description: "Grubs Description.",
+      entries: {}
+    },
+
     /* ###################################### Collectibles -> Items ############################################## */
     items: {
       h2: "Items",
