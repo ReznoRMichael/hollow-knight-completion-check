@@ -157,7 +157,9 @@ function HKCheckCompletion(jsonObject) {
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievements.entries, HKPlayerData, HKWorldItems); // ------------------------- Collectibles -> Charm Notches ---------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches.entries, HKPlayerData, HKWorldItems); // ------------------------- Secrets -> World Interactions ---------------------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches.entries, HKPlayerData, HKWorldItems); // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
+
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items.entries, HKPlayerData, HKWorldItems); // ------------------------- Secrets -> World Interactions ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.worldInteractions, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.worldInteractions.entries, HKPlayerData, HKWorldItems); // ------------------------- Secrets -> Secret Rooms ---------------------------------------------------------------------- //
 

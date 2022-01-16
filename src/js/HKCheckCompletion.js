@@ -220,6 +220,10 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   CheckAdditionalThings(HK.sections.charmNotches, HK.sections.charmNotches.entries, HKPlayerData, HKWorldItems);
 
+  // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
+
+  CheckAdditionalThings(HK.sections.items, HK.sections.items.entries, HKPlayerData, HKWorldItems);
+
   // ------------------------- Secrets -> World Interactions ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.worldInteractions, HK.sections.worldInteractions.entries, HKPlayerData, HKWorldItems);
