@@ -2816,6 +2816,80 @@ const HK = {
       },
     },
 
+    /* ###################################### Secrets -> Secret Rooms ############################################## */
+
+    secretRooms: {
+      h2: "Secret Rooms",
+      id: "hk-secret-rooms",
+      description: `Secret Rooms Description.`,
+      entries: {
+        grimmTentSecretRoom: {
+          name: "Grimm's Tent: Secret Room",
+          spoiler: "Dirtmouth: inside Grimm's Tent",
+          id: "Secret Mask",
+          sceneName: "Grimm_Main_Tent",
+          wiki: "Dirtmouth#The_Grimm_Troupe.27s_Tents"
+        },
+        towerOfLoveSecretRoom: {
+          name: "Tower of Love: Secret Room",
+          spoiler: "City of Tears: near The Collector's Map",
+          id: "secret sound_grub room",
+          sceneName: "Ruins2_11",
+          wiki: "Collector#Trivia"
+        },
+        weaversDenSecretRoom1: {
+          name: "Weaver's Den: Secret Room #1",
+          spoiler: "Deepnest: inside Weaver's Den",
+          id: "Breakable Wall",
+          sceneName: "Deepnest_45_v02",
+          wiki: "Deepnest#Sub-area:_Weavers.27_Den"
+        },
+        weaversDenSecretRoom2: {
+          name: "Weaver's Den: Secret Room #2",
+          spoiler: "Deepnest: inside Weaver's Den",
+          id: "Breakable Wall Waterways",
+          sceneName: "Deepnest_45_v02",
+          wiki: "Deepnest#Sub-area:_Weavers.27_Den"
+        },
+        pathOfPainEntrance: {
+          name: "White Palace: Path of Pain Entrance",
+          spoiler: "Break left wall above lift area",
+          id: "Breakable Wall Ruin Lift",
+          sceneName: "White_Palace_06",
+          wiki: "White_Palace#Sub-area:_Path_of_Pain"
+        },
+        killsBindingSeal: {
+          name: "White Palace: Path of Pain",
+          spoiler: "Main Secret Area, After Middle Lift",
+          wiki: "White_Palace#Sub-area:_Path_of_Pain"
+        },
+        whitePalaceSecretRoomVisited: {
+          name: "White Palace: Secret Room #1",
+          spoiler: "The Pale King's Workshop",
+          wiki: "White_Palace#The_Pale_King.27s_workshop"
+        },
+        whiteLadyRoom: {
+          name: "White Palace: Secret Room #2",
+          spoiler: "White Lady's Room, break floor",
+          id: "Quake Floor",
+          sceneName: "White_Palace_09",
+          wiki: "White_Palace#White_Lady.27s_room"
+        },
+        throneRoomLoreTablet: {
+          name: "White Palace: Secret Room #3",
+          spoiler: "Throne Room, break right wall",
+          id: "Breakable Wall Waterways",
+          sceneName: "White_Palace_09",
+          wiki: "White_Palace#Throne_room_Lore_Tablet"
+        },
+        /* 
+        #52 Quake Floor 🗺️ Palace Caged Lever ⌨️ White_Palace_15
+        #53 Breakable Wall Waterways 🗺️ Palace Spike Drop ⌨️ White_Palace_12
+        #54 Break Floor 1 🗺️ Palace Spike Drop ⌨️ White_Palace_12
+        */
+      },
+    },
+
     /* ################ Game Statistics ################### */
 
     statistics: {
@@ -3029,73 +3103,6 @@ const HK = {
           spoiler: "Fog Canyon: Millibelle the Banker",
           wiki: "Millibelle"
         },
-        grimmTentSecretRoom: {
-          name: "Grimm's Tent: Secret Room",
-          spoiler: "Dirtmouth: inside Grimm's Tent",
-          id: "Secret Mask",
-          sceneName: "Grimm_Main_Tent",
-          wiki: "Dirtmouth#The_Grimm_Troupe.27s_Tents"
-        },
-        towerOfLoveSecretRoom: {
-          name: "Tower of Love: Secret Room",
-          spoiler: "City of Tears: near The Collector's Map",
-          id: "secret sound_grub room",
-          sceneName: "Ruins2_11",
-          wiki: "Collector#Trivia"
-        },
-        weaversDenSecretRoom1: {
-          name: "Weaver's Den: Secret Room #1",
-          spoiler: "Deepnest: inside Weaver's Den",
-          id: "Breakable Wall",
-          sceneName: "Deepnest_45_v02",
-          wiki: "Deepnest#Sub-area:_Weavers.27_Den"
-        },
-        weaversDenSecretRoom2: {
-          name: "Weaver's Den: Secret Room #2",
-          spoiler: "Deepnest: inside Weaver's Den",
-          id: "Breakable Wall Waterways",
-          sceneName: "Deepnest_45_v02",
-          wiki: "Deepnest#Sub-area:_Weavers.27_Den"
-        },
-        /* 
-        Path of Pain entrance discovered
-        */
-        pathOfPainEntrance: {
-          name: "White Palace: Path of Pain Entrance",
-          spoiler: "Break left wall above lift area",
-          id: "Breakable Wall Ruin Lift",
-          sceneName: "White_Palace_06",
-          wiki: "White_Palace#Sub-area:_Path_of_Pain"
-        },
-        killsBindingSeal: {
-          name: "White Palace: Path of Pain",
-          spoiler: "Main Secret Area, After Middle Lift",
-          wiki: "White_Palace#Sub-area:_Path_of_Pain"
-        },
-        whitePalaceSecretRoomVisited: {
-          name: "White Palace: Secret Room #1",
-          spoiler: "The Pale King's Workshop",
-          wiki: "White_Palace#The_Pale_King.27s_workshop"
-        },
-        whiteLadyRoom: {
-          name: "White Palace: Secret Room #2",
-          spoiler: "White Lady's Room, break floor",
-          id: "Quake Floor",
-          sceneName: "White_Palace_09",
-          wiki: "White_Palace#White_Lady.27s_room"
-        },
-        throneRoomLoreTablet: {
-          name: "White Palace: Secret Room #3",
-          spoiler: "Throne Room, break right wall",
-          id: "Breakable Wall Waterways",
-          sceneName: "White_Palace_09",
-          wiki: "White_Palace#Throne_room_Lore_Tablet"
-        },
-        /* 
-        #52 Quake Floor 🗺️ Palace Caged Lever ⌨️ White_Palace_15
-        #53 Breakable Wall Waterways 🗺️ Palace Spike Drop ⌨️ White_Palace_12
-        #54 Break Floor 1 🗺️ Palace Spike Drop ⌨️ White_Palace_12
-        */
         whiteDefenderDefeats: {
           name: "White Defender Times Defeated",
           spoiler: "Royal Waterways (5 max)",
