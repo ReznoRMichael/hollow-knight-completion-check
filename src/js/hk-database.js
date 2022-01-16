@@ -2739,6 +2739,16 @@ const HK = {
       },
     },
 
+    /* ###################################### Collectibles -> Whispering Roots ############################################## */
+
+    whisperingRoots: {
+      h2: "Whispering Roots",
+      id: "hk-whispering-roots",
+      description: `Whispering Roots Description.`,
+      entries: {
+      },
+    },
+
     /* ###################################### Collectibles -> Items ############################################## */
 
     items: {

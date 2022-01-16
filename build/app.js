@@ -5957,6 +5957,14 @@ var HK = {
       entries: {}
     },
 
+    /* ###################################### Collectibles -> Whispering Roots ############################################## */
+    whisperingRoots: {
+      h2: "Whispering Roots",
+      id: "hk-whispering-roots",
+      description: "Whispering Roots Description.",
+      entries: {}
+    },
+
     /* ###################################### Collectibles -> Items ############################################## */
     items: {
       h2: "Items",
