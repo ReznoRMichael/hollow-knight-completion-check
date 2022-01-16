@@ -224,6 +224,10 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   CheckAdditionalThings(HK.sections.worldInteractions, HK.sections.worldInteractions.entries, HKPlayerData, HKWorldItems);
 
+  // ------------------------- Secrets -> Secret Rooms ---------------------------------------------------------------------- //
+
+  CheckAdditionalThings(HK.sections.secretRooms, HK.sections.secretRooms.entries, HKPlayerData, HKWorldItems);
+
   // ------------------------- Game Statistics ---------------------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.statistics, HK.sections.statistics.entries, HKPlayerData, HKWorldItems, HKSceneData);
