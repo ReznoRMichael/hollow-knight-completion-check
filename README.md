@@ -96,6 +96,9 @@ If you like the tool and wish it developed further with more functions and easie
 
 * v1.7.0 Upcoming:  
 
+  — **General Changes:**  
+  ✅ Added two new tabs: Collectibles and Secrets.
+
 * v1.6.1 2022-01-14:  
 
   — **Bug Fixes:**  
