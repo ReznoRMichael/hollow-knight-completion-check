@@ -2769,6 +2769,16 @@ const HK = {
       },
     },
 
+    /* ###################################### Collectibles -> Relics - King's Idol ############################################## */
+
+    relicsKingsIdol: {
+      h2: "Relics - King's Idol",
+      id: "hk-relics-idol",
+      description: `Relics - King's Idol Description.`,
+      entries: {
+      },
+    },
+
     /* ###################################### Collectibles -> Items ############################################## */
 
     items: {
