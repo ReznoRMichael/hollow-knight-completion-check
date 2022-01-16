@@ -94,6 +94,8 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
+* v1.7.0 Upcoming:  
+
 * v1.6.1 2022-01-14:  
 
   — **Bug Fixes:**  
