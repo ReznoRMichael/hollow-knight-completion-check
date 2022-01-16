@@ -277,6 +277,13 @@ function GenerateInnerHTML(db) {
 
         break;
 
+      /* Secrets */
+      case "worldInteractions":
+
+        textFill += `<div id="tab-secrets" class="large-section">`;
+
+        break;
+
       /* Statistics */
       case "statistics":
 
@@ -663,6 +670,7 @@ function GenerateInnerHTML(db) {
       case "achievements": // Essentials
       case "huntersJournalOptional": // Journal
       case "charmNotches": // Collectibles
+      case "worldInteractions": // Secrets
       case "statistics": // Stats
       case "hallOfGods": // Godmaster
 

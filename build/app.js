@@ -8700,6 +8700,12 @@ function GenerateInnerHTML(db) {
         textFill += "<div id=\"tab-collectibles\" class=\"large-section\">";
         break;
 
+      /* Secrets */
+
+      case "worldInteractions":
+        textFill += "<div id=\"tab-secrets\" class=\"large-section\">";
+        break;
+
       /* Statistics */
 
       case "statistics":
@@ -9064,6 +9070,8 @@ function GenerateInnerHTML(db) {
       case "huntersJournalOptional": // Journal
 
       case "charmNotches": // Collectibles
+
+      case "worldInteractions": // Secrets
 
       case "statistics": // Stats
 
