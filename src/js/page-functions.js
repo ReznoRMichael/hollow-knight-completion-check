@@ -669,7 +669,7 @@ function GenerateInnerHTML(db) {
       case "godmaster": // Main
       case "achievements": // Essentials
       case "huntersJournalOptional": // Journal
-      case "charmNotches": // Collectibles
+      case "items": // Collectibles
       case "secretRooms": // Secrets
       case "statistics": // Stats
       case "hallOfGods": // Godmaster
