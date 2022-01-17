@@ -5961,7 +5961,7 @@ var HK = {
     whisperingRoots: {
       h2: "Whispering Roots",
       id: "hk-whispering-roots",
-      description: "Whispering Roots Description.",
+      description: "There are 15 Whispering Roots in the game, containing a total of 482 Essence. Whispering Root Pin from Iselda reveals the locations of every Whispering Root in an area after that area's Map has been purchased.",
       entries: {
         whisperingRoot1: {
           name: "Whispering Root #1: 29 Orbs",
