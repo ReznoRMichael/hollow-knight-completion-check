@@ -2891,6 +2891,27 @@ const HK = {
       id: "hk-relics-egg",
       description: `Relics - Arcane Egg Description.`,
       entries: {
+        arcaneEgg1: {
+          name: "Arcane Egg #1",
+          spoiler: "The Abyss: Shade Cloak Room",
+          id: "Shiny Item",
+          sceneName: "Abyss_10",
+          wiki: "Arcane_Egg"
+        },
+        arcaneEgg2: {
+          name: "Arcane Egg #2",
+          spoiler: "Seer: 1200 Essence",
+          id: "dreamReward6",
+          sceneName: "",
+          wiki: "Arcane_Egg"
+        },
+        arcaneEgg3: {
+          name: "Arcane Egg #3",
+          spoiler: "The Abyss: Birthplace, requires Kingsoul",
+          id: "Shiny Item",
+          sceneName: "Abyss_15",
+          wiki: "Arcane_Egg"
+        },
         arcaneEggLifebloodCoreRoom: {
           name: "Arcane Egg #4 (missable)",
           spoiler: "The Abyss: Lifeblood Core Room",
