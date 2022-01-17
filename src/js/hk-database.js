@@ -2929,9 +2929,14 @@ const HK = {
       id: "hk-rancid-eggs",
       description: `Rancid Eggs Description.`,
       entries: {
-        tukDungEgg: {
+        rancidEgg21: {
           name: "Rancid Egg #21",
-          spoiler: "Royal Waterways: Tuk, with Defender's Crest",
+          spoiler: "Royal Waterways: Tuk's free Egg",
+          spoilerNormal: "Royal Waterways: Tuk, with Defender's Crest",
+          spoilerSteelSoul: "Royal Waterways: Inspect Tuk",
+          id: "tukDungEgg",
+          idSteelSoul: "Shiny Item",
+          sceneName: "Waterways_03",
           wiki: "Tuk"
         },
       },
