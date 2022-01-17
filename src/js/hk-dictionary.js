@@ -120,7 +120,7 @@ const MAP = {
   "Fungus2_30": "Fungal Wastes: Fungal Core Lower",
   "Fungus2_31": "Fungal Wastes: Mantis Lords Rewards",
   "Fungus2_32": "Fungal Wastes: Elder Hu",
-  "Fungus2_33": "Fungal Wastes: Leg Eater Root",
+  "Fungus2_33": "Fungal Wastes: Whispering Root near Fog Canyon",
   "Fungus2_34": "Fungal Wastes: Willoh",
   "Fungus3_01": "Fog Canyon: Upper West Tall",
   "Fungus3_02": "Fog Canyon: Lower West Tall",

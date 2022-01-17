@@ -2746,6 +2746,111 @@ const HK = {
       id: "hk-whispering-roots",
       description: `Whispering Roots Description.`,
       entries: {
+        whisperingRoot1: {
+          name: "Whispering Root #1: 29 Orbs",
+          spoiler: "Forgotten Crossroads: Right of Grubfather",
+          id: "Dream Plant",
+          sceneName: "Crossroads_07",
+          wiki: "Whispering_Root"
+        },
+        whisperingRoot2: {
+          name: "Whispering Root #2: 42 Orbs",
+          spoiler: "Forgotten Crossroads: Ancestral Mound",
+          id: "Dream Plant",
+          sceneName: "Crossroads_ShamanTemple",
+          wiki: "Whispering_Root"
+        },
+        whisperingRoot3: {
+          name: "Whispering Root #3: 18 Orbs",
+          spoiler: "Fungal Wastes: Above Mantis Village",
+          id: "Dream Plant",
+          sceneName: "Fungus2_17",
+          wiki: "Whispering_Root"
+        },
+        whisperingRoot4: {
+          name: "Whispering Root #4: 28 Orbs",
+          spoiler: "City of Tears: Below Stag Station",
+          id: "Dream Plant",
+          sceneName: "Ruins1_17",
+          wiki: "Whispering_Root"
+        },
+        whisperingRoot5: {
+          name: "Whispering Root #5: 46 Orbs",
+          spoiler: "Howling Cliffs: Big Main Area",
+          id: "Dream Plant",
+          sceneName: "Cliffs_01",
+          wiki: "Whispering_Root"
+        },
+        whisperingRoot6: {
+          name: "Whispering Root #6: 21 Orbs",
+          spoiler: "Crystal Peak: Hallownest Crown Big Area",
+          id: "Dream Plant",
+          sceneName: "Mines_23",
+          wiki: "Whispering_Root"
+        },
+        whisperingRoot7: {
+          name: "Whispering Root #7: 20 Orbs",
+          spoiler: "Resting Grounds: Right of Seer, Main Area",
+          id: "Dream Plant",
+          sceneName: "RestingGrounds_05",
+          wiki: "Whispering_Root"
+        },
+        whisperingRoot8: {
+          name: "Whispering Root #8: 34 Orbs",
+          spoiler: "Resting Grounds: Spirit's Glade",
+          id: "Dream Plant",
+          sceneName: "RestingGrounds_08",
+          wiki: "Whispering_Root"
+        },
+        whisperingRoot9: {
+          name: "Whispering Root #9: 35 Orbs",
+          spoiler: "City of Tears: Broken Elevator",
+          id: "Dream Plant",
+          sceneName: "Abyss_01",
+          wiki: "Whispering_Root"
+        },
+        whisperingRoot10: {
+          name: "Whispering Root #10: 44 Orbs",
+          spoiler: "Greenpath: Right of Queen's Gardens",
+          id: "Dream Plant",
+          sceneName: "Fungus1_13",
+          wiki: "Whispering_Root"
+        },
+        whisperingRoot11: {
+          name: "Whispering Root #11: 20 Orbs",
+          spoiler: "Fungal Wastes: Left of Leg Eater",
+          id: "Dream Plant",
+          sceneName: "Fungus2_33",
+          wiki: "Whispering_Root"
+        },
+        whisperingRoot12: {
+          name: "Whispering Root #12: 29 Orbs",
+          spoiler: "Queen's Gardens: Below Right Bench",
+          id: "Dream Plant",
+          sceneName: "Fungus3_11",
+          wiki: "Whispering_Root"
+        },
+        whisperingRoot13: {
+          name: "Whispering Root #13: 51 Orbs",
+          spoiler: "Kingdom's Edge: Right of Tower of Love",
+          id: "Dream Plant",
+          sceneName: "Deepnest_East_07",
+          wiki: "Whispering_Root"
+        },
+        whisperingRoot14: {
+          name: "Whispering Root #14: 45 Orbs",
+          spoiler: "Deepnest: Below Queen's Gardens",
+          id: "Dream Plant",
+          sceneName: "Deepnest_39",
+          wiki: "Whispering_Root"
+        },
+        whisperingRoot15: {
+          name: "Whispering Root #15: 20 Orbs",
+          spoiler: "The Hive: Right of Bench",
+          id: "Dream Plant",
+          sceneName: "Hive_02",
+          wiki: "Whispering_Root"
+        },
       },
     },
 
