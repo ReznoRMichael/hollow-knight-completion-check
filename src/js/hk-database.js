@@ -3403,6 +3403,13 @@ const HK = {
           sceneName: "Deepnest_Spider_Town",
           wiki: "Hallownest_Seal"
         },
+        hallownestSeal17: {
+          name: "Hallownest Seal #17",
+          spoiler: "Seer: 100 Essence collected",
+          id: "dreamReward1",
+          sceneName: "",
+          wiki: "Hallownest_Seal"
+        },
       },
     },
 
@@ -3641,6 +3648,13 @@ const HK = {
           spoiler: "Royal Waterways: Main Bench Area",
           id: "Shiny Item(Clone)",
           sceneName: "Waterways_02",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg19: {
+          name: "Rancid Egg #19",
+          spoiler: "Kingdom's Edge: Below Nailmaster Oro",
+          id: "Shiny Item(Clone)",
+          sceneName: "Deepnest_East_14",
           wiki: "Rancid_Egg"
         },
         rancidEgg21: {
