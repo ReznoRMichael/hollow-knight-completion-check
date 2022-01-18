@@ -99,7 +99,7 @@ If you like the tool and wish it developed further with more functions and easie
   — **General Changes:**  
   ✅ Added three new tabs: Collectibles, Geo Caches and Secrets.  
 
-  — **(New) Collectibles** changes/additions:  
+  — **(New Tab) Collectibles**:  
   ✅ Charm Notches (8).  
   ✅ Grubs (46).  
   ✅ Whispering Roots (15).  
@@ -110,13 +110,16 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Rancid Eggs (21).  
   ✅ Items.  
 
-  — **(New) Geo Caches** changes/additions:  
+  — **(New Tab) Geo Caches**:  
   ✅ Geo Chests (14).  
   ✅ Geo Rocks (205).  
 
-  — **(New) Secrets** changes/additions:  
+  — **(New Tab) Secrets**:  
   ✅ World Interactions.  
   ✅ Secret Rooms.  
+
+  — **Items** additions:  
+  ✅ City Crest.  
 
   — **Game Statistics** changes:  
   ✅ Removed Whispering Roots, Relics, Geo Rocks.  
