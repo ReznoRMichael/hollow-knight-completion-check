@@ -8510,6 +8510,8 @@ var HK = {
           maxDefault: 21,
           wiki: "Nail#Nail_Upgrades"
         },
+
+        /*
         whisperingRoots: {
           name: "Whispering Roots Completed",
           spoiler: "Dream Nail (15 Roots total)",
@@ -8553,6 +8555,7 @@ var HK = {
           maxDefault: 3,
           wiki: "Arcane_Egg"
         },
+        */
         // not ghostCoins
         geoPool: {
           name: "Shade Geo",

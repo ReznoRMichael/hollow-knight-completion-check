@@ -118,6 +118,9 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ World Interactions.  
   ✅ Secret Rooms.  
 
+  — **Game Statistics** changes:  
+  ✅ Removed Whispering Roots, Relics, Geo Rocks.  
+
 * v1.6.1 2022-01-14:  
 
   — **Bug Fixes:**  
