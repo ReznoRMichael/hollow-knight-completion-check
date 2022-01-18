@@ -94,10 +94,29 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
-* v1.7.0 Upcoming:  
+* v2.0.0 Upcoming:  
 
   — **General Changes:**  
-  ✅ Added two new tabs: Collectibles and Secrets.
+  ✅ Added three new tabs: Collectibles, Geo Caches and Secrets.  
+
+  — **(New) Collectibles** changes/additions:  
+  ✅ Charm Notches (8).  
+  ✅ Grubs (46).  
+  ✅ Whispering Roots (15).  
+  ✅ Relics - Wanderer's Journal (14).  
+  ✅ Relics - Hallownest Seal (17).  
+  ✅ Relics - King's Idol (8).  
+  ✅ Relics - Arcane Egg (4).  
+  ✅ Rancid Eggs (21).  
+  ✅ Items.  
+
+  — **(New) Geo Caches** changes/additions:  
+  ✅ Geo Chests (14).  
+  ✅ Geo Rocks (205).  
+
+  — **(New) Secrets** changes/additions:  
+  ✅ World Interactions.  
+  ✅ Secret Rooms.  
 
 * v1.6.1 2022-01-14:  
 
