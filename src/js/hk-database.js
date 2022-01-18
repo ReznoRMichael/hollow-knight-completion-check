@@ -2745,7 +2745,7 @@ const HK = {
       },
       grub2: {
         name: "Grub #2",
-        spoiler: "Forgotten Crossroads: Outside Stag Station",
+        spoiler: "Forgotten Crossroads: Left of Dark Corridor",
         id: "Grub Bottle",
         sceneName: "Crossroads_03",
         wiki: "Grub#Rewards_and_locations"
