@@ -1221,6 +1221,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "towerOfLoveSecretRoom":
       case "weaversDenSecretRoom1":
       case "weaversDenSecretRoom2":
+      case "cityCrest":
         FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
@@ -6399,7 +6400,22 @@ var HK = {
       h2: "Relics - Wanderer's Journal",
       id: "hk-relics-journal",
       description: "Relics - Wanderer's Journal Description.",
-      entries: {}
+      entries: {
+        wanderersJournal1: {
+          name: "Wanderer's Journal #1",
+          spoiler: "Greenpath: Room Above Fog Canyon",
+          id: "Shiny Item",
+          sceneName: "Fungus1_11",
+          wiki: "Wanderer%27s_Journal"
+        },
+        wanderersJournal2: {
+          name: "Wanderer's Journal #2",
+          spoiler: "Greenpath: Right of Stag Station",
+          id: "Shiny Item",
+          sceneName: "Fungus1_22",
+          wiki: "Wanderer%27s_Journal"
+        }
+      }
     },
 
     /* ###################################### Collectibles -> Relics - Hallownest Seal ############################################## */
@@ -6407,7 +6423,29 @@ var HK = {
       h2: "Relics - Hallownest Seal",
       id: "hk-relics-seal",
       description: "Relics - Hallownest Seal Description.",
-      entries: {}
+      entries: {
+        hallownestSeal1: {
+          name: "Hallownest Seal #1",
+          spoiler: "Forgotten Crossroads: Room Inside Well",
+          id: "Shiny Item",
+          sceneName: "Crossroads_01",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal2: {
+          name: "Hallownest Seal #2",
+          spoiler: "Greenpath: Stone Sanctuary Entrance",
+          id: "Shiny Item",
+          sceneName: "Fungus2_34",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal3: {
+          name: "Hallownest Seal #3",
+          spoiler: "Greenpath: Acid Bridge",
+          id: "Shiny Item",
+          sceneName: "Fungus1_10",
+          wiki: "Hallownest_Seal"
+        }
+      }
     },
 
     /* ###################################### Collectibles -> Relics - King's Idol ############################################## */
@@ -6559,6 +6597,13 @@ var HK = {
           name: "Collector's Map",
           spoiler: "Kingdom's Edge: Tower of Love, Love Key",
           wiki: "Map_and_Quill#The_Collector's_Map"
+        },
+        cityCrest: {
+          name: "City Crest",
+          spoiler: "Forgotten Crossroads: False Knight Reward",
+          id: "Shiny Item",
+          sceneName: "Crossroads_10",
+          wiki: "City_Crest"
         },
         hasDreamGate: {
           name: "Dreamgate",
