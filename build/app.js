@@ -6428,6 +6428,76 @@ var HK = {
           id: "Shiny Item",
           sceneName: "Fungus2_17",
           wiki: "Wanderer%27s_Journal"
+        },
+        wanderersJournal5: {
+          name: "Wanderer's Journal #5",
+          spoiler: "City of Tears: City Storerooms",
+          id: "Shiny Item",
+          sceneName: "Ruins1_28",
+          wiki: "Wanderer%27s_Journal"
+        },
+        wanderersJournal6: {
+          name: "Wanderer's Journal #6",
+          spoiler: "Howling Cliffs: Main Open Air Area",
+          id: "Shiny Item (1)",
+          sceneName: "Cliffs_01",
+          wiki: "Wanderer%27s_Journal"
+        },
+        wanderersJournal7: {
+          name: "Wanderer's Journal #7",
+          spoiler: "Crystal Peak: Right Tall Room",
+          id: "Shiny Item (1)",
+          sceneName: "Mines_20",
+          wiki: "Wanderer%27s_Journal"
+        },
+        wanderersJournal8: {
+          name: "Wanderer's Journal #8",
+          spoiler: "Resting Grounds: Crypts",
+          id: "Shiny Item",
+          sceneName: "RestingGrounds_10",
+          wiki: "Wanderer%27s_Journal"
+        },
+        wanderersJournal9: {
+          name: "Wanderer's Journal #9",
+          spoiler: "City of Tears: Room Above King's Station",
+          id: "Shiny Item",
+          sceneName: "Ruins2_05",
+          wiki: "Wanderer%27s_Journal"
+        },
+        wanderersJournal10: {
+          name: "Wanderer's Journal #10",
+          spoiler: "Ancient Basin: Broken Bridge",
+          id: "Shiny Item",
+          sceneName: "Abyss_02",
+          wiki: "Wanderer%27s_Journal"
+        },
+        wanderersJournal11: {
+          name: "Wanderer's Journal #11",
+          spoiler: "City of Tears: Pleasure House Elevator",
+          id: "Shiny Item (1)",
+          sceneName: "Ruins_Elevator",
+          wiki: "Wanderer%27s_Journal"
+        },
+        wanderersJournal12: {
+          name: "Wanderer's Journal #12",
+          spoiler: "Kingdom's Edge: Whispering Root Area",
+          id: "Shiny Item",
+          sceneName: "Deepnest_East_07",
+          wiki: "Wanderer%27s_Journal"
+        },
+        wanderersJournal13: {
+          name: "Wanderer's Journal #13",
+          spoiler: "Kingdom's Edge: Camp Bench",
+          id: "Shiny Item",
+          sceneName: "Deepnest_East_13",
+          wiki: "Wanderer%27s_Journal"
+        },
+        wanderersJournal14: {
+          name: "Wanderer's Journal #14",
+          spoiler: "Kingdom's Edge: Left of Markoth",
+          id: "Shiny Item",
+          sceneName: "Deepnest_East_18",
+          wiki: "Wanderer%27s_Journal"
         }
       }
     },
@@ -6465,6 +6535,97 @@ var HK = {
           id: "Shiny Item",
           sceneName: "Fungus2_03",
           wiki: "Hallownest_Seal"
+        },
+        hallownestSeal5: {
+          name: "Hallownest Seal #5",
+          spoiler: "City of Tears: Open Air Rafters",
+          id: "Shiny Item",
+          sceneName: "Ruins1_03",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal6: {
+          name: "Hallownest Seal #6",
+          spoiler: "City of Tears: Soul Master Rewards Room",
+          id: "Shiny Item",
+          sceneName: "Ruins1_32",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal7: {
+          name: "Hallownest Seal #7",
+          spoiler: "Resting Grounds: Crypts",
+          id: "Shiny Item (1)",
+          sceneName: "RestingGrounds_10",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal8: {
+          name: "Hallownest Seal #8",
+          spoiler: "City of Tears: King's Station Stag Station",
+          id: "Shiny Item",
+          sceneName: "Ruins2_08",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal9: {
+          name: "Hallownest Seal #9",
+          spoiler: "Grubfather: 23 Grubs rescued",
+          id: "Shiny Item Relic2",
+          sceneName: "Crossroads_38",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal10: {
+          name: "Hallownest Seal #10",
+          spoiler: "Fog Canyon: Right Tall Area",
+          id: "Shiny Item",
+          sceneName: "Fungus3_26",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal11: {
+          name: "Hallownest Seal #11",
+          spoiler: "Fog Canyon: Lifeblood Cocoon Room",
+          id: "Shiny Item",
+          sceneName: "Fungus3_30",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal12: {
+          name: "Hallownest Seal #12",
+          spoiler: "Queen's Gardens: Outside White Lady",
+          id: "Shiny Item",
+          sceneName: "Fungus3_48",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal13: {
+          name: "Hallownest Seal #13",
+          spoiler: "Fungal Wastes: Mantis Lords Reward Room",
+          id: "Shiny Item",
+          sceneName: "Fungus2_31",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal14: {
+          name: "Hallownest Seal #14",
+          spoiler: "City of Tears: Watcher's Spire Fourth Floor",
+          id: "Shiny Item",
+          sceneName: "Ruins2_03",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal15: {
+          name: "Hallownest Seal #15",
+          spoiler: "Deepnest: Room Above Lower Cornifer",
+          id: "Shiny Item",
+          sceneName: "Deepnest_16",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal16: {
+          name: "Hallownest Seal #16 (missable)",
+          spoiler: "Deepnest: Beast's Den",
+          id: "Shiny Item",
+          sceneName: "Deepnest_Spider_Town",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal17: {
+          name: "Hallownest Seal #17",
+          spoiler: "Seer: 100 Essence collected",
+          id: "dreamReward1",
+          sceneName: "",
+          wiki: "Hallownest_Seal"
         }
       }
     },
@@ -6474,7 +6635,64 @@ var HK = {
       h2: "Relics - King's Idol",
       id: "hk-relics-idol",
       description: "Relics - King's Idol Description.",
-      entries: {}
+      entries: {
+        kingsIdol1: {
+          name: "King's Idol #1",
+          spoiler: "Howling Cliffs: Main Open Air Area",
+          id: "Shiny Item",
+          sceneName: "Cliffs_01",
+          wiki: "King%27s_Idol"
+        },
+        kingsIdol2: {
+          name: "King's Idol #2",
+          spoiler: "Crystal Peak: Cornifer Room, use Monarch Wings",
+          id: "Shiny Item Stand",
+          sceneName: "Mines_30",
+          wiki: "King%27s_Idol"
+        },
+        kingsIdol3: {
+          name: "King's Idol #3",
+          spoiler: "Resting Grounds: Spirit's Glade, Waterfall",
+          id: "Shiny Item",
+          sceneName: "RestingGrounds_08",
+          wiki: "King%27s_Idol"
+        },
+        kingsIdol4: {
+          name: "King's Idol #4",
+          spoiler: "Royal Waterways: Dung Defender's Cave",
+          id: "Shiny Item Stand",
+          sceneName: "Waterways_15",
+          wiki: "King%27s_Idol"
+        },
+        kingsIdol5: {
+          name: "King's Idol #5",
+          spoiler: "Kingdom's Edge: Great Hopper Below Colosseum Entrance",
+          id: "Shiny Item",
+          sceneName: "Deepnest_East_08",
+          wiki: "King%27s_Idol"
+        },
+        kingsIdol6: {
+          name: "King's Idol #6",
+          spoiler: "Deepnest: Zote Arena Left Side",
+          id: "Shiny Item",
+          sceneName: "Deepnest_33",
+          wiki: "King%27s_Idol"
+        },
+        kingsIdol7: {
+          name: "King's Idol #7",
+          spoiler: "Grubfather: 38 Grubs rescued",
+          id: "Shiny Item Relic3",
+          sceneName: "Crossroads_38",
+          wiki: "King%27s_Idol"
+        },
+        kingsIdol8: {
+          name: "King's Idol #8",
+          spoiler: "Kingdom's Edge: Pale Lurker Room",
+          id: "Shiny Item",
+          sceneName: "GG_Lurker",
+          wiki: "King%27s_Idol"
+        }
+      }
     },
 
     /* ###################################### Collectibles -> Relics - Arcane Egg ############################################## */
@@ -6525,6 +6743,139 @@ var HK = {
           spoiler: "Fungal Wastes: Fungal Core Upper Room",
           id: "Shiny Item",
           sceneName: "Fungus2_29",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg2: {
+          name: "Rancid Egg #2",
+          spoiler: "City of Tears: Room Above Lemm",
+          id: "Shiny Item",
+          sceneName: "Ruins1_05",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg3: {
+          name: "Rancid Egg #3",
+          spoiler: "Crystal Peak: Dark Bench Room",
+          id: "Shiny Item",
+          sceneName: "Mines_29",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg4: {
+          name: "Rancid Egg #4",
+          spoiler: "Resting Grounds: Blue Lake",
+          id: "Shiny Item(Clone)",
+          sceneName: "Crossroads_50",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg5: {
+          name: "Rancid Egg #5",
+          spoiler: "Crystal Peak: Desolate Dive Entrance",
+          id: "Shiny Item(Clone)",
+          sceneName: "Mines_01",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg6: {
+          name: "Rancid Egg #6",
+          spoiler: "Royal Waterways: Mask Shard Room",
+          id: "Shiny Item",
+          sceneName: "Waterways_04b",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg7: {
+          name: "Rancid Egg #7",
+          spoiler: "Royal Waterways: Hidden Grub Room",
+          id: "Shiny Item(Clone)",
+          sceneName: "Waterways_04",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg8: {
+          name: "Rancid Egg #8",
+          spoiler: "Royal Waterways: Left of Isma's Grove",
+          id: "Shiny Item(Clone)",
+          sceneName: "Waterways_07",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg9: {
+          name: "Rancid Egg #9",
+          spoiler: "Greenpath: Outside Sheo's Hut",
+          id: "Shiny Item",
+          sceneName: "Fungus1_15",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg10: {
+          name: "Rancid Egg #10",
+          spoiler: "Grubfather: 16 Grubs rescued",
+          id: "Shiny Item Rancid Egg",
+          sceneName: "Crossroads_38",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg11: {
+          name: "Rancid Egg #11",
+          spoiler: "Queen's Gardens: Entrance from Fog Canyon",
+          id: "Shiny Item(Clone)",
+          sceneName: "Fungus3_34",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg12: {
+          name: "Rancid Egg #12",
+          spoiler: "City of Tears: Pleasure House Elevator",
+          id: "Shiny Item",
+          sceneName: "Ruins_Elevator",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg13: {
+          name: "Rancid Egg #13",
+          spoiler: "Kingdom's Edge: Whispering Root Area",
+          id: "Shiny Item (1)",
+          sceneName: "Deepnest_East_07",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg14: {
+          name: "Rancid Egg #14",
+          spoiler: "Deepnest: Weaver's Den",
+          id: "Shiny Item",
+          sceneName: "Deepnest_45_v02",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg15: {
+          name: "Rancid Egg #15",
+          spoiler: "Deepnest: Whispering Root Big Area Left Side",
+          id: "Shiny Item(Clone)",
+          sceneName: "Deepnest_39",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg16: {
+          name: "Rancid Egg #16 (missable)",
+          spoiler: "Deepnest: Beast's Den",
+          id: "Shiny Item(Clone)",
+          sceneName: "Deepnest_Spider_Town",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg17: {
+          name: "Rancid Egg #17",
+          spoiler: "Crystal Peak: Right Tall Room",
+          id: "Shiny Item(Clone)",
+          sceneName: "Mines_20",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg18: {
+          name: "Rancid Egg #18",
+          spoiler: "Royal Waterways: Main Bench Area",
+          id: "Shiny Item(Clone)",
+          sceneName: "Waterways_02",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg19: {
+          name: "Rancid Egg #19",
+          spoiler: "Kingdom's Edge: Below Nailmaster Oro",
+          id: "Shiny Item(Clone)",
+          sceneName: "Deepnest_East_14",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg20: {
+          name: "Rancid Egg #20",
+          spoiler: "Sly: 60 Geo",
+          id: "",
+          sceneName: "",
           wiki: "Rancid_Egg"
         },
         rancidEgg21: {
@@ -8447,6 +8798,11 @@ var HK = {
           name: "Reclaimed All Geo",
           spoiler: "City of Tears: Hot Springs, Millibelle the Thief",
           wiki: "Millibelle"
+        },
+        stagEggInspected: {
+          name: "Inspected Stag Nest Egg",
+          spoiler: "Howling Cliffs: Top of Stag Nest",
+          wiki: "Howling_Cliffs#Sub-area:_Stag_Nest"
         },
         elderbugGaveFlower: {
           name: "Delicate Flower: Elderbug",
@@ -10382,10 +10738,10 @@ var MAP = {
   "Fungus3_24": "Fog Canyon: Corridor to Overgrown Mound",
   "Fungus3_25": "Fog Canyon: Cornifer",
   "Fungus3_25b": "Fog Canyon: Corridor to Cornifer",
-  "Fungus3_26": "Fog Canyon: East Tall",
+  "Fungus3_26": "Fog Canyon: Right Tall Area",
   "Fungus3_27": "Fog Canyon: Corridor to Archives",
   "Fungus3_28": "Fog Canyon: Charm Notch",
-  "Fungus3_30": "Fog Canyon: Lifeblood",
+  "Fungus3_30": "Fog Canyon: Lifeblood Cocoon Room",
   "Fungus3_35": "Fog Canyon: Millibelle",
   "Fungus3_44": "Fog Canyon: Overgrown Mound Entrance",
   "Fungus3_47": "Fog Canyon: Teacher's Archives Entrance",
@@ -10414,7 +10770,7 @@ var MAP = {
   "Mines_17": "Crystal Peak: Corridor to Spike Grub",
   "Mines_18": "Crystal Peak: Crystal Guardian Bench",
   "Mines_19": "Crystal Peak: Grub Crushers",
-  "Mines_20": "Crystal Peak: East Tall",
+  "Mines_20": "Crystal Peak: Right Tall Room",
   "Mines_23": "Crystal Peak: Hallownest Crown Whispering Root",
   "Mines_24": "Crystal Peak: Hallownest Crown Grub",
   "Mines_25": "Crystal Peak: Hallownest Crown Climb",
@@ -10562,7 +10918,7 @@ var MAP = {
   "Deepnest_09": "Deepnest: Distant Village Stag Station",
   "Deepnest_10": "Deepnest: Distant Village",
   "Deepnest_14": "Deepnest: Failed Tramway Bench",
-  "Deepnest_16": "Deepnest: Top of Lower Cornifer",
+  "Deepnest_16": "Deepnest: Room Above Lower Cornifer",
   "Deepnest_17": "Deepnest: Garpede Corridor Below Cornifer",
   "Deepnest_26": "Deepnest: Failed Tramway Lifeblood",
   "Deepnest_26b": "Deepnest: Tram Pass Room",

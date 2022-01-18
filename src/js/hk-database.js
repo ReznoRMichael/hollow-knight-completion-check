@@ -3657,6 +3657,13 @@ const HK = {
           sceneName: "Deepnest_East_14",
           wiki: "Rancid_Egg"
         },
+        rancidEgg20: {
+          name: "Rancid Egg #20",
+          spoiler: "Sly: 60 Geo",
+          id: "",
+          sceneName: "",
+          wiki: "Rancid_Egg"
+        },
         rancidEgg21: {
           name: "Rancid Egg #21",
           spoiler: "Royal Waterways: Tuk's free Egg",
@@ -5581,6 +5588,11 @@ const HK = {
           name: "Reclaimed All Geo",
           spoiler: "City of Tears: Hot Springs, Millibelle the Thief",
           wiki: "Millibelle"
+        },
+        stagEggInspected: {
+          name: "Inspected Stag Nest Egg",
+          spoiler: "Howling Cliffs: Top of Stag Nest",
+          wiki: "Howling_Cliffs#Sub-area:_Stag_Nest"
         },
         elderbugGaveFlower: {
           name: "Delicate Flower: Elderbug",
