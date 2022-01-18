@@ -3232,6 +3232,13 @@ const HK = {
           sceneName: "Mines_20",
           wiki: "Wanderer%27s_Journal"
         },
+        wanderersJournal8: {
+          name: "Wanderer's Journal #8",
+          spoiler: "Resting Grounds: Crypts",
+          id: "Shiny Item",
+          sceneName: "RestingGrounds_10",
+          wiki: "Wanderer%27s_Journal"
+        },
       },
     },
 
@@ -3282,6 +3289,13 @@ const HK = {
           spoiler: "City of Tears: Soul Master Rewards Room",
           id: "Shiny Item",
           sceneName: "Ruins1_32",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal7: {
+          name: "Hallownest Seal #7",
+          spoiler: "Resting Grounds: Crypts",
+          id: "Shiny Item (1)",
+          sceneName: "RestingGrounds_10",
           wiki: "Hallownest_Seal"
         },
       },
