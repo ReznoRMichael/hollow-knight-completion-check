@@ -3207,6 +3207,20 @@ const HK = {
           sceneName: "Crossroads_01",
           wiki: "Hallownest_Seal"
         },
+        hallownestSeal2: {
+          name: "Hallownest Seal #2",
+          spoiler: "Greenpath: Stone Sanctuary Entrance",
+          id: "Shiny Item",
+          sceneName: "Fungus2_34",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal3: {
+          name: "Hallownest Seal #3",
+          spoiler: "Greenpath: Acid Bridge",
+          id: "Shiny Item",
+          sceneName: "Fungus1_10",
+          wiki: "Hallownest_Seal"
+        },
       },
     },
 
