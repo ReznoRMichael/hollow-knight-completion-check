@@ -3396,6 +3396,13 @@ const HK = {
           sceneName: "Deepnest_16",
           wiki: "Hallownest_Seal"
         },
+        hallownestSeal16: {
+          name: "Hallownest Seal #16 (missable)",
+          spoiler: "Deepnest: Beast's Den",
+          id: "Shiny Item",
+          sceneName: "Deepnest_Spider_Town",
+          wiki: "Hallownest_Seal"
+        },
       },
     },
 
@@ -3599,6 +3606,13 @@ const HK = {
           spoiler: "Deepnest: Whispering Root Big Area Left Side",
           id: "Shiny Item(Clone)",
           sceneName: "Deepnest_39",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg16: {
+          name: "Rancid Egg #16 (missable)",
+          spoiler: "Deepnest: Beast's Den",
+          id: "Shiny Item(Clone)",
+          sceneName: "Deepnest_Spider_Town",
           wiki: "Rancid_Egg"
         },
         rancidEgg21: {
