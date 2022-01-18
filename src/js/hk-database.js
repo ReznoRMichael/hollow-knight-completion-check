@@ -3246,6 +3246,13 @@ const HK = {
           sceneName: "Ruins2_05",
           wiki: "Wanderer%27s_Journal"
         },
+        wanderersJournal10: {
+          name: "Wanderer's Journal #10",
+          spoiler: "Ancient Basin: Broken Bridge",
+          id: "Shiny Item",
+          sceneName: "Abyss_02",
+          wiki: "Wanderer%27s_Journal"
+        },
       },
     },
 
@@ -3341,6 +3348,13 @@ const HK = {
           spoiler: "Resting Grounds: Spirit's Glade, Waterfall",
           id: "Shiny Item",
           sceneName: "RestingGrounds_08",
+          wiki: "King%27s_Idol"
+        }, 
+        kingsIdol4: {
+          name: "King's Idol #4",
+          spoiler: "Royal Waterways: Dung Defender's Cave",
+          id: "Shiny Item Stand",
+          sceneName: "Waterways_15",
           wiki: "King%27s_Idol"
         }, 
       },
