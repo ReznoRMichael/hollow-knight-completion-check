@@ -3629,6 +3629,20 @@ const HK = {
           sceneName: "Deepnest_Spider_Town",
           wiki: "Rancid_Egg"
         },
+        rancidEgg17: {
+          name: "Rancid Egg #17",
+          spoiler: "Crystal Peak: Right Tall Room",
+          id: "Shiny Item(Clone)",
+          sceneName: "Mines_20",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg18: {
+          name: "Rancid Egg #18",
+          spoiler: "Royal Waterways: Main Bench Area",
+          id: "Shiny Item(Clone)",
+          sceneName: "Waterways_02",
+          wiki: "Rancid_Egg"
+        },
         rancidEgg21: {
           name: "Rancid Egg #21",
           spoiler: "Royal Waterways: Tuk's free Egg",
