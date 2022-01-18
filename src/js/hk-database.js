@@ -3190,6 +3190,13 @@ const HK = {
           sceneName: "Fungus1_11",
           wiki: "Wanderer%27s_Journal"
         },
+        wanderersJournal2: {
+          name: "Wanderer's Journal #2",
+          spoiler: "Greenpath: Right of Stag Station",
+          id: "Shiny Item",
+          sceneName: "Fungus1_22",
+          wiki: "Wanderer%27s_Journal"
+        },
       },
     },
 
@@ -3377,6 +3384,13 @@ const HK = {
           name: "Collector's Map",
           spoiler: "Kingdom's Edge: Tower of Love, Love Key",
           wiki: "Map_and_Quill#The_Collector's_Map"
+        },
+        cityCrest: {
+          name: "City Crest",
+          spoiler: "Forgotten Crossroads: False Knight Reward",
+          id: "Shiny Item",
+          sceneName: "Crossroads_10",
+          wiki: "City_Crest"
         },
         hasDreamGate: {
           name: "Dreamgate",
