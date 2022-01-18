@@ -8578,6 +8578,8 @@ var HK = {
           spoiler: "Grey Mourner, Traitor's Child Grave",
           wiki: "Delicate_Flower"
         },
+
+        /* 
         geoRocks: {
           id: "geoRocks",
           name: "Geo Rocks",
@@ -8587,8 +8589,9 @@ var HK = {
           activated: 0,
           discoveredTotal: 0,
           max: 205,
-          maxDefault: 205
+          maxDefault: 205,
         },
+        */
         itemsDiscovered: {
           id: "itemsDiscovered",
           name: "Interactables",

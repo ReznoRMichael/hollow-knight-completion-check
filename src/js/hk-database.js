@@ -5368,6 +5368,7 @@ const HK = {
           spoiler: "Grey Mourner, Traitor's Child Grave",
           wiki: "Delicate_Flower"
         },
+        /* 
         geoRocks: {
           id: "geoRocks",
           name: "Geo Rocks",
@@ -5379,6 +5380,7 @@ const HK = {
           max: 205,
           maxDefault: 205,
         },
+        */
         itemsDiscovered: {
           id: "itemsDiscovered",
           name: "Interactables",
