@@ -3319,6 +3319,20 @@ const HK = {
           sceneName: "Ruins2_08",
           wiki: "Hallownest_Seal"
         },
+        hallownestSeal9: {
+          name: "Hallownest Seal #9",
+          spoiler: "Grubfather: 23 Grubs rescued",
+          id: "Shiny Item Relic2",
+          sceneName: "Crossroads_38",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal10: {
+          name: "Hallownest Seal #10",
+          spoiler: "Fog Canyon: Right Tall Area",
+          id: "Shiny Item",
+          sceneName: "Fungus3_26",
+          wiki: "Hallownest_Seal"
+        },
       },
     },
 
