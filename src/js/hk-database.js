@@ -3253,6 +3253,13 @@ const HK = {
           sceneName: "Abyss_02",
           wiki: "Wanderer%27s_Journal"
         },
+        wanderersJournal11: {
+          name: "Wanderer's Journal #11",
+          spoiler: "City of Tears: Pleasure House Elevator",
+          id: "Shiny Item (1)",
+          sceneName: "Ruins_Elevator",
+          wiki: "Wanderer%27s_Journal"
+        },
       },
     },
 
@@ -3338,6 +3345,13 @@ const HK = {
           spoiler: "Fog Canyon: Lifeblood Cocoon Room",
           id: "Shiny Item",
           sceneName: "Fungus3_30",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal12: {
+          name: "Hallownest Seal #12",
+          spoiler: "Queen's Gardens: Outside White Lady",
+          id: "Shiny Item",
+          sceneName: "Fungus3_48",
           wiki: "Hallownest_Seal"
         },
       },
