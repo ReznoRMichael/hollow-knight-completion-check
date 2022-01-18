@@ -3375,6 +3375,20 @@ const HK = {
           sceneName: "Fungus3_48",
           wiki: "Hallownest_Seal"
         },
+        hallownestSeal13: {
+          name: "Hallownest Seal #13",
+          spoiler: "Fungal Wastes: Mantis Lords Reward Room",
+          id: "Shiny Item",
+          sceneName: "Fungus2_31",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal14: {
+          name: "Hallownest Seal #14",
+          spoiler: "City of Tears: Watcher's Spire Fourth Floor",
+          id: "Shiny Item",
+          sceneName: "Ruins2_03",
+          wiki: "Hallownest_Seal"
+        },
       },
     },
 
