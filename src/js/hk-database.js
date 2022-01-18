@@ -3398,7 +3398,14 @@ const HK = {
           id: "Shiny Item Stand",
           sceneName: "Waterways_15",
           wiki: "King%27s_Idol"
-        }, 
+        },
+        kingsIdol5: {
+          name: "King's Idol #5",
+          spoiler: "Kingdom's Edge: Great Hopper Below Colosseum Entrance",
+          id: "Shiny Item",
+          sceneName: "Deepnest_East_08",
+          wiki: "King%27s_Idol"
+        },
       },
     },
 
@@ -3529,6 +3536,13 @@ const HK = {
           spoiler: "City of Tears: Pleasure House Elevator",
           id: "Shiny Item",
           sceneName: "Ruins_Elevator",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg13: {
+          name: "Rancid Egg #13",
+          spoiler: "Kingdom's Edge: Whispering Root Area",
+          id: "Shiny Item (1)",
+          sceneName: "Deepnest_East_07",
           wiki: "Rancid_Egg"
         },
         rancidEgg21: {
