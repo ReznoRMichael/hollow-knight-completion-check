@@ -3507,7 +3507,7 @@ const HK = {
           sceneName: "Abyss_15",
           wiki: "Arcane_Egg"
         },
-        arcaneEggLifebloodCoreRoom: {
+        arcaneEgg4: {
           name: "Arcane Egg #4 (missable)",
           spoiler: "The Abyss: Lifeblood Core Room",
           id: "Shiny Item (1)",
@@ -3660,7 +3660,7 @@ const HK = {
         rancidEgg20: {
           name: "Rancid Egg #20",
           spoiler: "Sly: 60 Geo",
-          id: "",
+          id: "slyRancidEgg",
           sceneName: "",
           wiki: "Rancid_Egg"
         },
