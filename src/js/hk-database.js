@@ -3204,6 +3204,13 @@ const HK = {
           sceneName: "Fungus2_04",
           wiki: "Wanderer%27s_Journal"
         },
+        wanderersJournal4: {
+          name: "Wanderer's Journal #4",
+          spoiler: "Fungal Wastes: Room Above Mantis Village",
+          id: "Shiny Item",
+          sceneName: "Fungus2_17",
+          wiki: "Wanderer%27s_Journal"
+        },
       },
     },
 
@@ -3299,6 +3306,13 @@ const HK = {
       id: "hk-rancid-eggs",
       description: `Rancid Eggs Description.`,
       entries: {
+        rancidEgg1: {
+          name: "Rancid Egg #1",
+          spoiler: "Fungal Wastes: Fungal Core Upper Room",
+          id: "Shiny Item",
+          sceneName: "Fungus2_29",
+          wiki: "Rancid_Egg"
+        },
         rancidEgg21: {
           name: "Rancid Egg #21",
           spoiler: "Royal Waterways: Tuk's free Egg",
