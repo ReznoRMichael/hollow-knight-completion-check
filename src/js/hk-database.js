@@ -3277,6 +3277,13 @@ const HK = {
           sceneName: "Ruins1_03",
           wiki: "Hallownest_Seal"
         },
+        hallownestSeal6: {
+          name: "Hallownest Seal #6",
+          spoiler: "City of Tears: Soul Master Rewards Room",
+          id: "Shiny Item",
+          sceneName: "Ruins1_32",
+          wiki: "Hallownest_Seal"
+        },
       },
     },
 
@@ -3299,6 +3306,13 @@ const HK = {
           spoiler: "Crystal Peak: Cornifer Room, use Monarch Wings",
           id: "Shiny Item Stand",
           sceneName: "Mines_30",
+          wiki: "King%27s_Idol"
+        }, 
+        kingsIdol3: {
+          name: "King's Idol #3",
+          spoiler: "Resting Grounds: Spirit's Glade, Waterfall",
+          id: "Shiny Item",
+          sceneName: "RestingGrounds_08",
           wiki: "King%27s_Idol"
         }, 
       },
@@ -3368,6 +3382,13 @@ const HK = {
           spoiler: "Crystal Peak: Dark Bench Room",
           id: "Shiny Item",
           sceneName: "Mines_29",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg4: {
+          name: "Rancid Egg #4",
+          spoiler: "Resting Grounds: Blue Lake",
+          id: "Shiny Item(Clone)",
+          sceneName: "Crossroads_50",
           wiki: "Rancid_Egg"
         },
         rancidEgg21: {
