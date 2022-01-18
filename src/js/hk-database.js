@@ -3211,6 +3211,13 @@ const HK = {
           sceneName: "Fungus2_17",
           wiki: "Wanderer%27s_Journal"
         },
+        wanderersJournal5: {
+          name: "Wanderer's Journal #5",
+          spoiler: "City of Tears: City Storerooms",
+          id: "Shiny Item",
+          sceneName: "Ruins1_28",
+          wiki: "Wanderer%27s_Journal"
+        },
       },
     },
 
@@ -3265,7 +3272,15 @@ const HK = {
       h2: "Relics - King's Idol",
       id: "hk-relics-idol",
       description: `Relics - King's Idol Description.`,
-      entries: {},
+      entries: {
+        kingsIdol1: {
+          name: "King's Idol #1",
+          spoiler: "Howling Cliffs: Main Open Air Area",
+          id: "Shiny Item",
+          sceneName: "Cliffs_01",
+          wiki: "King%27s_Idol"
+        }, 
+      },
     },
 
     /* ###################################### Collectibles -> Relics - Arcane Egg ############################################## */
