@@ -99,29 +99,29 @@ function TranslateMapName(mapCode, dictionary = MAP) {
 
 /**
  * Generates database entries text. Provides an easy filling solution.
- * @param {array} HKWorldItems 
+ * @param {array} objectArray 
  * @param {string} searchText 
  * @param {string} entryName 
  * @param {string} entryDB 
  * @param {string} wiki 
  */
-function GenerateDatabaseEntries(HKWorldItems, searchText = "", entryName = "", entryDB = "", wiki = "") {
+function GenerateDatabaseEntries(objectArray, searchText = "", entryName = "", entryDB = "", wiki = "") {
 
   let fillText = "";
   let count = 0;
 
-  for (let i = 0, ln = HKWorldItems.length; i < ln; i++) {
+  for (let i = 0, ln = objectArray.length; i < ln; i++) {
 
-    if (HKWorldItems[i].id.includes(searchText)) {
+    if (objectArray[i].id.includes(searchText)) {
 
       count++;
 
       fillText += `
       ${entryDB}${count}: {
         name: "${entryName} #${count}",
-        spoiler: "${TranslateMapName(HKWorldItems[i].sceneName)}",
-        id: "${HKWorldItems[i].id}",
-        sceneName: "${HKWorldItems[i].sceneName}",
+        spoiler: "${TranslateMapName(objectArray[i].sceneName)}",
+        id: "${objectArray[i].id}",
+        sceneName: "${objectArray[i].sceneName}",
         wiki: "${wiki}"
       },`;
     }
@@ -140,5 +140,6 @@ export {
   SetIconNone,
   SetIcon,
   ObjectLength,
-  TranslateMapName
+  TranslateMapName,
+  GenerateDatabaseEntries
 };
