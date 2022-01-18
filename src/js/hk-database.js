@@ -2738,7 +2738,7 @@ const HK = {
       entries: {
         grub1: {
         name: "Grub #1",
-        spoiler: "Forgotten Crossroads: Acid Grub",
+        spoiler: "Forgotten Crossroads: Acid Corridor",
         id: "Grub Bottle",
         sceneName: "Crossroads_35",
         wiki: "Grub#Rewards_and_locations"
@@ -2752,28 +2752,28 @@ const HK = {
       },
       grub3: {
         name: "Grub #3",
-        spoiler: "Forgotten Crossroads: Central Grub",
+        spoiler: "Forgotten Crossroads: Above Ancestral Mound",
         id: "Grub Bottle",
         sceneName: "Crossroads_05",
         wiki: "Grub#Rewards_and_locations"
       },
       grub4: {
         name: "Grub #4",
-        spoiler: "Forgotten Crossroads: Husk Guard Grub",
+        spoiler: "Forgotten Crossroads: Husk Guard Room",
         id: "Grub Bottle",
         sceneName: "Crossroads_48",
         wiki: "Grub#Rewards_and_locations"
       },
       grub5: {
         name: "Grub #5",
-        spoiler: "Forgotten Crossroads: Spike Grub",
+        spoiler: "Forgotten Crossroads: Spikes Room",
         id: "Grub Bottle",
         sceneName: "Crossroads_31",
         wiki: "Grub#Rewards_and_locations"
       },
       grub6: {
         name: "Grub #6",
-        spoiler: "Greenpath: Cornifer",
+        spoiler: "Greenpath: Cornifer Room",
         id: "Grub Bottle",
         sceneName: "Fungus1_06",
         wiki: "Grub#Rewards_and_locations"
@@ -2794,35 +2794,35 @@ const HK = {
       },
       grub9: {
         name: "Grub #9",
-        spoiler: "Howling Cliffs: Baldur's Shell",
+        spoiler: "Howling Cliffs: Baldur's Shell Room",
         id: "Grub Bottle",
         sceneName: "Fungus1_28",
         wiki: "Grub#Rewards_and_locations"
       },
       grub10: {
         name: "Grub #10",
-        spoiler: "Fungal Wastes: Cornifer",
+        spoiler: "Fungal Wastes: Cornifer Room",
         id: "Grub Bottle",
         sceneName: "Fungus2_18",
         wiki: "Grub#Rewards_and_locations"
       },
       grub11: {
         name: "Grub #11",
-        spoiler: "City of Tears: Grub Above Lemm",
+        spoiler: "City of Tears: Above Lemm",
         id: "Grub Bottle (1)",
         sceneName: "Ruins1_05",
         wiki: "Grub#Rewards_and_locations"
       },
       grub12: {
         name: "Grub #12",
-        spoiler: "Crystal Peak: Conveyor Belts Entrance",
+        spoiler: "Crystal Peak: Left of Dark Corridor",
         id: "Grub Bottle",
         sceneName: "Mines_04",
         wiki: "Grub#Rewards_and_locations"
       },
       grub13: {
         name: "Grub #13",
-        spoiler: "Crystal Peak: Spike Grub",
+        spoiler: "Crystal Peak: Spiked Conveyor Belts",
         id: "Grub Bottle",
         sceneName: "Mines_03",
         wiki: "Grub#Rewards_and_locations"
@@ -2836,7 +2836,7 @@ const HK = {
       },
       grub15: {
         name: "Grub #15",
-        spoiler: "Crystal Peak: Grub Crushers",
+        spoiler: "Crystal Peak: Crushers Below Top Bench",
         id: "Grub Bottle",
         sceneName: "Mines_19",
         wiki: "Grub#Rewards_and_locations"
@@ -2857,7 +2857,7 @@ const HK = {
       },
       grub18: {
         name: "Grub #18",
-        spoiler: "City of Tears: Guarded Grub Room",
+        spoiler: "City of Tears: Guarded House Room in Main Hub",
         id: "Grub Bottle",
         sceneName: "Ruins_House_01",
         wiki: "Grub#Rewards_and_locations"
@@ -2871,14 +2871,14 @@ const HK = {
       },
       grub20: {
         name: "Grub #20",
-        spoiler: "Crystal Peak: Grub Mimic",
+        spoiler: "Crystal Peak: Down from Dirtmouth entrance",
         id: "Grub Bottle",
         sceneName: "Mines_16",
         wiki: "Grub#Rewards_and_locations"
       },
       grub21: {
         name: "Grub #21",
-        spoiler: "Royal Waterways: Hidden Grub Room",
+        spoiler: "Royal Waterways: Top Left Corridor Above Bench",
         id: "Grub Bottle",
         sceneName: "Waterways_04",
         wiki: "Grub#Rewards_and_locations"
@@ -2892,28 +2892,28 @@ const HK = {
       },
       grub23: {
         name: "Grub #23",
-        spoiler: "Ancient Basin: Broken Vessel Grub",
+        spoiler: "Ancient Basin: Broken Vessel Top Room",
         id: "Grub Bottle",
         sceneName: "Abyss_19",
         wiki: "Grub#Rewards_and_locations"
       },
       grub24: {
         name: "Grub #24",
-        spoiler: "Ancient Basin: Cloth",
+        spoiler: "Ancient Basin: Cloth/Pale Ore Room",
         id: "Grub Bottle",
         sceneName: "Abyss_17",
         wiki: "Grub#Rewards_and_locations"
       },
       grub25: {
         name: "Grub #25",
-        spoiler: "Crystal Peak: Hallownest Crown Grub",
+        spoiler: "Crystal Peak: Hallownest Crown Corridor",
         id: "Grub Bottle",
         sceneName: "Mines_24",
         wiki: "Grub#Rewards_and_locations"
       },
       grub26: {
         name: "Grub #26",
-        spoiler: "Greenpath: Whispering Root",
+        spoiler: "Greenpath: Whispering Root Corridor",
         id: "Grub Bottle",
         sceneName: "Fungus1_13",
         wiki: "Grub#Rewards_and_locations"
@@ -2927,28 +2927,28 @@ const HK = {
       },
       grub28: {
         name: "Grub #28",
-        spoiler: "Queen's Gardens: Main Arena",
+        spoiler: "Queen's Gardens: Main Arena Above Left Bench",
         id: "Grub Bottle",
         sceneName: "Fungus3_10",
         wiki: "Grub#Rewards_and_locations"
       },
       grub29: {
         name: "Grub #29",
-        spoiler: "Queen's Gardens: Outside White Lady",
+        spoiler: "Queen's Gardens: Near White Lady",
         id: "Grub Bottle",
         sceneName: "Fungus3_48",
         wiki: "Grub#Rewards_and_locations"
       },
       grub30: {
         name: "Grub #30",
-        spoiler: "Queen's Gardens: Upper Grub Room",
+        spoiler: "Queen's Gardens: Upper Room near Greenpath",
         id: "Grub Bottle",
         sceneName: "Fungus3_22",
         wiki: "Grub#Rewards_and_locations"
       },
       grub31: {
         name: "Grub #31",
-        spoiler: "City of Tears: Grub Below King's Station",
+        spoiler: "City of Tears: Below King's Station",
         id: "Grub Bottle",
         sceneName: "Ruins2_07",
         wiki: "Grub#Rewards_and_locations"
@@ -2990,7 +2990,7 @@ const HK = {
       },
       grub37: {
         name: "Grub #37",
-        spoiler: "Fungal Wastes: Spore Shroom",
+        spoiler: "Fungal Wastes: Spore Shroom Room",
         id: "Grub Bottle",
         sceneName: "Fungus2_20",
         wiki: "Grub#Rewards_and_locations"
@@ -3004,7 +3004,7 @@ const HK = {
       },
       grub39: {
         name: "Grub #39",
-        spoiler: "Deepnest: Grub Mimics",
+        spoiler: "Deepnest: Right of Fungal Wastes Drop",
         id: "Grub Bottle",
         sceneName: "Deepnest_36",
         wiki: "Grub#Rewards_and_locations"
@@ -3025,7 +3025,7 @@ const HK = {
       },
       grub42: {
         name: "Grub #42",
-        spoiler: "Deepnest: Whispering Root",
+        spoiler: "Deepnest: Whispering Root Room",
         id: "Grub Bottle",
         sceneName: "Deepnest_39",
         wiki: "Grub#Rewards_and_locations"
@@ -3046,7 +3046,7 @@ const HK = {
       },
       grub45: {
         name: "Grub #45",
-        spoiler: "The Hive: Outside Grub",
+        spoiler: "The Hive: Kingdom's Edge Secret",
         id: "Grub Bottle",
         sceneName: "Hive_03",
         wiki: "Grub#Rewards_and_locations"
