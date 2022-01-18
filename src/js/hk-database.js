@@ -3419,6 +3419,20 @@ const HK = {
           sceneName: "Crossroads_50",
           wiki: "Rancid_Egg"
         },
+        rancidEgg5: {
+          name: "Rancid Egg #5",
+          spoiler: "Crystal Peak: Desolate Dive Entrance",
+          id: "Shiny Item(Clone)",
+          sceneName: "Mines_01",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg6: {
+          name: "Rancid Egg #6",
+          spoiler: "Royal Waterways: Mask Shard Room",
+          id: "Shiny Item",
+          sceneName: "Waterways_04b",
+          wiki: "Rancid_Egg"
+        },
         rancidEgg21: {
           name: "Rancid Egg #21",
           spoiler: "Royal Waterways: Tuk's free Egg",
