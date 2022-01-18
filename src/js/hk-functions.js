@@ -97,6 +97,39 @@ function TranslateMapName(mapCode, dictionary = MAP) {
   return translation;
 }
 
+/**
+ * Generates database entries text. Provides an easy filling solution.
+ * @param {array} HKWorldItems 
+ * @param {string} searchText 
+ * @param {string} entryName 
+ * @param {string} entryDB 
+ * @param {string} wiki 
+ */
+function GenerateDatabaseEntries(HKWorldItems, searchText = "", entryName = "", entryDB = "", wiki = "") {
+
+  let fillText = "";
+  let count = 0;
+
+  for (let i = 0, ln = HKWorldItems.length; i < ln; i++) {
+
+    if (HKWorldItems[i].id.includes(searchText)) {
+
+      count++;
+
+      fillText += `
+      ${entryDB}${count}: {
+        name: "${entryName} #${count}",
+        spoiler: "${TranslateMapName(HKWorldItems[i].sceneName)}",
+        id: "${HKWorldItems[i].id}",
+        sceneName: "${HKWorldItems[i].sceneName}",
+        wiki: "${wiki}"
+      },`;
+    }
+  }
+
+  return fillText;
+}
+
 /* ------------------------- Exports ------------------------------- */
 
 export {

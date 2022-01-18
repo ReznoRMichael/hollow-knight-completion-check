@@ -96,21 +96,10 @@ function HKCheckCompletion(jsonObject) {
   } else {
     _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].saveAnalyzed = false;
     return false;
-  }
-
-  var fillText = "";
-  var cnt = 0;
-
-  for (var i = 0, ln = HKWorldItems.length; i < ln; i++) {
-    if (HKWorldItems[i].id.includes("Grub Bottle")) {
-      cnt++;
-      fillText += "\n      grub".concat(cnt, ": {\n        name: \"Grub #").concat(cnt, "\",\n        spoiler: \"").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(HKWorldItems[i].sceneName), "\",\n        id: \"").concat(HKWorldItems[i].id, "\",\n        sceneName: \"").concat(HKWorldItems[i].sceneName, "\",\n        wiki: \"Grub#Rewards_and_locations\"\n      },");
-    }
-  }
-
-  console.log(fillText); // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
+  } // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
   // PrefillHTML(HK.sections);
   // Prevents adding current percent data after each function call and resets what the analyzing has done to the original object. Prevents wrong data display after subsequent save analyzing.
+
 
   ResetCompletion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"]); // ============================================================================================================================= //
   // ---------------- Time Played ----------------------------------------------------------------------------------------------- //
@@ -5968,9 +5957,324 @@ var HK = {
       entries: {
         grub1: {
           name: "Grub #1",
-          spoiler: "",
+          spoiler: "Forgotten Crossroads: Acid Grub",
           id: "Grub Bottle",
-          sceneName: "",
+          sceneName: "Crossroads_35",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub2: {
+          name: "Grub #2",
+          spoiler: "Forgotten Crossroads: Outside Stag Station",
+          id: "Grub Bottle",
+          sceneName: "Crossroads_03",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub3: {
+          name: "Grub #3",
+          spoiler: "Forgotten Crossroads: Central Grub",
+          id: "Grub Bottle",
+          sceneName: "Crossroads_05",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub4: {
+          name: "Grub #4",
+          spoiler: "Forgotten Crossroads: Husk Guard Grub",
+          id: "Grub Bottle",
+          sceneName: "Crossroads_48",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub5: {
+          name: "Grub #5",
+          spoiler: "Forgotten Crossroads: Spike Grub",
+          id: "Grub Bottle",
+          sceneName: "Crossroads_31",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub6: {
+          name: "Grub #6",
+          spoiler: "Greenpath: Cornifer",
+          id: "Grub Bottle",
+          sceneName: "Fungus1_06",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub7: {
+          name: "Grub #7",
+          spoiler: "Greenpath: Outside Hunter",
+          id: "Grub Bottle",
+          sceneName: "Fungus1_07",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub8: {
+          name: "Grub #8",
+          spoiler: "Greenpath: Outside Hornet",
+          id: "Grub Bottle",
+          sceneName: "Fungus1_21",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub9: {
+          name: "Grub #9",
+          spoiler: "Howling Cliffs: Baldur's Shell",
+          id: "Grub Bottle",
+          sceneName: "Fungus1_28",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub10: {
+          name: "Grub #10",
+          spoiler: "Fungal Wastes: Cornifer",
+          id: "Grub Bottle",
+          sceneName: "Fungus2_18",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub11: {
+          name: "Grub #11",
+          spoiler: "City of Tears: Grub Above Lemm",
+          id: "Grub Bottle (1)",
+          sceneName: "Ruins1_05",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub12: {
+          name: "Grub #12",
+          spoiler: "Crystal Peak: Conveyor Belts Entrance",
+          id: "Grub Bottle",
+          sceneName: "Mines_04",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub13: {
+          name: "Grub #13",
+          spoiler: "Crystal Peak: Spike Grub",
+          id: "Grub Bottle",
+          sceneName: "Mines_03",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub14: {
+          name: "Grub #14",
+          spoiler: "Crystal Peak: Crystal Heart Gauntlet",
+          id: "Grub Bottle",
+          sceneName: "Mines_31",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub15: {
+          name: "Grub #15",
+          spoiler: "Crystal Peak: Grub Crushers",
+          id: "Grub Bottle",
+          sceneName: "Mines_19",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub16: {
+          name: "Grub #16",
+          spoiler: "City of Tears: Soul Master Rewards Room",
+          id: "Grub Bottle",
+          sceneName: "Ruins1_32",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub17: {
+          name: "Grub #17",
+          spoiler: "Resting Grounds: Crypts",
+          id: "Grub Bottle",
+          sceneName: "RestingGrounds_10",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub18: {
+          name: "Grub #18",
+          spoiler: "City of Tears: Guarded Grub Room",
+          id: "Grub Bottle",
+          sceneName: "Ruins_House_01",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub19: {
+          name: "Grub #19",
+          spoiler: "Crystal Peak: Crystallized Mound",
+          id: "Grub Bottle",
+          sceneName: "Mines_35",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub20: {
+          name: "Grub #20",
+          spoiler: "Crystal Peak: Grub Mimic",
+          id: "Grub Bottle",
+          sceneName: "Mines_16",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub21: {
+          name: "Grub #21",
+          spoiler: "Royal Waterways: Hidden Grub Room",
+          id: "Grub Bottle",
+          sceneName: "Waterways_04",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub22: {
+          name: "Grub #22",
+          spoiler: "Royal Waterways: Isma's Grove",
+          id: "Grub Bottle",
+          sceneName: "Waterways_13",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub23: {
+          name: "Grub #23",
+          spoiler: "Ancient Basin: Broken Vessel Grub",
+          id: "Grub Bottle",
+          sceneName: "Abyss_19",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub24: {
+          name: "Grub #24",
+          spoiler: "Ancient Basin: Cloth",
+          id: "Grub Bottle",
+          sceneName: "Abyss_17",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub25: {
+          name: "Grub #25",
+          spoiler: "Crystal Peak: Hallownest Crown Grub",
+          id: "Grub Bottle",
+          sceneName: "Mines_24",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub26: {
+          name: "Grub #26",
+          spoiler: "Greenpath: Whispering Root",
+          id: "Grub Bottle",
+          sceneName: "Fungus1_13",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub27: {
+          name: "Grub #27",
+          spoiler: "Fog Canyon: Teacher's Archives Entrance",
+          id: "Grub Bottle",
+          sceneName: "Fungus3_47",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub28: {
+          name: "Grub #28",
+          spoiler: "Queen's Gardens: Main Arena",
+          id: "Grub Bottle",
+          sceneName: "Fungus3_10",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub29: {
+          name: "Grub #29",
+          spoiler: "Queen's Gardens: Outside White Lady",
+          id: "Grub Bottle",
+          sceneName: "Fungus3_48",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub30: {
+          name: "Grub #30",
+          spoiler: "Queen's Gardens: Upper Grub Room",
+          id: "Grub Bottle",
+          sceneName: "Fungus3_22",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub31: {
+          name: "Grub #31",
+          spoiler: "City of Tears: Grub Below King's Station",
+          id: "Grub Bottle",
+          sceneName: "Ruins2_07",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub32: {
+          name: "Grub #32",
+          spoiler: "City of Tears: The Collector Arena",
+          id: "Grub Bottle (1)",
+          sceneName: "Ruins2_11",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub33: {
+          name: "Grub #33",
+          spoiler: "City of Tears: The Collector Arena",
+          id: "Grub Bottle",
+          sceneName: "Ruins2_11",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub34: {
+          name: "Grub #34",
+          spoiler: "City of Tears: The Collector Arena",
+          id: "Grub Bottle (2)",
+          sceneName: "Ruins2_11",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub35: {
+          name: "Grub #35",
+          spoiler: "Kingdom's Edge: Below Camp Bench",
+          id: "Grub Bottle",
+          sceneName: "Deepnest_East_11",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub36: {
+          name: "Grub #36",
+          spoiler: "Kingdom's Edge: Below Nailmaster Oro",
+          id: "Grub Bottle",
+          sceneName: "Deepnest_East_14",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub37: {
+          name: "Grub #37",
+          spoiler: "Fungal Wastes: Spore Shroom",
+          id: "Grub Bottle",
+          sceneName: "Fungus2_20",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub38: {
+          name: "Grub #38",
+          spoiler: "City of Tears: Watcher's Spire Fourth Floor",
+          id: "Grub Bottle",
+          sceneName: "Ruins2_03",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub39: {
+          name: "Grub #39",
+          spoiler: "Deepnest: Grub Mimics",
+          id: "Grub Bottle",
+          sceneName: "Deepnest_36",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub40: {
+          name: "Grub #40",
+          spoiler: "Deepnest: Left of Hot Spring",
+          id: "Grub Bottle",
+          sceneName: "Deepnest_03",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub41: {
+          name: "Grub #41",
+          spoiler: "Deepnest: Nosk Corridor",
+          id: "Grub Bottle",
+          sceneName: "Deepnest_31",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub42: {
+          name: "Grub #42",
+          spoiler: "Deepnest: Whispering Root",
+          id: "Grub Bottle",
+          sceneName: "Deepnest_39",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub43: {
+          name: "Grub #43",
+          spoiler: "Deepnest: Beast's Den",
+          id: "Grub Bottle",
+          sceneName: "Deepnest_Spider_Town",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub44: {
+          name: "Grub #44",
+          spoiler: "Royal Waterways: Kingdom's Edge Acid Corridor",
+          id: "Grub Bottle",
+          sceneName: "Waterways_14",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub45: {
+          name: "Grub #45",
+          spoiler: "The Hive: Outside Grub",
+          id: "Grub Bottle",
+          sceneName: "Hive_03",
+          wiki: "Grub#Rewards_and_locations"
+        },
+        grub46: {
+          name: "Grub #46",
+          spoiler: "The Hive: Mask Shard Room",
+          id: "Grub Bottle",
+          sceneName: "Hive_04",
           wiki: "Grub#Rewards_and_locations"
         }
       }
@@ -8758,6 +9062,33 @@ function TranslateMapName(mapCode) {
   var translation = mapCode;
   if (dictionary.hasOwnProperty(mapCode)) translation = dictionary[mapCode];
   return translation;
+}
+/**
+ * Generates database entries text. Provides an easy filling solution.
+ * @param {array} HKWorldItems 
+ * @param {string} searchText 
+ * @param {string} entryName 
+ * @param {string} entryDB 
+ * @param {string} wiki 
+ */
+
+
+function GenerateDatabaseEntries(HKWorldItems) {
+  var searchText = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+  var entryName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
+  var entryDB = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "";
+  var wiki = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : "";
+  var fillText = "";
+  var count = 0;
+
+  for (var i = 0, ln = HKWorldItems.length; i < ln; i++) {
+    if (HKWorldItems[i].id.includes(searchText)) {
+      count++;
+      fillText += "\n      ".concat(entryDB).concat(count, ": {\n        name: \"").concat(entryName, " #").concat(count, "\",\n        spoiler: \"").concat(TranslateMapName(HKWorldItems[i].sceneName), "\",\n        id: \"").concat(HKWorldItems[i].id, "\",\n        sceneName: \"").concat(HKWorldItems[i].sceneName, "\",\n        wiki: \"").concat(wiki, "\"\n      },");
+    }
+  }
+
+  return fillText;
 }
 /* ------------------------- Exports ------------------------------- */
 
