@@ -3461,6 +3461,20 @@ const HK = {
           sceneName: "Waterways_07",
           wiki: "Rancid_Egg"
         },
+        rancidEgg9: {
+          name: "Rancid Egg #9",
+          spoiler: "Greenpath: Outside Sheo's Hut",
+          id: "Shiny Item",
+          sceneName: "Fungus1_15",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg10: {
+          name: "Rancid Egg #10",
+          spoiler: "Grubfather: 16 Grubs rescued",
+          id: "Shiny Item Rancid Egg",
+          sceneName: "Crossroads_38",
+          wiki: "Rancid_Egg"
+        },
         rancidEgg21: {
           name: "Rancid Egg #21",
           spoiler: "Royal Waterways: Tuk's free Egg",
