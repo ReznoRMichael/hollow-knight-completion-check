@@ -3333,6 +3333,13 @@ const HK = {
           sceneName: "Fungus3_26",
           wiki: "Hallownest_Seal"
         },
+        hallownestSeal11: {
+          name: "Hallownest Seal #11",
+          spoiler: "Fog Canyon: Lifeblood Cocoon Room",
+          id: "Shiny Item",
+          sceneName: "Fungus3_30",
+          wiki: "Hallownest_Seal"
+        },
       },
     },
 
@@ -3487,6 +3494,13 @@ const HK = {
           spoiler: "Grubfather: 16 Grubs rescued",
           id: "Shiny Item Rancid Egg",
           sceneName: "Crossroads_38",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg11: {
+          name: "Rancid Egg #11",
+          spoiler: "Queen's Gardens: Entrance from Fog Canyon",
+          id: "Shiny Item(Clone)",
+          sceneName: "Fungus3_34",
           wiki: "Rancid_Egg"
         },
         rancidEgg21: {

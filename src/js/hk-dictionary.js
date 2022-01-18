@@ -131,7 +131,7 @@ const MAP = {
   "Fungus3_26": "Fog Canyon: Right Tall Area",
   "Fungus3_27": "Fog Canyon: Corridor to Archives",
   "Fungus3_28": "Fog Canyon: Charm Notch",
-  "Fungus3_30": "Fog Canyon: Lifeblood",
+  "Fungus3_30": "Fog Canyon: Lifeblood Cocoon Room",
   "Fungus3_35": "Fog Canyon: Millibelle",
   "Fungus3_44": "Fog Canyon: Overgrown Mound Entrance",
   "Fungus3_47": "Fog Canyon: Teacher's Archives Entrance",
