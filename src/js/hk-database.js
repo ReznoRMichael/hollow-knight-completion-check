@@ -3260,6 +3260,13 @@ const HK = {
           sceneName: "Ruins_Elevator",
           wiki: "Wanderer%27s_Journal"
         },
+        wanderersJournal12: {
+          name: "Wanderer's Journal #12",
+          spoiler: "Kingdom's Edge: Whispering Root Area",
+          id: "Shiny Item",
+          sceneName: "Deepnest_East_07",
+          wiki: "Wanderer%27s_Journal"
+        },
       },
     },
 
@@ -3515,6 +3522,13 @@ const HK = {
           spoiler: "Queen's Gardens: Entrance from Fog Canyon",
           id: "Shiny Item(Clone)",
           sceneName: "Fungus3_34",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg12: {
+          name: "Rancid Egg #12",
+          spoiler: "City of Tears: Pleasure House Elevator",
+          id: "Shiny Item",
+          sceneName: "Ruins_Elevator",
           wiki: "Rancid_Egg"
         },
         rancidEgg21: {
