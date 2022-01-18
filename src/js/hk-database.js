@@ -3249,6 +3249,13 @@ const HK = {
           sceneName: "Fungus2_03",
           wiki: "Hallownest_Seal"
         },
+        hallownestSeal5: {
+          name: "Hallownest Seal #5",
+          spoiler: "City of Tears: Open Air Rafters",
+          id: "Shiny Item",
+          sceneName: "Ruins1_03",
+          wiki: "Hallownest_Seal"
+        },
       },
     },
 
@@ -3311,6 +3318,13 @@ const HK = {
           spoiler: "Fungal Wastes: Fungal Core Upper Room",
           id: "Shiny Item",
           sceneName: "Fungus2_29",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg2: {
+          name: "Rancid Egg #2",
+          spoiler: "City of Tears: Room Above Lemm",
+          id: "Shiny Item",
+          sceneName: "Ruins1_05",
           wiki: "Rancid_Egg"
         },
         rancidEgg21: {
