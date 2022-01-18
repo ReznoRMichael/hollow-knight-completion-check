@@ -3225,6 +3225,13 @@ const HK = {
           sceneName: "Cliffs_01",
           wiki: "Wanderer%27s_Journal"
         },
+        wanderersJournal7: {
+          name: "Wanderer's Journal #7",
+          spoiler: "Crystal Peak: Right Tall Room",
+          id: "Shiny Item (1)",
+          sceneName: "Mines_20",
+          wiki: "Wanderer%27s_Journal"
+        },
       },
     },
 
@@ -3285,6 +3292,13 @@ const HK = {
           spoiler: "Howling Cliffs: Main Open Air Area",
           id: "Shiny Item",
           sceneName: "Cliffs_01",
+          wiki: "King%27s_Idol"
+        }, 
+        kingsIdol2: {
+          name: "King's Idol #2",
+          spoiler: "Crystal Peak: Cornifer Room, use Monarch Wings",
+          id: "Shiny Item Stand",
+          sceneName: "Mines_30",
           wiki: "King%27s_Idol"
         }, 
       },

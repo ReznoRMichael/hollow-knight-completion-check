@@ -160,7 +160,7 @@ const MAP = {
   "Mines_17": "Crystal Peak: Corridor to Spike Grub",
   "Mines_18": "Crystal Peak: Crystal Guardian Bench",
   "Mines_19": "Crystal Peak: Grub Crushers",
-  "Mines_20": "Crystal Peak: East Tall",
+  "Mines_20": "Crystal Peak: Right Tall Room",
   "Mines_23": "Crystal Peak: Hallownest Crown Whispering Root",
   "Mines_24": "Crystal Peak: Hallownest Crown Grub",
   "Mines_25": "Crystal Peak: Hallownest Crown Climb",
