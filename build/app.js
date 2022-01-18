@@ -96,10 +96,11 @@ function HKCheckCompletion(jsonObject) {
   } else {
     _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].saveAnalyzed = false;
     return false;
-  } // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
+  }
+
+  console.log((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.GenerateDatabaseEntries)(HKSceneData.geoRocks, "Geo Rock", "Geo Rock", "geoRock", "Geo#How_to_Acquire")); // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
   // PrefillHTML(HK.sections);
   // Prevents adding current percent data after each function call and resets what the analyzing has done to the original object. Prevents wrong data display after subsequent save analyzing.
-
 
   ResetCompletion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"]); // ============================================================================================================================= //
   // ---------------- Time Played ----------------------------------------------------------------------------------------------- //
@@ -5964,7 +5965,7 @@ var HK = {
         },
         grub2: {
           name: "Grub #2",
-          spoiler: "Forgotten Crossroads: Outside Stag Station",
+          spoiler: "Forgotten Crossroads: Left of Dark Corridor",
           id: "Grub Bottle",
           sceneName: "Crossroads_03",
           wiki: "Grub#Rewards_and_locations"
@@ -9085,7 +9086,7 @@ function GenerateDatabaseEntries(objectArray) {
   for (var i = 0, ln = objectArray.length; i < ln; i++) {
     if (objectArray[i].id.includes(searchText)) {
       count++;
-      fillText += "\n      ".concat(entryDB).concat(count, ": {\n        name: \"").concat(entryName, " #").concat(count, "\",\n        spoiler: \"").concat(TranslateMapName(objectArray[i].sceneName), "\",\n        id: \"").concat(objectArray[i].id, "\",\n        sceneName: \"").concat(objectArray[i].sceneName, "\",\n        wiki: \"").concat(wiki, "\"\n      },");
+      fillText += "\n      ".concat(entryDB).concat(count, ": {\n        name: \"").concat(entryName, " #").concat(count, "\",\n        spoiler: \"").concat(TranslateMapName(objectArray[i].sceneName), "\",\n        id: \"").concat(objectArray[i].id, "\",\n        sceneName: \"").concat(objectArray[i].sceneName, "\",\n        hitsLeft: \"").concat(objectArray[i].hitsLeft, "\",\n        wiki: \"").concat(wiki, "\"\n      },");
     }
   }
 

@@ -24,7 +24,8 @@ import {
   SetIconNone,
   SetIcon,
   ObjectLength,
-  TranslateMapName
+  TranslateMapName,
+  GenerateDatabaseEntries
 } from "./hk-functions.js";
 
 // ---------------- Load image files (necessary for Webpack) ----------------------------------------------------------------------- //

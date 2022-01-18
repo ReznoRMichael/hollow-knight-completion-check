@@ -122,6 +122,7 @@ function GenerateDatabaseEntries(objectArray, searchText = "", entryName = "", e
         spoiler: "${TranslateMapName(objectArray[i].sceneName)}",
         id: "${objectArray[i].id}",
         sceneName: "${objectArray[i].sceneName}",
+        hitsLeft: "${objectArray[i].hitsLeft}",
         wiki: "${wiki}"
       },`;
     }
