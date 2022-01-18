@@ -3182,7 +3182,15 @@ const HK = {
       h2: "Relics - Wanderer's Journal",
       id: "hk-relics-journal",
       description: `Relics - Wanderer's Journal Description.`,
-      entries: {},
+      entries: {
+        wanderersJournal1: {
+          name: "Wanderer's Journal #1",
+          spoiler: "Greenpath: Room Above Fog Canyon",
+          id: "Shiny Item",
+          sceneName: "Fungus1_11",
+          wiki: "Wanderer%27s_Journal"
+        },
+      },
     },
 
     /* ###################################### Collectibles -> Relics - Hallownest Seal ############################################## */
@@ -3191,7 +3199,15 @@ const HK = {
       h2: "Relics - Hallownest Seal",
       id: "hk-relics-seal",
       description: `Relics - Hallownest Seal Description.`,
-      entries: {},
+      entries: {
+        hallownestSeal1: {
+          name: "Hallownest Seal #1",
+          spoiler: "Forgotten Crossroads: Room Inside Well",
+          id: "Shiny Item",
+          sceneName: "Crossroads_01",
+          wiki: "Hallownest_Seal"
+        },
+      },
     },
 
     /* ###################################### Collectibles -> Relics - King's Idol ############################################## */
