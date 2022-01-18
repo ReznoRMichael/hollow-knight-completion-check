@@ -3455,6 +3455,20 @@ const HK = {
           sceneName: "Deepnest_33",
           wiki: "King%27s_Idol"
         },
+        kingsIdol7: {
+          name: "King's Idol #7",
+          spoiler: "Grubfather: 38 Grubs rescued",
+          id: "Shiny Item Relic3",
+          sceneName: "Crossroads_38",
+          wiki: "King%27s_Idol"
+        },
+        kingsIdol8: {
+          name: "King's Idol #8",
+          spoiler: "Kingdom's Edge: Pale Lurker Room",
+          id: "Shiny Item",
+          sceneName: "GG_Lurker",
+          wiki: "King%27s_Idol"
+        },
       },
     },
 
