@@ -121,6 +121,9 @@ If you like the tool and wish it developed further with more functions and easie
   — **Items** additions:  
   ✅ City Crest.  
 
+  — **World Interactions** additions:  
+  ✅ Inspected Stag Nest Egg.  
+
   — **Game Statistics** changes:  
   ✅ Removed Whispering Roots, Relics, Geo Rocks.  
 
