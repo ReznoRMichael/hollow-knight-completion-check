@@ -96,10 +96,21 @@ function HKCheckCompletion(jsonObject) {
   } else {
     _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].saveAnalyzed = false;
     return false;
-  } // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
+  }
+
+  var fillText = "";
+  var cnt = 0;
+
+  for (var i = 0, ln = HKWorldItems.length; i < ln; i++) {
+    if (HKWorldItems[i].id.includes("Grub Bottle")) {
+      cnt++;
+      fillText += "\n      grub".concat(cnt, ": {\n        name: \"Grub #").concat(cnt, "\",\n        spoiler: \"").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(HKWorldItems[i].sceneName), "\",\n        id: \"").concat(HKWorldItems[i].id, "\",\n        sceneName: \"").concat(HKWorldItems[i].sceneName, "\",\n        wiki: \"Grub#Rewards_and_locations\"\n      },");
+    }
+  }
+
+  console.log(fillText); // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
   // PrefillHTML(HK.sections);
   // Prevents adding current percent data after each function call and resets what the analyzing has done to the original object. Prevents wrong data display after subsequent save analyzing.
-
 
   ResetCompletion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"]); // ============================================================================================================================= //
   // ---------------- Time Played ----------------------------------------------------------------------------------------------- //
@@ -5954,7 +5965,15 @@ var HK = {
       h2: "Grubs",
       id: "hk-grubs",
       description: "Grubs Description.",
-      entries: {}
+      entries: {
+        grub1: {
+          name: "Grub #1",
+          spoiler: "",
+          id: "Grub Bottle",
+          sceneName: "",
+          wiki: "Grub#Rewards_and_locations"
+        }
+      }
     },
 
     /* ###################################### Collectibles -> Whispering Roots ############################################## */
