@@ -3389,6 +3389,13 @@ const HK = {
           sceneName: "Ruins2_03",
           wiki: "Hallownest_Seal"
         },
+        hallownestSeal15: {
+          name: "Hallownest Seal #15",
+          spoiler: "Deepnest: Room Above Lower Cornifer",
+          id: "Shiny Item",
+          sceneName: "Deepnest_16",
+          wiki: "Hallownest_Seal"
+        },
       },
     },
 
@@ -3432,6 +3439,13 @@ const HK = {
           spoiler: "Kingdom's Edge: Great Hopper Below Colosseum Entrance",
           id: "Shiny Item",
           sceneName: "Deepnest_East_08",
+          wiki: "King%27s_Idol"
+        },
+        kingsIdol6: {
+          name: "King's Idol #6",
+          spoiler: "Deepnest: Zote Arena Left Side",
+          id: "Shiny Item",
+          sceneName: "Deepnest_33",
           wiki: "King%27s_Idol"
         },
       },

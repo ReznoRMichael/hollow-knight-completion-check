@@ -308,7 +308,7 @@ const MAP = {
   "Deepnest_09": "Deepnest: Distant Village Stag Station",
   "Deepnest_10": "Deepnest: Distant Village",
   "Deepnest_14": "Deepnest: Failed Tramway Bench",
-  "Deepnest_16": "Deepnest: Top of Lower Cornifer",
+  "Deepnest_16": "Deepnest: Room Above Lower Cornifer",
   "Deepnest_17": "Deepnest: Garpede Corridor Below Cornifer",
   "Deepnest_26": "Deepnest: Failed Tramway Lifeblood",
   "Deepnest_26b": "Deepnest: Tram Pass Room",
