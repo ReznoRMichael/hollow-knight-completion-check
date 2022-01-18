@@ -3267,6 +3267,20 @@ const HK = {
           sceneName: "Deepnest_East_07",
           wiki: "Wanderer%27s_Journal"
         },
+        wanderersJournal13: {
+          name: "Wanderer's Journal #13",
+          spoiler: "Kingdom's Edge: Camp Bench",
+          id: "Shiny Item",
+          sceneName: "Deepnest_East_13",
+          wiki: "Wanderer%27s_Journal"
+        },
+        wanderersJournal14: {
+          name: "Wanderer's Journal #14",
+          spoiler: "Kingdom's Edge: Left of Markoth",
+          id: "Shiny Item",
+          sceneName: "Deepnest_East_18",
+          wiki: "Wanderer%27s_Journal"
+        },
       },
     },
 
