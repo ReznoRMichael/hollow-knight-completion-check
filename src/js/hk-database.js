@@ -3433,6 +3433,20 @@ const HK = {
           sceneName: "Waterways_04b",
           wiki: "Rancid_Egg"
         },
+        rancidEgg7: {
+          name: "Rancid Egg #7",
+          spoiler: "Royal Waterways: Hidden Grub Room",
+          id: "Shiny Item(Clone)",
+          sceneName: "Waterways_04",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg8: {
+          name: "Rancid Egg #8",
+          spoiler: "Royal Waterways: Left of Isma's Grove",
+          id: "Shiny Item(Clone)",
+          sceneName: "Waterways_07",
+          wiki: "Rancid_Egg"
+        },
         rancidEgg21: {
           name: "Rancid Egg #21",
           spoiler: "Royal Waterways: Tuk's free Egg",
