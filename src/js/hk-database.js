@@ -3587,6 +3587,20 @@ const HK = {
           sceneName: "Deepnest_East_07",
           wiki: "Rancid_Egg"
         },
+        rancidEgg14: {
+          name: "Rancid Egg #14",
+          spoiler: "Deepnest: Weaver's Den",
+          id: "Shiny Item",
+          sceneName: "Deepnest_45_v02",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg15: {
+          name: "Rancid Egg #15",
+          spoiler: "Deepnest: Whispering Root Big Area Left Side",
+          id: "Shiny Item(Clone)",
+          sceneName: "Deepnest_39",
+          wiki: "Rancid_Egg"
+        },
         rancidEgg21: {
           name: "Rancid Egg #21",
           spoiler: "Royal Waterways: Tuk's free Egg",
