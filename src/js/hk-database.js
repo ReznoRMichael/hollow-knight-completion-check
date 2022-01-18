@@ -3218,6 +3218,13 @@ const HK = {
           sceneName: "Ruins1_28",
           wiki: "Wanderer%27s_Journal"
         },
+        wanderersJournal6: {
+          name: "Wanderer's Journal #6",
+          spoiler: "Howling Cliffs: Main Open Air Area",
+          id: "Shiny Item (1)",
+          sceneName: "Cliffs_01",
+          wiki: "Wanderer%27s_Journal"
+        },
       },
     },
 
@@ -3340,6 +3347,13 @@ const HK = {
           spoiler: "City of Tears: Room Above Lemm",
           id: "Shiny Item",
           sceneName: "Ruins1_05",
+          wiki: "Rancid_Egg"
+        },
+        rancidEgg3: {
+          name: "Rancid Egg #3",
+          spoiler: "Crystal Peak: Dark Bench Room",
+          id: "Shiny Item",
+          sceneName: "Mines_29",
           wiki: "Rancid_Egg"
         },
         rancidEgg21: {
