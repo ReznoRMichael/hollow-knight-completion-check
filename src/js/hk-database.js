@@ -3197,6 +3197,13 @@ const HK = {
           sceneName: "Fungus1_22",
           wiki: "Wanderer%27s_Journal"
         },
+        wanderersJournal3: {
+          name: "Wanderer's Journal #3",
+          spoiler: "Fungal Wastes: Below Shrumal Ogres",
+          id: "Shiny Item",
+          sceneName: "Fungus2_04",
+          wiki: "Wanderer%27s_Journal"
+        },
       },
     },
 
@@ -3226,6 +3233,13 @@ const HK = {
           spoiler: "Greenpath: Acid Bridge",
           id: "Shiny Item",
           sceneName: "Fungus1_10",
+          wiki: "Hallownest_Seal"
+        },
+        hallownestSeal4: {
+          name: "Hallownest Seal #4",
+          spoiler: "Fungal Wastes: Right of Queen's Station",
+          id: "Shiny Item",
+          sceneName: "Fungus2_03",
           wiki: "Hallownest_Seal"
         },
       },
