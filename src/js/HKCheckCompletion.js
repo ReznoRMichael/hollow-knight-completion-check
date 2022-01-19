@@ -232,6 +232,10 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   saveDataChecker.checkItems(HK.sections.whisperingRoots);
 
+  // ------------------------- Collectibles -> Relics - Wanderer's Journal ----------------------------------------------------------- //
+
+  saveDataChecker.checkItems(HK.sections.relicsWanderersJournal);
+
   // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.items, HK.sections.items.entries, HKPlayerData, HKWorldItems);

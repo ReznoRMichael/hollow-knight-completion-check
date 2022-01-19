@@ -170,7 +170,9 @@ function HKCheckCompletion(jsonObject) {
 
   saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.grubs); // ------------------------- Collectibles -> Whispering Roots ---------------------------------------------------------------------- //
 
-  saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.whisperingRoots); // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
+  saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.whisperingRoots); // ------------------------- Collectibles -> Relics - Wanderer's Journal ----------------------------------------------------------- //
+
+  saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.relicsWanderersJournal); // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items.entries, HKPlayerData, HKWorldItems); // ------------------------- Secrets -> World Interactions ---------------------------------------------------------------------- //
 
