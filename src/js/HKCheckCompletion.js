@@ -248,6 +248,10 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   saveDataChecker.checkItems(HK.sections.relicsArcaneEgg);
 
+  // ------------------------- Collectibles -> Rancid Eggs ----------------------------------------------------------- //
+
+  saveDataChecker.checkItems(HK.sections.rancidEggs);
+
   // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.items, HK.sections.items.entries, HKPlayerData, HKWorldItems);
