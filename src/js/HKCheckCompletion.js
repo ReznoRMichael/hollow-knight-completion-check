@@ -240,6 +240,10 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   saveDataChecker.checkItems(HK.sections.relicsHallownestSeal);
 
+  // ------------------------- Collectibles -> Relics - King's Idol ----------------------------------------------------------- //
+
+  saveDataChecker.checkItems(HK.sections.relicsKingsIdol);
+
   // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.items, HK.sections.items.entries, HKPlayerData, HKWorldItems);
