@@ -2400,9 +2400,33 @@ class DataChecker {
     this.geoRocksData = saveFile.sceneData.geoRocks;
   }
 
+  _FindItem(id = "", sceneName = "") {
+
+    for (let i = 0, length = this.boolData.length; i < length; i++) {
+      if (this.boolData[i].id === id && this.boolData[i].sceneName === sceneName && this.boolData[i].activated === true) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
   checkItems(section) {
     this.section = section;
     this.entries = section.entries;
+
+    for (let i of this.entries) {
+      
+      switch(i) {
+
+        default:
+          if (this._FindItem(this.entries[i].id, this.entries[i].sceneName)) {
+            SetIconGreen(this.section, i);
+          } else {
+            SetIconRed(this.section, i);
+          }
+      }
+    }
   }
 
 }
