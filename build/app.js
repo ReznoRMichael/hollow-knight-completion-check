@@ -102,10 +102,13 @@ function HKCheckCompletion(jsonObject) {
   } else {
     _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].saveAnalyzed = false;
     return false;
-  } // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
+  }
+  /* Initialize DataChecker object for checking status of items in save file */
+
+
+  var saveDataChecker = new DataChecker(jsonObject); // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
   // PrefillHTML(HK.sections);
   // Prevents adding current percent data after each function call and resets what the analyzing has done to the original object. Prevents wrong data display after subsequent save analyzing.
-
 
   ResetCompletion(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"]); // ============================================================================================================================= //
   // ---------------- Time Played ----------------------------------------------------------------------------------------------- //
@@ -163,10 +166,11 @@ function HKCheckCompletion(jsonObject) {
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievements.entries, HKPlayerData, HKWorldItems); // ------------------------- Collectibles -> Charm Notches ---------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches.entries, HKPlayerData, HKWorldItems); // ------------------------- Collectibles ---------------------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches.entries, HKPlayerData, HKWorldItems); // ------------------------- Collectibles -> Grubs ---------------------------------------------------------------------- //
 
-  var saveData = new DataChecker(jsonObject);
-  saveData.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.grubs); // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
+  saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.grubs); // ------------------------- Collectibles -> Whispering Roots ---------------------------------------------------------------------- //
+
+  saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.whisperingRoots); // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items.entries, HKPlayerData, HKWorldItems); // ------------------------- Secrets -> World Interactions ---------------------------------------------------------------------- //
 

@@ -228,6 +228,10 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   saveDataChecker.checkItems(HK.sections.grubs);
 
+  // ------------------------- Collectibles -> Whispering Roots ---------------------------------------------------------------------- //
+
+  saveDataChecker.checkItems(HK.sections.whisperingRoots);
+
   // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.items, HK.sections.items.entries, HKPlayerData, HKWorldItems);
