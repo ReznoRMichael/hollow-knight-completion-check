@@ -10,17 +10,3 @@ export class ItemListBox {
   }
 
 }
-
-
-export class DataChecker {
-
-  constructor(saveFile, section) {
-    this.saveFile = saveFile;
-    this.section = section;
-    this.entries = section.entries;
-    this.playerData = saveFile.playerData;
-    this.boolData = saveFile.sceneData.persistentBoolItems;
-    this.geoRocksData = saveFile.sceneData.geoRocks;
-  }
-
-}

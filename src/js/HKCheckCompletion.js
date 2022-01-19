@@ -2389,6 +2389,24 @@ function ResetCompletion(db) {
   }
 }
 
+/* -------------------------- Classes ---------------------------- */
+
+class DataChecker {
+
+  constructor(saveFile) {
+    this.saveFile = saveFile;
+    this.playerData = saveFile.playerData;
+    this.boolData = saveFile.sceneData.persistentBoolItems;
+    this.geoRocksData = saveFile.sceneData.geoRocks;
+  }
+
+  checkItems(section) {
+    this.section = section;
+    this.entries = section.entries;
+  }
+
+}
+
 /* ----------------------- Event Listeners -------------------------- */
 
 // Populate HTML at load (before img and css)
