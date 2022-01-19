@@ -236,6 +236,10 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   saveDataChecker.checkItems(HK.sections.relicsWanderersJournal);
 
+  // ------------------------- Collectibles -> Relics - Hallownest Seal ----------------------------------------------------------- //
+
+  saveDataChecker.checkItems(HK.sections.relicsHallownestSeal);
+
   // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.items, HK.sections.items.entries, HKPlayerData, HKWorldItems);
