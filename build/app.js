@@ -23,6 +23,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _img_notch_overcharmed_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/notch-overcharmed.png */ "./src/img/notch-overcharmed.png");
 /* harmony import */ var _img_geo_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/geo.png */ "./src/img/geo.png");
 /* harmony import */ var _img_geo_shade_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/geo-shade.png */ "./src/img/geo-shade.png");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 /* eslint-disable no-prototype-builtins */
 
 /* ---------------- Load main Hollow Knight database files ------------------------------------------------------------------------ */
@@ -157,7 +163,10 @@ function HKCheckCompletion(jsonObject) {
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievements.entries, HKPlayerData, HKWorldItems); // ------------------------- Collectibles -> Charm Notches ---------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches.entries, HKPlayerData, HKWorldItems); // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches.entries, HKPlayerData, HKWorldItems); // ------------------------- Collectibles ---------------------------------------------------------------------- //
+
+  var saveData = new DataChecker(jsonObject);
+  saveData.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.grubs); // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items.entries, HKPlayerData, HKWorldItems); // ------------------------- Secrets -> World Interactions ---------------------------------------------------------------------- //
 
@@ -2172,6 +2181,55 @@ function ResetCompletion(db) {
     }
   }
 }
+/* -------------------------- Classes ---------------------------- */
+
+
+var DataChecker = /*#__PURE__*/function () {
+  function DataChecker(saveFile) {
+    _classCallCheck(this, DataChecker);
+
+    this.saveFile = saveFile;
+    this.playerData = saveFile.playerData;
+    this.boolData = saveFile.sceneData.persistentBoolItems;
+    this.geoRocksData = saveFile.sceneData.geoRocks;
+  }
+
+  _createClass(DataChecker, [{
+    key: "_FindItem",
+    value: function _FindItem() {
+      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+      var sceneName = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+
+      for (var i = 0, length = this.boolData.length; i < length; i++) {
+        if (this.boolData[i].id === id && this.boolData[i].sceneName === sceneName && this.boolData[i].activated === true) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+  }, {
+    key: "checkItems",
+    value: function checkItems(section) {
+      this.section = section;
+      this.entries = section.entries;
+
+      for (var i in this.entries) {
+        switch (i) {
+          default:
+            if (this._FindItem(this.entries[i].id, this.entries[i].sceneName)) {
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, i);
+            } else {
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(this.section, i);
+            }
+
+        }
+      }
+    }
+  }]);
+
+  return DataChecker;
+}();
 /* ----------------------- Event Listeners -------------------------- */
 // Populate HTML at load (before img and css)
 

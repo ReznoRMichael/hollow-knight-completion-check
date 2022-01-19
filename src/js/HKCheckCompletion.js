@@ -107,6 +107,9 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
     return false;
   }
 
+  /* Initialize DataChecker object for checking status of items in save file */
+  let saveDataChecker = new DataChecker(jsonObject);
+
   // Pre-Cleaning and filling initial data (h2, id) needed for PrepareHTMLString()
   // PrefillHTML(HK.sections);
 
@@ -220,6 +223,10 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
   // ------------------------- Collectibles -> Charm Notches ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.charmNotches, HK.sections.charmNotches.entries, HKPlayerData, HKWorldItems);
+
+  // ------------------------- Collectibles -> Grubs ---------------------------------------------------------------------- //
+
+  saveDataChecker.checkItems(HK.sections.grubs);
 
   // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
 
@@ -2415,7 +2422,7 @@ class DataChecker {
     this.section = section;
     this.entries = section.entries;
 
-    for (let i of this.entries) {
+    for (let i in this.entries) {
       
       switch(i) {
 
