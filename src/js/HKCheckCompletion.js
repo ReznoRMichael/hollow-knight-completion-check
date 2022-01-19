@@ -244,6 +244,10 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   saveDataChecker.checkItems(HK.sections.relicsKingsIdol);
 
+  // ------------------------- Collectibles -> Relics - Arcane Egg ----------------------------------------------------------- //
+
+  saveDataChecker.checkItems(HK.sections.relicsArcaneEgg);
+
   // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.items, HK.sections.items.entries, HKPlayerData, HKWorldItems);

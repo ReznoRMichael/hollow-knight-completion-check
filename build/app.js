@@ -176,7 +176,9 @@ function HKCheckCompletion(jsonObject) {
 
   saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.relicsHallownestSeal); // ------------------------- Collectibles -> Relics - King's Idol ----------------------------------------------------------- //
 
-  saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.relicsKingsIdol); // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
+  saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.relicsKingsIdol); // ------------------------- Collectibles -> Relics - Arcane Egg ----------------------------------------------------------- //
+
+  saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.relicsArcaneEgg); // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items.entries, HKPlayerData, HKWorldItems); // ------------------------- Secrets -> World Interactions ---------------------------------------------------------------------- //
 
