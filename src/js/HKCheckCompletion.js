@@ -255,6 +255,10 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
   // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.items, HK.sections.items.entries, HKPlayerData, HKWorldItems);
+  
+  // ------------------------- Geo Caches -> Geo Chests ----------------------------------------------------------- //
+
+  saveDataChecker.checkItems(HK.sections.geoChests);
 
   // ------------------------- Secrets -> World Interactions ---------------------------------------------------------------------- //
 

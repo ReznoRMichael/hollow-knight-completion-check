@@ -182,7 +182,9 @@ function HKCheckCompletion(jsonObject) {
 
   saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.rancidEggs); // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items.entries, HKPlayerData, HKWorldItems); // ------------------------- Secrets -> World Interactions ---------------------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items.entries, HKPlayerData, HKWorldItems); // ------------------------- Geo Caches -> Geo Chests ----------------------------------------------------------- //
+
+  saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.geoChests); // ------------------------- Secrets -> World Interactions ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.worldInteractions, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.worldInteractions.entries, HKPlayerData, HKWorldItems); // ------------------------- Secrets -> Secret Rooms ---------------------------------------------------------------------- //
 
