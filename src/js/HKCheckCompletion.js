@@ -2226,7 +2226,7 @@ function CheckHallOfGods(db, playerData) {
  * @param {object} dataObject object containing all hints data
  * @param {object} playerData object containing HK Player Data to look in
  * @param {object} worldData object containing HK World Data to look in
- * @returns {bool} true when defeated Hollow Knight, false if not
+ * @returns {boolean} true when defeated Hollow Knight, false if not
  */
 function CheckHintsTrue(section, dataObject, playerData, worldData) {
 
@@ -2440,6 +2440,12 @@ class DataChecker {
     this.geoRocksData = saveFile.sceneData.geoRocks;
   }
 
+  /**
+   * Verifies if a specific Collectible is found in boolData and returns true/false.
+   * @param {string} id the Collectible's id in the database.
+   * @param {string} sceneName the Collectible's sceneName in the database.
+   * @returns {boolean}
+   */
   _FindItem(id = "", sceneName = "") {
 
     for (let i = 0, length = this.boolData.length; i < length; i++) {
@@ -2451,6 +2457,12 @@ class DataChecker {
     return false;
   }
 
+  /**
+   * Verifies if a specific Geo Rock is destroyed and returns true/false.
+   * @param {string} id the Geo Rock's id in the database.
+   * @param {string} sceneName the Geo Rock's sceneName in the database.
+   * @returns {boolean}
+   */
   _FindGeoRock(id = "", sceneName = "") {
 
     for (let i = 0, length = this.geoRocksData.length; i < length; i++) {
