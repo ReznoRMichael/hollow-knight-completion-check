@@ -4801,7 +4801,7 @@ var HK = {
     achievements: {
       h2: "Achievements Essentials",
       id: "hk-achievements",
-      description: "All the completely optional things that matter for achievements. This includes Zote/Nailsmith choices that you've made on your save file.",
+      description: "All the completely optional things that matter for achievements. Things here don't count or matter towards 112% Game Completion. This section includes Zote and Nailsmith choices that you've made on your save file.",
       entries: {
         hasMap: {
           name: "Inventory Map",
@@ -6151,7 +6151,7 @@ var HK = {
     grubs: {
       h2: "Grubs",
       id: "hk-grubs",
-      description: "Grubs Description.",
+      description: "Creatures found trapped in glass jars throughout Hallownest. They can be freed from their jar after which the Grubfather grants a reward for each Grub that is saved.<br>\n      <b>Note:</b> Due to a bug in recent versions of Hollow Knight, Grubs #33 and #34 (The Collector/Tower of Love) are not marked as released correctly in the save file. As a workaround for this bug, when Grub #32 is detected as released, #33 and #34 are automatically marked as released too in this app.",
       percent: 0,
       maxPercent: 46,
       entries: {
@@ -9127,7 +9127,7 @@ var HK = {
     statistics: {
       h2: "Game Statistics",
       id: "hk-statistics",
-      description: "This section is dedicated to all secrets, numbers and stats fans. Everything else you wish to know or the game doesn't tell you: Secrets, Whispering Roots, Geo deposits, Nail damage, Notches, total Relics found and many others.",
+      description: "Dedicated to numbers and stats fans. Everything what the game may not always tell you directly, but what can be read from a save file.",
       entries: {
         journalEntriesCompleted: {
           name: "Creatures Encountered",
