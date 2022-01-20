@@ -2519,6 +2519,33 @@ class DataChecker {
 
           break;
 
+        // Tuk's Rancid Egg - Normal or Steel Soul mode behaviour
+        case "rancidEgg21":
+
+          // Steel Soul
+          if (this.playerData.permadeathMode > 0) {
+
+            // id: "Shiny Item", sceneName: "Waterways_03"
+            if (this._FindItem(this.entries[entry])) {
+              SetIconGreen(this.section, entry);
+            } else {
+              SetIconRed(this.section, entry);
+            }
+
+          }
+          // Normal Mode
+          else {
+            
+            // playerData.tukDungEgg
+            if (this.playerData[this.entries[entry].idPlayerData] === true) {
+              SetIconGreen(this.section, entry);
+            } else {
+              SetIconRed(this.section, entry);
+            }
+          }
+
+          break;
+
         // boolData activation checks
         default:
 

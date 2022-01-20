@@ -3669,8 +3669,8 @@ const HK = {
           spoiler: "Royal Waterways: Tuk's free Egg",
           spoilerNormal: "Royal Waterways: Tuk, with Defender's Crest",
           spoilerSteelSoul: "Royal Waterways: Inspect Tuk",
-          id: "tukDungEgg",
-          idSteelSoul: "Shiny Item",
+          idPlayerData: "tukDungEgg",
+          id: "Shiny Item",
           sceneName: "Waterways_03",
           wiki: "Tuk"
         },

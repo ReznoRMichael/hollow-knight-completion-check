@@ -2283,6 +2283,28 @@ var DataChecker = /*#__PURE__*/function () {
             }
 
             break;
+          // Tuk's Rancid Egg - Normal or Steel Soul mode behaviour
+
+          case "rancidEgg21":
+            // Steel Soul
+            if (this.playerData.permadeathMode > 0) {
+              // id: "Shiny Item", sceneName: "Waterways_03"
+              if (this._FindItem(this.entries[entry])) {
+                (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, entry);
+              } else {
+                (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(this.section, entry);
+              }
+            } // Normal Mode
+            else {
+              // playerData.tukDungEgg
+              if (this.playerData[this.entries[entry].idPlayerData] === true) {
+                (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, entry);
+              } else {
+                (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(this.section, entry);
+              }
+            }
+
+            break;
           // boolData activation checks
 
           default:
@@ -7036,8 +7058,8 @@ var HK = {
           spoiler: "Royal Waterways: Tuk's free Egg",
           spoilerNormal: "Royal Waterways: Tuk, with Defender's Crest",
           spoilerSteelSoul: "Royal Waterways: Inspect Tuk",
-          id: "tukDungEgg",
-          idSteelSoul: "Shiny Item",
+          idPlayerData: "tukDungEgg",
+          id: "Shiny Item",
           sceneName: "Waterways_03",
           wiki: "Tuk"
         }
