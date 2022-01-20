@@ -6709,7 +6709,7 @@ var HK = {
     relicsHallownestSeal: {
       h2: "Relics - Hallownest Seal",
       id: "hk-relics-seal",
-      description: "Official symbols of the Pale King and the Five Great Knights. The seals can be found in various locations throughout the world. Can be sold to Relic Seeker Lemm for 450 Geo.<br>\n      17 x 450 = 7650 Geo Total.",
+      description: "Official symbols of the Pale King and the Five Great Knights. The seals can be found in various locations throughout the world. Can be sold to Relic Seeker Lemm for 450 Geo. Seal #16 is missable when a player enters the <span class=\"spoiler-span blurred\">Beast's Den</span> through the secret path without <span class=\"spoiler-span blurred\">being trapped by using the bench</span>.<br>\n      17 x 450 = 7650 Geo Total.",
       percent: 0,
       maxPercent: 17,
       entries: {
@@ -6839,7 +6839,7 @@ var HK = {
     relicsKingsIdol: {
       h2: "Relics - King's Idol",
       id: "hk-relics-idol",
-      description: "Relics - King's Idol Description.",
+      description: "Idols made of a mysterious white metal that depict the Pale King. They are found in various locations throughout Hallownest. Can be sold to Relic Seeker Lemm for 800 Geo.<br>\n      8 x 800 = 6400 Geo Total.",
       percent: 0,
       maxPercent: 8,
       entries: {
