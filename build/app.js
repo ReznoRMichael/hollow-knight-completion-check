@@ -7224,7 +7224,7 @@ var HK = {
     geoChests: {
       h2: "Geo Chests",
       id: "hk-geo-chests",
-      description: "All Geo Chests in the game, including one empty one and one with 1 Geo. A total of 2380 Geo can be collected from Geo Chests. Equipping Fragile Greed Charm won't increase the amount of Geo found inside Geo Chests.",
+      description: "All Geo Chests in the game, including one empty one and one with 1 Geo. A total of 2380 Geo can be collected from Geo Chests. Equipping the Fragile Greed Charm won't increase the amount of Geo found inside Geo Chests.",
       percent: 0,
       maxPercent: 14,
       entries: {
@@ -7333,7 +7333,7 @@ var HK = {
     geoRocks: {
       h2: "Geo Rocks",
       id: "hk-geo-rocks",
-      description: "Geo Rocks Description.",
+      description: "All Geo Rocks that can be found in the game. Only fully destroyed Geo Rocks are counted. Partially hit Geo Rocks won't be counted. Equipping the Fragile Greed Charm won't increase the amount of Geo found inside Geo Rocks. I have no idea how much Geo can be collected from all Geo Rocks. If you know, let me know, and you will be featured here.",
       percent: 0,
       maxPercent: 205,
       entries: {
