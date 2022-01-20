@@ -7106,7 +7106,7 @@ var HK = {
     items: {
       h2: "Items",
       id: "hk-items",
-      description: "Items Description.",
+      description: "Certain acquirable items, map markers or collectibles in the game that won't fit any specific category. Using custom map pins to mark interesting locations on the map is very useful while playing Hollow Knight. 1440 Geo is needed to buy all map pins from Iselda.",
       percent: 0,
       maxPercent: 21,
       entries: {
