@@ -2496,6 +2496,28 @@ class DataChecker {
     }
   }
 
+  /**
+   * Verifies the status of all Geo Rocks from the database.
+   * @param {object} section Provide a Geo Rocks section object to check.
+   */
+   checkGeoRocks(section) {
+    this.section = section;
+    this.entries = section.entries;
+
+    for (let i in this.entries) {
+      
+      switch(i) {
+
+        default:
+          if (this._FindGeoRock(this.entries[i].id, this.entries[i].sceneName)) {
+            SetIconGreen(this.section, i);
+          } else {
+            SetIconRed(this.section, i);
+          }
+      }
+    }
+  }
+
 }
 
 /* ----------------------- Event Listeners -------------------------- */
