@@ -5723,7 +5723,7 @@ const HK = {
     statistics: {
       h2: "Game Statistics",
       id: "hk-statistics",
-      description: "This section is dedicated to all secrets, numbers and stats fans. Everything else you wish to know or the game doesn't tell you: Secrets, Whispering Roots, Geo deposits, Nail damage, Notches, total Relics found and many others.",
+      description: "Dedicated to numbers and stats fans. Everything what the game may not always tell you directly, but what can be read from a save file.",
       entries: {
         journalEntriesCompleted: {
           name: "Creatures Encountered",
