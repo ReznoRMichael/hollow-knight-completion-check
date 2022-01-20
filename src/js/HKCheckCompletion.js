@@ -1362,7 +1362,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         break;
 
-      case "geoRocks":
+      /* case "geoRocks":
         discoveredTotal = sceneData.geoRocks.length;
 
         notActivated = CountGeoRocks(discoveredTotal, "unbroken");
@@ -1378,7 +1378,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           SetIconNone(section, i);
         }
         break;
-
+      */
       case "itemsDiscovered":
         discoveredTotal = sceneData.persistentBoolItems.length;
 
@@ -1821,7 +1821,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
    * @param {number} arrayLength How many items the Geo Rocks array is currently storing (for iteration)
    * @param {string} mode Choose which Geo Rocks to count (broken or unbroken)
    */
-  function CountGeoRocks(arrayLength, mode = "unbroken") {
+  /* function CountGeoRocks(arrayLength, mode = "unbroken") {
 
     let countTotal = 0;
     let geoRocksLog = [];
@@ -1852,7 +1852,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     }
 
     return countTotal;
-  }
+  } */
 
   /**
    * Counts the amount of in-game Interactables Activated or Not Activated. Logs to console all the Not Activated IDs and Map locations.

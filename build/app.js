@@ -1185,21 +1185,20 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         break;
 
-      case "geoRocks":
+      /* case "geoRocks":
         discoveredTotal = sceneData.geoRocks.length;
-        notActivated = CountGeoRocks(discoveredTotal, "unbroken");
+          notActivated = CountGeoRocks(discoveredTotal, "unbroken");
         activated = CountGeoRocks(discoveredTotal, "broken");
-        dataObject[i].discoveredTotal = discoveredTotal;
+          dataObject[i].discoveredTotal = discoveredTotal;
         dataObject[i].notActivated = notActivated;
         dataObject[i].activated = activated;
-
-        if (activated >= dataObject[i].max) {
-          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
+          if (activated >= dataObject[i].max) {
+          SetIconGreen(section, i);
         } else {
-          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
+          SetIconNone(section, i);
         }
-
         break;
+      */
 
       case "itemsDiscovered":
         discoveredTotal = sceneData.persistentBoolItems.length;
@@ -1636,39 +1635,33 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
    * @param {string} mode Choose which Geo Rocks to count (broken or unbroken)
    */
 
-
-  function CountGeoRocks(arrayLength) {
-    var mode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "unbroken";
-    var countTotal = 0;
-    var geoRocksLog = [];
-
-    if (mode === "unbroken") {
-      for (var _i3 = 0; _i3 < arrayLength; _i3++) {
-        if (sceneData.geoRocks[_i3].hitsLeft > 0) {
+  /* function CountGeoRocks(arrayLength, mode = "unbroken") {
+      let countTotal = 0;
+    let geoRocksLog = [];
+      if (mode === "unbroken") {
+      for (let i = 0; i < arrayLength; i++) {
+        if (sceneData.geoRocks[i].hitsLeft > 0) {
           countTotal++;
-          geoRocksLog.push("#".concat(countTotal, " \uD83C\uDFD4\uFE0F ").concat(sceneData.geoRocks[_i3].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(sceneData.geoRocks[_i3].sceneName), " \u2328\uFE0F ").concat(sceneData.geoRocks[_i3].sceneName));
+          geoRocksLog.push(`#${countTotal} 🏔️ ${sceneData.geoRocks[i].id} 🗺️ ${TranslateMapName(sceneData.geoRocks[i].sceneName)} ⌨️ ${sceneData.geoRocks[i].sceneName}`);
         }
       }
-
-      if (!countTotal) {
+        if (!countTotal) {
         console.log("%cAll Geo Rocks Broken!", "color: #16c60c; font-weight: 700;");
       } else {
-        console.groupCollapsed("%cUnbroken Geo Rocks (".concat(countTotal, "):"), "color: #16c60c; font-weight: 700;");
-
-        for (var _i4 = 0, length = geoRocksLog.length; _i4 < length; _i4++) {
-          console.log(geoRocksLog[_i4]);
+        console.groupCollapsed(`%cUnbroken Geo Rocks (${countTotal}):`, "color: #16c60c; font-weight: 700;");
+          for (let i = 0, length = geoRocksLog.length; i < length; i++) {
+          console.log(geoRocksLog[i]);
         }
-
-        console.groupEnd();
+          console.groupEnd();
       }
     } else {
-      for (var _i5 = 0; _i5 < arrayLength; _i5++) {
-        if (sceneData.geoRocks[_i5].hitsLeft === 0) countTotal++;
+      for (let i = 0; i < arrayLength; i++) {
+        if (sceneData.geoRocks[i].hitsLeft === 0) countTotal++;
       }
     }
+      return countTotal;
+  } */
 
-    return countTotal;
-  }
   /**
    * Counts the amount of in-game Interactables Activated or Not Activated. Logs to console all the Not Activated IDs and Map locations.
    * @param {number} arrayLength How many items the Interactables array is currently storing (for iteration)
@@ -1686,10 +1679,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       let list = new ItemListBox(worldData);
       
       */
-      for (var _i6 = 0; _i6 < arrayLength; _i6++) {
-        if (worldData[_i6].activated === false && worldData[_i6].semiPersistent === false) {
+      for (var _i3 = 0; _i3 < arrayLength; _i3++) {
+        if (worldData[_i3].activated === false && worldData[_i3].semiPersistent === false) {
           countTotal++;
-          itemsLog.push("#".concat(countTotal, " ").concat(worldData[_i6].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(worldData[_i6].sceneName), " \u2328\uFE0F ").concat(worldData[_i6].sceneName));
+          itemsLog.push("#".concat(countTotal, " ").concat(worldData[_i3].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(worldData[_i3].sceneName), " \u2328\uFE0F ").concat(worldData[_i3].sceneName));
         }
       }
 
@@ -1698,15 +1691,15 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       } else {
         console.groupCollapsed("%cNot Activated Interactables (".concat(countTotal, "):"), "color: #16c60c; font-weight: 700;");
 
-        for (var _i7 = 0, length = itemsLog.length; _i7 < length; _i7++) {
-          console.log(itemsLog[_i7]);
+        for (var _i4 = 0, length = itemsLog.length; _i4 < length; _i4++) {
+          console.log(itemsLog[_i4]);
         }
 
         console.groupEnd();
       }
     } else {
-      for (var _i8 = 0; _i8 < arrayLength; _i8++) {
-        if (worldData[_i8].activated === true) countTotal++;
+      for (var _i5 = 0; _i5 < arrayLength; _i5++) {
+        if (worldData[_i5].activated === true) countTotal++;
       }
     }
 
@@ -1720,9 +1713,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
   function LogMissingGrubs() {
     var rescuedGrubsSceneList = [];
 
-    for (var _i9 = 0, _length = worldData.length; _i9 < _length; _i9++) {
-      if (worldData[_i9].id.includes("Grub Bottle")) {
-        if (worldData[_i9].activated === true) {
+    for (var _i6 = 0, _length = worldData.length; _i6 < _length; _i6++) {
+      if (worldData[_i6].id.includes("Grub Bottle")) {
+        if (worldData[_i6].activated === true) {
           // There are 3 duplicates of the same map scene name from older game save files. Prevents adding duplicates
 
           /* if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (1)") {
@@ -1730,7 +1723,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           } else if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (2)") {
               continue;
           } else { */
-          rescuedGrubsSceneList.push(worldData[_i9].sceneName); // }
+          rescuedGrubsSceneList.push(worldData[_i6].sceneName); // }
         }
       }
     } // Filtering the reference database Grub list to include only the missing values
@@ -1746,8 +1739,8 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     } else {
       console.groupCollapsed("%cUnrescued Grubs (".concat(length, "):"), "color: #16c60c; font-weight: 700;");
 
-      for (var _i10 = 0; _i10 < length; _i10++) {
-        console.log("#".concat(section.grubsList.indexOf(missingGrubsList[_i10]) + 1, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(missingGrubsList[_i10]), " \u2328\uFE0F ").concat(missingGrubsList[_i10]));
+      for (var _i7 = 0; _i7 < length; _i7++) {
+        console.log("#".concat(section.grubsList.indexOf(missingGrubsList[_i7]) + 1, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(missingGrubsList[_i7]), " \u2328\uFE0F ").concat(missingGrubsList[_i7]));
       }
 
       console.groupEnd();
