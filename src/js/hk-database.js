@@ -2685,6 +2685,8 @@ const HK = {
       h2: "Charm Notches",
       id: "hk-charm-notches",
       description: `Charm Notches are required to equip Charms. They can be found in the game world, bought from Salubra or won from certain challenges.`,
+      percent: 0,
+      maxPercent: 8,
       entries: {
         notchShroomOgres: {
           name: "Charm Notch #1",
@@ -2735,6 +2737,8 @@ const HK = {
       h2: "Grubs",
       id: "hk-grubs",
       description: `Grubs Description.`,
+      percent: 0,
+      maxPercent: 46,
       entries: {
         grub1: {
           name: "Grub #1",
@@ -3067,6 +3071,8 @@ const HK = {
       h2: "Whispering Roots",
       id: "hk-whispering-roots",
       description: `There are 15 Whispering Roots in the game, containing a total of 482 Essence. Whispering Root Pin from Iselda reveals the locations of every Whispering Root in an area after that area's Map has been purchased.`,
+      percent: 0,
+      maxPercent: 15,
       entries: {
         whisperingRoot1: {
           name: "Whispering Root #1: 29 Orbs",
@@ -3182,6 +3188,8 @@ const HK = {
       h2: "Relics - Wanderer's Journal",
       id: "hk-relics-journal",
       description: `Relics - Wanderer's Journal Description.`,
+      percent: 0,
+      maxPercent: 14,
       entries: {
         wanderersJournal1: {
           name: "Wanderer's Journal #1",
@@ -3290,6 +3298,8 @@ const HK = {
       h2: "Relics - Hallownest Seal",
       id: "hk-relics-seal",
       description: `Relics - Hallownest Seal Description.`,
+      percent: 0,
+      maxPercent: 17,
       entries: {
         hallownestSeal1: {
           name: "Hallownest Seal #1",
@@ -3419,6 +3429,8 @@ const HK = {
       h2: "Relics - King's Idol",
       id: "hk-relics-idol",
       description: `Relics - King's Idol Description.`,
+      percent: 0,
+      maxPercent: 8,
       entries: {
         kingsIdol1: {
           name: "King's Idol #1",
@@ -3485,6 +3497,8 @@ const HK = {
       h2: "Relics - Arcane Egg",
       id: "hk-relics-egg",
       description: `Relics - Arcane Egg Description.`,
+      percent: 0,
+      maxPercent: 4,
       entries: {
         arcaneEgg1: {
           name: "Arcane Egg #1",
@@ -3523,6 +3537,8 @@ const HK = {
       h2: "Rancid Eggs",
       id: "hk-rancid-eggs",
       description: `Rancid Eggs Description.`,
+      percent: 0,
+      maxPercent: 21,
       entries: {
         rancidEgg1: {
           name: "Rancid Egg #1",
@@ -3683,6 +3699,8 @@ const HK = {
       h2: "Items",
       id: "hk-items",
       description: `Items Description.`,
+      percent: 0,
+      maxPercent: 21,
       entries: {
         hasQuill: {
           name: "Quill",
@@ -3800,6 +3818,8 @@ const HK = {
       h2: "Geo Chests",
       id: "hk-geo-chests",
       description: `Geo Chests Description.`,
+      percent: 0,
+      maxPercent: 14,
       entries: {
         chest1: {
           name: "Chest #1: 200 Geo",
@@ -3908,6 +3928,8 @@ const HK = {
       h2: "Geo Rocks",
       id: "hk-geo-rocks",
       description: `Geo Rocks Description.`,
+      percent: 0,
+      maxPercent: 205,
       entries: {
         geoRock1: {
           name: "Geo Rock #1",
