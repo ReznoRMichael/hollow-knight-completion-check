@@ -127,7 +127,7 @@ function TogglePageScrollElement(root, element, ratio) {
  * @param {object} jsObj Object with HTML data to fill
  * @param {number} hkGameCompletion Total completion percentage in a save file
  */
-function CompletionHTML(jsObj, hkGameCompletion) {
+/* function CompletionHTML(jsObj, hkGameCompletion) {
 
   let h2 = "";
   let h2id = "";
@@ -179,7 +179,7 @@ function CompletionHTML(jsObj, hkGameCompletion) {
       fillText = `<div class='percent-box${cl}'>${(i === "intro") ? cp: cp + jsObj[i].maxPercent}%</div>`;
     }
   }
-}
+} */
 
 
 /* ################################### Optimized Functions ########################################################################## */

@@ -11550,54 +11550,60 @@ function TogglePageScrollElement(root, element, ratio) {
  * @param {number} hkGameCompletion Total completion percentage in a save file
  */
 
+/* function CompletionHTML(jsObj, hkGameCompletion) {
 
-function CompletionHTML(jsObj, hkGameCompletion) {
-  var h2 = "";
-  var h2id = "";
-  var cl = "";
-  var clGreen = "box-green";
-  var clRed = "box-red";
-  var cp = 0; // current Percent
+  let h2 = "";
+  let h2id = "";
+  let cl = "";
+  let clGreen = "box-green";
+  let clRed = "box-red";
+  let cp = 0; // current Percent
+  let mp = 0; // max Percent
+  let fillText = "";
 
-  var mp = 0; // max Percent
-
-  var fillText = "";
-
-  for (var i in jsObj) {
+  for (let i in jsObj) {
     h2 = jsObj[i].h2;
     h2id = "h2-" + jsObj[i].id;
-    jsObj[i].hasOwnProperty("percent") ? cp = jsObj[i].percent : cp = 0;
-    if (i === "intro") cp = hkGameCompletion; // Don't use percent-box for Essentials, Achievements, Statistics
 
+    (jsObj[i].hasOwnProperty("percent")) ? cp = jsObj[i].percent: cp = 0;
+    if (i === "intro") cp = hkGameCompletion;
+
+    // Don't use percent-box for Essentials, Achievements, Statistics
     if (!jsObj[i].hasOwnProperty("maxPercent")) {
       fillText = "";
-    } // otherwise use percent-box with values cp/mp%
+    }
+    // otherwise use percent-box with values cp/mp%
     else {
+
       mp = jsObj[i].maxPercent;
 
       if (i === "maskShards") {
-        var perc = jsObj[i].percent;
-        perc % 4 ? cp = Math.floor(perc / 4) : cp = perc / 4;
+        let perc = jsObj[i].percent;
+        (perc % 4) ? cp = Math.floor(perc / 4): cp = perc / 4;
       } else if (i === "vesselFragments") {
-        var _perc = jsObj[i].percent;
-        _perc % 3 ? cp = Math.floor(_perc / 3) : cp = _perc / 3;
-      } // switches the box to red when a section (h2) is 0
+        let perc = jsObj[i].percent;
+        (perc % 3) ? cp = Math.floor(perc / 3): cp = perc / 3;
+      }
 
-
+      // switches the box to red when a section (h2) is 0
       if (cp === 0) {
-        cl = " ".concat(clRed);
-      } // switches the box to green when a section (h2) is completed
+        cl = ` ${clRed}`;
+      }
+      // switches the box to green when a section (h2) is completed
       else if (cp === mp) {
-        cl = " ".concat(clGreen);
-      } // default is blue (partially completed and starting value)
-      else cl = ""; // needed for Game Status to show percentage properly (adds a slash for all boxes except the Game Status one)
+        cl = ` ${clGreen}`;
+      }
+      // default is blue (partially completed and starting value)
+      else cl = "";
 
-
+      // needed for Game Status to show percentage properly (adds a slash for all boxes except the Game Status one)
       if (jsObj[i].id != "hk-intro") cp += "/";
-      fillText = "<div class='percent-box".concat(cl, "'>").concat(i === "intro" ? cp : cp + jsObj[i].maxPercent, "%</div>");
+
+      fillText = `<div class='percent-box${cl}'>${(i === "intro") ? cp: cp + jsObj[i].maxPercent}%</div>`;
     }
   }
-}
+} */
+
 /* ################################### Optimized Functions ########################################################################## */
 
 
@@ -12172,8 +12178,8 @@ function CompletionFill(section) {
       var perc = section.percent;
       perc % 4 ? cp = Math.floor(perc / 4) : cp = perc / 4;
     } else if (section.id === "hk-vesselfragments") {
-      var _perc2 = section.percent;
-      _perc2 % 3 ? cp = Math.floor(_perc2 / 3) : cp = _perc2 / 3;
+      var _perc = section.percent;
+      _perc % 3 ? cp = Math.floor(_perc / 3) : cp = _perc / 3;
     } // switches the box to red when a section (h2) is 0
 
 
