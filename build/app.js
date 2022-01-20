@@ -6906,7 +6906,7 @@ var HK = {
     relicsArcaneEgg: {
       h2: "Relics - Arcane Egg",
       id: "hk-relics-egg",
-      description: "Relics - Arcane Egg Description.",
+      description: "Jet black stone eggs originating from a civilisation that existed before the Kingdom of Hallownest was founded. Egg #4 is missable when the player will go right instead of left in the <span class=\"spoiler-span blurred\">Lifeblood Core room in the Abyss</span> and will touch the Charm. Can be sold to Relic Seeker Lemm for 1200 Geo.<br>\n      4 x 1200 = 4800 Geo Total.",
       percent: 0,
       maxPercent: 4,
       entries: {
