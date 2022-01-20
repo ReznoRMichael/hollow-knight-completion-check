@@ -2272,8 +2272,10 @@ var DataChecker = /*#__PURE__*/function () {
 
           case "hallownestSeal17": // The Seer's Essence Reward - Hallownest Seal
 
-          case "arcaneEgg2":
-            // The Seer's Essence Reward - Arcane Egg
+          case "arcaneEgg2": // The Seer's Essence Reward - Arcane Egg
+
+          case "rancidEgg20":
+            // Sly's Rancid Egg shop item
             if (this.playerData[this.entries[entry].id] === true) {
               (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, entry);
             } else {
