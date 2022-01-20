@@ -108,11 +108,11 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Relics - Hallownest Seal (17).  
   ✅ Relics - King's Idol (8).  
   ✅ Relics - Arcane Egg (4).  
-  ✅ Rancid Eggs (21). Increases True Completion total.  
+  ✅ Rancid Eggs (21).  
   ✅ Items.  
 
   — **(New Tab) Geo Caches**:  
-  ✅ Geo Chests (14). Increases True Completion total.  
+  ✅ Geo Chests (14).  
   ✅ Geo Rocks (205).  
 
   — **(New Tab) Secrets**:  
@@ -120,10 +120,10 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Secret Rooms.  
 
   — **Items** additions:  
-  ✅ City Crest. Increases True Completion total.  
+  ✅ City Crest.  
 
   — **World Interactions** additions:  
-  ✅ Inspected Stag Nest Egg. Increases True Completion total.  
+  ✅ Inspected Stag Nest Egg.  
 
   — **Game Statistics** changes:  
   ✅ Removed Whispering Roots, Relics, Geo Rocks (duplicates).  
