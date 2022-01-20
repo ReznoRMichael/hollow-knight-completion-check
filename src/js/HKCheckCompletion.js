@@ -2551,6 +2551,22 @@ class DataChecker {
 
           break;
 
+        // missable Arcane Egg in Lifeblood Core Room
+        case "arcaneEgg4":
+
+          if (this._FindItem(this.entries[entry])) {
+            SetIconGreen(this.section, entry);
+          }
+          // When got the Lifeblood Core charm, but didn't pick up the Arcane Egg
+          else if (this.playerData.gotCharm_9 === true) {
+            SetIconNone(this.section, entry);
+            this.entries[entry].disabled = true;
+          } else {
+            SetIconRed(this.section, entry);
+          }
+
+          break;
+
         // boolData activation checks
         default:
 

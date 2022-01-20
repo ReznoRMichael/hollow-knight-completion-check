@@ -2311,6 +2311,20 @@ var DataChecker = /*#__PURE__*/function () {
             }
 
             break;
+          // missable Arcane Egg in Lifeblood Core Room
+
+          case "arcaneEgg4":
+            if (this._FindItem(this.entries[entry])) {
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, entry);
+            } // When got the Lifeblood Core charm, but didn't pick up the Arcane Egg
+            else if (this.playerData.gotCharm_9 === true) {
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(this.section, entry);
+              this.entries[entry].disabled = true;
+            } else {
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(this.section, entry);
+            }
+
+            break;
           // boolData activation checks
 
           default:
