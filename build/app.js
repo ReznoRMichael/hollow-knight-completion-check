@@ -6600,7 +6600,7 @@ var HK = {
     relicsWanderersJournal: {
       h2: "Relics - Wanderer's Journal",
       id: "hk-relics-journal",
-      description: "Relics - Wanderer's Journal Description.",
+      description: "Tablets found commonly throughout Hallownest. They are always found next to corpses that are assumed to be the authors of the journal. Can be sold to Relic Seeker Lemm for 200 Geo. 14 x 200 = 2800 Geo Total.",
       percent: 0,
       maxPercent: 14,
       entries: {
