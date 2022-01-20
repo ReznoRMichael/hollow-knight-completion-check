@@ -2257,6 +2257,17 @@ var DataChecker = /*#__PURE__*/function () {
 
       for (var entry in this.entries) {
         switch (entry) {
+          // The Collector: Tower of Love Grubs activation Bug in the game - needs a workaround. All 3 Grubs must be treated as one.
+          case "grub33":
+          case "grub34":
+            if (this.entries.grub32.icon === "green") {
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, entry);
+            } else {
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(this.section, entry);
+            }
+
+            break;
+
           default:
             if (this._FindItem(this.entries[entry])) {
               (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, entry);
@@ -6301,14 +6312,14 @@ var HK = {
         grub32: {
           name: "Grub #32",
           spoiler: "City of Tears: The Collector Arena",
-          id: "Grub Bottle (1)",
+          id: "Grub Bottle",
           sceneName: "Ruins2_11",
           wiki: "Grub#Rewards_and_locations"
         },
         grub33: {
           name: "Grub #33",
           spoiler: "City of Tears: The Collector Arena",
-          id: "Grub Bottle",
+          id: "Grub Bottle (1)",
           sceneName: "Ruins2_11",
           wiki: "Grub#Rewards_and_locations"
         },

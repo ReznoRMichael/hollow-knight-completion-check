@@ -2493,6 +2493,19 @@ class DataChecker {
       
       switch(entry) {
 
+        // The Collector: Tower of Love Grubs activation Bug in the game - needs a workaround.
+        // All 3 Grubs in the Tower of Love must be treated as one.
+        case "grub33":
+        case "grub34":
+
+        if (this.entries.grub32.icon === "green") {
+          SetIconGreen(this.section, entry);
+        } else {
+          SetIconRed(this.section, entry);
+        }
+
+        break;
+
         default:
           if (this._FindItem(this.entries[entry])) {
             SetIconGreen(this.section, entry);
