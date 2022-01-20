@@ -2736,7 +2736,8 @@ const HK = {
     grubs: {
       h2: "Grubs",
       id: "hk-grubs",
-      description: `Grubs Description.`,
+      description: `Creatures found trapped in glass jars throughout Hallownest. They can be freed from their jar after which the Grubfather grants a reward for each Grub that is saved.<br>
+      Note: Due to a bug in recent versions of Hollow Knight, Grubs #33 and #34 (The Collector/Tower of Love) are not marked as released correctly in the save file. As a workaround for this bug, when Grub #32 is released, #33 and #34 are also marked as released in this app.`,
       percent: 0,
       maxPercent: 46,
       entries: {
