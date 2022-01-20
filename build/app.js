@@ -12114,8 +12114,8 @@ function CompletionFillNoSave(section) {
   var h2id = "";
   var mp = ""; // max Percent
 
-  var symbol = ""; // let cl = ""; // class
-
+  var symbol = "";
+  var textFill = "";
   id = section.id;
   h2 = section.h2;
   h2id = "h2-" + section.id;
@@ -12147,7 +12147,17 @@ function CompletionFillNoSave(section) {
 
   mp = "<div class='percent-box'>".concat(id === "hk-intro" ? 0 : section.maxPercent).concat(symbol, "</div>");
   if (!section.hasOwnProperty("maxPercent")) mp = "";
-  return "<h2 id='".concat(h2id, "'>").concat(h2).concat(mp, "</h2>");
+  textFill += "<h2 id='".concat(h2id, "'>").concat(h2).concat(mp, "</h2>"); // ----------------- True Completion h2 title ---------------- //
+
+  switch (id) {
+    case "hk-intro":
+      textFill += "<h2 id='hk-true-completion'>True Completion<div class='percent-box'>89.98%</div></h2>";
+      break;
+
+    default:
+  }
+
+  return textFill;
 }
 /**
  * Replaces the h2 titles with a current percent/max percent values as read from the database

@@ -358,6 +358,10 @@ h6 {
   justify-content: flex-start;
 }
 
+#hk-true-completion {
+  margin-top: 0;
+}
+
 .section-description {
   text-align: center;
   font-size: 0.8rem;

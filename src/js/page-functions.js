@@ -747,7 +747,7 @@ function CompletionFillNoSave(section) {
   let h2id = "";
   let mp = ""; // max Percent
   let symbol = "";
-  // let cl = ""; // class
+  let textFill = "";
 
   id = section.id;
   h2 = section.h2;
@@ -785,7 +785,18 @@ function CompletionFillNoSave(section) {
   mp = `<div class='percent-box'>${(id === "hk-intro") ? 0: section.maxPercent}${symbol}</div>`;
   if (!section.hasOwnProperty("maxPercent")) mp = "";
 
-  return `<h2 id='${h2id}'>${h2}${mp}</h2>`;
+  textFill += `<h2 id='${h2id}'>${h2}${mp}</h2>`;
+
+  // ----------------- True Completion h2 title ---------------- //
+  switch (id) {
+
+    case "hk-intro":
+      textFill += `<h2 id='hk-true-completion'>True Completion<div class='percent-box'>89.98%</div></h2>`;
+      break;
+    default:
+  }
+
+  return textFill;
 }
 
 /**
