@@ -2450,10 +2450,12 @@ class DataChecker {
    * @param {string} sceneName the Collectible's sceneName in the database.
    * @returns {boolean}
    */
-  _FindItem(id = "", sceneName = "") {
+  _FindItem(entry = {}) {
 
     for (let i = 0, length = this.boolData.length; i < length; i++) {
-      if (this.boolData[i].id === id && this.boolData[i].sceneName === sceneName && this.boolData[i].activated === true) {
+      if (this.boolData[i].id === entry.id &&
+        this.boolData[i].sceneName === entry.sceneName &&
+        this.boolData[i].activated === true) {
         return true;
       }
     }
@@ -2493,7 +2495,7 @@ class DataChecker {
       switch(i) {
 
         default:
-          if (this._FindItem(this.entries[i].id, this.entries[i].sceneName)) {
+          if (this._FindItem(this.entries[i])) {
             SetIconGreen(this.section, i);
           } else {
             SetIconRed(this.section, i);

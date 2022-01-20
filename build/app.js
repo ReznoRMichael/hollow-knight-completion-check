@@ -2227,11 +2227,10 @@ var DataChecker = /*#__PURE__*/function () {
   _createClass(DataChecker, [{
     key: "_FindItem",
     value: function _FindItem() {
-      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
-      var sceneName = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+      var entry = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
       for (var i = 0, length = this.boolData.length; i < length; i++) {
-        if (this.boolData[i].id === id && this.boolData[i].sceneName === sceneName && this.boolData[i].activated === true) {
+        if (this.boolData[i].id === entry.id && this.boolData[i].sceneName === entry.sceneName && this.boolData[i].activated === true) {
           return true;
         }
       }
@@ -2272,7 +2271,7 @@ var DataChecker = /*#__PURE__*/function () {
       for (var i in this.entries) {
         switch (i) {
           default:
-            if (this._FindItem(this.entries[i].id, this.entries[i].sceneName)) {
+            if (this._FindItem(this.entries[i])) {
               (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, i);
             } else {
               (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(this.section, i);
