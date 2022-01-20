@@ -466,9 +466,9 @@ function CheckExtendedCompletion(db) {
 
           // console.info("Entry loop:", entry);
 
-          /* Do not count (ignore) these entries at all */
           switch (entry) {
 
+            /* Do not count (ignore) these entries at all */
             case "oldNail":
             case "pantheonMaster": // Pantheons are counted in Godmaster section
             case "pantheonArtist":
@@ -479,7 +479,6 @@ function CheckExtendedCompletion(db) {
             case "dreamOrbs":
             case "charmsOwned":
             case "nailDamage":
-            case "rancidEggs":
             case "jinnEggsSold":
             case "xunFlowerBrokeTimes":
             case "itemsDiscovered":
@@ -499,6 +498,14 @@ function CheckExtendedCompletion(db) {
             case "greyPrinceDefeated":
             case "killedHollowKnight":
             case "killedFinalBoss":
+            case "grubsCollected": /* Collectibles are counted in their own sections */
+            case "whisperingRoots":
+            case "relicsWandererJournal":
+            case "relicsHallownestSeal":
+            case "relicsKingsIdol":
+            case "relicsArcaneEgg":
+            case "rancidEggs":
+            case "geoRocks":
 
               // console.info("Ignored:", entry);
 
@@ -605,12 +612,12 @@ function CheckExtendedCompletion(db) {
               max = 0;
             }
             /* Counting Geo Rocks */
-            else if (entries[entry].hasOwnProperty("activated") && entries[entry].hasOwnProperty("max")) {
+            /* else if (entries[entry].hasOwnProperty("activated") && entries[entry].hasOwnProperty("max")) {
 
               amount = entries[entry].activated;
               max = entries[entry].max;
 
-              /* Check in case the player has discovered more than 205 (max) Geo Rocks */
+              // Check in case the player has discovered more than 205 (max) Geo Rocks
               if (max < entries[entry].discoveredTotal) {
                 max = entries[entry].discoveredTotal;
               }
@@ -618,11 +625,11 @@ function CheckExtendedCompletion(db) {
               intro.extendedCompletionDone += amount;
               intro.extendedCompletionTotal += max;
 
-              // console.info(`${entry}: ${amount}/${max}`, entries[entry].name);
+              console.info(`${entry}: ${amount}/${max}`, entries[entry].name);
 
               amount = 0;
               max = 0;
-            }
+            } */
           }
         }
 
