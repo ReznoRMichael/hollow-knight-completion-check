@@ -103,6 +103,7 @@ If you like the tool and wish it developed further with more functions and easie
   — **(New Tab) Collectibles**:  
   ✅ Charm Notches (8).  
   ✅ Grubs (46).  
+  Note: Due to a bug in recent versions of Hollow Knight, Grubs #33 and #34 (The Collector/Tower of Love) are not marked as released correctly in the save file. As a workaround for this bug, when Grub #32 is detected as released, #33 and #34 are automatically marked as released too in this app.  
   ✅ Whispering Roots (15).  
   ✅ Relics - Wanderer's Journal (14).  
   ✅ Relics - Hallownest Seal (17).  
