@@ -2268,9 +2268,12 @@ var DataChecker = /*#__PURE__*/function () {
             }
 
             break;
-          // The Seer's Essence Reward - Hallownest Seal
+          // playerData activation checks true/false
 
-          case "hallownestSeal17":
+          case "hallownestSeal17": // The Seer's Essence Reward - Hallownest Seal
+
+          case "arcaneEgg2":
+            // The Seer's Essence Reward - Arcane Egg
             if (this.playerData[this.entries[entry].id] === true) {
               (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, entry);
             } else {
@@ -2278,6 +2281,7 @@ var DataChecker = /*#__PURE__*/function () {
             }
 
             break;
+          // boolData activation checks
 
           default:
             if (this._FindItem(this.entries[entry])) {

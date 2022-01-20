@@ -2506,8 +2506,9 @@ class DataChecker {
 
           break;
 
-        // playerData checks true/false
+        // playerData activation checks true/false
         case "hallownestSeal17": // The Seer's Essence Reward - Hallownest Seal
+        case "arcaneEgg2": // The Seer's Essence Reward - Arcane Egg
 
           if (this.playerData[this.entries[entry].id] === true) {
             SetIconGreen(this.section, entry);
@@ -2517,6 +2518,7 @@ class DataChecker {
 
           break;
 
+        // boolData activation checks
         default:
 
           if (this._FindItem(this.entries[entry])) {
