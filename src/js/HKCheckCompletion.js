@@ -2474,6 +2474,10 @@ class DataChecker {
     return false;
   }
 
+  /**
+   * Verifies the status of all items in a given section (e.g. Grubs or Whispering Roots) from the database.
+   * @param {object} section Provide a section object to check.
+   */
   checkItems(section) {
     this.section = section;
     this.entries = section.entries;
