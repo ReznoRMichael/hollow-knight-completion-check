@@ -2422,14 +2422,6 @@ function ResetCompletion(db) {
           if (entries[entry].hasOwnProperty("max")) {
             entries[entry].max = entries[entry].maxDefault;
           }
-
-          if (entry.hasOwnProperty("currentName")) {
-            delete entries[entry].currentName;
-          }
-
-          if (entry.hasOwnProperty("currentSpoiler")) {
-            delete entries[entry].currentSpoiler;
-          }
         }
     }
   }

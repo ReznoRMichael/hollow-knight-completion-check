@@ -2179,20 +2179,12 @@ function ResetCompletion(db) {
           if (entries[entry].hasOwnProperty("max")) {
             entries[entry].max = entries[entry].maxDefault;
           }
-
-          if (entry.hasOwnProperty("currentName")) {
-            delete entries[entry].currentName;
-          }
-
-          if (entry.hasOwnProperty("currentSpoiler")) {
-            delete entries[entry].currentSpoiler;
-          }
         }
 
     }
   }
 }
-/* -------------------------- Classes ---------------------------- */
+/* -------------------------- Classes --------------------------------------------------------------------------------------- */
 
 
 var DataChecker = /*#__PURE__*/function () {
@@ -2229,7 +2221,8 @@ var DataChecker = /*#__PURE__*/function () {
       }
 
       return false;
-    }
+    } // end _FindItem
+
     /**
      * Verifies if a specific Geo Rock is destroyed and returns true/false.
      * @param {string} id the Geo Rock's id in the database.
@@ -2249,7 +2242,8 @@ var DataChecker = /*#__PURE__*/function () {
       }
 
       return false;
-    }
+    } // end _FindGeoRock
+
     /**
      * Verifies the status of all items in a given section (e.g. Grubs or Whispering Roots) from the database.
      * @param {object} section Provide a section object to check.
@@ -2272,7 +2266,8 @@ var DataChecker = /*#__PURE__*/function () {
 
         }
       }
-    }
+    } // end checkItems
+
     /**
      * Verifies the status of all Geo Rocks from the database.
      * @param {object} section Provide a Geo Rocks section object to check.
@@ -2295,11 +2290,13 @@ var DataChecker = /*#__PURE__*/function () {
 
         }
       }
-    }
+    } // end checkGeoRocks
+
   }]);
 
   return DataChecker;
-}();
+}(); // end class DataChecker
+
 /* ----------------------- Event Listeners -------------------------- */
 // Populate HTML at load (before img and css)
 
