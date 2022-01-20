@@ -746,24 +746,45 @@ function CompletionFillNoSave(section) {
   let h2 = "";
   let h2id = "";
   let mp = ""; // max Percent
-  let symbol = "%";
+  let symbol = "";
   // let cl = ""; // class
 
   id = section.id;
   h2 = section.h2;
   h2id = "h2-" + section.id;
 
-  /* Do not display % when showing Hunter's Journal entries */
-  if (section.id === "hk-journal") symbol = "";
+  /* Display % only when showing Main Game Completion % sections */
+  switch (section.id) {
+
+    case "hk-intro":
+    case "hk-bosses":
+    case "hk-charms":
+    case "hk-equipment":
+    case "hk-nailupgrades":
+    case "hk-nailarts":
+    case "hk-spells":
+    case "hk-maskshards":
+    case "hk-vesselfragments":
+    case "hk-dreamnail":
+    case "hk-warriordreams":
+    case "hk-dreamers":
+    case "hk-colosseum":
+    case "hk-grimmtroupe":
+    case "hk-lifeblood":
+    case "hk-godmaster":
+
+      symbol = "%";
+
+      break;
+
+    default:
+
+      symbol = "";
+  }
 
   mp = `<div class='percent-box'>${(id === "hk-intro") ? 0: section.maxPercent}${symbol}</div>`;
   if (!section.hasOwnProperty("maxPercent")) mp = "";
 
-  /* return [
-      `<div id="${id}" ${cl}>`,
-          `<h2 id='${h2id}'>${h2}${mp}</h2>`,
-      "</div>\n"
-  ].join(""); */
   return `<h2 id='${h2id}'>${h2}${mp}</h2>`;
 }
 
@@ -779,12 +800,12 @@ function CompletionFill(section) {
   let clRed = "box-red";
   let cp = 0; // current Percent
   let mp = 0; // max Percent
-  let symbol = "%";
+  let symbol = "";
   let fillText = "";
 
   (section.hasOwnProperty("percent")) ? cp = section.percent: cp = 0;
 
-  // Don't use percent-box for Essentials, Achievements, Statistics
+  // Don't use percent-box for Essentials, Achievements, Statistics etc.
   if (!section.hasOwnProperty("maxPercent")) {
     fillText = "";
   }
@@ -815,8 +836,34 @@ function CompletionFill(section) {
     // needed for Game Status to show percentage properly (adds a slash for all boxes except the Game Status one)
     if (section.id !== "hk-intro") cp += "/";
 
-    /* Do not display % when showing Hunter's Journal entries */
-    if (section.id === "hk-journal") symbol = "";
+    /* Display % only when showing Main Game Completion % sections */
+    switch (section.id) {
+
+      case "hk-intro":
+      case "hk-bosses":
+      case "hk-charms":
+      case "hk-equipment":
+      case "hk-nailupgrades":
+      case "hk-nailarts":
+      case "hk-spells":
+      case "hk-maskshards":
+      case "hk-vesselfragments":
+      case "hk-dreamnail":
+      case "hk-warriordreams":
+      case "hk-dreamers":
+      case "hk-colosseum":
+      case "hk-grimmtroupe":
+      case "hk-lifeblood":
+      case "hk-godmaster":
+
+        symbol = "%";
+
+        break;
+
+      default:
+
+        symbol = "";
+    }
 
     fillText = `<div class='percent-box${cl}'>${(section.id === "hk-intro") ? cp: `${cp}${section.maxPercent}`}${symbol}</div>`;
   }

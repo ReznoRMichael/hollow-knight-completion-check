@@ -12108,22 +12108,39 @@ function CompletionFillNoSave(section) {
   var h2id = "";
   var mp = ""; // max Percent
 
-  var symbol = "%"; // let cl = ""; // class
+  var symbol = ""; // let cl = ""; // class
 
   id = section.id;
   h2 = section.h2;
   h2id = "h2-" + section.id;
-  /* Do not display % when showing Hunter's Journal entries */
+  /* Display % only when showing Main Game Completion % sections */
 
-  if (section.id === "hk-journal") symbol = "";
+  switch (section.id) {
+    case "hk-intro":
+    case "hk-bosses":
+    case "hk-charms":
+    case "hk-equipment":
+    case "hk-nailupgrades":
+    case "hk-nailarts":
+    case "hk-spells":
+    case "hk-maskshards":
+    case "hk-vesselfragments":
+    case "hk-dreamnail":
+    case "hk-warriordreams":
+    case "hk-dreamers":
+    case "hk-colosseum":
+    case "hk-grimmtroupe":
+    case "hk-lifeblood":
+    case "hk-godmaster":
+      symbol = "%";
+      break;
+
+    default:
+      symbol = "";
+  }
+
   mp = "<div class='percent-box'>".concat(id === "hk-intro" ? 0 : section.maxPercent).concat(symbol, "</div>");
   if (!section.hasOwnProperty("maxPercent")) mp = "";
-  /* return [
-      `<div id="${id}" ${cl}>`,
-          `<h2 id='${h2id}'>${h2}${mp}</h2>`,
-      "</div>\n"
-  ].join(""); */
-
   return "<h2 id='".concat(h2id, "'>").concat(h2).concat(mp, "</h2>");
 }
 /**
@@ -12141,9 +12158,9 @@ function CompletionFill(section) {
 
   var mp = 0; // max Percent
 
-  var symbol = "%";
+  var symbol = "";
   var fillText = "";
-  section.hasOwnProperty("percent") ? cp = section.percent : cp = 0; // Don't use percent-box for Essentials, Achievements, Statistics
+  section.hasOwnProperty("percent") ? cp = section.percent : cp = 0; // Don't use percent-box for Essentials, Achievements, Statistics etc.
 
   if (!section.hasOwnProperty("maxPercent")) {
     fillText = "";
@@ -12170,9 +12187,32 @@ function CompletionFill(section) {
 
 
     if (section.id !== "hk-intro") cp += "/";
-    /* Do not display % when showing Hunter's Journal entries */
+    /* Display % only when showing Main Game Completion % sections */
 
-    if (section.id === "hk-journal") symbol = "";
+    switch (section.id) {
+      case "hk-intro":
+      case "hk-bosses":
+      case "hk-charms":
+      case "hk-equipment":
+      case "hk-nailupgrades":
+      case "hk-nailarts":
+      case "hk-spells":
+      case "hk-maskshards":
+      case "hk-vesselfragments":
+      case "hk-dreamnail":
+      case "hk-warriordreams":
+      case "hk-dreamers":
+      case "hk-colosseum":
+      case "hk-grimmtroupe":
+      case "hk-lifeblood":
+      case "hk-godmaster":
+        symbol = "%";
+        break;
+
+      default:
+        symbol = "";
+    }
+
     fillText = "<div class='percent-box".concat(cl, "'>").concat(section.id === "hk-intro" ? cp : "".concat(cp).concat(section.maxPercent)).concat(symbol, "</div>");
   }
 
