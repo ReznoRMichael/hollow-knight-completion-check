@@ -2293,7 +2293,10 @@ var DataChecker = /*#__PURE__*/function () {
                 (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, entry);
               } else {
                 (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(this.section, entry);
-              }
+              } // Set Steel Soul text description
+
+
+              this.entries[entry].spoiler = this.entries[entry].spoilerSteelSoul;
             } // Normal Mode
             else {
               // playerData.tukDungEgg
@@ -2301,7 +2304,10 @@ var DataChecker = /*#__PURE__*/function () {
                 (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, entry);
               } else {
                 (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(this.section, entry);
-              }
+              } // Set Normal Mode text description
+
+
+              this.entries[entry].spoiler = this.entries[entry].spoilerNormal;
             }
 
             break;

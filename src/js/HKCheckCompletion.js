@@ -2532,16 +2532,21 @@ class DataChecker {
               SetIconRed(this.section, entry);
             }
 
+            // Set Steel Soul text description
+            this.entries[entry].spoiler = this.entries[entry].spoilerSteelSoul;
           }
           // Normal Mode
           else {
-            
+
             // playerData.tukDungEgg
             if (this.playerData[this.entries[entry].idPlayerData] === true) {
               SetIconGreen(this.section, entry);
             } else {
               SetIconRed(this.section, entry);
             }
+
+            // Set Normal Mode text description
+            this.entries[entry].spoiler = this.entries[entry].spoilerNormal;
           }
 
           break;
