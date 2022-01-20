@@ -2489,15 +2489,15 @@ class DataChecker {
     this.section = section;
     this.entries = section.entries;
 
-    for (let i in this.entries) {
+    for (let entry in this.entries) {
       
-      switch(i) {
+      switch(entry) {
 
         default:
-          if (this._FindItem(this.entries[i])) {
-            SetIconGreen(this.section, i);
+          if (this._FindItem(this.entries[entry])) {
+            SetIconGreen(this.section, entry);
           } else {
-            SetIconRed(this.section, i);
+            SetIconRed(this.section, entry);
           }
       }
     }
@@ -2511,15 +2511,15 @@ class DataChecker {
     this.section = section;
     this.entries = section.entries;
 
-    for (let i in this.entries) {
+    for (let entry in this.entries) {
       
-      switch(i) {
+      switch(entry) {
 
         default:
-          if (this._FindGeoRock(this.entries[i])) {
-            SetIconGreen(this.section, i);
+          if (this._FindGeoRock(this.entries[entry])) {
+            SetIconGreen(this.section, entry);
           } else {
-            SetIconRed(this.section, i);
+            SetIconRed(this.section, entry);
           }
       }
     }
