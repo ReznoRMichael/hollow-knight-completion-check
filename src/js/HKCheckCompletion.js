@@ -1230,9 +1230,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           }
         }
 
-        if (i === "grubsCollected") {
+        /* if (i === "grubsCollected") {
           LogMissingGrubs();
-        }
+        } */
 
         /* textPrefix += `: ${countTotal}`; */
 
@@ -1902,7 +1902,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
   /**
    * Compares and logs all unrescued Grubs in a list: IDs and map locations
    */
-  function LogMissingGrubs() {
+  /* function LogMissingGrubs() {
 
     let rescuedGrubsSceneList = [];
 
@@ -1910,11 +1910,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       if (worldData[i].id.includes("Grub Bottle")) {
         if (worldData[i].activated === true) {
           // There are 3 duplicates of the same map scene name from older game save files. Prevents adding duplicates
-          /* if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (1)") {
-              continue;
-          } else if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (2)") {
-              continue;
-          } else { */
+          //  if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (1)") {
+          //     continue;
+          // } else if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (2)") {
+          //     continue;
+          // } else { 
           rescuedGrubsSceneList.push(worldData[i].sceneName);
           // }
         }
@@ -1938,8 +1938,8 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     }
 
     return false;
-  }
-}
+  } */
+} // end function CheckAdditionalThings()
 
 /**
  * Checks and fills all the 7 locations of Mr Mushroom.

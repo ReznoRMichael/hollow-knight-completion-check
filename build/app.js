@@ -1066,10 +1066,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
             }
           }
         }
-
-        if (i === "grubsCollected") {
+        /* if (i === "grubsCollected") {
           LogMissingGrubs();
-        }
+        } */
+
         /* textPrefix += `: ${countTotal}`; */
 
 
@@ -1708,46 +1708,39 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
    * Compares and logs all unrescued Grubs in a list: IDs and map locations
    */
 
-
-  function LogMissingGrubs() {
-    var rescuedGrubsSceneList = [];
-
-    for (var _i6 = 0, _length = worldData.length; _i6 < _length; _i6++) {
-      if (worldData[_i6].id.includes("Grub Bottle")) {
-        if (worldData[_i6].activated === true) {
+  /* function LogMissingGrubs() {
+      let rescuedGrubsSceneList = [];
+      for (let i = 0, length = worldData.length; i < length; i++) {
+      if (worldData[i].id.includes("Grub Bottle")) {
+        if (worldData[i].activated === true) {
           // There are 3 duplicates of the same map scene name from older game save files. Prevents adding duplicates
-
-          /* if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (1)") {
-              continue;
-          } else if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (2)") {
-              continue;
-          } else { */
-          rescuedGrubsSceneList.push(worldData[_i6].sceneName); // }
+          //  if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (1)") {
+          //     continue;
+          // } else if (worldData[i].sceneName === "Ruins2_11" && worldData[i].id === "Grub Bottle (2)") {
+          //     continue;
+          // } else { 
+          rescuedGrubsSceneList.push(worldData[i].sceneName);
+          // }
         }
       }
-    } // Filtering the reference database Grub list to include only the missing values
-
-
-    var missingGrubsList = section.grubsList.filter(function (x) {
-      return !rescuedGrubsSceneList.includes(x);
-    });
-    var length = missingGrubsList.length;
-
-    if (!length) {
+    }
+      // Filtering the reference database Grub list to include only the missing values
+    let missingGrubsList = section.grubsList.filter(x => !rescuedGrubsSceneList.includes(x));
+    let length = missingGrubsList.length;
+      if (!length) {
       console.log("%cAll Grubs Rescued!", "color: #16c60c; font-weight: 700;");
     } else {
-      console.groupCollapsed("%cUnrescued Grubs (".concat(length, "):"), "color: #16c60c; font-weight: 700;");
-
-      for (var _i7 = 0; _i7 < length; _i7++) {
-        console.log("#".concat(section.grubsList.indexOf(missingGrubsList[_i7]) + 1, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(missingGrubsList[_i7]), " \u2328\uFE0F ").concat(missingGrubsList[_i7]));
+      console.groupCollapsed(`%cUnrescued Grubs (${length}):`, "color: #16c60c; font-weight: 700;");
+        for (let i = 0; i < length; i++) {
+        console.log(`#${section.grubsList.indexOf(missingGrubsList[i]) + 1} 🗺️ ${TranslateMapName(missingGrubsList[i])} ⌨️ ${missingGrubsList[i]}`);
       }
-
-      console.groupEnd();
+        console.groupEnd();
     }
+      return false;
+  } */
 
-    return false;
-  }
-}
+} // end function CheckAdditionalThings()
+
 /**
  * Checks and fills all the 7 locations of Mr Mushroom.
  * @param {object} section ID of the HTML element for data appending
