@@ -3822,7 +3822,7 @@ const HK = {
     geoChests: {
       h2: "Geo Chests",
       id: "hk-geo-chests",
-      description: `Geo Chests Description.`,
+      description: `All Geo Chests in the game, including one empty one and one with 1 Geo. A total of 2380 Geo can be collected from Geo Chests. Equipping Fragile Greed Charm won't increase the amount of Geo found inside Geo Chests.`,
       percent: 0,
       maxPercent: 14,
       entries: {
