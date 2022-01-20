@@ -2467,10 +2467,12 @@ class DataChecker {
    * @param {string} sceneName the Geo Rock's sceneName in the database.
    * @returns {boolean}
    */
-  _FindGeoRock(id = "", sceneName = "") {
+  _FindGeoRock(entry = {}) {
 
     for (let i = 0, length = this.geoRocksData.length; i < length; i++) {
-      if (this.geoRocksData[i].id === id && this.geoRocksData[i].sceneName === sceneName && this.geoRocksData[i].hitsLeft === 0) {
+      if (this.geoRocksData[i].id === entry.id &&
+        this.geoRocksData[i].sceneName === entry.sceneName &&
+        this.geoRocksData[i].hitsLeft === 0) {
         return true;
       }
     }
@@ -2513,7 +2515,7 @@ class DataChecker {
       switch(i) {
 
         default:
-          if (this._FindGeoRock(this.entries[i].id, this.entries[i].sceneName)) {
+          if (this._FindGeoRock(this.entries[i])) {
             SetIconGreen(this.section, i);
           } else {
             SetIconRed(this.section, i);
