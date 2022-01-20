@@ -1010,24 +1010,24 @@ function CheckIfDataTrue(section, dataObject, playerData, worldData = []) {
  */
 function CheckSpellLevel(section, dataObject, playerData) {
 
-  let sFillText = "";
+  // let sFillText = "";
 
   for (let i in dataObject) {
     switch (i) {
       case "vengefulSpirit":
       case "shadeSoul":
         (playerData.fireballLevel >= dataObject[i].fireballLevel) ? SetIconGreen(section, i): SetIconRed(section, i);
-        sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
+        // sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
         break;
       case "desolateDive":
       case "descendingDark":
         (playerData.quakeLevel >= dataObject[i].quakeLevel) ? SetIconGreen(section, i): SetIconRed(section, i);
-        sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
+        // sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
         break;
       case "howlingWraiths":
       case "abyssShriek":
         (playerData.screamLevel >= dataObject[i].screamLevel) ? SetIconGreen(section, i): SetIconRed(section, i);
-        sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
+        // sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
         break;
       default:
         break;

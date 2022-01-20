@@ -844,26 +844,25 @@ function CheckIfDataTrue(section, dataObject, playerData) {
 
 
 function CheckSpellLevel(section, dataObject, playerData) {
-  var sFillText = "";
-
+  // let sFillText = "";
   for (var i in dataObject) {
     switch (i) {
       case "vengefulSpirit":
       case "shadeSoul":
-        playerData.fireballLevel >= dataObject[i].fireballLevel ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
-        sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
+        playerData.fireballLevel >= dataObject[i].fireballLevel ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i); // sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
+
         break;
 
       case "desolateDive":
       case "descendingDark":
-        playerData.quakeLevel >= dataObject[i].quakeLevel ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
-        sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
+        playerData.quakeLevel >= dataObject[i].quakeLevel ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i); // sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
+
         break;
 
       case "howlingWraiths":
       case "abyssShriek":
-        playerData.screamLevel >= dataObject[i].screamLevel ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
-        sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
+        playerData.screamLevel >= dataObject[i].screamLevel ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i); // sFillText += PrepareHTMLString(section, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki);
+
         break;
 
       default:
