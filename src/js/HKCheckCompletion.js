@@ -2428,6 +2428,11 @@ function ResetCompletion(db) {
 
 class DataChecker {
 
+  /**
+   * Used for checking and verifying data (like Grubs, Items or Geo Rocks) inside a player's save file.
+   * Pass a save to the object and it will be split automatically to playerData, boolData and geoRocksData.
+   * @param {object} saveFile The whole player's save file, in JSON format
+   */
   constructor(saveFile) {
     this.saveFile = saveFile;
     this.playerData = saveFile.playerData;
@@ -2439,6 +2444,17 @@ class DataChecker {
 
     for (let i = 0, length = this.boolData.length; i < length; i++) {
       if (this.boolData[i].id === id && this.boolData[i].sceneName === sceneName && this.boolData[i].activated === true) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  _FindGeoRock(id = "", sceneName = "") {
+
+    for (let i = 0, length = this.geoRocksData.length; i < length; i++) {
+      if (this.geoRocksData[i].id === id && this.geoRocksData[i].sceneName === sceneName && this.geoRocksData[i].hitsLeft === 0) {
         return true;
       }
     }
