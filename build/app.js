@@ -1688,7 +1688,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       if (!countTotal) {
         console.log("%cAll Interactables Activated!", "color: #16c60c; font-weight: 700;");
       } else {
-        console.groupCollapsed("%cNot Activated Interactables (".concat(countTotal, "):"), "color: #16c60c; font-weight: 700;");
+        console.groupCollapsed("%cInteractables Not Activated (".concat(countTotal, "):"), "color: #16c60c; font-weight: 700;");
 
         for (var _i4 = 0, length = itemsLog.length; _i4 < length; _i4++) {
           console.log(itemsLog[_i4]);
@@ -2255,13 +2255,13 @@ var DataChecker = /*#__PURE__*/function () {
       this.section = section;
       this.entries = section.entries;
 
-      for (var i in this.entries) {
-        switch (i) {
+      for (var entry in this.entries) {
+        switch (entry) {
           default:
-            if (this._FindItem(this.entries[i])) {
-              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, i);
+            if (this._FindItem(this.entries[entry])) {
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, entry);
             } else {
-              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(this.section, i);
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(this.section, entry);
             }
 
         }
@@ -2279,13 +2279,13 @@ var DataChecker = /*#__PURE__*/function () {
       this.section = section;
       this.entries = section.entries;
 
-      for (var i in this.entries) {
-        switch (i) {
+      for (var entry in this.entries) {
+        switch (entry) {
           default:
-            if (this._FindGeoRock(this.entries[i])) {
-              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, i);
+            if (this._FindGeoRock(this.entries[entry])) {
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, entry);
             } else {
-              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(this.section, i);
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(this.section, entry);
             }
 
         }

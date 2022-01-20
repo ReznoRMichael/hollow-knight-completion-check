@@ -1882,7 +1882,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       if (!countTotal) {
         console.log("%cAll Interactables Activated!", "color: #16c60c; font-weight: 700;");
       } else {
-        console.groupCollapsed(`%cNot Activated Interactables (${countTotal}):`, "color: #16c60c; font-weight: 700;");
+        console.groupCollapsed(`%cInteractables Not Activated (${countTotal}):`, "color: #16c60c; font-weight: 700;");
 
         for (let i = 0, length = itemsLog.length; i < length; i++) {
           console.log(itemsLog[i]);
