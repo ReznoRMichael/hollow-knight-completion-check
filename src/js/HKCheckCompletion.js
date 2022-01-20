@@ -2435,7 +2435,7 @@ function ResetCompletion(db) {
   }
 }
 
-/* -------------------------- Classes ---------------------------- */
+/* -------------------------- Classes --------------------------------------------------------------------------------------- */
 
 class DataChecker {
 
@@ -2468,7 +2468,7 @@ class DataChecker {
     }
 
     return false;
-  }
+  } // end _FindItem
 
   /**
    * Verifies if a specific Geo Rock is destroyed and returns true/false.
@@ -2487,7 +2487,7 @@ class DataChecker {
     }
 
     return false;
-  }
+  } // end _FindGeoRock
 
   /**
    * Verifies the status of all items in a given section (e.g. Grubs or Whispering Roots) from the database.
@@ -2509,7 +2509,7 @@ class DataChecker {
           }
       }
     }
-  }
+  } // end checkItems
 
   /**
    * Verifies the status of all Geo Rocks from the database.
@@ -2531,9 +2531,9 @@ class DataChecker {
           }
       }
     }
-  }
+  } // end checkGeoRocks
 
-}
+} // end class DataChecker
 
 /* ----------------------- Event Listeners -------------------------- */
 
