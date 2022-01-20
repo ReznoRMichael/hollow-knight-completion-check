@@ -6600,7 +6600,7 @@ var HK = {
     relicsWanderersJournal: {
       h2: "Relics - Wanderer's Journal",
       id: "hk-relics-journal",
-      description: "Tablets found commonly throughout Hallownest. They are always found next to corpses that are assumed to be the authors of the journal. Can be sold to Relic Seeker Lemm for 200 Geo. 14 x 200 = 2800 Geo Total.",
+      description: "Tablets found commonly throughout Hallownest. They are always found next to corpses that are assumed to be the authors of the journal. Can be sold to Relic Seeker Lemm for 200 Geo.<br>\n      14 x 200 = 2800 Geo Total.",
       percent: 0,
       maxPercent: 14,
       entries: {
@@ -6709,7 +6709,7 @@ var HK = {
     relicsHallownestSeal: {
       h2: "Relics - Hallownest Seal",
       id: "hk-relics-seal",
-      description: "Relics - Hallownest Seal Description.",
+      description: "Official symbols of the Pale King and the Five Great Knights. The seals can be found in various locations throughout the world. Can be sold to Relic Seeker Lemm for 450 Geo.<br>\n      17 x 450 = 7650 Geo Total.",
       percent: 0,
       maxPercent: 17,
       entries: {
