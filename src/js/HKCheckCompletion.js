@@ -2498,15 +2498,16 @@ class DataChecker {
         case "grub33":
         case "grub34":
 
-        if (this.entries.grub32.icon === "green") {
-          SetIconGreen(this.section, entry);
-        } else {
-          SetIconRed(this.section, entry);
-        }
+          if (this.entries.grub32.icon === "green") {
+            SetIconGreen(this.section, entry);
+          } else {
+            SetIconRed(this.section, entry);
+          }
 
-        break;
+          break;
 
         default:
+
           if (this._FindItem(this.entries[entry])) {
             SetIconGreen(this.section, entry);
           } else {
@@ -2529,6 +2530,7 @@ class DataChecker {
       switch(entry) {
 
         default:
+          
           if (this._FindGeoRock(this.entries[entry])) {
             SetIconGreen(this.section, entry);
           } else {
