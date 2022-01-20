@@ -9053,10 +9053,10 @@ var HK = {
     secretRooms: {
       h2: "Secret Rooms",
       id: "hk-secret-rooms",
-      description: "Secret Rooms Description.",
+      description: "Certain Secret Rooms in the game. <span class=\"spoiler-span blurred\">Grimm's Tent Secret</span> is missable when the player will <span class=\"spoiler-span blurred\">Banish the Troupe or complete the Ritual</span>.",
       entries: {
         grimmTentSecretRoom: {
-          name: "Grimm's Tent: Secret Room",
+          name: "Grimm's Tent: Secret Room (missable)",
           spoiler: "Dirtmouth: inside Grimm's Tent",
           id: "Secret Mask",
           sceneName: "Grimm_Main_Tent",
