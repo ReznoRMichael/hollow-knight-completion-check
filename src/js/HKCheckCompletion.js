@@ -2506,6 +2506,17 @@ class DataChecker {
 
           break;
 
+        // playerData checks true/false
+        case "hallownestSeal17": // The Seer's Essence Reward - Hallownest Seal
+
+          if (this.playerData[this.entries[entry].id] === true) {
+            SetIconGreen(this.section, entry);
+          } else {
+            SetIconRed(this.section, entry);
+          }
+
+          break;
+
         default:
 
           if (this._FindItem(this.entries[entry])) {
@@ -2530,7 +2541,7 @@ class DataChecker {
       switch(entry) {
 
         default:
-          
+
           if (this._FindGeoRock(this.entries[entry])) {
             SetIconGreen(this.section, entry);
           } else {

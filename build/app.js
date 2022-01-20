@@ -2257,10 +2257,21 @@ var DataChecker = /*#__PURE__*/function () {
 
       for (var entry in this.entries) {
         switch (entry) {
-          // The Collector: Tower of Love Grubs activation Bug in the game - needs a workaround. All 3 Grubs must be treated as one.
+          // The Collector: Tower of Love Grubs activation Bug in the game - needs a workaround.
+          // All 3 Grubs in the Tower of Love must be treated as one.
           case "grub33":
           case "grub34":
             if (this.entries.grub32.icon === "green") {
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, entry);
+            } else {
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(this.section, entry);
+            }
+
+            break;
+          // The Seer's Essence Reward - Hallownest Seal
+
+          case "hallownestSeal17":
+            if (this.playerData[this.entries[entry].id] === true) {
               (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, entry);
             } else {
               (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(this.section, entry);
