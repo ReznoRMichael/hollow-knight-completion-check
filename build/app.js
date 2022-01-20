@@ -8984,7 +8984,7 @@ var HK = {
     worldInteractions: {
       h2: "World Interactions",
       id: "hk-world-interactions",
-      description: "World Interactions Description.",
+      description: "Certain interactions the player can make with NPCs in the game or world objects. All these here don't count towards either 112% Game Completion or Achievements.",
       entries: {
         unlockedCompletionRate: {
           name: "World Sense Ability",
