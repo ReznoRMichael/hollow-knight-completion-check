@@ -1377,7 +1377,7 @@ const HK = {
     achievements: {
       h2: "Achievements Essentials",
       id: "hk-achievements",
-      description: `All the completely optional things that matter for achievements. This includes Zote/Nailsmith choices that you've made on your save file.`,
+      description: `All the completely optional things that matter for achievements. Things here don't count or matter towards 112% Game Completion. This section includes Zote and Nailsmith choices that you've made on your save file.`,
       entries: {
         hasMap: {
           name: "Inventory Map",
