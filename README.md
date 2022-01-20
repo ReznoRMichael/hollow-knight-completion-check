@@ -98,6 +98,7 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **General Changes:**  
   ✅ Added three new tabs: Collectibles, Geo Caches and Secrets.  
+  ✅ More things counted towards True Completion number.  
 
   — **(New Tab) Collectibles**:  
   ✅ Charm Notches (8).  
@@ -107,11 +108,11 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Relics - Hallownest Seal (17).  
   ✅ Relics - King's Idol (8).  
   ✅ Relics - Arcane Egg (4).  
-  ✅ Rancid Eggs (21).  
+  ✅ Rancid Eggs (21). Increases True Completion total.  
   ✅ Items.  
 
   — **(New Tab) Geo Caches**:  
-  ✅ Geo Chests (14).  
+  ✅ Geo Chests (14). Increases True Completion total.  
   ✅ Geo Rocks (205).  
 
   — **(New Tab) Secrets**:  
@@ -119,13 +120,13 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Secret Rooms.  
 
   — **Items** additions:  
-  ✅ City Crest.  
+  ✅ City Crest. Increases True Completion total.  
 
   — **World Interactions** additions:  
-  ✅ Inspected Stag Nest Egg.  
+  ✅ Inspected Stag Nest Egg. Increases True Completion total.  
 
   — **Game Statistics** changes:  
-  ✅ Removed Whispering Roots, Relics, Geo Rocks.  
+  ✅ Removed Whispering Roots, Relics, Geo Rocks (duplicates).  
 
 * v1.6.1 2022-01-14:  
 
