@@ -6945,7 +6945,7 @@ var HK = {
     rancidEggs: {
       h2: "Rancid Eggs",
       id: "hk-rancid-eggs",
-      description: "Rancid Eggs Description.",
+      description: "A collectable item recovered from the corpses of Bluggsacs. Either an already-dead Bluggsac has to be found or a living one has to be killed to make it drop a Rancid Egg. A certain NPC in the game may be <em>very</em> interested in these... Egg #16 is missable when a player enters the <span class=\"spoiler-span blurred\">Beast's Den</span> through the secret path without <span class=\"spoiler-span blurred\">being trapped by using the bench</span>.",
       percent: 0,
       maxPercent: 21,
       entries: {
