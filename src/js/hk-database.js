@@ -2956,14 +2956,14 @@ const HK = {
         grub32: {
           name: "Grub #32",
           spoiler: "City of Tears: The Collector Arena",
-          id: "Grub Bottle (1)",
+          id: "Grub Bottle",
           sceneName: "Ruins2_11",
           wiki: "Grub#Rewards_and_locations"
         },
         grub33: {
           name: "Grub #33",
           spoiler: "City of Tears: The Collector Arena",
-          id: "Grub Bottle",
+          id: "Grub Bottle (1)",
           sceneName: "Ruins2_11",
           wiki: "Grub#Rewards_and_locations"
         },
