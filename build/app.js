@@ -184,7 +184,9 @@ function HKCheckCompletion(jsonObject) {
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items.entries, HKPlayerData, HKWorldItems); // ------------------------- Geo Caches -> Geo Chests ----------------------------------------------------------- //
 
-  saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.geoChests); // ------------------------- Secrets -> World Interactions ---------------------------------------------------------------------- //
+  saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.geoChests); // ------------------------- Geo Caches -> Geo Rocks ----------------------------------------------------------- //
+
+  saveDataChecker.checkGeoRocks(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.geoRocks); // ------------------------- Secrets -> World Interactions ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.worldInteractions, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.worldInteractions.entries, HKPlayerData, HKWorldItems); // ------------------------- Secrets -> Secret Rooms ---------------------------------------------------------------------- //
 
@@ -2003,7 +2005,7 @@ function CheckHallOfGods(db, playerData) {
  * @param {object} dataObject object containing all hints data
  * @param {object} playerData object containing HK Player Data to look in
  * @param {object} worldData object containing HK World Data to look in
- * @returns {bool} true when defeated Hollow Knight, false if not
+ * @returns {boolean} true when defeated Hollow Knight, false if not
  */
 
 
@@ -2201,6 +2203,11 @@ function ResetCompletion(db) {
 
 
 var DataChecker = /*#__PURE__*/function () {
+  /**
+   * Used for checking and verifying data (like Grubs, Items or Geo Rocks) inside a player's save file.
+   * Pass a save to the object and it will be split automatically to playerData, boolData and geoRocksData.
+   * @param {object} saveFile The whole player's save file, in JSON format
+   */
   function DataChecker(saveFile) {
     _classCallCheck(this, DataChecker);
 
@@ -2209,6 +2216,13 @@ var DataChecker = /*#__PURE__*/function () {
     this.boolData = saveFile.sceneData.persistentBoolItems;
     this.geoRocksData = saveFile.sceneData.geoRocks;
   }
+  /**
+   * Verifies if a specific Collectible is found in boolData and returns true/false.
+   * @param {string} id the Collectible's id in the database.
+   * @param {string} sceneName the Collectible's sceneName in the database.
+   * @returns {boolean}
+   */
+
 
   _createClass(DataChecker, [{
     key: "_FindItem",
@@ -2224,6 +2238,32 @@ var DataChecker = /*#__PURE__*/function () {
 
       return false;
     }
+    /**
+     * Verifies if a specific Geo Rock is destroyed and returns true/false.
+     * @param {string} id the Geo Rock's id in the database.
+     * @param {string} sceneName the Geo Rock's sceneName in the database.
+     * @returns {boolean}
+     */
+
+  }, {
+    key: "_FindGeoRock",
+    value: function _FindGeoRock() {
+      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+      var sceneName = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+
+      for (var i = 0, length = this.geoRocksData.length; i < length; i++) {
+        if (this.geoRocksData[i].id === id && this.geoRocksData[i].sceneName === sceneName && this.geoRocksData[i].hitsLeft === 0) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+    /**
+     * Verifies the status of all items in a given section (e.g. Grubs or Whispering Roots) from the database.
+     * @param {object} section Provide a section object to check.
+     */
+
   }, {
     key: "checkItems",
     value: function checkItems(section) {
@@ -2234,6 +2274,29 @@ var DataChecker = /*#__PURE__*/function () {
         switch (i) {
           default:
             if (this._FindItem(this.entries[i].id, this.entries[i].sceneName)) {
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, i);
+            } else {
+              (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(this.section, i);
+            }
+
+        }
+      }
+    }
+    /**
+     * Verifies the status of all Geo Rocks from the database.
+     * @param {object} section Provide a Geo Rocks section object to check.
+     */
+
+  }, {
+    key: "checkGeoRocks",
+    value: function checkGeoRocks(section) {
+      this.section = section;
+      this.entries = section.entries;
+
+      for (var i in this.entries) {
+        switch (i) {
+          default:
+            if (this._FindGeoRock(this.entries[i].id, this.entries[i].sceneName)) {
               (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(this.section, i);
             } else {
               (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(this.section, i);

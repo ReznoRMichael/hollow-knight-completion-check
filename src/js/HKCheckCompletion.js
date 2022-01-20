@@ -260,6 +260,10 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   saveDataChecker.checkItems(HK.sections.geoChests);
 
+  // ------------------------- Geo Caches -> Geo Rocks ----------------------------------------------------------- //
+
+  saveDataChecker.checkGeoRocks(HK.sections.geoRocks);
+
   // ------------------------- Secrets -> World Interactions ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.worldInteractions, HK.sections.worldInteractions.entries, HKPlayerData, HKWorldItems);
