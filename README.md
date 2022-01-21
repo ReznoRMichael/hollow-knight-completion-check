@@ -94,7 +94,7 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
-* v2.0.0 Upcoming:  
+* v2.0.0 2022-01-21:  
 
   — **General Changes:**  
   ✅ Added three new tabs: Collectibles, Geo Caches and Secrets.  
