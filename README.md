@@ -99,7 +99,7 @@ If you like the tool and wish it developed further with more functions and easie
   — **General Changes:**  
   ✅ Added three new tabs: Collectibles, Geo Caches and Secrets.  
   ✅ More things counted towards True Completion number.  
-  ✅ True Completion now shown right below Game Status for more exposure.  
+  ✅ True Completion % box now shown right below Game Status and the color of the box changes depending on progress (red/blue/green).  
 
   — **(New Tab) Collectibles**:  
   ✅ Charm Notches (8).  
