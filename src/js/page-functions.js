@@ -745,9 +745,9 @@ function CompletionFillNoSave(section) {
   let id = "";
   let h2 = "";
   let h2id = "";
-  let mp = ""; // max Percent
+  let percentBox = ""; // Percent Box
   let symbol = "";
-  let textFill = "";
+  let fullString = "";
 
   id = section.id;
   h2 = section.h2;
@@ -782,21 +782,21 @@ function CompletionFillNoSave(section) {
       symbol = "";
   }
 
-  mp = `<div class='percent-box'>${(id === "hk-intro") ? 0: section.maxPercent}${symbol}</div>`;
-  if (!section.hasOwnProperty("maxPercent")) mp = "";
+  percentBox = `<div class='percent-box'>${(id === "hk-intro") ? 0: section.maxPercent}${symbol}</div>`;
+  if (!section.hasOwnProperty("maxPercent")) percentBox = "";
 
-  textFill += `<h2 id='${h2id}'>${h2}${mp}</h2>`;
+  fullString += `<h2 id='${h2id}'>${h2}${percentBox}</h2>`;
 
-  // ----------------- True Completion h2 title ---------------- //
+  // ----------------- add True Completion h2 title ---------------- //
   switch (id) {
 
     case "hk-intro":
-      textFill += `<h2 id='hk-true-completion'>True Completion<div class='percent-box'>89.98%</div></h2>`;
+      fullString += `<h2 id='hk-true-completion'>True Completion<div class='percent-box'>0.00%</div></h2>`;
       break;
     default:
   }
 
-  return textFill;
+  return fullString;
 }
 
 /**
@@ -811,14 +811,18 @@ function CompletionFill(section) {
   let clRed = "box-red";
   let cp = 0; // current Percent
   let mp = 0; // max Percent
+  let trueCompletionCurrent = 0;
+  let trueCompletionTotal = 0;
+  let trueCompletionPercent = 0; // True Completion %
   let symbol = "";
-  let fillText = "";
+  let percentBox = "";
+  let fullString = "";
 
   (section.hasOwnProperty("percent")) ? cp = section.percent: cp = 0;
 
   // Don't use percent-box for Essentials, Achievements, Statistics etc.
   if (!section.hasOwnProperty("maxPercent")) {
-    fillText = "";
+    percentBox = "";
   }
   // otherwise use percent-box with values cp/mp%
   else {
@@ -851,6 +855,14 @@ function CompletionFill(section) {
     switch (section.id) {
 
       case "hk-intro":
+
+        // True Completion % reading and calculation for percent-box and box colors
+        trueCompletionCurrent = section.extendedCompletionDone;
+        trueCompletionTotal = section.extendedCompletionTotal;
+        trueCompletionPercent = (trueCompletionCurrent / trueCompletionTotal) * 100;
+        symbol = "%";
+
+        break;
       case "hk-bosses":
       case "hk-charms":
       case "hk-equipment":
@@ -876,11 +888,35 @@ function CompletionFill(section) {
         symbol = "";
     }
 
-    fillText = `<div class='percent-box${cl}'>${(section.id === "hk-intro") ? cp: `${cp}${section.maxPercent}`}${symbol}</div>`;
+    percentBox = `<div class='percent-box${cl}'>${(section.id === "hk-intro") ? cp: `${cp}${section.maxPercent}`}${symbol}</div>`;
   }
 
-  return `\t${h2id}${h2}${fillText}</h2>\n`;
+  fullString += `\t${h2id}${h2}${percentBox}</h2>\n`;
 
+  // ----------------- add True Completion h2 title ---------------- //
+  switch (section.id) {
+
+    case "hk-intro":
+
+      // switches the box to red when True Completion is 0
+      if (trueCompletionCurrent === 0) {
+        cl = ` ${clRed}`;
+      }
+      // switches the box to green when True Completion is 100.00%
+      else if (trueCompletionCurrent === trueCompletionTotal) {
+        cl = ` ${clGreen}`;
+      }
+      // default is blue (partially completed and starting value)
+      else cl = "";
+
+      fullString += `<h2 id='hk-true-completion'>
+      True Completion<div class='percent-box${cl}'>${trueCompletionPercent.toFixed(2)}${symbol}</div>
+      </h2>`;
+      break;
+    default:
+  }
+
+  return fullString;
 }
 
 /* function SingleEntryFill(section, entry) { */
