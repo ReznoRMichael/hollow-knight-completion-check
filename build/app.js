@@ -1114,6 +1114,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "rancidEggs":
       case "jinnEggsSold":
       case "xunFlowerBrokeTimes":
+      case "soldTrinket1":
+      case "soldTrinket2":
+      case "soldTrinket3":
+      case "soldTrinket4":
         // textPrefix += ": " + Math.abs(playerData[i]);
         amount = Math.abs(playerData[i]);
         dataObject[i].amount = amount;
@@ -9208,6 +9212,26 @@ var HK = {
           spoiler: "Amount of Geo the Shade is currently holding",
           min: 0,
           wiki: "Shade"
+        },
+        soldTrinket1: {
+          name: "Wanderer's Journals Sold",
+          spoiler: "City of Tears: Relic Seeker Lemm",
+          wiki: "Wanderer's_Journal"
+        },
+        soldTrinket2: {
+          name: "Hallownest Seals Sold",
+          spoiler: "City of Tears: Relic Seeker Lemm",
+          wiki: "Hallownest_Seal"
+        },
+        soldTrinket3: {
+          name: "King's Idols Sold",
+          spoiler: "City of Tears: Relic Seeker Lemm",
+          wiki: "King's_Idol"
+        },
+        soldTrinket4: {
+          name: "Arcane Eggs Sold",
+          spoiler: "City of Tears: Relic Seeker Lemm",
+          wiki: "Arcane_Egg"
         },
         rancidEggs: {
           name: "Rancid Eggs",

@@ -5808,11 +5808,6 @@ const HK = {
           min: 0,
           wiki: "Shade"
         },
-        rancidEggs: {
-          name: "Rancid Eggs",
-          spoiler: "Find: Hallownest, Buy: Sly, Tuk",
-          wiki: "Rancid_Egg"
-        },
         soldTrinket1: {
           name: "Wanderer's Journals Sold",
           spoiler: "City of Tears: Relic Seeker Lemm",
@@ -5821,17 +5816,22 @@ const HK = {
         soldTrinket2: {
           name: "Hallownest Seals Sold",
           spoiler: "City of Tears: Relic Seeker Lemm",
-          wiki: "Wanderer's_Journal"
+          wiki: "Hallownest_Seal"
         },
         soldTrinket3: {
           name: "King's Idols Sold",
           spoiler: "City of Tears: Relic Seeker Lemm",
-          wiki: "Wanderer's_Journal"
+          wiki: "King's_Idol"
         },
         soldTrinket4: {
           name: "Arcane Eggs Sold",
           spoiler: "City of Tears: Relic Seeker Lemm",
-          wiki: "Wanderer's_Journal"
+          wiki: "Arcane_Egg"
+        },
+        rancidEggs: {
+          name: "Rancid Eggs",
+          spoiler: "Find: Hallownest, Buy: Sly, Tuk",
+          wiki: "Rancid_Egg"
         },
         jinnEggsSold: {
           name: "Rancid Eggs Sold",

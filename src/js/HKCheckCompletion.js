@@ -1280,6 +1280,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "rancidEggs":
       case "jinnEggsSold":
       case "xunFlowerBrokeTimes":
+      case "soldTrinket1":
+      case "soldTrinket2":
+      case "soldTrinket3":
+      case "soldTrinket4":
         // textPrefix += ": " + Math.abs(playerData[i]);
         amount = Math.abs(playerData[i]);
 
