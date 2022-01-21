@@ -129,6 +129,10 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **Game Statistics** changes:  
   ✅ Removed Whispering Roots, Relics, Geo Rocks (duplicates).  
+  ✅ Added Wanderer's Journals Sold.  
+  ✅ Added Hallownest Seals Sold.  
+  ✅ Added King's Idols Sold.  
+  ✅ Added Arcane Eggs Sold.  
 
 * v1.6.1 2022-01-14:  
 
