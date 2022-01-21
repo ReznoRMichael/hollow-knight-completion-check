@@ -5813,6 +5813,26 @@ const HK = {
           spoiler: "Find: Hallownest, Buy: Sly, Tuk",
           wiki: "Rancid_Egg"
         },
+        soldTrinket1: {
+          name: "Wanderer's Journals Sold",
+          spoiler: "City of Tears: Relic Seeker Lemm",
+          wiki: "Wanderer's_Journal"
+        },
+        soldTrinket2: {
+          name: "Hallownest Seals Sold",
+          spoiler: "City of Tears: Relic Seeker Lemm",
+          wiki: "Wanderer's_Journal"
+        },
+        soldTrinket3: {
+          name: "King's Idols Sold",
+          spoiler: "City of Tears: Relic Seeker Lemm",
+          wiki: "Wanderer's_Journal"
+        },
+        soldTrinket4: {
+          name: "Arcane Eggs Sold",
+          spoiler: "City of Tears: Relic Seeker Lemm",
+          wiki: "Wanderer's_Journal"
+        },
         jinnEggsSold: {
           name: "Rancid Eggs Sold",
           spoiler: "Dirtmouth: Jinn, Steel Soul Mode only",
