@@ -6719,7 +6719,7 @@ var HK = {
       entries: {
         hallownestSeal1: {
           name: "Hallownest Seal #1",
-          spoiler: "Forgotten Crossroads: Room Inside Well",
+          spoiler: "Forgotten Crossroads: Inside the Well",
           id: "Shiny Item",
           sceneName: "Crossroads_01",
           wiki: "Hallownest_Seal"
