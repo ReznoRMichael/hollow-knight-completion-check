@@ -96,6 +96,9 @@ If you like the tool and wish it developed further with more functions and easie
 
 * v2.1.0 Upcoming:  
 
+  — **General Changes:**  
+  ✅ Added Cornifer's Notes to the Secrets tab.  
+
   — **World Interactions** additions:  
   ✅ Gossipping Bugs.  
   ✅ Mask Maker Unmasked.  
