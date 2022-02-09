@@ -9145,7 +9145,7 @@ var HK = {
     corniferNotes: {
       h2: "Cornifer's Notes",
       id: "hk-cornifer-notes",
-      description: "Cornifer the Cartographer leaves his note on the ground every time he leaves the current area. The note will be at the same spot where Cornifer was met. He leaves an area once a specific condition from that area was met, like defeating a boss or learning a new ability.",
+      description: "Cornifer the Cartographer leaves his note on the ground every time he leaves the current area. The note will be at the same spot where Cornifer was met. He leaves an area once a specific condition from that area was met, like defeating a boss or learning a new ability. After reading a note it will stop glowing and the entry will be marked as completed.",
       entries: {
         corniferNote1: {
           name: "Note #1: Forgotten Crossroads",
