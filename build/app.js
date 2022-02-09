@@ -12168,7 +12168,7 @@ function GenerateInnerHTML(db) {
 
       case "geoRocks": // Geo Caches
 
-      case "secretRooms": // Secrets
+      case "corniferNotes": // Secrets
 
       case "statistics": // Statistics
 

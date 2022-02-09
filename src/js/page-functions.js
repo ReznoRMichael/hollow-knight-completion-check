@@ -679,7 +679,7 @@ function GenerateInnerHTML(db) {
       case "huntersJournalOptional": // Journal
       case "items": // Collectibles
       case "geoRocks": // Geo Caches
-      case "secretRooms": // Secrets
+      case "corniferNotes": // Secrets
       case "statistics": // Statistics
       case "hallOfGods": // Godmaster
 
