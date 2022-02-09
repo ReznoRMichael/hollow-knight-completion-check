@@ -98,6 +98,7 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **World Interactions** additions:  
   ✅ Gossipping Bugs.  
+  ✅ Mask Maker Unmasked.  
 
   — **Bug Fixes:**  
   ✅ Corrected Hallownest Seal #2 location.  
