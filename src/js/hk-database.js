@@ -5591,6 +5591,11 @@ const HK = {
           spoiler: "Temple of the Black Egg: Lore Tablet",
           wiki: "World_Sense"
         },
+        spaBugsEncountered: {
+          name: "Gossipping Bugs",
+          spoiler: "Forgotten Crossroads: Hot Springs, acquire Mantis Claw",
+          wiki: "Hot_Spring#Forgotten_Crossroads"
+        },
         bankerAccountPurchased: {
           name: "Opened Bank Account",
           spoiler: "100 Geo: Fog Canyon: Millibelle the Banker",
