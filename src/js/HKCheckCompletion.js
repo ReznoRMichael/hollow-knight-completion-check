@@ -275,6 +275,10 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   CheckAdditionalThings(HK.sections.secretRooms, HK.sections.secretRooms.entries, HKPlayerData, HKWorldItems);
 
+  // ------------------------- Secrets -> Cornifer's Notes ----------------------------------------------------------- //
+
+  saveDataChecker.checkItems(HK.sections.corniferNotes);
+
   // ------------------------- Game Statistics ---------------------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.statistics, HK.sections.statistics.entries, HKPlayerData, HKWorldItems, HKSceneData);
