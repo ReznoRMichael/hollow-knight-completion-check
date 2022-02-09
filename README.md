@@ -94,6 +94,14 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
+* v2.1.0 Upcoming:  
+
+  — **World Interactions** additions:  
+  ✅ Gossipping Bugs.  
+
+  — **Bug Fixes:**  
+  ✅ Corrected Hallownest Seal #2 location.  
+
 * v2.0.0 2022-01-21:  
 
   — **General Changes:**  
