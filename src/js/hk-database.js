@@ -3313,7 +3313,7 @@ const HK = {
         },
         hallownestSeal2: {
           name: "Hallownest Seal #2",
-          spoiler: "Greenpath: Stone Sanctuary Entrance",
+          spoiler: "Fungal Wastes: Willoh's Room above Queen's Station",
           id: "Shiny Item",
           sceneName: "Fungus2_34",
           wiki: "Hallownest_Seal"
