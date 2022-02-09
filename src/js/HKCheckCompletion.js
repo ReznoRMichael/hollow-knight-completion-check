@@ -107,6 +107,9 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
     return false;
   }
 
+  // Generate database entries
+  // console.log(GenerateDatabaseEntries(HKWorldItems, "Shiny", "Note", "corniferNote", "Cornifer#Locations"));
+
   /* Initialize DataChecker object for checking status of items in save file */
   let saveDataChecker = new DataChecker(jsonObject);
 

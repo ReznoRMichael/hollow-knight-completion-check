@@ -112,7 +112,8 @@ function GenerateDatabaseEntries(objectArray, searchText = "", entryName = "", e
 
   for (let i = 0, ln = objectArray.length; i < ln; i++) {
 
-    if (objectArray[i].id.includes(searchText)) {
+    /* if (objectArray[i].id.includes(searchText)) { */
+    if (objectArray[i].id === searchText) {
 
       count++;
 
@@ -122,7 +123,6 @@ function GenerateDatabaseEntries(objectArray, searchText = "", entryName = "", e
         spoiler: "${TranslateMapName(objectArray[i].sceneName)}",
         id: "${objectArray[i].id}",
         sceneName: "${objectArray[i].sceneName}",
-        hitsLeft: "${objectArray[i].hitsLeft}",
         wiki: "${wiki}"
       },`;
     }

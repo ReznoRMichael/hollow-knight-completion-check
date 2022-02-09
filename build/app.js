@@ -102,7 +102,9 @@ function HKCheckCompletion(jsonObject) {
   } else {
     _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].saveAnalyzed = false;
     return false;
-  }
+  } // Generate database entries
+  // console.log(GenerateDatabaseEntries(HKWorldItems, "Shiny", "Note", "corniferNote", "Cornifer#Locations"));
+
   /* Initialize DataChecker object for checking status of items in save file */
 
 
@@ -9137,6 +9139,85 @@ var HK = {
       }
     },
 
+    /* ###################################### Secrets -> Secret Rooms ############################################## */
+    corniferNotes: {
+      h2: "Cornifer's Notes",
+      id: "hk-cornifer-notes",
+      description: "Cornifer's Notes description",
+      entries: {
+        corniferNote1: {
+          name: "Note #1",
+          spoiler: "Forgotten Crossroads: Cornifer",
+          id: "Shiny",
+          sceneName: "Crossroads_33",
+          wiki: "Cornifer#Locations"
+        },
+        corniferNote2: {
+          name: "Note #2",
+          spoiler: "City of Tears: Toll Bench Cornifer",
+          id: "Shiny",
+          sceneName: "Ruins1_31",
+          wiki: "Cornifer#Locations"
+        },
+        corniferNote3: {
+          name: "Note #3",
+          spoiler: "Crystal Peak: Cornifer",
+          id: "Shiny",
+          sceneName: "Mines_30",
+          wiki: "Cornifer#Locations"
+        },
+        corniferNote4: {
+          name: "Note #4",
+          spoiler: "Ancient Basin: Fountain",
+          id: "Shiny",
+          sceneName: "Abyss_04",
+          wiki: "Cornifer#Locations"
+        },
+        corniferNote5: {
+          name: "Note #5",
+          spoiler: "Kingdom's Edge: Entrance",
+          id: "Shiny",
+          sceneName: "Deepnest_East_03",
+          wiki: "Cornifer#Locations"
+        },
+        corniferNote6: {
+          name: "Note #6",
+          spoiler: "Resting Grounds: Stag Station",
+          id: "Shiny",
+          sceneName: "RestingGrounds_09",
+          wiki: "Cornifer#Locations"
+        },
+        corniferNote7: {
+          name: "Note #7",
+          spoiler: "Howling Cliffs: Main",
+          id: "Shiny",
+          sceneName: "Cliffs_01",
+          wiki: "Cornifer#Locations"
+        },
+        corniferNote8: {
+          name: "Note #8",
+          spoiler: "Greenpath: Cornifer",
+          id: "Shiny",
+          sceneName: "Fungus1_06",
+          wiki: "Cornifer#Locations"
+        },
+        corniferNote9: {
+          name: "Note #9",
+          spoiler: "Royal Waterways: Cornifer",
+          id: "Shiny",
+          sceneName: "Waterways_09",
+          wiki: "Cornifer#Locations"
+        },
+        corniferNote10: {
+          name: "Note #10",
+          spoiler: "Fungal Wastes: Cornifer",
+          id: "Shiny",
+          sceneName: "Fungus2_18",
+          wiki: "Cornifer#Locations"
+        }
+      }
+    },
+
     /* ################ Game Statistics ################### */
     statistics: {
       h2: "Game Statistics",
@@ -11410,9 +11491,10 @@ function GenerateDatabaseEntries(objectArray) {
   var count = 0;
 
   for (var i = 0, ln = objectArray.length; i < ln; i++) {
-    if (objectArray[i].id.includes(searchText)) {
+    /* if (objectArray[i].id.includes(searchText)) { */
+    if (objectArray[i].id === searchText) {
       count++;
-      fillText += "\n      ".concat(entryDB).concat(count, ": {\n        name: \"").concat(entryName, " #").concat(count, "\",\n        spoiler: \"").concat(TranslateMapName(objectArray[i].sceneName), "\",\n        id: \"").concat(objectArray[i].id, "\",\n        sceneName: \"").concat(objectArray[i].sceneName, "\",\n        hitsLeft: \"").concat(objectArray[i].hitsLeft, "\",\n        wiki: \"").concat(wiki, "\"\n      },");
+      fillText += "\n      ".concat(entryDB).concat(count, ": {\n        name: \"").concat(entryName, " #").concat(count, "\",\n        spoiler: \"").concat(TranslateMapName(objectArray[i].sceneName), "\",\n        id: \"").concat(objectArray[i].id, "\",\n        sceneName: \"").concat(objectArray[i].sceneName, "\",\n        wiki: \"").concat(wiki, "\"\n      },");
     }
   }
 
