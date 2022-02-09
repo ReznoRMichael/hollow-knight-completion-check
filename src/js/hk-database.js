@@ -5738,76 +5738,76 @@ const HK = {
     corniferNotes: {
       h2: "Cornifer's Notes",
       id: "hk-cornifer-notes",
-      description: `Cornifer's Notes description`,
+      description: `Cornifer the Cartographer leaves his note on the ground every time he leaves the current area. The note will be at the same spot where Cornifer was met. He leaves an area once a specific condition from that area was met, like defeating a boss or learning a new ability.`,
       entries: {
         corniferNote1: {
-          name: "Note #1",
-          spoiler: "Forgotten Crossroads: Cornifer",
+          name: "Note #1: Forgotten Crossroads",
+          spoiler: "Below Big Gruzzer Room",
           id: "Shiny",
           sceneName: "Crossroads_33",
           wiki: "Cornifer#Locations"
         },
         corniferNote2: {
-          name: "Note #2",
-          spoiler: "City of Tears: Toll Bench Cornifer",
-          id: "Shiny",
-          sceneName: "Ruins1_31",
-          wiki: "Cornifer#Locations"
-        },
-        corniferNote3: {
-          name: "Note #3",
-          spoiler: "Crystal Peak: Cornifer",
-          id: "Shiny",
-          sceneName: "Mines_30",
-          wiki: "Cornifer#Locations"
-        },
-        corniferNote4: {
-          name: "Note #4",
-          spoiler: "Ancient Basin: Fountain",
-          id: "Shiny",
-          sceneName: "Abyss_04",
-          wiki: "Cornifer#Locations"
-        },
-        corniferNote5: {
-          name: "Note #5",
-          spoiler: "Kingdom's Edge: Entrance",
-          id: "Shiny",
-          sceneName: "Deepnest_East_03",
-          wiki: "Cornifer#Locations"
-        },
-        corniferNote6: {
-          name: "Note #6",
-          spoiler: "Resting Grounds: Stag Station",
-          id: "Shiny",
-          sceneName: "RestingGrounds_09",
-          wiki: "Cornifer#Locations"
-        },
-        corniferNote7: {
-          name: "Note #7",
-          spoiler: "Howling Cliffs: Main",
-          id: "Shiny",
-          sceneName: "Cliffs_01",
-          wiki: "Cornifer#Locations"
-        },
-        corniferNote8: {
-          name: "Note #8",
-          spoiler: "Greenpath: Cornifer",
+          name: "Note #2: Greenpath",
+          spoiler: "Room below the Crossroads entrance",
           id: "Shiny",
           sceneName: "Fungus1_06",
           wiki: "Cornifer#Locations"
         },
-        corniferNote9: {
-          name: "Note #9",
-          spoiler: "Royal Waterways: Cornifer",
+        corniferNote3: {
+          name: "Note #3: Fungal Wastes",
+          spoiler: "Right of Queen's Station",
+          id: "Shiny",
+          sceneName: "Fungus2_18",
+          wiki: "Cornifer#Locations"
+        },
+        corniferNote4: {
+          name: "Note #4: Howling Cliffs",
+          spoiler: "Big Main Area on the left side",
+          id: "Shiny",
+          sceneName: "Cliffs_01",
+          wiki: "Cornifer#Locations"
+        },
+        corniferNote5: {
+          name: "Note #5: City of Tears",
+          spoiler: "Toll Bench left of Soul Sanctum",
+          id: "Shiny",
+          sceneName: "Ruins1_31",
+          wiki: "Cornifer#Locations"
+        },
+        corniferNote6: {
+          name: "Note #6: Crystal Peak",
+          spoiler: "Left of Central Bench",
+          id: "Shiny",
+          sceneName: "Mines_30",
+          wiki: "Cornifer#Locations"
+        },
+        corniferNote7: {
+          name: "Note #7: Resting Grounds",
+          spoiler: "Near the Stag Station",
+          id: "Shiny",
+          sceneName: "RestingGrounds_09",
+          wiki: "Cornifer#Locations"
+        },
+        corniferNote8: {
+          name: "Note #8: Royal Waterways",
+          spoiler: "Near Fungal Wastes exit",
           id: "Shiny",
           sceneName: "Waterways_09",
           wiki: "Cornifer#Locations"
         },
-        corniferNote10: {
-          name: "Note #10",
-          spoiler: "Fungal Wastes: Cornifer",
+        corniferNote9: {
+          name: "Note #9: Ancient Basin",
+          spoiler: "Below the Tram and Fountain",
           id: "Shiny",
-          sceneName: "Fungus2_18",
+          sceneName: "Abyss_04",
+          wiki: "Cornifer#Locations"
+        },
+        corniferNote10: {
+          name: "Note #10: Kingdom's Edge",
+          spoiler: "Below the King's Station entrance",
+          id: "Shiny",
+          sceneName: "Deepnest_East_03",
           wiki: "Cornifer#Locations"
         },
       },
