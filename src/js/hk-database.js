@@ -5626,6 +5626,11 @@ const HK = {
           spoiler: "Howling Cliffs: Top of Stag Nest",
           wiki: "Howling_Cliffs#Sub-area:_Stag_Nest"
         },
+        maskmakerUnmasked1: {
+          name: "Mask Maker Unmasked",
+          spoiler: "Deepnest, use Desolate Dive on Mask Maker",
+          wiki: "Mask_Maker#In-game_events"
+        },
         elderbugGaveFlower: {
           name: "Delicate Flower: Elderbug",
           spoiler: "Deliver from Traitor's Child Grave",
