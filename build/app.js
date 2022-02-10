@@ -403,6 +403,8 @@ function CheckExtendedCompletion(db) {
             case "bankerBalance":
             case "rancidEggs":
             case "geoRocks":
+            case "ore":
+            case "simpleKeys":
               // console.info("Ignored:", entry);
               continue;
           }
@@ -1129,6 +1131,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "soldTrinket3":
       case "soldTrinket4":
       case "ore":
+      case "simpleKeys":
         amount = Math.abs(playerData[i]);
         dataObject[i].amount = amount;
 
@@ -9381,6 +9384,11 @@ var HK = {
           name: "Pale Ore",
           spoiler: "Current amount of Pale Ore in inventory",
           wiki: "Pale_Ore"
+        },
+        simpleKeys: {
+          name: "Simple Keys",
+          spoiler: "Current amount of Simple Keys in inventory",
+          wiki: "Simple_Key"
         },
         rancidEggs: {
           name: "Rancid Eggs",

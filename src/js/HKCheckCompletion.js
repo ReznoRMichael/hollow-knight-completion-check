@@ -521,6 +521,8 @@ function CheckExtendedCompletion(db) {
             case "bankerBalance":
             case "rancidEggs":
             case "geoRocks":
+            case "ore":
+            case "simpleKeys":
 
               // console.info("Ignored:", entry);
 
@@ -1299,6 +1301,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "soldTrinket3":
       case "soldTrinket4":
       case "ore":
+      case "simpleKeys":
         amount = Math.abs(playerData[i]);
 
         dataObject[i].amount = amount;
