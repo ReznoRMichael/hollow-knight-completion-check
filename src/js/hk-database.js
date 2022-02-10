@@ -1183,6 +1183,11 @@ const HK = {
           spoiler: "Fungal Wastes, near Dashmaster charm statue",
           wiki: "Bretta"
         },
+        paidLegEater: {
+          name: "Paid to See Something Nice",
+          spoiler: "Fungal Wastes, Leg Eater: 86 Geo",
+          wiki: "Leg_Eater#In-game_events"
+        },
         mantisVillageFloorLever: {
           name: "Mantis Village Floor Lever",
           spoiler: "Fungal Wastes, right of Mantis Claw",
@@ -1278,11 +1283,6 @@ const HK = {
           id: "Shiny Item",
           sceneName: "Room_Colosseum_Silver",
           wiki: "Pale_Ore#How_to_Acquire"
-        },
-        paidLegEater: {
-          name: "Paid to See Something Nice",
-          spoiler: "Fungal Wastes, Leg Eater: 86 Geo",
-          wiki: "Leg_Eater#In-game_events"
         },
         waterwaysAcidDrained: {
           name: "Acid Drained",

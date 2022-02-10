@@ -4635,6 +4635,11 @@ var HK = {
           spoiler: "Fungal Wastes, near Dashmaster charm statue",
           wiki: "Bretta"
         },
+        paidLegEater: {
+          name: "Paid to See Something Nice",
+          spoiler: "Fungal Wastes, Leg Eater: 86 Geo",
+          wiki: "Leg_Eater#In-game_events"
+        },
         mantisVillageFloorLever: {
           name: "Mantis Village Floor Lever",
           spoiler: "Fungal Wastes, right of Mantis Claw",
