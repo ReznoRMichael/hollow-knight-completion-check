@@ -5602,12 +5602,12 @@ const HK = {
           wiki: "Jiji"
         },
         bathHouseOpened: {
-          name: "Pleasure House Door Opened",
+          name: "Pleasure House Door Unlocked",
           spoiler: "City of Tears: Right Side Main Hub Area",
           wiki: "City_of_Tears#Sub-area:_Pleasure_House"
         },
         gladeDoorOpened: {
-          name: "Spirits' Glade Door Opened",
+          name: "Spirits' Glade Door Unlocked",
           spoiler: "Resting Grounds, Seer: 200 Essence",
           wiki: "Resting_Grounds#Sub-area:_Spirits'_Glade"
         },
