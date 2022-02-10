@@ -99,12 +99,14 @@ If you like the tool and wish it developed further with more functions and easie
   — **General Changes:**  
   ✅ Added Cornifer's Notes to the Secrets tab.  
 
+  — **Game Completion Essentials** additions:  
+  ✅ Godseeker Cocoon Unlocked.  
+
   — **World Interactions** additions:  
   ✅ Gossipping Bugs.  
   ✅ Confessor Jiji's Cave Unlocked.  
   ✅ Pleasure House Door Unlocked.  
   ✅ Spirits' Glade Door Unlocked.  
-  ✅ Godseeker Cocoon Unlocked.  
   ✅ Mask Maker Unmasked.  
 
   — **Game Statistics** additions:  
