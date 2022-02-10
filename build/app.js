@@ -4649,6 +4649,11 @@ var HK = {
           spoiler: "Crystal Peak, below Quirrel location",
           wiki: "Shopkeeper's_Key"
         },
+        gaveSlykey: {
+          name: "Shopkeeper's Key Returned to Sly",
+          spoiler: "Dirtmouth, Sly's Shop",
+          wiki: "Sly"
+        },
         elegantKey: {
           name: "Elegant Key",
           spoiler: "Sly: 800 Geo + Shopkeeper's Key",
