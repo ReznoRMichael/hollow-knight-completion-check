@@ -5952,6 +5952,11 @@ const HK = {
           spoiler: "City of Tears: Relic Seeker Lemm",
           wiki: "Lemm#Collectibles"
         },
+        ore: {
+          name: "Pale Ore",
+          spoiler: "Current amount of Pale Ore in inventory",
+          wiki: "Pale_Ore"
+        },
         rancidEggs: {
           name: "Rancid Eggs",
           spoiler: "Find: Hallownest, Buy: Sly, Tuk",
