@@ -1279,6 +1279,11 @@ const HK = {
           sceneName: "Room_Colosseum_Silver",
           wiki: "Pale_Ore#How_to_Acquire"
         },
+        paidLegEater: {
+          name: "Paid to See Something Nice",
+          spoiler: "Fungal Wastes, Leg Eater: 86 Geo",
+          wiki: "Leg_Eater#In-game_events"
+        },
         waterwaysAcidDrained: {
           name: "Acid Drained",
           spoiler: "Royal Waterways, lever after Dung Defender",
