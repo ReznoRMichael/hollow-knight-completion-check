@@ -100,6 +100,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Added Cornifer's Notes to the Secrets tab.  
 
   — **Game Completion Essentials** additions:  
+  ✅ Paid to See Something Nice.  
   ✅ Shopkeeper's Key Returned to Sly.  
   ✅ Godseeker Cocoon Unlocked.  
 
