@@ -1298,12 +1298,12 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "soldTrinket2":
       case "soldTrinket3":
       case "soldTrinket4":
-        // textPrefix += ": " + Math.abs(playerData[i]);
+      case "ore":
         amount = Math.abs(playerData[i]);
 
         dataObject[i].amount = amount;
 
-        if (amount > 0 && i == "geoPool") {
+        if (amount > 0 && i === "geoPool") {
           SetIconPartial(section, i);
         } else {
           SetIconNone(section, i);

@@ -1128,11 +1128,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "soldTrinket2":
       case "soldTrinket3":
       case "soldTrinket4":
-        // textPrefix += ": " + Math.abs(playerData[i]);
+      case "ore":
         amount = Math.abs(playerData[i]);
         dataObject[i].amount = amount;
 
-        if (amount > 0 && i == "geoPool") {
+        if (amount > 0 && i === "geoPool") {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconPartial)(section, i);
         } else {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
@@ -9376,6 +9376,11 @@ var HK = {
           name: "Total Geo from Sold Relics",
           spoiler: "City of Tears: Relic Seeker Lemm",
           wiki: "Lemm#Collectibles"
+        },
+        ore: {
+          name: "Pale Ore",
+          spoiler: "Current amount of Pale Ore in inventory",
+          wiki: "Pale_Ore"
         },
         rancidEggs: {
           name: "Rancid Eggs",
