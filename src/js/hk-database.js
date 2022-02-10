@@ -5601,6 +5601,11 @@ const HK = {
           spoiler: "Dirtmouth, requires Simple Key",
           wiki: "Jiji"
         },
+        gladeDoorOpened: {
+          name: "Spirits' Glade Door Opened",
+          spoiler: "Resting Grounds, Seer: 200 Essence",
+          wiki: "Resting_Grounds#Sub-area:_Spirits'_Glade"
+        },
         bankerAccountPurchased: {
           name: "Opened Bank Account",
           spoiler: "100 Geo: Fog Canyon: Millibelle the Banker",
