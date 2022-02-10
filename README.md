@@ -113,6 +113,7 @@ If you like the tool and wish it developed further with more functions and easie
   — **Game Statistics** additions:  
   ✅ Total Geo from Sold Relics.  
   ✅ Pale Ore (current amount in inventory).  
+  ✅ Simple Keys (current amount in inventory).  
 
   — **Bug Fixes:**  
   ✅ Corrected Hallownest Seal #2 location.  
