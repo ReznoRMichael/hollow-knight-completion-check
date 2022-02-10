@@ -9022,7 +9022,7 @@ var HK = {
           wiki: "Hot_Spring#Forgotten_Crossroads"
         },
         jijiDoorUnlocked: {
-          name: "Unlocked Confessor Jiji's Hut",
+          name: "Confessor Jiji's Cave Unlocked",
           spoiler: "Dirtmouth, requires Simple Key",
           wiki: "Jiji"
         },
@@ -9032,7 +9032,7 @@ var HK = {
           wiki: "Resting_Grounds#Sub-area:_Spirits'_Glade"
         },
         bankerAccountPurchased: {
-          name: "Opened Bank Account",
+          name: "Bank Account Opened",
           spoiler: "100 Geo: Fog Canyon: Millibelle the Banker",
           wiki: "Millibelle"
         },
@@ -9042,7 +9042,7 @@ var HK = {
           wiki: "Millibelle"
         },
         millibelleCheckedStand: {
-          name: "Investigated Banker Stand",
+          name: "Banker Stand Investigated",
           spoiler: "Fog Canyon: Millibelle the Banker",
           wiki: "Millibelle"
         },
@@ -9057,7 +9057,7 @@ var HK = {
           wiki: "Millibelle"
         },
         stagEggInspected: {
-          name: "Inspected Stag Nest Egg",
+          name: "Stag Nest Egg Inspected",
           spoiler: "Howling Cliffs: Top of Stag Nest",
           wiki: "Howling_Cliffs#Sub-area:_Stag_Nest"
         },
