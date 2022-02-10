@@ -505,7 +505,9 @@ function CheckExtendedCompletion(db) {
             case "greyPrinceDefeated":
             case "killedHollowKnight":
             case "killedFinalBoss":
-            case "grubsCollected": // Collectibles are counted in their own sections
+            // Collectibles are counted in their own sections
+            // falls through
+            case "grubsCollected":
             case "whisperingRoots":
             case "relicsWandererJournal":
             case "relicsHallownestSeal":
