@@ -9021,6 +9021,11 @@ var HK = {
           spoiler: "Forgotten Crossroads: Hot Springs, acquire Mantis Claw",
           wiki: "Hot_Spring#Forgotten_Crossroads"
         },
+        jijiDoorUnlocked: {
+          name: "Unlocked Confessor Jiji's Hut",
+          spoiler: "Dirtmouth, requires Simple Key",
+          wiki: "Jiji"
+        },
         bankerAccountPurchased: {
           name: "Opened Bank Account",
           spoiler: "100 Geo: Fog Canyon: Millibelle the Banker",
