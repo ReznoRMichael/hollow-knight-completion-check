@@ -109,6 +109,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Confessor Jiji's Cave Unlocked.  
   ✅ Pleasure House Door Unlocked.  
   ✅ Spirits' Glade Door Unlocked.  
+  ✅ City of Tears Gate Opened.  
   ✅ Mask Maker Unmasked.  
 
   — **Game Statistics** additions:  
