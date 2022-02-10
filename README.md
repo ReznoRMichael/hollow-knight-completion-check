@@ -101,7 +101,8 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **World Interactions** additions:  
   ✅ Gossipping Bugs.  
-  ✅ Unlocked Confessor Jiji's Hut.  
+  ✅ Confessor Jiji's Hut Unlocked.  
+  ✅ Spirits' Glade Door Opened.  
   ✅ Mask Maker Unmasked.  
 
   — **Game Statistics** additions:  
