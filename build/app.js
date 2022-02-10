@@ -9054,6 +9054,11 @@ var HK = {
           spoiler: "Resting Grounds, Seer: 200 Essence",
           wiki: "Resting_Grounds#Sub-area:_Spirits'_Glade"
         },
+        openedCityGate: {
+          name: "City of Tears Gate Opened",
+          spoiler: "Fungal Wastes, requires City Crest",
+          wiki: "Fungal_Wastes"
+        },
         bankerAccountPurchased: {
           name: "Bank Account Opened",
           spoiler: "100 Geo: Fog Canyon: Millibelle the Banker",
