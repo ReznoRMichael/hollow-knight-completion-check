@@ -103,7 +103,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Gossipping Bugs.  
   ✅ Confessor Jiji's Cave Unlocked.  
   ✅ Pleasure House Door Unlocked.  
-  ✅ Spirits' Glade Door Opened.  
+  ✅ Spirits' Glade Door Unlocked.  
   ✅ Godseeker Cocoon Unlocked.  
   ✅ Mask Maker Unmasked.  
 
