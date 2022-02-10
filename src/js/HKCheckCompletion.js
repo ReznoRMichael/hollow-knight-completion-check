@@ -258,7 +258,7 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
   // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.items, HK.sections.items.entries, HKPlayerData, HKWorldItems);
-  
+
   // ------------------------- Geo Caches -> Geo Chests ----------------------------------------------------------- //
 
   saveDataChecker.checkItems(HK.sections.geoChests);
@@ -505,12 +505,18 @@ function CheckExtendedCompletion(db) {
             case "greyPrinceDefeated":
             case "killedHollowKnight":
             case "killedFinalBoss":
-            case "grubsCollected": /* Collectibles are counted in their own sections */
+            case "grubsCollected": // Collectibles are counted in their own sections
             case "whisperingRoots":
             case "relicsWandererJournal":
             case "relicsHallownestSeal":
             case "relicsKingsIdol":
             case "relicsArcaneEgg":
+            case "soldTrinket1":
+            case "soldTrinket2":
+            case "soldTrinket3":
+            case "soldTrinket4":
+            case "relicsSoldTotalGeo":
+            case "bankerBalance":
             case "rancidEggs":
             case "geoRocks":
 
@@ -548,8 +554,7 @@ function CheckExtendedCompletion(db) {
                   intro.extendedCompletionTotal++;
 
                   // console.info("Counted Total:", entry);
-                }
-                /* else {
+                } /* else {
                   console.info("Not Counted Total:", entry);
                 } */
 
@@ -1330,7 +1335,6 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
       case "relicsSoldTotalGeo":
 
-        dataObject[i].amount = 0;
         amount = 0;
 
         for (let i = 1; i <= 4; i++) {
@@ -1388,23 +1392,23 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         break;
 
-      /* case "geoRocks":
-        discoveredTotal = sceneData.geoRocks.length;
+        /* case "geoRocks":
+          discoveredTotal = sceneData.geoRocks.length;
 
-        notActivated = CountGeoRocks(discoveredTotal, "unbroken");
-        activated = CountGeoRocks(discoveredTotal, "broken");
+          notActivated = CountGeoRocks(discoveredTotal, "unbroken");
+          activated = CountGeoRocks(discoveredTotal, "broken");
 
-        dataObject[i].discoveredTotal = discoveredTotal;
-        dataObject[i].notActivated = notActivated;
-        dataObject[i].activated = activated;
+          dataObject[i].discoveredTotal = discoveredTotal;
+          dataObject[i].notActivated = notActivated;
+          dataObject[i].activated = activated;
 
-        if (activated >= dataObject[i].max) {
-          SetIconGreen(section, i);
-        } else {
-          SetIconNone(section, i);
-        }
-        break;
-      */
+          if (activated >= dataObject[i].max) {
+            SetIconGreen(section, i);
+          } else {
+            SetIconNone(section, i);
+          }
+          break;
+        */
       case "itemsDiscovered":
         discoveredTotal = sceneData.persistentBoolItems.length;
 
@@ -1475,7 +1479,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
             SetIconRed(section, i);
           }
         }
-        
+
         break;
 
       case "relicsWandererJournal":
@@ -1759,7 +1763,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         break;
 
-      /* Unobtainable Unbreakable Charms after Grimm Troupe Banishment */
+        /* Unobtainable Unbreakable Charms after Grimm Troupe Banishment */
       case "fragileGreed_unbreakable":
       case "fragileHealth_unbreakable":
       case "fragileStrength_unbreakable":
@@ -2516,8 +2520,8 @@ class DataChecker {
     this.entries = section.entries;
 
     for (let entry in this.entries) {
-      
-      switch(entry) {
+
+      switch (entry) {
 
         // The Collector: Tower of Love Grubs activation Bug in the game - needs a workaround.
         // All 3 Grubs in the Tower of Love must be treated as one.
@@ -2532,7 +2536,7 @@ class DataChecker {
 
           break;
 
-        // playerData activation checks true/false
+          // playerData activation checks true/false
         case "hallownestSeal17": // The Seer's Essence Reward - Hallownest Seal
         case "arcaneEgg2": // The Seer's Essence Reward - Arcane Egg
         case "rancidEgg20": // Sly's Rancid Egg shop item
@@ -2545,7 +2549,7 @@ class DataChecker {
 
           break;
 
-        // Tuk's Rancid Egg - Normal or Steel Soul mode behaviour
+          // Tuk's Rancid Egg - Normal or Steel Soul mode behaviour
         case "rancidEgg21":
 
           // Steel Soul
@@ -2577,7 +2581,7 @@ class DataChecker {
 
           break;
 
-        // missable Arcane Egg in Lifeblood Core Room
+          // missable Arcane Egg in Lifeblood Core Room
         case "arcaneEgg4":
 
           if (this._FindItem(this.entries[entry])) {
@@ -2593,7 +2597,7 @@ class DataChecker {
 
           break;
 
-        // boolData activation checks
+          // boolData activation checks
         default:
 
           if (this._FindItem(this.entries[entry])) {
@@ -2609,13 +2613,13 @@ class DataChecker {
    * Verifies the status of all Geo Rocks from the database.
    * @param {object} section Provide a Geo Rocks section object to check.
    */
-   checkGeoRocks(section) {
+  checkGeoRocks(section) {
     this.section = section;
     this.entries = section.entries;
 
     for (let entry in this.entries) {
-      
-      switch(entry) {
+
+      switch (entry) {
 
         default:
 

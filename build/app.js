@@ -387,14 +387,19 @@ function CheckExtendedCompletion(db) {
             case "greyPrinceDefeated":
             case "killedHollowKnight":
             case "killedFinalBoss":
-            case "grubsCollected":
-            /* Collectibles are counted in their own sections */
+            case "grubsCollected": // Collectibles are counted in their own sections
 
             case "whisperingRoots":
             case "relicsWandererJournal":
             case "relicsHallownestSeal":
             case "relicsKingsIdol":
             case "relicsArcaneEgg":
+            case "soldTrinket1":
+            case "soldTrinket2":
+            case "soldTrinket3":
+            case "soldTrinket4":
+            case "relicsSoldTotalGeo":
+            case "bankerBalance":
             case "rancidEggs":
             case "geoRocks":
               // console.info("Ignored:", entry);
@@ -425,7 +430,7 @@ function CheckExtendedCompletion(db) {
                   intro.extendedCompletionTotal++; // console.info("Counted Total:", entry);
                 }
                 /* else {
-                  console.info("Not Counted Total:", entry);
+                console.info("Not Counted Total:", entry);
                 } */
 
                 /* Missable Arcane Egg exception, subtract from total */
@@ -1154,7 +1159,6 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         break;
 
       case "relicsSoldTotalGeo":
-        dataObject[i].amount = 0;
         amount = 0;
 
         for (var _i = 1; _i <= 4; _i++) {
