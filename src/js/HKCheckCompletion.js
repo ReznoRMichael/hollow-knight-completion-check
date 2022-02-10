@@ -1328,6 +1328,21 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         break;
 
+      case "relicsSoldTotalGeo":
+
+        dataObject[i].amount = 0;
+        amount = 0;
+
+        for (let i = 1; i <= 4; i++) {
+          amount += (dataObject[`soldTrinket${i}`].amount * dataObject[`soldTrinket${i}`].geoValue);
+        }
+
+        dataObject[i].amount = amount;
+
+        SetIconNone(section, i);
+
+        break;
+
       case "bankerBalance":
 
         amount = playerData[i];

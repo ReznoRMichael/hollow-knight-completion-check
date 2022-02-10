@@ -1153,6 +1153,18 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         playerData[i] === true ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
+      case "relicsSoldTotalGeo":
+        dataObject[i].amount = 0;
+        amount = 0;
+
+        for (var _i = 1; _i <= 4; _i++) {
+          amount += dataObject["soldTrinket".concat(_i)].amount * dataObject["soldTrinket".concat(_i)].geoValue;
+        }
+
+        dataObject[i].amount = amount;
+        (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
+        break;
+
       case "bankerBalance":
         amount = playerData[i];
         /* When value is negative, reset to zero */
@@ -1609,8 +1621,8 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     var idText = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
     var sceneNameText = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
 
-    for (var _i = 0, length = worldData.length; _i < length; _i++) {
-      if (worldData[_i].id === idText && worldData[_i].sceneName === sceneNameText && worldData[_i].activated === true) {
+    for (var _i2 = 0, length = worldData.length; _i2 < length; _i2++) {
+      if (worldData[_i2].id === idText && worldData[_i2].sceneName === sceneNameText && worldData[_i2].activated === true) {
         return true;
       }
     }
@@ -1628,9 +1640,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
     var itemId = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
     var total = 0;
 
-    for (var _i2 = 0, length = worldData.length; _i2 < length; _i2++) {
-      if (worldData[_i2].id === itemId) {
-        if (worldData[_i2].activated === true) total++;
+    for (var _i3 = 0, length = worldData.length; _i3 < length; _i3++) {
+      if (worldData[_i3].id === itemId) {
+        if (worldData[_i3].activated === true) total++;
       }
     }
 
@@ -1686,10 +1698,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       let list = new ItemListBox(worldData);
       
       */
-      for (var _i3 = 0; _i3 < arrayLength; _i3++) {
-        if (worldData[_i3].activated === false && worldData[_i3].semiPersistent === false) {
+      for (var _i4 = 0; _i4 < arrayLength; _i4++) {
+        if (worldData[_i4].activated === false && worldData[_i4].semiPersistent === false) {
           countTotal++;
-          itemsLog.push("#".concat(countTotal, " ").concat(worldData[_i3].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(worldData[_i3].sceneName), " \u2328\uFE0F ").concat(worldData[_i3].sceneName));
+          itemsLog.push("#".concat(countTotal, " ").concat(worldData[_i4].id, " \uD83D\uDDFA\uFE0F ").concat((0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.TranslateMapName)(worldData[_i4].sceneName), " \u2328\uFE0F ").concat(worldData[_i4].sceneName));
         }
       }
 
@@ -1698,15 +1710,15 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       } else {
         console.groupCollapsed("%cInteractables Not Activated (".concat(countTotal, "):"), "color: #16c60c; font-weight: 700;");
 
-        for (var _i4 = 0, length = itemsLog.length; _i4 < length; _i4++) {
-          console.log(itemsLog[_i4]);
+        for (var _i5 = 0, length = itemsLog.length; _i5 < length; _i5++) {
+          console.log(itemsLog[_i5]);
         }
 
         console.groupEnd();
       }
     } else {
-      for (var _i5 = 0; _i5 < arrayLength; _i5++) {
-        if (worldData[_i5].activated === true) countTotal++;
+      for (var _i6 = 0; _i6 < arrayLength; _i6++) {
+        if (worldData[_i6].activated === true) countTotal++;
       }
     }
 
@@ -9141,7 +9153,7 @@ var HK = {
       }
     },
 
-    /* ###################################### Secrets -> Secret Rooms ############################################## */
+    /* ###################################### Secrets -> Cornifer's Notes ############################################## */
     corniferNotes: {
       h2: "Cornifer's Notes",
       id: "hk-cornifer-notes",
@@ -9309,22 +9321,31 @@ var HK = {
         soldTrinket1: {
           name: "Wanderer's Journals Sold",
           spoiler: "City of Tears: Relic Seeker Lemm",
+          geoValue: 200,
           wiki: "Wanderer's_Journal"
         },
         soldTrinket2: {
           name: "Hallownest Seals Sold",
           spoiler: "City of Tears: Relic Seeker Lemm",
+          geoValue: 450,
           wiki: "Hallownest_Seal"
         },
         soldTrinket3: {
           name: "King's Idols Sold",
           spoiler: "City of Tears: Relic Seeker Lemm",
+          geoValue: 800,
           wiki: "King's_Idol"
         },
         soldTrinket4: {
           name: "Arcane Eggs Sold",
           spoiler: "City of Tears: Relic Seeker Lemm",
+          geoValue: 1200,
           wiki: "Arcane_Egg"
+        },
+        relicsSoldTotalGeo: {
+          name: "Total Geo from Sold Relics",
+          spoiler: "City of Tears: Relic Seeker Lemm",
+          wiki: "Lemm#Collectibles"
         },
         rancidEggs: {
           name: "Rancid Eggs",
