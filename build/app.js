@@ -9071,6 +9071,11 @@ var HK = {
           spoiler: "Deepnest, use Desolate Dive on Mask Maker",
           wiki: "Mask_Maker#In-game_events"
         },
+        godseekerUnlocked: {
+          name: "Godseeker Cocoon Unlocked",
+          spoiler: "Royal Waterways: Junk Pit",
+          wiki: "Royal_Waterways#Sub-area:_Junk_Pit"
+        },
         elderbugGaveFlower: {
           name: "Delicate Flower: Elderbug",
           spoiler: "Deliver from Traitor's Child Grave",
