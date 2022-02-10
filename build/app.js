@@ -4752,6 +4752,11 @@ var HK = {
           spoiler: "Howling Cliffs, corpse of a large bug",
           wiki: "Howling_Cliffs#Nightmare_Lantern_Chamber"
         },
+        godseekerUnlocked: {
+          name: "Godseeker Cocoon Unlocked",
+          spoiler: "Royal Waterways: Junk Pit",
+          wiki: "Royal_Waterways#Sub-area:_Junk_Pit"
+        },
         killedMegaMossCharger: {
           name: "P1 Massive Moss Charger",
           spoiler: "Greenpath, near Fog Canyon",
@@ -9070,11 +9075,6 @@ var HK = {
           name: "Mask Maker Unmasked",
           spoiler: "Deepnest, use Desolate Dive on Mask Maker",
           wiki: "Mask_Maker#In-game_events"
-        },
-        godseekerUnlocked: {
-          name: "Godseeker Cocoon Unlocked",
-          spoiler: "Royal Waterways: Junk Pit",
-          wiki: "Royal_Waterways#Sub-area:_Junk_Pit"
         },
         elderbugGaveFlower: {
           name: "Delicate Flower: Elderbug",
