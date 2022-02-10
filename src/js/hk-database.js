@@ -5606,6 +5606,11 @@ const HK = {
           spoiler: "Resting Grounds, Seer: 200 Essence",
           wiki: "Resting_Grounds#Sub-area:_Spirits'_Glade"
         },
+        bathHouseOpened: {
+          name: "Pleasure House Door Opened",
+          spoiler: "City of Tears: Right Side Main Hub Area",
+          wiki: "City_of_Tears#Sub-area:_Pleasure_House"
+        },
         bankerAccountPurchased: {
           name: "Bank Account Opened",
           spoiler: "100 Geo: Fog Canyon: Millibelle the Banker",
