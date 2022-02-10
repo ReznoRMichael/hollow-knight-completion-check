@@ -5957,6 +5957,11 @@ const HK = {
           spoiler: "Current amount of Pale Ore in inventory",
           wiki: "Pale_Ore"
         },
+        simpleKeys: {
+          name: "Simple Keys",
+          spoiler: "Current amount of Simple Keys in inventory",
+          wiki: "Simple_Key"
+        },
         rancidEggs: {
           name: "Rancid Eggs",
           spoiler: "Find: Hallownest, Buy: Sly, Tuk",
