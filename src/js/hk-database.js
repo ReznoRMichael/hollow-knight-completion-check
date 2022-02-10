@@ -5901,22 +5901,31 @@ const HK = {
         soldTrinket1: {
           name: "Wanderer's Journals Sold",
           spoiler: "City of Tears: Relic Seeker Lemm",
+          geoValue: 200,
           wiki: "Wanderer's_Journal"
         },
         soldTrinket2: {
           name: "Hallownest Seals Sold",
           spoiler: "City of Tears: Relic Seeker Lemm",
+          geoValue: 450,
           wiki: "Hallownest_Seal"
         },
         soldTrinket3: {
           name: "King's Idols Sold",
           spoiler: "City of Tears: Relic Seeker Lemm",
+          geoValue: 800,
           wiki: "King's_Idol"
         },
         soldTrinket4: {
           name: "Arcane Eggs Sold",
           spoiler: "City of Tears: Relic Seeker Lemm",
+          geoValue: 1200,
           wiki: "Arcane_Egg"
+        },
+        relicsSoldTotalGeo: {
+          name: "Total Geo from Sold Relics",
+          spoiler: "City of Tears: Relic Seeker Lemm",
+          wiki: "Lemm#Collectibles"
         },
         rancidEggs: {
           name: "Rancid Eggs",
