@@ -179,7 +179,7 @@ const HK = {
       id: "hk-bosses",
       description: `Each boss from this list provides 1% Game Completion.<br>
       Note: There are many other bosses in the game. Only about ~half of the total bosses count directly towards % Game Completion stat.<br>
-      <b>P1-4</b> = difficulty level and which <span class='spoiler-span blurred'>Pantheon</span> a given boss unlocks.`,
+      <b>P1-P4</b> = difficulty level and which <span class='spoiler-span blurred'>Pantheon</span> a given boss unlocks.`,
       percent: 0,
       maxPercent: 14,
       entries: {

@@ -386,9 +386,10 @@ function CheckExtendedCompletion(db) {
             case "whiteDefenderDefeated":
             case "greyPrinceDefeated":
             case "killedHollowKnight":
-            case "killedFinalBoss":
-            case "grubsCollected": // Collectibles are counted in their own sections
+            case "killedFinalBoss": // Collectibles are counted in their own sections
+            // falls through
 
+            case "grubsCollected":
             case "whisperingRoots":
             case "relicsWandererJournal":
             case "relicsHallownestSeal":
@@ -3601,7 +3602,7 @@ var HK = {
     bosses: {
       h2: "Bosses",
       id: "hk-bosses",
-      description: "Each boss from this list provides 1% Game Completion.<br>\n      Note: There are many other bosses in the game. Only about ~half of the total bosses count directly towards % Game Completion stat.<br>\n      <b>P1-4</b> = difficulty level and which <span class='spoiler-span blurred'>Pantheon</span> a given boss unlocks.",
+      description: "Each boss from this list provides 1% Game Completion.<br>\n      Note: There are many other bosses in the game. Only about ~half of the total bosses count directly towards % Game Completion stat.<br>\n      <b>P1-P4</b> = difficulty level and which <span class='spoiler-span blurred'>Pantheon</span> a given boss unlocks.",
       percent: 0,
       maxPercent: 14,
       entries: {
