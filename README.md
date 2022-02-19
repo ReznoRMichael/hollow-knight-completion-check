@@ -102,6 +102,7 @@ If you like the tool and wish it developed further with more functions and easie
   — **Game Completion Essentials** additions:  
   ✅ Paid to See Something Nice.  
   ✅ Shopkeeper's Key Returned to Sly.  
+  ✅ Elegant Door Opened.  
   ✅ Tower of Love Door Opened.  
   ✅ Godseeker Cocoon Unlocked.  
 
