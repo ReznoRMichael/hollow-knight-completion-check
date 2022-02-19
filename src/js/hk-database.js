@@ -1290,12 +1290,12 @@ const HK = {
           wiki: "Royal_Waterways#Sub-area:_Isma.27s_Grove"
         },
         openedMageDoor_v2: {
-          name: "Elegant Door Opened",
+          name: "Elegant Door Unlocked",
           spoiler: "City of Tears: Soul Sanctum, requires Elegant Key",
           wiki: "Elegant_Key#Use"
         },
         openedLoveDoor: {
-          name: "Tower of Love Door Opened",
+          name: "Tower of Love Door Unlocked",
           spoiler: "City of Tears, requires Love Key",
           wiki: "City_of_Tears#Sub-area:_Tower_of_Love"
         },
