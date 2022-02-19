@@ -104,6 +104,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Shopkeeper's Key Returned to Sly.  
   ✅ Elegant Door Opened.  
   ✅ Tower of Love Door Opened.  
+  ✅ Lifeblood Door Opened.  
   ✅ Godseeker Cocoon Unlocked.  
 
   — **World Interactions** additions:  
