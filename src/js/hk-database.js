@@ -5655,6 +5655,11 @@ const HK = {
           sceneName: "Ruins1_31",
           wiki: "City_of_Tears#Sub-area:_Soul_Sanctum"
         },
+        openedWaterwaysManhole: {
+          name: "Waterways Manhole Unlocked",
+          spoiler: "City of Tears: below Lemm, use Simple Key",
+          wiki: "Royal_Waterways#How_to_access"
+        },
         waterwaysGate: {
           name: "Waterways Gate Opened",
           spoiler: "Royal Waterways: Cornifer Room, use lever",
