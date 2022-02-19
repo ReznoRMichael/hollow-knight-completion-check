@@ -110,6 +110,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Pleasure House Door Unlocked.  
   ✅ Spirits' Glade Door Unlocked.  
   ✅ City of Tears Gate Opened.  
+  ✅ Chandelier Dropped.  
   ✅ Mask Maker Unmasked.  
 
   — **Game Statistics** additions:  
