@@ -9083,6 +9083,11 @@ var HK = {
           sceneName: "Ruins1_31",
           wiki: "City_of_Tears#Sub-area:_Soul_Sanctum"
         },
+        waterwaysGate: {
+          name: "Waterways Gate Opened",
+          spoiler: "Royal Waterways: Cornifer Room, use lever",
+          wiki: "Royal_Waterways"
+        },
         watcherChandelier: {
           name: "Chandelier Dropped",
           spoiler: "City of Tears: Watcher Knights Room, break ceiling",
