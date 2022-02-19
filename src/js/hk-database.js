@@ -5676,7 +5676,7 @@ const HK = {
           wiki: "Howling_Cliffs#Sub-area:_Stag_Nest"
         },
         deepnestBridgeCollapsed: {
-          name: "Deepnest Bridge Collapsed",
+          name: "Deepnest Entry Bridge Collapsed",
           spoiler: "Fungal Wastes, left of Spore Shroom",
           wiki: "Deepnest#How_to_access"
         },
