@@ -9072,7 +9072,7 @@ var HK = {
           wiki: "Royal_Waterways#How_to_access"
         },
         gladeDoorOpened: {
-          name: "Spirits' Glade Door Unlocked",
+          name: "Spirits' Glade Door Opened",
           spoiler: "Resting Grounds, Seer: 200 Essence",
           wiki: "Resting_Grounds#Sub-area:_Spirits'_Glade"
         },

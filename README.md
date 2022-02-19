@@ -112,7 +112,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Gossipping Bugs.  
   ✅ Confessor Jiji's Cave Unlocked.  
   ✅ Pleasure House Door Unlocked.  
-  ✅ Spirits' Glade Door Unlocked.  
+  ✅ Spirits' Glade Door Opened.  
   ✅ City of Tears Gate Opened.  
   ✅ Soul Sanctum Shortcut.  
   ✅ Chandelier Dropped.  
