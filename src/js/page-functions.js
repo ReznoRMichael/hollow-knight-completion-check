@@ -810,6 +810,7 @@ function CompletionFill(section) {
   let clGreen = "box-green";
   let clRed = "box-red";
   let cp = 0; // current Percent
+  let midP = 0; // middle Percent
   let mp = 0; // max Percent
   let trueCompletionCurrent = 0;
   let trueCompletionTotal = 0;
@@ -820,6 +821,8 @@ function CompletionFill(section) {
 
   (section.hasOwnProperty("percent")) ? cp = section.percent: cp = 0;
 
+  (section.hasOwnProperty("midPercent")) ? midP = section.midPercent: midP = 0;
+
   // Don't use percent-box for Essentials, Achievements, Statistics etc.
   if (!section.hasOwnProperty("maxPercent")) {
     percentBox = "";
@@ -829,6 +832,7 @@ function CompletionFill(section) {
 
     mp = section.maxPercent;
 
+    // Shards and Fragments correct calculations
     if (section.id === "hk-maskshards") {
       let perc = section.percent;
       (perc % 4) ? cp = Math.floor(perc / 4): cp = perc / 4;
@@ -848,8 +852,21 @@ function CompletionFill(section) {
     // default is blue (partially completed and starting value)
     else cl = "";
 
-    // needed for Game Status to show percentage properly (adds a slash for all boxes except the Game Status one)
-    if (section.id !== "hk-intro") cp += "/";
+    // Select which symbol or text to display (/ or something else depending on the section)
+    switch (section.id) {
+
+      // needed for Game Status to show percentage properly (adds a slash for all boxes except the Game Status one)
+      case "hk-intro":
+        break;
+
+      // Hunter's Journal entries, Completed:Encountered of Total, e.g. 23/134 of 146
+      case "hk-journal":
+        cp = `${cp}/${midP} of `;
+        break;
+
+      default:
+        cp += "/";
+    }
 
     /* Display % only when showing Main Game Completion % sections */
     switch (section.id) {
