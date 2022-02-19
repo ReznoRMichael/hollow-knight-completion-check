@@ -5674,7 +5674,7 @@ const HK = {
         },
         colosseumHiddenHotSprings: {
           name: "Colosseum Hidden Hot Spring",
-          spoiler: "Colosseum of Fools, Bench Room, right wall",
+          spoiler: "Colosseum of Fools, wall right of Bench",
           id: "Breakable Wall_Silhouette",
           sceneName: "Room_Colosseum_02",
           wiki: "Colosseum_of_Fools#Description"

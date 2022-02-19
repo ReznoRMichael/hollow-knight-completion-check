@@ -1464,6 +1464,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "weaversDenSecretRoom2":
       case "cityCrest":
       case "soulSanctumShortcut":
+      case "colosseumHiddenHotSprings":
         (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) ? SetIconGreen(section, i): SetIconRed(section, i);
         break;
 
