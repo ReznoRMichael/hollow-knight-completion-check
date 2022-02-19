@@ -4741,6 +4741,11 @@ var HK = {
           spoiler: "Royal Waterways, lever after Dung Defender",
           wiki: "Royal_Waterways#Sub-area:_Isma.27s_Grove"
         },
+        openedLoveDoor: {
+          name: "Tower of Love Door Opened",
+          spoiler: "City of Tears, requires Love Key",
+          wiki: "City_of_Tears#Sub-area:_Tower_of_Love"
+        },
 
         /* 
         "abyssGateOpened": false,
