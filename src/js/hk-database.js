@@ -5675,6 +5675,11 @@ const HK = {
           spoiler: "Howling Cliffs: Top of Stag Nest",
           wiki: "Howling_Cliffs#Sub-area:_Stag_Nest"
         },
+        deepnestBridgeCollapsed: {
+          name: "Deepnest Bridge Collapsed",
+          spoiler: "Fungal Wastes, left of Spore Shroom",
+          wiki: "Deepnest#How_to_access"
+        },
         maskmakerUnmasked1: {
           name: "Mask Maker Unmasked",
           spoiler: "Deepnest, use Desolate Dive on Mask Maker",
