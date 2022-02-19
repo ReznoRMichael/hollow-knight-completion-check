@@ -5122,6 +5122,7 @@ var HK = {
       id: "hk-journal",
       description: "All the base-game Hunter's Journal entries that are counted for Hunter's Mark and Keen Hunter/True Hunter achievements. The 17 most commonly missed Journal entries are right at the top of this list.<br>\n      <i class=\"icon-ok-squared\"></i>= note completed.<br>\n      <i class=\"icon-ok-squared partial\"></i>= entry discovered, but note not completed.<br>\n      <i class=\"icon-cancel\"></i>= entry not yet discovered.<br>\n      <b>(no.)</b> = amount left to complete note.",
       percent: 0,
+      midPercent: 0,
       maxPercent: 146,
       entries: {
         PrayerSlug: {
@@ -11503,6 +11504,12 @@ function SetIconGreen() {
       // double % for equipment
       section.percent += 2;
       break;
+    // Hunter's Journal entries
+
+    case "hk-journal":
+      section.percent++;
+      section.midPercent++;
+      break;
 
     default:
       section.percent++;
@@ -11528,6 +11535,14 @@ function SetIconPartial() {
 function SetIconPartialJournal() {
   var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var entry = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+
+  /* Increase Hunter's Journal entries discovered amount */
+  switch (section.id) {
+    case "hk-journal":
+      section.midPercent++;
+      break;
+  }
+
   section.entries[entry].icon = "partialJournal";
 }
 /**
@@ -12408,6 +12423,8 @@ function CompletionFill(section) {
   var clRed = "box-red";
   var cp = 0; // current Percent
 
+  var midP = 0; // middle Percent
+
   var mp = 0; // max Percent
 
   var trueCompletionCurrent = 0;
@@ -12417,13 +12434,14 @@ function CompletionFill(section) {
   var symbol = "";
   var percentBox = "";
   var fullString = "";
-  section.hasOwnProperty("percent") ? cp = section.percent : cp = 0; // Don't use percent-box for Essentials, Achievements, Statistics etc.
+  section.hasOwnProperty("percent") ? cp = section.percent : cp = 0;
+  section.hasOwnProperty("midPercent") ? midP = section.midPercent : midP = 0; // Don't use percent-box for Essentials, Achievements, Statistics etc.
 
   if (!section.hasOwnProperty("maxPercent")) {
     percentBox = "";
   } // otherwise use percent-box with values cp/mp%
   else {
-    mp = section.maxPercent;
+    mp = section.maxPercent; // Shards and Fragments correct calculations
 
     if (section.id === "hk-maskshards") {
       var perc = section.percent;
@@ -12440,11 +12458,24 @@ function CompletionFill(section) {
     else if (cp === mp) {
       cl = " ".concat(clGreen);
     } // default is blue (partially completed and starting value)
-    else cl = ""; // needed for Game Status to show percentage properly (adds a slash for all boxes except the Game Status one)
+    else cl = ""; // Select which symbol or text to display (/ or something else depending on the section)
 
 
-    if (section.id !== "hk-intro") cp += "/";
+    switch (section.id) {
+      // needed for Game Status to show percentage properly (adds a slash for all boxes except the Game Status one)
+      case "hk-intro":
+        break;
+      // Hunter's Journal entries, Completed:Encountered of Total, e.g. 23/134 of 146
+
+      case "hk-journal":
+        cp = "".concat(cp, "/").concat(midP, " of ");
+        break;
+
+      default:
+        cp += "/";
+    }
     /* Display % only when showing Main Game Completion % sections */
+
 
     switch (section.id) {
       case "hk-intro":
