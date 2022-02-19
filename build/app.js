@@ -9446,7 +9446,7 @@ var HK = {
         },
         rancidEggs: {
           name: "Rancid Eggs",
-          spoiler: "Find: Hallownest, Buy: Sly, Tuk",
+          spoiler: "Current amount of Rancid Eggs in inventory",
           wiki: "Rancid_Egg"
         },
         jinnEggsSold: {
