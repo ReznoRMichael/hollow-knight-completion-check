@@ -5641,6 +5641,13 @@ const HK = {
           spoiler: "Fungal Wastes, requires City Crest",
           wiki: "Fungal_Wastes"
         },
+        soulSanctumShortcut: {
+          name: "Soul Sanctum Shortcut",
+          spoiler: "City of Tears: Cornifer Room, Lift, break wall",
+          id: "Breakable Wall Ruin Lift",
+          sceneName: "Ruins1_31",
+          wiki: "City_of_Tears#Sub-area:_Soul_Sanctum"
+        },
         bankerAccountPurchased: {
           name: "Bank Account Opened",
           spoiler: "100 Geo: Fog Canyon: Millibelle the Banker",
