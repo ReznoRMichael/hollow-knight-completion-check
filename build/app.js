@@ -1284,7 +1284,8 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "weaversDenSecretRoom2":
       case "cityCrest":
       case "soulSanctumShortcut":
-      case "colosseumHiddenHotSprings":
+      case "colosseumHiddenHotSpring":
+      case "paleLurkersRetreat":
         FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
@@ -9100,11 +9101,18 @@ var HK = {
           spoiler: "City of Tears: Watcher Knights Room, break ceiling",
           wiki: "Watcher_Knight#In-game_events"
         },
-        colosseumHiddenHotSprings: {
-          name: "Colosseum Hidden Hot Spring",
+        colosseumHiddenHotSpring: {
+          name: "Hidden Hot Spring Wall",
           spoiler: "Colosseum of Fools, wall right of Bench",
           id: "Breakable Wall_Silhouette",
           sceneName: "Room_Colosseum_02",
+          wiki: "Colosseum_of_Fools#Description"
+        },
+        paleLurkersRetreat: {
+          name: "Pale Lurker's Retreat Wall",
+          spoiler: "Colosseum of Fools, Room above Bench",
+          id: "Breakable Wall_Silhouette",
+          sceneName: "Room_Colosseum_Spectate",
           wiki: "Colosseum_of_Fools#Description"
         },
         stagEggInspected: {
