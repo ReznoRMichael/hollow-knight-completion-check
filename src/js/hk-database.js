@@ -5638,6 +5638,11 @@ const HK = {
           spoiler: "City of Tears: Right Side Main Hub Area",
           wiki: "City_of_Tears#Sub-area:_Pleasure_House"
         },
+        openedWaterwaysManhole: {
+          name: "Waterways Manhole Unlocked",
+          spoiler: "City of Tears: below Lemm, use Simple Key",
+          wiki: "Royal_Waterways#How_to_access"
+        },
         gladeDoorOpened: {
           name: "Spirits' Glade Door Unlocked",
           spoiler: "Resting Grounds, Seer: 200 Essence",
@@ -5654,11 +5659,6 @@ const HK = {
           id: "Breakable Wall Ruin Lift",
           sceneName: "Ruins1_31",
           wiki: "City_of_Tears#Sub-area:_Soul_Sanctum"
-        },
-        openedWaterwaysManhole: {
-          name: "Waterways Manhole Unlocked",
-          spoiler: "City of Tears: below Lemm, use Simple Key",
-          wiki: "Royal_Waterways#How_to_access"
         },
         waterwaysGate: {
           name: "Waterways Gate Opened",

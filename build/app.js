@@ -9066,6 +9066,11 @@ var HK = {
           spoiler: "City of Tears: Right Side Main Hub Area",
           wiki: "City_of_Tears#Sub-area:_Pleasure_House"
         },
+        openedWaterwaysManhole: {
+          name: "Waterways Manhole Unlocked",
+          spoiler: "City of Tears: below Lemm, use Simple Key",
+          wiki: "Royal_Waterways#How_to_access"
+        },
         gladeDoorOpened: {
           name: "Spirits' Glade Door Unlocked",
           spoiler: "Resting Grounds, Seer: 200 Essence",
