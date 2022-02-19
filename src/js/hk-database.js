@@ -5672,6 +5672,13 @@ const HK = {
           spoiler: "City of Tears: Watcher Knights Room, break ceiling",
           wiki: "Watcher_Knight#In-game_events"
         },
+        colosseumHiddenHotSprings: {
+          name: "Colosseum Hidden Hot Spring",
+          spoiler: "Colosseum of Fools, Bench Room, right wall",
+          id: "Breakable Wall_Silhouette",
+          sceneName: "Room_Colosseum_02",
+          wiki: "Colosseum_of_Fools#Description"
+        },
         stagEggInspected: {
           name: "Stag Nest Egg Inspected",
           spoiler: "Howling Cliffs: Top of Stag Nest",
