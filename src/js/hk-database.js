@@ -5656,6 +5656,11 @@ const HK = {
           spoiler: "City of Tears: Hot Springs, Millibelle the Thief",
           wiki: "Millibelle"
         },
+        watcherChandelier: {
+          name: "Chandelier Dropped",
+          spoiler: "City of Tears: Watcher Knights Room, breakable ceiling",
+          wiki: "Howling_Cliffs#Sub-area:_Stag_Nest"
+        },
         stagEggInspected: {
           name: "Stag Nest Egg Inspected",
           spoiler: "Howling Cliffs: Top of Stag Nest",
