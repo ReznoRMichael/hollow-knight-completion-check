@@ -5679,6 +5679,13 @@ const HK = {
           sceneName: "Room_Colosseum_02",
           wiki: "Colosseum_of_Fools#Description"
         },
+        paleLurkersRetreat: {
+          name: "Pale Lurker's Retreat Discovered",
+          spoiler: "Colosseum of Fools, Room above Bench",
+          id: "Breakable Wall_Silhouette",
+          sceneName: "Room_Colosseum_Spectate",
+          wiki: "Colosseum_of_Fools#Description"
+        },
         stagEggInspected: {
           name: "Stag Nest Egg Inspected",
           spoiler: "Howling Cliffs: Top of Stag Nest",
