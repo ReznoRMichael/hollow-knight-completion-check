@@ -4752,6 +4752,11 @@ var HK = {
           spoiler: "City of Tears, requires Love Key",
           wiki: "City_of_Tears#Sub-area:_Tower_of_Love"
         },
+        blueVineDoor: {
+          name: "Lifeblood Door Opened",
+          spoiler: "The Abyss, requires 14–15+ Lifeblood Masks",
+          wiki: "Lifeblood_Core#How_to_Acquire"
+        },
 
         /* 
         "abyssGateOpened": false,
