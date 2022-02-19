@@ -5658,8 +5658,8 @@ const HK = {
         },
         watcherChandelier: {
           name: "Chandelier Dropped",
-          spoiler: "City of Tears: Watcher Knights Room, breakable ceiling",
-          wiki: "Howling_Cliffs#Sub-area:_Stag_Nest"
+          spoiler: "City of Tears: Watcher Knights Room, break ceiling",
+          wiki: "Watcher_Knight#In-game_events"
         },
         stagEggInspected: {
           name: "Stag Nest Egg Inspected",
