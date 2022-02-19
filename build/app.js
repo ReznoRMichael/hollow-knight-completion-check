@@ -4753,7 +4753,7 @@ var HK = {
           wiki: "City_of_Tears#Sub-area:_Tower_of_Love"
         },
         abyssGateOpened: {
-          name: "The Abyss Door Opened",
+          name: "The Abyss Gate Opened",
           spoiler: "Ancient Basin, requires King's Brand",
           wiki: "Ancient_Basin#Description"
         },
