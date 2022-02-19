@@ -4741,6 +4741,11 @@ var HK = {
           spoiler: "Royal Waterways, lever after Dung Defender",
           wiki: "Royal_Waterways#Sub-area:_Isma.27s_Grove"
         },
+        openedMageDoor_v2: {
+          name: "Elegant Door Opened",
+          spoiler: "City of Tears: Soul Sanctum, requires Elegant Key",
+          wiki: "Elegant_Key#Use"
+        },
         openedLoveDoor: {
           name: "Tower of Love Door Opened",
           spoiler: "City of Tears, requires Love Key",
