@@ -1855,16 +1855,7 @@ function CheckHuntersJournal(db, sectionName, playerData) {
       }
 
       amountKillsLeft = playerData["kills".concat(entry)];
-      /* When killed at least 1, the entry has a gray symbol */
-
-      if (playerData["killed".concat(entry)] === true) {
-        (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconPartialJournal)(section, entry);
-        /* When not killed, the entry is undiscovered */
-      } else {
-        (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, entry);
-      }
       /* When the Hunter's Note is unlocked, the entry has a green symbol */
-
 
       if (amountKillsLeft === 0) {
         (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, entry);
@@ -1872,6 +1863,14 @@ function CheckHuntersJournal(db, sectionName, playerData) {
       } else {
         name += " (".concat(amountKillsLeft, ")");
         entries[entry].name = name;
+        /* When killed at least 1, the entry has a gray symbol */
+
+        if (playerData["killed".concat(entry)] === true) {
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconPartialJournal)(section, entry);
+          /* When not killed, the entry is undiscovered */
+        } else {
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, entry);
+        }
       }
       /* Void Idol backwards compatibility */
 

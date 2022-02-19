@@ -2073,27 +2073,27 @@ function CheckHuntersJournal(db, sectionName, playerData) {
 
       amountKillsLeft = playerData[`kills${entry}`];
 
-      /* When killed at least 1, the entry has a gray symbol */
-      if (playerData[`killed${entry}`] === true) {
-
-        SetIconPartialJournal(section, entry);
-
-        /* When not killed, the entry is undiscovered */
-      } else {
-
-        SetIconRed(section, entry);
-      }
-
       /* When the Hunter's Note is unlocked, the entry has a green symbol */
       if (amountKillsLeft === 0) {
 
         SetIconGreen(section, entry);
 
-        /* If not, show how many remain to defeat in the name */
+      /* If not, show how many remain to defeat in the name */
       } else {
 
         name += ` (${amountKillsLeft})`;
         entries[entry].name = name;
+
+        /* When killed at least 1, the entry has a gray symbol */
+        if (playerData[`killed${entry}`] === true) {
+
+          SetIconPartialJournal(section, entry);
+
+        /* When not killed, the entry is undiscovered */
+        } else {
+
+          SetIconRed(section, entry);
+        }
       }
 
       /* Void Idol backwards compatibility */
