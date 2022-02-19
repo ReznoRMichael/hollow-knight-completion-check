@@ -118,7 +118,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ City of Tears Gate Opened.  
   ✅ Soul Sanctum Shortcut.  
   ✅ Chandelier Dropped.  
-  ✅ Colosseum Hidden Hot Spring.  
+  ✅ Hidden Hot Spring Discovered.  
   ✅ Deepnest Entry Bridge Collapsed.  
   ✅ Mask Maker Unmasked.  
 
