@@ -9077,6 +9077,21 @@ var HK = {
           sceneName: "Ruins1_31",
           wiki: "City_of_Tears#Sub-area:_Soul_Sanctum"
         },
+        watcherChandelier: {
+          name: "Chandelier Dropped",
+          spoiler: "City of Tears: Watcher Knights Room, break ceiling",
+          wiki: "Watcher_Knight#In-game_events"
+        },
+        stagEggInspected: {
+          name: "Stag Nest Egg Inspected",
+          spoiler: "Howling Cliffs: Top of Stag Nest",
+          wiki: "Howling_Cliffs#Sub-area:_Stag_Nest"
+        },
+        maskmakerUnmasked1: {
+          name: "Mask Maker Unmasked",
+          spoiler: "Deepnest, use Desolate Dive on Mask Maker",
+          wiki: "Mask_Maker#In-game_events"
+        },
         bankerAccountPurchased: {
           name: "Bank Account Opened",
           spoiler: "100 Geo: Fog Canyon: Millibelle the Banker",
@@ -9101,21 +9116,6 @@ var HK = {
           name: "Reclaimed All Geo",
           spoiler: "City of Tears: Hot Springs, Millibelle the Thief",
           wiki: "Millibelle"
-        },
-        watcherChandelier: {
-          name: "Chandelier Dropped",
-          spoiler: "City of Tears: Watcher Knights Room, break ceiling",
-          wiki: "Watcher_Knight#In-game_events"
-        },
-        stagEggInspected: {
-          name: "Stag Nest Egg Inspected",
-          spoiler: "Howling Cliffs: Top of Stag Nest",
-          wiki: "Howling_Cliffs#Sub-area:_Stag_Nest"
-        },
-        maskmakerUnmasked1: {
-          name: "Mask Maker Unmasked",
-          spoiler: "Deepnest, use Desolate Dive on Mask Maker",
-          wiki: "Mask_Maker#In-game_events"
         },
         elderbugGaveFlower: {
           name: "Delicate Flower: Elderbug",
