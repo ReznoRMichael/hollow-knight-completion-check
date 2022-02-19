@@ -1444,7 +1444,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         (playerData.dreamReward3 === true) ? SetIconGreen(section, i): SetIconRed(section, i);
         break;
 
-        /* -------------------- Interactables ------------------------------- */
+        /* -------------------- World Interactables ------------------------------- */
       case "simpleKeyCityOfTears": // #2
       case "simpleKeyAncientBasin": // #3
       case "paleOreAncientBasin": // #1
@@ -1463,6 +1463,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "weaversDenSecretRoom1":
       case "weaversDenSecretRoom2":
       case "cityCrest":
+      case "soulSanctumShortcut":
         (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) ? SetIconGreen(section, i): SetIconRed(section, i);
         break;
 

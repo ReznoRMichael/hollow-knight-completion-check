@@ -1256,7 +1256,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         playerData.dreamReward3 === true ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
-      /* -------------------- Interactables ------------------------------- */
+      /* -------------------- World Interactables ------------------------------- */
 
       case "simpleKeyCityOfTears": // #2
 
@@ -1283,6 +1283,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "weaversDenSecretRoom1":
       case "weaversDenSecretRoom2":
       case "cityCrest":
+      case "soulSanctumShortcut":
         FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
@@ -9068,6 +9069,13 @@ var HK = {
           name: "City of Tears Gate Opened",
           spoiler: "Fungal Wastes, requires City Crest",
           wiki: "Fungal_Wastes"
+        },
+        soulSanctumShortcut: {
+          name: "Soul Sanctum Shortcut",
+          spoiler: "City of Tears: Cornifer Lift Room, break left wall",
+          id: "Breakable Wall Ruin Lift",
+          sceneName: "Ruins1_31",
+          wiki: "City_of_Tears#Sub-area:_Soul_Sanctum"
         },
         bankerAccountPurchased: {
           name: "Bank Account Opened",

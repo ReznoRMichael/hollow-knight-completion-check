@@ -5643,7 +5643,7 @@ const HK = {
         },
         soulSanctumShortcut: {
           name: "Soul Sanctum Shortcut",
-          spoiler: "City of Tears: Cornifer Room, Lift, break wall",
+          spoiler: "City of Tears: Cornifer Lift Room, break left wall",
           id: "Breakable Wall Ruin Lift",
           sceneName: "Ruins1_31",
           wiki: "City_of_Tears#Sub-area:_Soul_Sanctum"
