@@ -5673,14 +5673,14 @@ const HK = {
           wiki: "Watcher_Knight#In-game_events"
         },
         colosseumHiddenHotSpring: {
-          name: "Hidden Hot Spring Discovered",
+          name: "Hidden Hot Spring Wall",
           spoiler: "Colosseum of Fools, wall right of Bench",
           id: "Breakable Wall_Silhouette",
           sceneName: "Room_Colosseum_02",
           wiki: "Colosseum_of_Fools#Description"
         },
         paleLurkersRetreat: {
-          name: "Pale Lurker's Retreat Discovered",
+          name: "Pale Lurker's Retreat Wall",
           spoiler: "Colosseum of Fools, Room above Bench",
           id: "Breakable Wall_Silhouette",
           sceneName: "Room_Colosseum_Spectate",
