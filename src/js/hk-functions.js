@@ -42,6 +42,14 @@ function SetIconPartial(section = {}, entry = "") {
  */
 function SetIconPartialJournal(section = {}, entry = "") {
 
+  /* Increase Hunter's Journal entries discovered amount */
+  switch (section.id) {
+
+    case "hk-journal":
+      section.midPercent++;
+      break;
+  }
+
   section.entries[entry].icon = "partialJournal";
 }
 

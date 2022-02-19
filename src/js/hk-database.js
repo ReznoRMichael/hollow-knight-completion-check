@@ -1676,6 +1676,7 @@ const HK = {
       <i class="icon-cancel"></i>= entry not yet discovered.<br>
       <b>(no.)</b> = amount left to complete note.`,
       percent: 0,
+      midPercent: 0,
       maxPercent: 146,
       entries: {
         PrayerSlug: {
