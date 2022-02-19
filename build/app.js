@@ -2181,6 +2181,7 @@ function ResetCompletion(db) {
   for (var section in sections) {
     entries = sections[section].entries;
     if (sections[section].hasOwnProperty("percent")) sections[section].percent = 0;
+    if (sections[section].hasOwnProperty("midPercent")) sections[section].midPercent = 0;
 
     switch (section) {
       case "intro":
