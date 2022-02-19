@@ -22,6 +22,12 @@ import MAP from "./hk-dictionary.js";
       section.percent += 2;
       break;
 
+    // Hunter's Journal entries
+    case "hk-journal":
+      section.percent++;
+      section.midPercent++;
+      break;
+
     default:
       section.percent++;
   }
