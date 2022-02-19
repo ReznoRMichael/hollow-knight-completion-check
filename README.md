@@ -105,6 +105,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Elegant Door Opened.  
   ✅ Tower of Love Door Opened.  
   ✅ Lifeblood Door Opened.  
+  ✅ The Abyss Door Opened.  
   ✅ Godseeker Cocoon Unlocked.  
 
   — **World Interactions** additions:  
