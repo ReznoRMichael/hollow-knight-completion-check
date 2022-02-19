@@ -859,7 +859,7 @@ function CompletionFill(section) {
       case "hk-intro":
         break;
 
-      // Hunter's Journal entries, Completed:Encountered of Total, e.g. 23/134 of 146
+      // Hunter's Journal entries, Completed/Encountered of Total, e.g. 23/134 of 146
       case "hk-journal":
         cp = `${cp}/${midP} of `;
         break;

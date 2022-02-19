@@ -5120,7 +5120,7 @@ var HK = {
     huntersJournal: {
       h2: "Hunter's Journal",
       id: "hk-journal",
-      description: "All the base-game Hunter's Journal entries that are counted for Hunter's Mark and Keen Hunter/True Hunter achievements. The 17 most commonly missed Journal entries are right at the top of this list.<br>\n      <i class=\"icon-ok-squared\"></i>= note completed.<br>\n      <i class=\"icon-ok-squared partial\"></i>= entry discovered, but note not completed.<br>\n      <i class=\"icon-cancel\"></i>= entry not yet discovered.<br>\n      <b>(no.)</b> = amount left to complete note.",
+      description: "All the 146 base-game Hunter's Journal entries that are counted for Hunter's Mark and Keen Hunter/True Hunter achievements. The 17 most commonly missed Journal entries are right at the top of this list.<br>\n      Numbers above: <b>Completed/Encountered</b> of <b>146</b> Base Total<br>\n      <i class=\"icon-ok-squared\"></i>= note completed.<br>\n      <i class=\"icon-ok-squared partial\"></i>= entry discovered, but note not completed.<br>\n      <i class=\"icon-cancel\"></i>= entry not yet discovered.<br>\n      <b>(no.)</b> = amount left to complete note.",
       percent: 0,
       midPercent: 0,
       maxPercent: 146,
@@ -12465,7 +12465,7 @@ function CompletionFill(section) {
       // needed for Game Status to show percentage properly (adds a slash for all boxes except the Game Status one)
       case "hk-intro":
         break;
-      // Hunter's Journal entries, Completed:Encountered of Total, e.g. 23/134 of 146
+      // Hunter's Journal entries, Completed/Encountered of Total, e.g. 23/134 of 146
 
       case "hk-journal":
         cp = "".concat(cp, "/").concat(midP, " of ");
