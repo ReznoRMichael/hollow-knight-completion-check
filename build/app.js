@@ -9102,15 +9102,15 @@ var HK = {
           wiki: "Watcher_Knight#In-game_events"
         },
         colosseumHiddenHotSpring: {
-          name: "Hidden Hot Spring Wall",
-          spoiler: "Colosseum of Fools, wall right of Bench",
+          name: "Hidden Hot Spring",
+          spoiler: "Colosseum of Fools, break wall right of Bench",
           id: "Breakable Wall_Silhouette",
           sceneName: "Room_Colosseum_02",
           wiki: "Colosseum_of_Fools#Description"
         },
         paleLurkersRetreat: {
-          name: "Pale Lurker's Retreat Wall",
-          spoiler: "Colosseum of Fools, Room above Bench",
+          name: "Pale Lurker's Retreat",
+          spoiler: "Colosseum of Fools, Room above Bench, break wall",
           id: "Breakable Wall_Silhouette",
           sceneName: "Room_Colosseum_Spectate",
           wiki: "Colosseum_of_Fools#Description"

@@ -118,7 +118,8 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ City of Tears Gate Opened.  
   ✅ Soul Sanctum Shortcut.  
   ✅ Chandelier Dropped.  
-  ✅ Hidden Hot Spring Wall.  
+  ✅ Hidden Hot Spring.  
+  ✅ Pale Lurker's Retreat.  
   ✅ Deepnest Entry Bridge Collapsed.  
   ✅ Mask Maker Unmasked.  
 
