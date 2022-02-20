@@ -355,6 +355,9 @@ function GenerateInnerHTML(db) {
               case "partial":
                 obj.icon = SYMBOL_PARTIAL;
                 break;
+              case "revealed":
+                obj.icon = SYMBOL_EMPTY;
+                break;
               case "red":
                 obj.icon = SYMBOL_FALSE;
                 break;
@@ -522,12 +525,18 @@ function GenerateInnerHTML(db) {
               case "green":
                 obj.icon = SYMBOL_TRUE;
 
-                /* -------- Prevents blurring when a player has already completed the entry --------- */
+                /* -------- Prevents hiding as spoiler when a player has already completed the entry --------- */
                 obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
               case "partial":
                 obj.icon = SYMBOL_PARTIAL;
+                break;
+
+              case "revealed":
+                obj.icon = SYMBOL_EMPTY;
+                /* -------- Prevents textSuffix blurring when a player has already discovered the entry --------- */
+                obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
               case "partialJournal":
