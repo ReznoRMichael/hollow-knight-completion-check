@@ -97,9 +97,9 @@ If you like the tool and wish it developed further with more functions and easie
 * v2.1.0 Upcoming:  
 
   — **General Changes:**  
+  ✅ Updated Hunter's Journal number header. Now shows Creatures Completed/Encountered of 146 (previously only Completed/146).  
   ✅ Organized Game Completion % Essentials and Achievements Essentials by category.  
   ✅ Added Cornifer's Notes to the Secrets tab.  
-  ✅ Updated Hunter's Journal number header. Now shows Creatures Completed/Encountered of 146 (previously only Completed/146).  
 
   — **Game Completion Essentials** additions:  
   ✅ Paid to See Something Nice.  
