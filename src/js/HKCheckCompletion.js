@@ -1226,15 +1226,8 @@ function CheckAdditionalThings(section, saveFile) {
           }
         }
 
-        /* if (i === "grubsCollected") {
-          LogMissingGrubs();
-        } */
-
-        /* textPrefix += `: ${countTotal}`; */
-
         if (i === "grubRewards") {
           entries[i].amountTotal = playerData.grubsCollected;
-          /* textPrefix += ` / ${playerData.grubsCollected}`; */
         }
 
         if (i === "greyPrinceDefeats") {
@@ -1762,7 +1755,7 @@ function CheckAdditionalThings(section, saveFile) {
         if (entries[i].amount >= entries[i].max) {
           SetIconGreen(section, i);
         } else if (entries[i].amount > 0) {
-          SetIcon(section, i, "revealed");
+          SetIconPartial(section, i);
         } else {
           SetIconRed(section, i);
         }
