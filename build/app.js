@@ -1202,7 +1202,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         dataObject[i].amount = amount;
 
-        if (amount > 0) {
+        if (amount > 0 || playerData.bankerAccountPurchased === true) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, i, "revealed");
         } else {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
@@ -9440,20 +9440,6 @@ var HK = {
           spoiler: "Grey Mourner, Traitor's Child Grave",
           wiki: "Delicate_Flower"
         },
-
-        /* 
-        geoRocks: {
-          id: "geoRocks",
-          name: "Geo Rocks",
-          spoiler: "Unbroken | Broken | Discovered",
-          wiki: "Geo#How_to_Acquire",
-          notActivated: 0,
-          activated: 0,
-          discoveredTotal: 0,
-          max: 205,
-          maxDefault: 205,
-        },
-        */
         itemsDiscovered: {
           id: "itemsDiscovered",
           name: "Interactables",

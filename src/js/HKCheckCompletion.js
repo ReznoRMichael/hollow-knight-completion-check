@@ -1381,7 +1381,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         dataObject[i].amount = amount;
 
-        if (amount > 0) {
+        if (amount > 0 || playerData.bankerAccountPurchased === true) {
           SetIcon(section, i, "revealed");
         } else {
           SetIconNone(section, i);
