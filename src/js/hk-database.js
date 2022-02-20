@@ -1063,7 +1063,7 @@ const HK = {
       },
     },
 
-    /* ################ Game Completion % Essentials – Collectibles ################### */
+    /* ################ Essentials % -> Collectibles ################### */
 
     essentialsCollectibles: {
       h2: "Game Completion % Essentials – Collectibles",
@@ -1109,68 +1109,6 @@ const HK = {
           max: 3000,
           maxDefault: 3000,
           wiki: "Ancient_Basin#Description"
-        },
-        openedTownBuilding: {
-          name: "Stag Station: Dirtmouth",
-          spoiler: "Opened from inside after travelling",
-          wiki: "Dirtmouth"
-        },
-        openedCrossroads: {
-          name: "Stag Station: Forgotten Crossroads",
-          spoiler: "50 Geo: Right middle-bottom area",
-          wiki: "Forgotten_Crossroads"
-        },
-        openedGreenpath: {
-          name: "Stag Station: Greenpath",
-          spoiler: "140 Geo: Top middle area, below Hornet",
-          wiki: "Greenpath"
-        },
-        openedFungalWastes: {
-          name: "Stag Station: Queen's Station",
-          spoiler: "120 Geo: Fungal Wastes, near Fog Canyon",
-          wiki: "Fungal_Wastes#Sub-area:_Queen.27s_Station"
-        },
-        openedRuins1: {
-          name: "Stag Station: City Storerooms",
-          spoiler: "200 Geo: City of Tears, top left area",
-          wiki: "City_of_Tears#City_Storerooms"
-        },
-        openedRestingGrounds: {
-          name: "Stag Station: Resting Grounds",
-          spoiler: "0 Geo: Right middle area, near Seer",
-          wiki: "Resting_Grounds"
-        },
-        openedRuins2: {
-          name: "Stag Station: King's Station",
-          spoiler: "300 Geo: City of Tears, far right area",
-          wiki: "City_of_Tears#Sub-area:_King.27s_Station"
-        },
-        openedRoyalGardens: {
-          name: "Stag Station: Queen's Gardens",
-          spoiler: "200 Geo: Middle area, near Traitor's Grave",
-          wiki: "Queen's_Gardens"
-        },
-        openedDeepnest: {
-          name: "Stag Station: Distant Village",
-          spoiler: "250 Geo: Deepnest, far left area",
-          wiki: "Deepnest#Sub-area:_Distant_Village"
-        },
-        openedHiddenStation: {
-          name: "Stag Station: Hidden Station",
-          spoiler: "300 Geo: Ancient Basin: Palace Grounds",
-          wiki: "Ancient_Basin#Sub-Area:_Palace_Grounds"
-        },
-        openedStagNest: {
-          name: "Stag Station: Stag Nest",
-          spoiler: "Open all stations: Howling Cliffs, top area",
-          wiki: "Howling_Cliffs#Sub-area:_Stag_Nest"
-        },
-        stagStationsOpened: {
-          name: "Stag Stations Opened",
-          spoiler: "11 Stag Stations total including Dirtmouth",
-          max: 11,
-          maxDefault: 11,
-          wiki: "Fast_Travel_(Hollow_Knight)#Locations_and_Prices"
         },
         slyRescued: {
           name: "Sly Rescued",
@@ -1342,7 +1280,79 @@ const HK = {
       grubsList: ["Crossroads_35", "Crossroads_03", "Crossroads_05", "Crossroads_48", "Crossroads_31", "Fungus1_06", "Fungus1_07", "Fungus1_21", "Fungus1_28", "Fungus2_18", "Ruins1_05", "Mines_04", "Mines_03", "Mines_31", "Mines_19", "Ruins1_32", "RestingGrounds_10", "Ruins_House_01", "Mines_35", "Mines_16", "Waterways_04", "Waterways_13", "Abyss_19", "Abyss_17", "Mines_24", "Fungus1_13", "Fungus3_47", "Fungus3_10", "Fungus3_48", "Fungus3_22", "Ruins2_07", "Ruins2_11", "Ruins2_11", "Ruins2_11", "Deepnest_East_11", "Deepnest_East_14", "Fungus2_20", "Ruins2_03", "Deepnest_36", "Deepnest_03", "Deepnest_31", "Deepnest_39", "Deepnest_Spider_Town", "Waterways_14", "Hive_03", "Hive_04"],
     },
 
-    /* ################ Game Completion % Essentials – Bosses ################### */
+    /* ################ Essentials % -> Stag Stations ################### */
+
+    essentialsStagStations: {
+      h2: "Game Completion % Essentials – Stag Stations",
+      id: "hk-essentials-stag-stations",
+      description: `Stag Stations don't count directly towards 112% Game Completion, but are required to achieve full 112% by opening the <span class="spoiler-span blurred">Stag Nest for the Vessel Fragment</span>.`,
+      entries: {
+        openedTownBuilding: {
+          name: "Stag Station: Dirtmouth",
+          spoiler: "Opened from inside after travelling",
+          wiki: "Dirtmouth"
+        },
+        openedCrossroads: {
+          name: "Stag Station: Forgotten Crossroads",
+          spoiler: "50 Geo: Right middle-bottom area",
+          wiki: "Forgotten_Crossroads"
+        },
+        openedGreenpath: {
+          name: "Stag Station: Greenpath",
+          spoiler: "140 Geo: Top middle area, below Hornet",
+          wiki: "Greenpath"
+        },
+        openedFungalWastes: {
+          name: "Stag Station: Queen's Station",
+          spoiler: "120 Geo: Fungal Wastes, near Fog Canyon",
+          wiki: "Fungal_Wastes#Sub-area:_Queen.27s_Station"
+        },
+        openedRuins1: {
+          name: "Stag Station: City Storerooms",
+          spoiler: "200 Geo: City of Tears, top left area",
+          wiki: "City_of_Tears#City_Storerooms"
+        },
+        openedRestingGrounds: {
+          name: "Stag Station: Resting Grounds",
+          spoiler: "0 Geo: Right middle area, near Seer",
+          wiki: "Resting_Grounds"
+        },
+        openedRuins2: {
+          name: "Stag Station: King's Station",
+          spoiler: "300 Geo: City of Tears, far right area",
+          wiki: "City_of_Tears#Sub-area:_King.27s_Station"
+        },
+        openedRoyalGardens: {
+          name: "Stag Station: Queen's Gardens",
+          spoiler: "200 Geo: Middle area, near Traitor's Grave",
+          wiki: "Queen's_Gardens"
+        },
+        openedDeepnest: {
+          name: "Stag Station: Distant Village",
+          spoiler: "250 Geo: Deepnest, far left area",
+          wiki: "Deepnest#Sub-area:_Distant_Village"
+        },
+        openedHiddenStation: {
+          name: "Stag Station: Hidden Station",
+          spoiler: "300 Geo: Ancient Basin: Palace Grounds",
+          wiki: "Ancient_Basin#Sub-Area:_Palace_Grounds"
+        },
+        openedStagNest: {
+          name: "Stag Station: Stag Nest",
+          spoiler: "Open all stations: Howling Cliffs, top area",
+          wiki: "Howling_Cliffs#Sub-area:_Stag_Nest"
+        },
+        stagStationsOpened: {
+          name: "Stag Stations Opened",
+          spoiler: "11 Stag Stations total including Dirtmouth",
+          max: 11,
+          maxDefault: 11,
+          wiki: "Fast_Travel_(Hollow_Knight)#Locations_and_Prices"
+        },
+      },
+    },
+
+    /* ################ Essentials % -> Bosses ################### */
 
     essentialsBosses: {
       h2: "Game Completion % Essentials – Bosses",
