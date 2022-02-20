@@ -162,9 +162,9 @@ function HKCheckCompletion(jsonObject) {
   /* Must be checked before Statistics (for correct entry numbers) */
 
   CheckHuntersJournal(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"], "huntersJournal", HKPlayerData);
-  CheckHuntersJournal(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"], "huntersJournalOptional", HKPlayerData); // ------------------------- Essential Things --------------------------------------------------------------------------------- //
+  CheckHuntersJournal(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"], "huntersJournalOptional", HKPlayerData); // ------------------------- Essentials % -> Collectibles --------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.essential, jsonObject); // ------------------------- Achievements ------------------------------------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.essentialsCollectibles, jsonObject); // ------------------------- Achievements ------------------------------------------------------------------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievements, jsonObject); // ------------------------- Collectibles -> Charm Notches ---------------------------------------------------------------------- //
 
@@ -4492,11 +4492,11 @@ var HK = {
       }
     },
 
-    /* ################ Game Completion Essentials ################### */
-    essential: {
-      h2: "Game Completion Essentials",
-      id: "hk-essential",
-      description: "All things that don't count directly towards 112% Game Completion, but are required to achieve a large part of 112% points.",
+    /* ################ Game Completion % Essentials – Collectibles ################### */
+    essentialsCollectibles: {
+      h2: "Game Completion % Essentials – Collectibles",
+      id: "hk-essentials-collectibles",
+      description: "Collectibles that don't count directly towards 112% Game Completion, but are required to achieve full 112%.",
       entries: {
         /* 
         Absolute Radiance (for P5, achievements)
@@ -4765,7 +4765,17 @@ var HK = {
           name: "Godseeker Cocoon Unlocked",
           spoiler: "Royal Waterways: Junk Pit",
           wiki: "Royal_Waterways#Sub-area:_Junk_Pit"
-        },
+        }
+      },
+      grubsList: ["Crossroads_35", "Crossroads_03", "Crossroads_05", "Crossroads_48", "Crossroads_31", "Fungus1_06", "Fungus1_07", "Fungus1_21", "Fungus1_28", "Fungus2_18", "Ruins1_05", "Mines_04", "Mines_03", "Mines_31", "Mines_19", "Ruins1_32", "RestingGrounds_10", "Ruins_House_01", "Mines_35", "Mines_16", "Waterways_04", "Waterways_13", "Abyss_19", "Abyss_17", "Mines_24", "Fungus1_13", "Fungus3_47", "Fungus3_10", "Fungus3_48", "Fungus3_22", "Ruins2_07", "Ruins2_11", "Ruins2_11", "Ruins2_11", "Deepnest_East_11", "Deepnest_East_14", "Fungus2_20", "Ruins2_03", "Deepnest_36", "Deepnest_03", "Deepnest_31", "Deepnest_39", "Deepnest_Spider_Town", "Waterways_14", "Hive_03", "Hive_04"]
+    },
+
+    /* ################ Game Completion % Essentials – Bosses ################### */
+    essentialsBosses: {
+      h2: "Game Completion % Essentials – Bosses",
+      id: "hk-essentials-bosses",
+      description: "Bosses that don't count directly towards 112% Game Completion, but are required to achieve full 112%.",
+      entries: {
         killedMegaMossCharger: {
           name: "P1 Massive Moss Charger",
           spoiler: "Greenpath, near Fog Canyon",
@@ -4839,8 +4849,7 @@ var HK = {
           spoiler: "Godhome: Pantheon of the Knight",
           wiki: "Pure_Vessel"
         }
-      },
-      grubsList: ["Crossroads_35", "Crossroads_03", "Crossroads_05", "Crossroads_48", "Crossroads_31", "Fungus1_06", "Fungus1_07", "Fungus1_21", "Fungus1_28", "Fungus2_18", "Ruins1_05", "Mines_04", "Mines_03", "Mines_31", "Mines_19", "Ruins1_32", "RestingGrounds_10", "Ruins_House_01", "Mines_35", "Mines_16", "Waterways_04", "Waterways_13", "Abyss_19", "Abyss_17", "Mines_24", "Fungus1_13", "Fungus3_47", "Fungus3_10", "Fungus3_48", "Fungus3_22", "Ruins2_07", "Ruins2_11", "Ruins2_11", "Ruins2_11", "Deepnest_East_11", "Deepnest_East_14", "Fungus2_20", "Ruins2_03", "Deepnest_36", "Deepnest_03", "Deepnest_31", "Deepnest_39", "Deepnest_Spider_Town", "Waterways_14", "Hive_03", "Hive_04"]
+      }
     },
 
     /* ################ Achievements Essentials ################### */
@@ -11842,14 +11851,14 @@ function GenerateInnerHTML(db) {
     switch (section) {
       /* Main % */
       case "bosses":
-        textFill += ["<div class=\"tab-switch-buttons\">", "<button id=\"button-switch-main\" name=\"main\" class=\"button tab-switch\" type=\"button\">Main %</button>", "<button id=\"button-switch-essential\" name=\"essential\" class=\"button tab-switch\" type=\"button\">Essentials %</button>", "<button id=\"button-switch-journal\" name=\"journal\" class=\"button tab-switch\" type=\"button\">Journal</button>", "<button id=\"button-switch-collectibles\" name=\"collectibles\" class=\"button tab-switch\" type=\"button\">Collectibles</button>", "<button id=\"button-switch-geocaches\" name=\"geocaches\" class=\"button tab-switch\" type=\"button\">Geo Caches</button>", "<button id=\"button-switch-secrets\" name=\"secrets\" class=\"button tab-switch\" type=\"button\">Secrets</button>", "<button id=\"button-switch-godhome\" name=\"godhome\" class=\"button tab-switch\" type=\"button\">Godmaster</button>", "<button id=\"button-switch-statistics\" name=\"statistics\" class=\"button tab-switch\" type=\"button\">Statistics</button>", "</div>"].join("\n");
+        textFill += ["<div class=\"tab-switch-buttons\">", "<button id=\"button-switch-main\" name=\"main\" class=\"button tab-switch\" type=\"button\">Main %</button>", "<button id=\"button-switch-essentials\" name=\"essentials\" class=\"button tab-switch\" type=\"button\">Essentials %</button>", "<button id=\"button-switch-journal\" name=\"journal\" class=\"button tab-switch\" type=\"button\">Journal</button>", "<button id=\"button-switch-collectibles\" name=\"collectibles\" class=\"button tab-switch\" type=\"button\">Collectibles</button>", "<button id=\"button-switch-geocaches\" name=\"geocaches\" class=\"button tab-switch\" type=\"button\">Geo Caches</button>", "<button id=\"button-switch-secrets\" name=\"secrets\" class=\"button tab-switch\" type=\"button\">Secrets</button>", "<button id=\"button-switch-godhome\" name=\"godhome\" class=\"button tab-switch\" type=\"button\">Godmaster</button>", "<button id=\"button-switch-statistics\" name=\"statistics\" class=\"button tab-switch\" type=\"button\">Statistics</button>", "</div>"].join("\n");
         textFill += "<div id=\"tab-main\" class=\"large-section\">";
         break;
 
       /* Essentials % */
 
-      case "essential":
-        textFill += "<div id=\"tab-essential\" class=\"large-section\">";
+      case "essentialsCollectibles":
+        textFill += "<div id=\"tab-essentials\" class=\"large-section\">";
         break;
 
       /* Journal */

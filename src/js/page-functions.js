@@ -243,7 +243,7 @@ function GenerateInnerHTML(db) {
         textFill += [
           `<div class="tab-switch-buttons">`,
           `<button id="button-switch-main" name="main" class="button tab-switch" type="button">Main %</button>`,
-          `<button id="button-switch-essential" name="essential" class="button tab-switch" type="button">Essentials %</button>`,
+          `<button id="button-switch-essentials" name="essentials" class="button tab-switch" type="button">Essentials %</button>`,
           `<button id="button-switch-journal" name="journal" class="button tab-switch" type="button">Journal</button>`,
           `<button id="button-switch-collectibles" name="collectibles" class="button tab-switch" type="button">Collectibles</button>`,
           `<button id="button-switch-geocaches" name="geocaches" class="button tab-switch" type="button">Geo Caches</button>`,
@@ -258,9 +258,9 @@ function GenerateInnerHTML(db) {
         break;
 
       /* Essentials % */
-      case "essential":
+      case "essentialsCollectibles":
 
-        textFill += `<div id="tab-essential" class="large-section">`;
+        textFill += `<div id="tab-essentials" class="large-section">`;
 
         break;
 

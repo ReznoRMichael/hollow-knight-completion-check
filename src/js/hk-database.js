@@ -1063,12 +1063,12 @@ const HK = {
       },
     },
 
-    /* ################ Game Completion Essentials ################### */
+    /* ################ Game Completion % Essentials – Collectibles ################### */
 
-    essential: {
-      h2: "Game Completion Essentials",
-      id: "hk-essential",
-      description: "All things that don't count directly towards 112% Game Completion, but are required to achieve a large part of 112% points.",
+    essentialsCollectibles: {
+      h2: "Game Completion % Essentials – Collectibles",
+      id: "hk-essentials-collectibles",
+      description: "Collectibles that don't count directly towards 112% Game Completion, but are required to achieve full 112%.",
       entries: {
         /* 
         Absolute Radiance (for P5, achievements)
@@ -1338,6 +1338,17 @@ const HK = {
           spoiler: "Royal Waterways: Junk Pit",
           wiki: "Royal_Waterways#Sub-area:_Junk_Pit"
         },
+      },
+      grubsList: ["Crossroads_35", "Crossroads_03", "Crossroads_05", "Crossroads_48", "Crossroads_31", "Fungus1_06", "Fungus1_07", "Fungus1_21", "Fungus1_28", "Fungus2_18", "Ruins1_05", "Mines_04", "Mines_03", "Mines_31", "Mines_19", "Ruins1_32", "RestingGrounds_10", "Ruins_House_01", "Mines_35", "Mines_16", "Waterways_04", "Waterways_13", "Abyss_19", "Abyss_17", "Mines_24", "Fungus1_13", "Fungus3_47", "Fungus3_10", "Fungus3_48", "Fungus3_22", "Ruins2_07", "Ruins2_11", "Ruins2_11", "Ruins2_11", "Deepnest_East_11", "Deepnest_East_14", "Fungus2_20", "Ruins2_03", "Deepnest_36", "Deepnest_03", "Deepnest_31", "Deepnest_39", "Deepnest_Spider_Town", "Waterways_14", "Hive_03", "Hive_04"],
+    },
+
+    /* ################ Game Completion % Essentials – Bosses ################### */
+
+    essentialsBosses: {
+      h2: "Game Completion % Essentials – Bosses",
+      id: "hk-essentials-bosses",
+      description: "Bosses that don't count directly towards 112% Game Completion, but are required to achieve full 112%.",
+      entries: {
         killedMegaMossCharger: {
           name: "P1 Massive Moss Charger",
           spoiler: "Greenpath, near Fog Canyon",
@@ -1412,7 +1423,6 @@ const HK = {
           wiki: "Pure_Vessel"
         },
       },
-      grubsList: ["Crossroads_35", "Crossroads_03", "Crossroads_05", "Crossroads_48", "Crossroads_31", "Fungus1_06", "Fungus1_07", "Fungus1_21", "Fungus1_28", "Fungus2_18", "Ruins1_05", "Mines_04", "Mines_03", "Mines_31", "Mines_19", "Ruins1_32", "RestingGrounds_10", "Ruins_House_01", "Mines_35", "Mines_16", "Waterways_04", "Waterways_13", "Abyss_19", "Abyss_17", "Mines_24", "Fungus1_13", "Fungus3_47", "Fungus3_10", "Fungus3_48", "Fungus3_22", "Ruins2_07", "Ruins2_11", "Ruins2_11", "Ruins2_11", "Deepnest_East_11", "Deepnest_East_14", "Fungus2_20", "Ruins2_03", "Deepnest_36", "Deepnest_03", "Deepnest_31", "Deepnest_39", "Deepnest_Spider_Town", "Waterways_14", "Hive_03", "Hive_04"],
     },
 
     /* ################ Achievements Essentials ################### */

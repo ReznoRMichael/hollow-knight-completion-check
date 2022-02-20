@@ -215,9 +215,9 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
   CheckHuntersJournal(HK, "huntersJournal", HKPlayerData);
   CheckHuntersJournal(HK, "huntersJournalOptional", HKPlayerData);
 
-  // ------------------------- Essential Things --------------------------------------------------------------------------------- //
+  // ------------------------- Essentials % -> Collectibles --------------------------------------------------------------------- //
 
-  CheckAdditionalThings(HK.sections.essential, jsonObject);
+  CheckAdditionalThings(HK.sections.essentialsCollectibles, jsonObject);
 
   // ------------------------- Achievements ------------------------------------------------------------------------------------- //
 
