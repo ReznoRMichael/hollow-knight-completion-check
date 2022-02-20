@@ -1206,7 +1206,7 @@ const HK = {
     essentialsStagStations: {
       h2: "Game Completion % Essentials – Stag Stations",
       id: "hk-essentials-stag-stations",
-      description: `Stag Stations don't count directly towards 112% Game Completion, but are required to achieve full 112% by opening the <span class="spoiler-span blurred">Stag Nest for the Vessel Fragment</span>.`,
+      description: `Opened Stag Stations don't count directly towards 112% Game Completion, but are required to achieve full 112% by discovering the <span class="spoiler-span blurred">Stag Nest for the Vessel Fragment</span>.`,
       entries: {
         openedTownBuilding: {
           name: "Stag Station: Dirtmouth",
@@ -1362,7 +1362,7 @@ const HK = {
     essentialsBosses: {
       h2: "Game Completion % Essentials – Bosses",
       id: "hk-essentials-bosses",
-      description: "Bosses that don't count directly towards 112% Game Completion, but are required to achieve full 112%.",
+      description: "Bosses that don't count directly towards 112% Game Completion, but are required to defeat to achieve full 112%.",
       entries: {
         killedMegaMossCharger: {
           name: "P1 Massive Moss Charger",
