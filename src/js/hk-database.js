@@ -1349,7 +1349,14 @@ const HK = {
           spoiler: "City of Tears: Soul Sanctum",
           id: "Battle Scene v2",
           sceneName: "Ruins1_23",
-          wiki: "Soul_Warrior"
+          wiki: "Soul_Warrior#Location"
+        },
+        shadeSoulWarrior: {
+          name: "Shade Soul Warrior",
+          spoiler: "City of Tears: Soul Sanctum, use Elegant Key",
+          id: "Battle Scene v2",
+          sceneName: "Ruins1_31",
+          wiki: "Shade_Soul#How_to_Acquire"
         },
         pantheonCrystalGuardian: {
           name: "P2 Crystal Guardian",
