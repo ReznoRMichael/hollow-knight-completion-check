@@ -1424,6 +1424,7 @@ function CheckAdditionalThings(section, saveFile) {
       case "paleOreGrubfather": // #5
       case "paleOreColosseum": // #6
       case "pantheonSoulWarrior":
+      case "shadeSoulWarrior":
       case "pantheonCrystalGuardian":
       case "pantheonEnragedGuardian":
       case "mantisVillageFloorLever":

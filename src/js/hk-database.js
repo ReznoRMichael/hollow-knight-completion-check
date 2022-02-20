@@ -1071,7 +1071,6 @@ const HK = {
       description: "All things that don't count directly towards 112% Game Completion, but are required to achieve a large part of 112% points.",
       entries: {
         /* 
-        Soul Warrior 2 (Shade Soul)
         Absolute Radiance (for P5, achievements)
         Sisters of Battle (for P5, achievements)
         Winged Nosk (for P5, achievements)
