@@ -223,6 +223,10 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   CheckAdditionalThings(HK.sections.essentialsStagStations, jsonObject);
 
+  // ------------------------- Essentials % -> World Interactions -------------------------------------------------------------------- //
+
+  CheckAdditionalThings(HK.sections.essentialsWorldInteractions, jsonObject);
+
   // ------------------------- Essentials % -> Bosses --------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.essentialsBosses, jsonObject);
