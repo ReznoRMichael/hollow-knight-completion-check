@@ -223,7 +223,7 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   CheckAdditionalThings(HK.sections.essentialsStagStations, jsonObject);
 
-  // ------------------------- Essentials % -> World Interactions -------------------------------------------------------------------- //
+  // ------------------------- Essentials % -> World Interactions -------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.essentialsWorldInteractions, jsonObject);
 
@@ -231,11 +231,23 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   CheckAdditionalThings(HK.sections.essentialsBosses, jsonObject);
 
-  // ------------------------- Achievements ------------------------------------------------------------------------------------- //
+  // ------------------------- Achievements Essentials -> Collectibles --------------------------------------------------------- //
 
-  CheckAdditionalThings(HK.sections.achievements, jsonObject);
+  CheckAdditionalThings(HK.sections.achievementsCollectibles, jsonObject);
 
-  // ------------------------- Collectibles -> Charm Notches ---------------------------------------------------------------------- //
+  // ------------------------- Achievements Essentials -> Maps ----------------------------------------------------------- //
+
+  CheckAdditionalThings(HK.sections.achievementsMaps, jsonObject);
+
+  // ------------------------- Achievements Essentials -> World Interactions --------------------------------------------------- //
+
+  CheckAdditionalThings(HK.sections.achievementsWorldInteractions, jsonObject);
+
+  // ------------------------- Achievements Essentials -> Bosses ----------------------------------------------------------- //
+
+  CheckAdditionalThings(HK.sections.achievementsBosses, jsonObject);
+
+  // ------------------------- Collectibles -> Charm Notches ------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.charmNotches, jsonObject);
 
@@ -243,11 +255,11 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   saveDataChecker.checkItems(HK.sections.grubs);
 
-  // ------------------------- Collectibles -> Whispering Roots ---------------------------------------------------------------------- //
+  // ------------------------- Collectibles -> Whispering Roots ---------------------------------------------------------------- //
 
   saveDataChecker.checkItems(HK.sections.whisperingRoots);
 
-  // ------------------------- Collectibles -> Relics - Wanderer's Journal ----------------------------------------------------------- //
+  // ------------------------- Collectibles -> Relics - Wanderer's Journal ------------------------------------------------------- //
 
   saveDataChecker.checkItems(HK.sections.relicsWanderersJournal);
 

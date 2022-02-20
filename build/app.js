@@ -166,19 +166,25 @@ function HKCheckCompletion(jsonObject) {
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.essentialsCollectibles, jsonObject); // ------------------------- Essentials % -> Stag Stations -------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.essentialsStagStations, jsonObject); // ------------------------- Essentials % -> World Interactions -------------------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.essentialsStagStations, jsonObject); // ------------------------- Essentials % -> World Interactions -------------------------------------------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.essentialsWorldInteractions, jsonObject); // ------------------------- Essentials % -> Bosses --------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.essentialsBosses, jsonObject); // ------------------------- Achievements ------------------------------------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.essentialsBosses, jsonObject); // ------------------------- Achievements Essentials -> Collectibles --------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievements, jsonObject); // ------------------------- Collectibles -> Charm Notches ---------------------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievementsCollectibles, jsonObject); // ------------------------- Achievements Essentials -> Maps ----------------------------------------------------------- //
+
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievementsMaps, jsonObject); // ------------------------- Achievements Essentials -> World Interactions --------------------------------------------------- //
+
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievementsWorldInteractions, jsonObject); // ------------------------- Achievements Essentials -> Bosses ----------------------------------------------------------- //
+
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievementsBosses, jsonObject); // ------------------------- Collectibles -> Charm Notches ------------------------------------------------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches, jsonObject); // ------------------------- Collectibles -> Grubs ---------------------------------------------------------------------- //
 
-  saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.grubs); // ------------------------- Collectibles -> Whispering Roots ---------------------------------------------------------------------- //
+  saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.grubs); // ------------------------- Collectibles -> Whispering Roots ---------------------------------------------------------------- //
 
-  saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.whisperingRoots); // ------------------------- Collectibles -> Relics - Wanderer's Journal ----------------------------------------------------------- //
+  saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.whisperingRoots); // ------------------------- Collectibles -> Relics - Wanderer's Journal ------------------------------------------------------- //
 
   saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.relicsWanderersJournal); // ------------------------- Collectibles -> Relics - Hallownest Seal ----------------------------------------------------------- //
 
@@ -4871,17 +4877,51 @@ var HK = {
       }
     },
 
-    /* ################ Achievements Essentials ################### */
-    achievements: {
-      h2: "Achievements Essentials",
-      id: "hk-achievements",
-      description: "All the completely optional things that matter for achievements. Things here don't count or matter towards 112% Game Completion. This section includes Zote and Nailsmith choices that you've made on your save file.",
+    /* ################ Achievements Essentials -> Collectibles ################### */
+    achievementsCollectibles: {
+      h2: "Achievements Essentials – Collectibles",
+      id: "hk-achievements-collectibles",
+      description: "Collectibles important for unlocking achievements. They don't count or matter towards 112% Game Completion.",
       entries: {
         hasMap: {
           name: "Inventory Map",
           spoiler: "First map bought from Cornifer or Iselda",
           wiki: "Map_and_Quill"
         },
+        hasJournal: {
+          name: "Hunter's Journal",
+          spoiler: "Greenpath: Hunter, above Stone Sanctuary",
+          wiki: "Hunter's_Journal"
+        },
+        hasHuntersMark: {
+          name: "Hunter's Mark",
+          spoiler: "Greenpath: Hunter, complete base 146 Hunter Notes",
+          wiki: "Hunter's_Mark"
+        },
+        killsBigBuzzer: {
+          name: "Vengefly King Journal Note",
+          spoiler: "Colosseum: Trial of the Warrior",
+          wiki: "Vengefly_King"
+        },
+        salubraBlessing: {
+          name: "Salubra's Blessing",
+          spoiler: "Salubra: 800 Geo + all 40 Charms Owned",
+          wiki: "Salubra's_Blessing"
+        },
+        gotShadeCharm: {
+          name: "Void Heart",
+          spoiler: "Equip Kingsoul Charm and find Birthplace",
+          wiki: "Void_Heart"
+        }
+      }
+    },
+
+    /* ################ Achievements Essentials -> Maps ################### */
+    achievementsMaps: {
+      h2: "Achievements Essentials – Maps",
+      id: "hk-achievements-maps",
+      description: "Acquired maps are important for unlocking achievements. They don't count or matter towards 112% Game Completion.",
+      entries: {
         mapCrossroads: {
           name: "Map: Forgotten Crossroads",
           spoiler: "30/40 Geo: below Gruzzer area",
@@ -4953,57 +4993,16 @@ var HK = {
           max: 13,
           maxDefault: 13,
           wiki: "Map_and_Quill#Maps"
-        },
-        hasJournal: {
-          name: "Hunter's Journal",
-          spoiler: "Greenpath: Hunter, above Stone Sanctuary",
-          wiki: "Hunter's_Journal"
-        },
-        hasHuntersMark: {
-          name: "Hunter's Mark",
-          spoiler: "Greenpath: Hunter, complete base 146 Hunter Notes",
-          wiki: "Hunter's_Mark"
-        },
-        killsBigBuzzer: {
-          name: "Vengefly King Journal Note",
-          spoiler: "Colosseum: Trial of the Warrior",
-          wiki: "Vengefly_King"
-        },
-        falseKnightDreamDefeated: {
-          name: "Failed Champion",
-          spoiler: "Forgotten Crossroads, near False Knight",
-          wiki: "Failed_Champion"
-        },
-        mageLordDreamDefeated: {
-          name: "Soul Tyrant",
-          spoiler: "City of Tears: Soul Sanctum, near Soul Master",
-          wiki: "Soul_Tyrant"
-        },
-        infectedKnightDreamDefeated: {
-          name: "Lost Kin",
-          spoiler: "Ancient Basin, Broken Vessel location",
-          wiki: "Lost_Kin"
-        },
-        whiteDefenderDefeated: {
-          name: "White Defender",
-          spoiler: "Royal Waterways, Dung Defender, use Desolate Dive",
-          wiki: "White_Defender"
-        },
-        greyPrinceDefeated: {
-          name: "Grey Prince Zote",
-          spoiler: "Dirtmouth: Bretta's Room (per save choice)",
-          wiki: "Grey_Prince_Zote"
-        },
-        killedHollowKnight: {
-          name: "Hollow Knight",
-          spoiler: "Forgotten Crossroads: Black Egg Temple",
-          wiki: "Hollow_Knight"
-        },
-        salubraBlessing: {
-          name: "Salubra's Blessing",
-          spoiler: "Salubra: 800 Geo + all 40 Charms Owned",
-          wiki: "Salubra's_Blessing"
-        },
+        }
+      }
+    },
+
+    /* ################ Achievements Essentials -> World Interactions ################### */
+    achievementsWorldInteractions: {
+      h2: "Achievements Essentials – World Interactions",
+      id: "hk-achievements-world-interactions",
+      description: "Certain interactions the player can make with NPCs in the game or world objects important for unlocking achievements. They don't count or matter towards 112% Game Completion. This section includes some choices that the player can make in the game.",
+      entries: {
         quirrelEpilogueCompleted: {
           name: "Quirrel: Witness",
           spoiler: "Blue Lake: after defeating Monomon the Teacher",
@@ -5049,22 +5048,6 @@ var HK = {
           spoilerSheoHutWaiting: "Waiting at Sheo's Hut",
           spoilerUpgradeNail: "Upgrade Nail to Pure Nail",
           wiki: "Nailsmith"
-        },
-        gotShadeCharm: {
-          name: "Void Heart",
-          spoiler: "Equip Kingsoul Charm and find Birthplace",
-          wiki: "Void_Heart"
-        },
-
-        /* 
-        Absolute Radiance (for P5, achievements)
-        Sisters of Battle (for P5, achievements)
-        Winged Nosk (for P5, achievements)
-        */
-        killedFinalBoss: {
-          name: "The Radiance",
-          spoiler: "Requires Void Heart & Dream Nail Hollow Knight",
-          wiki: "Radiance"
         },
         mrMushroomState1: {
           name: "Mr Mushroom #1",
@@ -5133,6 +5116,56 @@ var HK = {
           8. There journeys end. The kingdom ventured.
           */
 
+      }
+    },
+
+    /* ################ Achievements Essentials -> Bosses ################### */
+    achievementsBosses: {
+      h2: "Achievements Essentials – Bosses",
+      id: "hk-achievements-bosses",
+      description: "Bosses important for unlocking achievements. They don't count or matter towards 112% Game Completion.",
+      entries: {
+        falseKnightDreamDefeated: {
+          name: "Failed Champion",
+          spoiler: "Forgotten Crossroads, near False Knight",
+          wiki: "Failed_Champion"
+        },
+        mageLordDreamDefeated: {
+          name: "Soul Tyrant",
+          spoiler: "City of Tears: Soul Sanctum, near Soul Master",
+          wiki: "Soul_Tyrant"
+        },
+        infectedKnightDreamDefeated: {
+          name: "Lost Kin",
+          spoiler: "Ancient Basin, Broken Vessel location",
+          wiki: "Lost_Kin"
+        },
+        whiteDefenderDefeated: {
+          name: "White Defender",
+          spoiler: "Royal Waterways, Dung Defender, use Desolate Dive",
+          wiki: "White_Defender"
+        },
+        greyPrinceDefeated: {
+          name: "Grey Prince Zote",
+          spoiler: "Dirtmouth: Bretta's Room (per save choice)",
+          wiki: "Grey_Prince_Zote"
+        },
+        killedHollowKnight: {
+          name: "Hollow Knight",
+          spoiler: "Forgotten Crossroads: Black Egg Temple",
+          wiki: "Hollow_Knight"
+        },
+
+        /* 
+        Absolute Radiance (for P5, achievements)
+        Sisters of Battle (for P5, achievements)
+        Winged Nosk (for P5, achievements)
+        */
+        killedFinalBoss: {
+          name: "The Radiance",
+          spoiler: "Requires Void Heart & Dream Nail Hollow Knight",
+          wiki: "Radiance"
+        }
       }
     },
 
@@ -11769,66 +11802,6 @@ function TogglePageScrollElement(root, element, ratio) {
     HideElement(element);
   }
 }
-/**
- * Replaces the h2 titles with a current percent/max percent values as read from the save file
- * @param {object} jsObj Object with HTML data to fill
- * @param {number} hkGameCompletion Total completion percentage in a save file
- */
-
-/* function CompletionHTML(jsObj, hkGameCompletion) {
-
-  let h2 = "";
-  let h2id = "";
-  let cl = "";
-  let clGreen = "box-green";
-  let clRed = "box-red";
-  let cp = 0; // current Percent
-  let mp = 0; // max Percent
-  let fillText = "";
-
-  for (let i in jsObj) {
-    h2 = jsObj[i].h2;
-    h2id = "h2-" + jsObj[i].id;
-
-    (jsObj[i].hasOwnProperty("percent")) ? cp = jsObj[i].percent: cp = 0;
-    if (i === "intro") cp = hkGameCompletion;
-
-    // Don't use percent-box for Essentials, Achievements, Statistics
-    if (!jsObj[i].hasOwnProperty("maxPercent")) {
-      fillText = "";
-    }
-    // otherwise use percent-box with values cp/mp%
-    else {
-
-      mp = jsObj[i].maxPercent;
-
-      if (i === "maskShards") {
-        let perc = jsObj[i].percent;
-        (perc % 4) ? cp = Math.floor(perc / 4): cp = perc / 4;
-      } else if (i === "vesselFragments") {
-        let perc = jsObj[i].percent;
-        (perc % 3) ? cp = Math.floor(perc / 3): cp = perc / 3;
-      }
-
-      // switches the box to red when a section (h2) is 0
-      if (cp === 0) {
-        cl = ` ${clRed}`;
-      }
-      // switches the box to green when a section (h2) is completed
-      else if (cp === mp) {
-        cl = ` ${clGreen}`;
-      }
-      // default is blue (partially completed and starting value)
-      else cl = "";
-
-      // needed for Game Status to show percentage properly (adds a slash for all boxes except the Game Status one)
-      if (jsObj[i].id != "hk-intro") cp += "/";
-
-      fillText = `<div class='percent-box${cl}'>${(i === "intro") ? cp: cp + jsObj[i].maxPercent}%</div>`;
-    }
-  }
-} */
-
 /* ################################### Optimized Functions ########################################################################## */
 
 
@@ -12278,9 +12251,9 @@ function GenerateInnerHTML(db) {
 
     switch (section) {
       /* ending the tabs */
-      case "godmaster": // Main
+      case "godmaster": // Main %
 
-      case "achievements": // Essentials
+      case "achievementsBosses": // Essentials %
 
       case "huntersJournalOptional": // Journal
 
