@@ -5941,51 +5941,6 @@ const HK = {
           maxDefault: 21,
           wiki: "Nail#Nail_Upgrades"
         },
-        /*
-        whisperingRoots: {
-          name: "Whispering Roots Completed",
-          spoiler: "Dream Nail (15 Roots total)",
-          max: 15,
-          maxDefault: 15,
-          wiki: "Whispering_Root"
-        },
-        relicsWandererJournal: {
-          name: "Relic #1 Found Total",
-          nameHeld: "trinket1",
-          nameSold: "soldTrinket1",
-          spoiler: "Wanderer's Journal (14 Journals total)",
-          max: 14,
-          maxDefault: 14,
-          wiki: "Wanderer's_Journal"
-        },
-        relicsHallownestSeal: {
-          name: "Relic #2 Found Total",
-          nameHeld: "trinket2",
-          nameSold: "soldTrinket2",
-          spoiler: "Hallownest Seal (17 Seals total)",
-          max: 17,
-          maxDefault: 17,
-          wiki: "Hallownest_Seal"
-        },
-        relicsKingsIdol: {
-          name: "Relic #3 Found Total",
-          nameHeld: "trinket3",
-          nameSold: "soldTrinket3",
-          spoiler: "King's Idol (8 Idols total)",
-          max: 8,
-          maxDefault: 8,
-          wiki: "King's_Idol"
-        },
-        relicsArcaneEgg: {
-          name: "Relic #4 Found Total",
-          nameHeld: "trinket4",
-          nameSold: "soldTrinket4",
-          spoiler: "Arcane Egg (4 Eggs max, 1 missable)",
-          max: 3,
-          maxDefault: 3,
-          wiki: "Arcane_Egg"
-        },
-        */
         // not ghostCoins
         geoPool: {
           name: "Shade Geo",

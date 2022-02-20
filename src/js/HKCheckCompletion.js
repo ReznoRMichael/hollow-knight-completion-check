@@ -1293,6 +1293,18 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         break;
 
       case "geoPool":
+        amount = Math.abs(playerData[i]);
+
+        dataObject[i].amount = amount;
+
+        if (amount > 0) {
+          SetIconPartial(section, i);
+        } else {
+          SetIcon(section, i, "revealed");
+        }
+
+        break;
+
       case "rancidEggs":
       case "jinnEggsSold":
       case "xunFlowerBrokeTimes":
@@ -1306,8 +1318,8 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         dataObject[i].amount = amount;
 
-        if (amount > 0 && i === "geoPool") {
-          SetIconPartial(section, i);
+        if (amount > 0) {
+          SetIcon(section, i, "revealed");
         } else {
           SetIconNone(section, i);
         }
@@ -1318,6 +1330,8 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
             SetIconNone(section, i);
             dataObject[i].disabled = true;
+          } else {
+            SetIcon(section, i, "revealed");
           }
         }
 
@@ -1348,7 +1362,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         dataObject[i].amount = amount;
 
-        SetIconNone(section, i);
+        if (amount > 0) {
+          SetIcon(section, i, "revealed");
+        } else {
+          SetIconNone(section, i);
+        }
 
         break;
 
@@ -1363,7 +1381,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         dataObject[i].amount = amount;
 
-        SetIconNone(section, i);
+        if (amount > 0) {
+          SetIcon(section, i, "revealed");
+        } else {
+          SetIconNone(section, i);
+        }
 
         break;
 
@@ -1397,23 +1419,6 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         break;
 
-        /* case "geoRocks":
-          discoveredTotal = sceneData.geoRocks.length;
-
-          notActivated = CountGeoRocks(discoveredTotal, "unbroken");
-          activated = CountGeoRocks(discoveredTotal, "broken");
-
-          dataObject[i].discoveredTotal = discoveredTotal;
-          dataObject[i].notActivated = notActivated;
-          dataObject[i].activated = activated;
-
-          if (activated >= dataObject[i].max) {
-            SetIconGreen(section, i);
-          } else {
-            SetIconNone(section, i);
-          }
-          break;
-        */
       case "itemsDiscovered":
         discoveredTotal = sceneData.persistentBoolItems.length;
 
@@ -1425,7 +1430,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         dataObject[i].activated = activated;
 
         /* textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`; */
-        SetIconNone(section, i);
+        SetIcon(section, i, "revealed");
         break;
 
       case "shopkeeperKey":

@@ -1123,6 +1123,17 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         break;
 
       case "geoPool":
+        amount = Math.abs(playerData[i]);
+        dataObject[i].amount = amount;
+
+        if (amount > 0) {
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconPartial)(section, i);
+        } else {
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, i, "revealed");
+        }
+
+        break;
+
       case "rancidEggs":
       case "jinnEggsSold":
       case "xunFlowerBrokeTimes":
@@ -1135,8 +1146,8 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         amount = Math.abs(playerData[i]);
         dataObject[i].amount = amount;
 
-        if (amount > 0 && i === "geoPool") {
-          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconPartial)(section, i);
+        if (amount > 0) {
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, i, "revealed");
         } else {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
         }
@@ -1146,6 +1157,8 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           if (playerData.permadeathMode < 1) {
             (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
             dataObject[i].disabled = true;
+          } else {
+            (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, i, "revealed");
           }
         }
 
@@ -1170,7 +1183,13 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         }
 
         dataObject[i].amount = amount;
-        (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
+
+        if (amount > 0) {
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, i, "revealed");
+        } else {
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
+        }
+
         break;
 
       case "bankerBalance":
@@ -1182,7 +1201,13 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         }
 
         dataObject[i].amount = amount;
-        (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
+
+        if (amount > 0) {
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, i, "revealed");
+        } else {
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
+        }
+
         break;
 
       case "millibelleLeft":
@@ -1212,21 +1237,6 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
         break;
 
-      /* case "geoRocks":
-        discoveredTotal = sceneData.geoRocks.length;
-          notActivated = CountGeoRocks(discoveredTotal, "unbroken");
-        activated = CountGeoRocks(discoveredTotal, "broken");
-          dataObject[i].discoveredTotal = discoveredTotal;
-        dataObject[i].notActivated = notActivated;
-        dataObject[i].activated = activated;
-          if (activated >= dataObject[i].max) {
-          SetIconGreen(section, i);
-        } else {
-          SetIconNone(section, i);
-        }
-        break;
-      */
-
       case "itemsDiscovered":
         discoveredTotal = sceneData.persistentBoolItems.length;
         notActivated = CountItems(discoveredTotal, "notActivated");
@@ -1236,7 +1246,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         dataObject[i].activated = activated;
         /* textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`; */
 
-        (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
+        (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, i, "revealed");
         break;
 
       case "shopkeeperKey":
@@ -9369,52 +9379,6 @@ var HK = {
           maxDefault: 21,
           wiki: "Nail#Nail_Upgrades"
         },
-
-        /*
-        whisperingRoots: {
-          name: "Whispering Roots Completed",
-          spoiler: "Dream Nail (15 Roots total)",
-          max: 15,
-          maxDefault: 15,
-          wiki: "Whispering_Root"
-        },
-        relicsWandererJournal: {
-          name: "Relic #1 Found Total",
-          nameHeld: "trinket1",
-          nameSold: "soldTrinket1",
-          spoiler: "Wanderer's Journal (14 Journals total)",
-          max: 14,
-          maxDefault: 14,
-          wiki: "Wanderer's_Journal"
-        },
-        relicsHallownestSeal: {
-          name: "Relic #2 Found Total",
-          nameHeld: "trinket2",
-          nameSold: "soldTrinket2",
-          spoiler: "Hallownest Seal (17 Seals total)",
-          max: 17,
-          maxDefault: 17,
-          wiki: "Hallownest_Seal"
-        },
-        relicsKingsIdol: {
-          name: "Relic #3 Found Total",
-          nameHeld: "trinket3",
-          nameSold: "soldTrinket3",
-          spoiler: "King's Idol (8 Idols total)",
-          max: 8,
-          maxDefault: 8,
-          wiki: "King's_Idol"
-        },
-        relicsArcaneEgg: {
-          name: "Relic #4 Found Total",
-          nameHeld: "trinket4",
-          nameSold: "soldTrinket4",
-          spoiler: "Arcane Egg (4 Eggs max, 1 missable)",
-          max: 3,
-          maxDefault: 3,
-          wiki: "Arcane_Egg"
-        },
-        */
         // not ghostCoins
         geoPool: {
           name: "Shade Geo",
@@ -12007,6 +11971,10 @@ function GenerateInnerHTML(db) {
                 obj.icon = SYMBOL_PARTIAL;
                 break;
 
+              case "revealed":
+                obj.icon = SYMBOL_EMPTY;
+                break;
+
               case "red":
                 obj.icon = SYMBOL_FALSE;
                 break;
@@ -12158,13 +12126,20 @@ function GenerateInnerHTML(db) {
 
               case "green":
                 obj.icon = SYMBOL_TRUE;
-                /* -------- Prevents blurring when a player has already completed the entry --------- */
+                /* -------- Prevents hiding as spoiler when a player has already completed the entry --------- */
 
                 obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
               case "partial":
                 obj.icon = SYMBOL_PARTIAL;
+                break;
+
+              case "revealed":
+                obj.icon = SYMBOL_EMPTY;
+                /* -------- Prevents textSuffix blurring when a player has already discovered the entry --------- */
+
+                obj.span[0] = "<span class='spoiler-span-green'>";
                 break;
 
               case "partialJournal":
