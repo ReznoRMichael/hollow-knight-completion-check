@@ -101,7 +101,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Organized Game Completion % Essentials and Achievements Essentials by category.  
   ✅ Added Cornifer's Notes to the Secrets tab.  
 
-  — **Game Completion Essentials** additions:  
+  — **Game Completion % Essentials - World Interactions** additions:  
   ✅ Paid to See Something Nice.  
   ✅ Shopkeeper's Key Returned to Sly.  
   ✅ Delicate Flower Accepted.  
@@ -110,6 +110,8 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Lifeblood Door Opened.  
   ✅ The Abyss Gate Opened.  
   ✅ Godseeker Cocoon Unlocked.  
+
+  — **Game Completion % Essentials - Bosses** additions:  
   ✅ Shade Soul Warrior.  
 
   — **World Interactions** additions:  
