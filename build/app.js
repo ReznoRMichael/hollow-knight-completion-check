@@ -164,11 +164,11 @@ function HKCheckCompletion(jsonObject) {
   CheckHuntersJournal(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"], "huntersJournal", HKPlayerData);
   CheckHuntersJournal(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"], "huntersJournalOptional", HKPlayerData); // ------------------------- Essential Things --------------------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.essential, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.essential.entries, HKPlayerData, HKWorldItems); // ------------------------- Achievements ------------------------------------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.essential, jsonObject); // ------------------------- Achievements ------------------------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievements, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievements.entries, HKPlayerData, HKWorldItems); // ------------------------- Collectibles -> Charm Notches ---------------------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievements, jsonObject); // ------------------------- Collectibles -> Charm Notches ---------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches.entries, HKPlayerData, HKWorldItems); // ------------------------- Collectibles -> Grubs ---------------------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.charmNotches, jsonObject); // ------------------------- Collectibles -> Grubs ---------------------------------------------------------------------- //
 
   saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.grubs); // ------------------------- Collectibles -> Whispering Roots ---------------------------------------------------------------------- //
 
@@ -184,21 +184,21 @@ function HKCheckCompletion(jsonObject) {
 
   saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.rancidEggs); // ------------------------- Collectibles -> Items ---------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items.entries, HKPlayerData, HKWorldItems); // ------------------------- Geo Caches -> Geo Chests ----------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.items, jsonObject); // ------------------------- Geo Caches -> Geo Chests ----------------------------------------------------------- //
 
   saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.geoChests); // ------------------------- Geo Caches -> Geo Rocks ----------------------------------------------------------- //
 
   saveDataChecker.checkGeoRocks(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.geoRocks); // ------------------------- Secrets -> World Interactions ---------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.worldInteractions, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.worldInteractions.entries, HKPlayerData, HKWorldItems); // ------------------------- Secrets -> Secret Rooms ---------------------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.worldInteractions, jsonObject); // ------------------------- Secrets -> Secret Rooms ---------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.secretRooms, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.secretRooms.entries, HKPlayerData, HKWorldItems); // ------------------------- Secrets -> Cornifer's Notes ----------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.secretRooms, jsonObject); // ------------------------- Secrets -> Cornifer's Notes ----------------------------------------------------------- //
 
   saveDataChecker.checkItems(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.corniferNotes); // ------------------------- Game Statistics ---------------------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.statistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.statistics.entries, HKPlayerData, HKWorldItems, HKSceneData); // ------------------------- Godhome Statistics ------------------------------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.statistics, jsonObject); // ------------------------- Godhome Statistics ------------------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.godhomeStatistics, _hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.godhomeStatistics.entries, HKPlayerData, HKWorldItems, HKSceneData);
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.godhomeStatistics, jsonObject);
   /* ------------------------- Pantheon Statistics ------------------------------------------------------------------------------ */
 
   CheckPantheon(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"], "pantheonOfTheMaster", HKPlayerData);
@@ -998,27 +998,19 @@ function WorldDataActivated(idText, sceneNameText, worldData) {
 } */
 
 /**
- * Verifies if the data in a specific object are true or false, or checks what values they have, and appends HTML accordingly.
- * @param {object} section ID of the HTML element for data appending
- * @param {object} dataObject Object containing data to be verified
- * @param {object} playerData Reference/pointer to specific data where to search (playerData)
- * @param {object} worldData Reference/pointer to specific data where to search (sceneData.persistentBoolItems)
- * @param {object} sceneData Reference/pointer to specific data where to search (sceneData)
+ * Verifies if the data in a specific section is true or false, or checks what values they have.
+ * @param {object} section Reference/pointer to the specific section of the whole hk-database
+ * @param {object} saveFile Reference/pointer to the whole Hollow Knight save file object (jsonObject)
  */
 
 
-function CheckAdditionalThings(section, dataObject, playerData, worldData, sceneData) {
-  /* let {
-      textPrefix,
-      textSuffix,
-      wiki
-  } = "";
-  let sFillText = ""; */
-  // Start main loop
-  for (var i in dataObject) {
-    /* textPrefix = dataObject[i].name;
-    (dataObject[i].hasOwnProperty("spoiler")) ? textSuffix = dataObject[i].spoiler: textSuffix = "";
-    (dataObject[i].hasOwnProperty("wiki")) ? wiki = dataObject[i].wiki: wiki = ""; */
+function CheckAdditionalThings(section, saveFile) {
+  var entries = section.entries;
+  var playerData = saveFile.playerData;
+  var sceneData = saveFile.sceneData;
+  var worldData = saveFile.sceneData.persistentBoolItems; // Start main loop
+
+  for (var i in entries) {
     var _2 = 0,
         amount = _2.amount,
         countTotal = _2.countTotal,
@@ -1046,34 +1038,34 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         }
 
         countTotal = amount;
-        dataObject[i].amount = amount;
+        entries[i].amount = amount;
 
         if (i === "journalEntriesCompleted" || i === "journalNotesCompleted") {
           countTotal = "".concat(amount, " / ").concat(playerData.journalEntriesTotal);
-          dataObject[i].amountTotal = playerData.journalEntriesTotal;
-          dataObject[i].spoiler = "".concat(dataObject[i].spoilerDefault, " (").concat(dataObject[i].max, " max)");
+          entries[i].amountTotal = playerData.journalEntriesTotal;
+          entries[i].spoiler = "".concat(entries[i].spoilerDefault, " (").concat(entries[i].max, " max)");
           /* when Zote is dead, the max Journal entries will equal 4 less instead of 164. For the green tick */
 
           if (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
             if (playerData.hasOwnProperty("killedGreyPrince")) {
-              dataObject[i].max -= 4; // Subtract GPZ and 3 Zotelings from max
+              entries[i].max -= 4; // Subtract GPZ and 3 Zotelings from max
             }
 
-            dataObject[i].spoiler = "".concat(dataObject[i].spoilerDefault, " (").concat(dataObject[i].max, " max)");
+            entries[i].spoiler = "".concat(entries[i].spoilerDefault, " (").concat(entries[i].max, " max)");
             /* Change spoiler for less confusion */
           }
           /* when Grimm Troupe is banished, max Journal entries will be 1 or 2 less */
 
 
           if (playerData.hasOwnProperty("destroyedNightmareLantern") && playerData.destroyedNightmareLantern === true) {
-            dataObject[i].max--; // Subtract Nightmare King from max
+            entries[i].max--; // Subtract Nightmare King from max
 
             /* if the player didn't defeat any Grimmkin Nightmare before banishing, subtract it from max */
 
             if (playerData.killedFlameBearerLarge === false) {
-              dataObject[i].max--; // Subtract Grimmkin Nightmare from max
+              entries[i].max--; // Subtract Grimmkin Nightmare from max
 
-              dataObject[i].spoiler = "".concat(dataObject[i].spoilerDefault, " (").concat(dataObject[i].max, " max)");
+              entries[i].spoiler = "".concat(entries[i].spoilerDefault, " (").concat(entries[i].max, " max)");
               /* Change spoiler for less confusion */
             }
           }
@@ -1086,7 +1078,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
 
         if (i === "grubRewards") {
-          dataObject[i].amountTotal = playerData.grubsCollected;
+          entries[i].amountTotal = playerData.grubsCollected;
           /* textPrefix += ` / ${playerData.grubsCollected}`; */
         }
 
@@ -1094,11 +1086,11 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           // backwards compatibility with earlier game versions
           if (playerData.hasOwnProperty(i) === false) {
             (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-            dataObject[i].disabled = true; // textPrefix = `<del>${dataObject[i].name}</del>`;
+            entries[i].disabled = true; // textPrefix = `<del>${dataObject[i].name}</del>`;
 
             break;
           } else if (playerData.zoteDead === true || playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
-            dataObject[i].disabled = true; // textPrefix = `<del>${textPrefix}</del>`;
+            entries[i].disabled = true; // textPrefix = `<del>${textPrefix}</del>`;
           }
         }
 
@@ -1106,13 +1098,13 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           // backwards compatibility with earlier game versions
           if (playerData.hasOwnProperty(i) === false) {
             (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-            dataObject[i].disabled = true; // textPrefix = `<del>${dataObject[i].name}</del>`;
+            entries[i].disabled = true; // textPrefix = `<del>${dataObject[i].name}</del>`;
 
             break;
           }
         }
 
-        if (amount >= dataObject[i].max) {
+        if (amount >= entries[i].max) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else if (amount > 0) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconPartial)(section, i);
@@ -1124,7 +1116,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
       case "geoPool":
         amount = Math.abs(playerData[i]);
-        dataObject[i].amount = amount;
+        entries[i].amount = amount;
 
         if (amount > 0) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconPartial)(section, i);
@@ -1144,7 +1136,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "ore":
       case "simpleKeys":
         amount = Math.abs(playerData[i]);
-        dataObject[i].amount = amount;
+        entries[i].amount = amount;
 
         if (amount > 0) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, i, "revealed");
@@ -1156,7 +1148,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           // fade out if not on Steel Soul
           if (playerData.permadeathMode < 1) {
             (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-            dataObject[i].disabled = true;
+            entries[i].disabled = true;
           } else {
             (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, i, "revealed");
           }
@@ -1178,7 +1170,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         // fade out if on Steel Soul
         if (playerData.permadeathMode > 0) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-          dataObject[i].disabled = true;
+          entries[i].disabled = true;
           continue;
         }
 
@@ -1189,10 +1181,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         amount = 0;
 
         for (var _i = 1; _i <= 4; _i++) {
-          amount += dataObject["soldTrinket".concat(_i)].amount * dataObject["soldTrinket".concat(_i)].geoValue;
+          amount += entries["soldTrinket".concat(_i)].amount * entries["soldTrinket".concat(_i)].geoValue;
         }
 
-        dataObject[i].amount = amount;
+        entries[i].amount = amount;
 
         if (amount > 0) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, i, "revealed");
@@ -1210,7 +1202,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           amount = 0;
         }
 
-        dataObject[i].amount = amount;
+        entries[i].amount = amount;
 
         if (amount > 0 || playerData.bankerAccountPurchased === true) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, i, "revealed");
@@ -1251,9 +1243,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         discoveredTotal = sceneData.persistentBoolItems.length;
         notActivated = CountItems(discoveredTotal, "notActivated");
         activated = CountItems(discoveredTotal, "active");
-        dataObject[i].discoveredTotal = discoveredTotal;
-        dataObject[i].notActivated = notActivated;
-        dataObject[i].activated = activated;
+        entries[i].discoveredTotal = discoveredTotal;
+        entries[i].notActivated = notActivated;
+        entries[i].activated = activated;
         /* textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`; */
 
         (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, i, "revealed");
@@ -1306,21 +1298,21 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "soulSanctumShortcut":
       case "colosseumHiddenHotSpring":
       case "paleLurkersRetreat":
-        FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
+        FindWorldItem(entries[i].id, entries[i].sceneName) ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         break;
 
       case "grimmTentSecretRoom":
         /* Backwards compatibility with older save files */
         if (playerData.hasOwnProperty("destroyedNightmareLantern") === false) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-          dataObject[i].disabled = true;
-        } else if (FindWorldItem(dataObject[i].id, dataObject[i].sceneName)) {
+          entries[i].disabled = true;
+        } else if (FindWorldItem(entries[i].id, entries[i].sceneName)) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else {
           /* When the Ritual has been completed or Grimm Troupe has been Banished, the secret is no longer possible to discover */
           if (playerData.grimmChildLevel >= 4) {
             (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-            dataObject[i].disabled = true;
+            entries[i].disabled = true;
           } else {
             (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
           }
@@ -1332,9 +1324,9 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "relicsHallownestSeal":
       case "relicsKingsIdol":
       case "relicsArcaneEgg":
-        total = playerData[dataObject[i].nameHeld] + playerData[dataObject[i].nameSold];
+        total = playerData[entries[i].nameHeld] + playerData[entries[i].nameSold];
 
-        if (total >= dataObject[i].max) {
+        if (total >= entries[i].max) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else if (total > 0) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconPartial)(section, i);
@@ -1342,19 +1334,19 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
         }
 
-        dataObject[i].amount = total;
+        entries[i].amount = total;
         /* textPrefix += ": " + total; */
 
         break;
 
       case "arcaneEggLifebloodCoreRoom":
-        FindWorldItem(dataObject[i].id, dataObject[i].sceneName) ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
+        FindWorldItem(entries[i].id, entries[i].sceneName) ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
         break;
 
       case "pantheonHallownest":
         if (playerData.hasOwnProperty("bossDoorStateTier5") === false) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-          dataObject[i].disabled = true;
+          entries[i].disabled = true;
         } else {
           playerData.bossDoorStateTier5.completed === true ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         }
@@ -1364,7 +1356,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "killsBindingSeal":
         if (playerData.hasOwnProperty(i) === false) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-          dataObject[i].disabled = true;
+          entries[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
 
           break;
@@ -1380,7 +1372,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "killedVoidIdol_1":
         if (playerData.hasOwnProperty(i) === false) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-          dataObject[i].disabled = true;
+          entries[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
 
           break;
@@ -1393,7 +1385,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "killedVoidIdol_2":
         if (playerData.hasOwnProperty(i) === false) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-          dataObject[i].disabled = true;
+          entries[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
 
           break;
@@ -1407,12 +1399,12 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         // compatibility with earlier game versions
         if (playerData.hasOwnProperty(i) === false) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-          dataObject[i].disabled = true;
+          entries[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
 
           break;
         } else if (playerData.zoteDead === true || playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
-          dataObject[i].disabled = true;
+          entries[i].disabled = true;
           /* textPrefix = `<del>${textPrefix}</del>`; */
         }
 
@@ -1422,45 +1414,45 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
       case "zoteStatus":
         (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
-        dataObject[i].name = dataObject[i].nameDefault;
-        dataObject[i].spoiler = dataObject[i].spoilerDefault;
+        entries[i].name = entries[i].nameDefault;
+        entries[i].spoiler = entries[i].spoilerDefault;
 
         if (playerData.zoteDead === true) {
           /* textPrefix = dataObject[i].nameNeglect;
           textSuffix = dataObject[i].spoilerNeglect; */
-          dataObject[i].name = dataObject[i].nameNeglect;
-          dataObject[i].spoiler = dataObject[i].spoilerNeglect;
+          entries[i].name = entries[i].nameNeglect;
+          entries[i].spoiler = entries[i].spoilerNeglect;
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else if (playerData.killedZote === true) {
           /* textPrefix = dataObject[i].nameRivalry;
           textSuffix = dataObject[i].spoilerRivalry; */
-          dataObject[i].name = dataObject[i].nameRivalry;
-          dataObject[i].spoiler = dataObject[i].spoilerRivalry;
+          entries[i].name = entries[i].nameRivalry;
+          entries[i].spoiler = entries[i].spoilerRivalry;
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else if (playerData.zoteRescuedBuzzer === false) {
           if (playerData.hasWalljump === false) {
             /* textPrefix = dataObject[i].nameTrappedVengefly;
             textSuffix = dataObject[i].spoilerTrappedVengefly; */
-            dataObject[i].name = dataObject[i].nameTrappedVengefly;
-            dataObject[i].spoiler = dataObject[i].spoilerTrappedVengefly;
+            entries[i].name = entries[i].nameTrappedVengefly;
+            entries[i].spoiler = entries[i].spoilerTrappedVengefly;
           } else if (playerData.hasWalljump === true) {
             /* textPrefix = dataObject[i].nameNotRescuedVengefly;
             textSuffix = dataObject[i].spoilerNotRescuedVengefly; */
-            dataObject[i].name = dataObject[i].nameNotRescuedVengefly;
-            dataObject[i].spoiler = dataObject[i].spoilerNotRescuedVengefly;
+            entries[i].name = entries[i].nameNotRescuedVengefly;
+            entries[i].spoiler = entries[i].spoilerNotRescuedVengefly;
           }
         } else if (playerData.zoteRescuedBuzzer === true) {
           if (playerData.zoteRescuedDeepnest === false) {
             /* textPrefix = dataObject[i].nameTrappedDeepnest;
             textSuffix = dataObject[i].spoilerTrappedDeepnest; */
-            dataObject[i].name = dataObject[i].nameTrappedDeepnest;
-            dataObject[i].spoiler = dataObject[i].spoilerTrappedDeepnest;
+            entries[i].name = entries[i].nameTrappedDeepnest;
+            entries[i].spoiler = entries[i].spoilerTrappedDeepnest;
           } else if (playerData.zoteRescuedDeepnest === true) {
             if (playerData.killedZote === false) {
               /* textPrefix = dataObject[i].nameColosseum;
               textSuffix = dataObject[i].spoilerColosseum; */
-              dataObject[i].name = dataObject[i].nameColosseum;
-              dataObject[i].spoiler = dataObject[i].spoilerColosseum;
+              entries[i].name = entries[i].nameColosseum;
+              entries[i].spoiler = entries[i].spoilerColosseum;
             }
           }
         }
@@ -1469,31 +1461,31 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
       case "nailsmithStatus":
         (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
-        dataObject[i].name = dataObject[i].nameDefault;
-        dataObject[i].spoiler = dataObject[i].spoilerDefault;
+        entries[i].name = entries[i].nameDefault;
+        entries[i].spoiler = entries[i].spoilerDefault;
 
         if (playerData.nailsmithKilled === true) {
           /* textPrefix = dataObject[i].namePurity;
           textSuffix = dataObject[i].spoilerPurity; */
-          dataObject[i].name = dataObject[i].namePurity;
-          dataObject[i].spoiler = dataObject[i].spoilerPurity;
+          entries[i].name = entries[i].namePurity;
+          entries[i].spoiler = entries[i].spoilerPurity;
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else if (playerData.nailsmithConvoArt === true) {
           /* textPrefix = dataObject[i].nameHappyCouple;
           textSuffix = dataObject[i].spoilerHappyCouple; */
-          dataObject[i].name = dataObject[i].nameHappyCouple;
-          dataObject[i].spoiler = dataObject[i].spoilerHappyCouple;
+          entries[i].name = entries[i].nameHappyCouple;
+          entries[i].spoiler = entries[i].spoilerHappyCouple;
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else if (playerData.nailsmithSpared === true) {
           /* textPrefix = dataObject[i].nameSheoHutWaiting;
           textSuffix = dataObject[i].spoilerSheoHutWaiting; */
-          dataObject[i].name = dataObject[i].nameSheoHutWaiting;
-          dataObject[i].spoiler = dataObject[i].spoilerSheoHutWaiting;
+          entries[i].name = entries[i].nameSheoHutWaiting;
+          entries[i].spoiler = entries[i].spoilerSheoHutWaiting;
         } else {
           /* textPrefix = dataObject[i].nameUpgradeNail;
           textSuffix = dataObject[i].spoilerUpgradeNail; */
-          dataObject[i].name = dataObject[i].nameUpgradeNail;
-          dataObject[i].spoiler = dataObject[i].spoilerUpgradeNail;
+          entries[i].name = entries[i].nameUpgradeNail;
+          entries[i].spoiler = entries[i].spoilerUpgradeNail;
         }
 
         break;
@@ -1505,7 +1497,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
       case "mrMushroomState5":
       case "mrMushroomState6":
       case "mrMushroomState7":
-        CheckMrMushroomState(section, dataObject[i], playerData["mrMushroomState"]);
+        CheckMrMushroomState(section, entries[i], playerData["mrMushroomState"]);
         break;
 
       case "openedTownBuilding":
@@ -1522,19 +1514,19 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         /* backwards compatibility with earlier game versions */
         if (playerData.hasOwnProperty(i) === false) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-          dataObject[i].disabled = true;
+          entries[i].disabled = true;
           break;
         } else if (playerData[i] === true) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
           /* Create amount property before incrementing (avoids NaN) */
 
-          if (!dataObject.stagStationsOpened.hasOwnProperty("amount")) {
-            dataObject.stagStationsOpened.amount = 0;
+          if (!entries.stagStationsOpened.hasOwnProperty("amount")) {
+            entries.stagStationsOpened.amount = 0;
           }
           /* increment the stag stations amount by one */
 
 
-          dataObject.stagStationsOpened.amount++;
+          entries.stagStationsOpened.amount++;
         } else {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         }
@@ -1545,10 +1537,10 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         /* backwards compatibility check */
         if (!playerData.hasOwnProperty("openedHiddenStation")) {
           /* Subtract one from maximum for extended completion counting */
-          dataObject[i].max--;
+          entries[i].max--;
         }
 
-        if (dataObject[i].amount >= dataObject[i].max) {
+        if (entries[i].amount >= entries[i].max) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
@@ -1573,13 +1565,13 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
           /* Create amount property before incrementing (avoids NaN) */
 
-          if (!dataObject.areaMaps.hasOwnProperty("amount")) {
-            dataObject.areaMaps.amount = 0;
+          if (!entries.areaMaps.hasOwnProperty("amount")) {
+            entries.areaMaps.amount = 0;
           }
           /* increment the area maps amount by one */
 
 
-          dataObject.areaMaps.amount++;
+          entries.areaMaps.amount++;
         } else {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         }
@@ -1587,7 +1579,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         break;
 
       case "areaMaps":
-        if (dataObject[i].amount >= dataObject[i].max) {
+        if (entries[i].amount >= entries[i].max) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
@@ -1603,14 +1595,14 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         /* backwards compatibility with earlier game versions */
         if (playerData.hasOwnProperty(i) === false) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-          dataObject[i].disabled = true;
+          entries[i].disabled = true;
         } else if (playerData[i] === true) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else {
           /* If player doesn't have an Unbreakable Charm, and they Banished the Grimm Troupe, the entry needs to be disabled */
           if (playerData.hasOwnProperty("destroyedNightmareLantern") && playerData.destroyedNightmareLantern === true) {
             (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-            dataObject[i].disabled = true;
+            entries[i].disabled = true;
           } else {
             (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
           }
@@ -1622,7 +1614,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
         // backwards compatibility with earlier game versions
         if (playerData.hasOwnProperty(i) === false) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-          dataObject[i].disabled = true; // textPrefix = `<del>${dataObject[i].name}</del>`;
+          entries[i].disabled = true; // textPrefix = `<del>${dataObject[i].name}</del>`;
 
           break;
         } else if (playerData[i] === true) {
@@ -1633,10 +1625,7 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
 
     } // end switch (i)
 
-    /* sFillText += PrepareHTMLString(section, textPrefix, textSuffix, wiki); */
-
   } // end for (let i in dataObject)
-  // AppendHTML(section, sFillText);
   // ==========================================
   // -------------- Methods ---------------- //
 
