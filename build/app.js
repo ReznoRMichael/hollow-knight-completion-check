@@ -164,7 +164,9 @@ function HKCheckCompletion(jsonObject) {
   CheckHuntersJournal(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"], "huntersJournal", HKPlayerData);
   CheckHuntersJournal(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"], "huntersJournalOptional", HKPlayerData); // ------------------------- Essentials % -> Collectibles --------------------------------------------------------------------- //
 
-  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.essentialsCollectibles, jsonObject); // ------------------------- Achievements ------------------------------------------------------------------------------------- //
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.essentialsCollectibles, jsonObject); // ------------------------- Essentials % -> Bosses --------------------------------------------------------------------- //
+
+  CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.essentialsBosses, jsonObject); // ------------------------- Achievements ------------------------------------------------------------------------------------- //
 
   CheckAdditionalThings(_hk_database_js__WEBPACK_IMPORTED_MODULE_0__["default"].sections.achievements, jsonObject); // ------------------------- Collectibles -> Charm Notches ---------------------------------------------------------------------- //
 

@@ -219,6 +219,10 @@ function HKCheckCompletion(jsonObject, benchStart = performance.now()) {
 
   CheckAdditionalThings(HK.sections.essentialsCollectibles, jsonObject);
 
+  // ------------------------- Essentials % -> Bosses --------------------------------------------------------------------- //
+
+  CheckAdditionalThings(HK.sections.essentialsBosses, jsonObject);
+
   // ------------------------- Achievements ------------------------------------------------------------------------------------- //
 
   CheckAdditionalThings(HK.sections.achievements, jsonObject);
