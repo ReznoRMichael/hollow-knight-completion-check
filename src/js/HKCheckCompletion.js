@@ -1712,6 +1712,8 @@ function CheckAdditionalThings(section, saveFile) {
 
         if (entries[i].amount >= entries[i].max) {
           SetIconGreen(section, i);
+        } else if (entries[i].amount > 0) {
+          SetIconPartial(section, i);
         } else {
           SetIconRed(section, i);
         }
