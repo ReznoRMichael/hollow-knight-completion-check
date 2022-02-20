@@ -1440,18 +1440,53 @@ const HK = {
       },
     },
 
-    /* ################ Achievements Essentials ################### */
+    /* ################ Achievements Essentials -> Collectibles ################### */
 
-    achievements: {
-      h2: "Achievements Essentials",
-      id: "hk-achievements",
-      description: `All the completely optional things that matter for achievements. Things here don't count or matter towards 112% Game Completion. This section includes Zote and Nailsmith choices that you've made on your save file.`,
+    achievementsCollectibles: {
+      h2: "Achievements Essentials – Collectibles",
+      id: "hk-achievements-collectibles",
+      description: `Collectibles important for unlocking achievements. They don't count or matter towards 112% Game Completion.`,
       entries: {
         hasMap: {
           name: "Inventory Map",
           spoiler: "First map bought from Cornifer or Iselda",
           wiki: "Map_and_Quill"
         },
+        hasJournal: {
+          name: "Hunter's Journal",
+          spoiler: "Greenpath: Hunter, above Stone Sanctuary",
+          wiki: "Hunter's_Journal"
+        },
+        hasHuntersMark: {
+          name: "Hunter's Mark",
+          spoiler: "Greenpath: Hunter, complete base 146 Hunter Notes",
+          wiki: "Hunter's_Mark"
+        },
+        killsBigBuzzer: {
+          name: "Vengefly King Journal Note",
+          spoiler: "Colosseum: Trial of the Warrior",
+          wiki: "Vengefly_King"
+        },
+        salubraBlessing: {
+          name: "Salubra's Blessing",
+          spoiler: "Salubra: 800 Geo + all 40 Charms Owned",
+          wiki: "Salubra's_Blessing"
+        },
+        gotShadeCharm: {
+          name: "Void Heart",
+          spoiler: "Equip Kingsoul Charm and find Birthplace",
+          wiki: "Void_Heart"
+        },
+      },
+    },
+
+    /* ################ Achievements Essentials -> Maps ################### */
+
+    achievementsMaps: {
+      h2: "Achievements Essentials – Maps",
+      id: "hk-achievements-maps",
+      description: `Acquired maps are important for unlocking achievements. They don't count or matter towards 112% Game Completion.`,
+      entries: {
         mapCrossroads: {
           name: "Map: Forgotten Crossroads",
           spoiler: "30/40 Geo: below Gruzzer area",
@@ -1524,56 +1559,16 @@ const HK = {
           maxDefault: 13,
           wiki: "Map_and_Quill#Maps"
         },
-        hasJournal: {
-          name: "Hunter's Journal",
-          spoiler: "Greenpath: Hunter, above Stone Sanctuary",
-          wiki: "Hunter's_Journal"
-        },
-        hasHuntersMark: {
-          name: "Hunter's Mark",
-          spoiler: "Greenpath: Hunter, complete base 146 Hunter Notes",
-          wiki: "Hunter's_Mark"
-        },
-        killsBigBuzzer: {
-          name: "Vengefly King Journal Note",
-          spoiler: "Colosseum: Trial of the Warrior",
-          wiki: "Vengefly_King"
-        },
-        falseKnightDreamDefeated: {
-          name: "Failed Champion",
-          spoiler: "Forgotten Crossroads, near False Knight",
-          wiki: "Failed_Champion"
-        },
-        mageLordDreamDefeated: {
-          name: "Soul Tyrant",
-          spoiler: "City of Tears: Soul Sanctum, near Soul Master",
-          wiki: "Soul_Tyrant"
-        },
-        infectedKnightDreamDefeated: {
-          name: "Lost Kin",
-          spoiler: "Ancient Basin, Broken Vessel location",
-          wiki: "Lost_Kin"
-        },
-        whiteDefenderDefeated: {
-          name: "White Defender",
-          spoiler: "Royal Waterways, Dung Defender, use Desolate Dive",
-          wiki: "White_Defender"
-        },
-        greyPrinceDefeated: {
-          name: "Grey Prince Zote",
-          spoiler: "Dirtmouth: Bretta's Room (per save choice)",
-          wiki: "Grey_Prince_Zote"
-        },
-        killedHollowKnight: {
-          name: "Hollow Knight",
-          spoiler: "Forgotten Crossroads: Black Egg Temple",
-          wiki: "Hollow_Knight"
-        },
-        salubraBlessing: {
-          name: "Salubra's Blessing",
-          spoiler: "Salubra: 800 Geo + all 40 Charms Owned",
-          wiki: "Salubra's_Blessing"
-        },
+      },
+    },
+
+    /* ################ Achievements Essentials -> World Interactions ################### */
+
+    achievementsWorldInteractions: {
+      h2: "Achievements Essentials – World Interactions",
+      id: "hk-achievements-world-interactions",
+      description: `Certain interactions the player can make with NPCs in the game or world objects important for unlocking achievements. They don't count or matter towards 112% Game Completion. This section includes some choices that the player can make in the game.`,
+      entries: {
         quirrelEpilogueCompleted: {
           name: "Quirrel: Witness",
           spoiler: "Blue Lake: after defeating Monomon the Teacher",
@@ -1619,21 +1614,6 @@ const HK = {
           spoilerSheoHutWaiting: "Waiting at Sheo's Hut",
           spoilerUpgradeNail: "Upgrade Nail to Pure Nail",
           wiki: "Nailsmith"
-        },
-        gotShadeCharm: {
-          name: "Void Heart",
-          spoiler: "Equip Kingsoul Charm and find Birthplace",
-          wiki: "Void_Heart"
-        },
-        /* 
-        Absolute Radiance (for P5, achievements)
-        Sisters of Battle (for P5, achievements)
-        Winged Nosk (for P5, achievements)
-        */
-        killedFinalBoss: {
-          name: "The Radiance",
-          spoiler: "Requires Void Heart & Dream Nail Hollow Knight",
-          wiki: "Radiance"
         },
         mrMushroomState1: {
           name: "Mr Mushroom #1",
@@ -1703,6 +1683,56 @@ const HK = {
           7. Path of Wyrm, at new lands entered, (King's Pass)
           8. There journeys end. The kingdom ventured.
           */
+      },
+    },
+
+    /* ################ Achievements Essentials -> Bosses ################### */
+
+    achievementsBosses: {
+      h2: "Achievements Essentials – Bosses",
+      id: "hk-achievements-bosses",
+      description: `Bosses important for unlocking achievements. They don't count or matter towards 112% Game Completion.`,
+      entries: {
+        falseKnightDreamDefeated: {
+          name: "Failed Champion",
+          spoiler: "Forgotten Crossroads, near False Knight",
+          wiki: "Failed_Champion"
+        },
+        mageLordDreamDefeated: {
+          name: "Soul Tyrant",
+          spoiler: "City of Tears: Soul Sanctum, near Soul Master",
+          wiki: "Soul_Tyrant"
+        },
+        infectedKnightDreamDefeated: {
+          name: "Lost Kin",
+          spoiler: "Ancient Basin, Broken Vessel location",
+          wiki: "Lost_Kin"
+        },
+        whiteDefenderDefeated: {
+          name: "White Defender",
+          spoiler: "Royal Waterways, Dung Defender, use Desolate Dive",
+          wiki: "White_Defender"
+        },
+        greyPrinceDefeated: {
+          name: "Grey Prince Zote",
+          spoiler: "Dirtmouth: Bretta's Room (per save choice)",
+          wiki: "Grey_Prince_Zote"
+        },
+        killedHollowKnight: {
+          name: "Hollow Knight",
+          spoiler: "Forgotten Crossroads: Black Egg Temple",
+          wiki: "Hollow_Knight"
+        },
+        /* 
+        Absolute Radiance (for P5, achievements)
+        Sisters of Battle (for P5, achievements)
+        Winged Nosk (for P5, achievements)
+        */
+        killedFinalBoss: {
+          name: "The Radiance",
+          spoiler: "Requires Void Heart & Dream Nail Hollow Knight",
+          wiki: "Radiance"
+        },
       },
     },
 
