@@ -94,7 +94,7 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
-* v2.1.0 Upcoming:  
+* v2.1.0 2022-02-20:  
 
   — **General Changes:**  
   ✅ Updated Hunter's Journal number header. Now shows Creatures Completed/Encountered of 146 (previously only Completed/146).  
