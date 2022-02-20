@@ -1761,6 +1761,8 @@ function CheckAdditionalThings(section, saveFile) {
 
         if (entries[i].amount >= entries[i].max) {
           SetIconGreen(section, i);
+        } else if (entries[i].amount > 0) {
+          SetIcon(section, i, "revealed");
         } else {
           SetIconRed(section, i);
         }

@@ -1557,6 +1557,8 @@ function CheckAdditionalThings(section, saveFile) {
       case "areaMaps":
         if (entries[i].amount >= entries[i].max) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
+        } else if (entries[i].amount > 0) {
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, i, "revealed");
         } else {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
         }
