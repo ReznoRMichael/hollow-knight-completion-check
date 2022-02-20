@@ -1335,6 +1335,16 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           }
         }
 
+        if (i === "xunFlowerBrokeTimes") {
+          if (amount < 1 && playerData.xunFlowerGiven === true) {
+            SetIcon(section, i, "revealed");
+          } else if (amount > 0) {
+            SetIcon(section, i, "revealed");
+          } else {
+            SetIconNone(section, i);
+          }
+        }
+
         break;
 
       case "tukDungEgg":

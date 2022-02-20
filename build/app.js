@@ -1162,6 +1162,16 @@ function CheckAdditionalThings(section, dataObject, playerData, worldData, scene
           }
         }
 
+        if (i === "xunFlowerBrokeTimes") {
+          if (amount < 1 && playerData.xunFlowerGiven === true) {
+            (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, i, "revealed");
+          } else if (amount > 0) {
+            (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, i, "revealed");
+          } else {
+            (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
+          }
+        }
+
         break;
 
       case "tukDungEgg":
