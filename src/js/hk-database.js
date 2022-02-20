@@ -1284,6 +1284,11 @@ const HK = {
           sceneName: "Room_Colosseum_Silver",
           wiki: "Pale_Ore#How_to_Acquire"
         },
+        xunFlowerGiven: {
+          name: "Delicate Flower Accepted",
+          spoiler: "Resting Grounds: listen to Grey Mourner",
+          wiki: "Grey_Mourner#In-game_events"
+        },
         waterwaysAcidDrained: {
           name: "Acid Drained",
           spoiler: "Royal Waterways, lever after Dung Defender",
