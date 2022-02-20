@@ -109,6 +109,7 @@ If you like the tool and wish it developed further with more functions and easie
   ✅ Lifeblood Door Opened.  
   ✅ The Abyss Gate Opened.  
   ✅ Godseeker Cocoon Unlocked.  
+  ✅ Shade Soul Warrior.  
 
   — **World Interactions** additions:  
   ✅ Gossipping Bugs.  
