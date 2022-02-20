@@ -1130,42 +1130,6 @@ function WorldDataActivated(idText, sceneNameText, worldData) {
 }
 
 /**
- * Verifies if the data in a specific object are true or false, and appends HTML accordingly. Creates a copy of dataObject.
- * @param {object} section ID of the HTML element for data appending
- * @param {string} idText Text string inside save data to search for
- * @param {object} dataObject Object containing data to be verified
- * @param {object} worldData Reference/pointer to specific data where to search
- */
-/* function CheckWorldDataTrue(section, idText, dataObject, worldData) {
-    let orderedArray = [];
-    let size = ObjectLength(dataObject);
-    let sFillText = "";
-
-    // Order the items before displaying them (creates a copy of dataObject)
-    for (let i in dataObject) {
-        orderedArray.push([i, dataObject[i].name, dataObject[i].spoiler, dataObject[i].wiki, false]);
-    }
-
-    // Search for completed items and mark them for display
-    for (let i = 0, length = worldData.length; i < length; i++) {
-        for (let j = 0; j < size; j++) {
-            if (worldData[i].id === idText && worldData[i].sceneName === orderedArray[j][0] && worldData[i].activated === true) {
-                orderedArray[j][4] = true;
-            }
-        }
-    }
-
-    // Display the items as they were initially ordered
-    for (let i = 0; i < size; i++) {
-        SetIconRed();
-        if (orderedArray[i][4] === true) SetIconGreen(section);
-        sFillText += PrepareHTMLString(section, orderedArray[i][1], orderedArray[i][2], orderedArray[i][3]);
-    }
-
-    // AppendHTML(section, sFillText);
-} */
-
-/**
  * Verifies if the data in a specific section is true or false, or checks what values they have.
  * @param {object} section Reference/pointer to the specific section of the whole hk-database
  * @param {object} saveFile Reference/pointer to the whole Hollow Knight save file object (jsonObject)
