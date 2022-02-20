@@ -1070,11 +1070,6 @@ const HK = {
       id: "hk-essentials-collectibles",
       description: "Collectibles that don't count directly towards 112% Game Completion, but are required to achieve full 112%.",
       entries: {
-        /* 
-        Absolute Radiance (for P5, achievements)
-        Sisters of Battle (for P5, achievements)
-        Winged Nosk (for P5, achievements)
-        */
         grubsCollected: {
           name: "Grubs Rescued",
           spoiler: "46 Grubs total",
@@ -1103,35 +1098,6 @@ const HK = {
           maxDefault: 2400,
           wiki: "Dream_Nail#Essence"
         },
-        fountainGeo: {
-          name: "Geo in Fountain",
-          spoiler: "Ancient Basin: 3000 Geo maximum",
-          max: 3000,
-          maxDefault: 3000,
-          wiki: "Ancient_Basin#Description"
-        },
-        slyRescued: {
-          name: "Sly Rescued",
-          spoiler: "Forgotten Crossroads, near Gruz Mother",
-          wiki: "Sly"
-        },
-        brettaRescued: {
-          name: "Bretta Rescued",
-          spoiler: "Fungal Wastes, near Dashmaster charm statue",
-          wiki: "Bretta"
-        },
-        paidLegEater: {
-          name: "Paid to See Something Nice",
-          spoiler: "Fungal Wastes, Leg Eater: 86 Geo",
-          wiki: "Leg_Eater#In-game_events"
-        },
-        mantisVillageFloorLever: {
-          name: "Mantis Village Floor Lever",
-          spoiler: "Fungal Wastes, right of Mantis Claw",
-          id: "Mantis Lever (1)",
-          sceneName: "Fungus2_14",
-          wiki: "Fungal_Wastes#Sub-area:_Mantis_Village"
-        },
         hasLantern: {
           name: "Lumafly Lantern",
           spoiler: "Sly: 1800 Geo",
@@ -1141,11 +1107,6 @@ const HK = {
           name: "Shopkeeper's Key",
           spoiler: "Crystal Peak, below Quirrel location",
           wiki: "Shopkeeper's_Key"
-        },
-        gaveSlykey: {
-          name: "Shopkeeper's Key Returned to Sly",
-          spoiler: "Dirtmouth, Sly's Shop",
-          wiki: "Sly"
         },
         elegantKey: {
           name: "Elegant Key",
@@ -1221,36 +1182,6 @@ const HK = {
           sceneName: "Room_Colosseum_Silver",
           wiki: "Pale_Ore#How_to_Acquire"
         },
-        xunFlowerGiven: {
-          name: "Delicate Flower Accepted",
-          spoiler: "Resting Grounds: listen to Grey Mourner",
-          wiki: "Grey_Mourner#In-game_events"
-        },
-        waterwaysAcidDrained: {
-          name: "Acid Drained",
-          spoiler: "Royal Waterways, lever after Dung Defender",
-          wiki: "Royal_Waterways#Sub-area:_Isma.27s_Grove"
-        },
-        openedMageDoor_v2: {
-          name: "Elegant Door Unlocked",
-          spoiler: "City of Tears: Soul Sanctum, requires Elegant Key",
-          wiki: "Elegant_Key#Use"
-        },
-        openedLoveDoor: {
-          name: "Tower of Love Door Unlocked",
-          spoiler: "City of Tears, requires Love Key",
-          wiki: "City_of_Tears#Sub-area:_Tower_of_Love"
-        },
-        abyssGateOpened: {
-          name: "The Abyss Gate Opened",
-          spoiler: "Ancient Basin, requires King's Brand",
-          wiki: "Ancient_Basin#Description"
-        },
-        blueVineDoor: {
-          name: "Lifeblood Door Opened",
-          spoiler: "The Abyss, requires 14–15+ Lifeblood Masks",
-          wiki: "Lifeblood_Core#How_to_Acquire"
-        },
         hasTramPass: {
           name: "Tram Pass",
           spoiler: "Deepnest: Failed Tramway",
@@ -1265,16 +1196,6 @@ const HK = {
           name: "White Fragment: King",
           spoiler: "Pale King: White Palace",
           wiki: "Kingsoul#How_to_Acquire"
-        },
-        nightmareLanternLit: {
-          name: "Nightmare Lantern Lit",
-          spoiler: "Howling Cliffs, corpse of a large bug",
-          wiki: "Howling_Cliffs#Nightmare_Lantern_Chamber"
-        },
-        godseekerUnlocked: {
-          name: "Godseeker Cocoon Unlocked",
-          spoiler: "Royal Waterways: Junk Pit",
-          wiki: "Royal_Waterways#Sub-area:_Junk_Pit"
         },
       },
       grubsList: ["Crossroads_35", "Crossroads_03", "Crossroads_05", "Crossroads_48", "Crossroads_31", "Fungus1_06", "Fungus1_07", "Fungus1_21", "Fungus1_28", "Fungus2_18", "Ruins1_05", "Mines_04", "Mines_03", "Mines_31", "Mines_19", "Ruins1_32", "RestingGrounds_10", "Ruins_House_01", "Mines_35", "Mines_16", "Waterways_04", "Waterways_13", "Abyss_19", "Abyss_17", "Mines_24", "Fungus1_13", "Fungus3_47", "Fungus3_10", "Fungus3_48", "Fungus3_22", "Ruins2_07", "Ruins2_11", "Ruins2_11", "Ruins2_11", "Deepnest_East_11", "Deepnest_East_14", "Fungus2_20", "Ruins2_03", "Deepnest_36", "Deepnest_03", "Deepnest_31", "Deepnest_39", "Deepnest_Spider_Town", "Waterways_14", "Hive_03", "Hive_04"],
@@ -1348,6 +1269,90 @@ const HK = {
           max: 11,
           maxDefault: 11,
           wiki: "Fast_Travel_(Hollow_Knight)#Locations_and_Prices"
+        },
+      },
+    },
+
+    /* ################ Essentials % -> World Interactions ################### */
+
+    essentialsWorldInteractions: {
+      h2: "Game Completion % Essentials – World Interactions",
+      id: "hk-essentials-world-interactions",
+      description: `Certain interactions the player can make with NPCs in the game or world objects which don't count directly towards 112% Game Completion, but are required to achieve full 112%.`,
+      entries: {
+        slyRescued: {
+          name: "Sly Rescued",
+          spoiler: "Forgotten Crossroads, near Gruz Mother",
+          wiki: "Sly"
+        },
+        brettaRescued: {
+          name: "Bretta Rescued",
+          spoiler: "Fungal Wastes, near Dashmaster charm statue",
+          wiki: "Bretta"
+        },
+        paidLegEater: {
+          name: "Paid to See Something Nice",
+          spoiler: "Fungal Wastes, Leg Eater: 86 Geo",
+          wiki: "Leg_Eater#In-game_events"
+        },
+        gaveSlykey: {
+          name: "Shopkeeper's Key Returned to Sly",
+          spoiler: "Dirtmouth, Sly's Shop",
+          wiki: "Sly"
+        },
+        mantisVillageFloorLever: {
+          name: "Mantis Village Floor Lever",
+          spoiler: "Fungal Wastes, right of Mantis Claw",
+          id: "Mantis Lever (1)",
+          sceneName: "Fungus2_14",
+          wiki: "Fungal_Wastes#Sub-area:_Mantis_Village"
+        },
+        xunFlowerGiven: {
+          name: "Delicate Flower Accepted",
+          spoiler: "Resting Grounds: listen to Grey Mourner",
+          wiki: "Grey_Mourner#In-game_events"
+        },
+        waterwaysAcidDrained: {
+          name: "Acid Drained",
+          spoiler: "Royal Waterways, lever after Dung Defender",
+          wiki: "Royal_Waterways#Sub-area:_Isma.27s_Grove"
+        },
+        openedMageDoor_v2: {
+          name: "Elegant Door Unlocked",
+          spoiler: "City of Tears: Soul Sanctum, requires Elegant Key",
+          wiki: "Elegant_Key#Use"
+        },
+        openedLoveDoor: {
+          name: "Tower of Love Door Unlocked",
+          spoiler: "City of Tears, requires Love Key",
+          wiki: "City_of_Tears#Sub-area:_Tower_of_Love"
+        },
+        abyssGateOpened: {
+          name: "The Abyss Gate Opened",
+          spoiler: "Ancient Basin, requires King's Brand",
+          wiki: "Ancient_Basin#Description"
+        },
+        blueVineDoor: {
+          name: "Lifeblood Door Opened",
+          spoiler: "The Abyss, requires 14–15+ Lifeblood Masks",
+          wiki: "Lifeblood_Core#How_to_Acquire"
+        },
+        nightmareLanternLit: {
+          name: "Nightmare Lantern Lit",
+          spoiler: "Howling Cliffs, corpse of a large bug",
+          wiki: "Howling_Cliffs#Nightmare_Lantern_Chamber"
+        },
+        godseekerUnlocked: {
+          name: "Godseeker Cocoon Unlocked",
+          spoiler: "Royal Waterways: Junk Pit",
+          wiki: "Royal_Waterways#Sub-area:_Junk_Pit"
+        },
+        fountainGeo: {
+          name: "Geo in Fountain",
+          spoiler: "Ancient Basin: 3000 Geo maximum",
+          max: 3000,
+          maxDefault: 3000,
+          wiki: "Ancient_Basin#Description"
         },
       },
     },
@@ -1620,6 +1625,11 @@ const HK = {
           spoiler: "Equip Kingsoul Charm and find Birthplace",
           wiki: "Void_Heart"
         },
+        /* 
+        Absolute Radiance (for P5, achievements)
+        Sisters of Battle (for P5, achievements)
+        Winged Nosk (for P5, achievements)
+        */
         killedFinalBoss: {
           name: "The Radiance",
           spoiler: "Requires Void Heart & Dream Nail Hollow Knight",
