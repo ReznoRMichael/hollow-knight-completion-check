@@ -1453,7 +1453,6 @@ function CheckAdditionalThings(section, saveFile) {
       case "cityCrest":
       case "soulSanctumShortcut":
       case "colosseumHiddenHotSpring":
-      case "paleLurkersRetreat":
         (FindWorldItem(entries[i].id, entries[i].sceneName)) ? SetIconGreen(section, i): SetIconRed(section, i);
         break;
 
@@ -1461,6 +1460,20 @@ function CheckAdditionalThings(section, saveFile) {
 
         /* Backwards compatibility with older save files */
         if (playerData.hasOwnProperty("destroyedNightmareLantern") === false) {
+          SetIconNone(section, i);
+          entries[i].disabled = true;
+        } else if (FindWorldItem(entries[i].id, entries[i].sceneName)) {
+          SetIconGreen(section, i);
+        } else {
+          SetIconRed(section, i);
+        }
+
+        break;
+
+      case "paleLurkersRetreat":
+
+        /* Backwards compatibility with older save files */
+        if (playerData.hasOwnProperty("hasGodfinder") === false) {
           SetIconNone(section, i);
           entries[i].disabled = true;
         } else if (FindWorldItem(entries[i].id, entries[i].sceneName)) {

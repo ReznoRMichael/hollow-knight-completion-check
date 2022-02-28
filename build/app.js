@@ -1257,7 +1257,6 @@ function CheckAdditionalThings(section, saveFile) {
       case "pantheonCrystalGuardian":
       case "pantheonEnragedGuardian":
       case "mantisVillageFloorLever":
-      case "pathOfPainEntrance":
       case "whiteLadyRoom":
       case "throneRoomLoreTablet":
       case "towerOfLoveSecretRoom":
@@ -1268,6 +1267,19 @@ function CheckAdditionalThings(section, saveFile) {
       case "colosseumHiddenHotSpring":
       case "paleLurkersRetreat":
         FindWorldItem(entries[i].id, entries[i].sceneName) ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
+        break;
+
+      case "pathOfPainEntrance":
+        /* Backwards compatibility with older save files */
+        if (playerData.hasOwnProperty("destroyedNightmareLantern") === false) {
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
+          entries[i].disabled = true;
+        } else if (FindWorldItem(entries[i].id, entries[i].sceneName)) {
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
+        } else {
+          (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconRed)(section, i);
+        }
+
         break;
 
       case "grimmTentSecretRoom":

@@ -98,6 +98,7 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **General Changes:**  
   ✅ Moved Pale Lurker's Retreat to Game Completion % Essentials – World Interactions.  
+  ✅ Add backwards save compatibility detection to entries: Path of Pain Entrance.  
 
 * v2.1.0 2022-02-20:  
 
