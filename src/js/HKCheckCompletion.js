@@ -1130,8 +1130,6 @@ function CheckNailUpgrades(section, dataObject, playerData) {
     sFillText += PrepareHTMLString(section, dataObject[nail[i]].name, dataObject[nail[i]].spoiler, dataObject[nail[i]].wiki);
   }
   if (section.percent) section.percent--; // subject one for the Old Nail
-
-  // AppendHTML(section, sFillText);
 }
 
 /**
@@ -1235,11 +1233,10 @@ function CheckAdditionalThings(section, saveFile) {
           if (playerData.hasOwnProperty(i) === false) {
             SetIconNone(section, i);
             entries[i].disabled = true;
-            // textPrefix = `<del>${dataObject[i].name}</del>`;
             break;
+
           } else if (playerData.zoteDead === true || (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
             entries[i].disabled = true;
-            // textPrefix = `<del>${textPrefix}</del>`;
           }
         }
 
@@ -1248,7 +1245,6 @@ function CheckAdditionalThings(section, saveFile) {
           if (playerData.hasOwnProperty(i) === false) {
             SetIconNone(section, i);
             entries[i].disabled = true;
-            // textPrefix = `<del>${dataObject[i].name}</del>`;
             break;
           }
         }
@@ -1412,7 +1408,6 @@ function CheckAdditionalThings(section, saveFile) {
         entries[i].notActivated = notActivated;
         entries[i].activated = activated;
 
-        /* textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`; */
         SetIcon(section, i, "revealed");
         break;
 
@@ -1524,7 +1519,6 @@ function CheckAdditionalThings(section, saveFile) {
 
         entries[i].amount = total;
 
-        /* textPrefix += ": " + total; */
         break;
 
       case "arcaneEggLifebloodCoreRoom":
@@ -1545,7 +1539,6 @@ function CheckAdditionalThings(section, saveFile) {
         if (playerData.hasOwnProperty(i) === false) {
           SetIconNone(section, i);
           entries[i].disabled = true;
-          /* textPrefix = `<del>${textPrefix}</del>`; */
           break;
         }
         (playerData[i] == 0) ? SetIconGreen(section, i): SetIconRed(section, i);
@@ -1559,7 +1552,6 @@ function CheckAdditionalThings(section, saveFile) {
         if (playerData.hasOwnProperty(i) === false) {
           SetIconNone(section, i);
           entries[i].disabled = true;
-          /* textPrefix = `<del>${textPrefix}</del>`; */
           break;
         }
         (playerData[i] === true) ? SetIconGreen(section, i): SetIconRed(section, i);
@@ -1570,7 +1562,6 @@ function CheckAdditionalThings(section, saveFile) {
         if (playerData.hasOwnProperty(i) === false) {
           SetIconNone(section, i);
           entries[i].disabled = true;
-          /* textPrefix = `<del>${textPrefix}</del>`; */
           break;
         }
         (playerData[i] === true) ? SetIconGreen(section, i): SetIconRed(section, i);
@@ -1582,11 +1573,11 @@ function CheckAdditionalThings(section, saveFile) {
         if (playerData.hasOwnProperty(i) === false) {
           SetIconNone(section, i);
           entries[i].disabled = true;
-          /* textPrefix = `<del>${textPrefix}</del>`; */
           break;
-        } else if (playerData.zoteDead === true || (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
+
+        } else if (playerData.zoteDead === true ||
+          (playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true)) {
           entries[i].disabled = true;
-          /* textPrefix = `<del>${textPrefix}</del>`; */
         }
         (playerData[i] === true) ? SetIconGreen(section, i): SetIconNone(section, i);
         if (playerData.zoteRescuedBuzzer === true && playerData[i] === false) SetIconRed(section, i);
@@ -1598,16 +1589,12 @@ function CheckAdditionalThings(section, saveFile) {
         entries[i].spoiler = entries[i].spoilerDefault;
 
         if (playerData.zoteDead === true) {
-          /* textPrefix = dataObject[i].nameNeglect;
-          textSuffix = dataObject[i].spoilerNeglect; */
           entries[i].name = entries[i].nameNeglect;
           entries[i].spoiler = entries[i].spoilerNeglect;
 
           SetIconGreen(section, i);
 
         } else if (playerData.killedZote === true) {
-          /* textPrefix = dataObject[i].nameRivalry;
-          textSuffix = dataObject[i].spoilerRivalry; */
           entries[i].name = entries[i].nameRivalry;
           entries[i].spoiler = entries[i].spoilerRivalry;
 
@@ -1615,28 +1602,20 @@ function CheckAdditionalThings(section, saveFile) {
 
         } else if (playerData.zoteRescuedBuzzer === false) {
           if (playerData.hasWalljump === false) {
-            /* textPrefix = dataObject[i].nameTrappedVengefly;
-            textSuffix = dataObject[i].spoilerTrappedVengefly; */
             entries[i].name = entries[i].nameTrappedVengefly;
             entries[i].spoiler = entries[i].spoilerTrappedVengefly;
 
           } else if (playerData.hasWalljump === true) {
-            /* textPrefix = dataObject[i].nameNotRescuedVengefly;
-            textSuffix = dataObject[i].spoilerNotRescuedVengefly; */
             entries[i].name = entries[i].nameNotRescuedVengefly;
             entries[i].spoiler = entries[i].spoilerNotRescuedVengefly;
           }
         } else if (playerData.zoteRescuedBuzzer === true) {
           if (playerData.zoteRescuedDeepnest === false) {
-            /* textPrefix = dataObject[i].nameTrappedDeepnest;
-            textSuffix = dataObject[i].spoilerTrappedDeepnest; */
             entries[i].name = entries[i].nameTrappedDeepnest;
             entries[i].spoiler = entries[i].spoilerTrappedDeepnest;
 
           } else if (playerData.zoteRescuedDeepnest === true) {
             if (playerData.killedZote === false) {
-              /* textPrefix = dataObject[i].nameColosseum;
-              textSuffix = dataObject[i].spoilerColosseum; */
               entries[i].name = entries[i].nameColosseum;
               entries[i].spoiler = entries[i].spoilerColosseum;
             }
@@ -1650,30 +1629,22 @@ function CheckAdditionalThings(section, saveFile) {
         entries[i].spoiler = entries[i].spoilerDefault;
 
         if (playerData.nailsmithKilled === true) {
-          /* textPrefix = dataObject[i].namePurity;
-          textSuffix = dataObject[i].spoilerPurity; */
           entries[i].name = entries[i].namePurity;
           entries[i].spoiler = entries[i].spoilerPurity;
 
           SetIconGreen(section, i);
 
         } else if (playerData.nailsmithConvoArt === true) {
-          /* textPrefix = dataObject[i].nameHappyCouple;
-          textSuffix = dataObject[i].spoilerHappyCouple; */
           entries[i].name = entries[i].nameHappyCouple;
           entries[i].spoiler = entries[i].spoilerHappyCouple;
 
           SetIconGreen(section, i);
 
         } else if (playerData.nailsmithSpared === true) {
-          /* textPrefix = dataObject[i].nameSheoHutWaiting;
-          textSuffix = dataObject[i].spoilerSheoHutWaiting; */
           entries[i].name = entries[i].nameSheoHutWaiting;
           entries[i].spoiler = entries[i].spoilerSheoHutWaiting;
 
         } else {
-          /* textPrefix = dataObject[i].nameUpgradeNail;
-          textSuffix = dataObject[i].spoilerUpgradeNail; */
           entries[i].name = entries[i].nameUpgradeNail;
           entries[i].spoiler = entries[i].spoilerUpgradeNail;
         }
@@ -1823,7 +1794,6 @@ function CheckAdditionalThings(section, saveFile) {
 
           SetIconNone(section, i);
           entries[i].disabled = true;
-          // textPrefix = `<del>${dataObject[i].name}</del>`;
           break;
 
         } else if (playerData[i] === true) {
@@ -2294,11 +2264,8 @@ function CheckHallOfGods(db, playerData) {
  */
 function CheckHintsTrue(section, dataObject, playerData, worldData) {
 
-  /* let sFillText = ""; */
-
   if (playerData.killedHollowKnight === true) {
     // a text to show when player already finished their first playthrough (killed Hollow Knight first time)
-    /* AppendHTML(section, "...a successful Knight who doesn't need hints anymore. The Knight explores the world of Hallownest patiently in constant search of its remaining secrets..."); */
     section.current = "endOfHints";
     return true;
   }
@@ -2307,11 +2274,14 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
 
     if (i === "endOfHints") {
       break;
+
     } else if (playerData[i] === true) {
       continue;
+
     } else if (i === "fireballLevel") {
       if (playerData[i] >= 1) {
         continue;
+
       } else {
         section.current = i;
         break;
@@ -2327,6 +2297,7 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
       }
       if (GruzMotherDefeated) {
         continue; // next dataObject (i)
+        
       } else {
         section.current = i;
         break;
@@ -2334,8 +2305,10 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
     } else if (i === "dungDefenderOrHornet2") {
       if (playerData.defeatedDungDefender === true) {
         continue;
+
       } else if (playerData.hornetOutskirtsDefeated === true) {
         continue;
+
       } else { // if no Dung Defender or Hornet 2
         section.current = i;
         break;
@@ -2343,9 +2316,11 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
     } else if (i === "ismaTearOrShadeCloak") {
       if (playerData.hasAcidArmour === true) {
         continue;
+
       } else if (playerData.hasKingsBrand === true) {
         if (playerData.hasShadowDash === true) {
           continue;
+
         } else { // if Kings Brand but no Shade Cloak
           section.current = i;
           break;
@@ -2359,8 +2334,6 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
       break;
     }
   } // end: for (let i in dataObject)
-
-  // AppendHTML(section, sFillText);
 } // function CheckHintsTrue()
 
 /**

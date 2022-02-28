@@ -950,7 +950,6 @@ function CheckNailUpgrades(section, dataObject, playerData) {
   }
 
   if (section.percent) section.percent--; // subject one for the Old Nail
-  // AppendHTML(section, sFillText);
 }
 /**
  * Verifies if the specific Interactable (Item, Boss, Chest etc.) is activated. Returns true or false.
@@ -1054,11 +1053,10 @@ function CheckAdditionalThings(section, saveFile) {
           // backwards compatibility with earlier game versions
           if (playerData.hasOwnProperty(i) === false) {
             (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-            entries[i].disabled = true; // textPrefix = `<del>${dataObject[i].name}</del>`;
-
+            entries[i].disabled = true;
             break;
           } else if (playerData.zoteDead === true || playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
-            entries[i].disabled = true; // textPrefix = `<del>${textPrefix}</del>`;
+            entries[i].disabled = true;
           }
         }
 
@@ -1066,8 +1064,7 @@ function CheckAdditionalThings(section, saveFile) {
           // backwards compatibility with earlier game versions
           if (playerData.hasOwnProperty(i) === false) {
             (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-            entries[i].disabled = true; // textPrefix = `<del>${dataObject[i].name}</del>`;
-
+            entries[i].disabled = true;
             break;
           }
         }
@@ -1214,8 +1211,6 @@ function CheckAdditionalThings(section, saveFile) {
         entries[i].discoveredTotal = discoveredTotal;
         entries[i].notActivated = notActivated;
         entries[i].activated = activated;
-        /* textPrefix += `: ${notActivated} | ${activated} | ${discoveredTotal}`; */
-
         (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIcon)(section, i, "revealed");
         break;
 
@@ -1328,8 +1323,6 @@ function CheckAdditionalThings(section, saveFile) {
         }
 
         entries[i].amount = total;
-        /* textPrefix += ": " + total; */
-
         break;
 
       case "arcaneEggLifebloodCoreRoom":
@@ -1350,8 +1343,6 @@ function CheckAdditionalThings(section, saveFile) {
         if (playerData.hasOwnProperty(i) === false) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
           entries[i].disabled = true;
-          /* textPrefix = `<del>${textPrefix}</del>`; */
-
           break;
         }
 
@@ -1366,8 +1357,6 @@ function CheckAdditionalThings(section, saveFile) {
         if (playerData.hasOwnProperty(i) === false) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
           entries[i].disabled = true;
-          /* textPrefix = `<del>${textPrefix}</del>`; */
-
           break;
         }
 
@@ -1379,8 +1368,6 @@ function CheckAdditionalThings(section, saveFile) {
         if (playerData.hasOwnProperty(i) === false) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
           entries[i].disabled = true;
-          /* textPrefix = `<del>${textPrefix}</del>`; */
-
           break;
         }
 
@@ -1393,12 +1380,9 @@ function CheckAdditionalThings(section, saveFile) {
         if (playerData.hasOwnProperty(i) === false) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
           entries[i].disabled = true;
-          /* textPrefix = `<del>${textPrefix}</del>`; */
-
           break;
         } else if (playerData.zoteDead === true || playerData.zoteRescuedBuzzer === false && playerData.hasWalljump === true) {
           entries[i].disabled = true;
-          /* textPrefix = `<del>${textPrefix}</del>`; */
         }
 
         playerData[i] === true ? (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i) : (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
@@ -1411,39 +1395,27 @@ function CheckAdditionalThings(section, saveFile) {
         entries[i].spoiler = entries[i].spoilerDefault;
 
         if (playerData.zoteDead === true) {
-          /* textPrefix = dataObject[i].nameNeglect;
-          textSuffix = dataObject[i].spoilerNeglect; */
           entries[i].name = entries[i].nameNeglect;
           entries[i].spoiler = entries[i].spoilerNeglect;
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else if (playerData.killedZote === true) {
-          /* textPrefix = dataObject[i].nameRivalry;
-          textSuffix = dataObject[i].spoilerRivalry; */
           entries[i].name = entries[i].nameRivalry;
           entries[i].spoiler = entries[i].spoilerRivalry;
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else if (playerData.zoteRescuedBuzzer === false) {
           if (playerData.hasWalljump === false) {
-            /* textPrefix = dataObject[i].nameTrappedVengefly;
-            textSuffix = dataObject[i].spoilerTrappedVengefly; */
             entries[i].name = entries[i].nameTrappedVengefly;
             entries[i].spoiler = entries[i].spoilerTrappedVengefly;
           } else if (playerData.hasWalljump === true) {
-            /* textPrefix = dataObject[i].nameNotRescuedVengefly;
-            textSuffix = dataObject[i].spoilerNotRescuedVengefly; */
             entries[i].name = entries[i].nameNotRescuedVengefly;
             entries[i].spoiler = entries[i].spoilerNotRescuedVengefly;
           }
         } else if (playerData.zoteRescuedBuzzer === true) {
           if (playerData.zoteRescuedDeepnest === false) {
-            /* textPrefix = dataObject[i].nameTrappedDeepnest;
-            textSuffix = dataObject[i].spoilerTrappedDeepnest; */
             entries[i].name = entries[i].nameTrappedDeepnest;
             entries[i].spoiler = entries[i].spoilerTrappedDeepnest;
           } else if (playerData.zoteRescuedDeepnest === true) {
             if (playerData.killedZote === false) {
-              /* textPrefix = dataObject[i].nameColosseum;
-              textSuffix = dataObject[i].spoilerColosseum; */
               entries[i].name = entries[i].nameColosseum;
               entries[i].spoiler = entries[i].spoilerColosseum;
             }
@@ -1458,25 +1430,17 @@ function CheckAdditionalThings(section, saveFile) {
         entries[i].spoiler = entries[i].spoilerDefault;
 
         if (playerData.nailsmithKilled === true) {
-          /* textPrefix = dataObject[i].namePurity;
-          textSuffix = dataObject[i].spoilerPurity; */
           entries[i].name = entries[i].namePurity;
           entries[i].spoiler = entries[i].spoilerPurity;
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else if (playerData.nailsmithConvoArt === true) {
-          /* textPrefix = dataObject[i].nameHappyCouple;
-          textSuffix = dataObject[i].spoilerHappyCouple; */
           entries[i].name = entries[i].nameHappyCouple;
           entries[i].spoiler = entries[i].spoilerHappyCouple;
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
         } else if (playerData.nailsmithSpared === true) {
-          /* textPrefix = dataObject[i].nameSheoHutWaiting;
-          textSuffix = dataObject[i].spoilerSheoHutWaiting; */
           entries[i].name = entries[i].nameSheoHutWaiting;
           entries[i].spoiler = entries[i].spoilerSheoHutWaiting;
         } else {
-          /* textPrefix = dataObject[i].nameUpgradeNail;
-          textSuffix = dataObject[i].spoilerUpgradeNail; */
           entries[i].name = entries[i].nameUpgradeNail;
           entries[i].spoiler = entries[i].spoilerUpgradeNail;
         }
@@ -1611,8 +1575,7 @@ function CheckAdditionalThings(section, saveFile) {
         // backwards compatibility with earlier game versions
         if (playerData.hasOwnProperty(i) === false) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconNone)(section, i);
-          entries[i].disabled = true; // textPrefix = `<del>${dataObject[i].name}</del>`;
-
+          entries[i].disabled = true;
           break;
         } else if (playerData[i] === true) {
           (0,_hk_functions_js__WEBPACK_IMPORTED_MODULE_2__.SetIconGreen)(section, i);
@@ -2039,11 +2002,8 @@ function CheckHallOfGods(db, playerData) {
 
 
 function CheckHintsTrue(section, dataObject, playerData, worldData) {
-  /* let sFillText = ""; */
   if (playerData.killedHollowKnight === true) {
     // a text to show when player already finished their first playthrough (killed Hollow Knight first time)
-
-    /* AppendHTML(section, "...a successful Knight who doesn't need hints anymore. The Knight explores the world of Hallownest patiently in constant search of its remaining secrets..."); */
     section.current = "endOfHints";
     return true;
   }
@@ -2108,7 +2068,6 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
       break;
     }
   } // end: for (let i in dataObject)
-  // AppendHTML(section, sFillText);
 
 } // function CheckHintsTrue()
 
