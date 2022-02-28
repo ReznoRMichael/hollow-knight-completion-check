@@ -4777,6 +4777,13 @@ var HK = {
           spoiler: "Howling Cliffs, corpse of a large bug",
           wiki: "Howling_Cliffs#Nightmare_Lantern_Chamber"
         },
+        paleLurkersRetreat: {
+          name: "Pale Lurker's Retreat",
+          spoiler: "Colosseum of Fools, Room above Bench, break wall",
+          id: "Breakable Wall_Silhouette",
+          sceneName: "Room_Colosseum_Spectate",
+          wiki: "Colosseum_of_Fools#Description"
+        },
         godseekerUnlocked: {
           name: "Godseeker Cocoon Unlocked",
           spoiler: "Royal Waterways: Junk Pit",
@@ -9154,13 +9161,6 @@ var HK = {
           spoiler: "Colosseum of Fools, break wall right of Bench",
           id: "Breakable Wall_Silhouette",
           sceneName: "Room_Colosseum_02",
-          wiki: "Colosseum_of_Fools#Description"
-        },
-        paleLurkersRetreat: {
-          name: "Pale Lurker's Retreat",
-          spoiler: "Colosseum of Fools, Room above Bench, break wall",
-          id: "Breakable Wall_Silhouette",
-          sceneName: "Room_Colosseum_Spectate",
           wiki: "Colosseum_of_Fools#Description"
         },
         stagEggInspected: {
