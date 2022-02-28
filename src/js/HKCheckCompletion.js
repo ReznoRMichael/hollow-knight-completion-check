@@ -1458,7 +1458,7 @@ function CheckAdditionalThings(section, saveFile) {
 
       case "pathOfPainEntrance":
 
-        /* Backwards compatibility with older save files */
+        /* Backwards compatibility with older save files (before Grimm Troupe) */
         if (playerData.hasOwnProperty("destroyedNightmareLantern") === false) {
           SetIconNone(section, i);
           entries[i].disabled = true;
@@ -1472,7 +1472,7 @@ function CheckAdditionalThings(section, saveFile) {
 
       case "paleLurkersRetreat":
 
-        /* Backwards compatibility with older save files */
+        /* Backwards compatibility with older save files (before Godmaster) */
         if (playerData.hasOwnProperty("hasGodfinder") === false) {
           SetIconNone(section, i);
           entries[i].disabled = true;
