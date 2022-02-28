@@ -2297,7 +2297,7 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
       }
       if (GruzMotherDefeated) {
         continue; // next dataObject (i)
-        
+
       } else {
         section.current = i;
         break;
@@ -2329,6 +2329,24 @@ function CheckHintsTrue(section, dataObject, playerData, worldData) {
         section.current = i;
         break;
       }
+    /* 
+    After killing Hollow Knight:
+    - gather 1800 Essence (Essence sources)
+    - get Awoken Dream Nail from Seer
+    - use Awoken Dream Nail on the knight corpse in Ancient Basin/Palace Grounds (discover White Palace)
+    - acquire White Fragment from White Palace
+    - defeat Hornet 2
+    - get King's Brand
+    - open door to the Abyss
+    - light the lighthouse
+    - get Shade Cloak
+    - visit Queen's Gardens
+    - defeat Traitor Lord
+    - get White Fragment from White Lady
+    - equip Kingsoul and visit Birthplace
+    - get Void Heart
+    - go to Black Egg Temple, Dream Nail Hollow Knight and defeat Radiance (end of hints)
+    */
     } else { // if anything from the hints list is not done
       section.current = i;
       break;
