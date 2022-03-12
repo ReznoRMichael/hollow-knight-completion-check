@@ -7444,12 +7444,12 @@ var HK = {
     geoRocks: {
       h2: "Geo Rocks",
       id: "hk-geo-rocks",
-      description: "All Geo Rocks that can be found in the game. Only fully destroyed Geo Rocks are counted. Partially hit Geo Rocks won't be counted. Equipping the Fragile Greed Charm won't increase the amount of Geo found inside Geo Rocks. A total of 5074 Geo can be collected from Geo Rocks.",
+      description: "All Geo Rocks that can be found in the game. Only fully destroyed Geo Rocks are counted. Partially hit Geo Rocks won't be counted. Equipping the Fragile Greed Charm won't increase the amount of Geo found inside Geo Rocks. I have no idea how much Geo can be collected from all Geo Rocks. If you know, let me know, and you will be featured here.",
       percent: 0,
-      maxPercent: 207,
+      maxPercent: 205,
       entries: {
         geoRock1: {
-          name: "Geo Rock #1 (15 Geo)",
+          name: "Geo Rock #1",
           spoiler: "King's Pass",
           id: "Geo Rock 4",
           sceneName: "Tutorial_01",
@@ -7457,7 +7457,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock2: {
-          name: "Geo Rock #2 (15 Geo)",
+          name: "Geo Rock #2",
           spoiler: "King's Pass",
           id: "Geo Rock 1",
           sceneName: "Tutorial_01",
@@ -7465,7 +7465,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock3: {
-          name: "Geo Rock #3 (15 Geo)",
+          name: "Geo Rock #3",
           spoiler: "King's Pass",
           id: "Geo Rock 3",
           sceneName: "Tutorial_01",
@@ -7473,7 +7473,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock4: {
-          name: "Geo Rock #4 (18 Geo)",
+          name: "Geo Rock #4",
           spoiler: "King's Pass",
           id: "Geo Rock 2",
           sceneName: "Tutorial_01",
@@ -7481,7 +7481,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock5: {
-          name: "Geo Rock #5 (15 Geo)",
+          name: "Geo Rock #5",
           spoiler: "King's Pass",
           id: "Geo Rock 5",
           sceneName: "Tutorial_01",
@@ -7489,7 +7489,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock6: {
-          name: "Geo Rock #6 (19 Geo)",
+          name: "Geo Rock #6",
           spoiler: "Forgotten Crossroads: Well",
           id: "Geo Rock 2",
           sceneName: "Crossroads_01",
@@ -7497,7 +7497,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock7: {
-          name: "Geo Rock #7 (15 Geo)",
+          name: "Geo Rock #7",
           spoiler: "Forgotten Crossroads: Gruzzer Vertical Room",
           id: "Geo Rock 1",
           sceneName: "Crossroads_07",
@@ -7505,7 +7505,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock8: {
-          name: "Geo Rock #8 (15 Geo)",
+          name: "Geo Rock #8",
           spoiler: "Forgotten Crossroads: Gruzzer Vertical Room",
           id: "Geo Rock 1 (2)",
           sceneName: "Crossroads_07",
@@ -7513,7 +7513,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock9: {
-          name: "Geo Rock #9 (15 Geo)",
+          name: "Geo Rock #9",
           spoiler: "Forgotten Crossroads: Gruzzer Vertical Room",
           id: "Geo Rock 1 (1)",
           sceneName: "Crossroads_07",
@@ -7521,7 +7521,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock10: {
-          name: "Geo Rock #10 (15 Geo)",
+          name: "Geo Rock #10",
           spoiler: "Forgotten Crossroads: Corridor to Acid Grub",
           id: "Geo Rock 2",
           sceneName: "Crossroads_12",
@@ -7529,7 +7529,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock11: {
-          name: "Geo Rock #11 (10 Geo)",
+          name: "Geo Rock #11",
           spoiler: "Forgotten Crossroads: Aspid Arena",
           id: "Geo Rock 1 (3)",
           sceneName: "Crossroads_08",
@@ -7537,7 +7537,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock12: {
-          name: "Geo Rock #12 (10 Geo)",
+          name: "Geo Rock #12",
           spoiler: "Forgotten Crossroads: Aspid Arena",
           id: "Geo Rock 1 (2)",
           sceneName: "Crossroads_08",
@@ -7545,7 +7545,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock13: {
-          name: "Geo Rock #13 (15 Geo)",
+          name: "Geo Rock #13",
           spoiler: "Forgotten Crossroads: Aspid Arena",
           id: "Geo Rock 1",
           sceneName: "Crossroads_08",
@@ -7553,7 +7553,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock14: {
-          name: "Geo Rock #14 (10 Geo)",
+          name: "Geo Rock #14",
           spoiler: "Forgotten Crossroads: Aspid Arena",
           id: "Geo Rock 1 (1)",
           sceneName: "Crossroads_08",
@@ -7561,7 +7561,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock15: {
-          name: "Geo Rock #15 (15 Geo)",
+          name: "Geo Rock #15",
           spoiler: "Forgotten Crossroads: Fungal Wastes Entrance",
           id: "Geo Rock 1",
           sceneName: "Crossroads_18",
@@ -7569,7 +7569,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock16: {
-          name: "Geo Rock #16 (15 Geo)",
+          name: "Geo Rock #16",
           spoiler: "Forgotten Crossroads: Fungal Wastes Entrance",
           id: "Geo Rock 2",
           sceneName: "Crossroads_18",
@@ -7577,7 +7577,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock17: {
-          name: "Geo Rock #17 (15 Geo)",
+          name: "Geo Rock #17",
           spoiler: "Forgotten Crossroads: Fungal Wastes Entrance",
           id: "Geo Rock 3",
           sceneName: "Crossroads_18",
@@ -7585,7 +7585,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock18: {
-          name: "Geo Rock #18 (15 Geo)",
+          name: "Geo Rock #18",
           spoiler: "Forgotten Crossroads: Goam Mask Shard",
           id: "Geo Rock 2",
           sceneName: "Crossroads_13",
@@ -7593,7 +7593,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock19: {
-          name: "Geo Rock #19 (15 Geo)",
+          name: "Geo Rock #19",
           spoiler: "Forgotten Crossroads: Goam Mask Shard",
           id: "Geo Rock 1",
           sceneName: "Crossroads_13",
@@ -7601,7 +7601,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock20: {
-          name: "Geo Rock #20 (15 Geo)",
+          name: "Geo Rock #20",
           spoiler: "Forgotten Crossroads: Right of Mask Shard",
           id: "Geo Rock 2",
           sceneName: "Crossroads_42",
@@ -7609,7 +7609,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock21: {
-          name: "Geo Rock #21 (15 Geo)",
+          name: "Geo Rock #21",
           spoiler: "Forgotten Crossroads: Right of Mask Shard",
           id: "Geo Rock 1",
           sceneName: "Crossroads_42",
@@ -7617,7 +7617,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock22: {
-          name: "Geo Rock #22 (15 Geo)",
+          name: "Geo Rock #22",
           spoiler: "Forgotten Crossroads: Before Gruz Mother",
           id: "Geo Rock 1",
           sceneName: "Crossroads_19",
@@ -7625,7 +7625,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock23: {
-          name: "Geo Rock #23 (15 Geo)",
+          name: "Geo Rock #23",
           spoiler: "Forgotten Crossroads: Outside False Knight",
           id: "Geo Rock 1",
           sceneName: "Crossroads_21",
@@ -7633,7 +7633,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock24: {
-          name: "Geo Rock #24 (15 Geo)",
+          name: "Geo Rock #24",
           spoiler: "Forgotten Crossroads: Crystal Peak Dark Toll",
           id: "Geo Rock 2 (1)",
           sceneName: "Mines_33",
@@ -7641,7 +7641,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock25: {
-          name: "Geo Rock #25 (15 Geo)",
+          name: "Geo Rock #25",
           spoiler: "Forgotten Crossroads: Crystal Peak Dark Toll",
           id: "Geo Rock 2",
           sceneName: "Mines_33",
@@ -7649,7 +7649,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock26: {
-          name: "Geo Rock #26 (15 Geo)",
+          name: "Geo Rock #26",
           spoiler: "Forgotten Crossroads: Crystal Peak Dark Toll",
           id: "Geo Rock 2 (2)",
           sceneName: "Mines_33",
@@ -7657,7 +7657,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock27: {
-          name: "Geo Rock #27 (15 Geo)",
+          name: "Geo Rock #27",
           spoiler: "Forgotten Crossroads: Above Lever",
           id: "Geo Rock 2",
           sceneName: "Crossroads_16",
@@ -7665,7 +7665,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock28: {
-          name: "Geo Rock #28 (15 Geo)",
+          name: "Geo Rock #28",
           spoiler: "Forgotten Crossroads: Central Grub",
           id: "Geo Rock 1",
           sceneName: "Crossroads_05",
@@ -7673,7 +7673,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock29: {
-          name: "Geo Rock #29 (15 Geo)",
+          name: "Geo Rock #29",
           spoiler: "Forgotten Crossroads: Outside Tram",
           id: "Geo Rock 1",
           sceneName: "Crossroads_27",
@@ -7681,7 +7681,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock30: {
-          name: "Geo Rock #30 (15 Geo)",
+          name: "Geo Rock #30",
           spoiler: "Forgotten Crossroads: Tram",
           id: "Geo Rock 1",
           sceneName: "Crossroads_46",
@@ -7689,7 +7689,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock31: {
-          name: "Geo Rock #31 (15 Geo)",
+          name: "Geo Rock #31",
           spoiler: "Forgotten Crossroads: False Knight Arena",
           id: "Geo Rock 1",
           sceneName: "Crossroads_10",
@@ -7697,7 +7697,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock32: {
-          name: "Geo Rock #32 (15 Geo)",
+          name: "Geo Rock #32",
           spoiler: "Forgotten Crossroads: Ancestral Mound",
           id: "Geo Rock 2",
           sceneName: "Crossroads_ShamanTemple",
@@ -7705,7 +7705,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock33: {
-          name: "Geo Rock #33 (15 Geo)",
+          name: "Geo Rock #33",
           spoiler: "Forgotten Crossroads: Ancestral Mound",
           id: "Geo Rock 2 (1)",
           sceneName: "Crossroads_ShamanTemple",
@@ -7713,7 +7713,7 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock34: {
-          name: "Geo Rock #34 (15 Geo)",
+          name: "Geo Rock #34",
           spoiler: "Forgotten Crossroads: Ancestral Mound",
           id: "Geo Rock 1",
           sceneName: "Crossroads_ShamanTemple",
@@ -7721,1383 +7721,1367 @@ var HK = {
           wiki: "Geo#How_to_Acquire"
         },
         geoRock35: {
-          name: "Geo Rock #35 (15 Geo)",
-          spoiler: "Forgotten Crossroads: Ancestral Mound",
-          id: "_Items/Geo Rock 2",
-          sceneName: "Crossroads_ShamanTemple",
-          hitsLeft: "0",
-          wiki: "Geo#How_to_Acquire"
-        },
-        geoRock36: {
-          name: "Geo Rock #36 (26 Geo)",
+          name: "Geo Rock #35",
           spoiler: "Greenpath: Entrance",
           id: "Geo Rock Green Path 01",
           sceneName: "Fungus1_01",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock37: {
-          name: "Geo Rock #37 (26 Geo)",
+        geoRock36: {
+          name: "Geo Rock #36",
           spoiler: "Greenpath: Waterfall Bench",
           id: "Geo Rock Green Path 01",
           sceneName: "Fungus1_01b",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock38: {
-          name: "Geo Rock #38 (26 Geo)",
+        geoRock37: {
+          name: "Geo Rock #37",
           spoiler: "Greenpath: First Hornet Sighting",
           id: "Geo Rock Green Path 01",
           sceneName: "Fungus1_02",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock39: {
-          name: "Geo Rock #39 (26 Geo)",
+        geoRock38: {
+          name: "Geo Rock #38",
           spoiler: "Greenpath: First Hornet Sighting",
           id: "Geo Rock Green Path 01 (1)",
           sceneName: "Fungus1_02",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock40: {
-          name: "Geo Rock #40 (26 Geo)",
+        geoRock39: {
+          name: "Geo Rock #39",
           spoiler: "Greenpath: Outside Hunter",
           id: "Geo Rock Green Path 01",
           sceneName: "Fungus1_07",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock41: {
-          name: "Geo Rock #41 (26 Geo)",
+        geoRock40: {
+          name: "Geo Rock #40",
           spoiler: "Greenpath: Above Sanctuary Bench",
           id: "Geo Rock Green Path 01",
           sceneName: "Fungus1_19",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock42: {
-          name: "Geo Rock #42 (26 Geo)",
+        geoRock41: {
+          name: "Geo Rock #41",
           spoiler: "Greenpath: Acid Bridge",
           id: "Geo Rock Green Path 01",
           sceneName: "Fungus1_10",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock43: {
-          name: "Geo Rock #43 (26 Geo)",
+        geoRock42: {
+          name: "Geo Rock #42",
           spoiler: "Greenpath: Outside Stag Station",
           id: "Geo Rock Green Path 01 (1)",
           sceneName: "Fungus1_22",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock44: {
-          name: "Geo Rock #44 (26 Geo)",
+        geoRock43: {
+          name: "Geo Rock #43",
           spoiler: "Greenpath: Outside Stag Station",
           id: "Geo Rock Green Path 01",
           sceneName: "Fungus1_22",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock45: {
-          name: "Geo Rock #45 (26 Geo)",
+        geoRock44: {
+          name: "Geo Rock #44",
           spoiler: "Greenpath: Toll",
           id: "Geo Rock Green Path 01",
           sceneName: "Fungus1_31",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock46: {
-          name: "Geo Rock #46 (15 Geo)",
+        geoRock45: {
+          name: "Geo Rock #45",
           spoiler: "Greenpath: Toll",
           id: "Geo Rock 1 (1)",
           sceneName: "Fungus1_31",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock47: {
-          name: "Geo Rock #47 (15 Geo)",
+        geoRock46: {
+          name: "Geo Rock #46",
           spoiler: "Greenpath: Toll",
           id: "Geo Rock 2 (1)",
           sceneName: "Fungus1_31",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock48: {
-          name: "Geo Rock #48 (26 Geo)",
+        geoRock47: {
+          name: "Geo Rock #47",
           spoiler: "Greenpath: Storerooms",
           id: "Geo Rock Green Path 01 (2)",
           sceneName: "Fungus1_03",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock49: {
-          name: "Geo Rock #49 (26 Geo)",
+        geoRock48: {
+          name: "Geo Rock #48",
           spoiler: "Greenpath: Storerooms",
           id: "Geo Rock Green Path 01 (1)",
           sceneName: "Fungus1_03",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock50: {
-          name: "Geo Rock #50 (26 Geo)",
+        geoRock49: {
+          name: "Geo Rock #49",
           spoiler: "Greenpath: Storerooms",
           id: "Geo Rock Green Path 01",
           sceneName: "Fungus1_03",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock51: {
-          name: "Geo Rock #51 (15 Geo)",
+        geoRock50: {
+          name: "Geo Rock #50",
           spoiler: "Greenpath: Outside Thorns",
           id: "Geo Rock 2",
           sceneName: "Fungus1_05",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock52: {
-          name: "Geo Rock #52 (15 Geo)",
+        geoRock51: {
+          name: "Geo Rock #51",
           spoiler: "Howling Cliffs: Baldur's Shell",
           id: "Geo Rock 2",
           sceneName: "Fungus1_28",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock53: {
-          name: "Geo Rock #53 (15 Geo)",
+        geoRock52: {
+          name: "Geo Rock #52",
           spoiler: "Howling Cliffs: Baldur's Shell",
           id: "Geo Rock 1 (2)",
           sceneName: "Fungus1_28",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock54: {
-          name: "Geo Rock #54 (30 Geo)",
+        geoRock53: {
+          name: "Geo Rock #53",
           spoiler: "Greenpath: Outside Hornet",
           id: "Geo Rock Green Path 02",
           sceneName: "Fungus1_21",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock55: {
-          name: "Geo Rock #55 (30 Geo)",
+        geoRock54: {
+          name: "Geo Rock #54",
           spoiler: "Greenpath: Outside Hornet",
           id: "Geo Rock Green Path 02 (1)",
           sceneName: "Fungus1_21",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock56: {
-          name: "Geo Rock #56 (30 Geo)",
+        geoRock55: {
+          name: "Geo Rock #55",
           spoiler: "Greenpath: Outside Hornet",
           id: "Geo Rock Green Path 02 (2)",
           sceneName: "Fungus1_21",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock57: {
-          name: "Geo Rock #57 (26 Geo)",
+        geoRock56: {
+          name: "Geo Rock #56",
           spoiler: "Greenpath: Hornet",
           id: "Geo Rock Green Path 01",
           sceneName: "Fungus1_04",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock58: {
-          name: "Geo Rock #58 (26 Geo)",
+        geoRock57: {
+          name: "Geo Rock #57",
           spoiler: "Greenpath: Massive Moss Charger",
           id: "Geo Rock Green Path 01",
           sceneName: "Fungus1_29",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock59: {
-          name: "Geo Rock #59 (26 Geo)",
+        geoRock58: {
+          name: "Geo Rock #58",
           spoiler: "Greenpath: Massive Moss Charger Corridor",
           id: "Geo Rock Green Path 01",
           sceneName: "Fungus1_12",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock60: {
-          name: "Geo Rock #60 (26 Geo)",
+        geoRock59: {
+          name: "Geo Rock #59",
           spoiler: "Greenpath: Massive Moss Charger Corridor",
           id: "Geo Rock Green Path 01 (1)",
           sceneName: "Fungus1_12",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock61: {
-          name: "Geo Rock #61 (30 Geo)",
+        geoRock60: {
+          name: "Geo Rock #60",
           spoiler: "Greenpath: Massive Moss Charger Corridor",
           id: "Geo Rock Green Path 02",
           sceneName: "Fungus1_12",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock62: {
-          name: "Geo Rock #62 (26 Geo)",
+        geoRock61: {
+          name: "Geo Rock #61",
           spoiler: "Fog Canyon: Queen's Gardens Acid Entrance",
           id: "Geo Rock Green Path 01",
           sceneName: "Fungus3_03",
           hitsLeft: "5",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock63: {
-          name: "Geo Rock #63 (22 Geo)",
+        geoRock62: {
+          name: "Geo Rock #62",
           spoiler: "Fungal Wastes: Below Shrumal Ogres",
           id: "Geo Rock Fung 01",
           sceneName: "Fungus2_04",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock64: {
-          name: "Geo Rock #64 (22 Geo)",
+        geoRock63: {
+          name: "Geo Rock #63",
           spoiler: "Fungal Wastes: Cornifer",
           id: "Geo Rock Fung 01 (1)",
           sceneName: "Fungus2_18",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock65: {
-          name: "Geo Rock #65 (22 Geo)",
+        geoRock64: {
+          name: "Geo Rock #64",
           spoiler: "Fungal Wastes: Cornifer",
           id: "Geo Rock Fung 01",
           sceneName: "Fungus2_18",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock66: {
-          name: "Geo Rock #66 (17 Geo)",
+        geoRock65: {
+          name: "Geo Rock #65",
           spoiler: "Fungal Wastes: Cornifer",
           id: "Geo Rock Fung 02 (1)",
           sceneName: "Fungus2_18",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock67: {
-          name: "Geo Rock #67 (17 Geo)",
+        geoRock66: {
+          name: "Geo Rock #66",
           spoiler: "Fungal Wastes: Cornifer",
           id: "Geo Rock Fung 02 (2)",
           sceneName: "Fungus2_18",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock68: {
-          name: "Geo Rock #68 (15 Geo)",
+        geoRock67: {
+          name: "Geo Rock #67",
           spoiler: "Forgotten Crossroads: Goam Journal",
           id: "Geo Rock 1",
           sceneName: "Crossroads_52",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock69: {
-          name: "Geo Rock #69 (15 Geo)",
+        geoRock68: {
+          name: "Geo Rock #68",
           spoiler: "Forgotten Crossroads: Goam Journal",
           id: "Geo Rock 2",
           sceneName: "Crossroads_52",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock70: {
-          name: "Geo Rock #70 (22 Geo)",
+        geoRock69: {
+          name: "Geo Rock #69",
           spoiler: "Fungal Wastes: Outside Elder Hu",
           id: "Geo Rock Fung 01",
           sceneName: "Fungus2_08",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock71: {
-          name: "Geo Rock #71 (22 Geo)",
+        geoRock70: {
+          name: "Geo Rock #70",
           spoiler: "Fungal Wastes: Left Of Pilgrim's Way",
           id: "Geo Rock Fung 01",
           sceneName: "Fungus2_10",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock72: {
-          name: "Geo Rock #72 (17 Geo)",
+        geoRock71: {
+          name: "Geo Rock #71",
           spoiler: "Fungal Wastes: Right of Bouncy Mushroom Grub",
           id: "Geo Rock Fung 02",
           sceneName: "Fungus2_11",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock73: {
-          name: "Geo Rock #73 (22 Geo)",
+        geoRock72: {
+          name: "Geo Rock #72",
           spoiler: "Fungal Wastes: Right of Bouncy Mushroom Grub",
           id: "Geo Rock Fung 01",
           sceneName: "Fungus2_11",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock74: {
-          name: "Geo Rock #74 (22 Geo)",
+        geoRock73: {
+          name: "Geo Rock #73",
           spoiler: "Fungal Wastes: Bretta Bench",
           id: "Geo Rock Fung 01 (1)",
           sceneName: "Fungus2_13",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock75: {
-          name: "Geo Rock #75 (22 Geo)",
+        geoRock74: {
+          name: "Geo Rock #74",
           spoiler: "Fungal Wastes: Bretta Bench",
           id: "Geo Rock Fung 01",
           sceneName: "Fungus2_13",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock76: {
-          name: "Geo Rock #76 (17 Geo)",
+        geoRock75: {
+          name: "Geo Rock #75",
           spoiler: "Fungal Wastes: Bretta Bench",
           id: "Geo Rock Fung 02",
           sceneName: "Fungus2_13",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock77: {
-          name: "Geo Rock #77 (15 Geo)",
+        geoRock76: {
+          name: "Geo Rock #76",
           spoiler: "Fungal Wastes: Mantis Village",
           id: "Geo Rock 2 (2)",
           sceneName: "Fungus2_14",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock78: {
-          name: "Geo Rock #78 (15 Geo)",
+        geoRock77: {
+          name: "Geo Rock #77",
           spoiler: "Fungal Wastes: Mantis Village",
           id: "Geo Rock 1",
           sceneName: "Fungus2_14",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock79: {
-          name: "Geo Rock #79 (15 Geo)",
+        geoRock78: {
+          name: "Geo Rock #78",
           spoiler: "Fungal Wastes: Mantis Village",
           id: "Geo Rock 2 (3)",
           sceneName: "Fungus2_14",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock80: {
-          name: "Geo Rock #80 (15 Geo)",
+        geoRock79: {
+          name: "Geo Rock #79",
           spoiler: "Fungal Wastes: Mantis Village",
           id: "Geo Rock 2 (1)",
           sceneName: "Fungus2_14",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock81: {
-          name: "Geo Rock #81 (15 Geo)",
+        geoRock80: {
+          name: "Geo Rock #80",
           spoiler: "Fungal Wastes: Mantis Village",
           id: "Geo Rock 2",
           sceneName: "Fungus2_14",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock82: {
-          name: "Geo Rock #82 (15 Geo)",
+        geoRock81: {
+          name: "Geo Rock #81",
           spoiler: "Fungal Wastes: Mantis Lords",
           id: "Geo Rock 1",
           sceneName: "Fungus2_15",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock83: {
-          name: "Geo Rock #83 (15 Geo)",
+        geoRock82: {
+          name: "Geo Rock #82",
           spoiler: "Fungal Wastes: Mantis Lords",
           id: "Geo Rock 1 (1)",
           sceneName: "Fungus2_15",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock84: {
-          name: "Geo Rock #84 (22 Geo)",
+        geoRock83: {
+          name: "Geo Rock #83",
           spoiler: "Fungal Wastes: Fungal Core Upper",
           id: "Geo Rock Fung 01",
           sceneName: "Fungus2_29",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock85: {
-          name: "Geo Rock #85 (15 Geo)",
+        geoRock84: {
+          name: "Geo Rock #84",
           spoiler: "Fungal Wastes: Pilgrim's Way",
           id: "Geo Rock 1",
           sceneName: "Fungus2_21",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock86: {
-          name: "Geo Rock #86 (30 Geo)",
+        geoRock85: {
+          name: "Geo Rock #85",
           spoiler: "City of Tears: Rafters",
           id: "Geo Rock City 1",
           sceneName: "Ruins1_03",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock87: {
-          name: "Geo Rock #87 (30 Geo)",
+        geoRock86: {
+          name: "Geo Rock #86",
           spoiler: "City of Tears: Lemm Room",
           id: "Geo Rock City 1 (1)",
           sceneName: "Ruins1_05b",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock88: {
-          name: "Geo Rock #88 (30 Geo)",
+        geoRock87: {
+          name: "Geo Rock #87",
           spoiler: "City of Tears: Rancid Egg Above Lemm",
           id: "Geo Rock City 1",
           sceneName: "Ruins1_05c",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock89: {
-          name: "Geo Rock #89 (15 Geo)",
+        geoRock88: {
+          name: "Geo Rock #88",
           spoiler: "Forgotten Crossroads: Vessel Fragment",
           id: "Geo Rock 2",
           sceneName: "Crossroads_37",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock90: {
-          name: "Geo Rock #90 (15 Geo)",
+        geoRock89: {
+          name: "Geo Rock #89",
           spoiler: "Forgotten Crossroads: Brooding Mawlek Middle",
           id: "Geo Rock 1",
           sceneName: "Crossroads_36",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock91: {
-          name: "Geo Rock #91 (15 Geo)",
+        geoRock90: {
+          name: "Geo Rock #90",
           spoiler: "Howling Cliffs: Gorb",
           id: "Geo Rock 1",
           sceneName: "Cliffs_02",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock92: {
-          name: "Geo Rock #92 (15 Geo)",
+        geoRock91: {
+          name: "Geo Rock #91",
           spoiler: "Howling Cliffs: Gorb",
           id: "Geo Rock 1 (1)",
           sceneName: "Cliffs_02",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock93: {
-          name: "Geo Rock #93 (15 Geo)",
+        geoRock92: {
+          name: "Geo Rock #92",
           spoiler: "Howling Cliffs: Main",
           id: "Geo Rock 2 (2)",
           sceneName: "Cliffs_01",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock94: {
-          name: "Geo Rock #94 (15 Geo)",
+        geoRock93: {
+          name: "Geo Rock #93",
           spoiler: "Howling Cliffs: Main",
           id: "Geo Rock 2 (1)",
           sceneName: "Cliffs_01",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock95: {
-          name: "Geo Rock #95 (15 Geo)",
+        geoRock94: {
+          name: "Geo Rock #94",
           spoiler: "Howling Cliffs: Main",
           id: "Geo Rock 2 (4)",
           sceneName: "Cliffs_01",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock96: {
-          name: "Geo Rock #96 (15 Geo)",
+        geoRock95: {
+          name: "Geo Rock #95",
           spoiler: "Howling Cliffs: Main",
           id: "Geo Rock 2 (3)",
           sceneName: "Cliffs_01",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock97: {
-          name: "Geo Rock #97 (24 Geo)",
+        geoRock96: {
+          name: "Geo Rock #96",
           spoiler: "Crystal Peak: Dark Entrance",
           id: "Geo Rock Mine",
           sceneName: "Mines_02",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock98: {
-          name: "Geo Rock #98 (15 Geo)",
+        geoRock97: {
+          name: "Geo Rock #97",
           spoiler: "Crystal Peak: Dark Entrance",
           id: "Geo Rock 1",
           sceneName: "Mines_02",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock99: {
-          name: "Geo Rock #99 (22 Geo)",
+        geoRock98: {
+          name: "Geo Rock #98",
           spoiler: "Crystal Peak: Dark Entrance",
           id: "Geo Rock Mine (1)",
           sceneName: "Mines_02",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock100: {
-          name: "Geo Rock #100 (16 Geo)",
+        geoRock99: {
+          name: "Geo Rock #99",
           spoiler: "Crystal Peak: Conveyor Belts Entrance",
           id: "Geo Rock Mine (1)",
           sceneName: "Mines_04",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock101: {
-          name: "Geo Rock #101 (16 Geo)",
+        geoRock100: {
+          name: "Geo Rock #100",
           spoiler: "Crystal Peak: Conveyor Belts Entrance",
           id: "Geo Rock Mine",
           sceneName: "Mines_04",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock102: {
-          name: "Geo Rock #102 (22 Geo)",
+        geoRock101: {
+          name: "Geo Rock #101",
           spoiler: "Crystal Peak: Above Spike Grub",
           id: "Geo Rock Mine",
           sceneName: "Mines_05",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock103: {
-          name: "Geo Rock #103 (24 Geo)",
+        geoRock102: {
+          name: "Geo Rock #102",
           spoiler: "Crystal Peak: East Tall",
           id: "Geo Rock Mine (4)",
           sceneName: "Mines_20",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock104: {
-          name: "Geo Rock #104 (24 Geo)",
+        geoRock103: {
+          name: "Geo Rock #103",
           spoiler: "Crystal Peak: East Tall",
           id: "Geo Rock Mine (3)",
           sceneName: "Mines_20",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock105: {
-          name: "Geo Rock #105 (24 Geo)",
+        geoRock104: {
+          name: "Geo Rock #104",
           spoiler: "Crystal Peak: East Tall",
           id: "Geo Rock Mine (2)",
           sceneName: "Mines_20",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock106: {
-          name: "Geo Rock #106 (24 Geo)",
+        geoRock105: {
+          name: "Geo Rock #105",
           spoiler: "Crystal Peak: Chest Crushers",
           id: "Geo Rock Mine",
           sceneName: "Mines_37",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock107: {
-          name: "Geo Rock #107 (24 Geo)",
+        geoRock106: {
+          name: "Geo Rock #106",
           spoiler: "Crystal Peak: Chest Crushers",
           id: "Geo Rock Mine (1)",
           sceneName: "Mines_37",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock108: {
-          name: "Geo Rock #108 (30 Geo)",
+        geoRock107: {
+          name: "Geo Rock #107",
           spoiler: "Royal Waterways: Entrance",
           id: "Geo Rock City 1",
           sceneName: "Waterways_01",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock109: {
-          name: "Geo Rock #109 (26 Geo)",
+        geoRock108: {
+          name: "Geo Rock #108",
           spoiler: "Royal Waterways: Entrance",
           id: "Geo Rock City 1 (1)",
           sceneName: "Waterways_01",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock110: {
-          name: "Geo Rock #110 (30 Geo)",
+        geoRock109: {
+          name: "Geo Rock #109",
           spoiler: "Royal Waterways: Mask Shard Room",
           id: "Geo Rock City 1",
           sceneName: "Waterways_04b",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock111: {
-          name: "Geo Rock #111 (15 Geo)",
+        geoRock110: {
+          name: "Geo Rock #110",
           spoiler: "City of Tears: Broken Elevator",
           id: "Geo Rock 2 (1)",
           sceneName: "Abyss_01",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock112: {
-          name: "Geo Rock #112 (15 Geo)",
+        geoRock111: {
+          name: "Geo Rock #111",
           spoiler: "City of Tears: Broken Elevator",
           id: "Geo Rock 2",
           sceneName: "Abyss_01",
           hitsLeft: "5",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock113: {
-          name: "Geo Rock #113 (15 Geo)",
+        geoRock112: {
+          name: "Geo Rock #112",
           spoiler: "City of Tears: Broken Elevator",
           id: "Geo Rock 1",
           sceneName: "Abyss_01",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock114: {
-          name: "Geo Rock #114 (15 Geo)",
+        geoRock113: {
+          name: "Geo Rock #113",
           spoiler: "Ancient Basin: Broken Bridge",
           id: "Geo Rock Deepnest (1)",
           sceneName: "Abyss_02",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock115: {
-          name: "Geo Rock #115 (15 Geo)",
+        geoRock114: {
+          name: "Geo Rock #114",
           spoiler: "Ancient Basin: Broken Bridge",
           id: "Geo Rock Deepnest",
           sceneName: "Abyss_02",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock116: {
-          name: "Geo Rock #116 (15 Geo)",
+        geoRock115: {
+          name: "Geo Rock #115",
           spoiler: "Ancient Basin: Broken Bridge",
           id: "Geo Rock Deepnest (2)",
           sceneName: "Abyss_02",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock117: {
-          name: "Geo Rock #117 (30 Geo)",
+        geoRock116: {
+          name: "Geo Rock #116",
           spoiler: "City of Tears: King's Station",
           id: "Geo Rock City 1",
           sceneName: "Ruins2_06",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock118: {
-          name: "Geo Rock #118 (30 Geo)",
+        geoRock117: {
+          name: "Geo Rock #117",
           spoiler: "City of Tears: Above King's Station",
           id: "Geo Rock City 1",
           sceneName: "Ruins2_05",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock119: {
-          name: "Geo Rock #119 (44 Geo)",
+        geoRock118: {
+          name: "Geo Rock #118",
           spoiler: "Kingdom's Edge: Whispering Root",
           id: "Geo Rock Outskirts",
+          sceneName: "Deepnest_East_07",
+          hitsLeft: "0",
+          wiki: "Geo#How_to_Acquire"
+        },
+        geoRock119: {
+          name: "Geo Rock #119",
+          spoiler: "Kingdom's Edge: Whispering Root",
+          id: "Geo Rock Outskirts (1)",
           sceneName: "Deepnest_East_07",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
         geoRock120: {
-          name: "Geo Rock #120 (44 Geo)",
-          spoiler: "Kingdom's Edge: Whispering Root",
-          id: "Geo Rock Outskirts (1)",
-          sceneName: "Deepnest_East_07",
-          hitsLeft: "0",
-          wiki: "Geo#How_to_Acquire"
-        },
-        geoRock121: {
-          name: "Geo Rock #121 (44 Geo)",
+          name: "Geo Rock #120",
           spoiler: "Kingdom's Edge: Outside Nailmaster Oro",
           id: "Geo Rock Outskirts",
           sceneName: "Deepnest_East_06",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock122: {
-          name: "Geo Rock #122 (44 Geo)",
+        geoRock121: {
+          name: "Geo Rock #121",
           spoiler: "Kingdom's Edge: Outside Nailmaster Oro",
           id: "Geo Rock Outskirts (1)",
           sceneName: "Deepnest_East_06",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock123: {
-          name: "Geo Rock #123 (44 Geo)",
+        geoRock122: {
+          name: "Geo Rock #122",
           spoiler: "Kingdom's Edge: Bardoon",
           id: "Geo Rock Outskirts",
           sceneName: "Deepnest_East_04",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock124: {
-          name: "Geo Rock #124 (44 Geo)",
+        geoRock123: {
+          name: "Geo Rock #123",
           spoiler: "Kingdom's Edge: Great Hopper King's Idol",
           id: "Geo Rock Outskirts",
           sceneName: "Deepnest_East_08",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock125: {
-          name: "Geo Rock #125 (44 Geo)",
+        geoRock124: {
+          name: "Geo Rock #124",
           spoiler: "Kingdom's Edge: Pale Lurker Arena",
           id: "Geo Rock Outskirts",
           sceneName: "GG_Lurker",
           hitsLeft: "5",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock126: {
-          name: "Geo Rock #126 (30 Geo)",
+        geoRock125: {
+          name: "Geo Rock #125",
           spoiler: "Fog Canyon: Overgrown Mound",
           id: "Geo Rock Green Path 02",
           sceneName: "Room_Fungus_Shaman",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock127: {
-          name: "Geo Rock #127 (30 Geo)",
+        geoRock126: {
+          name: "Geo Rock #126",
           spoiler: "City of Tears: Soul Master Rewards Room",
           id: "Geo Rock City 1",
           sceneName: "Ruins1_32",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock128: {
-          name: "Geo Rock #128 (30 Geo)",
+        geoRock127: {
+          name: "Geo Rock #127",
           spoiler: "Royal Waterways: Outside Flukemarm",
           id: "Geo Rock City 1",
           sceneName: "Waterways_08",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock129: {
-          name: "Geo Rock #129 (30 Geo)",
+        geoRock128: {
+          name: "Geo Rock #128",
           spoiler: "Royal Waterways: Flukemunga Corridor",
           id: "Geo Rock City 1",
           sceneName: "GG_Pipeway",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock130: {
-          name: "Geo Rock #130 (22 Geo)",
+        geoRock129: {
+          name: "Geo Rock #129",
           spoiler: "Royal Waterways: Fluke Hermit Room",
           id: "Geo Rock Fung 01",
           sceneName: "Room_GG_Shortcut",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock131: {
-          name: "Geo Rock #131 (17 Geo)",
+        geoRock130: {
+          name: "Geo Rock #130",
           spoiler: "Royal Waterways: Fluke Hermit Room",
           id: "Geo Rock Fung 02 (1)",
           sceneName: "Room_GG_Shortcut",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock132: {
-          name: "Geo Rock #132 (25 Geo)",
+        geoRock131: {
+          name: "Geo Rock #131",
           spoiler: "Resting Grounds: Crypts",
           id: "Geo Rock Grave 02 (1)",
           sceneName: "RestingGrounds_10",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock133: {
-          name: "Geo Rock #133 (25 Geo)",
+        geoRock132: {
+          name: "Geo Rock #132",
           spoiler: "Resting Grounds: Crypts",
           id: "Geo Rock Grave 02",
           sceneName: "RestingGrounds_10",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock134: {
-          name: "Geo Rock #134 (25 Geo)",
+        geoRock133: {
+          name: "Geo Rock #133",
           spoiler: "Resting Grounds: Crypts",
           id: "Geo Rock Grave 01",
           sceneName: "RestingGrounds_10",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock135: {
-          name: "Geo Rock #135 (24 Geo)",
+        geoRock134: {
+          name: "Geo Rock #134",
           spoiler: "Crystal Peak: Crystal Heart Gauntlet",
           id: "Geo Rock Mine",
           sceneName: "Mines_31",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock136: {
-          name: "Geo Rock #136 (24 Geo)",
+        geoRock135: {
+          name: "Geo Rock #135",
           spoiler: "Crystal Peak: Grub Mimic",
           id: "Geo Rock Mine",
           sceneName: "Mines_16",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock137: {
-          name: "Geo Rock #137 (35 Geo)",
+        geoRock136: {
+          name: "Geo Rock #136",
           spoiler: "Ancient Basin: Corridor to Broken Vessel",
           id: "Geo Rock Abyss",
           sceneName: "Abyss_18",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock138: {
-          name: "Geo Rock #138 (35 Geo)",
+        geoRock137: {
+          name: "Geo Rock #137",
           spoiler: "The Abyss: Main/Core Area",
           id: "Geo Rock Abyss (1)",
+          sceneName: "Abyss_06_Core",
+          hitsLeft: "0",
+          wiki: "Geo#How_to_Acquire"
+        },
+        geoRock138: {
+          name: "Geo Rock #138",
+          spoiler: "The Abyss: Main/Core Area",
+          id: "Geo Rock Abyss",
           sceneName: "Abyss_06_Core",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
         geoRock139: {
-          name: "Geo Rock #139 (35 Geo)",
-          spoiler: "The Abyss: Main/Core Area",
-          id: "Geo Rock Abyss",
-          sceneName: "Abyss_06_Core",
-          hitsLeft: "0",
-          wiki: "Geo#How_to_Acquire"
-        },
-        geoRock140: {
-          name: "Geo Rock #140 (35 Geo)",
-          spoiler: "The Abyss: Main/Core Area",
-          id: "_Props/Geo Rock Abyss",
-          sceneName: "Abyss_06_Core",
-          hitsLeft: "0",
-          wiki: "Geo#How_to_Acquire"
-        },
-        geoRock141: {
-          name: "Geo Rock #141 (35 Geo)",
+          name: "Geo Rock #139",
           spoiler: "Ancient Basin: Broken Vessel Grub",
           id: "Geo Rock Abyss (1)",
           sceneName: "Abyss_19",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock142: {
-          name: "Geo Rock #142 (35 Geo)",
+        geoRock140: {
+          name: "Geo Rock #140",
           spoiler: "Ancient Basin: Broken Vessel Grub",
           id: "Geo Rock Abyss",
           sceneName: "Abyss_19",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock143: {
-          name: "Geo Rock #143 (24 Geo)",
+        geoRock141: {
+          name: "Geo Rock #141",
           spoiler: "Crystal Peak: Hallownest Crown Climb",
           id: "Geo Rock Mine",
           sceneName: "Mines_25",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock144: {
-          name: "Geo Rock #144 (24 Geo)",
+        geoRock142: {
+          name: "Geo Rock #142",
           spoiler: "Crystal Peak: Hallownest Crown Climb",
           id: "Geo Rock Mine (4)",
           sceneName: "Mines_25",
           hitsLeft: "4",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock145: {
-          name: "Geo Rock #145 (24 Geo)",
+        geoRock143: {
+          name: "Geo Rock #143",
           spoiler: "Crystal Peak: Hallownest Crown Climb",
           id: "Geo Rock Mine (2)",
           sceneName: "Mines_25",
           hitsLeft: "4",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock146: {
-          name: "Geo Rock #146 (24 Geo)",
+        geoRock144: {
+          name: "Geo Rock #144",
           spoiler: "Crystal Peak: Hallownest Crown Climb",
           id: "Geo Rock Mine (1)",
           sceneName: "Mines_25",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock147: {
-          name: "Geo Rock #147 (24 Geo)",
+        geoRock145: {
+          name: "Geo Rock #145",
           spoiler: "Crystal Peak: Hallownest Crown Climb",
           id: "Geo Rock Mine (3)",
           sceneName: "Mines_25",
           hitsLeft: "4",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock148: {
-          name: "Geo Rock #148 (30 Geo)",
+        geoRock146: {
+          name: "Geo Rock #146",
           spoiler: "City of Tears: Watcher's Spire Second Floor",
           id: "Geo Rock City 1",
           sceneName: "Ruins2_01",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock149: {
-          name: "Geo Rock #149 (30 Geo)",
+        geoRock147: {
+          name: "Geo Rock #147",
           spoiler: "Fog Canyon: East Tall",
           id: "Geo Rock Green Path 01",
           sceneName: "Fungus3_26",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock150: {
-          name: "Geo Rock #150 (26 Geo)",
+        geoRock148: {
+          name: "Geo Rock #148",
           spoiler: "Queen's Gardens: Main Arena",
           id: "Geo Rock Green Path 01",
           sceneName: "Fungus3_10",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock151: {
-          name: "Geo Rock #151 (30 Geo)",
+        geoRock149: {
+          name: "Geo Rock #149",
           spoiler: "Queen's Gardens: Outside White Lady",
           id: "Geo Rock Green Path 02",
           sceneName: "Fungus3_48",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock152: {
-          name: "Geo Rock #152 (27 Geo)",
+        geoRock150: {
+          name: "Geo Rock #150",
           spoiler: "Queen's Gardens: Moss Prophet Room",
           id: "Geo Rock Green Path 01 (1)",
           sceneName: "Fungus3_39",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock153: {
-          name: "Geo Rock #153 (30 Geo)",
+        geoRock151: {
+          name: "Geo Rock #151",
           spoiler: "Queen's Gardens: Moss Prophet Room",
           id: "Geo Rock Green Path 01",
           sceneName: "Fungus3_39",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock154: {
-          name: "Geo Rock #154 (15 Geo)",
+        geoRock152: {
+          name: "Geo Rock #152",
           spoiler: "Fungal Wastes: Deepnest Fall",
           id: "Geo Rock 1",
           sceneName: "Deepnest_01",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock155: {
-          name: "Geo Rock #155 (15 Geo)",
+        geoRock153: {
+          name: "Geo Rock #153",
           spoiler: "Fungal Wastes: Deepnest Fall",
           id: "Geo Rock 2",
           sceneName: "Deepnest_01",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock156: {
-          name: "Geo Rock #156 (26 Geo)",
+        geoRock154: {
+          name: "Geo Rock #154",
           spoiler: "Queen's Gardens: Corridor To Deepnest",
           id: "Geo Rock Green Path 01 (1)",
           sceneName: "Deepnest_43",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock157: {
-          name: "Geo Rock #157 (26 Geo)",
+        geoRock155: {
+          name: "Geo Rock #155",
           spoiler: "Queen's Gardens: Corridor To Deepnest",
           id: "Geo Rock Green Path 01",
           sceneName: "Deepnest_43",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock158: {
-          name: "Geo Rock #158 (22 Geo)",
+        geoRock156: {
+          name: "Geo Rock #156",
           spoiler: "Fungal Wastes: Fungal Core Lower",
           id: "Geo Rock Fung 01",
           sceneName: "Fungus2_30",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock159: {
-          name: "Geo Rock #159 (22 Geo)",
+        geoRock157: {
+          name: "Geo Rock #157",
           spoiler: "Fungal Wastes: Fungal Core Lower",
           id: "Geo Rock Fung 01 (1)",
           sceneName: "Fungus2_30",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock160: {
-          name: "Geo Rock #160 (15 Geo)",
+        geoRock158: {
+          name: "Geo Rock #158",
           spoiler: "Deepnest: Lower Cornifer",
           id: "Geo Rock Deepnest",
           sceneName: "Fungus2_25",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock161: {
-          name: "Geo Rock #161 (15 Geo)",
+        geoRock159: {
+          name: "Geo Rock #159",
           spoiler: "Deepnest: Lower Cornifer",
           id: "Geo Rock Deepnest (1)",
           sceneName: "Fungus2_25",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock162: {
-          name: "Geo Rock #162 (15 Geo)",
+        geoRock160: {
+          name: "Geo Rock #160",
           spoiler: "Deepnest: Lower Cornifer",
           id: "Geo Rock Deepnest (2)",
           sceneName: "Fungus2_25",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock163: {
-          name: "Geo Rock #163 (15 Geo)",
+        geoRock161: {
+          name: "Geo Rock #161",
           spoiler: "Deepnest: Top of Lower Cornifer",
           id: "Geo Rock Deepnest (4)",
           sceneName: "Deepnest_16",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock164: {
-          name: "Geo Rock #164 (15 Geo)",
+        geoRock162: {
+          name: "Geo Rock #162",
           spoiler: "Deepnest: Top of Lower Cornifer",
           id: "Geo Rock Deepnest (3)",
           sceneName: "Deepnest_16",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock165: {
-          name: "Geo Rock #165 (15 Geo)",
+        geoRock163: {
+          name: "Geo Rock #163",
           spoiler: "Deepnest: Top of Lower Cornifer",
           id: "Geo Rock Deepnest (1)",
+          sceneName: "Deepnest_16",
+          hitsLeft: "0",
+          wiki: "Geo#How_to_Acquire"
+        },
+        geoRock164: {
+          name: "Geo Rock #164",
+          spoiler: "Deepnest: Top of Lower Cornifer",
+          id: "Geo Rock Deepnest",
+          sceneName: "Deepnest_16",
+          hitsLeft: "0",
+          wiki: "Geo#How_to_Acquire"
+        },
+        geoRock165: {
+          name: "Geo Rock #165",
+          spoiler: "Deepnest: Top of Lower Cornifer",
+          id: "Geo Rock Deepnest (2)",
           sceneName: "Deepnest_16",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
         geoRock166: {
-          name: "Geo Rock #166 (15 Geo)",
-          spoiler: "Deepnest: Top of Lower Cornifer",
-          id: "Geo Rock Deepnest",
-          sceneName: "Deepnest_16",
-          hitsLeft: "0",
+          name: "Geo Rock #166",
+          spoiler: "Deepnest: Outside Grub Mimics",
+          id: "Geo Rock Deepnest (1)",
+          sceneName: "Deepnest_02",
+          hitsLeft: "3",
           wiki: "Geo#How_to_Acquire"
         },
         geoRock167: {
-          name: "Geo Rock #167 (15 Geo)",
-          spoiler: "Deepnest: Top of Lower Cornifer",
-          id: "Geo Rock Deepnest (2)",
-          sceneName: "Deepnest_16",
-          hitsLeft: "0",
-          wiki: "Geo#How_to_Acquire"
-        },
-        geoRock168: {
-          name: "Geo Rock #168 (15 Geo)",
-          spoiler: "Deepnest: Outside Grub Mimics",
-          id: "Geo Rock Deepnest (1)",
-          sceneName: "Deepnest_02",
-          hitsLeft: "3",
-          wiki: "Geo#How_to_Acquire"
-        },
-        geoRock169: {
-          name: "Geo Rock #169 (15 Geo)",
+          name: "Geo Rock #167",
           spoiler: "Deepnest: Outside Grub Mimics",
           id: "Geo Rock Deepnest",
           sceneName: "Deepnest_02",
           hitsLeft: "3",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock170: {
-          name: "Geo Rock #170 (15 Geo)",
+        geoRock168: {
+          name: "Geo Rock #168",
           spoiler: "Deepnest: Whispering Root",
           id: "Geo Rock Deepnest (1)",
+          sceneName: "Deepnest_39",
+          hitsLeft: "0",
+          wiki: "Geo#How_to_Acquire"
+        },
+        geoRock169: {
+          name: "Geo Rock #169",
+          spoiler: "Deepnest: Whispering Root",
+          id: "Geo Rock Deepnest (2)",
+          sceneName: "Deepnest_39",
+          hitsLeft: "0",
+          wiki: "Geo#How_to_Acquire"
+        },
+        geoRock170: {
+          name: "Geo Rock #170",
+          spoiler: "Deepnest: Whispering Root",
+          id: "Geo Rock Deepnest",
           sceneName: "Deepnest_39",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
         geoRock171: {
-          name: "Geo Rock #171 (15 Geo)",
-          spoiler: "Deepnest: Whispering Root",
-          id: "Geo Rock Deepnest (2)",
-          sceneName: "Deepnest_39",
-          hitsLeft: "0",
+          name: "Geo Rock #171",
+          spoiler: "Deepnest: Left of Hot Spring",
+          id: "Geo Rock Deepnest (1)",
+          sceneName: "Deepnest_03",
+          hitsLeft: "3",
           wiki: "Geo#How_to_Acquire"
         },
         geoRock172: {
-          name: "Geo Rock #172 (15 Geo)",
-          spoiler: "Deepnest: Whispering Root",
-          id: "Geo Rock Deepnest",
-          sceneName: "Deepnest_39",
+          name: "Geo Rock #172",
+          spoiler: "Deepnest: Left of Hot Spring",
+          id: "Geo Rock Deepnest (2)",
+          sceneName: "Deepnest_03",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
         geoRock173: {
-          name: "Geo Rock #173 (15 Geo)",
+          name: "Geo Rock #173",
           spoiler: "Deepnest: Left of Hot Spring",
-          id: "Geo Rock Deepnest (1)",
+          id: "Geo Rock Deepnest",
           sceneName: "Deepnest_03",
           hitsLeft: "3",
           wiki: "Geo#How_to_Acquire"
         },
         geoRock174: {
-          name: "Geo Rock #174 (15 Geo)",
-          spoiler: "Deepnest: Left of Hot Spring",
-          id: "Geo Rock Deepnest (2)",
-          sceneName: "Deepnest_03",
+          name: "Geo Rock #174",
+          spoiler: "Deepnest: Outside Galien",
+          id: "Geo Rock Deepnest (1)",
+          sceneName: "Deepnest_35",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
         geoRock175: {
-          name: "Geo Rock #175 (15 Geo)",
-          spoiler: "Deepnest: Left of Hot Spring",
+          name: "Geo Rock #175",
+          spoiler: "Deepnest: Outside Galien",
           id: "Geo Rock Deepnest",
-          sceneName: "Deepnest_03",
-          hitsLeft: "3",
+          sceneName: "Deepnest_35",
+          hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
         geoRock176: {
-          name: "Geo Rock #176 (15 Geo)",
-          spoiler: "Deepnest: Outside Galien",
-          id: "Geo Rock Deepnest (1)",
-          sceneName: "Deepnest_35",
+          name: "Geo Rock #176",
+          spoiler: "Deepnest: Corridor to Tram",
+          id: "Geo Rock Deepnest",
+          sceneName: "Deepnest_37",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
         geoRock177: {
-          name: "Geo Rock #177 (15 Geo)",
-          spoiler: "Deepnest: Outside Galien",
-          id: "Geo Rock Deepnest",
-          sceneName: "Deepnest_35",
+          name: "Geo Rock #177",
+          spoiler: "Deepnest: Corridor to Tram",
+          id: "Geo Rock Deepnest (1)",
+          sceneName: "Deepnest_37",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
         geoRock178: {
-          name: "Geo Rock #178 (15 Geo)",
-          spoiler: "Deepnest: Corridor to Tram",
+          name: "Geo Rock #178",
+          spoiler: "Kingdom's Edge: Left of The Hive",
           id: "Geo Rock Deepnest",
-          sceneName: "Deepnest_37",
+          sceneName: "Deepnest_East_01",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
         geoRock179: {
-          name: "Geo Rock #179 (15 Geo)",
-          spoiler: "Deepnest: Corridor to Tram",
+          name: "Geo Rock #179",
+          spoiler: "Kingdom's Edge: Left of The Hive",
           id: "Geo Rock Deepnest (1)",
-          sceneName: "Deepnest_37",
+          sceneName: "Deepnest_East_01",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
         geoRock180: {
-          name: "Geo Rock #180 (15 Geo)",
-          spoiler: "Kingdom's Edge: Left of The Hive",
+          name: "Geo Rock #180",
+          spoiler: "Kingdom's Edge: Above The Hive",
           id: "Geo Rock Deepnest",
-          sceneName: "Deepnest_East_01",
+          sceneName: "Deepnest_East_02",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
         geoRock181: {
-          name: "Geo Rock #181 (15 Geo)",
-          spoiler: "Kingdom's Edge: Left of The Hive",
+          name: "Geo Rock #181",
+          spoiler: "Kingdom's Edge: Above The Hive",
           id: "Geo Rock Deepnest (1)",
-          sceneName: "Deepnest_East_01",
+          sceneName: "Deepnest_East_02",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
         geoRock182: {
-          name: "Geo Rock #182 (15 Geo)",
-          spoiler: "Kingdom's Edge: Above The Hive",
-          id: "Geo Rock Deepnest",
-          sceneName: "Deepnest_East_02",
-          hitsLeft: "0",
-          wiki: "Geo#How_to_Acquire"
-        },
-        geoRock183: {
-          name: "Geo Rock #183 (15 Geo)",
-          spoiler: "Kingdom's Edge: Above The Hive",
-          id: "Geo Rock Deepnest (1)",
-          sceneName: "Deepnest_East_02",
-          hitsLeft: "0",
-          wiki: "Geo#How_to_Acquire"
-        },
-        geoRock184: {
-          name: "Geo Rock #184 (30 Geo)",
+          name: "Geo Rock #182",
           spoiler: "Royal Waterways: Left of Isma's Grove",
           id: "Geo Rock City 1",
           sceneName: "Waterways_07",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock185: {
-          name: "Geo Rock #185 (56 Geo)",
+        geoRock183: {
+          name: "Geo Rock #183",
           spoiler: "The Hive: Outside Grub",
           id: "Geo Rock Hive (2)",
           sceneName: "Hive_03",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock186: {
-          name: "Geo Rock #186 (56 Geo)",
+        geoRock184: {
+          name: "Geo Rock #184",
           spoiler: "The Hive: Outside Grub",
           id: "Geo Rock Hive",
           sceneName: "Hive_03",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock187: {
-          name: "Geo Rock #187 (56 Geo)",
+        geoRock185: {
+          name: "Geo Rock #185",
           spoiler: "The Hive: Outside Grub",
           id: "Geo Rock Hive (1)",
           sceneName: "Hive_03",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock188: {
-          name: "Geo Rock #188 (56 Geo)",
+        geoRock186: {
+          name: "Geo Rock #186",
           spoiler: "The Hive: Entrance",
           id: "Geo Rock Hive",
           sceneName: "Hive_01",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock189: {
-          name: "Geo Rock #189 (56 Geo)",
+        geoRock187: {
+          name: "Geo Rock #187",
           spoiler: "The Hive: Whispering Root",
           id: "Geo Rock Hive",
           sceneName: "Hive_02",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock190: {
-          name: "Geo Rock #190 (56 Geo)",
+        geoRock188: {
+          name: "Geo Rock #188",
           spoiler: "The Hive: Whispering Root",
           id: "Geo Rock Hive (2)",
           sceneName: "Hive_02",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock191: {
-          name: "Geo Rock #191 (56 Geo)",
+        geoRock189: {
+          name: "Geo Rock #189",
           spoiler: "The Hive: Whispering Root",
           id: "Geo Rock Hive (1)",
           sceneName: "Hive_02",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock192: {
-          name: "Geo Rock #192 (56 Geo)",
+        geoRock190: {
+          name: "Geo Rock #190",
           spoiler: "The Hive: Mask Shard Room",
           id: "Geo Rock Hive",
           sceneName: "Hive_04",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock193: {
-          name: "Geo Rock #193 (56 Geo)",
+        geoRock191: {
+          name: "Geo Rock #191",
           spoiler: "The Hive: Mask Shard Room",
           id: "Geo Rock Hive (1)",
           sceneName: "Hive_04",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock194: {
-          name: "Geo Rock #194 (15 Geo)",
+        geoRock192: {
+          name: "Geo Rock #192",
           spoiler: "Deepnest: Nosk Corridor",
           id: "Geo Rock Deepnest",
           sceneName: "Deepnest_31",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock195: {
-          name: "Geo Rock #195 (15 Geo)",
+        geoRock193: {
+          name: "Geo Rock #193",
           spoiler: "Deepnest: Nosk Corridor",
           id: "Geo Rock Deepnest (1)",
           sceneName: "Deepnest_31",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock196: {
-          name: "Geo Rock #196 (15 Geo)",
+        geoRock194: {
+          name: "Geo Rock #194",
           spoiler: "Deepnest: Nosk Corridor",
           id: "Geo Rock Deepnest (2)",
           sceneName: "Deepnest_31",
           hitsLeft: "3",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock197: {
-          name: "Geo Rock #197 (15 Geo)",
+        geoRock195: {
+          name: "Geo Rock #195",
           spoiler: "Deepnest: Beast's Den",
           id: "Geo Rock Deepnest (3)",
           sceneName: "Deepnest_Spider_Town",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock198: {
-          name: "Geo Rock #198 (15 Geo)",
+        geoRock196: {
+          name: "Geo Rock #196",
           spoiler: "Deepnest: Beast's Den",
           id: "Geo Rock Deepnest (4)",
           sceneName: "Deepnest_Spider_Town",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock199: {
-          name: "Geo Rock #199 (20 Geo)",
+        geoRock197: {
+          name: "Geo Rock #197",
           spoiler: "Deepnest: Beast's Den",
           id: "Geo Rock Deepnest (5)",
           sceneName: "Deepnest_Spider_Town",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock200: {
-          name: "Geo Rock #200 (15 Geo)",
+        geoRock198: {
+          name: "Geo Rock #198",
           spoiler: "Deepnest: Beast's Den",
           id: "Geo Rock Deepnest",
           sceneName: "Deepnest_Spider_Town",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock201: {
-          name: "Geo Rock #201 (15 Geo)",
+        geoRock199: {
+          name: "Geo Rock #199",
           spoiler: "Deepnest: Beast's Den",
           id: "Geo Rock Deepnest (1)",
           sceneName: "Deepnest_Spider_Town",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock202: {
-          name: "Geo Rock #202 (30 Geo)",
+        geoRock200: {
+          name: "Geo Rock #200",
           spoiler: "Deepnest: Beast's Den",
           id: "Geo Rock Deepnest (7)",
           sceneName: "Deepnest_Spider_Town",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock203: {
-          name: "Geo Rock #203 (15 Geo)",
+        geoRock201: {
+          name: "Geo Rock #201",
           spoiler: "Deepnest: Beast's Den",
           id: "Geo Rock Deepnest (2)",
           sceneName: "Deepnest_Spider_Town",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock204: {
-          name: "Geo Rock #204 (20 Geo)",
+        geoRock202: {
+          name: "Geo Rock #202",
           spoiler: "Deepnest: Beast's Den",
           id: "Geo Rock Deepnest (6)",
           sceneName: "Deepnest_Spider_Town",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock205: {
-          name: "Geo Rock #205 (30 Geo)",
+        geoRock203: {
+          name: "Geo Rock #203",
           spoiler: "City of Tears: Pleasure House Elevator",
           id: "Geo Rock City 1",
           sceneName: "Ruins_Elevator",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock206: {
-          name: "Geo Rock #206 (44 Geo)",
-          spoiler: "Kingdom's Edge: Near 420 Geo Rock",
+        geoRock204: {
+          name: "Geo Rock #204",
+          spoiler: "Kingdom's Edge: near 420 Geo Rock",
           id: "Geo Rock Outskirts",
           sceneName: "Deepnest_East_17",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
         },
-        geoRock207: {
-          name: "Geo Rock #207 (420 Geo)",
+        geoRock205: {
+          name: "Geo Rock #205 (420 Geo)",
           spoiler: "Kingdom's Edge",
           id: "Giant Geo Egg",
           sceneName: "Deepnest_East_17",
