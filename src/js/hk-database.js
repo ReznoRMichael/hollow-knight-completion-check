@@ -4044,7 +4044,7 @@ const HK = {
     geoRocks: {
       h2: "Geo Rocks",
       id: "hk-geo-rocks",
-      description: "All Geo Rocks that can be found in the game. Only fully destroyed Geo Rocks are counted. Partially hit Geo Rocks won't be counted. Equipping the Fragile Greed Charm won't increase the amount of Geo found inside Geo Rocks. A total of 5074 Geo can be collected from Geo Rocks.",
+      description: `All Geo Rocks that can be found in the game. Only fully destroyed Geo Rocks are counted. Partially hit Geo Rocks won't be counted. Equipping the Fragile Greed Charm won't increase the amount of Geo found inside Geo Rocks. A total of 5074 Geo can be collected from Geo Rocks (credit: <a href="https://github.com/ReznoRMichael/hollow-knight-completion-check/pull/9" target="_blank">Araraura</a>).`,
       percent: 0,
       maxPercent: 207,
       entries: {
@@ -4323,7 +4323,7 @@ const HK = {
         geoRock35: {
           name: "Geo Rock #35: 15 Geo",
           spoiler: "Forgotten Crossroads: Ancestral Mound",
-          id: "_Items/Geo Rock 2",
+          id: "Geo Rock 2",
           sceneName: "Crossroads_ShamanTemple",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
@@ -5163,7 +5163,7 @@ const HK = {
         geoRock140: {
           name: "Geo Rock #140: 35 Geo",
           spoiler: "The Abyss: Main/Core Area",
-          id: "_Props/Geo Rock Abyss",
+          id: "Geo Rock Abyss",
           sceneName: "Abyss_06_Core",
           hitsLeft: "0",
           wiki: "Geo#How_to_Acquire"
