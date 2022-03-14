@@ -94,7 +94,7 @@ If you like the tool and wish it developed further with more functions and easie
 
 ## Version History
 
-* v2.1.0 Upcoming:  
+* v2.2.0 Upcoming:  
 
   — **General Changes:**  
   ✅ Moved Pale Lurker's Retreat to Game Completion % Essentials – World Interactions.  
