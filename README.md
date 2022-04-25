@@ -98,7 +98,11 @@ If you like the tool and wish it developed further with more functions and easie
 
   — **General Changes:**  
   ✅ Moved Pale Lurker's Retreat to Game Completion % Essentials – World Interactions.  
-  ✅ Add backwards save compatibility detection to entries: Path of Pain Entrance, Pale Lurker's Retreat.  
+  ✅ Added backwards save compatibility detection to entries: Path of Pain Entrance, Pale Lurker's Retreat.  
+
+  — **Geo Rocks:**  
+  ✅ Added every Geo Rock's value and Geo total from all Rocks (big thanks to Araraura)  
+  ✅ Added 2 missing Geo Rocks - duplicates in game logic (big thanks to Araraura)  
 
 * v2.1.0 2022-02-20:  
 
