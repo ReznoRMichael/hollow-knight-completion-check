@@ -11,7 +11,17 @@
   <img src="https://img.shields.io/static/v1?label=Instagram&message=reznor.technology&labelColor=lightgrey&color=E4405F&style=flat&logo=Instagram"></a>
 </p>
 
-# Save Completion Analyzer for Hollow Knight
+
+## Notice
+
+I am deeply saddened to inform you that the author of this repository, ReznoR, passed away in 2022.  
+Development of this project will no longer continue.
+Any donations will be used to maintain his resting place. 
+Thank you for your understanding.
+
+His brother – Gerrrciu
+
+# Save Completion Analyzer for Hollow Knight 
 
 > Now you can see what you missed easily! Game Completion %, every Shard/Fragment/Ore, costs, locations, Game Statistics, Hunter's Journal, Achievements, Game Completion essentials. And if you are completely lost, I designed a spoiler-free Hint system based on your individual game progress.
 
