@@ -14,12 +14,9 @@
 
 # Notice
 
-<p style="font-size:25px;">
-I am deeply saddened to inform you that the author of this repository, ReznoR, passed away in 2022.<br>
-Development of this project will no longer continue. I will not change anything in this repository.<br>
-Any donations will be used to maintain his resting place.<br>
+
+# I am deeply saddened to inform you that the author of this repository, ReznoR, passed away in 2022. Development of this project will no longer continue. I will not change anything in this repository. Any donations will be used to maintain his resting place.
 Thank you for your understanding.
-</p> 
 
 **His brother – Gerrrciu**
 
