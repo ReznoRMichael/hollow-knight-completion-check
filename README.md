@@ -14,12 +14,14 @@
 
 ## Notice
 
-I am deeply saddened to inform you that the author of this repository, ReznoR, passed away in 2022.  
-Development of this project will no longer continue.
-Any donations will be used to maintain his resting place. 
+<p style="font-size:18px;">
+I am deeply saddened to inform you that the author of this repository, ReznoR, passed away in 2022.<br>
+Development of this project will no longer continue. I will not change anything in this repository.<br>
+Any donations will be used to maintain his resting place.<br>
 Thank you for your understanding.
+</p> 
 
-His brother – Gerrrciu
+**His brother – Gerrrciu**
 
 # Save Completion Analyzer for Hollow Knight 
 
