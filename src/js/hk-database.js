@@ -793,7 +793,7 @@ const HK = {
         },
         vesselFragmentDeepnest: {
           name: "Vessel Fragment #8",
-          spoiler: "Deepnest: Goam platforming challenge",
+          spoiler: "Deepnest: Garpede platforming challenge",
           wiki: "Vessel_Fragment",
           id: "Vessel Fragment",
           sceneName: "Deepnest_38"
